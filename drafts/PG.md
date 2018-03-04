@@ -1,6 +1,5 @@
 # 深入浅出策略梯度(Policy Gradient)
 
-岁
 
 
 # 相关概念
@@ -149,5 +148,5 @@ B --> D{Rhombus}
 C --> D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2NTU1NTUzMDFdfQ==
+eyJoaXN0b3J5IjpbLTEyNzQ4MDA2NjBdfQ==
 -->
