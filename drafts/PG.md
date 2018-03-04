@@ -1,6 +1,6 @@
 # 深入浅出策略梯度(Policy Gradient)
 
-Hi! I'm your first Markdown file in **StackEdit**. If you want to learn about StackEdit, you can read me. If you want to play with Markdown, you can edit me. If you have finished with me, you can just create new files by opening the **file explorer** on the left corner of the navigation bar.
+su
 
 
 # 相关概念
@@ -149,5 +149,5 @@ B --> D{Rhombus}
 C --> D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIxMjE3NTEyMjJdfQ==
+eyJoaXN0b3J5IjpbLTgxNTc3MTIwXX0=
 -->
