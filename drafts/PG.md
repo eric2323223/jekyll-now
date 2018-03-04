@@ -31,7 +31,7 @@ In contrast, policy gradient methods try to learn a policy function directly (in
 
 # 策略梯度（PG）
 ## PG的基本原理
-PG不计算reward而以一定的概率
+PG不计算reward而是以
 ## PG的目标函数
 ## Score function的由来
 ## PG的改进
@@ -176,5 +176,5 @@ B --> D{Rhombus}
 C --> D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTY5NTY2NDk3MCwtMjc5MTgwNDA4XX0=
+eyJoaXN0b3J5IjpbLTE0MDA0NDEyOTAsLTI3OTE4MDQwOF19
 -->
