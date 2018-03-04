@@ -6,6 +6,15 @@ Alpha GO 战胜人类棋手标志着机器学习特别是强化学习正在成�
 # 相关概念
 
 ## 强化学习
+Typically, a RL setup is composed of two components, an agent and an environment.
+
+![](https://cdn-images-1.medium.com/max/1600/1*c3pEt4pFk0Mx684DDVsW-w.png)
+
+Reinforcement Learning Illustration ([https://i.stack.imgur.com/eoeSq.png](https://i.stack.imgur.com/eoeSq.png))
+
+Then environment refers to the object that the agent is acting on (e.g. the game itself in the Atari game), while the agent represents the RL algorithm. The environment starts by sending a state to the agent, which then based on its knowledge to take an action in response to that state. After that, the environment send a pair of next state and reward back to the agent. The agent will update its knowledge with the reward returned by the environment to evaluate its last action. The loop keeps going on until the environment sends a terminal state, which ends to episode.
+
+Most of the RL algorithms follow this pattern. In the following paragraphs, I will briefly talk about some terms used in RL to facilitate our discussion in the next section.
 #### Definition
 
 1.  Action (A): All the possible moves that the agent can take
@@ -166,5 +175,5 @@ B --> D{Rhombus}
 C --> D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjI5ODU4NzIzXX0=
+eyJoaXN0b3J5IjpbMTQwODc0MTU1XX0=
 -->
