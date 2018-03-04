@@ -1,6 +1,6 @@
 # 深入浅出策略梯度(Policy Gradient)
 
-随着alpha GO zhan'sh
+随着alpha GO 战胜人类棋手，机器学习特别是强化学习正成为jie'ju
 
 
 # 相关概念
@@ -149,5 +149,5 @@ B --> D{Rhombus}
 C --> D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0NzczODk5OTBdfQ==
+eyJoaXN0b3J5IjpbMTg3OTA5MDA5NF19
 -->
