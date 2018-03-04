@@ -6,7 +6,14 @@ Alpha GO 战胜人类棋手标志着机器学习特别是强化学习正在成�
 # 相关概念
 
 ## 强化学习
+#### Definition
 
+1.  Action (A): All the possible moves that the agent can take
+2.  State (S): Current situation returned by the environment.
+3.  Reward (R): An immediate return send back from the environment to evaluate the last action.
+4.  Policy (π): The strategy that the agent employs to determine next action based on the current state.
+5.  Value (V): The expected long-term return with discount, as opposed to the short-term reward R. _Vπ(s)_  is defined as the expected long-term return of the current state sunder policy π.
+6.  Q-value or action-value (Q): Q-value is similar to Value, except that it takes an extra parameter, the current action  _a_.  _Qπ(s, a)_  refers to the long-term return of the current state  _s_, taking action  _a_  under policy π.
 
 DQN is a form of Q-learning with function approximation (using a neural network), which means it tries to learn a state-action value function Q (given by a neural network in DQN) by minimizing temporal-difference errors, i.e. trying to make the value  Q(s,a)Q(s,a)  close to *r+γmaxa′Q(s′,a′)r+γmaxa′Q(s′,a′)*  after observing a transition  (s,a,r,s′)(s,a,r,s′), where the actions can be chosen arbitrarily (the algorithm is  _off-policy_), typically using a greedy or epsilon-greedy policy based on the current Q function.
 
@@ -159,5 +166,5 @@ B --> D{Rhombus}
 C --> D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0NjY4OTUyODhdfQ==
+eyJoaXN0b3J5IjpbMjI5ODU4NzIzXX0=
 -->
