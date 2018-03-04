@@ -1,6 +1,6 @@
 # 深入浅出策略梯度(Policy Gradient)
 
-sui
+随着
 
 
 # 相关概念
@@ -149,5 +149,5 @@ B --> D{Rhombus}
 C --> D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbOTczMzk1Mjk3XX0=
+eyJoaXN0b3J5IjpbLTEwNTM4NDgxNzddfQ==
 -->
