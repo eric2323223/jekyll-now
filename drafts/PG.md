@@ -7,7 +7,7 @@ Alpha GO 战胜人类棋手标志着机器学习特别是强化学习正在成�
 
 ## 强化学习
 
-## 强化xue
+## 强化学习的
 
 ----------
 
@@ -148,5 +148,5 @@ B --> D{Rhombus}
 C --> D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTM2MDQyNzEyN119
+eyJoaXN0b3J5IjpbNTQ3Nzg3Mzg1XX0=
 -->
