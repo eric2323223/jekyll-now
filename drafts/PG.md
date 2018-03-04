@@ -1,6 +1,6 @@
 # 深入浅出策略梯度(Policy Gradient)
 
-Alpha GO 战胜人类棋手标志着机器学习特别是强化学习正在成为解决实际复杂问题的有力武器，由于强化学习自身的特点，其目前在很多场景下，例如自动驾驶，机器人等复杂自动控制领域zh
+Alpha GO 战胜人类棋手标志着机器学习特别是强化学习正在成为解决实际复杂问题的有力武器，由于强化学习自身的特点，其目前在很多场景下，例如自动驾驶，机器人等复杂自动控制领域发挥着越来越带的作用。本文旨在介绍强化学习中梯度ce'luo
 
 
 # 相关概念
@@ -149,5 +149,5 @@ B --> D{Rhombus}
 C --> D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE4ODY2OTA0MDNdfQ==
+eyJoaXN0b3J5IjpbLTE4NjgyNTAyOTJdfQ==
 -->
