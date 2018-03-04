@@ -15,7 +15,10 @@ Alpha GO 战胜人类棋手标志着机器学习特别是强化学习正在成�
 # 策略梯度（PG）
 ## PG的基本原理
 ## PG的目标函数
+## Score function的由来
+## PG的改进
 
+# 总结
 ----------
 
 
@@ -155,5 +158,5 @@ B --> D{Rhombus}
 C --> D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwNjY0NjQ1MjFdfQ==
+eyJoaXN0b3J5IjpbLTI4ODQxMTA2OV19
 -->
