@@ -31,6 +31,7 @@ In contrast, policy gradient methods try to learn a policy function directly (in
 
 # 策略梯度（PG）
 ## PG的基本原理
+
 ## PG的目标函数
 ## Score function的由来
 ## PG的改进
@@ -175,5 +176,5 @@ B --> D{Rhombus}
 C --> D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTQwODc0MTU1XX0=
+eyJoaXN0b3J5IjpbLTE1NDQ4Njg4MDNdfQ==
 -->
