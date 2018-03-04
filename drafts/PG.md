@@ -1,6 +1,6 @@
 # 深入浅出策略梯度(Policy Gradient)
 
-随着alpha GO 
+随着alpha GO zh
 
 
 # 相关概念
@@ -149,5 +149,5 @@ B --> D{Rhombus}
 C --> D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE3MTE3ODU5NTNdfQ==
+eyJoaXN0b3J5IjpbMTAxMDc2MjM4MV19
 -->
