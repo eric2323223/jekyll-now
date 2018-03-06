@@ -33,7 +33,7 @@ In contrast, policy gradient methods try to learn a policy function directly (in
 ## PG的基本原理
 DQN可以直接计算reward从而可以得到最优解，听上去很不错，但是却有一些不足，比如下图这个例子：
 
-采用DQN的方法在确定的状态下将得到固定的reward，这使得
+采用DQN的方法在确定的状态下将得到固定的reward，因此在使用DQN方法决定灰色方格的xia
 PG不计算reward而是以直接使用策略选择action，使得action的选则服从一定的概率分布，通过使用整个策略完成这个交互，
 ## PG的目标函数
 ## Score function的由来
@@ -179,6 +179,6 @@ B --> D{Rhombus}
 C --> D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTQxNDE3MTA3NSw1Mzg1NDcwMjUsMTk1OD
+eyJoaXN0b3J5IjpbMTM1MTY2MTM0OCw1Mzg1NDcwMjUsMTk1OD
 Y0NjQ4XX0=
 -->
