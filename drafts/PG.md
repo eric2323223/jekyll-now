@@ -31,7 +31,7 @@ In contrast, policy gradient methods try to learn a policy function directly (in
 
 # 策略梯度（PG）
 ## PG的基本原理
-DQN可以直接计算reward从而可以得到最优解，听上去很不错，但是却有一些不足，比如下图这个例子：
+DQN可以直接计算reward从而可以得到最优解，这听上去很不错，但是却有一些不足，比如下图这个例子：
 
 采用DQN的方法在确定的状态下将得到固定的reward，因此在使用DQN方法决定灰色方格的下一步（左或右）将必然会导致bad result。另外，state的数量也是限制DQN的一个因素
 PG则采取了概率的方式解决了上述问题
@@ -180,6 +180,6 @@ B --> D{Rhombus}
 C --> D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjUxNDYwNDY4LDE3MjMyNzAzMTAsNjUxND
-YwNDY4LDUzODU0NzAyNV19
+eyJoaXN0b3J5IjpbLTIwODUxNzY1MTEsMTcyMzI3MDMxMCw2NT
+E0NjA0NjgsNTM4NTQ3MDI1XX0=
 -->
