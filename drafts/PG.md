@@ -6,7 +6,7 @@ Alpha GO 战胜人类棋手标志着机器学习特别是强化学习正在成�
 # 相关概念
 
 ## 强化学习
-解决复杂问题的一类方法
+解决复杂问题的一类方法，通过不断地与系统交互并得到反馈
 Typically, a RL setup is composed of two components, an agent and an environment.
 强化学习一般包含两部分：agent和环境
 
@@ -187,5 +187,5 @@ B --> D{Rhombus}
 C --> D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2NDEzOTMyOTBdfQ==
+eyJoaXN0b3J5IjpbMTQ0NjMxNzQyOV19
 -->
