@@ -7,6 +7,7 @@ Alpha GO 战胜人类棋手标志着机器学习特别是强化学习正在成�
 
 ## 强化学习
 Typically, a RL setup is composed of two components, an agent and an environment.
+qin
 
 ![](https://cdn-images-1.medium.com/max/1600/1*c3pEt4pFk0Mx684DDVsW-w.png)
 
@@ -183,5 +184,5 @@ B --> D{Rhombus}
 C --> D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzAxOTE0NjFdfQ==
+eyJoaXN0b3J5IjpbLTEzODA0NjI2MTVdfQ==
 -->
