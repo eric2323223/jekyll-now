@@ -33,7 +33,7 @@ In contrast, policy gradient methods try to learn a policy function directly (in
 # 策略梯度（PG）
 ## PG的基本原理
 DQN可以直接计算reward从而可以得到最优解，这听上去很不错，但是却有一些不足，比如下图这个例子：
-
+石头剪刀布的例子-stochastic
 采用DQN的方法在确定的状态下将得到确定的reward，因此在使用DQN方法决定灰色方格的下一步（左或右）将必然会导致bad result。事实上很多实际的都有类似的特征，即
 
 另外，庞大的state的数量也是使用DQN的一个问题，大多数现实问题都有很大的状态集合，以至于没有足够的内存能够处理所有
@@ -184,5 +184,5 @@ B --> D{Rhombus}
 C --> D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTY1OTgzOTQ3NF19
+eyJoaXN0b3J5IjpbLTI4NDE1MTgwMV19
 -->
