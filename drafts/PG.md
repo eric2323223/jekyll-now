@@ -45,7 +45,7 @@ DQN可以直接计算reward从而可以得到最优解，这听上去很不错�
 PG不计算reward而是以直接使用策略选择action，使得action的选择服从一定的概率分布，通过使用这个策略完成所有交互，这就把一个复杂的实际问题转化成了mdp优化问题
 
 ## PG的目标函数
-{\\rm maximize}_{\\theta}\\; \\mathbb{E}_{\\pi_{\\theta}}\\left\[\\sum_{t=0}^{T-1}\\gamma^t r_t\\right\]
+{\rm maximize}_{\theta}\\; \\mathbb{E}_{\\pi_{\\theta}}\\left\[\\sum_{t=0}^{T-1}\\gamma^t r_t\\right\]
 ## Score function的由来
 ## PG的改进
 
@@ -189,5 +189,5 @@ B --> D{Rhombus}
 C --> D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjEwMjE1OTAyMV19
+eyJoaXN0b3J5IjpbLTIwMjAwNTcyOTldfQ==
 -->
