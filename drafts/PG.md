@@ -47,9 +47,6 @@ PG不计算reward而是以直接使用策略选择action，使得action的选择
 ## PG的目标函数
 $$
 \nabla_\theta \mathbb{E}[f(x)] &= \nabla_\theta \int p_\theta(x)f(x)dx \
-&= \\int \\frac{p_\\theta(x)}{p_\\theta(x)} \\nabla_\\theta p_\\theta(x)f(x)dx \\\
-&= \\int p_\\theta(x)\\nabla_\\theta \\log p_\\theta(x)f(x)dx \\\
-&= \\mathbb{E}\\Big\[f(x)\\nabla_\\theta \\log p_\\theta(x)\\Big\]
 $$
 ## Score function的由来
 ## PG的改进
@@ -194,5 +191,5 @@ B --> D{Rhombus}
 C --> D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1NzEyMTQxODFdfQ==
+eyJoaXN0b3J5IjpbLTEyNzk1MDAzNTddfQ==
 -->
