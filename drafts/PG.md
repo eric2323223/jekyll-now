@@ -99,6 +99,10 @@ $$
 $$
 \int r(\tau)\nabla_\theta\pi_\theta(\tau)d\tau = \int r(\tau)\pi_\theta(\tau)\nabla_\theta log\pi_\theta(\tau)d\tau
 $$
+再根据期望值的定义，
+$$
+
+$$
 ## Score function的由来
 
 ## PG的改进
@@ -243,5 +247,5 @@ B --> D{Rhombus}
 C --> D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTgzOTIzMDkxLDE1NjczMjAyMThdfQ==
+eyJoaXN0b3J5IjpbMTQ5MzIyMDA1MCwxNTY3MzIwMjE4XX0=
 -->
