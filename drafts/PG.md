@@ -93,7 +93,7 @@ $$
 $$
 由于$\pi_\theta(\tau)$本身依赖于$\theta$，我们无法直接求导，因此要使用一个小技巧
 $$
-\nabla_\theta\pi_\theta(\tau) = 
+\nabla_\theta\pi_\theta(\tau) = \pi_\theta(\tau)\frac{\nabla_\theta}{}
 $$
 ## Score function的由来
 
@@ -239,5 +239,5 @@ B --> D{Rhombus}
 C --> D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjA1NjE3MjgwOCwxNTY3MzIwMjE4XX0=
+eyJoaXN0b3J5IjpbMjAwODk4MjY1NiwxNTY3MzIwMjE4XX0=
 -->
