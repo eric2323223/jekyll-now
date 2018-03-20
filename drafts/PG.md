@@ -59,7 +59,7 @@ I Taxi robot reaches its destination (termination = good)
 I Waiter robot nishes a shift (xed time)
 I Walking robot falls over (termination = bad)
 I Goal: maximize expected return per episode
-$\operatorname*{argmin}_\theta \mathbb(x)$
+$\operatorname*{argmax}_\theta \mathbb E[R|\pi]$
 
 $$
 J(\theta) = \int
@@ -210,5 +210,5 @@ B --> D{Rhombus}
 C --> D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNDE1MzUxNDYsLTcwNjA5NjIzXX0=
+eyJoaXN0b3J5IjpbLTExOTcwOTM5OTMsLTcwNjA5NjIzXX0=
 -->
