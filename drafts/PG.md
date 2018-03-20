@@ -66,24 +66,16 @@ PG的学习是一个策略的优化过程，最开始随机的生成一个策略
 $$
 argmax_\theta \mathbb E[r_0+r_1+r_2+...+r_t|\pi_\theta]  
 $$
-其中$\mathbb E[r_0+r_1+r_2+...+r_t|\pi_\theta]$表示在策略$\pi_\theta$条件下一轮交互（$t_0$到$t_t$步）中的累计奖励的期望值，这里是期望而不是确定值的原因是每一步的奖励$r_i \sim P(\pi(a_i | s_{i-1})|s_{i-1})$是根据策略得到的期望值而不是确定值。
+其中$\mathbb E[r_0+r_1+r_2+...+r_t|\pi_\theta]$表示在策略$\pi_\theta$条件下一轮交互（$t_0$到$t_t$步）中的累计奖励的期望值，这里是期望而不是确定值是因为每一步的奖励$r_i \sim P(\pi(a_i | s_{i-1})|s_{i-1})$是根据策略得到的期望值而不是确定值。
 我们把单个轮次的累计奖励作为PG的目标函数$J(\theta)$，则PG的目标就是确定构成策略的参数$\theta$使得$J(\theta)$取得最大的期望值
 $$
 \theta ^* = argmax J(\theta)
 $$
 图片trojectrary.
 
-I In each episode, the initial state is sampled from , and the agent acts until
-the terminal state is reached. For example:
-I Taxi robot reaches its destination (termination = good)
-I Waiter robot nishes a shift (xed time)
-I Walking robot falls over (termination = bad)
-I Goal: maximize expected return per episode
 $\operatorname*{argmax}_\theta \mathbb E[R|\pi]$
 
-$$
-J(\theta) = \int
-$$
+
 $$
 \nabla_\theta \mathbb E[f(x)] = \nabla_\theta \int p_\theta(x)f(x)dx 
 $$
@@ -231,5 +223,5 @@ B --> D{Rhombus}
 C --> D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTYxNzM5NDg4MywtNzA2MDk2MjNdfQ==
+eyJoaXN0b3J5IjpbMTI4NDUwODY5NywtNzA2MDk2MjNdfQ==
 -->
