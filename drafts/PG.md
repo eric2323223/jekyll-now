@@ -73,7 +73,7 @@ $$
 $$
 图片trojectrary.
 
-现在PG的学习就变成了一个对$J(\theta)$求最大值的数学问题，
+现在PG的学习就变成了一个对$J(\theta)$求最大值的数学问题，对于连续可导的函数求极值的一个常用方法是
 
 
 $$
@@ -223,5 +223,5 @@ B --> D{Rhombus}
 C --> D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE3MzUxMTI5ODAsLTcwNjA5NjIzXX0=
+eyJoaXN0b3J5IjpbNTE4MTQ2MDcyLC03MDYwOTYyM119
 -->
