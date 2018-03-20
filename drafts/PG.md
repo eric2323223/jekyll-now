@@ -97,11 +97,11 @@ $$
 $$
 因此
 $$
-\int r(\tau)\nabla_\theta\pi_\theta(\tau)d\tau = \int r(\tau)\pi_\theta(\tau)\nabla_\theta log\pi_\theta(\tau)d\tau
+\nabla_\theta J(\theta) =\int r(\tau)\nabla_\theta\pi_\theta(\tau)d\tau = \int r(\tau)\pi_\theta(\tau)\nabla_\theta log\pi_\theta(\tau)d\tau
 $$
 再根据期望值的定义，
 $$
-
+\nabla_\theta J(\theta) =\int r(\tau)\pi_\theta(\tau)\nabla_\theta log\pi_\theta(\tau)d\tau=
 $$
 ## Score function的由来
 
@@ -247,5 +247,5 @@ B --> D{Rhombus}
 C --> D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTQ5MzIyMDA1MCwxNTY3MzIwMjE4XX0=
+eyJoaXN0b3J5IjpbLTExNjk0MDA1NzgsMTU2NzMyMDIxOF19
 -->
