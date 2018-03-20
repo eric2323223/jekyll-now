@@ -72,7 +72,7 @@ $$
 其中$\mathbb E[r_0+r_1+r_2+...+r_t|\pi_\theta]$表示在策略$\pi_\theta$条件下一轮交互（$0$到$t$步）中的累计奖励的期望值，这里是期望而不是确定值是因为每一步的奖励是根据策略得到的期望值而不是确定值。由于$r_i \sim P(s_{i-1}, a_i)\pi(a_i | s_{i-1})$, 可以把累计奖励的期望值写成如下：
 
 $$
-J(\theta) = \mathbb E_{\tau\sim p_\theta(\tau)}[\sum_t r(s_t, a_t)] \approx \frac {1}{N}\sum_i\sum_t r(s_{i,t}, a_{i,t})
+J(\theta) = \mathbb E_{\tau\sim p_\theta(\tau)}[\sum_t r(\tau)] \approx \frac {1}{N}\sum_i\sum_t r(s_{i,t}, a_{i,t})
 $$
 我们把单个轮次的累计奖励作为PG的目标函数$J(\theta)$，则PG的目标就是确定构成策略的参数$\theta$使得$J(\theta)$取得最大的期望值
 
@@ -82,7 +82,7 @@ $$
 图片trajectory.
 
 现在PG的学习就变成了一个对$J(\theta)$求最大值的问题，和监督式学习中使用的梯度下降(gradient descent)求损失函数(loss function)的最小值类似，PG中使用梯度上升(gradient ascent)来更新$\theta$。
-根据期望值的数学定义：
+根据期望值的数学定义，
 
 $$
 J(\theta) = \mathbb E_{r\sim p_\theta(\tau)} [\sum r_\tau]= \int_\tau r(\tau)p_\theta(\tau) d\tau
@@ -235,5 +235,5 @@ B --> D{Rhombus}
 C --> D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2NTQ0MzIyMjcsMTU2NzMyMDIxOF19
+eyJoaXN0b3J5IjpbLTY2MTM2NDI5LDE1NjczMjAyMThdfQ==
 -->
