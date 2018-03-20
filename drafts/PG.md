@@ -101,7 +101,7 @@ $$
 $$
 再根据期望值的定义，
 $$
-\nabla_\theta J(\theta) =\int r(\tau)\pi_\theta(\tau)\nabla_\theta log\pi_\theta(\tau)d\tau=
+\nabla_\theta J(\theta) =\int r(\tau)\pi_\theta(\tau)\nabla_\theta log\pi_\theta(\tau)d\tau=\mathbb E_{\tau\sim\pi_\the}
 $$
 ## Score function的由来
 
@@ -247,5 +247,5 @@ B --> D{Rhombus}
 C --> D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTExNjk0MDA1NzgsMTU2NzMyMDIxOF19
+eyJoaXN0b3J5IjpbLTYyMjQyODE2NCwxNTY3MzIwMjE4XX0=
 -->
