@@ -97,7 +97,7 @@ $$
 $$
 因此
 $$
-\int r\nabla_\theta\pi_\theta(\tau)d\tau = 
+\int r(\tau)\nabla_\theta\pi_\theta(\tau)d\tau = \int r(\tau)\pi_\theta(\tau)\nabla_\theta log\pi_\theta(\tau)d\tau
 $$
 ## Score function的由来
 
@@ -243,5 +243,5 @@ B --> D{Rhombus}
 C --> D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTExNTQyNDg0MywxNTY3MzIwMjE4XX0=
+eyJoaXN0b3J5IjpbNTgzOTIzMDkxLDE1NjczMjAyMThdfQ==
 -->
