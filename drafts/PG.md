@@ -73,7 +73,7 @@ $$
 $$
 图片trojectrary.
 
-$\operatorname*{argmax}_\theta \mathbb E[R|\pi]$
+现在PG的学习就变成了一个对
 
 
 $$
@@ -223,5 +223,5 @@ B --> D{Rhombus}
 C --> D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTI4NDUwODY5NywtNzA2MDk2MjNdfQ==
+eyJoaXN0b3J5IjpbMjYwMTU1MDk4LC03MDYwOTYyM119
 -->
