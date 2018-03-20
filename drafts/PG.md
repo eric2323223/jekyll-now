@@ -49,7 +49,7 @@ DQN可以直接计算奖励从而可以得到最优解，这听上去很不错�
 ## PG的目标函数
 根据PG的基本原理，我们可以把PG的过程描述为以下表达式
 $$
-
+J(\theta) = \int
 $$
 $$
 \nabla_\theta \mathbb E[f(x)] = \nabla_\theta \int p_\theta(x)f(x)dx 
@@ -197,5 +197,5 @@ B --> D{Rhombus}
 C --> D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjU0NTk4MTA2LC03MDYwOTYyM119
+eyJoaXN0b3J5IjpbMTQ4Nzk3MjI3MSwtNzA2MDk2MjNdfQ==
 -->
