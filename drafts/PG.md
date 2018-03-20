@@ -105,7 +105,7 @@ $$
 $$
 由于，
 $$
-log\pi_\theta(\tau) = logp(s_1) + \sum_{t=1}^Tlog\pi_\theta(a_t|t_t)+logp(s_{}
+log\pi_\theta(\tau) = logp(s_1) + \sum_{t=1}^Tlog\pi_\theta(a_t|t_t)+logp(s_{t+1}|s_t, a_t)
 $$
 ## Score function的由来
 
@@ -251,5 +251,5 @@ B --> D{Rhombus}
 C --> D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2NzkxNjE5MjQsMTU2NzMyMDIxOF19
+eyJoaXN0b3J5IjpbMTYxMTE2NDc1OSwxNTY3MzIwMjE4XX0=
 -->
