@@ -87,9 +87,9 @@ $$
 $$
 J(\theta) = \mathbb E_{r\sim p_\theta(\tau)} [\sum r_\tau]= \int_\tau r(\tau)\pi_\theta(\tau) d\tau
 $$
-
+对这个积分
 $$
-\nabla_\theta \mathbb E[f(x)] = \nabla_\theta \int p_\theta(x)f(x)dx 
+\nabla_\theta J(\theta) =  \nabla_\theta \int p_\theta(x)f(x)dx 
 $$
 ## Score function的由来
 
@@ -235,5 +235,5 @@ B --> D{Rhombus}
 C --> D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTY0MzIwNTEzNSwxNTY3MzIwMjE4XX0=
+eyJoaXN0b3J5IjpbLTc5NTY3OTQwOSwxNTY3MzIwMjE4XX0=
 -->
