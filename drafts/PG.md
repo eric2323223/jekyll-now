@@ -64,7 +64,7 @@ PG的学习是一个策略的优化过程，最开始随机的生成一个策略
 ## PG的目标函数
 根据上述PG的基本原理，策略可以表示为$\pi(a|s,\theta)$， 意为在状态$s$和参数$\theta$条件下发生动作$a$的概率。我们可以把PG的目标描述为以下表达式
 $$
-argmax_\theta \mathbb E_\pi[\sum_0 ^t R(s_t)|\pi]
+argmax_\theta \mathbb E[\sum_0 ^t R(s_t)|\pi_\theta]
 $$
 
 I In each episode, the initial state is sampled from , and the agent acts until
@@ -224,5 +224,5 @@ B --> D{Rhombus}
 C --> D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTk1NzIyNDUzMCwtNzA2MDk2MjNdfQ==
+eyJoaXN0b3J5IjpbMjE0MDEzODYxMywtNzA2MDk2MjNdfQ==
 -->
