@@ -73,7 +73,7 @@ $$
 $$
 \theta ^* = argmax J(\theta)
 $$
-图片trojectrary.
+图片trajectory.
 
 现在PG的学习就变成了一个对$J(\theta)$求最大值的问题，和监督式学习中使用的梯度下降类似，PG中使用梯度上升来更新$\theta$。
 根据期望值的数学定义：
@@ -227,5 +227,5 @@ B --> D{Rhombus}
 C --> D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEyNDQ4NjE2NDEsLTcwNjA5NjIzXX0=
+eyJoaXN0b3J5IjpbMTU5OTE2MTg4MSwtNzA2MDk2MjNdfQ==
 -->
