@@ -19,10 +19,10 @@ Then environment refers to the object that the agent is acting on (e.g. the game
 Most of the RL algorithms follow this pattern. In the following paragraphs, I will briefly talk about some terms used in RL to facilitate our discussion in the next section.
 #### Definition
 
-1.  Action (A): All the possible moves that the agent can take
-2.  State (S): Current situation returned by the environment.
-3.  Reward (R): An immediate return send back from the environment to evaluate the last action.
-4.  Policy (π): The strategy that the agent employs to determine next action based on the current state.
+1.  动作 (A): All the possible moves that the agent can take
+2.  状态 (S): Current situation returned by the environment.
+3.  奖励 (R): An immediate return send back from the environment to evaluate the last action.
+4.  策略 (π): The strategy that the agent employs to determine next action based on the current state.
 5.  Value (V): The expected long-term return with discount, as opposed to the short-term reward R. _Vπ(s)_  is defined as the expected long-term return of the current state sunder policy π.
 6.  Q-value or action-value (Q): Q-value is similar to Value, except that it takes an extra parameter, the current action  _a_.  _Qπ(s, a)_  refers to the long-term return of the current state  _s_, taking action  _a_  under policy π.
 
@@ -39,8 +39,8 @@ DQN可以直接计算reward从而可以得到最优解，这听上去很不错�
 石头剪刀布的例子-stochastic
 采用DQN的方法在确定的状态下将得到确定的reward，因此在使用DQN方法决定灰色方格的下一步（左或右）将必然会导致bad result。事实上很多实际的都有类似的特征，即
 
-另外，有限的状态数量也是使用DQN的一个大问题，因为基于值的方法需要保存所有状态-动作的对应关系，因此很多现实问题（例如机器人控制和自动驾驶都是连续动作空间），都因为巨量的状态而无法计算
-那么如何解决上面的两个问题呢？有没有一种方法能在确定的状态下得到不同的action呢？又有什么方法能避免维护庞大的状态表呢？
+另外，有限的状态数量也是使用DQN的一个大问题，因为基于值的方法需要保存所有状态-动作的对应关系，因此很多现实问题（例如机器人控制和自动驾驶都是连续动作空间），都因为巨量的状态而无法计算。
+那么如何解决上面的两个问题呢？有没有一种方法能在确定的状态下得到不同的动作呢？又有什么方法能避免维护庞大的状态表呢？
 简单来说，PG则采取了随机（stochastic）的方式解决了上述2个问题。首先随机能提供非确定的结果，但这种非确定的结果并不是完全的随机而是服从某种概率分布的随机
 PG不计算reward而是以直接使用策略选择action，使得action的选择服从一定的概率分布，通过使用这个策略完成所有交互，这就把一个复杂的实际问题转化成了mdp优化问题
 ![enter image description here](https://github.com/eric2323223/ML/blob/dev/drafts/PG1.PNG?raw=true)
@@ -193,5 +193,5 @@ B --> D{Rhombus}
 C --> D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzNjU0MDcwODMsLTcwNjA5NjIzXX0=
+eyJoaXN0b3J5IjpbLTYyMjIzMzkwLC03MDYwOTYyM119
 -->
