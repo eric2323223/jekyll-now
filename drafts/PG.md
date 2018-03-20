@@ -53,7 +53,7 @@ MDP:Reward function
 Episode: 
 轨迹 $\tau$ 表示在PG一轮的学习中状态$s$，动作$a$和奖励$r$的顺序排列
 $$
-\tau = (s)
+\tau = (s_0, a_0, r_0, s_1, a_1, r_1, ... , s_t, a_t, r_t)
 $$
 policy：
 
@@ -224,5 +224,5 @@ B --> D{Rhombus}
 C --> D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwODE5MDQ0NzgsLTcwNjA5NjIzXX0=
+eyJoaXN0b3J5IjpbLTkyNTA4NjkwOSwtNzA2MDk2MjNdfQ==
 -->
