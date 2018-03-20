@@ -59,9 +59,8 @@ I Taxi robot reaches its destination (termination = good)
 I Waiter robot nishes a shift (xed time)
 I Walking robot falls over (termination = bad)
 I Goal: maximize expected return per episode
-maximize
-
-E[R j ]
+$maximize_\pi \mathbb E
+
 $$
 J(\theta) = \int
 $$
@@ -211,5 +210,5 @@ B --> D{Rhombus}
 C --> D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTA0MTU3ODQ4MiwtNzA2MDk2MjNdfQ==
+eyJoaXN0b3J5IjpbLTEyMzk2NDU0NDgsLTcwNjA5NjIzXX0=
 -->
