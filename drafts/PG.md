@@ -25,6 +25,7 @@ Most of the RL algorithms follow this pattern. In the following paragraphs, I wi
 4.  策略 (π): The strategy that the agent employs to determine next action based on the current state.
 5.  Value (V): The expected long-term return with discount, as opposed to the short-term reward R. _Vπ(s)_  is defined as the expected long-term return of the current state sunder policy π.
 6.  Q-value or action-value (Q): Q-value is similar to Value, except that it takes an extra parameter, the current action  _a_.  _Qπ(s, a)_  refers to the long-term return of the current state  _s_, taking action  _a_  under policy π.
+举例j
 
 DQN is a form of Q-learning with function approximation (using a neural network), which means it tries to learn a state-action value function Q (given by a neural network in DQN) by minimizing temporal-difference errors, i.e. trying to make the value  Q(s,a)Q(s,a)  close to *r+γmaxa′Q(s′,a′)r+γmaxa′Q(s′,a′)*  after observing a transition  (s,a,r,s′)(s,a,r,s′), where the actions can be chosen arbitrarily (the algorithm is  _off-policy_), typically using a greedy or epsilon-greedy policy based on the current Q function.
 
@@ -197,5 +198,5 @@ B --> D{Rhombus}
 C --> D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTk3MDQ2MjQ1LC03MDYwOTYyM119
+eyJoaXN0b3J5IjpbLTQ3Njg1ODgsLTcwNjA5NjIzXX0=
 -->
