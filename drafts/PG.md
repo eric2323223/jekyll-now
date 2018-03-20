@@ -54,7 +54,7 @@ Episode:
 Trajectrary:
 
 
-过程是这样的，使得action的选择服从一定的概率分布，通过使用这个策略完成所有交互，这就把一个复杂的实际问题转化成了概率优化问题
+PG的学习过程是这样的，使得action的选择服从一定的概率分布，通过使用这个策略完成所有交互，这就把一个复杂的实际问题转化成了概率优化问题
 ![enter image description here](https://github.com/eric2323223/ML/blob/dev/drafts/PG1.PNG?raw=true)
 ## PG的目标函数
 根据上述PG的基本原理，策略可以表示为$\pi(a|s,\theta)$， 意为在状态$s$和参数$\theta$条件下发生动作$a$的概率。我们可以把PG的过程描述为以下表达式
@@ -217,5 +217,5 @@ B --> D{Rhombus}
 C --> D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEyMDUxMjkxNjQsLTcwNjA5NjIzXX0=
+eyJoaXN0b3J5IjpbLTc0MjgwNzQ4NywtNzA2MDk2MjNdfQ==
 -->
