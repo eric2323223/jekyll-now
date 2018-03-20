@@ -67,7 +67,7 @@ PG的学习是一个策略的优化过程，最开始随机的生成一个策略
 根据上述PG的基本原理，我们可以把PG的目标形式化的描述为以下表达式
 
 $$
-argmax_\theta \mathbb E[r_0+r_1+r_2+...+r_t|\pi_\theta]  
+J(\theta) = argmax_\theta \mathbb E[r_0+r_1+r_2+...+r_t|\pi_\theta]  
 $$
 其中$\mathbb E[r_0+r_1+r_2+...+r_t|\pi_\theta]$表示在策略$\pi_\theta$条件下一轮交互（$0$到$t$步）中的累计奖励的期望值，这里是期望而不是确定值是因为每一步的奖励是根据策略得到的期望值而不是确定值。由于$r_i \sim P(s_{i-1}, a_i)\pi(a_i | s_{i-1})$, 可以把累计奖励的期望值写成如下：
 
@@ -235,5 +235,5 @@ B --> D{Rhombus}
 C --> D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTc2NDkwNjE3NiwxNTY3MzIwMjE4XX0=
+eyJoaXN0b3J5IjpbMTAyNTQ4MDY3MCwxNTY3MzIwMjE4XX0=
 -->
