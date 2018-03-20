@@ -91,7 +91,7 @@ $$
 $$
 \nabla_\theta J(\theta) =  \nabla_\theta \int_\tau r(\tau)\pi_\theta(\tau) d\tau= \int_\tau r(\tau)\nabla_\theta \pi_\theta(\tau) d\tau
 $$
-由于$\pi_\theta(\tau)$本身依赖于$\theta$，我们无法直接求导，因此要使用一个小技巧，由于$$
+由于$\pi_\theta(\tau)$本身依赖于$\theta$，我们无法直接求导，因此要使用一个小技巧，由于$\nabla log f(x)=$
 $$
 \nabla_\theta\pi_\theta(\tau) = \pi_\theta(\tau)\frac{\nabla_\theta\pi_\theta(\tau)}{\pi_\theta(\tau)}=\pi_\theta(\tau)\nabla_\theta log\pi_\theta(\tau)
 $$
@@ -240,5 +240,5 @@ B --> D{Rhombus}
 C --> D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTU4Njc2OTUyNSwxNTY3MzIwMjE4XX0=
+eyJoaXN0b3J5IjpbLTgwODMzMDI0MSwxNTY3MzIwMjE4XX0=
 -->
