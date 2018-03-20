@@ -91,10 +91,10 @@ $$
 $$
 \nabla_\theta J(\theta) =  \nabla_\theta \int_\tau r(\tau)\pi_\theta(\tau) d\tau= \int_\tau r(\tau)\nabla_\theta \pi_\theta(\tau) d\tau
 $$
-由于$\pi_\theta($
+由于$\pi_\theta(\tau)$本身依赖于$\theta$
 ## Score function的由来
 
-## PG的改进\t
+## PG的改进
 
 # 总结
 ----------
@@ -236,5 +236,5 @@ B --> D{Rhombus}
 C --> D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE4NTIxODQyNDcsMTU2NzMyMDIxOF19
+eyJoaXN0b3J5IjpbNDgzNjE0ODYwLDE1NjczMjAyMThdfQ==
 -->
