@@ -97,7 +97,7 @@ $$
 $$
 因此
 $$
-
+\int r\nabla_\theta\pi_\theta(\tau)d\tau = 
 $$
 ## Score function的由来
 
@@ -243,5 +243,5 @@ B --> D{Rhombus}
 C --> D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTY1Mzk0OTg5MywxNTY3MzIwMjE4XX0=
+eyJoaXN0b3J5IjpbLTExNTQyNDg0MywxNTY3MzIwMjE4XX0=
 -->
