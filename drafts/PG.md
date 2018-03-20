@@ -73,7 +73,7 @@ $$
 $$
 图片trojectrary.
 
-现在PG的学习就变成了一个对
+现在PG的学习就变成了一个对J(
 
 
 $$
@@ -223,5 +223,5 @@ B --> D{Rhombus}
 C --> D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjYwMTU1MDk4LC03MDYwOTYyM119
+eyJoaXN0b3J5IjpbLTE2MTcxOTgwMjQsLTcwNjA5NjIzXX0=
 -->
