@@ -103,6 +103,10 @@ $$
 $$
 \nabla_\theta J(\theta) =\int r(\tau)\pi_\theta(\tau)\nabla_\theta log\pi_\theta(\tau)d\tau=\mathbb E_{\tau\sim\pi_\theta(\tau)}[\nabla_\theta log\pi_\theta(\tau)r(\tau)]
 $$
+由于，
+$$
+log\pi_theta(\tau) = 
+$$
 ## Score function的由来
 
 ## PG的改进
@@ -247,5 +251,5 @@ B --> D{Rhombus}
 C --> D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTMwMTI0OTc0OSwxNTY3MzIwMjE4XX0=
+eyJoaXN0b3J5IjpbMTE2NzAzMTE4NiwxNTY3MzIwMjE4XX0=
 -->
