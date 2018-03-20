@@ -76,7 +76,7 @@ $$
 现在PG的学习就变成了一个对$J(\theta)$求最大值的问题，和监督式学习中使用的梯度下降类似，PG中使用梯度上升来更新$\theta$。
 根据期望值的数学定义：
 $$
-J(\theta) = \mathbb E
+J(\theta) = \mathbb E 
 $$
 $$
 \nabla_\theta \mathbb E[f(x)] = \nabla_\theta \int p_\theta(x)f(x)dx 
@@ -225,5 +225,5 @@ B --> D{Rhombus}
 C --> D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE5OTQyOTczMCwtNzA2MDk2MjNdfQ==
+eyJoaXN0b3J5IjpbLTEzMTE3NjAyOTYsLTcwNjA5NjIzXX0=
 -->
