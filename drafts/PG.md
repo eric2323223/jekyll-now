@@ -55,6 +55,7 @@ Episode:
 $$
 \tau = (s_0, a_0, r_0, s_1, a_1, r_1, ... , s_t, a_t, r_t)
 $$
+由于
 策略$\pi_\theta(a|s)$ 表示在状态$s$和参数$\theta$条件下发生动作$a$的概率
 
 
@@ -225,5 +226,5 @@ B --> D{Rhombus}
 C --> D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTc2MzA2MjE3OSwtNzA2MDk2MjNdfQ==
+eyJoaXN0b3J5IjpbMTkzNzUyMzM3NCwtNzA2MDk2MjNdfQ==
 -->
