@@ -64,9 +64,9 @@ PG的学习是一个策略的优化过程，最开始随机的生成一个策略
 ## PG的目标函数
 根据上述PG的基本原理，我们可以把PG的目标形式化的描述为以下表达式
 $$
-argmax_\theta \mathbb E[r_0+r_1+r_2+...+r_t|\pi_\theta]  
+argmax_\theta \mathbb E[r_t0+r_t1+r_t2+...+r_t|\pi_\theta]  
 $$
-$\mathbb E[r_0+r_1+r_2+...+r_t|\pi_\theta]$表示在策略$\pi_\theta$条件下一轮交互（$t_0$到$t_t$步）中的累计奖励的期望值，这里是期望而不是确定值的原因是美意bu$r$
+$\mathbb E[r_0+r_1+r_2+...+r_t|\pi_\theta]$表示在策略$\pi_\theta$条件下一轮交互（$t_0$到$t_t$步）中的累计奖励的期望值，这里是期望而不是确定值的原因是每一步的奖励$r_t=
 I In each episode, the initial state is sampled from , and the agent acts until
 the terminal state is reached. For example:
 I Taxi robot reaches its destination (termination = good)
@@ -224,5 +224,5 @@ B --> D{Rhombus}
 C --> D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTg0MjE0NjUyMSwtNzA2MDk2MjNdfQ==
+eyJoaXN0b3J5IjpbMTk1OTM4MzQ3NCwtNzA2MDk2MjNdfQ==
 -->
