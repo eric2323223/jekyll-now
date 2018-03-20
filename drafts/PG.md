@@ -85,7 +85,7 @@ $$
 根据期望值的数学定义，
 
 $$
-J(\theta) = \mathbb E_{r\sim p_\theta(\tau)} [\sum r_\tau]= \int_\tau r(\tau)p_\theta(\tau) d\tau
+J(\theta) = \mathbb E_{r\sim p_\theta(\tau)} [\sum r_\tau]= \int_\tau r(\tau)\pi_\theta(\tau) d\tau
 $$
 
 $$
@@ -235,5 +235,5 @@ B --> D{Rhombus}
 C --> D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTUyNjkwMjYyLDE1NjczMjAyMThdfQ==
+eyJoaXN0b3J5IjpbLTY0MzIwNTEzNSwxNTY3MzIwMjE4XX0=
 -->
