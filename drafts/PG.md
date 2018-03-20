@@ -73,7 +73,7 @@ $$
 $$
 图片trojectrary.
 
-现在PG的学习就变成了一个对$J(\theta)$求最大值的数学问题，和监督式学习中使用的梯度下降类似，PG
+现在PG的学习就变成了一个对$J(\theta)$求最大值的问题，和监督式学习中使用的梯度下降类似，PG中使用梯度上升来确定$\theta$。
 
 
 $$
@@ -223,5 +223,5 @@ B --> D{Rhombus}
 C --> D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTkyMjM0MjMzOCwtNzA2MDk2MjNdfQ==
+eyJoaXN0b3J5IjpbNDU5MDUwMjc5LC03MDYwOTYyM119
 -->
