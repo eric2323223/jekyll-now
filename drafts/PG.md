@@ -110,6 +110,10 @@ $$
 $$
 r(\tau)=\sum_{t=1}^Tr(s_t,a_t)
 $$
+可得
+$$
+\nabla_\theta J(\theta) =
+$$
 ## Score function的由来
 
 ## PG的改进
@@ -254,5 +258,5 @@ B --> D{Rhombus}
 C --> D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0MzQzNjExMTQsMTU2NzMyMDIxOF19
+eyJoaXN0b3J5IjpbMTM4MjIxODMyOSwxNTY3MzIwMjE4XX0=
 -->
