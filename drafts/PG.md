@@ -35,7 +35,7 @@ In contrast, policy gradient methods try to learn a policy function directly (in
 
 # 策略梯度（PG）
 ## PG的基本原理
-DQN可以直接计算reward从而可以得到最优解，这听上去很不错，单这种确定性的方法恰恰无法处理一些对弈问题，比如石头剪刀布的游戏，最好的但是却有一些不足，比如下图这个例子：
+DQN可以直接计算reward从而可以得到最优解，这听上去很不错，单这种确定性的方法恰恰无法处理一些对弈问题，比如石头剪刀布的游戏，最好的解法是随机的使用sh 但是却有一些不足，比如下图这个例子：
 石头剪刀布的例子-stochastic
 采用DQN的方法在确定的状态下将得到确定的reward，因此在使用DQN方法决定灰色方格的下一步（左或右）将必然会导致bad result。事实上很多实际的都有类似的特征，即
 
@@ -193,5 +193,5 @@ B --> D{Rhombus}
 C --> D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTE1MTk4NzI4NywtNzA2MDk2MjNdfQ==
+eyJoaXN0b3J5IjpbLTE2OTQ5NjY0NTMsLTcwNjA5NjIzXX0=
 -->
