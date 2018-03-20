@@ -95,7 +95,10 @@ $$
 $$
 \nabla_\theta\pi_\theta(\tau) = \pi_\theta(\tau)\frac{\nabla_\theta\pi_\theta(\tau)}{\pi_\theta(\tau)}=\pi_\theta(\tau)\nabla_\theta log\pi_\theta(\tau)
 $$
+因此
+$$
 
+$$
 ## Score function的由来
 
 ## PG的改进
@@ -240,5 +243,5 @@ B --> D{Rhombus}
 C --> D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjkyODIyNDExLDE1NjczMjAyMThdfQ==
+eyJoaXN0b3J5IjpbMTY1Mzk0OTg5MywxNTY3MzIwMjE4XX0=
 -->
