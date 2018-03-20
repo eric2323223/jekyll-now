@@ -71,7 +71,7 @@ $$
 $$
 \mathbb E_{r\sim p_\theta(\tau)} [\sum r_\tau] = \int _\tau r(\tau)p_\theta(\tau)d\tau
 $$
-其中$\mathbb E[r_0+r_1+r_2+...+r_t|\pi_\theta]$表示在策略$\pi_\theta$条件下一轮交互（$t_0$到$t_t$步）中的累计奖励的期望值，这里是期望而不是确定值是因为每一步的奖励是根据策略得到的期望值而不是确定值。由于$r_i \sim P(s_{i-1}, a_i)\pi(a_i | s_{i-1})$, 可以把累计奖励的期望值写成如下：
+其中$\mathbb E[r_0+r_1+r_2+...+r_t|\pi_\theta]$表示在策略$\pi_\theta$条件下一轮交互（$0$到$t$步）中的累计奖励的期望值，这里是期望而不是确定值是因为每一步的奖励是根据策略得到的期望值而不是确定值。由于$r_i \sim P(s_{i-1}, a_i)\pi(a_i | s_{i-1})$, 可以把累计奖励的期望值写成如下：
 $$
 J(\theta) = \mathbb E_{\tau\sim p_\theta(\tau)}[\sum_t r(s_t, a_t)] \approx \frac {1}{N}\sum_i\sum_t r(s_{i,t}, a_{i,t})
 $$
@@ -233,5 +233,5 @@ B --> D{Rhombus}
 C --> D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTI4OTY4OTA3NSwxNTY3MzIwMjE4XX0=
+eyJoaXN0b3J5IjpbLTE3Nzc4NjQyMjEsMTU2NzMyMDIxOF19
 -->
