@@ -55,7 +55,7 @@ Episode:
 $$
 \tau = (s_0, a_0, r_0, s_1, a_1, r_1, ... , s_t, a_t, r_t)
 $$
-policy：
+策略：
 
 
 
@@ -224,5 +224,5 @@ B --> D{Rhombus}
 C --> D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0ODU4OTQ5NDIsLTcwNjA5NjIzXX0=
+eyJoaXN0b3J5IjpbLTIyNTg1NzY5MSwtNzA2MDk2MjNdfQ==
 -->
