@@ -81,7 +81,7 @@ $$
 $$
 图片trajectory.
 
-现在PG的学习就变成了一个对$J(\theta)$求最大值的问题，和监督式学习中使用的梯度下降求损失函数(loss function)的最小值类似，PG中使用梯度上升来更新$\theta$。
+现在PG的学习就变成了一个对$J(\theta)$求最大值的问题，和监督式学习中使用的梯度下降(gra求损失函数(loss function)的最小值类似，PG中使用梯度上升来更新$\theta$。
 根据期望值的数学定义：
 $$
 J(\theta) = \mathbb E[r_0+r_1+r_2+...+r_t|\pi_\theta]  = \int_\tau r(\tau)p_\theta(\tau) d\tau
@@ -233,5 +233,5 @@ B --> D{Rhombus}
 C --> D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE3Nzc4NjQyMjEsMTU2NzMyMDIxOF19
+eyJoaXN0b3J5IjpbLTIxMDI4MTE1MDMsMTU2NzMyMDIxOF19
 -->
