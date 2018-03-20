@@ -112,7 +112,7 @@ r(\tau)=\sum_{t=1}^Tr(s_t,a_t)
 $$
 可得
 $$
-\nabla_\theta J(\theta) =\mathbb E_{\tau\sim\pi_\theta(\tau)}[]
+\nabla_\theta J(\theta) =\mathbb E_{\tau\sim\pi_\theta(\tau)}[(\sum_{t=1}^Tlog\pi_\theta(a_t|t_t))(\sum_{t=1}^Tr(s_t,a_t))]
 $$
 ## Score function的由来
 
@@ -258,5 +258,5 @@ B --> D{Rhombus}
 C --> D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjk4ODU3Mzc1LDE1NjczMjAyMThdfQ==
+eyJoaXN0b3J5IjpbMTk3NDEzMDI5OCwxNTY3MzIwMjE4XX0=
 -->
