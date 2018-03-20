@@ -91,7 +91,7 @@ $$
 $$
 \nabla_\theta J(\theta) =  \nabla_\theta \int_\tau r(\tau)\pi_\theta(\tau) d\tau= \int_\tau r(\tau)\nabla_\theta \pi_\theta(\tau) d\tau
 $$
-由于$\pi_\theta(\tau)$本身依赖于$\theta$
+由于$\pi_\theta(\tau)$本身依赖于$\theta$，我们无法直接求导，因此要使用一个小技巧
 ## Score function的由来
 
 ## PG的改进
@@ -236,5 +236,5 @@ B --> D{Rhombus}
 C --> D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNDgzNjE0ODYwLDE1NjczMjAyMThdfQ==
+eyJoaXN0b3J5IjpbOTAxMTQwMzExLDE1NjczMjAyMThdfQ==
 -->
