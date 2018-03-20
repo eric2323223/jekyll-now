@@ -73,7 +73,7 @@ $$
 $$
 图片trojectrary.
 
-现在PG的学习就变成了一个对$J(\theta)$求最大值的数学问题，和监督式学习重视用的对于连续可导的函数求极值的一个常用方法是求导数，当导数为
+现在PG的学习就变成了一个对$J(\theta)$求最大值的数学问题，和监督式学习中使用的梯度下降类似，PG
 
 
 $$
@@ -223,5 +223,5 @@ B --> D{Rhombus}
 C --> D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjk1NjExMDA5LC03MDYwOTYyM119
+eyJoaXN0b3J5IjpbLTkyMjM0MjMzOCwtNzA2MDk2MjNdfQ==
 -->
