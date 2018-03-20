@@ -46,6 +46,7 @@ PG不计算reward而是以直接使用策略选择action，使得action的选择
 ![enter image description here](https://github.com/eric2323223/ML/blob/dev/drafts/PG1.PNG?raw=true)
 ## PG的目标函数
 根据PG的基本原理，我们可以把PG的过程描述为以下表达式
+
 $$
 \nabla_\theta \mathbb E[f(x)] = \nabla_\theta \int p_\theta(x)f(x)dx 
 $$
@@ -192,5 +193,5 @@ B --> D{Rhombus}
 C --> D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbOTc0MDMwMDQ5LC03MDYwOTYyM119
+eyJoaXN0b3J5IjpbLTE1NzEzNjc5NDksLTcwNjA5NjIzXX0=
 -->
