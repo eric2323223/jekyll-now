@@ -64,7 +64,7 @@ PG的学习是一个策略的优化过程，最开始随机的生成一个策略
 ## PG的目标函数
 根据上述PG的基本原理，我们可以把PG的目标形式化的描述为以下表达式
 $$
-maximize \mathbb E[r
+maximize \mathbb E[r_0+r_1+r_2+...+r_t|\pi]  
 argmax_\theta \mathbb E[\sum_0 ^t R(s_t)|\pi_\theta]
 $$
 
@@ -225,5 +225,5 @@ B --> D{Rhombus}
 C --> D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTkzODI0NTQzOCwtNzA2MDk2MjNdfQ==
+eyJoaXN0b3J5IjpbMTA2ODU3Mzg2OSwtNzA2MDk2MjNdfQ==
 -->
