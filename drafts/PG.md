@@ -66,7 +66,7 @@ PG的学习是一个策略的优化过程，最开始随机的生成一个策略
 $$
 argmax_\theta \mathbb E[r_0+r_1+r_2+...+r_t|\pi_\theta]  
 $$
-其中argmax
+
 I In each episode, the initial state is sampled from , and the agent acts until
 the terminal state is reached. For example:
 I Taxi robot reaches its destination (termination = good)
@@ -224,5 +224,5 @@ B --> D{Rhombus}
 C --> D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNDYwNjU3MTI5LC03MDYwOTYyM119
+eyJoaXN0b3J5IjpbMTE1MzY5OTU5OCwtNzA2MDk2MjNdfQ==
 -->
