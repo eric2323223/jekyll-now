@@ -107,6 +107,9 @@ $$
 $$
 log\pi_\theta(\tau) = logp(s_1) + \sum_{t=1}^Tlog\pi_\theta(a_t|t_t)+logp(s_{t+1}|s_t, a_t)
 $$
+$$
+r(\tau)=\sum_{t=1}^Tr(s_t,a_t)
+$$
 ## Score function的由来
 
 ## PG的改进
@@ -251,5 +254,5 @@ B --> D{Rhombus}
 C --> D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTYxMTE2NDc1OSwxNTY3MzIwMjE4XX0=
+eyJoaXN0b3J5IjpbLTE0MzQzNjExMTQsMTU2NzMyMDIxOF19
 -->
