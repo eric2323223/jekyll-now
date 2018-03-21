@@ -139,10 +139,10 @@ figure: intuition
 Initialize $\theta$ arbitrarily
 for all episodes $(s_1, a_1, r_2, ... , s_{T-1}, a_{T-1})\sim \pi_\theta$ do
 for t = 1 to T - 1 do
-$\theta = \theta + \alpha\nabla log\pi_\theta(a$
+$\theta = \theta + \alpha\nabla log\pi_\theta(a_t, s_t)a$
 end for
 end for
-return 
+return $\theta$
 end function
 
 ## PG的改进
@@ -215,6 +215,6 @@ B --> D{Rhombus}
 C --> D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2OTI5NzA4MjEsMTcyMzA5NzYwNiwxOT
-c0MTMwMjk4XX0=
+eyJoaXN0b3J5IjpbLTI1Mzc2NTYwMCwxNzIzMDk3NjA2LDE5Nz
+QxMzAyOThdfQ==
 -->
