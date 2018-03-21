@@ -20,7 +20,7 @@ Most of the RL algorithms follow this pattern. In the following paragraphs, I wi
 #### Definition
 
 1.  主体(Agent) 指能够通过动作与环境交互的**，在RL的环境中主体通常是运行中的算法
-2.  环境(Environment) 指任何可以通过接受主体的动作并回馈给主体奖励的
+2.  环境(Environment) 指任何可以通过接受主体的动作并回馈给主体奖励的**， 比如
 3.  动作 (Action): All the possible moves that the agent can take
 4.  状态 (State): Current situation returned by the environment.
 5.  奖励 (Reward): An immediate return send back from the environment to evaluate the last action.
@@ -217,6 +217,6 @@ B --> D{Rhombus}
 C --> D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTU1MzEzMTg0OCwxNzIzMDk3NjA2LDE5Nz
+eyJoaXN0b3J5IjpbLTEzNzM3MzY4NiwxNzIzMDk3NjA2LDE5Nz
 QxMzAyOThdfQ==
 -->
