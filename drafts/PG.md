@@ -130,7 +130,7 @@ $$
 
 
 ## PG的改进
-虽然PG理论上能处理
+虽然PG理论上能处理基于值的方法无法处理的复杂问题，但由于PG以来样本
 
 # 总结
 ----------
@@ -272,6 +272,6 @@ B --> D{Rhombus}
 C --> D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTExMzM5NTkzODMsMTcyMzA5NzYwNiwxOT
-c0MTMwMjk4XX0=
+eyJoaXN0b3J5IjpbLTc3NzUzNDgyMCwxNzIzMDk3NjA2LDE5Nz
+QxMzAyOThdfQ==
 -->
