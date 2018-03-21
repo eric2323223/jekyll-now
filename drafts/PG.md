@@ -116,7 +116,7 @@ $$
 $$
 还需要指出的是上述表达式描述了当前策略$\pi_\theta$通过一轮获得的导数，前面我们已经提到过由于策略产生的是非确定的动作，为了避免个体的偏差，我们需要多次取样并去均值来提高准确性，所以，
 $$
-\nabla_\theta J(\theta) \approx \frac{1}{N}\sum_{i=1}^N[(\sum_{t=1}^Tlog\pi_\theta(a_t|s_t))(\sum_{t=1}^Tr(s_t,a_t))]
+\nabla_\theta J(\theta) \approx \frac{1}{N}\sum_{i=1}^N[(\sum_{t=1}^Tlog\pi_\theta(a_{i,t}|s_{i,t}))(\sum_{t=1}^Tr(s_{i,t},a_{i,t}))]
 $$
 至此，我们就得到了可计算的目标函数的导数$\nabla J(\theta)$，在轮次结束的反向传递(back propagation)中使用学习率$\alpha$与$\nabla J(\theta)$的乘积作为差值$\delta$更新$\theta$
 $$
@@ -267,6 +267,6 @@ B --> D{Rhombus}
 C --> D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODgzNDY5NjQ5LDE3MjMwOTc2MDYsMTk3ND
-EzMDI5OF19
+eyJoaXN0b3J5IjpbMTE1MDg0MzI4MSwxNzIzMDk3NjA2LDE5Nz
+QxMzAyOThdfQ==
 -->
