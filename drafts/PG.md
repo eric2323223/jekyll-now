@@ -126,7 +126,7 @@ $$
 从实现角度看，PG的学习过程可以分为三个阶段
 1. 取样	对当前策略取多个轨迹用以准确计算目标函数，取样的过程就是用当前策略进行多次前向传递并保存轨迹
 2. 计算
-3. 改进cel
+3. 改进策略	这使用2计算出的 更新$\theta$
 ## Score function的由来
 
 ## PG的改进
@@ -271,6 +271,6 @@ B --> D{Rhombus}
 C --> D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTk5NzQ1NTA1MSwxNzIzMDk3NjA2LDE5Nz
-QxMzAyOThdfQ==
+eyJoaXN0b3J5IjpbMTA2MDk1MjU0LDE3MjMwOTc2MDYsMTk3ND
+EzMDI5OF19
 -->
