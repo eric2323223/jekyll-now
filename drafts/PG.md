@@ -19,10 +19,10 @@ Then environment refers to the object that the agent is acting on (e.g. the game
 Most of the RL algorithms follow this pattern. In the following paragraphs, I will briefly talk about some terms used in RL to facilitate our discussion in the next section.
 #### Definition
 
-1.  
-2. 动作 (A): All the possible moves that the agent can take
-3.  状态 (S): Current situation returned by the environment.
-4.  奖励 (R): An immediate return send back from the environment to evaluate the last action.
+1.  主体(Agent)
+2.  动作 (Action): All the possible moves that the agent can take
+3.  状态 (State): Current situation returned by the environment.
+4.  奖励 (Reward): An immediate return send back from the environment to evaluate the last action.
 5.  策略 (π): The strategy that the agent employs to determine next action based on the current state.
 6.  Value (V): The expected long-term return with discount, as opposed to the short-term reward R. _Vπ(s)_  is defined as the expected long-term return of the current state sunder policy π.
 7.  Q-value or action-value (Q): Q-value is similar to Value, except that it takes an extra parameter, the current action  _a_.  _Qπ(s, a)_  refers to the long-term return of the current state  _s_, taking action  _a_  under policy π.
@@ -216,6 +216,6 @@ B --> D{Rhombus}
 C --> D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2NzQzMTUzMSwxNzIzMDk3NjA2LDE5Nz
+eyJoaXN0b3J5IjpbLTYyMjY0ODgwMywxNzIzMDk3NjA2LDE5Nz
 QxMzAyOThdfQ==
 -->
