@@ -137,7 +137,7 @@ figure: intuition
 伪实现
 > Initialize policy parameter $\theta$, baseline b
 for iteration=1, 2, ... do
-Collect a set of trajectories by executing the current policy
+>>Collect a set of trajectories by executing the current policy
 At each timestep in each trajectory, compute
 the return ^ Rt =
 PT􀀀1
@@ -220,6 +220,6 @@ B --> D{Rhombus}
 C --> D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTA1OTY1NDMwMywxNzIzMDk3NjA2LDE5Nz
+eyJoaXN0b3J5IjpbMjEzODMyMjcxOSwxNzIzMDk3NjA2LDE5Nz
 QxMzAyOThdfQ==
 -->
