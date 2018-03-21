@@ -19,7 +19,7 @@ Then environment refers to the object that the agent is acting on (e.g. the game
 Most of the RL algorithms follow this pattern. In the following paragraphs, I will briefly talk about some terms used in RL to facilitate our discussion in the next section.
 #### Definition
 
-1.  主体(Agent) 指能够通过
+1.  主体(Agent) 指能够通过动作与环境交互的**，在
 2.  环境(Environment)
 3.  动作 (Action): All the possible moves that the agent can take
 4.  状态 (State): Current situation returned by the environment.
@@ -217,6 +217,6 @@ B --> D{Rhombus}
 C --> D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE3Nzg2NDkyNDMsMTcyMzA5NzYwNiwxOT
+eyJoaXN0b3J5IjpbLTE2OTM4MjY4MTUsMTcyMzA5NzYwNiwxOT
 c0MTMwMjk4XX0=
 -->
