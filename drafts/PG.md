@@ -130,7 +130,7 @@ $$
 
 
 ## PG的改进
-虽然PG理论上能处理基于值的方法无法处理的复杂问题，但由于PG依赖样本来优化
+虽然PG理论上能处理基于值的方法无法处理的复杂问题，但由于PG依赖样本来优化策略导致这种方法有较大的
 
 # 总结
 ----------
@@ -272,6 +272,6 @@ B --> D{Rhombus}
 C --> D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1OTQxMjYyNDQsMTcyMzA5NzYwNiwxOT
-c0MTMwMjk4XX0=
+eyJoaXN0b3J5IjpbMjE0NzEzNTM3MCwxNzIzMDk3NjA2LDE5Nz
+QxMzAyOThdfQ==
 -->
