@@ -118,7 +118,7 @@ $$
 $$
 \theta = \theta + \alpha \nabla J(\theta)
 $$
-以上为了推倒用于反响传递的可计算的$\nabla J(\theta)$列出了很多表达式，目的是帮助读者理解如何真正的代码实现PG算法，如果直接看代码的话恐怕很难理解
+以上为了推倒用于反响传递的可计算的$\nabla J(\theta)$列出了很多表达式，目的是帮助读者理解PG算法实现，ying如果直接看代码的话恐怕很难理解
 ## Score function的由来
 
 ## PG的改进
@@ -263,6 +263,6 @@ B --> D{Rhombus}
 C --> D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTExMjQ1MzE2MjEsMTcyMzA5NzYwNiwxOT
-c0MTMwMjk4XX0=
+eyJoaXN0b3J5IjpbMTY0NjcwMTM1LDE3MjMwOTc2MDYsMTk3ND
+EzMDI5OF19
 -->
