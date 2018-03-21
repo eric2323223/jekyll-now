@@ -23,7 +23,7 @@ Most of the RL algorithms follow this pattern. In the following paragraphs, I wi
 2.  环境(Environment) 指主体作用的对象， 比如Atari游戏本身。
 3.  动作 (Action): 指所有可能的作用于环境上的操作。
 4.  状态 (State): 指可被主体感知的关于环境的信息。
-5.  奖励 (Reward): 指由环境回馈给主体的关于上一个An immediate return send back from the environment to evaluate the last action.
+5.  奖励 (Reward): 指由环境回馈给主体的描述上一个动作效果的信息。
 
 强化学习基本原理是：
 
@@ -228,6 +228,6 @@ B --> D{Rhombus}
 C --> D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTg3MjQ3NTIwNywxNzIzMDk3NjA2LDE5Nz
-QxMzAyOThdfQ==
+eyJoaXN0b3J5IjpbLTE2NDAxMDMwNjcsMTcyMzA5NzYwNiwxOT
+c0MTMwMjk4XX0=
 -->
