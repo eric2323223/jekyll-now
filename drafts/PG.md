@@ -114,6 +114,7 @@ $$
 $$
 \nabla_\theta J(\theta) =\mathbb E_{\tau\sim\pi_\theta(\tau)}[(\sum_{t=1}^Tlog\pi_\theta(a_t|s_t))(\sum_{t=1}^Tr(s_t,a_t))]
 $$
+还需要指出de
 至此，我们就得到了可计算的目标函数的导数$\nabla J(\theta)$，在轮次结束的反向传递(back propagation)中使用学习率$\alpha$与$\nabla J(\theta)$的乘积作为差值$\delta$更新$\theta$
 $$
 \theta = \theta + \alpha \nabla J(\theta)
@@ -263,6 +264,6 @@ B --> D{Rhombus}
 C --> D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE3NTk1MTMzNjAsMTcyMzA5NzYwNiwxOT
-c0MTMwMjk4XX0=
+eyJoaXN0b3J5IjpbMTAwOTcxMjk2OSwxNzIzMDk3NjA2LDE5Nz
+QxMzAyOThdfQ==
 -->
