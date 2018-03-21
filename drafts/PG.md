@@ -85,7 +85,7 @@ $$
 根据期望值的数学定义，
 
 $$
-J(\theta) = \mathbb E_{r\sim p_\theta(\tau)} [\sum r_\tau]= \int_\tau r(\tau)\pi_\theta(\tau) d\tau
+J(\theta) = \mathbb E_{r\sim \pi_\theta(\tau)} [\sum r_\tau]= \int_\tau r(\tau)\pi_\theta(\tau) d\tau
 $$
 对这个积分表达式求导数，
 $$
@@ -127,9 +127,10 @@ $$
 1. **取样**	对当前策略取多个轨迹用以准确计算目标函数，取样的过程就是用当前策略进行多次前向传递并保存轨迹
 2. **计算$\nabla J(\theta)$**
 3. **改进策略**	使用2计算出的$\nabla J(\theta)$更新$\theta$
-## Score function的由来
+
 
 ## PG的改进
+
 
 # 总结
 ----------
@@ -271,6 +272,6 @@ B --> D{Rhombus}
 C --> D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTIwOTA1NDc5MSwxNzIzMDk3NjA2LDE5Nz
-QxMzAyOThdfQ==
+eyJoaXN0b3J5IjpbLTIwMjU1MDMzNzgsMTcyMzA5NzYwNiwxOT
+c0MTMwMjk4XX0=
 -->
