@@ -118,7 +118,7 @@ $$
 $$
 \theta = \theta + \alpha \nabla J(\theta)
 $$
-以上为了推倒用于反响传递的可计算的$\nabla J(\theta)$列出了很多表达式，目的是解释如何
+以上为了推倒用于反响传递的可计算的$\nabla J(\theta)$列出了很多表达式，目的是帮助du如何真正的代码实现
 ## Score function的由来
 
 ## PG的改进
@@ -263,6 +263,6 @@ B --> D{Rhombus}
 C --> D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwNzUxMzU3MzAsMTcyMzA5NzYwNiwxOT
-c0MTMwMjk4XX0=
+eyJoaXN0b3J5IjpbLTYwMTI0OTE1OSwxNzIzMDk3NjA2LDE5Nz
+QxMzAyOThdfQ==
 -->
