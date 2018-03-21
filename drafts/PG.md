@@ -114,7 +114,7 @@ $$
 $$
 \nabla_\theta J(\theta) =\mathbb E_{\tau\sim\pi_\theta(\tau)}[(\sum_{t=1}^Tlog\pi_\theta(a_t|s_t))(\sum_{t=1}^Tr(s_t,a_t))]
 $$
-还需要指出的是上述表达式描述了当前策略$\pi_\theta$通过一轮获得的导数，前面我们已经提到过由于
+还需要指出的是上述表达式描述了当前策略$\pi_\theta$通过一轮获得的导数，前面我们已经提到过由于策略产生的是非确定的动作，为了避免个体的偏差，我们需要多次抽样
 至此，我们就得到了可计算的目标函数的导数$\nabla J(\theta)$，在轮次结束的反向传递(back propagation)中使用学习率$\alpha$与$\nabla J(\theta)$的乘积作为差值$\delta$更新$\theta$
 $$
 \theta = \theta + \alpha \nabla J(\theta)
@@ -264,6 +264,6 @@ B --> D{Rhombus}
 C --> D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNzQzMjU0MzUyLDE3MjMwOTc2MDYsMTk3ND
+eyJoaXN0b3J5IjpbNDg5NjAzNzE1LDE3MjMwOTc2MDYsMTk3ND
 EzMDI5OF19
 -->
