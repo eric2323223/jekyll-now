@@ -20,12 +20,13 @@ Most of the RL algorithms follow this pattern. In the following paragraphs, I wi
 #### Definition
 
 1.  主体(Agent)
-2.  动作 (Action): All the possible moves that the agent can take
-3.  状态 (State): Current situation returned by the environment.
-4.  奖励 (Reward): An immediate return send back from the environment to evaluate the last action.
-5.  策略 (π): The strategy that the agent employs to determine next action based on the current state.
-6.  Value (V): The expected long-term return with discount, as opposed to the short-term reward R. _Vπ(s)_  is defined as the expected long-term return of the current state sunder policy π.
-7.  Q-value or action-value (Q): Q-value is similar to Value, except that it takes an extra parameter, the current action  _a_.  _Qπ(s, a)_  refers to the long-term return of the current state  _s_, taking action  _a_  under policy π.
+2.  环境(Environment)
+3.  动作 (Action): All the possible moves that the agent can take
+4.  状态 (State): Current situation returned by the environment.
+5.  奖励 (Reward): An immediate return send back from the environment to evaluate the last action.
+6.  策略 (π): The strategy that the agent employs to determine next action based on the current state.
+7.  Value (V): The expected long-term return with discount, as opposed to the short-term reward R. _Vπ(s)_  is defined as the expected long-term return of the current state sunder policy π.
+8.  Q-value or action-value (Q): Q-value is similar to Value, except that it takes an extra parameter, the current action  _a_.  _Qπ(s, a)_  refers to the long-term return of the current state  _s_, taking action  _a_  under policy π.
 举例解释ASR$\pi$
 
 图片 RL successful cases
@@ -216,6 +217,6 @@ B --> D{Rhombus}
 C --> D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTYyMjY0ODgwMywxNzIzMDk3NjA2LDE5Nz
+eyJoaXN0b3J5IjpbMTY4Njk2MDgyNywxNzIzMDk3NjA2LDE5Nz
 QxMzAyOThdfQ==
 -->
