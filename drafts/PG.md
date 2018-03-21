@@ -26,6 +26,10 @@ Most of the RL algorithms follow this pattern. In the following paragraphs, I wi
 5.  Value (V): The expected long-term return with discount, as opposed to the short-term reward R. _Vπ(s)_  is defined as the expected long-term return of the current state sunder policy π.
 6.  Q-value or action-value (Q): Q-value is similar to Value, except that it takes an extra parameter, the current action  _a_.  _Qπ(s, a)_  refers to the long-term return of the current state  _s_, taking action  _a_  under policy π.
 举例解释ASR$\pi$
+
+图片 RL successful cases
+图片 
+
 I Discrete action space: network outputs vector of probabilities
 I Continuous action space: network outputs mean and diagonal covariance of
 Gaussian
@@ -273,6 +277,6 @@ B --> D{Rhombus}
 C --> D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODQ2MjE4MjAsMTcyMzA5NzYwNiwxOTc0MT
-MwMjk4XX0=
+eyJoaXN0b3J5IjpbMTg4MTAzMDkzOSwxNzIzMDk3NjA2LDE5Nz
+QxMzAyOThdfQ==
 -->
