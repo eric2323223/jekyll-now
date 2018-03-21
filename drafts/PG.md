@@ -19,7 +19,7 @@ Then environment refers to the object that the agent is acting on (e.g. the game
 Most of the RL algorithms follow this pattern. In the following paragraphs, I will briefly talk about some terms used in RL to facilitate our discussion in the next section.
 #### Definition
 
-1.  主体(Agent) 指能够通过动作与环境交互的**，在RL的环境中主体通常是运行中的算法，比如在Atari游戏中的主体是算法控制的
+1.  主体(Agent) 指能够通过动作与环境交互的**，在RL的环境中主体通常是运行中的算法，比如在Atari游戏中的主体是控制fe
 2.  环境(Environment) 指主体作用的对象， 比如
 3.  动作 (Action): All the possible moves that the agent can take
 4.  状态 (State): Current situation returned by the environment.
@@ -228,6 +228,6 @@ B --> D{Rhombus}
 C --> D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTYzMjcwMzI0LDE3MjMwOTc2MDYsMTk3ND
+eyJoaXN0b3J5IjpbMjA2ODI0MDIzLDE3MjMwOTc2MDYsMTk3ND
 EzMDI5OF19
 -->
