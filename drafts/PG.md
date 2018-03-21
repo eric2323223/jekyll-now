@@ -72,7 +72,7 @@ $$
 其中$\mathbb E[r_0+r_1+r_2+...+r_t|\pi_\theta]$表示在策略$\pi_\theta$条件下一轮交互（$0$到$t$步）中的累计奖励的期望值，这里是期望而不是确定值是因为每一步的奖励是根据策略得到的期望值而不是确定值。由于$r_i$可以由$r(\tau_{i-1})$计算得到，因此可以把累计奖励的期望值写成如下：
 
 $$
-J(\theta) = \mathbb E_{\tau\sim p_\theta(\tau)}[\sum_t r(\tau)] \approx \frac {1}{N}\sum_i\sum_t r(s_{i,t}, a_{i,t})
+J(\theta) = \mathbb E_{\tau\sim \pi_\theta(\tau)}[\sum_t r(\tau)] \approx \frac {1}{N}\sum_i\sum_t r(s_{i,t}, a_{i,t})
 $$
 我们把单个轮次的累计奖励作为PG的目标函数$J(\theta)$，则PG的目标就是确定构成策略的参数$\theta$使得$J(\theta)$取得最大的期望值
 
@@ -272,6 +272,6 @@ B --> D{Rhombus}
 C --> D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwMjU1MDMzNzgsMTcyMzA5NzYwNiwxOT
+eyJoaXN0b3J5IjpbLTEzMzE1MTMxMzMsMTcyMzA5NzYwNiwxOT
 c0MTMwMjk4XX0=
 -->
