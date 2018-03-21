@@ -25,13 +25,12 @@ Most of the RL algorithms follow this pattern. In the following paragraphs, I wi
 4.  状态 (State): Current situation returned by the environment.
 5.  奖励 (Reward): An immediate return send back from the environment to evaluate the last action.
 
-强化学习是从动物学习、参数扰动自适应控制等理论发展而来，其基本原理是：
+强化学习基本原理是：
 
-如果Agent的某个行为策略导致环境正的奖赏(强化信号)，那么Agent以后产生这个行为策略的趋势便会加强。Agent的目标是在每个离散状态发现最优策略以使期望的折扣奖赏和最大。
-
+>如果Agent的某个行为策略导致环境正的奖赏(强化信号)，那么Agent以后产生这个行为策略的趋势便会加强。Agent的目标是在每个离散状态发现最优策略以使期望的折扣奖赏和最大。
 强化学习把学习看作试探评价过程，Agent选择一个动作用于环境，环境接受该动作后状态发生变化，同时产生一个强化信号(奖或惩)反馈给Agent，Agent根据强化信号和环境当前状态再选择下一个动作，选择的原则是使受到正强化(奖)的概率增大。选择的动作不仅影响立即强化值，而且影响环境下一时刻的状态及最终的强化值。
 
-[![强化学习](https://gss2.bdstatic.com/9fo3dSag_xI4khGkpoWK1HF6hhy/baike/s%3D220/sign=b5718cb2a0ec08fa220014a569ef3d4d/3bf33a87e950352a842e0d055343fbf2b2118b6b.jpg)](https://baike.baidu.com/pic/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/2971075/0/30ecd5ef347b560bacafd594?fr=lemma&ct=single "强化学习")强化学习
+
 
 强化学习不同于连接主义学习中的监督学习，主要表现在教师信号上，强化学习中由环境提供的强化信号是Agent对所产生动作的好坏作一种评价(通常为标量信号)，而不是告诉Agent如何去产生正确的动作。由于外部环境提供了很少的信息，Agent必须靠自身的经历进行学习。通过这种方式，Agent在行动一一评价的环境中获得知识，改进行动方案以适应环境。
 
@@ -229,6 +228,6 @@ B --> D{Rhombus}
 C --> D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTY5NDM3MTMxMiwxNzIzMDk3NjA2LDE5Nz
-QxMzAyOThdfQ==
+eyJoaXN0b3J5IjpbLTE3NTI4NjEwMzYsMTcyMzA5NzYwNiwxOT
+c0MTMwMjk4XX0=
 -->
