@@ -124,9 +124,9 @@ $$
 $$
 以上为了推导用于反向传递的可计算的$\nabla J(\theta)$列出了很多表达式，目的是帮助读者理解PG算法实现，因为在代码实现中会直接使用~~表达式x~~计算$\nabla J(\theta)$，如果直接看代码而不了解$\nabla J(\theta)$的变形的话恐怕会很难理解。
 从实现角度看，PG的学习过程可以分为三个阶段
-1. 取样	对当前策略取多个轨迹用以准确计算目标函数，取样的过程就是用当前策略进行多次前向传递并保存轨迹
-2. 计算
-3. 改进策略	使用2计算出的$\nabla J(\theta)$更新$\theta$
+1. **取样**	对当前策略取多个轨迹用以准确计算目标函数，取样的过程就是用当前策略进行多次前向传递并保存轨迹
+2. **计算$\nabla J(\theta)$**
+3. **改进策略**	使用2计算出的$\nabla J(\theta)$更新$\theta$
 ## Score function的由来
 
 ## PG的改进
@@ -271,6 +271,6 @@ B --> D{Rhombus}
 C --> D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0NjI2NTIxNTgsMTcyMzA5NzYwNiwxOT
-c0MTMwMjk4XX0=
+eyJoaXN0b3J5IjpbMTIwOTA1NDc5MSwxNzIzMDk3NjA2LDE5Nz
+QxMzAyOThdfQ==
 -->
