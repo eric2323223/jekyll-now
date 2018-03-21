@@ -118,11 +118,12 @@ $$
 $$
 \nabla_\theta J(\theta) \approx \frac{1}{N}\sum_{i=1}^N[(\sum_{t=1}^Tlog\pi_\theta(a_{i,t}|s_{i,t}))(\sum_{t=1}^Tr(s_{i,t},a_{i,t}))]
 $$
-至此，我们就得到了可计算的目标函数的导数$\nabla J(\theta)$，在轮次结束的反向传递(back propagation)中使用学习率$\alpha$与$\nabla J(\theta)$的乘积作为差值$\delta$更新$\theta$
+至此，我们就得到了可计算的目标函数的导数$\nabla J(\theta)$，在轮次的反向传递(back propagation)中使用学习率$\alpha$与$\nabla J(\theta)$的乘积作为差值$\delta$更新$\theta$
 $$
 \theta = \theta + \alpha \nabla J(\theta)
 $$
-以上为了推倒用于反向传递的可计算的$\nabla J(\theta)$列出了很多表达式，目的是帮助读者理解PG算法实现，因为在代码实现中会直接使用~~表达式x~~计算$\nabla J(\theta)$，如果直接看代码而不了解$\nabla J(\theta)$的变形的话恐怕会很难理解。
+以上为了推导用于反向传递的可计算的$\nabla J(\theta)$列出了很多表达式，目的是帮助读者理解PG算法实现，因为在代码实现中会直接使用~~表达式x~~计算$\nabla J(\theta)$，如果直接看代码而不了解$\nabla J(\theta)$的变形的话恐怕会很难理解。
+cong
 ## Score function的由来
 
 ## PG的改进
@@ -267,6 +268,6 @@ B --> D{Rhombus}
 C --> D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEyMjY4MTc4NDYsMTcyMzA5NzYwNiwxOT
+eyJoaXN0b3J5IjpbLTExMDQ4MzYyMjUsMTcyMzA5NzYwNiwxOT
 c0MTMwMjk4XX0=
 -->
