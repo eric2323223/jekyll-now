@@ -28,7 +28,7 @@ Most of the RL algorithms follow this pattern. In the following paragraphs, I wi
 举例解释ASR$\pi$
 
 图片 RL successful cases
-图片 
+图片 RL methods relationship
 
 I Discrete action space: network outputs vector of probabilities
 I Continuous action space: network outputs mean and diagonal covariance of
@@ -277,6 +277,6 @@ B --> D{Rhombus}
 C --> D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTg4MTAzMDkzOSwxNzIzMDk3NjA2LDE5Nz
+eyJoaXN0b3J5IjpbMTg0NDE5NTk4NywxNzIzMDk3NjA2LDE5Nz
 QxMzAyOThdfQ==
 -->
