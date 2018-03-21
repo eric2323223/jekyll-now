@@ -114,7 +114,7 @@ $$
 $$
 \nabla_\theta J(\theta) =\mathbb E_{\tau\sim\pi_\theta(\tau)}[(\sum_{t=1}^Tlog\pi_\theta(a_t|s_t))(\sum_{t=1}^Tr(s_t,a_t))]
 $$
-至此，我们就得到了可计算的目标函数的导数$\nabla J(\theta)$，在轮次结束的反向传递(back propagation)中shiy
+至此，我们就得到了可计算的目标函数的导数$\nabla J(\theta)$，在轮次结束的反向传递(back propagation)中使用学习率$\alpha$
 ## Score function的由来
 
 ## PG的改进
@@ -259,6 +259,6 @@ B --> D{Rhombus}
 C --> D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTM3MDcxMTg0NCwxNzIzMDk3NjA2LDE5Nz
+eyJoaXN0b3J5IjpbLTQyODczOTI5OSwxNzIzMDk3NjA2LDE5Nz
 QxMzAyOThdfQ==
 -->
