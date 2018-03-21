@@ -135,8 +135,8 @@ figure: intuition
 3. **改进策略**	使用2计算出的$\nabla J(\theta)$更新$\theta$
 
 伪实现
-> Initialize policy parameter , baseline b
-for iteration=1; 2; : : : do
+> Initialize policy parameter $\theta$, baseline b
+for iteration=1, 2, ... do
 Collect a set of trajectories by executing the current policy
 At each timestep in each trajectory, compute
 the return ^ Rt =
@@ -220,6 +220,6 @@ B --> D{Rhombus}
 C --> D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTQzNDAzNzg3MywxNzIzMDk3NjA2LDE5Nz
+eyJoaXN0b3J5IjpbMTA1OTY1NDMwMywxNzIzMDk3NjA2LDE5Nz
 QxMzAyOThdfQ==
 -->
