@@ -22,7 +22,7 @@ Most of the RL algorithms follow this pattern. In the following paragraphs, I wi
 1.  主体(Agent) 指能够通过动作与环境交互的**，在RL的环境中主体通常是运行中的算法，比如在Atari游戏中的主体是用于控制飞船的算法
 2.  环境(Environment) 指主体动作作用的对象， 比如Atari游戏本身。
 3.  动作 (Action): 指所有可能的作用于环境上的操作，比如Atari游戏中算法控制飞船进行移动或射击。
-4.  状态 (State): 指可被主体感知的关于环境的信息，比如Atari游戏中屏幕现实的所有物体的位置和
+4.  状态 (State): 指可被主体感知的关于环境的信息，比如Atari游戏中屏幕显示的所有物体的位置以及移动方向和速度信息
 5.  奖励 (Reward): 指由环境回馈给主体的描述上一个动作效果的信息。
 
 强化学习基本原理是：
@@ -228,6 +228,6 @@ B --> D{Rhombus}
 C --> D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNDU2ODgwMzc2LDE3MjMwOTc2MDYsMTk3ND
-EzMDI5OF19
+eyJoaXN0b3J5IjpbLTEyNzY1NjE4MDMsMTcyMzA5NzYwNiwxOT
+c0MTMwMjk4XX0=
 -->
