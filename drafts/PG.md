@@ -135,6 +135,20 @@ figure: intuition
 3. **改进策略**	使用2计算出的$\nabla J(\theta)$更新$\theta$
 
 伪实现
+> Initialize policy parameter , baseline b
+for iteration=1; 2; : : : do
+Collect a set of trajectories by executing the current policy
+At each timestep in each trajectory, compute
+the return ^ Rt =
+PT􀀀1
+t0=t 
+t0􀀀t rt0 , and
+the advantage estimate ^ At = ^ Rt 􀀀 b(st ).
+Re-t the baseline, by minimizing kb(st) 􀀀 Rtk2,
+summed over all trajectories and timesteps.
+Update the policy, using a policy gradient estimate ^g,
+which is a sum of terms r log (at j st ; ) ^ At
+end for
 
 ## PG的改进
 虽然PG理论上能处理基于值的方法无法处理的复杂问题，但由于PG依赖样本来优化策略，导致这种方法在学习的过程中有比较大的抖动，即学习的效果不能持续增强和收敛。目前一个比较流行的改进是Actor-Critic算法，其基本思想是
@@ -206,6 +220,6 @@ B --> D{Rhombus}
 C --> D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2NTI1MTY4MTcsMTcyMzA5NzYwNiwxOT
-c0MTMwMjk4XX0=
+eyJoaXN0b3J5IjpbMTQzNDAzNzg3MywxNzIzMDk3NjA2LDE5Nz
+QxMzAyOThdfQ==
 -->
