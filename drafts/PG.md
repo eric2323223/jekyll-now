@@ -130,7 +130,7 @@ $$
 
 
 ## PG的改进
-
+PG
 
 # 总结
 ----------
@@ -272,6 +272,6 @@ B --> D{Rhombus}
 C --> D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQ1NjAxOTc4MiwxNzIzMDk3NjA2LDE5Nz
+eyJoaXN0b3J5IjpbMTIwMjUwMTA0MSwxNzIzMDk3NjA2LDE5Nz
 QxMzAyOThdfQ==
 -->
