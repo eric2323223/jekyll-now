@@ -131,7 +131,7 @@ $$
 伪实现
 
 ## PG的改进
-虽然PG理论上能处理基于值的方法无法处理的复杂问题，但由于PG依赖样本来优化策略导致这种方法在学习的过程中有比较大的抖动，即学习的效果不能持续增强和收敛。因此，目前
+虽然PG理论上能处理基于值的方法无法处理的复杂问题，但由于PG依赖样本来优化策略，导致这种方法在学习的过程中有比较大的抖动，即学习的效果不能持续增强和收敛。因此，目前
 
 # 总结
 ----------
@@ -273,6 +273,6 @@ B --> D{Rhombus}
 C --> D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzk3NjM5MTAwLDE3MjMwOTc2MDYsMTk3ND
-EzMDI5OF19
+eyJoaXN0b3J5IjpbODQ2MjE4MjAsMTcyMzA5NzYwNiwxOTc0MT
+MwMjk4XX0=
 -->
