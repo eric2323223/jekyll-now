@@ -139,7 +139,7 @@ figure: intuition
 Initialize $\theta$ arbitrarily
 for all episodes $(s_1, a_1, r_2, ... , s_{T-1}, a_{T-1})\sim \pi_\theta$ do
 for t = 1 to T - 1 do
-$\theta = \theta + \alpha\nabla log\pi_\theta(a_t, s_t)a$
+$\theta = \theta + \alpha\nabla log\pi_\theta(a_t, s_t)r(a_t, s_t)$
 end for
 end for
 return $\theta$
@@ -215,6 +215,6 @@ B --> D{Rhombus}
 C --> D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTI1Mzc2NTYwMCwxNzIzMDk3NjA2LDE5Nz
+eyJoaXN0b3J5IjpbLTc1OTk4MjEwMCwxNzIzMDk3NjA2LDE5Nz
 QxMzAyOThdfQ==
 -->
