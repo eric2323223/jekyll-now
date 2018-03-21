@@ -114,6 +114,7 @@ $$
 $$
 \nabla_\theta J(\theta) =\mathbb E_{\tau\sim\pi_\theta(\tau)}[(\sum_{t=1}^Tlog\pi_\theta(a_t|s_t))(\sum_{t=1}^Tr(s_t,a_t))]
 $$
+至此，我们就得到了可计算的
 ## Score function的由来
 
 ## PG的改进
@@ -258,6 +259,6 @@ B --> D{Rhombus}
 C --> D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbOTM2MzQ5MzI3LDE3MjMwOTc2MDYsMTk3ND
-EzMDI5OF19
+eyJoaXN0b3J5IjpbLTcyMzk0NzcwMCwxNzIzMDk3NjA2LDE5Nz
+QxMzAyOThdfQ==
 -->
