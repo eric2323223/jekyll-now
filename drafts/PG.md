@@ -137,7 +137,7 @@ figure: intuition
 伪实现
 >function REINFORCE()
 Initialize $\theta$ arbitrarily
-for all episodes ${s_1; a_1; r_2; : : : ; sT􀀀1; aT􀀀1; rT g  $do
+for all episodes ${s_1, a_1, r_2, ... , s_{T-1}, a_{T-1}}\ rT g  $do
 for t = 1 to T 􀀀 1 do
     + r log (at ; st )vt
 end for
@@ -215,6 +215,6 @@ B --> D{Rhombus}
 C --> D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEyOTIwNDczMzUsMTcyMzA5NzYwNiwxOT
-c0MTMwMjk4XX0=
+eyJoaXN0b3J5IjpbLTg0MjE0MTY5MCwxNzIzMDk3NjA2LDE5Nz
+QxMzAyOThdfQ==
 -->
