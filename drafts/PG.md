@@ -130,7 +130,7 @@ $$
 
 
 ## PG的改进
-PG
+PG的特性
 
 # 总结
 ----------
@@ -272,6 +272,6 @@ B --> D{Rhombus}
 C --> D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0NzYzMTY2MzMsMTcyMzA5NzYwNiwxOT
-c0MTMwMjk4XX0=
+eyJoaXN0b3J5IjpbNDQyODMwMDA5LDE3MjMwOTc2MDYsMTk3ND
+EzMDI5OF19
 -->
