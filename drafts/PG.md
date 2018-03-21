@@ -118,6 +118,7 @@ $$
 $$
 \theta = \theta + \alpha \nabla J(\theta)
 $$
+以上为了推倒kejisuan
 ## Score function的由来
 
 ## PG的改进
@@ -262,6 +263,6 @@ B --> D{Rhombus}
 C --> D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTIwMjIyMDM3MCwxNzIzMDk3NjA2LDE5Nz
+eyJoaXN0b3J5IjpbMTk5MDMxNjM1OSwxNzIzMDk3NjA2LDE5Nz
 QxMzAyOThdfQ==
 -->
