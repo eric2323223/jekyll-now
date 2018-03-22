@@ -16,7 +16,7 @@ Alpha GO战胜人类让大众惊叹于人工智能的突飞猛进的同时，也
 4.  状态 (State): 指可被主体感知的关于环境的信息，比如Atari游戏中屏幕显示的所有物体的位置以及移动方向和速度信息
 5.  奖励 (Reward): 指由环境回馈给主体的描述上一个动作效果的信息，比如Atari游戏中飞船动作导致的得分变化。
 
-强化学习的过程这样的，处于初始状态的Agent产生随机的动作作用于环境，环境返回给Agent新的状态和对动作的奖励，这个奖励可以是正向（表示动作的好的）也可以是负向的（表示动作是不好的），Agent收集反馈通过算法决定下一个动作
+强化学习的过程这样的，处于初始状态的Agent产生随机的动作作用于环境，环境返回给Agent新的状态和对动作的奖励，这个奖励可以是正向（表示动作的好的）也可以是负向的（表示动作是不好的），Agent收集反馈通过算法决定下一个动作直至终结状态
 
 robot control, Boston Dynamics
 监督式学习由于依赖标记过的数据来训练计算机，本质上是有人来教计算机的学习方法，而强化学习是计算机独立自我学习解决复杂问题的一类方法，通过不断地与系统交互并优化反馈来学习。
@@ -234,6 +234,6 @@ B --> D{Rhombus}
 C --> D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjcwNTk3OTUsMTcyMzA5NzYwNiwxOTc0MT
-MwMjk4XX0=
+eyJoaXN0b3J5IjpbMTY4MTYxMDIxNiwxNzIzMDk3NjA2LDE5Nz
+QxMzAyOThdfQ==
 -->
