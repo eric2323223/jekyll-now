@@ -6,7 +6,7 @@
 # 相关概念
 
 ## 强化学习
-Alpha GO战胜人类的大众惊叹于人工智能的突飞猛进的同时，也让人不禁好奇计算机到底是如何实现对人类的超越，一方面监督式学习(supervised learning)shoux无法训练**， 另一方面采用穷举的方式会遇到硬件的限制（围棋的状态组合空间$10^{360}$达到了宇宙粒子的数量级）
+Alpha GO战胜人类的大众惊叹于人工智能的突飞猛进的同时，也让人不禁好奇计算机到底是如何实现对人类的超越，一方面监督式学习(supervised learning)受限于无法训练**， 另一方面采用穷举的方式会遇到硬件的限制（围棋的状态组合空间$10^{360}$达到了宇宙粒子的数量级）
 robot control, Boston Dynamics
 监督式学习由于依赖标记过的数据来训练计算机，本质上是有人来教计算机的学习方法，而强化学习是计算机独立自我学习解决复杂问题的一类方法，通过不断地与系统交互并优化反馈来学习。
 Typically, a RL setup is composed of two components, an agent and an environment.
@@ -230,6 +230,6 @@ B --> D{Rhombus}
 C --> D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjA3NTUxOTc3NiwxNzIzMDk3NjA2LDE5Nz
+eyJoaXN0b3J5IjpbMTE0Nzc3NTI3MiwxNzIzMDk3NjA2LDE5Nz
 QxMzAyOThdfQ==
 -->
