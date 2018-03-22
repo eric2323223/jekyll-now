@@ -8,6 +8,11 @@
 ## 强化学习
 Alpha GO战胜人类让大众惊叹于人工智能的突飞猛进的同时，也让人不禁好奇计算机到底是如何实现对人类的超越，一方面监督式学习(supervised learning)的效果受限于训练数据， 另一方面采用穷举的方式会遇到硬件的限制（围棋的状态组合空间$10^{360}$达到了宇宙粒子的数量级）。其实Alpha GO的一个秘密武器就是强化学习，简单来说，强化学习一种中通过反馈的学习方式，它包括如下图所示的几个部分：
 ![](https://cdn-images-1.medium.com/max/1600/1*c3pEt4pFk0Mx684DDVsW-w.png)
+1.  主体(Agent) 指能够通过动作与环境交互的**，在RL的环境中主体通常是运行中的算法，比如在Atari游戏中的主体是用于控制飞船的算法
+2.  环境(Environment) 指主体动作作用的对象， 比如Atari游戏本身。
+3.  动作 (Action): 指所有可能的作用于环境上的操作，比如Atari游戏中算法控制飞船进行移动或射击。
+4.  状态 (State): 指可被主体感知的关于环境的信息，比如Atari游戏中屏幕显示的所有物体的位置以及移动方向和速度信息
+5.  奖励 (Reward): 指由环境回馈给主体的描述上一个动作效果的信息，比如Atari游戏中飞船动作导致的得分变化。
 robot control, Boston Dynamics
 监督式学习由于依赖标记过的数据来训练计算机，本质上是有人来教计算机的学习方法，而强化学习是计算机独立自我学习解决复杂问题的一类方法，通过不断地与系统交互并优化反馈来学习。
 Typically, a RL setup is composed of two components, an agent and an environment.
@@ -20,13 +25,7 @@ Reinforcement Learning Illustration ([https://i.stack.imgur.com/eoeSq.png](https
 Then environment refers to the object that the agent is acting on (e.g. the game itself in the Atari game), while the agent represents the RL algorithm. The environment starts by sending a state to the agent, which then based on its knowledge to take an action in response to that state. After that, the environment send a pair of next state and reward back to the agent. The agent will update its knowledge with the reward returned by the environment to evaluate its last action. The loop keeps going on until the environment sends a terminal state, which ends to episode.
 
 Most of the RL algorithms follow this pattern. In the following paragraphs, I will briefly talk about some terms used in RL to facilitate our discussion in the next section.
-#### Definition
 
-1.  主体(Agent) 指能够通过动作与环境交互的**，在RL的环境中主体通常是运行中的算法，比如在Atari游戏中的主体是用于控制飞船的算法
-2.  环境(Environment) 指主体动作作用的对象， 比如Atari游戏本身。
-3.  动作 (Action): 指所有可能的作用于环境上的操作，比如Atari游戏中算法控制飞船进行移动或射击。
-4.  状态 (State): 指可被主体感知的关于环境的信息，比如Atari游戏中屏幕显示的所有物体的位置以及移动方向和速度信息
-5.  奖励 (Reward): 指由环境回馈给主体的描述上一个动作效果的信息，比如Atari游戏中飞船动作导致的得分变化。
 
 强化学习基本原理是：
 
@@ -231,6 +230,6 @@ B --> D{Rhombus}
 C --> D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTk0NTUxOTE1NSwxNzIzMDk3NjA2LDE5Nz
-QxMzAyOThdfQ==
+eyJoaXN0b3J5IjpbMzk2NzM4MCwxNzIzMDk3NjA2LDE5NzQxMz
+AyOThdfQ==
 -->
