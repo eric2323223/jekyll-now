@@ -35,17 +35,6 @@ Most of the RL algorithms follow this pattern. In the following paragraphs, I wi
 
 强化学习基本原理是：
 
-
-
-
-
-
-
-6.  策略 (π): The strategy that the agent employs to determine next action based on the current state.
-7.  Value (V): The expected long-term return with discount, as opposed to the short-term reward R. _Vπ(s)_  is defined as the expected long-term return of the current state sunder policy π.
-8.  Q-value or action-value (Q): Q-value is similar to Value, except that it takes an extra parameter, the current action  _a_.  _Qπ(s, a)_  refers to the long-term return of the current state  _s_, taking action  _a_  under policy π.
-举例解释ASR$\pi$
-
 图片 RL successful cases
 图片 RL methods relationship
 
@@ -237,6 +226,6 @@ B --> D{Rhombus}
 C --> D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTc4NTY3NTkzNiwxNjgxNjEwMjE2LDE3Mj
+eyJoaXN0b3J5IjpbMTg3MTAzMzU0NywxNjgxNjEwMjE2LDE3Mj
 MwOTc2MDZdfQ==
 -->
