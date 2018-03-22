@@ -1,6 +1,6 @@
 # 深入浅出策略梯度(Policy Gradient)
 
-强化学习(Reinforcement Learning)是一类用于复杂场景的学习算法，被广泛应用在复杂机器控制任务。近几年来，随着神经网络的重新兴起，强化学习也被逐渐应用在一些新的领域，比如自动驾驶，计算机视觉等。Alpha GO 战胜人类棋手标志着机器学习特别是强化学习正在成为逐渐成熟并能够处理更加复杂的问题，chengwei。本文旨在介绍强化学习中梯度策略（PG）的基本原理，相关概念，并着重介绍作者在学习PG过程中遇到的一些难点如理解score function和实现技术。
+强化学习(Reinforcement Learning)是一类用于复杂场景的学习算法，被广泛应用在复杂机器控制任务。近几年来，随着神经网络的重新兴起，强化学习也被逐渐应用在一些新的领域，比如自动驾驶，计算机视觉等。Alpha GO 战胜人类棋手标志着机器学习特别是强化学习正在成为逐渐成熟并能够处理更加复杂的问题，成为了人工智能领域的研究热点，也被认为能够在未来。本文旨在介绍强化学习中梯度策略（PG）的基本原理，相关概念，并着重介绍作者在学习PG过程中遇到的一些难点如理解score function和实现技术。
 
 
 # 相关概念
@@ -229,6 +229,6 @@ B --> D{Rhombus}
 C --> D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE5MjUzOTc1MjIsMTcyMzA5NzYwNiwxOT
-c0MTMwMjk4XX0=
+eyJoaXN0b3J5IjpbMTM2MTcyNTAzOCwxNzIzMDk3NjA2LDE5Nz
+QxMzAyOThdfQ==
 -->
