@@ -148,7 +148,7 @@ $$
 $$
 \theta = \theta + \alpha \nabla J(\theta)
 $$
-以上为了推导用于反向传递的可计算的$\nabla J(\theta)$列出了很多表达式，目的是帮助读者理解PG算法实现，因为在代码实现中会直接使用~~表达式x~~计算$\nabla J(\theta)$，如果直接看代码而不了解$\nabla J(\theta)$的变形的话恐怕会觉得疑惑。不过从$\nabla_\theta J(\theta)$和$\pi_\theta(\tau)$$r(\tau)$的基本关系也可以直观的理解为如果奖励($r(\tau)$)比较高时，策略($\pi_\theta(\tau)$)会倾向于增加相应的动作的概率，如果奖励比较低时，策略会倾向于降低相应动作的概率。从原理的角度来看，PG和传统的监督式学习的学习过程非常相似，每轮次都由前向传递和反向传递构成，
+以上为了推导用于反向传递的可计算的$\nabla J(\theta)$列出了很多表达式，目的是帮助读者理解PG算法实现，因为在代码实现中会直接使用~~表达式x~~计算$\nabla J(\theta)$，如果直接看代码而不了解$\nabla J(\theta)$的变形的话恐怕会觉得疑惑。不过从$\nabla_\theta J(\theta)$和$\pi_\theta(\tau)$$r(\tau)$的基本关系也可以直观的理解为如果奖励($r(\tau)$)比较高时，策略($\pi_\theta(\tau)$)会倾向于增加相应的动作的概率，如果奖励比较低时，策略会倾向于降低相应动作的概率。从原理的角度来看，PG和传统的监督式学习的学习过程非常相似，每轮次都由前向传递和反向传递构成，前向传递负责计算目标函数，反向传递负责ch
 figure: intuition
 
 从实现角度看，PG的学习过程可以分为三个阶段
@@ -237,6 +237,6 @@ B --> D{Rhombus}
 C --> D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEyNjY0MDI2OTMsMTY4MTYxMDIxNiwxNz
-IzMDk3NjA2XX0=
+eyJoaXN0b3J5IjpbMTg1OTk2NTUzOCwxNjgxNjEwMjE2LDE3Mj
+MwOTc2MDZdfQ==
 -->
