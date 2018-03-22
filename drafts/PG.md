@@ -6,7 +6,7 @@
 # 相关概念
 
 ## 强化学习
-Alpha GO战胜人类让大众惊叹于人工智能的突飞猛进的同时，也让人不禁好奇计算机到底是如何实现对人类的超越，一方面监督式学习(supervised learning)的效果受限于训练数据， 另一方面采用穷举的方式会遇到硬件的限制（围棋的状态组合空间$10^{360}$达到了宇宙粒子的数量级）。其实Alpha GO的一个秘密武器就是强化学习，简单来说，强化学习一种中通过反馈的学习方式，它包括如下图所示的几个部分：
+Alpha GO战胜人类让大众惊叹于人工智能的突飞猛进的同时，也让人不禁好奇机器学习到底是如何实现对人类的超越，一方面监督式学习(supervised learning)的效果受限于训练数据， 另一方面采用穷举的方式会遇到硬件的限制（围棋的状态组合空间$10^{360}$达到了宇宙粒子的数量级）。其实Alpha GO的一个秘密武器就是强化学习，简单来说，强化学习一种通过反馈进行优化的机器学习方式，它包括如下图所示的几个部分：
 ![](https://cdn-images-1.medium.com/max/1600/1*c3pEt4pFk0Mx684DDVsW-w.png)
 1.  主体(Agent) 指能够通过动作与环境交互的**，在RL的环境中主体通常是运行中的算法，比如在Atari游戏中的主体是用于控制飞船的算法
 2.  环境(Environment) 指主体动作作用的对象， 比如Atari游戏本身。
@@ -230,6 +230,6 @@ B --> D{Rhombus}
 C --> D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzk2NzM4MCwxNzIzMDk3NjA2LDE5NzQxMz
-AyOThdfQ==
+eyJoaXN0b3J5IjpbLTIzNTg3NjY3NiwxNzIzMDk3NjA2LDE5Nz
+QxMzAyOThdfQ==
 -->
