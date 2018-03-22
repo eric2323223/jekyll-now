@@ -29,8 +29,7 @@ Most of the RL algorithms follow this pattern. In the following paragraphs, I wi
 
 强化学习基本原理是：
 
->如果Agent的某个行为策略导致环境正的奖赏(强化信号)，那么Agent以后产生这个行为策略的趋势便会加强。Agent的目标是在每个离散状态发现最优策略以使期望的折扣奖赏和最大。
-强化学习把学习看作试探评价过程，Agent选择一个动作用于环境，环境接受该动作后状态发生变化，同时产生一个强化信号(奖或惩)反馈给Agent，Agent根据强化信号和环境当前状态再选择下一个动作，选择的原则是使受到正强化(奖)的概率增大。选择的动作不仅影响立即强化值，而且影响环境下一时刻的状态及最终的强化值。
+
 
 
 
@@ -230,6 +229,6 @@ B --> D{Rhombus}
 C --> D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNDAyNTU2ODk1LDE3MjMwOTc2MDYsMTk3ND
-EzMDI5OF19
+eyJoaXN0b3J5IjpbLTEzMzMxMTEzODAsMTcyMzA5NzYwNiwxOT
+c0MTMwMjk4XX0=
 -->
