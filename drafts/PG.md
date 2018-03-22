@@ -18,8 +18,6 @@ Alpha GO战胜人类让大众惊叹于人工智能的突飞猛进的同时，也
 robot control, Boston Dynamics
 监督式学习由于依赖标记过的数据来训练计算机，本质上是有人来教计算机的学习方法，而强化学习是计算机独立自我学习解决复杂问题的一类方法，通过不断地与系统交互并优化反馈来学习。
 Typically, a RL setup is composed of two components, an agent and an environment.
-强化学习一般包含两部分：agent和环境
-
 
 
 Reinforcement Learning Illustration ([https://i.stack.imgur.com/eoeSq.png](https://i.stack.imgur.com/eoeSq.png))
@@ -232,6 +230,6 @@ B --> D{Rhombus}
 C --> D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjAxMDY1NzY2MiwxNzIzMDk3NjA2LDE5Nz
-QxMzAyOThdfQ==
+eyJoaXN0b3J5IjpbNDAyNTU2ODk1LDE3MjMwOTc2MDYsMTk3ND
+EzMDI5OF19
 -->
