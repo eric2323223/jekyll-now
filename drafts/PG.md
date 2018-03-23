@@ -160,6 +160,7 @@ end function
 虽然PG理论上能处理基于值的方法无法处理的复杂问题，但由于PG依赖样本来优化策略，导致这种方法在学习的过程中有比较大的抖动，即学习的效果不能持续增强和收敛。目前一个比较流行的改进是Actor-Critic算法，其基本思想是
 
 # 总结
+
 ----------
 
 
@@ -226,6 +227,6 @@ B --> D{Rhombus}
 C --> D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzNTM1MTMzNjEsMTg3MTAzMzU0NywxNz
-IzMDk3NjA2XX0=
+eyJoaXN0b3J5IjpbNTA4NDA3MDY5LDE4NzEwMzM1NDcsMTcyMz
+A5NzYwNl19
 -->
