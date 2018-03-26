@@ -17,7 +17,7 @@ Alpha GO战胜人类让大众惊叹于人工智能的突飞猛进的同时，也
 强化学习的过程是一个通过和环境交互获得反馈，在根据返回调整以期使总奖励最大化的过程，需要强调的是这个是一个多步的交互的过程，每一步交互都会影响其后的所有步骤。具体来说，
 ### 强化学习的基本目标
 是奖励最大话
-#### Markov Decision Process (MDP)
+
 强化学习中的环境一般被形式化的描述为MDP，
 We briefly introduced Markov Decision Process  `**MDP**`in our first article. To recall, in reinforcement learning problems we have an agent interacting with an environment. At each time step, the agent performs an action which leads to two things: changing the environment state and the agent (possibly) recieving a reward (_or penalty_) from the enviroment. The goal of the agent is to discover an optimal policy (i.e. what actions to do in each state) such that it maximizes the total value of rewards recieved from the environment in response to its actions.  `**MDP**`**is**  used to describe the agent/ environemnt interaction settings in a formal way.
 
@@ -228,5 +228,5 @@ B --> D{Rhombus}
 C --> D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTg1MzMzMDM2NiwtNDM0NzIyOTldfQ==
+eyJoaXN0b3J5IjpbLTEyMDM4NDYwMzUsLTQzNDcyMjk5XX0=
 -->
