@@ -14,15 +14,12 @@ Alpha GO战胜人类让大众惊叹于人工智能的突飞猛进的同时，也
 -   `**p(s_{t+1} | s_t, a_t)**` : State transition model that describes how the environment state changes when the user performs an action  `a`depending on the action  `a`and the current state st.
 -   `**p(r_{t+1} | s_t, a_t)**` : Reward model that describes the real-valued reward value that the agent recieves from the environment after performing an action. In MDP the the reward value depends on the current state and the action performed.
 -   **𝛾** : 折扣系数，用于调整未来对当前的影响
-
+强化学习的过程是主体
 ### 强化学习的基本目标
 
 #### Markov Decision Process (MDP)
 强化学习中的环境一般被形式化的描述为MDP，
 We briefly introduced Markov Decision Process  `**MDP**`in our first article. To recall, in reinforcement learning problems we have an agent interacting with an environment. At each time step, the agent performs an action which leads to two things: changing the environment state and the agent (possibly) recieving a reward (_or penalty_) from the enviroment. The goal of the agent is to discover an optimal policy (i.e. what actions to do in each state) such that it maximizes the total value of rewards recieved from the environment in response to its actions.  `**MDP**`**is**  used to describe the agent/ environemnt interaction settings in a formal way.
-
-**MDP**  consists of a tuple of 5 elements:
-
 
 
 The way by which the agent choses which action to perform is named the agent  `policy`  which is a function that takes the current environment state to return an action. The policy is often denoted by the symbol 𝛑.
@@ -231,5 +228,5 @@ B --> D{Rhombus}
 C --> D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjg1NTEwMzU4XX0=
+eyJoaXN0b3J5IjpbOTk5Mjg2ODUzXX0=
 -->
