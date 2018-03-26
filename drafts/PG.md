@@ -34,7 +34,11 @@ The way by which the agent choses which action to perform is named the agent  `p
 同监督式学习类似，强化学习也是一个通过多个轮次逐渐优化算法参数来增强学习效果的过程，每个轮次包含两部分：前向传递和反向传递。处于初始状态的Agent根据算法的当前参数生成动作作用于环境，环境返回给Agent新的状态和对动作的奖励，这个奖励可以是正向（表示动作的好的）也可以是负向的（表示动作是不好的），在轮次结束后算法通过汇总所有在本轮收集到的反馈调整算法的参数开始下一轮的学习，直到学习的效果不再增长。目前主流的强化学习由两类：基于值的方法和基于策略的方法。
 ## 基于值的方法
 
-基于值的方法的基本思想是假设存在一个值函数Q，使得在任意状态下
+基于值的方法的基本思想是假设存在一个值函数Q，使得在任意状态下满足
+$$
+Q(s,a) = r + \gamma max
+$$
+
 
 
 robot control, Boston Dynamics
@@ -243,5 +247,5 @@ B --> D{Rhombus}
 C --> D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTI5ODgyMjUyOF19
+eyJoaXN0b3J5IjpbLTEzMzI5NTU3ODVdfQ==
 -->
