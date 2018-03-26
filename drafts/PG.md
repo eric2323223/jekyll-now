@@ -9,8 +9,8 @@
 Alpha GO战胜人类让大众惊叹于人工智能的突飞猛进的同时，也让人不禁好奇机器学习到底是如何实现对人类的超越，一方面监督式学习(supervised learning)的效果受限于训练数据， 另一方面采用简单穷举的方式会遇到硬件的限制（围棋的状态组合空间$10^{360}$达到了宇宙粒子的数量级）。其实Alpha GO的一个秘密武器就是今天的主角-强化学习，强化学习是机器学习中的一类方法。~~简单的说，这类方法通过和环境的交互获得反馈，再根据反馈进行优化。~~强化学习诞生于上世纪80年代，开始应用于制造业，特别是工业机器人的自动控制，近年来随着其他机器方法的流行开始应用于更加“智能”的场景，除了大名鼎鼎的Alpha GO，google deepmind团队还应用强化学习实现了计算机自主学习玩Atari系列电子游戏并超越了人类万家的水平，**。越来越多成功的应用表明强化学习 ---
 ### Markov Decision Process (MDP)
 不同于监督式学习通过标签数据进行学习，强化学习通过和环境交互来学习。环境一般被形式化的描述为MDP，由以下几部分组成：
--   **S** : 状态集，Set of states. At each time step the state of the environment is an element  s ∈  **S**.
--   **A**: 动作集 Set of actions. At each time step the agent choses an action  `a ∈  **A**`  to perform.
+-   **$S$** : 状态集，Set of states. At each time step the state of the environment is an element  $s \in  S$.
+-   **A**: 动作集 Set of actions. At each time step the agent choses an action  $a \in  **A**$ to perform.
 -   **p(s_{t+1} | s_t, a_t)** : State transition model that describes how the environment state changes when the user performs an action  `a`depending on the action  `a`and the current state st.
 -   **p(r_{t+1} | s_t, a_t)** : Reward model that describes the real-valued reward value that the agent recieves from the environment after performing an action. In MDP the the reward value depends on the current state and the action performed.
 -  **𝛾** : 折扣系数，用于调整未来对当前的影响
@@ -228,5 +228,5 @@ B --> D{Rhombus}
 C --> D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbOTU5NzM5MTIyLC00MzQ3MjI5OV19
+eyJoaXN0b3J5IjpbLTg1OTA0MjQxNiwtNDM0NzIyOTldfQ==
 -->
