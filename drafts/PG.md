@@ -13,7 +13,7 @@ Alpha GO战胜人类让大众惊叹于人工智能的突飞猛进的同时，也
 -   `**A**`: 动作集 Set of actions. At each time step the agent choses an action  `a ∈  **A**`  to perform.
 -   `**p(s_{t+1} | s_t, a_t)**` : State transition model that describes how the environment state changes when the user performs an action  `a`depending on the action  `a`and the current state st.
 -   `**p(r_{t+1} | s_t, a_t)**` : Reward model that describes the real-valued reward value that the agent recieves from the environment after performing an action. In MDP the the reward value depends on the current state and the action performed.
--   **𝛾** : 折扣系数，用于调整未来影响discount factor that controls the importance of future rewards. We will describe it in more details later.
+-   **𝛾** : 折扣系数，用于调整未来对当前的影响
 
 ### 强化学习的基本目标
 
@@ -231,5 +231,5 @@ B --> D{Rhombus}
 C --> D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTkzMjk0OTI5OV19
+eyJoaXN0b3J5IjpbNjg1NTEwMzU4XX0=
 -->
