@@ -38,7 +38,7 @@ The way by which the agent choses which action to perform is named the agent  `p
 $$
 Q(s,a) = r + \gamma max_{a'} Q(s', a')
 $$
-其中，￥$s', a'$表示下一个状态和动作，$\gamma$表示对未来事件的折扣率，bellman方程描述了一个递归的计算方法，即$s$状态在使用$a$动作得到的奖励等于当前的直接奖励$r$和下一步动作$a'$产生的奖励的和
+其中，$s,a$表示当前的状态和动作，$s'$表示在dan下一个状态和动作，$\gamma$表示对未来事件的折扣率，bellman方程描述了一个递归的计算方法，即$s$状态在使用$a$动作得到的奖励等于当前的直接奖励$r$和下一步动作$a'$产生的奖励的和
 
 
 robot control, Boston Dynamics
@@ -247,5 +247,5 @@ B --> D{Rhombus}
 C --> D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTc0ODMwNTM2NF19
+eyJoaXN0b3J5IjpbMjE0NDgxODkzN119
 -->
