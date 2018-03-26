@@ -36,7 +36,7 @@ The way by which the agent choses which action to perform is named the agent  `p
 
 基于值的方法的基本思想是假设存在一个值函数Q，使得在任意状态下满足
 $$
-Q(s,a) = r + \gamma max
+Q(s,a) = r + \gamma max_{a'} Q(s', a')
 $$
 
 
@@ -247,5 +247,5 @@ B --> D{Rhombus}
 C --> D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzMzI5NTU3ODVdfQ==
+eyJoaXN0b3J5IjpbMTg1MjE5NzkxNl19
 -->
