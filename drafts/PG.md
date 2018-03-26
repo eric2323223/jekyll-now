@@ -14,7 +14,7 @@ Alpha GO战胜人类让大众惊叹于人工智能的突飞猛进的同时，也
 -   `**p(s_{t+1} | s_t, a_t)**` : State transition model that describes how the environment state changes when the user performs an action  `a`depending on the action  `a`and the current state st.
 -   `**p(r_{t+1} | s_t, a_t)**` : Reward model that describes the real-valued reward value that the agent recieves from the environment after performing an action. In MDP the the reward value depends on the current state and the action performed.
 -   **𝛾** : 折扣系数，用于调整未来对当前的影响
-强化学习的过程是一个通过和环境交互获得反馈，在根据返回调整以期使总奖励最大化的过程，需要强调的是这个过程是一个多步的交互，bin，***。具体来说
+强化学习的过程是一个通过和环境交互获得反馈，在根据返回调整以期使总奖励最大化的过程，需要强调的是这个是一个多步的交互的过程他，并且每一步交互都会影响气候的所有步骤的，***。具体来说
 ### 强化学习的基本目标
 是奖励最大话
 #### Markov Decision Process (MDP)
@@ -228,5 +228,5 @@ B --> D{Rhombus}
 C --> D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEyNTIwNjMxNDldfQ==
+eyJoaXN0b3J5IjpbOTY3NTc5MjIyXX0=
 -->
