@@ -10,10 +10,10 @@ Alpha GO战胜人类让大众惊叹于人工智能的突飞猛进的同时，也
 ### MDP
 不同于监督式学习通过标签数据进行学习，强化学习通过和环境交互来学习。环境一般被轻视化的描述为MDP，他由以下几部分组成：
 -   `**S**` : 状态集，Set of states. At each time step the state of the environment is an element  `s ∈  **S**`.
--   `**A**`: Set of actions. At each time step the agent choses an action  `a ∈  **A**`  to perform.
+-   `**A**`: 动作集 Set of actions. At each time step the agent choses an action  `a ∈  **A**`  to perform.
 -   `**p(s_{t+1} | s_t, a_t)**` : State transition model that describes how the environment state changes when the user performs an action  `a`depending on the action  `a`and the current state st.
 -   `**p(r_{t+1} | s_t, a_t)**` : Reward model that describes the real-valued reward value that the agent recieves from the environment after performing an action. In MDP the the reward value depends on the current state and the action performed.
--   **𝛾** : discount factor that controls the importance of future rewards. We will describe it in more details later.
+-   **𝛾** : 折扣系数，用于调整未来影响discount factor that controls the importance of future rewards. We will describe it in more details later.
 
 ### 强化学习的基本目标
 
@@ -231,5 +231,5 @@ B --> D{Rhombus}
 C --> D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNzkwNTY1ODldfQ==
+eyJoaXN0b3J5IjpbMTkzMjk0OTI5OV19
 -->
