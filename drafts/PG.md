@@ -7,6 +7,8 @@
 
 ## 强化学习
 Alpha GO战胜人类让大众惊叹于人工智能的突飞猛进的同时，也让人不禁好奇机器学习到底是如何实现对人类的超越，一方面监督式学习(supervised learning)的效果受限于训练数据， 另一方面采用简单穷举的方式会遇到硬件的限制（围棋的状态组合空间$10^{360}$达到了宇宙粒子的数量级）。其实Alpha GO的一个秘密武器就是今天的主角-强化学习，强化学习是机器学习中的一类方法。简单的说，这类方法通过和环境的交互获得反馈，再根据反馈进行优化。强化学习诞生于上世纪80年代，开始应用于制造业，特别是工业机器人的自动控制，近年来随着其他机器方法的流行开始应用于更加“智能”的场景，除了大名鼎鼎的Alpha GO，google deepmind团队还应用强化学习实现了计算机自主学习玩Atari系列电子游戏并超越了人类万家的水平，**。越来越多成功的应用表明强化学习 ---
+### 强化学习的基本目标
+
 #### Markov Decision Process (MDP)
 强化学习中的环境一般被形式化的描述为MDP，
 We briefly introduced Markov Decision Process  `**MDP**`in our first article. To recall, in reinforcement learning problems we have an agent interacting with an environment. At each time step, the agent performs an action which leads to two things: changing the environment state and the agent (possibly) recieving a reward (_or penalty_) from the enviroment. The goal of the agent is to discover an optimal policy (i.e. what actions to do in each state) such that it maximizes the total value of rewards recieved from the environment in response to its actions.  `**MDP**`**is**  used to describe the agent/ environemnt interaction settings in a formal way.
@@ -225,5 +227,5 @@ B --> D{Rhombus}
 C --> D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbOTc4NDQ3MzQyXX0=
+eyJoaXN0b3J5IjpbLTE4MjY2MjEyNTRdfQ==
 -->
