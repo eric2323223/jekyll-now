@@ -10,9 +10,9 @@ Alpha GO战胜人类让大众惊叹于人工智能的突飞猛进的同时，也
 ### Markov Decision Process (MDP)
 不同于监督式学习通过标签数据进行学习，强化学习通过和环境交互来学习。环境一般被形式化的描述为MDP，由以下几部分组成：
 -   **$S$** : 状态集，Set of states. At each time step the state of the environment is an element  $s \in  S$.
--   **A**: 动作集 Set of actions. At each time step the agent choses an action  $a \in  **A**$ to perform.
--   **p(s_{t+1} | s_t, a_t)** : State transition model that describes how the environment state changes when the user performs an action  `a`depending on the action  `a`and the current state st.
--   **p(r_{t+1} | s_t, a_t)** : Reward model that describes the real-valued reward value that the agent recieves from the environment after performing an action. In MDP the the reward value depends on the current state and the action performed.
+-   **$A$**: 动作集 Set of actions. At each time step the agent choses an action  $a \in  A$ to perform.
+-   **$p(s_{t+1} | s_t, a_t)$** : State transition model that describes how the environment state changes when the user performs an action  `a`depending on the action  `a`and the current state st.
+-   **$p(r_{t+1} | s_t, a_t)$** : Reward model that describes the real-valued reward value that the agent recieves from the environment after performing an action. In MDP the the reward value depends on the current state and the action performed.
 -  **𝛾** : 折扣系数，用于调整未来对当前的影响
 强化学习的过程是一个通过和环境交互获得反馈，再根据返回调整以期使总奖励最大化的过程，需要强调的是这个是一个多步的交互的过程，每一步交互都会影响其后的所有步骤。具体来说，
 ### 强化学习的基本目标
@@ -228,5 +228,5 @@ B --> D{Rhombus}
 C --> D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTg1OTA0MjQxNiwtNDM0NzIyOTldfQ==
+eyJoaXN0b3J5IjpbODI0ODIxMzIsLTQzNDcyMjk5XX0=
 -->
