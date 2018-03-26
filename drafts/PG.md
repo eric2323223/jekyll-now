@@ -38,7 +38,7 @@ The way by which the agent choses which action to perform is named the agent  `p
 $$
 Q(s,a) = r + \gamma max_{a'} Q(s', a')
 $$
-bellman 
+其中，$s', a'$表示狭义gebellman方程表述了
 
 
 robot control, Boston Dynamics
@@ -247,5 +247,5 @@ B --> D{Rhombus}
 C --> D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTg0NjcwOTc2OF19
+eyJoaXN0b3J5IjpbLTEwNTcwNzQzOTVdfQ==
 -->
