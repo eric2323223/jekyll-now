@@ -154,7 +154,7 @@ return $\theta$
 end function
 
 ## PG的改进
-### 减小方差
+
 虽然PG理论上能处理基于值的方法无法处理的复杂问题，但由于PG依赖样本来优化策略，导致这种方法受样本个体差异影响有比较大的方差，学习的效果不容易持续增强和收敛。一个基本的改进思路是通过减少无效的元素来降低方差，由于当前的动作不会对过去的奖励产生影响，因此可以将$\nabla_\theta J(\theta)$改写为
 $$
 \nabla_\theta J(\theta) \approx\frac{1}{N}\sum_{i=1}^N[(\sum_{t=1}^Tlog\pi_\theta(a_{i,t}|s_{i,t}))(\sum_{t'=t}^Tr(a_{i,t'}, s_{i, t'}))]
@@ -163,7 +163,7 @@ $$
 $$
 \nabla_\theta J(\theta) \approx\frac{1}{N}\sum_{i=1}^N[(\sum_{t=1}^Tlog\pi_\theta(a_{i,t}|s_{i,t}))(\sum_{t'=t}^T\gamma^{t'-t} r(a_{i,t'}, s_{i, t'}))]
 $$
-### 引入基准值
+
 另外一个思路是通过引入基准(baseline)$b$减小方差，这是因为实际计算中产生的总奖励并不能准确代表这个策略的好坏程度，比如当前已经得到了一个较好的策略，而在下一轮的学习中用一个不太好的样本也能得到一个正向的总奖励$\sum r$，PG算法依然会由于这个正向的总奖励调整原来的策略而导致学习效果下降。如果有一个基准值$b$使得PG不会向低于基准值的方向移动（$\sum r - b >0$），就可以有效的避免这种问题。
 我们还可以证明基准值的引入不会对目标函数造成影响，即$\frac{1}{N}\sum_{i=1}^N[(\sum_{t=1}^Tlog\pi_\theta(a_{i,t}|s_{i,t}))(\sum_{t'=t}^Tr(a_{i,t'}, s_{i, t'})-b)]$是对$\nabla_\theta J(\theta)$的无偏估计(unbiased estimator)， 因为
 $$
@@ -250,5 +250,5 @@ B --> D{Rhombus}
 C --> D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNzkxNDcwOTEyLDE2NTc2MjE3MzldfQ==
+eyJoaXN0b3J5IjpbLTIyMTkzNzU3OSwxNjU3NjIxNzM5XX0=
 -->
