@@ -185,7 +185,7 @@ $$
 
 # 总结
 
-PG关键词是抽样，通过抽样模拟目标函数，避免了遍历，由于抽样导致较大的方查
+个人体会PG可以总结一个关键词抽样，通过抽样模拟目标函数，避免了遍历，由于抽样导致较大的方查
 
 ----------
 
@@ -250,5 +250,5 @@ B --> D{Rhombus}
 C --> D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTk4MTQ4NDE4MSwxNjU3NjIxNzM5XX0=
+eyJoaXN0b3J5IjpbNTk5MTQ2MDY5LDE2NTc2MjE3MzldfQ==
 -->
