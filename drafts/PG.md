@@ -158,8 +158,9 @@ end function
 $$
 \nabla_\theta J(\theta) \approx\mathbb E_{\tau\sim\pi_\theta(\tau)}[(\sum_{t=1}^Tlog\pi_\theta(a_{i,t}|s_{i,t}))(\sum_{t=1}^Tr(s_{i,t}, a_{i,t}))]
 $$
+一个基本的常识是
 $$
-\nabla_\theta J(\theta) \approx\mathbb E_{\tau\sim\pi_\theta(\tau)}[(\sum_{t=1}^Tlog\pi_\theta(a_{i,t}|s_{i,t}))(\sum_{t=t'}^Tr(\tau))]
+\nabla_\theta J(\theta) \approx\mathbb E_{\tau\sim\pi_\theta(\tau)}[(\sum_{t=1}^Tlog\pi_\theta(a_{i,t}|s_{i,t}))(\sum_{t'=t}^Tr(\tau))]
 $$
 
 # 总结
@@ -230,5 +231,5 @@ B --> D{Rhombus}
 C --> D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTk2OTc4ODkxOCwxNjU3NjIxNzM5XX0=
+eyJoaXN0b3J5IjpbLTkxNzc3MzYzLDE2NTc2MjE3MzldfQ==
 -->
