@@ -9,7 +9,7 @@
 Alpha GO战胜人类让大众惊叹于人工智能的突飞猛进的同时，也让人不禁好奇机器学习到底是如何实现对人类的超越，一方面监督式学习(supervised learning)的效果受限于训练数据， 另一方面采用简单穷举的方式会遇到硬件的限制（围棋的状态组合空间$10^{360}$达到了宇宙粒子的数量级）。其实Alpha GO的一个秘密武器就是今天的主角-强化学习，强化学习是机器学习中的一类方法。~~简单的说，这类方法通过和环境的交互获得反馈，再根据反馈进行优化。~~强化学习诞生于上世纪80年代，开始应用于制造业，特别是工业机器人的自动控制，近年来随着其他机器方法的流行开始应用于更加“智能”的场景，除了大名鼎鼎的Alpha GO，google deepmind团队还应用强化学习实现了计算机自主学习玩Atari系列电子游戏并超越了人类万家的水平，**。越来越多成功的应用表明强化学习 ---
 ### ![](https://fm.cnbc.com/applications/cnbc.com/resources/img/editorial/2017/11/13/104838704-spot.1910x1000.png?v=1510586396)
 
->强化学习其实也是机器学习的一个分支，但是它与我们常见监督学习supervised learning）不太一样。它讲究在一系列的情景之下，通过多步恰当的决策来达到一个目标，是一种**序列多步决策**的问题。
+>强化学习其实也是机器学习的一个分支，但是它与我们常见监督式学习（supervised learning）不太一样。强化学习更想它讲究在一系列的情景之下，通过多步恰当的决策来达到一个目标，是一种**序列多步决策**的问题。
 >可以看到强化学习有别于传统的机器学习，我们是不能立即得到标记的，而只能得到一个反馈，也可以说强化学习是一种**标记延迟的监督学习**。
 
 ### Markov决策过程 (Markov Decision Process (MDP)
@@ -254,6 +254,6 @@ B --> D{Rhombus}
 C --> D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjAzNDQ1NzI0NywtODU4MzM3NzM0LDE0NT
+eyJoaXN0b3J5IjpbLTczMTk4NjAzMywtODU4MzM3NzM0LDE0NT
 M3OTU4OTIsMTY1NzYyMTczOV19
 -->
