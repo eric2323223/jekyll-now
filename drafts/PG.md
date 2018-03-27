@@ -179,7 +179,7 @@ $$
 ### 
 # 总结
 
-PG
+PG关键词是抽样，通过抽样模拟目标函数，由于抽样导致j
 
 ----------
 
@@ -244,5 +244,5 @@ B --> D{Rhombus}
 C --> D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwOTYxMzgxMzAsMTY1NzYyMTczOV19
+eyJoaXN0b3J5IjpbODk3MTg0NDQ3LDE2NTc2MjE3MzldfQ==
 -->
