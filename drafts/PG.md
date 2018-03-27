@@ -158,7 +158,7 @@ end function
 $$
 \nabla_\theta J(\theta) \approx\mathbb E_{\tau\sim\pi_\theta(\tau)}[(\sum_{t=1}^Tlog\pi_\theta(a_{i,t}|s_{i,t}))(\sum_{t'=t}^Tr(a_{i,t'}, s_{i, t'}))]
 $$
-另外一个思路是通过使用基准
+另外一个思路是通过使用基准(baseline)稳定
 
 # 总结
 
@@ -228,5 +228,5 @@ B --> D{Rhombus}
 C --> D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjExMjMxMTEzNCwxNjU3NjIxNzM5XX0=
+eyJoaXN0b3J5IjpbNzA5Mjc1NjExLDE2NTc2MjE3MzldfQ==
 -->
