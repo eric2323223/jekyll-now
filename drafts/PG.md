@@ -10,7 +10,7 @@ Alpha GO战胜人类让大众惊叹于人工智能的突飞猛进的同时，也
 ### ![](https://fm.cnbc.com/applications/cnbc.com/resources/img/editorial/2017/11/13/104838704-spot.1910x1000.png?v=1510586396)
 
 强化学习是机器学习的一个分支，但是它与我们常见监督式学习（supervised learning）不太一样。从学习方式上讲强化学习更加接近人类的学习，记得我小时候玩新的电子游戏的时候虽然看不懂屏幕的提示但是经过自己的摸索也能掌握游戏方法，这个摸索的过程其实就是通过试错逐渐了解游戏规则的学习过程，强化学习也是通过一系列的尝试并通过得到的反馈不断调整自己的行为来学习陌生的环境。
-强化学习一般被形式化的描述为Markov决策过程(MDP)，由以下几部分组成：
+强化学习可以被形式化的描述为Markov决策过程(MDP)，由以下几部分组成：
 -   **$S$** : 状态集，Set of states. At each time step the state of the environment is an element  $s \in  S$.
 -   **$A$**: 动作集 Set of actions. At each time step the agent choses an action  $a \in  A$ to perform.
 -   **$p(s_{t+1} | s_t, a_t)$** : State transition model that describes how the environment state changes when the user performs an action  `a`depending on the action  `a`and the current state st.
@@ -249,6 +249,6 @@ B --> D{Rhombus}
 C --> D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwODAzMDAyNzcsLTg1ODMzNzczNCwxND
+eyJoaXN0b3J5IjpbLTE2OTkxMzY4NjMsLTg1ODMzNzczNCwxND
 UzNzk1ODkyLDE2NTc2MjE3MzldfQ==
 -->
