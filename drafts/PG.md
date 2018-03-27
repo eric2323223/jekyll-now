@@ -163,7 +163,7 @@ $$
 $$
 \nabla_\theta J(\theta) \approx\frac{1}{N}\sum_{i=1}^N[(\sum_{t=1}^Tlog\pi_\theta(a_{i,t}|s_{i,t}))(\sum_{t'=t}^T\gamma^{t'-t} r(a_{i,t'}, s_{i, t'}))]
 $$
-另外一个思路是通过引入基准(baseline)$b$减小方差
+另外一个思路是通过引入基准(baseline)$b$减小方差，在实际计算中产生的总
 $$
 \nabla_\theta J(\theta) \approx\frac{1}{N}\sum_{i=1}^N[(\sum_{t=1}^Tlog\pi_\theta(a_{i,t}|s_{i,t}))(\sum_{t'=t}^Tr(a_{i,t'}, s_{i, t'})-b)]
 $$
@@ -248,5 +248,5 @@ B --> D{Rhombus}
 C --> D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNDQwMDM3ODE3LDE2NTc2MjE3MzldfQ==
+eyJoaXN0b3J5IjpbNjA2OTQ1MTc0LDE2NTc2MjE3MzldfQ==
 -->
