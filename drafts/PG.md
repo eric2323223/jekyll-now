@@ -180,7 +180,7 @@ $$
 $$
 b=\frac{1}{N}\sum_{i=1}^N r(a_i, s_i)
 $$
-目前也有对基准值进行改进的方法，比如Actor-Critic算法，基本思想就是使用DQN进行基准值的优化，由于篇幅所先
+目前也有对基准值进行改进的方法，比如Actor-Critic算法，基本思想就是使用DQN进行基准值的优化，由于篇幅所限制在这里不展开介绍
 ### 
 # 总结
 
@@ -249,5 +249,5 @@ B --> D{Rhombus}
 C --> D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwNzgxMDI4OTksMTY1NzYyMTczOV19
+eyJoaXN0b3J5IjpbLTE2MjQ5Mzc1MTYsMTY1NzYyMTczOV19
 -->
