@@ -168,7 +168,7 @@ b=\frac{1}{N}\sum_{i=1}^N r(a_i, s_i)
 $$
 由于
 $$
-\mathbb E[\nabla_\theta log\pi(\tau)b] = \int \pi_\theta(\tau)\nabla_\theta(\tau)bd\tau = \int \pi_\theta(\tau)\nabla_\theta(\tau)bd\tau
+\mathbb E[\nabla_\theta log\pi(\tau)b]=\int \pi_\theta(\tau)\nabla_\ log _\theta(\tau)bd\tau = \int \pi_\theta(\tau)\nabla_\theta(\tau)bd\tau = 
 $$
 
 
@@ -240,5 +240,5 @@ B --> D{Rhombus}
 C --> D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTUzNzIzMTMzLDE2NTc2MjE3MzldfQ==
+eyJoaXN0b3J5IjpbLTE3MjQxOTU1NjMsMTY1NzYyMTczOV19
 -->
