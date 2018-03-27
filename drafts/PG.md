@@ -158,6 +158,7 @@ end function
 $$
 \nabla_\theta J(\theta) =\mathbb E_{\tau\sim\pi_\theta(\tau)}[(\sum_{t=1}^Tlog\pi_\theta(a_t|s_t))(\sum_{t=1}^Tr(s_t,a_t))]
 $$
+有shan
 # 总结
 
 ----------
@@ -226,5 +227,5 @@ B --> D{Rhombus}
 C --> D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTQyNTg4NTg3NiwxNjU3NjIxNzM5XX0=
+eyJoaXN0b3J5IjpbLTExNjExMDc1NjEsMTY1NzYyMTczOV19
 -->
