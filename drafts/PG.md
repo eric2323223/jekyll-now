@@ -158,7 +158,7 @@ end function
 $$
 \nabla_\theta J(\theta) \approx\mathbb E_{\tau\sim\pi_\theta(\tau)}[(\sum_{t=1}^Tlog\pi_\theta(a_{i,t}|s_{i,t}))(\sum_{t=1}^Tr(s_{i,t}, a_{i,t}))]
 $$
-一个基本的常识是
+一个基本的常识是当前的动作不会对过去的奖励产生影响，因此可以将上师
 $$
 \nabla_\theta J(\theta) \approx\mathbb E_{\tau\sim\pi_\theta(\tau)}[(\sum_{t=1}^Tlog\pi_\theta(a_{i,t}|s_{i,t}))(\sum_{t'=t}^Tr(\tau))]
 $$
@@ -231,5 +231,5 @@ B --> D{Rhombus}
 C --> D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTkxNzc3MzYzLDE2NTc2MjE3MzldfQ==
+eyJoaXN0b3J5IjpbLTMxMDM1MzA0NCwxNjU3NjIxNzM5XX0=
 -->
