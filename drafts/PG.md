@@ -170,8 +170,11 @@ $$
 $$
 \mathbb E[\nabla_\theta log\pi(\tau)b]=\int \pi_\theta(\tau)\nabla_\ log _\theta(\tau)bd\tau=\int \pi_\theta(\tau)\nabla_\theta(\tau)bd\tau = b\nabla_\theta\int \pi_\theta(\tau)d\tau
 $$
-由于$\pi()$是概率密度函数$\int \pi_\theta(\tau)d\tau=1$
-
+由于$\pi()$是概率密度函数$\int \pi_\theta(\tau)d\tau=1$，因此
+$$
+\mathbb E[\nabla_\theta log\pi(\tau)b] = b\nabla_\theta1=0
+$$
+由此我们知道
 # 总结
 
 ----------
@@ -240,5 +243,5 @@ B --> D{Rhombus}
 C --> D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1MjIyMDc5NTAsMTY1NzYyMTczOV19
+eyJoaXN0b3J5IjpbLTE3NjU2MDQ2MTAsMTY1NzYyMTczOV19
 -->
