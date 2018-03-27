@@ -163,7 +163,7 @@ $$
 $$
 \nabla_\theta J(\theta) \approx\frac{1}{N}\sum_{i=1}^N[(\sum_{t=1}^Tlog\pi_\theta(a_{i,t}|s_{i,t}))(\sum_{t'=t}^T\gamma^{t'-t} r(a_{i,t'}, s_{i, t'}))]
 $$
-另外一个思路是通过引入基准(baseline)$b$减小方差，这是因为实际计算中产生的总奖励并不能准确代表这个策略的好坏程度，比如有可能一个不太好的策略也能得到一个正向的总奖励，PG算法依然会由于这个正向的总奖励
+另外一个思路是通过引入基准(baseline)$b$减小方差，这是因为实际计算中产生的总奖励并不能准确代表这个策略的好坏程度，比如有可能一个不太好的策略也能得到一个正向的总奖励$J(\theta)$，PG算法依然会由于这个正向的$J9$
 $$
 \nabla_\theta J(\theta) \approx\frac{1}{N}\sum_{i=1}^N[(\sum_{t=1}^Tlog\pi_\theta(a_{i,t}|s_{i,t}))(\sum_{t'=t}^Tr(a_{i,t'}, s_{i, t'})-b)]
 $$
@@ -248,5 +248,5 @@ B --> D{Rhombus}
 C --> D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEwNjE5MDE3NjIsMTY1NzYyMTczOV19
+eyJoaXN0b3J5IjpbOTUxMzg0MjIyLDE2NTc2MjE3MzldfQ==
 -->
