@@ -158,7 +158,7 @@ end function
 $$
 \nabla_\theta J(\theta) \approx\frac{1}{N}\sum_{i=1}^N[(\sum_{t=1}^Tlog\pi_\theta(a_{i,t}|s_{i,t}))(\sum_{t'=t}^Tr(a_{i,t'}, s_{i, t'}))]
 $$b
-另外一个思路是通过引入基准(baseline)$b$稳定样本个体差异导致的方差
+另外一个思路是通过引入基准(baseline)$b$减小方差
 $$
 \nabla_\theta J(\theta) \approx\frac{1}{N}\sum_{i=1}^N[(\sum_{t=1}^Tlog\pi_\theta(a_{i,t}|s_{i,t}))(\sum_{t'=t}^Tr(a_{i,t'}, s_{i, t'})-b)]
 $$
@@ -174,7 +174,7 @@ $$
 $$
 \mathbb E[\nabla_\theta log\pi(\tau)b] = b\nabla_\theta1=0
 $$
-由此我们证明了引入基准$b$不会对$$
+由此我们证明了引入基准$b$不会对$\nabla_\theta J(\theta)$产生影响
 # 总结
 
 ----------
@@ -243,5 +243,5 @@ B --> D{Rhombus}
 C --> D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNzEwNTM2NDI5LDE2NTc2MjE3MzldfQ==
+eyJoaXN0b3J5IjpbLTg4OTQ5Nzg2MCwxNjU3NjIxNzM5XX0=
 -->
