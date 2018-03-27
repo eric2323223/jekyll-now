@@ -163,7 +163,7 @@ $$
 $$
 \nabla_\theta J(\theta) \approx\frac{1}{N}\sum_{i=1}^N[(\sum_{t=1}^Tlog\pi_\theta(a_{i,t}|s_{i,t}))(\sum_{t'=t}^T\gamma^{t'-t} r(a_{i,t'}, s_{i, t'}))]
 $$
-另外一个思路是通过引入基准(baseline)$b$减小方差，这是因为实际计算中产生的总奖励并不能准确代表这个策略的好坏程度，比如当前已经得到了一个较好的策略，而在下一轮的学习中用一个不太好的样本也能得到一个正向的总奖励$J(\theta)$，PG算法依然会由于这个正向的$J(\theta)$调整原来的策略而导致学习效果下降。如果有一ge
+另外一个思路是通过引入基准(baseline)$b$减小方差，这是因为实际计算中产生的总奖励并不能准确代表这个策略的好坏程度，比如当前已经得到了一个较好的策略，而在下一轮的学习中用一个不太好的样本也能得到一个正向的总奖励$J(\theta)$，PG算法依然会由于这个正向的$J(\theta)$调整原来的策略而导致学习效果下降。如果有一个基准的$J(\theta)$就能有效的避免这种wenti
 $$
 \nabla_\theta J(\theta) \approx\frac{1}{N}\sum_{i=1}^N[(\sum_{t=1}^Tlog\pi_\theta(a_{i,t}|s_{i,t}))(\sum_{t'=t}^Tr(a_{i,t'}, s_{i, t'})-b)]
 $$
@@ -248,5 +248,5 @@ B --> D{Rhombus}
 C --> D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTExOTYxODU5ODUsMTY1NzYyMTczOV19
+eyJoaXN0b3J5IjpbMjg1NzQ1NDcyLDE2NTc2MjE3MzldfQ==
 -->
