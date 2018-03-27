@@ -154,7 +154,7 @@ return $\theta$
 end function
 
 ## PG的改进
-虽然PG理论上能处理基于值的方法无法处理的复杂问题，但由于PG依赖样本来优化策略，导致这种方法在学习的过程中有比较大的方差，即学习的效果不能持续增强和收敛。一个基本的改进思路是通过减少无效的元素来降低方差，由于当前的动作不会对过去的奖励产生影响，因此可以将$\nabla_\theta J(\theta)$改写为
+虽然PG理论上能处理基于值的方法无法处理的复杂问题，但由于PG依赖样本来优化策略，导致这种方法受样本个体差异影响有比较大的方差，学习的效果不容易持续增强和收敛。一个基本的改进思路是通过减少无效的元素来降低方差，由于当前的动作不会对过去的奖励产生影响，因此可以将$\nabla_\theta J(\theta)$改写为
 $$
 \nabla_\theta J(\theta) \approx\frac{1}{N}\sum_{i=1}^N[(\sum_{t=1}^Tlog\pi_\theta(a_{i,t}|s_{i,t}))(\sum_{t'=t}^Tr(a_{i,t'}, s_{i, t'}))]
 $$b
@@ -243,5 +243,5 @@ B --> D{Rhombus}
 C --> D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2MTk5OTYxMzUsMTY1NzYyMTczOV19
+eyJoaXN0b3J5IjpbLTIwNTY1OTkwMDMsMTY1NzYyMTczOV19
 -->
