@@ -166,6 +166,11 @@ $$
 $$
 b=\frac{1}{N}\sum_{i=1}^N r(a_i, s_i)
 $$
+由于
+$$
+\mathbb E
+$$
+
 
 # 总结
 
@@ -235,5 +240,5 @@ B --> D{Rhombus}
 C --> D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE4Mzc3OTI0MjYsMTY1NzYyMTczOV19
+eyJoaXN0b3J5IjpbLTExNDE1NjYzNzQsMTY1NzYyMTczOV19
 -->
