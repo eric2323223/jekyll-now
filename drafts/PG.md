@@ -158,8 +158,10 @@ end function
 $$
 \nabla_\theta J(\theta) \approx\mathbb E_{\tau\sim\pi_\theta(\tau)}[(\sum_{t=1}^Tlog\pi_\theta(a_{i,t}|s_{i,t}))(\sum_{t'=t}^Tr(a_{i,t'}, s_{i, t'}))]
 $$
-另外一个思路是通过使用基准(baseline)稳定样本个体差异导致的方差
-
+另外一个思路是通过使用基准(baseline)$b$稳定样本个体差异导致的方差
+$$
+\nabla_\theta J(\theta) \approx\mathbb E_{\tau\sim\pi_\theta(\tau)}[(\sum_{t=1}^Tlog\pi_\theta(a_{i,t}|s_{i,t}))(\sum_{t'=t}^Tr(a_{i,t'}, s_{i, t'}))]
+$$
 
 # 总结
 
@@ -176,7 +178,7 @@ $$
 
 StackEdit extends the standard Markdown syntax by adding extra **Markdown extensions**, providing you with some nice features.
 
-> **ProTip:** You can disable any **Markdown extension** in the **File properties** dialog.
+> **ProTip:** You can disable ny **Markdown extension** in the **File properties** dialog.
 
 
 ## SmartyPants
@@ -229,5 +231,5 @@ B --> D{Rhombus}
 C --> D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjA5MzMwODgwNCwxNjU3NjIxNzM5XX0=
+eyJoaXN0b3J5IjpbLTEzMDc2NTc0NTUsMTY1NzYyMTczOV19
 -->
