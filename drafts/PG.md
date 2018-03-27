@@ -142,7 +142,7 @@ figure: intuition
 2. **计算$\nabla J(\theta)$**
 3. **改进策略**	使用2计算出的$\nabla J(\theta)$更新$\theta$
 
-Atari射击游戏伪实现
+### 
 >function REINFORCE()
 Initialize $\theta$ arbitrarily
 for all episodes $(s_1, a_1, r_2, ... , s_{T-1}, a_{T-1})\sim \pi_\theta$ do
@@ -248,6 +248,6 @@ B --> D{Rhombus}
 C --> D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjI1OTAyMDY4LC04NTgzMzc3MzQsMTQ1Mz
-c5NTg5MiwxNjU3NjIxNzM5XX0=
+eyJoaXN0b3J5IjpbMjA5NzgyMzI2NCwtODU4MzM3NzM0LDE0NT
+M3OTU4OTIsMTY1NzYyMTczOV19
 -->
