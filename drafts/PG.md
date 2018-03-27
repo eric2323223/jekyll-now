@@ -162,7 +162,7 @@ $$
 $$
 \nabla_\theta J(\theta) \approx\mathbb E_{\tau\sim\pi_\theta(\tau)}[(\sum_{t=1}^Tlog\pi_\theta(a_{i,t}|s_{i,t}))(\sum_{t'=t}^Tr(a_{i,t'}, s_{i, t'}))]
 $$
-另外一个思路是通过
+另外一个思路是通过使用基准
 
 # 总结
 
@@ -232,5 +232,5 @@ B --> D{Rhombus}
 C --> D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTExMTkxOTAyMjEsMTY1NzYyMTczOV19
+eyJoaXN0b3J5IjpbMjA4MDU3NjcwMiwxNjU3NjIxNzM5XX0=
 -->
