@@ -86,7 +86,7 @@ $$
 $$
 J(\theta) = \mathbb E_{\tau\sim \pi_\theta(\tau)}[\sum_t r(\tau)] \approx \frac {1}{N}\sum_i\sum_t r(s_{i,t}, a_{i,t})
 $$
-我们把单个轮次的累计奖励作为PG的目标函数$J(\theta)$，则PG的目标就是确定构成策略的参数$\theta$使得$J(\theta)$取得最大的期望值
+我们把单个轮次的累计奖励作为PG的目标函数$J(\theta)$，则PG的目标就是确定构成策略的参数$\theta$使得$J(\theta)$取得最大值
 
 $$
 \theta ^* = argmax J(\theta)
@@ -250,5 +250,5 @@ B --> D{Rhombus}
 C --> D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1MjQ3Njk5NjEsMTY1NzYyMTczOV19
+eyJoaXN0b3J5IjpbMTk4MTQ4NDE4MSwxNjU3NjIxNzM5XX0=
 -->
