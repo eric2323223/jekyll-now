@@ -154,11 +154,7 @@ return $\theta$
 end function
 
 ## PG的改进
-虽然PG理论上能处理基于值的方法无法处理的复杂问题，但由于PG依赖样本来优化策略，导致这种方法在学习的过程中有比较大的抖动，即学习的效果不能持续增强和收敛。一个基本的改进思路是通过减少无效的元素来降低方差，
-$$
-\nabla_\theta J(\theta) \approx\mathbb E_{\tau\sim\pi_\theta(\tau)}[(\sum_{t=1}^Tlog\pi_\theta(a_{i,t}|s_{i,t}))(\sum_{t=1}^Tr(s_{i,t}, a_{i,t}))]
-$$
-我们知道当前的动作不会对过去的奖励产生影响，因此可以将上式改写为
+虽然PG理论上能处理基于值的方法无法处理的复杂问题，但由于PG依赖样本来优化策略，导致这种方法在学习的过程中有比较大的抖动，即学习的效果不能持续增强和收敛。一个基本的改进思路是通过减少无效的元素来降低方差，由于当前的动作不会对过去的奖励产生影响，因此可以将$\nabla_\theta J(\theta)$改写为
 $$
 \nabla_\theta J(\theta) \approx\mathbb E_{\tau\sim\pi_\theta(\tau)}[(\sum_{t=1}^Tlog\pi_\theta(a_{i,t}|s_{i,t}))(\sum_{t'=t}^Tr(a_{i,t'}, s_{i, t'}))]
 $$
@@ -232,5 +228,5 @@ B --> D{Rhombus}
 C --> D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTcyMTQxNzkxNSwxNjU3NjIxNzM5XX0=
+eyJoaXN0b3J5IjpbMjExMjMxMTEzNCwxNjU3NjIxNzM5XX0=
 -->
