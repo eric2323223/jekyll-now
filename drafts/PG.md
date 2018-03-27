@@ -1,7 +1,7 @@
 # 深入浅出策略梯度(Policy Gradient)
 
 强化学习(Reinforcement Learning)是一类用于复杂场景的学习算法，被广泛应用在机器控制任务。近几年来，随着神经网络的重新兴起，强化学习也被逐渐应用在一些新的领域，比如自动驾驶，计算机视觉等。Alpha GO 战胜人类棋手标志着机器学习特别是强化学习正在成为逐渐成熟并能够处理更加复杂的问题，成为研究的热点，也被认为能够在未来在人工智能领域取得突破的方向之一。本文旨在介绍强化学习中梯度策略（PG）的基本原理，相关概念，并着重介绍作者在学习PG过程中遇到的一些难点如理解目标函数和实现技术。
-
+![](https://media.shellypalmer.com/wp-content/images/2016/03/alphago.jpg)
 
 # 相关概念
 
@@ -9,7 +9,7 @@
 Alpha GO战胜人类让大众惊叹于人工智能的突飞猛进的同时，也让人不禁好奇机器学习到底是如何实现对人类的超越，一方面监督式学习(supervised learning)的效果受限于训练数据， 另一方面采用简单穷举的方式会遇到硬件的限制（围棋的状态组合空间$10^{360}$达到了宇宙粒子的数量级）。其实Alpha GO的一个秘密武器就是今天的主角-强化学习，强化学习是机器学习中的一类方法。~~简单的说，这类方法通过和环境的交互获得反馈，再根据反馈进行优化。~~强化学习诞生于上世纪80年代，开始应用于制造业，特别是工业机器人的自动控制，近年来随着其他机器方法的流行开始应用于更加“智能”的场景，除了大名鼎鼎的Alpha GO，google deepmind团队还应用强化学习实现了计算机自主学习玩Atari系列电子游戏并超越了人类万家的水平，**。越来越多成功的应用表明强化学习 ---
 ### ![](https://fm.cnbc.com/applications/cnbc.com/resources/img/editorial/2017/11/13/104838704-spot.1910x1000.png?v=1510586396)
 
-强化学习其实也是机器学习的一个分支，但是它与我们常见监督式学习（supervised learning）不太一样。从学习方式上讲强化学习更加接近人类的学习，记得我小时候玩新的电子游戏的时候虽然看不懂屏幕的提示但是经过自己的摸索也能掌握游戏方法，这个摸索的过程其实就是通过试错逐渐了解游戏规则的学习过程，强化学习也是通过一系列的尝试并通过得到的反馈不断调整自己的行为来学习陌生的环境。
+强化学习是机器学习的一个分支，但是它与我们常见监督式学习（supervised learning）不太一样。从学习方式上讲强化学习更加接近人类的学习，记得我小时候玩新的电子游戏的时候虽然看不懂屏幕的提示但是经过自己的摸索也能掌握游戏方法，这个摸索的过程其实就是通过试错逐渐了解游戏规则的学习过程，强化学习也是通过一系列的尝试并通过得到的反馈不断调整自己的行为来学习陌生的环境。
 在强化学习中的环境一般被形式化的描述为Markov决策过程(MDP)，由以下几部分组成：
 -   **$S$** : 状态集，Set of states. At each time step the state of the environment is an element  $s \in  S$.
 -   **$A$**: 动作集 Set of actions. At each time step the agent choses an action  $a \in  A$ to perform.
@@ -19,7 +19,7 @@ Alpha GO战胜人类让大众惊叹于人工智能的突飞猛进的同时，也
 
 强化学习的过程是一个通过和环境交互获得反馈，再根据返回调整以期使总奖励最大化的过程，这个是一个多步的交互的过程，每一步交互都会影响其后的所有步骤。强化学习中的一次交互是指Agent 对环境施加一个动作，这会导致导致环境的状态发生改变并且由环境回馈给Agent一个奖励（奖励既可以是正向的也可以是负向的），强化学习的目标就是寻找一个最优的策略使得整个学习过程获得的奖励最大化。
 
-![](https://media.shellypalmer.com/wp-content/images/2016/03/alphago.jpg)
+
 ![](https://atariage.com/2600/hacks/screenshots/s_SpaceInvaders_RK_Hack_2.png)
 强化学习它包括如下图所示的几个部分：
 ![](https://cdn-images-1.medium.com/max/1600/1*c3pEt4pFk0Mx684DDVsW-w.png)
@@ -249,6 +249,6 @@ B --> D{Rhombus}
 C --> D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjY0MjIyMjI3LC04NTgzMzc3MzQsMTQ1Mz
-c5NTg5MiwxNjU3NjIxNzM5XX0=
+eyJoaXN0b3J5IjpbMTEyMzY4MTAwNiwtODU4MzM3NzM0LDE0NT
+M3OTU4OTIsMTY1NzYyMTczOV19
 -->
