@@ -36,7 +36,7 @@ The way by which the agent choses which action to perform is named the agent  `p
 5.  奖励 (Reward): 指由环境回馈给主体的描述上一个动作效果的信息，比如Atari游戏中飞船动作导致的得分变化。
 
 
-在实践上，强化学习是一个通过多个轮次逐渐优化算法参数来增强学习效果的过程，每个轮次包含两部分：前向传递和反向传递，这和q。处于初始状态的Agent根据算法的当前参数生成动作作用于环境，环境返回给Agent新的状态和对动作的奖励，在轮次结束后算法通过汇总所有在本轮收集到的反馈调整算法的参数开始下一轮的学习，直到学习的效果不再增长。常见的强化学习有两类：基于值的方法和基于策略的方法。
+在实践上，强化学习是一个通过多个轮次逐渐优化算法参数来增强学习效果的过程，每个轮次包含两部分：前向传递和反向传递。处于初始状态的Agent根据算法的当前参数生成动作作用于环境，环境返回给Agent新的状态和对动作的奖励，在轮次结束后算法通过汇总所有在本轮收集到的反馈调整算法的参数开始下一轮的学习，直到学习的效果不再增长。常见的强化学习有两类：基于值的方法和基于策略的方法。
 ## 基于值的方法
 
 基于值的方法的基本思想是求一个函数Q满足bellman方程，使得在状态$s$下使用动作$a$可能得到最大的奖励
@@ -254,6 +254,6 @@ B --> D{Rhombus}
 C --> D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjE2ODA4MzAyLC04NTgzMzc3MzQsMTQ1Mz
+eyJoaXN0b3J5IjpbNjkyMDk5MzYwLC04NTgzMzc3MzQsMTQ1Mz
 c5NTg5MiwxNjU3NjIxNzM5XX0=
 -->
