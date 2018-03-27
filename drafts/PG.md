@@ -181,7 +181,7 @@ $$
 $$
 由此我们证明了引入基准$b$不会对$\nabla_\theta J(\theta)$产生影响
 ### 
-# 总结
+## 总结
 
 PG关键词是抽样，通过抽样模拟目标函数，避免了遍历，由于抽样导致较大的方查
 
@@ -248,6 +248,6 @@ B --> D{Rhombus}
 C --> D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEwNTQ0NDg0MzYsLTg1ODMzNzczNCwxND
-UzNzk1ODkyLDE2NTc2MjE3MzldfQ==
+eyJoaXN0b3J5IjpbNjM1ODAzMjAxLC04NTgzMzc3MzQsMTQ1Mz
+c5NTg5MiwxNjU3NjIxNzM5XX0=
 -->
