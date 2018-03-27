@@ -162,7 +162,10 @@ $$
 $$
 \nabla_\theta J(\theta) \approx\frac{1}{N}\sum_{i=1}^N[(\sum_{t=1}^Tlog\pi_\theta(a_{i,t}|s_{i,t}))(\sum_{t'=t}^Tr(a_{i,t'}, s_{i, t'})-b)]
 $$
-常见的jizh
+常见的基准值是均值
+$$
+b=\frac
+$$
 
 # 总结
 
@@ -232,5 +235,5 @@ B --> D{Rhombus}
 C --> D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTExNDgxMDg0NDEsMTY1NzYyMTczOV19
+eyJoaXN0b3J5IjpbLTE2MjEzNzk1MDcsMTY1NzYyMTczOV19
 -->
