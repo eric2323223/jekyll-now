@@ -160,7 +160,7 @@ $$
 $$
 另外一个思路是通过使用基准(baseline)$b$稳定样本个体差异导致的方差
 $$
-\nabla_\theta J(\theta) \approx\mathbb E_{\tau\sim\pi_\theta(\tau)}[(\sum_{t=1}^Tlog\pi_\theta(a_{i,t}|s_{i,t}))(\sum_{t'=t}^Tr(a_{i,t'}, s_{i, t'}))]
+\nabla_\theta J(\theta) \approx\mathbb E_{\tau\sim\pi_\theta(\tau)}[(\sum_{t=1}^Tlog\pi_\theta(a_{i,t}|s_{i,t}))(\sum_{t'=t}^Tr(a_{i,t'}, s_{i, t'})-b)]
 $$
 
 # 总结
@@ -231,5 +231,5 @@ B --> D{Rhombus}
 C --> D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzMDc2NTc0NTUsMTY1NzYyMTczOV19
+eyJoaXN0b3J5IjpbLTEwMTE1MzY5MCwxNjU3NjIxNzM5XX0=
 -->
