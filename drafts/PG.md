@@ -172,6 +172,7 @@ $$
 $$
 \mathbb E[\nabla_\theta log\pi(\tau)b] = b\nabla_\theta1=0
 $$
+所以
 $$
 \nabla_\theta J(\theta) \approx\frac{1}{N}\sum_{i=1}^N[(\sum_{t=1}^Tlog\pi_\theta(a_{i,t}|s_{i,t}))(\sum_{t'=t}^Tr(a_{i,t'}, s_{i, t'})-b)]
 $$
@@ -179,15 +180,7 @@ $$
 $$
 b=\frac{1}{N}\sum_{i=1}^N r(a_i, s_i)
 $$
-由于
-$$
-\mathbb E[\nabla_\theta log\pi(\tau)b]=\int \pi_\theta(\tau)\nabla_\ log _\theta(\tau)bd\tau=\int \pi_\theta(\tau)\nabla_\theta(\tau)bd\tau = b\nabla_\theta\int \pi_\theta(\tau)d\tau
-$$
-由于$\pi()$是概率密度函数$\int \pi_\theta(\tau)d\tau=1$，因此
-$$
-\mathbb E[\nabla_\theta log\pi(\tau)b] = b\nabla_\theta1=0
-$$
-由此我们证明了引入基准$b$不会对$\nabla_\theta J(\theta)$产生影响
+
 ### 
 # 总结
 
@@ -256,5 +249,5 @@ B --> D{Rhombus}
 C --> D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTU3NDE4MTg1MCwxNjU3NjIxNzM5XX0=
+eyJoaXN0b3J5IjpbLTIwMDIxNjM4MjIsMTY1NzYyMTczOV19
 -->
