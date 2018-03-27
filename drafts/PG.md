@@ -39,8 +39,8 @@ Q(s,a) = r + \gamma max_{a'} Q(s', a')
 $$
 其中，$s'$表示在当前状态$s$下使用动作$a$得到的下一个状态，$\gamma$表示对未来事件的折扣率，bellman方程描述了一个递归的计算方法，即$s$状态在使用$a$动作得到的总奖励等于当前的直接奖励$r$和下一步动作$a'$产生的总奖励的和。
 基于值的方法有以下两个特点：
-- 确定性
 - 维护状态
+- 确定性
 - 从这个方程可知，为了计算$s$状态下的最大奖励，需要求处其后所有状态的总奖励。~~因此由于需要保存所有状态的奖励，这种方法要求问题的状态空间不能太大。~~
 ### 基于策略的方法
 
@@ -250,6 +250,6 @@ B --> D{Rhombus}
 C --> D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzMxMDAxOTU0LC04NTgzMzc3MzQsMTQ1Mz
-c5NTg5MiwxNjU3NjIxNzM5XX0=
+eyJoaXN0b3J5IjpbLTc2OTAxMTI5NCwtODU4MzM3NzM0LDE0NT
+M3OTU4OTIsMTY1NzYyMTczOV19
 -->
