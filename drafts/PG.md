@@ -180,7 +180,7 @@ $$
 $$
 b=\frac{1}{N}\sum_{i=1}^N r(a_i, s_i)
 $$
-
+目前也有对基准值进行改进的方法，比如
 ### 
 # 总结
 
@@ -249,5 +249,5 @@ B --> D{Rhombus}
 C --> D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwMDIxNjM4MjIsMTY1NzYyMTczOV19
+eyJoaXN0b3J5IjpbLTcxNDE1MjUzOSwxNjU3NjIxNzM5XX0=
 -->
