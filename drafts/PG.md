@@ -154,9 +154,12 @@ return $\theta$
 end function
 
 ## PG的改进
-虽然PG理论上能处理基于值的方法无法处理的复杂问题，但由于PG依赖样本来优化策略，导致这种方法在学习的过程中有比较大的抖动，即学习的效果不能持续增强和收敛。一个基本的改进思路是通过减少使用基准降低方差，
+虽然PG理论上能处理基于值的方法无法处理的复杂问题，但由于PG依赖样本来优化策略，导致这种方法在学习的过程中有比较大的抖动，即学习的效果不能持续增强和收敛。一个基本的改进思路是通过减少***使用基准降低方差，
 $$
 \nabla_\theta J(\theta) =\mathbb E_{\tau\sim\pi_\theta(\tau)}[(\sum_{t=1}^Tlog\pi_\theta(\tau))(\sum_{t=1}^Tr(\tau))]
+$$
+$$
+\nabla_\theta J(\theta) =\mathbb E_{\tau\sim\pi_\theta(\tau)}[(\sum_{t=1}^Tlog\pi_\theta(\tau))(\sum_{t=t'}^Tr(\tau))]
 $$
 
 # 总结
@@ -227,5 +230,5 @@ B --> D{Rhombus}
 C --> D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE4NTAzNjMyOTUsMTY1NzYyMTczOV19
+eyJoaXN0b3J5IjpbMTM5MTU1MzkxMiwxNjU3NjIxNzM5XX0=
 -->
