@@ -17,11 +17,8 @@ Alpha GO战胜人类让大众惊叹于人工智能的突飞猛进的同时，也
 -   **$p(r_{t+1} | s_t, a_t)$** : Reward model that describes the real-valued reward value that the agent recieves from the environment after performing an action. In MDP the the reward value depends on the current state and the action performed.
 -  **𝛾** : 折扣系数，用于调整未来对当前的影响
 
-
 强化学习的过程是一个通过和环境交互获得反馈，再根据返回调整以期使总奖励最大化的过程，这个是一个多步的交互的过程，每一步交互都会影响其后的所有步骤。强化学习中的一次交互是指Agent 对环境施加一个动作，这会导致导致环境的状态发生改变并且由环境回馈给Agent一个奖励（奖励既可以是正向的也可以是负向的），强化学习的目标就是寻找一个最优的策略使得整个学习过程获得的奖励最大化。
 
-
-The way by which the agent choses which action to perform is named the agent  `policy`  which is a function that takes the current environment state to return an action. The policy is often denoted by the symbol 𝛑.
 ![](https://media.shellypalmer.com/wp-content/images/2016/03/alphago.jpg)
 ![](https://atariage.com/2600/hacks/screenshots/s_SpaceInvaders_RK_Hack_2.png)
 强化学习它包括如下图所示的几个部分：
@@ -252,6 +249,6 @@ B --> D{Rhombus}
 C --> D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTYwNjg3NDg1NywtODU4MzM3NzM0LDE0NT
-M3OTU4OTIsMTY1NzYyMTczOV19
+eyJoaXN0b3J5IjpbNjY0MjIyMjI3LC04NTgzMzc3MzQsMTQ1Mz
+c5NTg5MiwxNjU3NjIxNzM5XX0=
 -->
