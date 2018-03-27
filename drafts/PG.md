@@ -164,7 +164,7 @@ $$
 $$
 常见的基准值是均值
 $$
-b=\frac
+b=\frac{1}{N}\sum_{i=1}^N r(a_i, s_i)
 $$
 
 # 总结
@@ -235,5 +235,5 @@ B --> D{Rhombus}
 C --> D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2MjEzNzk1MDcsMTY1NzYyMTczOV19
+eyJoaXN0b3J5IjpbLTE4Mzc3OTI0MjYsMTY1NzYyMTczOV19
 -->
