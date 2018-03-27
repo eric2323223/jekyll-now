@@ -159,7 +159,7 @@ end function
 $$
 \nabla_\theta J(\theta) \approx\frac{1}{N}\sum_{i=1}^N[(\sum_{t=1}^Tlog\pi_\theta(a_{i,t}|s_{i,t}))(\sum_{t'=t}^Tr(a_{i,t'}, s_{i, t'}))]
 $$
-jiejia
+我们还可以借鉴MDP折扣系数的思想降低未来的影响
 另外一个思路是通过引入基准(baseline)$b$减小方差
 $$
 \nabla_\theta J(\theta) \approx\frac{1}{N}\sum_{i=1}^N[(\sum_{t=1}^Tlog\pi_\theta(a_{i,t}|s_{i,t}))(\sum_{t'=t}^Tr(a_{i,t'}, s_{i, t'})-b)]
@@ -245,5 +245,5 @@ B --> D{Rhombus}
 C --> D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIxMzM5MzY0MzMsMTY1NzYyMTczOV19
+eyJoaXN0b3J5IjpbNDQ2OTc3NTgyLDE2NTc2MjE3MzldfQ==
 -->
