@@ -16,8 +16,7 @@ Alpha GO战胜人类让大众惊叹于人工智能的突飞猛进的同时，也
 -   **$p(r_{t+1} | s_t, a_t)$** : Reward model that describes the real-valued reward value that the agent recieves from the environment after performing an action. In MDP the the reward value depends on the current state and the action performed.
 -  **𝛾** : 折扣系数，用于调整未来对当前的影响
 
-强化学习的过程是一个通过和环境交互获得反馈，再根据返回调整以期使总奖励最大化的过程，这个是一个多步(timestep)的交互的过程，每一步交互都会影响其后的所有步骤。强化学习中的一次交互是指Agent 对环境施加一个动作，这会导致环境的状态发生改变并且由环境回馈给Agent一个奖励（奖励既可以是正向的也可以是负向的），强化学习的目标就是寻找一个最优的策略使得整个学习过程（从开始状态到终结状态）获得的奖励最大化。
-强化学习
+强化学习的过程是一个通过和环境交互获得反馈，再根据返回调整以期使总奖励最大化的过程，这个是一个多步(multi-timestep)的交互的过程，每一步交互都会影响其后的所有步骤。强化学习中的一次交互是指Agent 对环境施加一个动作，这会导致环境的状态发生改变并且由环境回馈给Agent一个奖励（奖励既可以是正向的也可以是负向的），强化学习的目标就是寻找一个最优的策略使得整个学习过程（从开始状态到终结状态）获得的奖励最大化。
 
 ![](https://atariage.com/2600/hacks/screenshots/s_SpaceInvaders_RK_Hack_2.png)
 强化学习它包括如下图所示的几个部分：
@@ -184,6 +183,6 @@ PG关键词是抽样，通过抽样模拟目标函数，避免了遍历，由于
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTgxOTc5MzA0OSwtNDc3MzMwMzE3LC04NT
-gzMzc3MzQsMTQ1Mzc5NTg5Ml19
+eyJoaXN0b3J5IjpbLTE5NjY0NDQxODksLTQ3NzMzMDMxNywtOD
+U4MzM3NzM0LDE0NTM3OTU4OTJdfQ==
 -->
