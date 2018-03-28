@@ -78,7 +78,7 @@ PG的学习是一个策略的优化过程，最开始随机的生成一个策略
 ![enter image description here](https://github.com/eric2323223/ML/blob/dev/drafts/PG1.PNG?raw=true)
 
 ### 实现
-我们知道在监督式学习中一般会选择一种loss function, 如square loss, Hinge loss, logistic loss等，来表示真实值和实际值的差距从而在反向传递中进行参数的更新。在强化学习中同样需要
+我们知道在监督式学习中一般会选择一种loss function, 如square loss, Hinge loss, logistic loss等，来表示真实值和实际值的差距从而在反向传递中进行参数的更新。在学习中同样需要类似的函数表示当前的效果，这就是目标函数
 #### PG的目标函数
 根据上述PG的基本原理，我们可以把PG的目标形式化的描述为以下表达式
 
@@ -192,6 +192,6 @@ PG关键词是抽样，通过抽样模拟目标函数，避免了遍历，由于
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNDA2NDE4MDU4LC00NzczMzAzMTcsLTg1OD
-MzNzczNCwxNDUzNzk1ODkyXX0=
+eyJoaXN0b3J5IjpbMTY2ODYzMjA5NywtNDc3MzMwMzE3LC04NT
+gzMzc3MzQsMTQ1Mzc5NTg5Ml19
 -->
