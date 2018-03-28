@@ -148,7 +148,8 @@ figure: intuition
 3. **改进策略**	使用2计算出的$\nabla J(\theta)$更新$\theta$
 
 ### PG实现
-
+应用PG解决实际问题的例子
+https://medium.com/@dhruvp/how-to-write-a-neural-network-to-play-pong-from-scratch-956b57d4f6e0
 
 ## PG的改进
 ### 减小方差
@@ -187,6 +188,6 @@ PG关键词是抽样，通过抽样模拟目标函数，避免了遍历，由于
 - [Deep Reinforcement Learning: Pong from Pixels](http://karpathy.github.io/2016/05/31/rl/)
 - 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQ0MjY1OTYzOSwtNDc3MzMwMzE3LC04NT
-gzMzc3MzQsMTQ1Mzc5NTg5Ml19
+eyJoaXN0b3J5IjpbLTE4NDg2NzI0MjUsLTQ3NzMzMDMxNywtOD
+U4MzM3NzM0LDE0NTM3OTU4OTJdfQ==
 -->
