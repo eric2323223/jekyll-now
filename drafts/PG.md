@@ -148,15 +148,7 @@ figure: intuition
 3. **改进策略**	使用2计算出的$\nabla J(\theta)$更新$\theta$
 
 ### PG实现
->function REINFORCE()
-Initialize $\theta$ arbitrarily
-for all episodes $(s_1, a_1, r_2, ... , s_{T-1}, a_{T-1})\sim \pi_\theta$ do
-for t = 1 to T - 1 do
-$\theta = \theta + \alpha\nabla log\pi_\theta(a_t, s_t)r(a_t, s_t)$
-end for
-end for
-return $\theta$
-end function
+
 
 ## PG的改进
 ### 减小方差
@@ -192,6 +184,6 @@ PG关键词是抽样，通过抽样模拟目标函数，避免了遍历，由于
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzY0MTMwNDEzLC00NzczMzAzMTcsLTg1OD
-MzNzczNCwxNDUzNzk1ODkyXX0=
+eyJoaXN0b3J5IjpbLTMwNTMwOTA1NCwtNDc3MzMwMzE3LC04NT
+gzMzc3MzQsMTQ1Mzc5NTg5Ml19
 -->
