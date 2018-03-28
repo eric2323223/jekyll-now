@@ -188,6 +188,6 @@ PG关键词是抽样，通过抽样模拟目标函数，避免了遍历，由于
 - [Deep Reinforcement Learning: Pong from Pixels](http://karpathy.github.io/2016/05/31/rl/)
 - 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE4NDg2NzI0MjUsLTQ3NzMzMDMxNywtOD
-U4MzM3NzM0LDE0NTM3OTU4OTJdfQ==
+eyJoaXN0b3J5IjpbODA1ODU4NjM4LC0xODQ4NjcyNDI1LC00Nz
+czMzAzMTcsLTg1ODMzNzczNCwxNDUzNzk1ODkyXX0=
 -->
