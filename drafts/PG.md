@@ -181,7 +181,10 @@ $$
 PG关键词是抽样，通过抽样模拟目标函数，避免了遍历，由于抽样导致较大的方查
 
 
+### 参考资料
+- Deep Reinforcement Learning: Pong from Pixels
+- 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODExMDI5Njc1LC00NzczMzAzMTcsLTg1OD
-MzNzczNCwxNDUzNzk1ODkyXX0=
+eyJoaXN0b3J5IjpbMTY4MDkxMDEyNCwtNDc3MzMwMzE3LC04NT
+gzMzc3MzQsMTQ1Mzc5NTg5Ml19
 -->
