@@ -41,7 +41,8 @@ $$
 - 确定性
 从这个方程可知，为了计算$s$状态下的最大奖励，需要求处其后所有状态的总奖励。~~
 
-强化学习包括了一系列不同的算法，其中比较常见的是基于值（Value-based）的方法和基于策略（Policy-based）的方法。这两种方法各有特点，适用于解决不同的问题。一般来说，基于值的方法
+强化学习包括了一系列不同的算法，其中比较常见的是基于值（Value-based）的方法和基于策略（Policy-based）的方法。这两种方法各有特点，适用于解决不同的问题。一般来说，
+
 ![](https://yanpanlau.github.io/img/torcs/actor-critic.png)
 
 
@@ -189,6 +190,6 @@ PG关键词是抽样，通过抽样模拟目标函数，避免了遍历，由于
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE3NTYyNTgxNjQsLTQ3NzMzMDMxNywtOD
+eyJoaXN0b3J5IjpbLTIwMzYyMTU0ODIsLTQ3NzMzMDMxNywtOD
 U4MzM3NzM0LDE0NTM3OTU4OTJdfQ==
 -->
