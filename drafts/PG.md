@@ -136,6 +136,8 @@ $$
 \theta = \theta + \alpha \nabla J(\theta)
 $$
 ![](http://karpathy.github.io/assets/rl/pg.png)
+>A visualization of the score function gradient estimator. **Left**: A gaussian distribution and a few samples from it (blue dots). On each blue dot we also plot the gradient of the log probability with respect to the gaussian's mean parameter. The arrow indicates the direction in which the mean of the distribution should be nudged to increase the probability of that sample. **Middle**: Overlay of some score function giving -1 everywhere except +1 in some small regions (note this can be an arbitrary and not necessarily differentiable scalar-valued function). The arrows are now color coded because due to the multiplication in the update we are going to average up all the green arrows, and the _negative_ of the red arrows. **Right**: after parameter update, the green arrows and the reversed red arrows nudge us to left and towards the bottom. Samples from this distribution will now have a higher expected score, as desired.
+
 以上为了推导用于反向传递的可计算的$\nabla J(\theta)$列出了很多表达式，目的是帮助读者理解PG算法实现，因为在代码实现中会直接使用~~表达式x~~计算$\nabla J(\theta)$，如果直接看代码而不了解$\nabla J(\theta)$的变形的话恐怕会觉得费解。不过从$\nabla_\theta J(\theta)$和$\pi_\theta(\tau)$$r(\tau)$的基本关系还是能够作出这样的直观解释：如果奖励($r(\tau)$)比较高时，策略($\pi_\theta(\tau)$)会倾向于增加相应的动作的概率，如果奖励比较低时，策略会倾向于降低相应动作的概率。从机器学习的原理的角度来看，PG和传统的监督式学习的学习过程还是比较相似的，每轮次都由前向传递和反向传递构成，前向传递负责计算目标函数，反向传递负责更新算法的参数，依此进行多轮次的学习指导学习效果稳定收敛。唯一不同的是，监督式学习的目标函数相对直接，即目标值和真实值的差，这个值一次前向传递就能得到；而PG的目标函数源自轮次内所有得到的奖励，并且需要进行一定的数学转换才能计算，另外由于用取样模拟期望，也需要对同一套参数进行多次前向传递来增加模拟的准确性。
 >可以看到强化学习有别于传统的机器学习，我们是不能立即得到标记的，而只能得到一个反馈，也可以说强化学习是一种**标记延迟的监督学习**
 figure: intuition
@@ -185,6 +187,6 @@ PG关键词是抽样，通过抽样模拟目标函数，避免了遍历，由于
 - [Deep Reinforcement Learning: Pong from Pixels](http://karpathy.github.io/2016/05/31/rl/)
 - 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTM4ODI2MTUwOSwtNDc3MzMwMzE3LC04NT
+eyJoaXN0b3J5IjpbLTQ0MjY1OTYzOSwtNDc3MzMwMzE3LC04NT
 gzMzc3MzQsMTQ1Mzc5NTg5Ml19
 -->
