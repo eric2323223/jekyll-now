@@ -41,7 +41,8 @@ $$
 - 确定性
 从这个方程可知，为了计算$s$状态下的最大奖励，需要求处其后所有状态的总奖励。~~
 
-
+强化学习包括了
+![](https://yanpanlau.github.io/img/torcs/actor-critic.png)
 
 
 ## 策略梯度（PG）
@@ -74,7 +75,7 @@ $$
 
 PG的学习是一个策略的优化过程，最开始随机的生成一个策略，当然这个策略对对象系统一无所知，所以用这个策略产生的动作会从对象系统那里很可能会得到一个负面奖励，这个过程就好像我们的自动驾驶策略在面对笔直的路面而产生右转的动作导致汽车撞上路边的行人这样的严重后果。为了更好的驾驶汽车PG需要不断的改变策略从而获得更高的轮次奖励（安全快速的到达目的地），PG在一轮的学习中使用同一个策略直到该轮结束，通过梯度上升改变策略并开始下一轮学习，如此往复直到轮次累计奖励不再增长停止。   ~~一个使得action的选择服从一定的概率分布，通过使用这个策略完成所有交互，这就把一个复杂的实际问题转化成了概率优化问题~~
 ![enter image description here](https://github.com/eric2323223/ML/blob/dev/drafts/PG1.PNG?raw=true)
-![](https://yanpanlau.github.io/img/torcs/actor-critic.png)
+
 ### PG的目标函数
 根据上述PG的基本原理，我们可以把PG的目标形式化的描述为以下表达式
 
@@ -188,6 +189,6 @@ PG关键词是抽样，通过抽样模拟目标函数，避免了遍历，由于
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTg1NjExNDM3MiwtNDc3MzMwMzE3LC04NT
-gzMzc3MzQsMTQ1Mzc5NTg5Ml19
+eyJoaXN0b3J5IjpbLTEzODY4MTAyNzksLTQ3NzMzMDMxNywtOD
+U4MzM3NzM0LDE0NTM3OTU4OTJdfQ==
 -->
