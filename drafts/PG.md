@@ -188,6 +188,6 @@ PG关键词是抽样，通过抽样模拟目标函数，避免了遍历，由于
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQ3NzMzMDMxNywxNzc0NjIzNTkwLC04NT
+eyJoaXN0b3J5IjpbLTg1NjExNDM3MiwtNDc3MzMwMzE3LC04NT
 gzMzc3MzQsMTQ1Mzc5NTg5Ml19
 -->
