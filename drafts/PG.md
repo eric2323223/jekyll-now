@@ -78,7 +78,7 @@ PG的学习是一个策略的优化过程，最开始随机的生成一个策略
 ![enter image description here](https://github.com/eric2323223/ML/blob/dev/drafts/PG1.PNG?raw=true)
 
 ### 实现
-为了实现
+在
 #### PG的目标函数
 根据上述PG的基本原理，我们可以把PG的目标形式化的描述为以下表达式
 
@@ -192,6 +192,6 @@ PG关键词是抽样，通过抽样模拟目标函数，避免了遍历，由于
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzNDA4NjQwODYsLTQ3NzMzMDMxNywtOD
-U4MzM3NzM0LDE0NTM3OTU4OTJdfQ==
+eyJoaXN0b3J5IjpbLTg2NTY0MjEyOCwtNDc3MzMwMzE3LC04NT
+gzMzc3MzQsMTQ1Mzc5NTg5Ml19
 -->
