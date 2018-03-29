@@ -153,8 +153,7 @@ figure: intuition
 学习的目的是理解如何控制球拍（即上下移动），而依据当前球拍的位置和球的速度位置信息，这些信息通过观察屏幕得到的。另外还需要通过观察双方的得分了解学习的效果。
 - policy function $p()$
 - reward function $r()$
-
-
+```
 	policy_function = createPolicy(random(theta))
 	game.init()
 	while True:
@@ -173,6 +172,7 @@ figure: intuition
 
 			cumulated_reward = 0
 			game.reset()
+```
 3. 
 ![](http://karpathy.github.io/assets/rl/policy.png)
 https://medium.com/@dhruvp/how-to-write-a-neural-network-to-play-pong-from-scratch-956b57d4f6e0
@@ -215,6 +215,6 @@ PG关键词是抽样，通过抽样模拟目标函数，避免了遍历，由于
 - [Deep Reinforcement Learning: Pong from Pixels](http://karpathy.github.io/2016/05/31/rl/)
 - 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTc3NzY1NDg4NSw4OTk2NjEwNiwtNDc3Mz
+eyJoaXN0b3J5IjpbMTM0NTQxNzY0MSw4OTk2NjEwNiwtNDc3Mz
 MwMzE3LC04NTgzMzc3MzQsMTQ1Mzc5NTg5Ml19
 -->
