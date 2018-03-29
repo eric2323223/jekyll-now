@@ -154,7 +154,8 @@ figure: intuition
 - policy function $p()$
 - reward function $r()$
 - 
-
+`for each timestep:'
+	`
 3. 
 ![](http://karpathy.github.io/assets/rl/policy.png)
 https://medium.com/@dhruvp/how-to-write-a-neural-network-to-play-pong-from-scratch-956b57d4f6e0
@@ -197,6 +198,6 @@ PG关键词是抽样，通过抽样模拟目标函数，避免了遍历，由于
 - [Deep Reinforcement Learning: Pong from Pixels](http://karpathy.github.io/2016/05/31/rl/)
 - 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTQ1NjYyNzQ5Nyw4OTk2NjEwNiwtNDc3Mz
+eyJoaXN0b3J5IjpbMTA0NDkwMjY5NSw4OTk2NjEwNiwtNDc3Mz
 MwMzE3LC04NTgzMzc3MzQsMTQ1Mzc5NTg5Ml19
 -->
