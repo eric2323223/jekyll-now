@@ -153,7 +153,7 @@ figure: intuition
 学习的目的是理解如何控制球拍（即上下移动），而依据当前球拍的位置和球的速度位置信息，这些信息通过观察屏幕得到的。另外还需要通过观察双方的得分了解学习的效果。
 
 ```
-	policy = createPolicy(random(theta))
+	policy = buildModel(random(theta))
 	game.init()
 	while(True):
 		action = poliy_function(game.getState())
@@ -212,6 +212,6 @@ PG关键词是抽样，通过抽样模拟目标函数，避免了遍历，由于
 - [Deep Reinforcement Learning: Pong from Pixels](http://karpathy.github.io/2016/05/31/rl/)
 - 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQwNzAzMzY1MywxMzkxMzgyMjMwLC00NT
+eyJoaXN0b3J5IjpbMTQ3OTc1NDA3MiwxMzkxMzgyMjMwLC00NT
 A4MjMzMTQsLTg1ODMzNzczNCwxNDUzNzk1ODkyXX0=
 -->
