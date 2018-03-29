@@ -156,7 +156,7 @@ figure: intuition
 	policy = some_NN_model(random(theta))
 	game.init()
 	while(True):
-		action = poliy_function(game.getState())
+		action = policy.forward(game.getState())
 		game.act(action)
 		reward = reward_function(game.getState())
 
@@ -165,7 +165,7 @@ figure: intuition
 		if terminated:
 			score = log(PI)*cumulated_reward
 			derivative_score = 
-			policy.updateParameter(
+			policy.backward(
 			updatePolicy(derivative_score)
 
 			cumulated_reward = 0
@@ -212,6 +212,6 @@ PG关键词是抽样，通过抽样模拟目标函数，避免了遍历，由于
 - [Deep Reinforcement Learning: Pong from Pixels](http://karpathy.github.io/2016/05/31/rl/)
 - 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEwMjU4NzI2NTYsMTM5MTM4MjIzMCwtND
-UwODIzMzE0LC04NTgzMzc3MzQsMTQ1Mzc5NTg5Ml19
+eyJoaXN0b3J5IjpbLTczNDY0ODc2OCwxMzkxMzgyMjMwLC00NT
+A4MjMzMTQsLTg1ODMzNzczNCwxNDUzNzk1ODkyXX0=
 -->
