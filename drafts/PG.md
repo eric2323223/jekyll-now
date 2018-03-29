@@ -152,6 +152,7 @@ figure: intuition
 ![](http://karpathy.github.io/assets/rl/policy.png)
 https://medium.com/@dhruvp/how-to-write-a-neural-network-to-play-pong-from-scratch-956b57d4f6e0
 
+
 ## PG的改进
 ### 减小方差
 虽然PG理论上能处理基于值的方法无法处理的复杂问题，但由于PG依赖样本来优化策略，导致这种方法受样本个体差异影响有比较大的方差，学习的效果不容易持续增强和收敛。一个基本的改进思路是通过减少无效的元素来降低方差，由于当前的动作不会对过去的奖励产生影响，因此可以将$\nabla_\theta J(\theta)$改写为
@@ -189,6 +190,6 @@ PG关键词是抽样，通过抽样模拟目标函数，避免了遍历，由于
 - [Deep Reinforcement Learning: Pong from Pixels](http://karpathy.github.io/2016/05/31/rl/)
 - 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODcyMTIxNjQ4LDg5OTY2MTA2LC00NzczMz
-AzMTcsLTg1ODMzNzczNCwxNDUzNzk1ODkyXX0=
+eyJoaXN0b3J5IjpbMTY2NTUyODc5OCw4OTk2NjEwNiwtNDc3Mz
+MwMzE3LC04NTgzMzc3MzQsMTQ1Mzc5NTg5Ml19
 -->
