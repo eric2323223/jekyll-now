@@ -148,7 +148,7 @@ figure: intuition
 3. **改进策略**	使用2计算出的$\nabla J(\theta)$更新$\theta$
 
 ### PG应用
-通过实例介绍如何应用PG解决具体问题，学习玩Atari Pong游戏。 PONG是一个模拟打乒乓球的游戏，玩家控制屏幕一侧的一小块平面（模拟乒乓球拍）上下移动来击球。如果迫使对方失球则己方一侧的得分加一，反之对方得分。
+通过实例介绍如何应用PG解决具体问题，学习玩Atari Pong游戏。 PONG是一个模拟打乒乓球的游戏，玩家控制屏幕一侧的一小块平面（模拟乒乓球拍）上下移动来击球。如果迫使对方失球则己方一侧的得分加一，反之对方得分。使用PG学习
 ![](http://karpathy.github.io/assets/rl/policy.png)
 https://medium.com/@dhruvp/how-to-write-a-neural-network-to-play-pong-from-scratch-956b57d4f6e0
 
@@ -190,6 +190,6 @@ PG关键词是抽样，通过抽样模拟目标函数，避免了遍历，由于
 - [Deep Reinforcement Learning: Pong from Pixels](http://karpathy.github.io/2016/05/31/rl/)
 - 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTUwMjIwNTYxOSw4OTk2NjEwNiwtNDc3Mz
-MwMzE3LC04NTgzMzc3MzQsMTQ1Mzc5NTg5Ml19
+eyJoaXN0b3J5IjpbNDYwODgxMDE3LDg5OTY2MTA2LC00NzczMz
+AzMTcsLTg1ODMzNzczNCwxNDUzNzk1ODkyXX0=
 -->
