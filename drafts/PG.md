@@ -150,7 +150,7 @@ figure: intuition
 ### PG应用
 通过实例介绍如何应用PG解决具体问题，学习玩Atari Pong游戏。 PONG是一个模拟打乒乓球的游戏，玩家控制屏幕一侧的一小块平面（模拟乒乓球拍）上下移动来击球。如果迫使对方失球则己方一侧的得分加一，反之对方得分。使用PG学习PONG游戏的过程可以分为一下几个阶段。
 1. 建模
-学习的目的是理解如何控制球拍（即上下移动），而依据当前球的速度和位置信息，这些信息通过观察屏幕得到的。由此
+学习的目的是理解如何控制球拍（即上下移动），而依据当前球拍的位置和球的速度和位置信息，这些信息通过观察屏幕得到的。由此可知
 3. 
 ![](http://karpathy.github.io/assets/rl/policy.png)
 https://medium.com/@dhruvp/how-to-write-a-neural-network-to-play-pong-from-scratch-956b57d4f6e0
@@ -193,6 +193,6 @@ PG关键词是抽样，通过抽样模拟目标函数，避免了遍历，由于
 - [Deep Reinforcement Learning: Pong from Pixels](http://karpathy.github.io/2016/05/31/rl/)
 - 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEyMDg4ODM5OTEsODk5NjYxMDYsLTQ3Nz
+eyJoaXN0b3J5IjpbLTExNzA5MjAzMDQsODk5NjYxMDYsLTQ3Nz
 MzMDMxNywtODU4MzM3NzM0LDE0NTM3OTU4OTJdfQ==
 -->
