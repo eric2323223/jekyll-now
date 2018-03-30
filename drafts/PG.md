@@ -171,7 +171,7 @@ figure: intuition
 1. 构造一个策略模型并随机的初始化模型的参数$\theta$。模型的功能是通过前向传递由状态信息计算出所有动作的概率分布，例如（向上90%，向下10%），并选取概率最大的动作发给游戏作为指令。
 2. 开始游戏。
 3. 获得当前的状态，如球拍的位置和球的移动速度方向信息。
-4. 将状态信息传入策略模型计算相应的动作，这里还要记录动作的概率是为了用于在反向传递计算$\nabla J(\theta) = 1$
+4. 将状态信息传入策略模型计算相应的动作，这里还要记录动作的概率是为了用于在反向传递计算$\nabla J(\theta) = \nabla log\pi_\theta(\tau)r(\tau)$
 3![](http://karpathy.github.io/assets/rl/policy.png)
 https://medium.com/@dhruvp/how-to-write-a-neural-network-to-play-pong-from-scratch-956b57d4f6e0
 
@@ -213,6 +213,6 @@ PG关键词是抽样，通过抽样模拟目标函数，避免了遍历，由于
 - [Deep Reinforcement Learning: Pong from Pixels](http://karpathy.github.io/2016/05/31/rl/)
 - 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODk3NjQyMjU0LC0xNTg3OTQ1NTY3LDEzOT
-EzODIyMzAsLTg1ODMzNzczNCwxNDUzNzk1ODkyXX0=
+eyJoaXN0b3J5IjpbMTgzNDA3NDM2MSwtMTU4Nzk0NTU2NywxMz
+kxMzgyMjMwLC04NTgzMzc3MzQsMTQ1Mzc5NTg5Ml19
 -->
