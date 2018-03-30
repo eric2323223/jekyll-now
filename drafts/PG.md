@@ -172,7 +172,8 @@ figure: intuition
 3. 获得当前的状态，如球拍的位置和球的移动速度方向信息。
 4. 将状态信息传入策略模型计算相应的动作，这里还要记录动作的概率$\pi(s)$是为了用于在反向传递计算$\nabla J(\theta) = \mathbb E[\nabla log\pi_\theta(\tau)r(\tau)]$
 5. 使用4计算出的动作进行游戏并获得奖励reward。
-6. 将一轮的交互信息（状态，动作概率，动作和奖励）存入
+6. 将一轮的交互信息（状态，动作概率，动作和奖励）存入当前轨迹$\tau$中。
+7. 
 3![](http://karpathy.github.io/assets/rl/policy.png)
 https://medium.com/@dhruvp/how-to-write-a-neural-network-to-play-pong-from-scratch-956b57d4f6e0
 
@@ -214,6 +215,6 @@ PG关键词是抽样，通过抽样模拟目标函数，避免了遍历，由于
 - [Deep Reinforcement Learning: Pong from Pixels](http://karpathy.github.io/2016/05/31/rl/)
 - 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEyMzczNDcwNjMsLTE1ODc5NDU1NjcsMT
-M5MTM4MjIzMCwtODU4MzM3NzM0LDE0NTM3OTU4OTJdfQ==
+eyJoaXN0b3J5IjpbLTY0MjI3MjkzOCwtMTU4Nzk0NTU2NywxMz
+kxMzgyMjMwLC04NTgzMzc3MzQsMTQ1Mzc5NTg5Ml19
 -->
