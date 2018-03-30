@@ -160,7 +160,7 @@ figure: intuition
 		action, prob = policy.forward(game.getState())
 		game.play(action)
 		reward = rewardRecognizer(state)
-		trajectory.append((state, action, reward))
+		trajectory.append((state, prob, action, reward))
 
 		if terminated:
 			policy.backward(trajectory)
@@ -208,6 +208,6 @@ PG关键词是抽样，通过抽样模拟目标函数，避免了遍历，由于
 - [Deep Reinforcement Learning: Pong from Pixels](http://karpathy.github.io/2016/05/31/rl/)
 - 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjEzMDAyMDA3NSwtMTU4Nzk0NTU2NywxMz
-kxMzgyMjMwLC04NTgzMzc3MzQsMTQ1Mzc5NTg5Ml19
+eyJoaXN0b3J5IjpbLTE0NDk3ODM4MDYsLTE1ODc5NDU1NjcsMT
+M5MTM4MjIzMCwtODU4MzM3NzM0LDE0NTM3OTU4OTJdfQ==
 -->
