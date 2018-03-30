@@ -161,7 +161,7 @@ figure: intuition
 		game.play(action)
 		reward = rewardRecognizer(state)
 		trajectory.append((state, prob, action, reward))
-		if terminated:
+		if game.terminated():
 			if count < SAMPLE_COUNT:
 				count += 1
 				break
@@ -212,6 +212,6 @@ PG关键词是抽样，通过抽样模拟目标函数，避免了遍历，由于
 - [Deep Reinforcement Learning: Pong from Pixels](http://karpathy.github.io/2016/05/31/rl/)
 - 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTIyNDUyNjgwNCwtMTU4Nzk0NTU2NywxMz
-kxMzgyMjMwLC04NTgzMzc3MzQsMTQ1Mzc5NTg5Ml19
+eyJoaXN0b3J5IjpbNzg1Mzc1MDkxLC0xNTg3OTQ1NTY3LDEzOT
+EzODIyMzAsLTg1ODMzNzczNCwxNDUzNzk1ODkyXX0=
 -->
