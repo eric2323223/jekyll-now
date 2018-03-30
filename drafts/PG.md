@@ -168,7 +168,7 @@ figure: intuition
 				trajectory = []
 				count = 0
 ```
-1. 构造一个策略模型并随机的初始化模型的参数$\theta$，模型可以这里的模型可以使用卷积神经网络
+1. 构造一个策略模型并随机的初始化模型的参数$\theta$，模型接收当前的游戏状态这里的模型可以使用卷积神经网络
 3. ![](http://karpathy.github.io/assets/rl/policy.png)
 https://medium.com/@dhruvp/how-to-write-a-neural-network-to-play-pong-from-scratch-956b57d4f6e0
 
@@ -210,6 +210,6 @@ PG关键词是抽样，通过抽样模拟目标函数，避免了遍历，由于
 - [Deep Reinforcement Learning: Pong from Pixels](http://karpathy.github.io/2016/05/31/rl/)
 - 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTM1Mzk2Njc1OCwtMTU4Nzk0NTU2NywxMz
+eyJoaXN0b3J5IjpbLTk5NjUxMzYxNSwtMTU4Nzk0NTU2NywxMz
 kxMzgyMjMwLC04NTgzMzc3MzQsMTQ1Mzc5NTg5Ml19
 -->
