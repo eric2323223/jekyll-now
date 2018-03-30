@@ -148,7 +148,7 @@ figure: intuition
 3. **改进策略**	使用2计算出的$\nabla J(\theta)$更新$\theta$
 
 ### PG应用
-通过实例介绍如何应用PG解决具体问题，学习玩Atari Pong游戏。 PONG是一个模拟打乒乓球的游戏，玩家控制屏幕一侧的一小块平面（模拟乒乓球拍）上下移动来击球。如果迫使对方失球则己方一侧的得分加一，反之对方得分。使用PG学习PONG游戏的过程可以写成以下伪代码：
+通过实例介绍如何应用PG解决具体问题，学习玩Atari Pong游戏。 PONG是一个模拟打乒乓球的游戏，玩家控制屏幕一侧的一小块平面（模拟乒乓球拍）上下移动来击球。如果迫使对方失球则己方一侧的得分加一，反之对方得分。使用PG学习PONG游戏的方法是使用的过程可以写成以下伪代码：
 ```
 	policy = build_policy_model()
 	game.start()
@@ -174,7 +174,7 @@ figure: intuition
 5. 使用4计算出的动作进行游戏并获得奖励reward。
 6. 将一轮的交互信息（状态，动作概率，动作和奖励）存入当前轨迹$\tau$中。
 7. 如果游戏未结束（乒乓球还在被双方击打中）则继续使用当前的策略模型进行下一轮的交互。
-8. 如果游戏结束（一方未击中
+8. 如果游戏结束（一方未击中乒乓球）则
 3![](http://karpathy.github.io/assets/rl/policy.png)
 https://medium.com/@dhruvp/how-to-write-a-neural-network-to-play-pong-from-scratch-956b57d4f6e0
 
@@ -216,6 +216,6 @@ PG关键词是抽样，通过抽样模拟目标函数，避免了遍历，由于
 - [Deep Reinforcement Learning: Pong from Pixels](http://karpathy.github.io/2016/05/31/rl/)
 - 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzMwNzA3MDE0LC0xNTg3OTQ1NTY3LDEzOT
-EzODIyMzAsLTg1ODMzNzczNCwxNDUzNzk1ODkyXX0=
+eyJoaXN0b3J5IjpbLTExOTQ1MTI5NDAsLTE1ODc5NDU1NjcsMT
+M5MTM4MjIzMCwtODU4MzM3NzM0LDE0NTM3OTU4OTJdfQ==
 -->
