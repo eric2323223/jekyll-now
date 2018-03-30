@@ -159,10 +159,12 @@ figure: intuition
 		trajectory.append((state, prob, action, reward))
 		if game.terminated():
 			if count < SAMPLE_COUNT:
+				trajectories.append(trojectrory)
+				trojectroy = []
 				count += 1
 				break
 			else:
-				policy.backpropagation(trajectory)
+				policy.backpropagation(trajectories)
 				game.restart()
 				trajectory = []
 				count = 0
@@ -216,6 +218,6 @@ PG关键词是抽样，通过抽样模拟目标函数，避免了遍历，由于
 - [Deep Reinforcement Learning: Pong from Pixels](http://karpathy.github.io/2016/05/31/rl/)
 - 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTMzOTIyMDE4LC0xNTg3OTQ1NTY3LDEzOT
-EzODIyMzAsLTg1ODMzNzczNCwxNDUzNzk1ODkyXX0=
+eyJoaXN0b3J5IjpbMTE5NDE1OTkxMywtMTU4Nzk0NTU2NywxMz
+kxMzgyMjMwLC04NTgzMzc3MzQsMTQ1Mzc5NTg5Ml19
 -->
