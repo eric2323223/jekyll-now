@@ -58,12 +58,13 @@ $$
 ~~MDP:Reward function~~
 **Policy策略** $\pi_\theta(a|s)$ 表示在状态$s$和参数$\theta$条件下发生动作$a$的概率
 **Episode轮次**: 表示从起始状态开始使用某种策略产生动作与对象系统交互，直到某个终结状态结束。比如在围棋游戏中的一个轮次就是从棋盘中的第一个落子开始直到对弈分出胜负，或者自动驾驶的轮次指从汽车启动一直到顺利抵达指定的目的地，当然撞车或者开进水塘也是种不理想的终结状态。
-**轮次奖励**：
-**Trajectory轨迹** $\tau$ 表示在PG一个轮次的学习中状态$s$，动作$a$和奖励$r$的顺序排列
+**Trajectory轨迹** $\tau$ 表示在PG一个轮次的学习中状态$s$，动作$a$和奖励$r$的顺序排列。
+由于策略产生的是非确定的动作，同一个策略在多个轮次可以产生多个不同的轨迹。
 $$
 \tau = (s_0, a_0, r_0, s_1, a_1, r_1, ... , s_t, a_t, r_t)
 $$
-由于策略产生的是非确定的动作，同一个策略在多个轮次可以产生多个不同的轨迹。~~因此在实现中对每个策略会求多个轮次的平均值~~
+**轮次奖励**：$\sum r(\tau)$表示在一个轮次中依次动作产生的奖励的总和。
+~~因此在实现中对每个策略会求多个轮次的平均值~~
 
 >如果Agent的某个行为策略导致环境正的奖赏(强化信号)，那么Agent以后产生这个行为策略的趋势便会加强。Agent的目标是在每个离散状态发现最优策略以使期望的折扣奖赏和最大。
 强化学习把学习看作试探评价过程，Agent选择一个动作用于环境，环境接受该动作后状态发生变化，同时产生一个强化信号(奖或惩)反馈给Agent，Agent根据强化信号和环境当前状态再选择下一个动作，选择的原则是使受到正强化(奖)的概率增大。选择的动作不仅影响立即强化值，而且影响环境下一时刻的状态及最终的强化值。
@@ -72,7 +73,9 @@ $$
 
 
 PG的学习是一个策略的优化过程，最开始随机的生成一个策略，当然这个策略对对象系统一无所知，所以用这个策略产生的动作会从对象系统那里很可能会得到一个负面奖励，这个过程就好像我们的自动驾驶策略在面对笔直的路面而产生右转的动作导致汽车撞上路边的行人这样的严重后果。为了更好的驾驶汽车PG需要不断的改变策略从而获得更高的轮次奖励（安全快速的到达目的地），PG在一轮的学习中使用同一个策略直到该轮结束，通过梯度上升改变策略并开始下一轮学习，如此往复直到轮次累计奖励不再增长停止。   ~~一个使得action的选择服从一定的概率分布，通过使用这个策略完成所有交互，这就把一个复杂的实际问题转化成了概率优化问题~~
-![enter image description here](https://github.com/eric2323223/ML/blob/dev/drafts/PG1.PNG?raw=true)
+![](http://karpathy.github.io/assets/rl/pg.png)
+
+![](https://github.com/eric2323223/ML/blob/dev/drafts/PG1.PNG?raw=true)
 
 ### 实现
 我们知道在监督式学习中一般会选择一种loss function, 如square loss, Hinge loss, logistic loss等，来表示真实值和实际值的差距从而据此在反向传递中进行参数的更新。在策略梯度学习中同样需要类似的函数表示当前的效果，这就是目标函数。
@@ -135,7 +138,7 @@ $$
 $$
 \theta = \theta + \alpha \nabla J(\theta)
 $$
-![](http://karpathy.github.io/assets/rl/pg.png)
+
 >A visualization of the score function gradient estimator. **Left**: A gaussian distribution and a few samples from it (blue dots). On each blue dot we also plot the gradient of the log probability with respect to the gaussian's mean parameter. The arrow indicates the direction in which the mean of the distribution should be nudged to increase the probability of that sample. **Middle**: Overlay of some score function giving -1 everywhere except +1 in some small regions (note this can be an arbitrary and not necessarily differentiable scalar-valued function). The arrows are now color coded because due to the multiplication in the update we are going to average up all the green arrows, and the _negative_ of the red arrows. **Right**: after parameter update, the green arrows and the reversed red arrows nudge us to left and towards the bottom. Samples from this distribution will now have a higher expected score, as desired.
 
 以上为了推导用于反向传递的可计算的$\nabla J(\theta)$列出了很多表达式，目的是帮助读者理解PG算法实现，因为在代码实现中会直接使用~~表达式x~~计算$\nabla J(\theta)$，如果直接看代码而不了解$\nabla J(\theta)$的变形的话恐怕会觉得费解。不过从$\nabla_\theta J(\theta)$和$\pi_\theta(\tau)$$r(\tau)$的基本关系还是能够作出这样的直观解释：如果奖励($r(\tau)$)比较高时，策略($\pi_\theta(\tau)$)会倾向于增加相应的动作的概率，如果奖励比较低时，策略会倾向于降低相应动作的概率。从机器学习的原理的角度来看，PG和传统的监督式学习的学习过程还是比较相似的，每轮次都由前向传递和反向传递构成，前向传递负责计算目标函数，反向传递负责更新算法的参数，依此进行多轮次的学习指导学习效果稳定收敛。唯一不同的是，监督式学习的目标函数相对直接，即目标值和真实值的差，这个值一次前向传递就能得到；而PG的目标函数源自轮次内所有得到的奖励，并且需要进行一定的数学转换才能计算，另外由于用抽样模拟期望，也需要对同一套参数进行多次抽样来增加模拟的准确性。
@@ -204,15 +207,15 @@ $$
 
 
 ## 总结
-如果用通俗的话来总结PG，那就是“PG基本靠猜”。但这不是瞎猜，而是用随机（stochastic）的方式科学的猜，随机既保证了非确定性又能通过控制概率避免完全盲目，是PG解决复杂问题的核心和基础。
-PG的流行主要由于两点，一是算法原理上使处理复杂问题成为可能，二是可以直接通过交互学习而无需标签数据，节省了很大的人力。从算法原理上讲，PG最大的两个特点是随机（stochastic）和抽样（sampling），随机既保证了非确定性又能通过控制概率避免完全盲目，是PG解决复杂问题的基础，猜；抽样则是另一个解决复杂问题的有力武器，
-关键词是抽样和随机，通过抽样模拟目标函数，避免了遍历，由于抽样导致较大的方查
+如果让作者用通俗的话来总结PG，那就是“PG基本靠猜”。这里的猜不是瞎猜，而是用随机（stochastic）的方式科学的猜，随机既保证了非确定性又能通过控制概率避免完全盲目，是PG解决复杂问题的核心和基础。双刃剑的另一面是，‘猜’这个特点造成了PG方差大、收敛慢的缺点，这是源于 	这个无法完全避免，
+但是瑕不掩瑜，PG除了理论上的处理复杂问题的优势，在实践应用中也有明显的优势，那就是它可以仅靠与目标系统交互进行学习，而不需要标签数据，这节省了大量的人力。 目前层出不穷的variance reduction的方法也证明了人们不仅没有因为PG的缺点放弃它，反而正在通过不断的改进使其扬长避短，发扬光大。
+
 
 
 ### 参考资料
 - [Deep Reinforcement Learning: Pong from Pixels](http://karpathy.github.io/2016/05/31/rl/)
 - [Berkeley deep reinforcement learning course](http://rll.berkeley.edu/deeprlcourse/f17docs/lecture_4_policy_gradient.pdf)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjEyNzM0OTExMywtMTU4Nzk0NTU2NywxMz
-kxMzgyMjMwLC04NTgzMzc3MzQsMTQ1Mzc5NTg5Ml19
+eyJoaXN0b3J5IjpbOTcyMDA0ODM3LC0xNTg3OTQ1NTY3LDEzOT
+EzODIyMzAsLTg1ODMzNzczNCwxNDUzNzk1ODkyXX0=
 -->
