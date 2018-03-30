@@ -159,8 +159,7 @@ figure: intuition
 		state = game.currentState()
 		action, prob = policy.forward(game.getState())
 		game.play(action)
-		reward = rewardRecogni(state)
-
+		reward = rewardRecognizer(state)
 		trajectory.append((state, action, reward))
 
 		if terminated:
@@ -170,9 +169,7 @@ figure: intuition
 
 			cumulated_reward = 0
 			game.reset()
-			rewards = []
-			states = []
-			actions = []
+			trajectory = []
 ```
 3. ![](http://karpathy.github.io/assets/rl/policy.png)
 https://medium.com/@dhruvp/how-to-write-a-neural-network-to-play-pong-from-scratch-956b57d4f6e0
@@ -215,6 +212,6 @@ PG关键词是抽样，通过抽样模拟目标函数，避免了遍历，由于
 - [Deep Reinforcement Learning: Pong from Pixels](http://karpathy.github.io/2016/05/31/rl/)
 - 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTE0NDIzMzU5NywtMTU4Nzk0NTU2NywxMz
+eyJoaXN0b3J5IjpbLTk0ODkyMTI0MiwtMTU4Nzk0NTU2NywxMz
 kxMzgyMjMwLC04NTgzMzc3MzQsMTQ1Mzc5NTg5Ml19
 -->
