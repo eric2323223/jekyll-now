@@ -155,7 +155,7 @@ figure: intuition
 ```
 	policy = some_NN_model(random(theta))
 	game.init()
-	while(True):
+	while True:
 		state = game.currentState()
 		action, prob = policy.forward(game.getState())
 		game.play(action)
@@ -208,6 +208,6 @@ PG关键词是抽样，通过抽样模拟目标函数，避免了遍历，由于
 - [Deep Reinforcement Learning: Pong from Pixels](http://karpathy.github.io/2016/05/31/rl/)
 - 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTUzNDI4MTA5MCwtMTU4Nzk0NTU2NywxMz
+eyJoaXN0b3J5IjpbLTU3MDI3MzkzOSwtMTU4Nzk0NTU2NywxMz
 kxMzgyMjMwLC04NTgzMzc3MzQsMTQ1Mzc5NTg5Ml19
 -->
