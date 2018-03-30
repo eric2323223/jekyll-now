@@ -158,7 +158,7 @@ figure: intuition
 	while(True):
 		action, prob = policy.forward(game.getState())
 		game.act(action)
-		reward = reward_function(game.getState())
+		reward = score_function(game.getState())
 
 		cumulated_reward += reward
 
@@ -211,6 +211,6 @@ PG关键词是抽样，通过抽样模拟目标函数，避免了遍历，由于
 - [Deep Reinforcement Learning: Pong from Pixels](http://karpathy.github.io/2016/05/31/rl/)
 - 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNDA1MTk0MTYzLC0xNTg3OTQ1NTY3LDEzOT
-EzODIyMzAsLTg1ODMzNzczNCwxNDUzNzk1ODkyXX0=
+eyJoaXN0b3J5IjpbMTExNjIyNDYyOCwtMTU4Nzk0NTU2NywxMz
+kxMzgyMjMwLC04NTgzMzc3MzQsMTQ1Mzc5NTg5Ml19
 -->
