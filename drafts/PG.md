@@ -159,7 +159,7 @@ figure: intuition
 		trajectory.append((state, prob, action, reward))
 		if game.terminated():
 			if count < SAMPLE_COUNT:
-				trajectories.append(trojectrory)
+				trajectories.append(trajectrory)
 				trojectroy = []
 				count += 1
 				break
@@ -167,6 +167,7 @@ figure: intuition
 				policy.backpropagation(trajectories)
 				game.restart()
 				trajectory = []
+				trajectories = []
 				count = 0
 ```
 1. 构造一个策略模型并随机的初始化模型的参数$\theta$。模型的功能是通过前向传递由状态信息计算出所有动作的概率分布，例如（向上90%，向下10%），并选取概率最大的动作发给游戏作为指令。
@@ -176,7 +177,7 @@ figure: intuition
 5. 使用4计算出的动作进行游戏并获得奖励reward。
 6. 将一轮的交互信息（状态，动作概率，动作和奖励）存入当前轨迹$\tau$中。
 7. 如果游戏未结束（乒乓球还在被双方击打中）则继续使用当前的策略模型进行下一步的交互。
-8. 如果游戏结束（一方未击中乒乓球）则使用相同的策略模型开始新一轮的
+8. 如果游戏结束（一方未击中乒乓球）则保存上一轮轨迹信息使用相同的策略模型开始新一轮的
 3![](http://karpathy.github.io/assets/rl/policy.png)
 https://medium.com/@dhruvp/how-to-write-a-neural-network-to-play-pong-from-scratch-956b57d4f6e0
 
@@ -218,6 +219,6 @@ PG关键词是抽样，通过抽样模拟目标函数，避免了遍历，由于
 - [Deep Reinforcement Learning: Pong from Pixels](http://karpathy.github.io/2016/05/31/rl/)
 - 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTE5NDE1OTkxMywtMTU4Nzk0NTU2NywxMz
+eyJoaXN0b3J5IjpbMjEzNTk3OTEwMywtMTU4Nzk0NTU2NywxMz
 kxMzgyMjMwLC04NTgzMzc3MzQsMTQ1Mzc5NTg5Ml19
 -->
