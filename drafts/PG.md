@@ -144,7 +144,7 @@ figure: intuition
 
 
 ### PG应用
-下面我们通过一个实例介绍如何应用PG解决具体问题：学习玩Atari Pong游戏。 PONG是一个模拟打乒乓球的游戏，玩家控制屏幕一侧的一小块平面（模拟乒乓球拍）上下移动来击球。如果迫使对方失球则己方一侧的得分加一，反之对方得分。使用PG学习PONG游戏的方法是使用PG算法控制的一方与游戏控制的另一方进行交互，通过观察比分变化调整动作（向上或向下）的概率分布，使本方得分最大化。学习的过程可以写成以下伪代码：
+下面我们通过一个实例介绍如何应用PG解决具体问题：学习玩Atari Pong游戏。 PONG是一个模拟打乒乓球的游戏，玩家控制屏幕一侧的一小块平面（模拟乒乓球拍）上下移动来击球。如果迫使对方失球则己方一侧的得分加一，反之对方得分。使用PG学习PONG游戏的基本思路是使用PG算法控制的一方与游戏控制的另一方进行对弈，通过观察游戏状态以及比分变化调整动作（向上或向下）的概率分布，使本方得分最大化。学习的过程可以写成以下伪代码：
 ```
 	policy = build_policy_model()
 	game.start()
@@ -197,26 +197,21 @@ $$
 $$
 \mathbb E[\nabla_\theta log\pi(\tau)b]=\int \pi_\theta(\tau)\nabla_\ log _\theta(\tau)bd\tau=\int \pi_\theta(\tau)\nabla_\theta(\tau)bd\tau = b\nabla_\theta\int \pi_\theta(\tau)d\tau
 $$
-由于$\pi()$是概率密度函数$\int \pi_\theta(\tau)d\tau=1$，因此
-$$
-\mathbb E[\nabla_\theta log\pi(\tau)b] = b\nabla_\theta1=0
-$$
-由此我们证明了引入基准$b$不会对$\nabla_\theta J(\theta)$产生影响。目前比较常用的基准值是均值，需要说明的是基准值依赖抽样因此是一个动态变化的值而非一成不变
-$$
-b=\frac{1}{N}\sum_{i=1}^N r(a_i, s_i)
-$$
-学术界还在尝试用其他方法生成更好的基准值，Actor-Critic就是一个典型的代表，简单来说这种方法使用DQN方法来生成baseline，由于这不是本文讨论的重点故不做展开介绍。
+由于$\pi()$是概率密度函数$\int \pi_\theta(\tau)d\tau=1$，因此$\mathbb E[\nabla_\theta log\pi(\tau)b] = b\nabla_\theta1=0$。由此我们证明了引入基准$b$不会对$\nabla_\theta J(\theta)$产生影响。
+目前比较常用的基准值是均值$b=\frac{1}{N}\sum_{i=1}^N r(a_i, s_i)$，需要说明的是基准值依赖抽样因此是一个动态变化的值而非一成不变。
+
+学术界还在尝试用其他方法生成更好的基准值，Actor-Critic就是一个典型的代表，这种方法的基本思想是使用DQN方法来生成baseline，由于这不是本文讨论的重点故不做展开介绍。
 
 
 ## 总结
 
-PG关键词是抽样，通过抽样模拟目标函数，避免了遍历，由于抽样导致较大的方查
+PG关键词是抽样和随机，通过抽样模拟目标函数，避免了遍历，由于抽样导致较大的方查
 
 
 ### 参考资料
 - [Deep Reinforcement Learning: Pong from Pixels](http://karpathy.github.io/2016/05/31/rl/)
 - 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTY2NjYyNTM0MiwtMTU4Nzk0NTU2NywxMz
+eyJoaXN0b3J5IjpbMTg4NTAzMDE4MiwtMTU4Nzk0NTU2NywxMz
 kxMzgyMjMwLC04NTgzMzc3MzQsMTQ1Mzc5NTg5Ml19
 -->
