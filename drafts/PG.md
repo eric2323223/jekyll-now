@@ -193,11 +193,11 @@ $$
 $$
 \nabla_\theta J(\theta) \approx\frac{1}{N}\sum_{i=1}^N[(\sum_{t=1}^Tlog\pi_\theta(a_{i,t}|s_{i,t}))(\sum_{t'=t}^T\gamma^{t'-t} r(a_{i,t'}, s_{i, t'}))]
 $$
-另外一个思路是通过引入基准(baseline)$b$减小方差，这是因为实际计算中产生的总奖励并不能准确代表这个策略的好坏程度，比如有可能一个不太好的策略也能得到一个正向的总奖励
+另外一个思路是通过引入基准(baseline)$b$减小方差，这是因为实际计算中产生的轮次奖励并不能准确代表这个策略的好坏程度，比如当策略已经较好时，使用一个不太好的样本生成了较小的轮次奖励，由于这个奖励非负，传统的PG算法仍然尝试增加产生这个轨迹的动作的几率，从而导致学习策略不升反降。所以我们需要引入一个基准值，使得算法能够增加优于基准值的动作的概率，降低低于基准值动作的概率
 $$
 \nabla_\theta J(\theta) \approx\frac{1}{N}\sum_{i=1}^N[(\sum_{t=1}^Tlog\pi_\theta(a_{i,t}|s_{i,t}))(\sum_{t'=t}^Tr(a_{i,t'}, s_{i, t'})-b)]
 $$
-常见的基准值是均值
+常见的基准值是均值，需要说明的是基准值依赖抽样因此是一个动态变化的值而非一成不变
 $$
 b=\frac{1}{N}\sum_{i=1}^N r(a_i, s_i)
 $$
@@ -220,6 +220,6 @@ PG关键词是抽样，通过抽样模拟目标函数，避免了遍历，由于
 - [Deep Reinforcement Learning: Pong from Pixels](http://karpathy.github.io/2016/05/31/rl/)
 - 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTk4Mjk3NzY2MSwtMTU4Nzk0NTU2NywxMz
-kxMzgyMjMwLC04NTgzMzc3MzQsMTQ1Mzc5NTg5Ml19
+eyJoaXN0b3J5IjpbLTU0MTQwMzI5LC0xNTg3OTQ1NTY3LDEzOT
+EzODIyMzAsLTg1ODMzNzczNCwxNDUzNzk1ODkyXX0=
 -->
