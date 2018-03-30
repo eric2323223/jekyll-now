@@ -160,7 +160,7 @@ figure: intuition
 		game.act(action)
 		reward = score_function(game.getState())
 
-		rewards.append(
+		t
 
 		if terminated:
 			score = log(PI)*cumulated_reward
@@ -214,6 +214,6 @@ PG关键词是抽样，通过抽样模拟目标函数，避免了遍历，由于
 - [Deep Reinforcement Learning: Pong from Pixels](http://karpathy.github.io/2016/05/31/rl/)
 - 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjkwNjQwMzQxLC0xNTg3OTQ1NTY3LDEzOT
-EzODIyMzAsLTg1ODMzNzczNCwxNDUzNzk1ODkyXX0=
+eyJoaXN0b3J5IjpbLTQ3MzQ0NzM1NSwtMTU4Nzk0NTU2NywxMz
+kxMzgyMjMwLC04NTgzMzc3MzQsMTQ1Mzc5NTg5Ml19
 -->
