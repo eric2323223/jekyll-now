@@ -142,13 +142,9 @@ $$
 >可以看到强化学习有别于传统的机器学习，我们是不能立即得到标记的，而只能得到一个反馈，也可以说强化学习是一种**标记延迟的监督学习**
 figure: intuition
 
-从实现角度看，PG的学习过程可以分为三个阶段
-1. **取样**	对当前策略取多个轨迹用以准确计算目标函数，取样的过程就是用当前策略进行多次前向传递并保存轨迹
-2. **计算$\nabla J(\theta)$**
-3. **改进策略**	使用2计算出的$\nabla J(\theta)$更新$\theta$
 
 ### PG应用
-通过实例介绍如何应用PG解决具体问题，学习玩Atari Pong游戏。 PONG是一个模拟打乒乓球的游戏，玩家控制屏幕一侧的一小块平面（模拟乒乓球拍）上下移动来击球。如果迫使对方失球则己方一侧的得分加一，反之对方得分。使用PG学习PONG游戏的方法是使用PG算法控制的一方与游戏控制的另一方进行交互，通过观察比分变化调整动作（向上或向下）的概率分布，使本方得分最大化。学习的过程可以写成以下伪代码：
+下面我们通过一个实例介绍如何应用PG解决具体问题：学习玩Atari Pong游戏。 PONG是一个模拟打乒乓球的游戏，玩家控制屏幕一侧的一小块平面（模拟乒乓球拍）上下移动来击球。如果迫使对方失球则己方一侧的得分加一，反之对方得分。使用PG学习PONG游戏的方法是使用PG算法控制的一方与游戏控制的另一方进行交互，通过观察比分变化调整动作（向上或向下）的概率分布，使本方得分最大化。学习的过程可以写成以下伪代码：
 ```
 	policy = build_policy_model()
 	game.start()
@@ -197,10 +193,6 @@ $$
 $$
 \nabla_\theta J(\theta) \approx\frac{1}{N}\sum_{i=1}^N[(\sum_{t=1}^Tlog\pi_\theta(a_{i,t}|s_{i,t}))(\sum_{t'=t}^Tr(a_{i,t'}, s_{i, t'})-b)]
 $$
-常见的基准值是均值，需要说明的是基准值依赖抽样因此是一个动态变化的值而非一成不变
-$$
-b=\frac{1}{N}\sum_{i=1}^N r(a_i, s_i)
-$$
 由于
 $$
 \mathbb E[\nabla_\theta log\pi(\tau)b]=\int \pi_\theta(\tau)\nabla_\ log _\theta(\tau)bd\tau=\int \pi_\theta(\tau)\nabla_\theta(\tau)bd\tau = b\nabla_\theta\int \pi_\theta(\tau)d\tau
@@ -209,8 +201,13 @@ $$
 $$
 \mathbb E[\nabla_\theta log\pi(\tau)b] = b\nabla_\theta1=0
 $$
-由此我们证明了引入基准$b$不会对$\nabla_\theta J(\theta)$产生影响
-### 
+由此我们证明了引入基准$b$不会对$\nabla_\theta J(\theta)$产生影响。目前比较常用的基准值是均值，需要说明的是基准值依赖抽样因此是一个动态变化的值而非一成不变
+$$
+b=\frac{1}{N}\sum_{i=1}^N r(a_i, s_i)
+$$
+学术界还在尝试用其他方法生成更好的基准值，Actor-Critic就是一个典型的代表，简单来说这种方法使用DQN方法来生成baseline，由于这不是本文讨论的重点故不做展开介绍。
+
+
 ## 总结
 
 PG关键词是抽样，通过抽样模拟目标函数，避免了遍历，由于抽样导致较大的方查
@@ -220,6 +217,6 @@ PG关键词是抽样，通过抽样模拟目标函数，避免了遍历，由于
 - [Deep Reinforcement Learning: Pong from Pixels](http://karpathy.github.io/2016/05/31/rl/)
 - 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTU0MTQwMzI5LC0xNTg3OTQ1NTY3LDEzOT
-EzODIyMzAsLTg1ODMzNzczNCwxNDUzNzk1ODkyXX0=
+eyJoaXN0b3J5IjpbMTY2NjYyNTM0MiwtMTU4Nzk0NTU2NywxMz
+kxMzgyMjMwLC04NTgzMzc3MzQsMTQ1Mzc5NTg5Ml19
 -->
