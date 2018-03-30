@@ -163,11 +163,7 @@ figure: intuition
 		trajectory.append((state, action, reward))
 
 		if terminated:
-			score = log(PI)*cumulated_reward
-			derivative_score = 
-			policy.backward()
-
-			cumulated_reward = 0
+			policy.backward(trajectory)
 			game.reset()
 			trajectory = []
 ```
@@ -212,6 +208,6 @@ PG关键词是抽样，通过抽样模拟目标函数，避免了遍历，由于
 - [Deep Reinforcement Learning: Pong from Pixels](http://karpathy.github.io/2016/05/31/rl/)
 - 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTk0ODkyMTI0MiwtMTU4Nzk0NTU2NywxMz
+eyJoaXN0b3J5IjpbMTUzNDI4MTA5MCwtMTU4Nzk0NTU2NywxMz
 kxMzgyMjMwLC04NTgzMzc3MzQsMTQ1Mzc5NTg5Ml19
 -->
