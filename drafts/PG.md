@@ -177,7 +177,8 @@ figure: intuition
 5. 使用4计算出的动作进行游戏并获得奖励reward。
 6. 将一轮的交互信息（状态，动作概率，动作和奖励）存入当前轨迹$\tau$中。
 7. 如果游戏未结束（乒乓球还在被双方击打中）则继续使用当前的策略模型进行下一步的交互。
-8. 如果游戏结束（一方未击中乒乓球）则保存上一轮轨迹信息并使用相同的策略模型开始新一轮的游戏，也就是为了降低个体差异的影响，
+8. 如果游戏结束（一方未击中乒乓球）则保存上一轮轨迹信息并使用相同的策略模型开始新一轮的游戏，也就是为了降低个体差异的影响，为同一个策略模型生成多个样本。
+9. 当产生足够的样本以后
 3![](http://karpathy.github.io/assets/rl/policy.png)
 https://medium.com/@dhruvp/how-to-write-a-neural-network-to-play-pong-from-scratch-956b57d4f6e0
 
@@ -219,6 +220,6 @@ PG关键词是抽样，通过抽样模拟目标函数，避免了遍历，由于
 - [Deep Reinforcement Learning: Pong from Pixels](http://karpathy.github.io/2016/05/31/rl/)
 - 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTU3NzAwNDAwNSwtMTU4Nzk0NTU2NywxMz
-kxMzgyMjMwLC04NTgzMzc3MzQsMTQ1Mzc5NTg5Ml19
+eyJoaXN0b3J5IjpbNzg1MTA5NzY4LC0xNTg3OTQ1NTY3LDEzOT
+EzODIyMzAsLTg1ODMzNzczNCwxNDUzNzk1ODkyXX0=
 -->
