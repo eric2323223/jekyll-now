@@ -156,7 +156,7 @@ figure: intuition
 		state = game.currentState()
 		action, prob = policy.feedforward(state)
 		game.play(action)
-		reward = rewardRecognizer(state)
+		reward = game.getReward()
 		trajectory.append((state, prob, action, reward))
 		if game.terminated():
 			if count < SAMPLE_COUNT:
@@ -215,6 +215,6 @@ PG关键词是抽样，通过抽样模拟目标函数，避免了遍历，由于
 - [Deep Reinforcement Learning: Pong from Pixels](http://karpathy.github.io/2016/05/31/rl/)
 - 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTY4Nzc2MDM3NCwtMTU4Nzk0NTU2NywxMz
+eyJoaXN0b3J5IjpbMTk0NTk3MTE5MSwtMTU4Nzk0NTU2NywxMz
 kxMzgyMjMwLC04NTgzMzc3MzQsMTQ1Mzc5NTg5Ml19
 -->
