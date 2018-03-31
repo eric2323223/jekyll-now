@@ -5,7 +5,7 @@
 
 
 ## 强化学习
-Alpha GO战胜人类让大众惊叹于人工智能的突飞猛进的同时，也让人不禁好奇机器学习到底是如何实现对人类的超越，一方面传统的监督式学习(supervised learning)的效果受限于训练数据， 另一方面采用简单穷举的方式会遇到硬件的限制（围棋的状态组合空间$10^{360}$达到了宇宙粒子的数量级）。其实Alpha GO的一个秘密武器就是今天的主角-强化学习。强化学习诞生于上世纪80年代，开始应用于制造业，特别是工业机器人的自动控制（达到类似Boston dynamics 的机器狗的动作控制效果），近年来随着其他机器方法的流行开始应用于更加“智能”的场景，除了大名鼎鼎的Alpha GO，google deepmind团队还应用强化学习实现了计算机自主学习玩Atari系列电子游戏并超越了人类万家的水平，**。越来越多成功的应用表明强化学习 --
+Alpha GO战胜人类让大众惊叹于人工智能的突飞猛进的同时，也让人不禁好奇机器学习到底是如何实现对人类的超越，一方面传统的监督式学习(supervised learning)的效果受限于训练数据， 另一方面采用简单穷举的方式会遇到硬件的限制（围棋的状态组合空间$10^{360}$达到了宇宙粒子的数量级）。其实Alpha GO的一个秘密武器就是今天的主角-强化学习。强化学习诞生于上世纪80年代，开始应用于制造业，特别是工业机器人的自动控制（达到类似Boston Dynamics 的机器狗的动作控制效果），近年来随着其他机器方法的流行开始应用于更加“智能”的场景，除了大名鼎鼎的Alpha GO，google deepmind团队还应用强化学习实现了计算机自主学习玩Atari系列电子游戏并超越了人类万家的水平，**。越来越多成功的应用表明强化学习 --
 ### ![](https://fm.cnbc.com/applications/cnbc.com/resources/img/editorial/2017/11/13/104838704-spot.1910x1000.png?v=1510586396)
 
 强化学习是机器学习的一个分支，但是它与我们常见监督式学习（supervised learning）不太一样。从学习方式上讲强化学习更加接近人类的学习，记得我小时候玩新的电子游戏的时候虽然看不懂屏幕的提示但是经过自己的摸索也能掌握游戏方法，这个摸索的过程其实就是通过试错逐渐了解游戏规则的学习过程，强化学习也是通过一系列的尝试并通过得到的反馈不断调整自己的行为来学习陌生的环境。
@@ -216,6 +216,6 @@ $$
 - [Deep Reinforcement Learning: Pong from Pixels](http://karpathy.github.io/2016/05/31/rl/)
 - [Berkeley deep reinforcement learning course](http://rll.berkeley.edu/deeprlcourse/f17docs/lecture_4_policy_gradient.pdf)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQ2MzgzNTg0NCw5NzIwMDQ4MzcsLTE1OD
-c5NDU1NjcsLTg1ODMzNzczNCwxNDUzNzk1ODkyXX0=
+eyJoaXN0b3J5IjpbLTE2MDY5NDg1MTYsOTcyMDA0ODM3LC0xNT
+g3OTQ1NTY3LC04NTgzMzc3MzQsMTQ1Mzc5NTg5Ml19
 -->
