@@ -216,6 +216,6 @@ $$
 - [Deep Reinforcement Learning: Pong from Pixels](http://karpathy.github.io/2016/05/31/rl/)
 - [Berkeley deep reinforcement learning course](http://rll.berkeley.edu/deeprlcourse/f17docs/lecture_4_policy_gradient.pdf)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTE1NDA4MTU1Nyw5NzIwMDQ4MzcsLTE1OD
-c5NDU1NjcsLTg1ODMzNzczNCwxNDUzNzk1ODkyXX0=
+eyJoaXN0b3J5IjpbMTUwNjI5ODMxLDExNTQwODE1NTcsOTcyMD
+A0ODM3LC04NTgzMzc3MzQsMTQ1Mzc5NTg5Ml19
 -->
