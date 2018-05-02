@@ -1,5 +1,12 @@
  Loss functions
-
+## Classification
+### Cross entropy
+## Regression
+### MSE(Mean Square Error)
+### Triplet
+### CTC
+### Contrastive
+### Square loss
 
 
 ## Design of loss function
