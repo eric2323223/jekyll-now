@@ -32,9 +32,7 @@
 - [Picking Loss Functions - A comparison between MSE, Cross Entropy, and Hinge Loss](http://rohanvarma.me/Loss-Functions/)
 - [About loss functions, regularization and joint losses ](http://christopher5106.github.io/deep/learning/2016/09/16/about-loss-functions-multinomial-logistic-logarithm-cross-entropy-square-errors-euclidian-absolute-frobenius-hinge.html)
 - [Machine learning non-differentiable loss functions](http://khanhxnguyen.com/machine-learning-non-differentiable-loss-functions/)
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTc1MDU1NTk4OF19
--->
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQ0MTgyOTgwMF19
+eyJoaXN0b3J5IjpbLTE3NjQzNTYzODgsLTQ0MTgyOTgwMF19
 -->
