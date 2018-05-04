@@ -11,6 +11,8 @@
 
 ## Design of loss function
 ### Multi-task learning
+### Auxiliary loss?
+
 
 
 ## reference
