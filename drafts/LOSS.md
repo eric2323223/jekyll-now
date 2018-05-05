@@ -34,5 +34,5 @@
 - [Machine learning non-differentiable loss functions](http://khanhxnguyen.com/machine-learning-non-differentiable-loss-functions/)
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE3NjQzNTYzODgsLTQ0MTgyOTgwMF19
+eyJoaXN0b3J5IjpbLTE3NjQzNTYzODhdfQ==
 -->
