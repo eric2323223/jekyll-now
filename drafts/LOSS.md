@@ -1,4 +1,5 @@
- Loss functions
+# Loss functions
+
 ## Classification
 ### Cross entropy
 ## Regression
@@ -34,5 +35,5 @@
 - [Machine learning non-differentiable loss functions](http://khanhxnguyen.com/machine-learning-non-differentiable-loss-functions/)
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE3NjQzNTYzODhdfQ==
+eyJoaXN0b3J5IjpbNzg5MzI2NzEzLC0xNzY0MzU2Mzg4XX0=
 -->
