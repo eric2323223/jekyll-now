@@ -1,13 +1,50 @@
-# Loss functions
+# 漫谈Loss function
+说起机器学习就不能不提到loss function，因为所有的机器学习问题都可以抽象成对loss function的优化过程。Loss function的设计很大程度上决定了机器学习任务的成败，本文我们就聊聊loss function
 
-## Classification
-### Cross entropy
-## Regression
-### MSE(Mean Square Error)
-### Triplet
-### CTC
-### Contrastive
-### Square loss
+## 原理
+要想设计好loss function，就需要知道他的来历，为什么需要loss function呢？简单来说loss function是一种量化模型拟合程度的工具，我们知道机器学习（监督式机器学习）的常见方法是用标签数据训练模型使其不断接近现实，那么如何判断模型和现实的接近程度呢？如何判断模型已经足够好呢？loss function可以回答这些问题，loss function的loss表示了模型和真实的差距，当这个距离达到最小值的时候我们就认为模型达到最好的状态。所以机器学习实际上是一个求loss function最小值的问题。
+
+- convex loss function
+![](https://cdn-images-1.medium.com/max/1600/1*t6OiVIMKw3SBjNzj-lp_Fw.png)
+![](https://i0.wp.com/ucanalytics.com/blogs/wp-content/uploads/2017/09/Logistic-Regression-Loss-Function-3D-plot.jpg?fit=1146%2C1048)
+
+- non-convex function
+![](https://sebastianraschka.com/images/faq/visual-backpropagation/nonconvex-cost.png)
+![](https://i.stack.imgur.com/TY1L1.png)
+	- local minima
+		- SGD
+		- initialization
+		- 
+	- saddle point
+
+## 特性
+
+minimized the distance between expected value and ground truth value
+
+- convex vs. non-convex
+- semantics
+
+## 分类
+
+## 设计
+
+## 总结
+
+- 0/1 loss function
+- surrogate-loss-functions
+
+### Distance-based Loss function
+### Prediction error-based loss function
+
+## Purpose
+### Classification
+- Cross entropy
+### Regression
+ MSE(Mean Square Error)
+ Triplet
+ CTC
+# Contrastive
+ Square loss
 
 
 ## Design of loss function
@@ -33,7 +70,9 @@
 - [Picking Loss Functions - A comparison between MSE, Cross Entropy, and Hinge Loss](http://rohanvarma.me/Loss-Functions/)
 - [About loss functions, regularization and joint losses ](http://christopher5106.github.io/deep/learning/2016/09/16/about-loss-functions-multinomial-logistic-logarithm-cross-entropy-square-errors-euclidian-absolute-frobenius-hinge.html)
 - [Machine learning non-differentiable loss functions](http://khanhxnguyen.com/machine-learning-non-differentiable-loss-functions/)
-
+- [Loss function semantics](http://hunch.net/?p=269)
+- [Escaping from Saddle Points](http://www.offconvex.org/2016/03/22/saddlepoints/)
+- [How to Escape Saddle Points Efficiently](http://www.offconvex.org/2017/07/19/saddle-efficiency/)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNzg5MzI2NzEzLC0xNzY0MzU2Mzg4XX0=
+eyJoaXN0b3J5IjpbLTc1MDU1NTk4OF19
 -->
