@@ -78,3 +78,6 @@ minimized the distance between expected value and ground truth value
 - [Escaping from Saddle Points](http://www.offconvex.org/2016/03/22/saddlepoints/)
 - [How to Escape Saddle Points Efficiently](http://www.offconvex.org/2017/07/19/saddle-efficiency/)
 - [Surrogate loss functions](http://fa.bianp.net/blog/2014/surrogate-loss-functions-in-machine-learning/)
+<!--stackedit_data:
+eyJoaXN0b3J5IjpbLTE1NzE2OTE4MTNdfQ==
+-->
