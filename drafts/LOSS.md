@@ -7,7 +7,8 @@
 why GD?
 - there is no closed form solution
 - it is computational impossible to use analytical solution when data is huge
-what problem caused
+what problem caused by GD?
+- 0 gradient is not nessisarily gol
 how to escape from saddle point
 what is global minimum is not differenciable?
 how can SGD help?
@@ -93,5 +94,5 @@ minimized the distance between expected value and ground truth value
 - [Surrogate loss functions](http://fa.bianp.net/blog/2014/surrogate-loss-functions-in-machine-learning/)
 - [A comparison of loss function on deep embedding](https://www.slideshare.net/CenkBircanolu/a-comparison-of-loss-function-on-deep-embedding)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE3ODY3MDMwNzVdfQ==
+eyJoaXN0b3J5IjpbMjIyMTc2NzI2XX0=
 -->
