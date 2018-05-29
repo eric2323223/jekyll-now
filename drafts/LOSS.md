@@ -8,11 +8,12 @@
 当loss function是convex函数时，最小值存在于倒数$\frac {\delta L}{\delta w}$为零时， 图1表示一维$w$的loss function， 图2表示二维$w = (\beta_0, \beta_1)$的loss function
 - convex loss function
 ![](https://cdn-images-1.medium.com/max/1600/1*t6OiVIMKw3SBjNzj-lp_Fw.png)
-![](https://i0.wp.com/ucanalytics.com/blogs/wp-content/uploads/2017/09/Logistic-Regression-Loss-Function-3D-plot.jpg?fit=1146%2C1048)
+
 
 -2. non-convex function
-![](https://sebastianraschka.com/images/faq/visual-backpropagation/nonconvex-cost.png)
+
 ![](https://i.stack.imgur.com/TY1L1.png)
+![](https://www.cs.umd.edu/~tomg/img/landscapes/noshort.png)
 2. non-convex
 对于
 4. 	
@@ -83,6 +84,6 @@ minimized the distance between expected value and ground truth value
 - [Surrogate loss functions](http://fa.bianp.net/blog/2014/surrogate-loss-functions-in-machine-learning/)
 - [A comparison of loss function on deep embedding](https://www.slideshare.net/CenkBircanolu/a-comparison-of-loss-function-on-deep-embedding)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjA0NTQ2MTY1MSw2MDM5NzU2NjYsLTEyNz
-E2NzEzNzFdfQ==
+eyJoaXN0b3J5IjpbLTk5ODE3MTg0NiwyMDQ1NDYxNjUxLDYwMz
+k3NTY2NiwtMTI3MTY3MTM3MV19
 -->
