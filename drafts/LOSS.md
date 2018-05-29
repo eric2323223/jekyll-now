@@ -11,6 +11,7 @@ what problem caused by GD?
 - 0 gradient is not nessisarily global minimum
    - flat region
    - saddle point
+   - choose better loss function
 how to solve these problem?
 - SGD   
 how to escape from saddle point
@@ -98,5 +99,5 @@ minimized the distance between expected value and ground truth value
 - [Surrogate loss functions](http://fa.bianp.net/blog/2014/surrogate-loss-functions-in-machine-learning/)
 - [A comparison of loss function on deep embedding](https://www.slideshare.net/CenkBircanolu/a-comparison-of-loss-function-on-deep-embedding)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTgyMjE2NDE4NV19
+eyJoaXN0b3J5IjpbLTE1Mzc2MzQ1NDAsLTgyMjE2NDE4NV19
 -->
