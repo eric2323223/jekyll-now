@@ -14,6 +14,7 @@ what problem caused by GD?
 
 how to solve these problem?
 - choose better loss function
+    - surrogate loss function
 - SGD   
 how to escape from saddle point
 what is global minimum is not differenciable?
@@ -100,5 +101,6 @@ minimized the distance between expected value and ground truth value
 - [Surrogate loss functions](http://fa.bianp.net/blog/2014/surrogate-loss-functions-in-machine-learning/)
 - [A comparison of loss function on deep embedding](https://www.slideshare.net/CenkBircanolu/a-comparison-of-loss-function-on-deep-embedding)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjUxOTE0OTc0LC04MjIxNjQxODVdfQ==
+eyJoaXN0b3J5IjpbLTkyMDI4Nzk0MiwyNTE5MTQ5NzQsLTgyMj
+E2NDE4NV19
 -->
