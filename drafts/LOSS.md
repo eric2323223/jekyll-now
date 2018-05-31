@@ -40,7 +40,8 @@
 ### By purpose
 - classification
 - regression
-
+- multi-task learning
+### By ...
 
 - MSE
 - Cross entropy
@@ -61,19 +62,7 @@
 ### Distance-based Loss function
 ### Prediction error-based loss function
 
-## Purpose
-### Classification
-- Cross entropy
-### Regression
 
-# Contrastive
- Square loss
-
-
-## Design of loss function
-### Multi-task learning
-### Auxiliary loss?
-some test will be required to ensure it work like expected
 
 
 ## reference
@@ -100,6 +89,6 @@ some test will be required to ensure it work like expected
 - [Surrogate loss functions](http://fa.bianp.net/blog/2014/surrogate-loss-functions-in-machine-learning/)
 - [A comparison of loss function on deep embedding](https://www.slideshare.net/CenkBircanolu/a-comparison-of-loss-function-on-deep-embedding)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTkzMTQxOTc1LDE0OTM3NDI4MywtNjMxNz
-Q0NTkyLC01NTMxNjY0MzJdfQ==
+eyJoaXN0b3J5IjpbMTYyMjk4NjYwOCwxNDkzNzQyODMsLTYzMT
+c0NDU5MiwtNTUzMTY2NDMyXX0=
 -->
