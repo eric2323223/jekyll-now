@@ -8,13 +8,14 @@
 ### Gradient based optimization
 与数学中的求极值问题不同的地方是，机器学习中的求极值使用graident based的方法的的在学习的开始阶段我们最常见到的loss function是这样的，如图一所示
 
-why GD?
+#### why GD?
 - there is no closed form solution
 - it is computational impossible to use analytical solution when data is huge
-what problem caused by GD?
+#### what problem caused by GD?
 - 0 gradient is not nessisarily global minimum
    - flat region
    - saddle point
+ 
 ### Non-convexity
 ### 不唯一性
 - surrogate loss function
@@ -110,8 +111,8 @@ some test will be required to ensure it work like expected
 - [Surrogate loss functions](http://fa.bianp.net/blog/2014/surrogate-loss-functions-in-machine-learning/)
 - [A comparison of loss function on deep embedding](https://www.slideshare.net/CenkBircanolu/a-comparison-of-loss-function-on-deep-embedding)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTgzOTI4ODIwMiw5MTc5OTg4MzMsLTI0NT
-Y5MTgwNSwxNDEzMDEyMTA1LC0xMzk1NjU5NjM5LC0xODI0Mjk1
-MzMyLC0xNTk2ODA1MCwxMTA5NTg5Nzg2LC02NDU3MjU4ODgsMj
-UxOTE0OTc0LC04MjIxNjQxODVdfQ==
+eyJoaXN0b3J5IjpbLTIwMjIzMjI4ODAsMTgzOTI4ODIwMiw5MT
+c5OTg4MzMsLTI0NTY5MTgwNSwxNDEzMDEyMTA1LC0xMzk1NjU5
+NjM5LC0xODI0Mjk1MzMyLC0xNTk2ODA1MCwxMTA5NTg5Nzg2LC
+02NDU3MjU4ODgsMjUxOTE0OTc0LC04MjIxNjQxODVdfQ==
 -->
