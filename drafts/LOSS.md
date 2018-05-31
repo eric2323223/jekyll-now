@@ -20,7 +20,8 @@
 #### how to solve these problem?
 - choose better loss function
     - surrogate loss function
-- SGD   
+- SGD  
+- Parameter initialization
 ### Non-convexity
 ![](https://i.stack.imgur.com/TY1L1.png)
 ![](https://www.cs.umd.edu/~tomg/img/landscapes/noshort.png)
@@ -112,7 +113,7 @@ some test will be required to ensure it work like expected
 - [Surrogate loss functions](http://fa.bianp.net/blog/2014/surrogate-loss-functions-in-machine-learning/)
 - [A comparison of loss function on deep embedding](https://www.slideshare.net/CenkBircanolu/a-comparison-of-loss-function-on-deep-embedding)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2ODcyNDU2OTcsMTgzOTI4ODIwMiw5MT
+eyJoaXN0b3J5IjpbLTEwODM0NDM4NzksMTgzOTI4ODIwMiw5MT
 c5OTg4MzMsLTI0NTY5MTgwNSwxNDEzMDEyMTA1LC0xMzk1NjU5
 NjM5LC0xODI0Mjk1MzMyLC0xNTk2ODA1MCwxMTA5NTg5Nzg2LC
 02NDU3MjU4ODgsMjUxOTE0OTc0LC04MjIxNjQxODVdfQ==
