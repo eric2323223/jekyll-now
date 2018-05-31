@@ -37,14 +37,17 @@
 - semantics
 
 ## 分类
-### By 
+### By purpose
+- classification
+- regression
+
 
 - MSE
 - Cross entropy
 - Cosine loss
 - Contrastive loss
 - CTC
-- 
+- Triplet loss
 
 ## 设计
 - loss functin semantic
@@ -62,9 +65,7 @@
 ### Classification
 - Cross entropy
 ### Regression
- MSE(Mean Square Error)
- Triplet
- C
+
 # Contrastive
  Square loss
 
@@ -99,6 +100,6 @@ some test will be required to ensure it work like expected
 - [Surrogate loss functions](http://fa.bianp.net/blog/2014/surrogate-loss-functions-in-machine-learning/)
 - [A comparison of loss function on deep embedding](https://www.slideshare.net/CenkBircanolu/a-comparison-of-loss-function-on-deep-embedding)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzMTI2ODk1MjQsMTQ5Mzc0MjgzLC02Mz
-E3NDQ1OTIsLTU1MzE2NjQzMl19
+eyJoaXN0b3J5IjpbLTkzMTQxOTc1LDE0OTM3NDI4MywtNjMxNz
+Q0NTkyLC01NTMxNjY0MzJdfQ==
 -->
