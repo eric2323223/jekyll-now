@@ -6,9 +6,9 @@
 
 ## 特性
 ### Gradient based(GD) optimization
-与数学中的求极值问题不同的地方是，机器学习中的求极值使用graident based(GD的方法的的在学习的开始阶段我们最常见到的loss function是这样的，如图一所示
+与数学中的求极值问题不同的地方是，机器学习中的求极值使用graident based(GD)的方法的的在学习的开始阶段我们最常见到的loss function是这样的，如图一所示
 
-#### why GD?
+#### 为什么 GD?
 - there is no closed form solution
 - it is computational impossible to use analytical solution when data is huge
 #### what problem caused by GD?
@@ -113,7 +113,7 @@ some test will be required to ensure it work like expected
 - [Surrogate loss functions](http://fa.bianp.net/blog/2014/surrogate-loss-functions-in-machine-learning/)
 - [A comparison of loss function on deep embedding](https://www.slideshare.net/CenkBircanolu/a-comparison-of-loss-function-on-deep-embedding)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjEzMjY3NzgxLDE4MzkyODgyMDIsOTE3OT
+eyJoaXN0b3J5IjpbMTQ2NDYwMTc0LDE4MzkyODgyMDIsOTE3OT
 k4ODMzLC0yNDU2OTE4MDUsMTQxMzAxMjEwNSwtMTM5NTY1OTYz
 OSwtMTgyNDI5NTMzMiwtMTU5NjgwNTAsMTEwOTU4OTc4NiwtNj
 Q1NzI1ODg4LDI1MTkxNDk3NCwtODIyMTY0MTg1XX0=
