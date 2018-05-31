@@ -74,7 +74,7 @@ minimized the distance between expected value and ground truth value
 ## Design of loss function
 ### Multi-task learning
 ### Auxiliary loss?
-
+some test will be required to ensure it work like expected
 
 
 ## reference
@@ -101,6 +101,6 @@ minimized the distance between expected value and ground truth value
 - [Surrogate loss functions](http://fa.bianp.net/blog/2014/surrogate-loss-functions-in-machine-learning/)
 - [A comparison of loss function on deep embedding](https://www.slideshare.net/CenkBircanolu/a-comparison-of-loss-function-on-deep-embedding)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTY0NTcyNTg4OCwyNTE5MTQ5NzQsLTgyMj
-E2NDE4NV19
+eyJoaXN0b3J5IjpbMTEwOTU4OTc4NiwtNjQ1NzI1ODg4LDI1MT
+kxNDk3NCwtODIyMTY0MTg1XX0=
 -->
