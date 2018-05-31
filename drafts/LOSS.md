@@ -41,6 +41,8 @@
 
 ## 设计
 - loss functin semantic
+- Convergence
+- differenciable
 
 ## 总结
 
@@ -91,5 +93,6 @@ some test will be required to ensure it work like expected
 - [Surrogate loss functions](http://fa.bianp.net/blog/2014/surrogate-loss-functions-in-machine-learning/)
 - [A comparison of loss function on deep embedding](https://www.slideshare.net/CenkBircanolu/a-comparison-of-loss-function-on-deep-embedding)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTYzMTc0NDU5MiwtNTUzMTY2NDMyXX0=
+eyJoaXN0b3J5IjpbLTE3NDg2NDg2OTIsLTYzMTc0NDU5MiwtNT
+UzMTY2NDMyXX0=
 -->
