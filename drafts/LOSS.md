@@ -5,6 +5,7 @@
 简单来说loss function是一种量化模型拟合程度的工具，我们知道机器学习（监督式机器学习）的基本思想设计一个由参数$\theta$决定的模型$f_\theta$，使得输入$x$经过模型$f_\theta(x)$计算后得到接近真实$y$的结果，模型的训练过程是用标签数据（$x_i, y_i$）输入模型$f_w(x_i) = \hat y_i$并计算预测值和真实值的差距$L_w$，求$w$使得$L_w$取最小值，这时模型$f_x$达到最优状态，那么如何判断模型和现实的接近程度呢？如何判断模型已经足够好呢？loss function可以回答这些问题，loss function的loss表示了模型和真实的差距$L_w(\hat y, y)$，当这个距离达到最小值的时候我们就认为模型达到最好的状态。所以机器学习实际上是一个求loss function最小值的问题，
 
 ## 特性
+### Gradient based optimization
 与数学中的求极值问题不同的地方是，机器学习中的求极值使用graident based的方法的的在学习的开始阶段我们最常见到的loss function是这样的，如图一所示
 
 why GD?
@@ -14,6 +15,7 @@ what problem caused by GD?
 - 0 gradient is not nessisarily global minimum
    - flat region
    - saddle point
+### Non-convexity
 
 how to solve these problem?
 - choose better loss function
@@ -104,8 +106,8 @@ some test will be required to ensure it work like expected
 - [Surrogate loss functions](http://fa.bianp.net/blog/2014/surrogate-loss-functions-in-machine-learning/)
 - [A comparison of loss function on deep embedding](https://www.slideshare.net/CenkBircanolu/a-comparison-of-loss-function-on-deep-embedding)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTI0NTY5MTgwNSwxNDEzMDEyMTA1LC0xMz
-k1NjU5NjM5LC0xODI0Mjk1MzMyLC0xNTk2ODA1MCwxMTA5NTg5
-Nzg2LC02NDU3MjU4ODgsMjUxOTE0OTc0LC04MjIxNjQxODVdfQ
-==
+eyJoaXN0b3J5IjpbLTYxNDkxMjA4NiwtMjQ1NjkxODA1LDE0MT
+MwMTIxMDUsLTEzOTU2NTk2MzksLTE4MjQyOTUzMzIsLTE1OTY4
+MDUwLDExMDk1ODk3ODYsLTY0NTcyNTg4OCwyNTE5MTQ5NzQsLT
+gyMjE2NDE4NV19
 -->
