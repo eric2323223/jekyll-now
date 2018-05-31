@@ -15,17 +15,19 @@
 - 0 gradient is not nessisarily global minimum
    - flat region
    - saddle point
- 
+
+#### how to solve these problem?
+- choose better loss function
+    - surrogate loss function
+- SGD   
 ### Non-convexity
 ### 不唯一性
 - surrogate loss function
 - Design matters a lot!!
 ### 
 
-how to solve these problem?
-- choose better loss function
-    - surrogate loss function
-- SGD   
+
+
 how to escape from saddle point
 what is global minimum is not differenciable?
 how can SGD help?
@@ -111,8 +113,8 @@ some test will be required to ensure it work like expected
 - [Surrogate loss functions](http://fa.bianp.net/blog/2014/surrogate-loss-functions-in-machine-learning/)
 - [A comparison of loss function on deep embedding](https://www.slideshare.net/CenkBircanolu/a-comparison-of-loss-function-on-deep-embedding)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwMjIzMjI4ODAsMTgzOTI4ODIwMiw5MT
-c5OTg4MzMsLTI0NTY5MTgwNSwxNDEzMDEyMTA1LC0xMzk1NjU5
-NjM5LC0xODI0Mjk1MzMyLC0xNTk2ODA1MCwxMTA5NTg5Nzg2LC
-02NDU3MjU4ODgsMjUxOTE0OTc0LC04MjIxNjQxODVdfQ==
+eyJoaXN0b3J5IjpbMTQ3MTU3NzU0NCwxODM5Mjg4MjAyLDkxNz
+k5ODgzMywtMjQ1NjkxODA1LDE0MTMwMTIxMDUsLTEzOTU2NTk2
+MzksLTE4MjQyOTUzMzIsLTE1OTY4MDUwLDExMDk1ODk3ODYsLT
+Y0NTcyNTg4OCwyNTE5MTQ5NzQsLTgyMjE2NDE4NV19
 -->
