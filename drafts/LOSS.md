@@ -44,6 +44,7 @@ minimized the distance between expected value and ground truth value
 - semantics
 
 ## 分类
+### By 
 
 ## 设计
 - loss functin semantic
@@ -97,7 +98,7 @@ some test will be required to ensure it work like expected
 - [Surrogate loss functions](http://fa.bianp.net/blog/2014/surrogate-loss-functions-in-machine-learning/)
 - [A comparison of loss function on deep embedding](https://www.slideshare.net/CenkBircanolu/a-comparison-of-loss-function-on-deep-embedding)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTg1MDc5MjM5MCwxODM5Mjg4MjAyLDkxNz
+eyJoaXN0b3J5IjpbLTU1MzE2NjQzMiwxODM5Mjg4MjAyLDkxNz
 k5ODgzMywtMjQ1NjkxODA1LDE0MTMwMTIxMDUsLTEzOTU2NTk2
 MzksLTE4MjQyOTUzMzIsLTE1OTY4MDUwLDExMDk1ODk3ODYsLT
 Y0NTcyNTg4OCwyNTE5MTQ5NzQsLTgyMjE2NDE4NV19
