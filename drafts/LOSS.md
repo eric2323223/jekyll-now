@@ -37,23 +37,6 @@
 - convex loss function
 ![](https://cdn-images-1.medium.com/max/1600/1*t6OiVIMKw3SBjNzj-lp_Fw.png)
 
-
-
--2. non-convex function
-
-
-
-2. non-convex
-对于
-4. 	
-	- local minima
-		- SGD
-		- initialization
-		- 
-	- saddle point
-
-
-
 minimized the distance between expected value and ground truth value
 
 - convex vs. non-convex
@@ -113,8 +96,8 @@ some test will be required to ensure it work like expected
 - [Surrogate loss functions](http://fa.bianp.net/blog/2014/surrogate-loss-functions-in-machine-learning/)
 - [A comparison of loss function on deep embedding](https://www.slideshare.net/CenkBircanolu/a-comparison-of-loss-function-on-deep-embedding)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEwODM0NDM4NzksMTgzOTI4ODIwMiw5MT
-c5OTg4MzMsLTI0NTY5MTgwNSwxNDEzMDEyMTA1LC0xMzk1NjU5
-NjM5LC0xODI0Mjk1MzMyLC0xNTk2ODA1MCwxMTA5NTg5Nzg2LC
-02NDU3MjU4ODgsMjUxOTE0OTc0LC04MjIxNjQxODVdfQ==
+eyJoaXN0b3J5IjpbLTk0ODc3Mjg1OSwxODM5Mjg4MjAyLDkxNz
+k5ODgzMywtMjQ1NjkxODA1LDE0MTMwMTIxMDUsLTEzOTU2NTk2
+MzksLTE4MjQyOTUzMzIsLTE1OTY4MDUwLDExMDk1ODk3ODYsLT
+Y0NTcyNTg4OCwyNTE5MTQ5NzQsLTgyMjE2NDE4NV19
 -->
