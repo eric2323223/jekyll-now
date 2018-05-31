@@ -55,6 +55,8 @@
 - Convergence
 - differenciable
 
+#### Example of loss function design
+
 ## 总结
 
 
@@ -89,6 +91,6 @@
 - [Surrogate loss functions](http://fa.bianp.net/blog/2014/surrogate-loss-functions-in-machine-learning/)
 - [A comparison of loss function on deep embedding](https://www.slideshare.net/CenkBircanolu/a-comparison-of-loss-function-on-deep-embedding)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTYyMjk4NjYwOCwxNDkzNzQyODMsLTYzMT
-c0NDU5MiwtNTUzMTY2NDMyXX0=
+eyJoaXN0b3J5IjpbLTE4MDE0MDc2NjQsMTYyMjk4NjYwOCwxND
+kzNzQyODMsLTYzMTc0NDU5MiwtNTUzMTY2NDMyXX0=
 -->
