@@ -46,8 +46,7 @@
 
 ## 总结
 
-- 0/1 loss function
-- surrogate-loss-functions
+
 
 ### Distance-based Loss function
 ### Prediction error-based loss function
@@ -93,6 +92,6 @@ some test will be required to ensure it work like expected
 - [Surrogate loss functions](http://fa.bianp.net/blog/2014/surrogate-loss-functions-in-machine-learning/)
 - [A comparison of loss function on deep embedding](https://www.slideshare.net/CenkBircanolu/a-comparison-of-loss-function-on-deep-embedding)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE3NDg2NDg2OTIsLTYzMTc0NDU5MiwtNT
-UzMTY2NDMyXX0=
+eyJoaXN0b3J5IjpbMTQ5Mzc0MjgzLC02MzE3NDQ1OTIsLTU1Mz
+E2NjQzMl19
 -->
