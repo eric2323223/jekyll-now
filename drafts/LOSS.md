@@ -17,6 +17,7 @@ what problem caused by GD?
    - saddle point
 ### Non-convexity
 ### Multiple solutions
+### 
 
 how to solve these problem?
 - choose better loss function
@@ -46,7 +47,7 @@ how can SGD help?
 		- 
 	- saddle point
 
-## 特性
+
 
 minimized the distance between expected value and ground truth value
 
@@ -107,7 +108,7 @@ some test will be required to ensure it work like expected
 - [Surrogate loss functions](http://fa.bianp.net/blog/2014/surrogate-loss-functions-in-machine-learning/)
 - [A comparison of loss function on deep embedding](https://www.slideshare.net/CenkBircanolu/a-comparison-of-loss-function-on-deep-embedding)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTcwMjI1NTAxLC0yNDU2OTE4MDUsMTQxMz
+eyJoaXN0b3J5IjpbMzYyMzAzNjkyLC0yNDU2OTE4MDUsMTQxMz
 AxMjEwNSwtMTM5NTY1OTYzOSwtMTgyNDI5NTMzMiwtMTU5Njgw
 NTAsMTEwOTU4OTc4NiwtNjQ1NzI1ODg4LDI1MTkxNDk3NCwtOD
 IyMTY0MTg1XX0=
