@@ -39,6 +39,13 @@
 ## 分类
 ### By 
 
+- MSE
+- Cross entropy
+- Cosine loss
+- Contrastive loss
+- CTC
+- 
+
 ## 设计
 - loss functin semantic
 - Convergence
@@ -92,6 +99,6 @@ some test will be required to ensure it work like expected
 - [Surrogate loss functions](http://fa.bianp.net/blog/2014/surrogate-loss-functions-in-machine-learning/)
 - [A comparison of loss function on deep embedding](https://www.slideshare.net/CenkBircanolu/a-comparison-of-loss-function-on-deep-embedding)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTQ5Mzc0MjgzLC02MzE3NDQ1OTIsLTU1Mz
-E2NjQzMl19
+eyJoaXN0b3J5IjpbLTEzMTI2ODk1MjQsMTQ5Mzc0MjgzLC02Mz
+E3NDQ1OTIsLTU1MzE2NjQzMl19
 -->
