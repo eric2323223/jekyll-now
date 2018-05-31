@@ -17,6 +17,7 @@ what problem caused by GD?
    - saddle point
 ### Non-convexity
 ### Multiple solutions
+- surrogate loss function
 ### 
 
 how to solve these problem?
@@ -108,8 +109,8 @@ some test will be required to ensure it work like expected
 - [Surrogate loss functions](http://fa.bianp.net/blog/2014/surrogate-loss-functions-in-machine-learning/)
 - [A comparison of loss function on deep embedding](https://www.slideshare.net/CenkBircanolu/a-comparison-of-loss-function-on-deep-embedding)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzYyMzAzNjkyLC0yNDU2OTE4MDUsMTQxMz
-AxMjEwNSwtMTM5NTY1OTYzOSwtMTgyNDI5NTMzMiwtMTU5Njgw
-NTAsMTEwOTU4OTc4NiwtNjQ1NzI1ODg4LDI1MTkxNDk3NCwtOD
-IyMTY0MTg1XX0=
+eyJoaXN0b3J5IjpbLTg4MDc0OTM5MCwtMjQ1NjkxODA1LDE0MT
+MwMTIxMDUsLTEzOTU2NTk2MzksLTE4MjQyOTUzMzIsLTE1OTY4
+MDUwLDExMDk1ODk3ODYsLTY0NTcyNTg4OCwyNTE5MTQ5NzQsLT
+gyMjE2NDE4NV19
 -->
