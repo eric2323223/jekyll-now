@@ -22,7 +22,8 @@
     - surrogate loss function
 - SGD   
 ### Non-convexity
-
+![](https://i.stack.imgur.com/TY1L1.png)
+![](https://www.cs.umd.edu/~tomg/img/landscapes/noshort.png)
 ### 不唯一性
 - surrogate loss function
 - Design matters a lot!!
@@ -36,10 +37,11 @@
 ![](https://cdn-images-1.medium.com/max/1600/1*t6OiVIMKw3SBjNzj-lp_Fw.png)
 
 
+
 -2. non-convex function
 
-![](https://i.stack.imgur.com/TY1L1.png)
-![](https://www.cs.umd.edu/~tomg/img/landscapes/noshort.png)
+
+
 2. non-convex
 对于
 4. 	
@@ -110,8 +112,8 @@ some test will be required to ensure it work like expected
 - [Surrogate loss functions](http://fa.bianp.net/blog/2014/surrogate-loss-functions-in-machine-learning/)
 - [A comparison of loss function on deep embedding](https://www.slideshare.net/CenkBircanolu/a-comparison-of-loss-function-on-deep-embedding)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTI4MjQ1NDQ2MywxODM5Mjg4MjAyLDkxNz
-k5ODgzMywtMjQ1NjkxODA1LDE0MTMwMTIxMDUsLTEzOTU2NTk2
-MzksLTE4MjQyOTUzMzIsLTE1OTY4MDUwLDExMDk1ODk3ODYsLT
-Y0NTcyNTg4OCwyNTE5MTQ5NzQsLTgyMjE2NDE4NV19
+eyJoaXN0b3J5IjpbLTE2ODcyNDU2OTcsMTgzOTI4ODIwMiw5MT
+c5OTg4MzMsLTI0NTY5MTgwNSwxNDEzMDEyMTA1LC0xMzk1NjU5
+NjM5LC0xODI0Mjk1MzMyLC0xNTk2ODA1MCwxMTA5NTg5Nzg2LC
+02NDU3MjU4ODgsMjUxOTE0OTc0LC04MjIxNjQxODVdfQ==
 -->
