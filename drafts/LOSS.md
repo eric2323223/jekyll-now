@@ -101,6 +101,6 @@ some test will be required to ensure it work like expected
 - [Surrogate loss functions](http://fa.bianp.net/blog/2014/surrogate-loss-functions-in-machine-learning/)
 - [A comparison of loss function on deep embedding](https://www.slideshare.net/CenkBircanolu/a-comparison-of-loss-function-on-deep-embedding)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTEwOTU4OTc4NiwtNjQ1NzI1ODg4LDI1MT
-kxNDk3NCwtODIyMTY0MTg1XX0=
+eyJoaXN0b3J5IjpbLTE1OTY4MDUwLDExMDk1ODk3ODYsLTY0NT
+cyNTg4OCwyNTE5MTQ5NzQsLTgyMjE2NDE4NV19
 -->
