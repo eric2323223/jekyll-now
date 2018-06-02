@@ -25,7 +25,8 @@
 ### Non-convexity
 ![](https://cdn-images-1.medium.com/max/1600/1*t6OiVIMKw3SBjNzj-lp_Fw.png)
 ![](https://i.stack.imgur.com/TY1L1.png)
-![](https://www.cs.umd.edu/~tdescent）的方法求loss function的最小值，这使得loss function的优化问题具有
+![](https://www.cs.umd.edu/~tdescent）
+的方法求loss function的最小值，这使得loss function的优化问题具有
 
 - convex vs. non-convex
 - Regularization
@@ -86,7 +87,7 @@
 - [Surrogate loss functions](http://fa.bianp.net/blog/2014/surrogate-loss-functions-in-machine-learning/)
 - [A comparison of loss function on deep embedding](https://www.slideshare.net/CenkBircanolu/a-comparison-of-loss-function-on-deep-embedding)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjA1MzUzOTgwLC0xMjI3Mzg4MzEwLC0xOD
+eyJoaXN0b3J5IjpbNDIzMzg2MjU0LC0xMjI3Mzg4MzEwLC0xOD
 AxNDA3NjY0LDE2MjI5ODY2MDgsMTQ5Mzc0MjgzLC02MzE3NDQ1
 OTIsLTU1MzE2NjQzMl19
 -->
