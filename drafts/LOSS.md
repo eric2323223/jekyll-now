@@ -11,7 +11,7 @@
 
 ![](https://i.stack.imgur.com/TY1L1.png)
 #### 那么为什么还要使用GD呢？
-我们直到优化问题一般由两类解法，一个是分析方法，即在确定
+我们直到优化问题一般由两类解法，一个是分析方法，即存在解析解（closed-form solution），另一种是
 - there is no closed form solution
 - it is computational impossible to use analytical solution when data is huge
 #### what problem caused by GD?
@@ -90,9 +90,9 @@
 - [Surrogate loss functions](http://fa.bianp.net/blog/2014/surrogate-loss-functions-in-machine-learning/)
 - [A comparison of loss function on deep embedding](https://www.slideshare.net/CenkBircanolu/a-comparison-of-loss-function-on-deep-embedding)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1OTA1MzE0MTYsNjAyMDU5MjAzLDk5MT
-EyODQsMTA1NzQ3ODExOCwtMzE1MzA3MzQsLTEzNzA1NDk0MzUs
-NDIzMzg2MjU0LC0xMjI3Mzg4MzEwLC0xODAxNDA3NjY0LDE2Mj
-I5ODY2MDgsMTQ5Mzc0MjgzLC02MzE3NDQ1OTIsLTU1MzE2NjQz
-Ml19
+eyJoaXN0b3J5IjpbMTg3NzQ5OTk1MSwtMTU5MDUzMTQxNiw2MD
+IwNTkyMDMsOTkxMTI4NCwxMDU3NDc4MTE4LC0zMTUzMDczNCwt
+MTM3MDU0OTQzNSw0MjMzODYyNTQsLTEyMjczODgzMTAsLTE4MD
+E0MDc2NjQsMTYyMjk4NjYwOCwxNDkzNzQyODMsLTYzMTc0NDU5
+MiwtNTUzMTY2NDMyXX0=
 -->
