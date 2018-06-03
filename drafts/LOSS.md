@@ -91,10 +91,10 @@
 - [Surrogate loss functions](http://fa.bianp.net/blog/2014/surrogate-loss-functions-in-machine-learning/)
 - [A comparison of loss function on deep embedding](https://www.slideshare.net/CenkBircanolu/a-comparison-of-loss-function-on-deep-embedding)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTY0Mjk2OTA3MCwtNzE4ODM1NDIsMTI0Nz
-c3MjY5OSwxNTk0MDQ3NTcsMTg3NzQ5OTk1MSwtMTU5MDUzMTQx
-Niw2MDIwNTkyMDMsOTkxMTI4NCwxMDU3NDc4MTE4LC0zMTUzMD
-czNCwtMTM3MDU0OTQzNSw0MjMzODYyNTQsLTEyMjczODgzMTAs
-LTE4MDE0MDc2NjQsMTYyMjk4NjYwOCwxNDkzNzQyODMsLTYzMT
-c0NDU5MiwtNTUzMTY2NDMyXX0=
+eyJoaXN0b3J5IjpbLTE1MTQ3NjU1NDEsLTY0Mjk2OTA3MCwtNz
+E4ODM1NDIsMTI0Nzc3MjY5OSwxNTk0MDQ3NTcsMTg3NzQ5OTk1
+MSwtMTU5MDUzMTQxNiw2MDIwNTkyMDMsOTkxMTI4NCwxMDU3ND
+c4MTE4LC0zMTUzMDczNCwtMTM3MDU0OTQzNSwtMTIyNzM4ODMx
+MCwtMTgwMTQwNzY2NCwxNjIyOTg2NjA4LDE0OTM3NDI4MywtNj
+MxNzQ0NTkyLC01NTMxNjY0MzJdfQ==
 -->
