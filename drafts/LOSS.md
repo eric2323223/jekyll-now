@@ -52,6 +52,7 @@
 
 ## 设计
 - loss functin semantic
+- strict theoretical minimum of 0
 - Convergence
 - differenciable
 
@@ -90,10 +91,10 @@
 - [Surrogate loss functions](http://fa.bianp.net/blog/2014/surrogate-loss-functions-in-machine-learning/)
 - [A comparison of loss function on deep embedding](https://www.slideshare.net/CenkBircanolu/a-comparison-of-loss-function-on-deep-embedding)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTcxODgzNTQyLDEyNDc3NzI2OTksMTU5ND
-A0NzU3LDE4Nzc0OTk5NTEsLTE1OTA1MzE0MTYsNjAyMDU5MjAz
-LDk5MTEyODQsMTA1NzQ3ODExOCwtMzE1MzA3MzQsLTEzNzA1ND
-k0MzUsNDIzMzg2MjU0LC0xMjI3Mzg4MzEwLC0xODAxNDA3NjY0
-LDE2MjI5ODY2MDgsMTQ5Mzc0MjgzLC02MzE3NDQ1OTIsLTU1Mz
-E2NjQzMl19
+eyJoaXN0b3J5IjpbLTEzMDg4OTE4OTEsLTcxODgzNTQyLDEyND
+c3NzI2OTksMTU5NDA0NzU3LDE4Nzc0OTk5NTEsLTE1OTA1MzE0
+MTYsNjAyMDU5MjAzLDk5MTEyODQsMTA1NzQ3ODExOCwtMzE1Mz
+A3MzQsLTEzNzA1NDk0MzUsNDIzMzg2MjU0LC0xMjI3Mzg4MzEw
+LC0xODAxNDA3NjY0LDE2MjI5ODY2MDgsMTQ5Mzc0MjgzLC02Mz
+E3NDQ1OTIsLTU1MzE2NjQzMl19
 -->
