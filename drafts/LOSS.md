@@ -6,7 +6,7 @@
 
 ## 特性
 ### Gradient based(GD) optimization
-与数学中的求极值问题不同的地方是，机器学习中的求极值使用。机器学习的领域主要使用基于梯度下降（graidient based(GD)的方法，如图一所示对于一个可导的凸函数，从任意一点出发，沿着倒数下降的方向前进直到倒数为零的点，就是函数的最小值。这个方法看上去简单有效，但是在实际的机器学习任务中，模型参数的数量都很大（如VGG16有$1.38*10^8$个参数），这时de
+与数学中的求极值问题不同的地方是，机器学习中的求极值使用。机器学习的领域主要使用基于梯度下降（graidient based(GD)的方法，如图一所示对于一个可导的凸函数，从任意一点出发，沿着倒数下降的方向前进直到倒数为零的点，就是函数的最小值。这个方法看上去简单有效，但是在实际的机器学习任务中，模型参数的数量都很大（如VGG16有$1.38*10^8$个参数），这时的loss function的表现通常如图二所示
 ![](https://cdn-images-1.medium.com/max/1600/1*t6OiVIMKw3SBjNzj-lp_Fw.png)
 
 
@@ -26,7 +26,7 @@
 - Parameter initialization
 ### Non-convexity
 
-![](https://i.stack.imgur.com/TY1L1.png)
+
 ![](https://www.cs.umd.edu/~tdescent）
 的方法求loss function的最小值，这使得loss function的优化问题具有
 
@@ -89,7 +89,7 @@
 - [Surrogate loss functions](http://fa.bianp.net/blog/2014/surrogate-loss-functions-in-machine-learning/)
 - [A comparison of loss function on deep embedding](https://www.slideshare.net/CenkBircanolu/a-comparison-of-loss-function-on-deep-embedding)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTAyMjI0MDAyNywxMDU3NDc4MTE4LC0zMT
+eyJoaXN0b3J5IjpbMTc4MTg0ODEzMSwxMDU3NDc4MTE4LC0zMT
 UzMDczNCwtMTM3MDU0OTQzNSw0MjMzODYyNTQsLTEyMjczODgz
 MTAsLTE4MDE0MDc2NjQsMTYyMjk4NjYwOCwxNDkzNzQyODMsLT
 YzMTc0NDU5MiwtNTUzMTY2NDMyXX0=
