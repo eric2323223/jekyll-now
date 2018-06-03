@@ -11,7 +11,7 @@
 
 ![](https://i.stack.imgur.com/TY1L1.png)
 #### 那么为什么还要使用GD呢？
-数学意义上的的优化问题一般有两类解法，一个是分析方法，适用于在解析解（closed-form solution），另一种是迭代优化（iterative optimization）方法用于不存在解析解的情况，GD就属于迭代优化的一种典型方法。所有基于神经网络的的
+数学意义上的的优化问题一般有两类解法，一个是分析方法，适用于在解析解（closed-form solution），另一种是迭代优化（iterative optimization）方法用于不存在解析解的情况，GD就属于迭代优化的一种典型方法。所有基于神经网络的的优化过程由于存在nolinear activation
 - there is no closed form solution
 - it is computational impossible to use analytical solution when data is huge
 #### what problem caused by GD?
@@ -91,7 +91,7 @@
 - [Surrogate loss functions](http://fa.bianp.net/blog/2014/surrogate-loss-functions-in-machine-learning/)
 - [A comparison of loss function on deep embedding](https://www.slideshare.net/CenkBircanolu/a-comparison-of-loss-function-on-deep-embedding)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzMDg4OTE4OTEsLTcxODgzNTQyLDEyND
+eyJoaXN0b3J5IjpbLTE5Mjc5NzQ3MTgsLTcxODgzNTQyLDEyND
 c3NzI2OTksMTU5NDA0NzU3LDE4Nzc0OTk5NTEsLTE1OTA1MzE0
 MTYsNjAyMDU5MjAzLDk5MTEyODQsMTA1NzQ3ODExOCwtMzE1Mz
 A3MzQsLTEzNzA1NDk0MzUsNDIzMzg2MjU0LC0xMjI3Mzg4MzEw
