@@ -7,6 +7,8 @@
 ## 特性
 ### Gradient based(GD) optimization
 与数学中的求极值问题不同的地方是，机器学习中的求极值使用。机器学习的领域主要使用基于梯度下降（graidient based(GD)的方法的的在学习的开始阶段我们最常见到的loss function是这样的，如图一所示
+![](https://cdn-images-1.medium.com/max/1600/1*t6OiVIMKw3SBjNzj-lp_Fw.png)
+
 
 #### 为什么 GD?
 - there is no closed form solution
@@ -23,7 +25,7 @@
 - SGD  
 - Parameter initialization
 ### Non-convexity
-![](https://cdn-images-1.medium.com/max/1600/1*t6OiVIMKw3SBjNzj-lp_Fw.png)
+
 ![](https://i.stack.imgur.com/TY1L1.png)
 ![](https://www.cs.umd.edu/~tdescent）
 的方法求loss function的最小值，这使得loss function的优化问题具有
@@ -87,7 +89,8 @@
 - [Surrogate loss functions](http://fa.bianp.net/blog/2014/surrogate-loss-functions-in-machine-learning/)
 - [A comparison of loss function on deep embedding](https://www.slideshare.net/CenkBircanolu/a-comparison-of-loss-function-on-deep-embedding)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzNzA1NDk0MzUsNDIzMzg2MjU0LC0xMj
-I3Mzg4MzEwLC0xODAxNDA3NjY0LDE2MjI5ODY2MDgsMTQ5Mzc0
-MjgzLC02MzE3NDQ1OTIsLTU1MzE2NjQzMl19
+eyJoaXN0b3J5IjpbLTExMTg4NjI0OTUsLTEzNzA1NDk0MzUsND
+IzMzg2MjU0LC0xMjI3Mzg4MzEwLC0xODAxNDA3NjY0LDE2MjI5
+ODY2MDgsMTQ5Mzc0MjgzLC02MzE3NDQ1OTIsLTU1MzE2NjQzMl
+19
 -->
