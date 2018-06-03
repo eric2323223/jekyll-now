@@ -10,7 +10,7 @@
 ![](https://cdn-images-1.medium.com/max/1600/1*t6OiVIMKw3SBjNzj-lp_Fw.png)
 
 ![](https://i.stack.imgur.com/TY1L1.png)
-#### 为什么 GD?
+#### 那么为什么还要使用GD呢？
 - there is no closed form solution
 - it is computational impossible to use analytical solution when data is huge
 #### what problem caused by GD?
@@ -89,7 +89,7 @@
 - [Surrogate loss functions](http://fa.bianp.net/blog/2014/surrogate-loss-functions-in-machine-learning/)
 - [A comparison of loss function on deep embedding](https://www.slideshare.net/CenkBircanolu/a-comparison-of-loss-function-on-deep-embedding)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTgzNDQxMTM1OCw2MDIwNTkyMDMsOTkxMT
+eyJoaXN0b3J5IjpbLTExOTMwNzAxNSw2MDIwNTkyMDMsOTkxMT
 I4NCwxMDU3NDc4MTE4LC0zMTUzMDczNCwtMTM3MDU0OTQzNSw0
 MjMzODYyNTQsLTEyMjczODgzMTAsLTE4MDE0MDc2NjQsMTYyMj
 k4NjYwOCwxNDkzNzQyODMsLTYzMTc0NDU5MiwtNTUzMTY2NDMy
