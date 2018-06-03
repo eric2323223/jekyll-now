@@ -87,7 +87,7 @@
 - [Surrogate loss functions](http://fa.bianp.net/blog/2014/surrogate-loss-functions-in-machine-learning/)
 - [A comparison of loss function on deep embedding](https://www.slideshare.net/CenkBircanolu/a-comparison-of-loss-function-on-deep-embedding)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNDIzMzg2MjU0LC0xMjI3Mzg4MzEwLC0xOD
-AxNDA3NjY0LDE2MjI5ODY2MDgsMTQ5Mzc0MjgzLC02MzE3NDQ1
-OTIsLTU1MzE2NjQzMl19
+eyJoaXN0b3J5IjpbLTEzNzA1NDk0MzUsNDIzMzg2MjU0LC0xMj
+I3Mzg4MzEwLC0xODAxNDA3NjY0LDE2MjI5ODY2MDgsMTQ5Mzc0
+MjgzLC02MzE3NDQ1OTIsLTU1MzE2NjQzMl19
 -->
