@@ -15,7 +15,7 @@
 - there is no closed form solution
 - it is computational impossible to use analytical solution when data is huge
 #### what problem caused by GD?
-根据GD在导数为gou
+根据GD在导数为0chu
 - 0 gradient is not nessisarily global minimum
    - flat region
    - saddle point
@@ -92,11 +92,11 @@
 - [Surrogate loss functions](http://fa.bianp.net/blog/2014/surrogate-loss-functions-in-machine-learning/)
 - [A comparison of loss function on deep embedding](https://www.slideshare.net/CenkBircanolu/a-comparison-of-loss-function-on-deep-embedding)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzNDg3ODc2MywtMzg5MjE0MTM4LC0xNT
-E0NzY1NTQxLC02NDI5NjkwNzAsLTcxODgzNTQyLDEyNDc3NzI2
-OTksMTU5NDA0NzU3LDE4Nzc0OTk5NTEsLTE1OTA1MzE0MTYsNj
-AyMDU5MjAzLDk5MTEyODQsMTA1NzQ3ODExOCwtMzE1MzA3MzQs
-LTEzNzA1NDk0MzUsLTEyMjczODgzMTAsLTE4MDE0MDc2NjQsMT
-YyMjk4NjYwOCwxNDkzNzQyODMsLTYzMTc0NDU5MiwtNTUzMTY2
-NDMyXX0=
+eyJoaXN0b3J5IjpbLTIzMjE1NDc3NiwtMTM0ODc4NzYzLC0zOD
+kyMTQxMzgsLTE1MTQ3NjU1NDEsLTY0Mjk2OTA3MCwtNzE4ODM1
+NDIsMTI0Nzc3MjY5OSwxNTk0MDQ3NTcsMTg3NzQ5OTk1MSwtMT
+U5MDUzMTQxNiw2MDIwNTkyMDMsOTkxMTI4NCwxMDU3NDc4MTE4
+LC0zMTUzMDczNCwtMTM3MDU0OTQzNSwtMTIyNzM4ODMxMCwtMT
+gwMTQwNzY2NCwxNjIyOTg2NjA4LDE0OTM3NDI4MywtNjMxNzQ0
+NTkyXX0=
 -->
