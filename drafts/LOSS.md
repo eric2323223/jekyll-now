@@ -15,10 +15,11 @@
 - there is no closed form solution
 - it is computational impossible to use analytical solution when data is huge
 #### what problem caused by GD?
-根据GD在导数为0处收敛的特性，可知高维loss function中GD可能会收敛于如下区域
+根据GD在导数为0处收敛的特性，可知除了global minimum高维loss function中GD可能会收敛于如下区域
 - 0 gradient is not nessisarily global minimum
    - flat region
    - 鞍点（saddle point）
+   - 
    - global minimum is not differenciable
 
 #### how to solve these problem?
@@ -92,11 +93,11 @@
 - [Surrogate loss functions](http://fa.bianp.net/blog/2014/surrogate-loss-functions-in-machine-learning/)
 - [A comparison of loss function on deep embedding](https://www.slideshare.net/CenkBircanolu/a-comparison-of-loss-function-on-deep-embedding)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTUzNTMxNzAzOCwtMTM0ODc4NzYzLC0zOD
-kyMTQxMzgsLTE1MTQ3NjU1NDEsLTY0Mjk2OTA3MCwtNzE4ODM1
-NDIsMTI0Nzc3MjY5OSwxNTk0MDQ3NTcsMTg3NzQ5OTk1MSwtMT
-U5MDUzMTQxNiw2MDIwNTkyMDMsOTkxMTI4NCwxMDU3NDc4MTE4
-LC0zMTUzMDczNCwtMTM3MDU0OTQzNSwtMTIyNzM4ODMxMCwtMT
-gwMTQwNzY2NCwxNjIyOTg2NjA4LDE0OTM3NDI4MywtNjMxNzQ0
-NTkyXX0=
+eyJoaXN0b3J5IjpbLTgwMzU1MTU4NCwxNTM1MzE3MDM4LC0xMz
+Q4Nzg3NjMsLTM4OTIxNDEzOCwtMTUxNDc2NTU0MSwtNjQyOTY5
+MDcwLC03MTg4MzU0MiwxMjQ3NzcyNjk5LDE1OTQwNDc1NywxOD
+c3NDk5OTUxLC0xNTkwNTMxNDE2LDYwMjA1OTIwMyw5OTExMjg0
+LDEwNTc0NzgxMTgsLTMxNTMwNzM0LC0xMzcwNTQ5NDM1LC0xMj
+I3Mzg4MzEwLC0xODAxNDA3NjY0LDE2MjI5ODY2MDgsMTQ5Mzc0
+MjgzXX0=
 -->
