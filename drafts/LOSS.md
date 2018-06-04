@@ -51,7 +51,7 @@ $$X={x_1, x_2, ..., x_n} and Y={y_1, y_2,..., y_n}$$
 	- categorical corss entropy loss
 	$L(X, Y)= - \frac{1}{n} \sigma_{i=1}^n y_i ln(x_i) $
 - pairwise loss function
-$$L(x_1, x_2)=\{ {positive}{negative}$$
+$$L(x_1, x_2)=\left\{ {positive}{negative}$$
 - triplet loss function
 - quadruplet loss function
 - hybrid loss function
@@ -104,6 +104,6 @@ $$L(x_1, x_2)=\{ {positive}{negative}$$
 - [Surrogate loss functions](http://fa.bianp.net/blog/2014/surrogate-loss-functions-in-machine-learning/)
 - [A comparison of loss function on deep embedding](https://www.slideshare.net/CenkBircanolu/a-comparison-of-loss-function-on-deep-embedding)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE5ODA5MDgxMDEsOTE1MzI3MjMsODIwNj
-MyODcyXX0=
+eyJoaXN0b3J5IjpbMTI3MzkyMDE0OCw5MTUzMjcyMyw4MjA2Mz
+I4NzJdfQ==
 -->
