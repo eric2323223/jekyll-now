@@ -23,7 +23,7 @@
      - global minimum is not differenciable
 
 #### how to solve these problem?
-it looks like GD have very few chance  to  find a global minimum,  do a good job in optimiztion the loss function, 
+it looks like GD our only option but unfortunately have very few chance  to  find a global minimum of a practical loss function, then how can we solve this issue. do a good job in optimiztion the loss function, 
 - choose better loss function
     - surrogate loss function
 - SGD  
@@ -94,6 +94,6 @@ it looks like GD have very few chance  to  find a global minimum,  do a good job
 - [Surrogate loss functions](http://fa.bianp.net/blog/2014/surrogate-loss-functions-in-machine-learning/)
 - [A comparison of loss function on deep embedding](https://www.slideshare.net/CenkBircanolu/a-comparison-of-loss-function-on-deep-embedding)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTM4ODE5MzQxMywtMjk5MjY5NTgsLTEwMj
-U0ODUyMiwxNzM0MzIxODEyLDEzNTk2OTY2NTldfQ==
+eyJoaXN0b3J5IjpbMTc3MTI2NzI2LC0yOTkyNjk1OCwtMTAyNT
+Q4NTIyLDE3MzQzMjE4MTIsMTM1OTY5NjY1OV19
 -->
