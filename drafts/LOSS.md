@@ -47,9 +47,11 @@ it looks like GD is the only option for machine learning tasks but unfortunately
 	- image semantic segmentation as an example.
 ### By number of inputs
 - class-wise loss function
+$$X={x_1, x_2, x_3, ...}$$
 - pairwise loss function
 - triplet loss function
-- quadr
+- quadruplet loss function
+- hybrid loss function
 
 - MSE
 - Cross entropy
@@ -99,6 +101,6 @@ it looks like GD is the only option for machine learning tasks but unfortunately
 - [Surrogate loss functions](http://fa.bianp.net/blog/2014/surrogate-loss-functions-in-machine-learning/)
 - [A comparison of loss function on deep embedding](https://www.slideshare.net/CenkBircanolu/a-comparison-of-loss-function-on-deep-embedding)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE3ODQ5MjY5NTgsOTE1MzI3MjMsODIwNj
-MyODcyXX0=
+eyJoaXN0b3J5IjpbLTQzMTk2ODE3Nyw5MTUzMjcyMyw4MjA2Mz
+I4NzJdfQ==
 -->
