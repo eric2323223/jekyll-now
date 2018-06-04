@@ -94,6 +94,5 @@ it looks like GD our only option but unfortunately have very few chance  to  fin
 - [Surrogate loss functions](http://fa.bianp.net/blog/2014/surrogate-loss-functions-in-machine-learning/)
 - [A comparison of loss function on deep embedding](https://www.slideshare.net/CenkBircanolu/a-comparison-of-loss-function-on-deep-embedding)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODIwNjMyODcyLC0yOTkyNjk1OCwtMTAyNT
-Q4NTIyLDE3MzQzMjE4MTIsMTM1OTY5NjY1OV19
+eyJoaXN0b3J5IjpbODIwNjMyODcyXX0=
 -->
