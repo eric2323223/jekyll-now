@@ -17,7 +17,7 @@
 #### what problem caused by GD?
 根据GD在导数为0处收敛的特性，可知在高维loss function中，除了global minimum，GD还可能会收敛于如下区域
 - 0 gradient is not nessisarily global minimum
-   - flat region，即
+   - flat region，即图1中1
    - local minimum
    - 鞍点（saddle point）
    - 
@@ -94,5 +94,5 @@
 - [Surrogate loss functions](http://fa.bianp.net/blog/2014/surrogate-loss-functions-in-machine-learning/)
 - [A comparison of loss function on deep embedding](https://www.slideshare.net/CenkBircanolu/a-comparison-of-loss-function-on-deep-embedding)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTM1OTY5NjY1OV19
+eyJoaXN0b3J5IjpbLTIwNjAyMDk3NjQsMTM1OTY5NjY1OV19
 -->
