@@ -19,10 +19,11 @@
 - 0 gradient is not nessisarily global minimum
    - flat region，即图1中1
    - local minimum， 如图1中点2
-   - 鞍点（saddle point），如图1中点3处，鞍点是指在该点上一个纬度。。。事实上，on the surface of a high dimensional loss function, saddle points take majority part of all 0-gradient points, consider a loss function with 100000 parameters, soppose there are  50% possiblity a 0-gradient point is at its minimum and 50% possiblity at its maximum, the possibilty of this point being global/local minimum is $0.5^100000 \approx 1*10^{-30103}$ 在高维的loss function的优化过程中，GD几乎全部在按点处收敛。假设模型有100000个参数（纬度），每个纬度chu
+   - 鞍点（saddle point），如图1中点3处，鞍点是指在该点上一个纬度。。。事实上，on the surface of a high dimensional loss function, saddle points take majority part of all 0-gradient points, consider a loss function with 100000 parameters, soppose there are  50% possiblity a 0-gradient point is at its minimum and 50% possiblity at its maximum, the possibilty of this point being global/local minimum is $0.5^100000 \approx 1*10^{-30103}$ 
      - global minimum is not differenciable
 
 #### how to solve these problem?
+it looks like
 - choose better loss function
     - surrogate loss function
 - SGD  
@@ -93,6 +94,6 @@
 - [Surrogate loss functions](http://fa.bianp.net/blog/2014/surrogate-loss-functions-in-machine-learning/)
 - [A comparison of loss function on deep embedding](https://www.slideshare.net/CenkBircanolu/a-comparison-of-loss-function-on-deep-embedding)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTI2MzM4ODE2OCwtMjk5MjY5NTgsLTEwMj
-U0ODUyMiwxNzM0MzIxODEyLDEzNTk2OTY2NTldfQ==
+eyJoaXN0b3J5IjpbLTEwMTUxMTYyNzUsLTI5OTI2OTU4LC0xMD
+I1NDg1MjIsMTczNDMyMTgxMiwxMzU5Njk2NjU5XX0=
 -->
