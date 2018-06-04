@@ -48,6 +48,8 @@ it looks like GD is the only option for machine learning tasks but unfortunately
 ### By number of inputs
 - class-wise loss function
 $$X={x_1, x_2, ..., x_n} and Y={y_1, y_2,..., y_n}$$
+	- categorical corss entropy loss
+	-
 - pairwise loss function
 - triplet loss function
 - quadruplet loss function
@@ -101,6 +103,6 @@ $$X={x_1, x_2, ..., x_n} and Y={y_1, y_2,..., y_n}$$
 - [Surrogate loss functions](http://fa.bianp.net/blog/2014/surrogate-loss-functions-in-machine-learning/)
 - [A comparison of loss function on deep embedding](https://www.slideshare.net/CenkBircanolu/a-comparison-of-loss-function-on-deep-embedding)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwMDQ3MzUyOTYsOTE1MzI3MjMsODIwNj
-MyODcyXX0=
+eyJoaXN0b3J5IjpbLTQ5OTMwNTc0OCw5MTUzMjcyMyw4MjA2Mz
+I4NzJdfQ==
 -->
