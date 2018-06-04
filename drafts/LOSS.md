@@ -20,7 +20,7 @@
    - flat region，即图1中1
    - local minimum， 如图1中点2
    - 鞍点（saddle point），如图1中点3处
-事实上，在高维的loss function的优化过程中，GD几乎从来没法在global minimum处收敛，jiash
+事实上，在高维的loss function的优化过程中，GD几乎从来没法在global minimum处收敛，假设模型有100000个参数
      - global minimum is not differenciable
 
 #### how to solve these problem?
@@ -94,5 +94,5 @@
 - [Surrogate loss functions](http://fa.bianp.net/blog/2014/surrogate-loss-functions-in-machine-learning/)
 - [A comparison of loss function on deep embedding](https://www.slideshare.net/CenkBircanolu/a-comparison-of-loss-function-on-deep-embedding)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0MTA4MTA2OTIsMTM1OTY5NjY1OV19
+eyJoaXN0b3J5IjpbMTQ0MTQwMDQ3OCwxMzU5Njk2NjU5XX0=
 -->
