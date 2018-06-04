@@ -57,7 +57,7 @@ $$L(x_1, x_2)=\left\{ {positive}{negative}$$
 	- siamese loss with global loss
 	- KL divergence loss
 - triplet loss function
-$$(x_1, x_2, x$$
+$$(x_1, x_2, x_3)$$
 - quadruplet loss function
 - hybrid loss function
 
@@ -109,6 +109,6 @@ $$(x_1, x_2, x$$
 - [Surrogate loss functions](http://fa.bianp.net/blog/2014/surrogate-loss-functions-in-machine-learning/)
 - [A comparison of loss function on deep embedding](https://www.slideshare.net/CenkBircanolu/a-comparison-of-loss-function-on-deep-embedding)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTM3MTc5NDc5Niw5MTUzMjcyMyw4MjA2Mz
+eyJoaXN0b3J5IjpbMTc2MjI5MDYwMyw5MTUzMjcyMyw4MjA2Mz
 I4NzJdfQ==
 -->
