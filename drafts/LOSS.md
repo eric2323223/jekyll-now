@@ -109,6 +109,6 @@ $$(x_1, x_2, x_3)$$
 - [Surrogate loss functions](http://fa.bianp.net/blog/2014/surrogate-loss-functions-in-machine-learning/)
 - [A comparison of loss function on deep embedding](https://www.slideshare.net/CenkBircanolu/a-comparison-of-loss-function-on-deep-embedding)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE3NDQ4Mjc1NTMsMTc2MjI5MDYwMyw5MT
-UzMjcyMyw4MjA2MzI4NzJdfQ==
+eyJoaXN0b3J5IjpbMTc2MjI5MDYwMywtMTc0NDgyNzU1MywxNz
+YyMjkwNjAzLDkxNTMyNzIzLDgyMDYzMjg3Ml19
 -->
