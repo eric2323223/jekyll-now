@@ -73,6 +73,7 @@ $$(x_1, x_2, x_3)$$
 - strict theoretical minimum of 0
 - Convergence
 - differenciable
+- experiment
 
 #### Example of loss function design
 
@@ -109,6 +110,6 @@ $$(x_1, x_2, x_3)$$
 - [Surrogate loss functions](http://fa.bianp.net/blog/2014/surrogate-loss-functions-in-machine-learning/)
 - [A comparison of loss function on deep embedding](https://www.slideshare.net/CenkBircanolu/a-comparison-of-loss-function-on-deep-embedding)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTc2MjI5MDYwMywtMTc0NDgyNzU1MywxNz
-YyMjkwNjAzLDkxNTMyNzIzLDgyMDYzMjg3Ml19
+eyJoaXN0b3J5IjpbNjk0NDk1MjQ1LDE3NjIyOTA2MDMsLTE3ND
+Q4Mjc1NTMsOTE1MzI3MjMsODIwNjMyODcyXX0=
 -->
