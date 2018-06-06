@@ -111,5 +111,5 @@ $$(x_1, x_2, x_3)$$
 - [Surrogate loss functions](http://fa.bianp.net/blog/2014/surrogate-loss-functions-in-machine-learning/)
 - [A comparison of loss function on deep embedding](https://www.slideshare.net/CenkBircanolu/a-comparison-of-loss-function-on-deep-embedding)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjI4NzcxMzQ3LDM5ODYzMjYwMF19
+eyJoaXN0b3J5IjpbMzYxNjU4ODQ2LDYyODc3MTM0N119
 -->
