@@ -1,4 +1,4 @@
-# 漫谈Loss function
+ # 漫谈Loss function
 说起机器学习就不能不提到loss function，因为所有的机器学习问题都可以抽象成loss function的优化过程。Loss function的设计从根本上决定了机器学习任务的成败，本文我们就聊聊loss function
 
 ## 原理
@@ -74,6 +74,7 @@ $$(x_1, x_2, x_3)$$
 - Convergence
 - differenciable
 - experiment
+- outliers effect
 - use regression such as mse in classification (consider margin)
 
 #### Example of loss function design
@@ -111,5 +112,6 @@ $$(x_1, x_2, x_3)$$
 - [Surrogate loss functions](http://fa.bianp.net/blog/2014/surrogate-loss-functions-in-machine-learning/)
 - [A comparison of loss function on deep embedding](https://www.slideshare.net/CenkBircanolu/a-comparison-of-loss-function-on-deep-embedding)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzYxNjU4ODQ2LDYyODc3MTM0N119
+eyJoaXN0b3J5IjpbLTc2ODQ1MTU2MiwzNjE2NTg4NDYsNjI4Nz
+cxMzQ3XX0=
 -->
