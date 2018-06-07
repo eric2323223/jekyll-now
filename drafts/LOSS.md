@@ -75,6 +75,7 @@ $$(x_1, x_2, x_3)$$
 - differenciable
 - experiment
 - outliers effect
+  - MSE vs MAE
 - use regression such as mse in classification (consider margin)
 
 #### Example of loss function design
@@ -112,6 +113,6 @@ $$(x_1, x_2, x_3)$$
 - [Surrogate loss functions](http://fa.bianp.net/blog/2014/surrogate-loss-functions-in-machine-learning/)
 - [A comparison of loss function on deep embedding](https://www.slideshare.net/CenkBircanolu/a-comparison-of-loss-function-on-deep-embedding)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTc2ODQ1MTU2MiwzNjE2NTg4NDYsNjI4Nz
-cxMzQ3XX0=
+eyJoaXN0b3J5IjpbLTEwMDE5MzA5NjYsMzYxNjU4ODQ2LDYyOD
+c3MTM0N119
 -->
