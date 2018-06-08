@@ -80,7 +80,7 @@ $$(x_1, x_2, x_3)$$
 - Convergence
 - differenciable
 - computation effort
-	- 
+	- log likelihood example
 - experiment
 - outliers effect
   - MSE vs MAE
@@ -121,7 +121,7 @@ $$(x_1, x_2, x_3)$$
 - [Surrogate loss functions](http://fa.bianp.net/blog/2014/surrogate-loss-functions-in-machine-learning/)
 - [A comparison of loss function on deep embedding](https://www.slideshare.net/CenkBircanolu/a-comparison-of-loss-function-on-deep-embedding)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTIwMzUzMTEzNCwtMTM3ODg0MzQ4MywtOD
-A4OTU2ODE1LC0xMzc4ODQzNDgzLC0xMDAxOTMwOTY2LDM2MTY1
-ODg0Niw2Mjg3NzEzNDddfQ==
+eyJoaXN0b3J5IjpbNjE3ODg3MjcyLC0xMzc4ODQzNDgzLC04MD
+g5NTY4MTUsLTEzNzg4NDM0ODMsLTEwMDE5MzA5NjYsMzYxNjU4
+ODQ2LDYyODc3MTM0N119
 -->
