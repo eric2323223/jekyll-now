@@ -79,6 +79,8 @@ $$(x_1, x_2, x_3)$$
 - strict theoretical minimum of 0
 - Convergence
 - differenciable
+- computation effort
+	- 
 - experiment
 - outliers effect
   - MSE vs MAE
@@ -119,7 +121,7 @@ $$(x_1, x_2, x_3)$$
 - [Surrogate loss functions](http://fa.bianp.net/blog/2014/surrogate-loss-functions-in-machine-learning/)
 - [A comparison of loss function on deep embedding](https://www.slideshare.net/CenkBircanolu/a-comparison-of-loss-function-on-deep-embedding)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzNzg4NDM0ODMsLTgwODk1NjgxNSwtMT
-M3ODg0MzQ4MywtMTAwMTkzMDk2NiwzNjE2NTg4NDYsNjI4Nzcx
-MzQ3XX0=
+eyJoaXN0b3J5IjpbMTIwMzUzMTEzNCwtMTM3ODg0MzQ4MywtOD
+A4OTU2ODE1LC0xMzc4ODQzNDgzLC0xMDAxOTMwOTY2LDM2MTY1
+ODg0Niw2Mjg3NzEzNDddfQ==
 -->
