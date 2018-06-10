@@ -123,9 +123,11 @@ center loss
 - [How to Escape Saddle Points Efficiently](http://www.offconvex.org/2017/07/19/saddle-efficiency/)
 - [Surrogate loss functions](http://fa.bianp.net/blog/2014/surrogate-loss-functions-in-machine-learning/)
 - [A comparison of loss function on deep embedding](https://www.slideshare.net/CenkBircanolu/a-comparison-of-loss-function-on-deep-embedding)
+- [神经网络如何设计自己的loss function，如果需要修改或设计自己的loss，需要遵循什么规则](https://www.zhihu.com/question/59797824)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTA0NDU4MzU0MiwtMjM3NjU3MjM0LDE5OT
-I3NDU2MjYsMTgyMDg2MTA1LC0xMzA4MTAxOTAwLDYxNzg4NzI3
-MiwtMTM3ODg0MzQ4MywtODA4OTU2ODE1LC0xMzc4ODQzNDgzLC
-0xMDAxOTMwOTY2LDM2MTY1ODg0Niw2Mjg3NzEzNDddfQ==
+eyJoaXN0b3J5IjpbLTg2MzIyNDQ4NCwxMDQ0NTgzNTQyLC0yMz
+c2NTcyMzQsMTk5Mjc0NTYyNiwxODIwODYxMDUsLTEzMDgxMDE5
+MDAsNjE3ODg3MjcyLC0xMzc4ODQzNDgzLC04MDg5NTY4MTUsLT
+EzNzg4NDM0ODMsLTEwMDE5MzA5NjYsMzYxNjU4ODQ2LDYyODc3
+MTM0N119
 -->
