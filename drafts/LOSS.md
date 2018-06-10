@@ -86,9 +86,9 @@ $$(x_1, x_2, x_3)$$
 - outliers effect
   - MSE vs MAE
 
-## 设计yang'li
+## 设计样例
 - use regression such as mse in classification (consider margin)
-3
+
 #### Example of loss function design
 
 ## 总结
@@ -124,8 +124,8 @@ $$(x_1, x_2, x_3)$$
 - [Surrogate loss functions](http://fa.bianp.net/blog/2014/surrogate-loss-functions-in-machine-learning/)
 - [A comparison of loss function on deep embedding](https://www.slideshare.net/CenkBircanolu/a-comparison-of-loss-function-on-deep-embedding)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjM2NDM4MzYyLDE5OTI3NDU2MjYsMTgyMD
-g2MTA1LC0xMzA4MTAxOTAwLDYxNzg4NzI3MiwtMTM3ODg0MzQ4
-MywtODA4OTU2ODE1LC0xMzc4ODQzNDgzLC0xMDAxOTMwOTY2LD
-M2MTY1ODg0Niw2Mjg3NzEzNDddfQ==
+eyJoaXN0b3J5IjpbLTIzNzY1NzIzNCwxOTkyNzQ1NjI2LDE4Mj
+A4NjEwNSwtMTMwODEwMTkwMCw2MTc4ODcyNzIsLTEzNzg4NDM0
+ODMsLTgwODk1NjgxNSwtMTM3ODg0MzQ4MywtMTAwMTkzMDk2Ni
+wzNjE2NTg4NDYsNjI4NzcxMzQ3XX0=
 -->
