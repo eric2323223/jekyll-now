@@ -54,9 +54,9 @@ it looks like GD is the only option for machine learning tasks but unfortunately
 	- image semantic segmentation as an example.
 ### By number of inputs
 - class-wise loss function
-$$X={x_1, x_2, ..., x_n} and Y={y_1, y_2,..., y_n}$$
+$$X={x_1, x_2, ..., x_n}  and  Y={y_1, y_2,..., y_n}$$
 	- categorical corss entropy loss
-	$L(X, Y)= - \frac{1}{n} \sigma_{i=1}^n y_i ln(x_i) $
+	$$L(X, Y)= \frac {1}{n} \sigma_{i=1}^n y_i ln(x_i) $
 - pairwise loss function
 $$L(x_1, x_2)=\left\{ {positive}{negative}$$
 	- cosine similarity loss
@@ -122,8 +122,8 @@ $$(x_1, x_2, x_3)$$
 - [Surrogate loss functions](http://fa.bianp.net/blog/2014/surrogate-loss-functions-in-machine-learning/)
 - [A comparison of loss function on deep embedding](https://www.slideshare.net/CenkBircanolu/a-comparison-of-loss-function-on-deep-embedding)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTk5Mjc0NTYyNiwxODIwODYxMDUsLTEzMD
-gxMDE5MDAsNjE3ODg3MjcyLC0xMzc4ODQzNDgzLC04MDg5NTY4
-MTUsLTEzNzg4NDM0ODMsLTEwMDE5MzA5NjYsMzYxNjU4ODQ2LD
-YyODc3MTM0N119
+eyJoaXN0b3J5IjpbOTgzMzk3NjkxLDE5OTI3NDU2MjYsMTgyMD
+g2MTA1LC0xMzA4MTAxOTAwLDYxNzg4NzI3MiwtMTM3ODg0MzQ4
+MywtODA4OTU2ODE1LC0xMzc4ODQzNDgzLC0xMDAxOTMwOTY2LD
+M2MTY1ODg0Niw2Mjg3NzEzNDddfQ==
 -->
