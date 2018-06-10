@@ -93,7 +93,7 @@ $$(x_1, x_2, x_3)$$
 
 ## 总结
 
-
+center loss
 
 ### Distance-based Loss function
 ### Prediction error-based loss function 
@@ -124,8 +124,8 @@ $$(x_1, x_2, x_3)$$
 - [Surrogate loss functions](http://fa.bianp.net/blog/2014/surrogate-loss-functions-in-machine-learning/)
 - [A comparison of loss function on deep embedding](https://www.slideshare.net/CenkBircanolu/a-comparison-of-loss-function-on-deep-embedding)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIzNzY1NzIzNCwxOTkyNzQ1NjI2LDE4Mj
-A4NjEwNSwtMTMwODEwMTkwMCw2MTc4ODcyNzIsLTEzNzg4NDM0
-ODMsLTgwODk1NjgxNSwtMTM3ODg0MzQ4MywtMTAwMTkzMDk2Ni
-wzNjE2NTg4NDYsNjI4NzcxMzQ3XX0=
+eyJoaXN0b3J5IjpbMTA0NDU4MzU0MiwtMjM3NjU3MjM0LDE5OT
+I3NDU2MjYsMTgyMDg2MTA1LC0xMzA4MTAxOTAwLDYxNzg4NzI3
+MiwtMTM3ODg0MzQ4MywtODA4OTU2ODE1LC0xMzc4ODQzNDgzLC
+0xMDAxOTMwOTY2LDM2MTY1ODg0Niw2Mjg3NzEzNDddfQ==
 -->
