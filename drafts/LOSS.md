@@ -72,6 +72,7 @@ $$(x_1, x_2, x_3)$$
 - Cross entropy
 - Cosine loss
 - Contrastive loss
+$$l(i,j);=y_{ij}d_$$
 - CTC
 - Triplet loss
 
@@ -125,9 +126,9 @@ center loss
 - [A comparison of loss function on deep embedding](https://www.slideshare.net/CenkBircanolu/a-comparison-of-loss-function-on-deep-embedding)
 - [神经网络如何设计自己的loss function，如果需要修改或设计自己的loss，需要遵循什么规则](https://www.zhihu.com/question/59797824)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwMzU4MTczMjgsLTg2MzIyNDQ4NCwxMD
-Q0NTgzNTQyLC0yMzc2NTcyMzQsMTk5Mjc0NTYyNiwxODIwODYx
-MDUsLTEzMDgxMDE5MDAsNjE3ODg3MjcyLC0xMzc4ODQzNDgzLC
-04MDg5NTY4MTUsLTEzNzg4NDM0ODMsLTEwMDE5MzA5NjYsMzYx
-NjU4ODQ2LDYyODc3MTM0N119
+eyJoaXN0b3J5IjpbMTcwNTg2MDA2MCwtODYzMjI0NDg0LDEwND
+Q1ODM1NDIsLTIzNzY1NzIzNCwxOTkyNzQ1NjI2LDE4MjA4NjEw
+NSwtMTMwODEwMTkwMCw2MTc4ODcyNzIsLTEzNzg4NDM0ODMsLT
+gwODk1NjgxNSwtMTM3ODg0MzQ4MywtMTAwMTkzMDk2NiwzNjE2
+NTg4NDYsNjI4NzcxMzQ3XX0=
 -->
