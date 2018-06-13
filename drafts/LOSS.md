@@ -7,7 +7,9 @@
 ## 特性
 
 ### Gradient based(GD) optimization
-与数学中的求极值问题不同的地方是，机器学习中的求极值使用。机器学习的领域主要使用基于梯度下降（graidient based(GD)的方法，如图一所示对于一个可导的凸函数，从任意一点出发，沿着倒数下降的方向前进直到倒数为零的点，就是函数的最小值。这个方法看上去简单有效，但是在实际的机器学习任务中，模型参数的数量都很大（如VGG16有$1.38*10^8$个参数），这时的loss function的表现会复杂很多，图二展示了模型参数中的两个参数构成的loss function的形态，可见其中有很多区域导数为零，但他们并不是global minimum，算法会在这些区域收敛，这时模型并不具备最优的性能。
+与数学中的求极值问题不同的地方是，机器学习中的求极值使用。机器学习的领域主要使用基于梯度下降（graidient based(GD)的方法，如图一所示对于一个可导的凸函数，从任意一点出发，沿着倒数下降的方向前进直到倒数为零的点，就是函数的最小值。
+
+这个方法看上去简单有效，但是在实际的机器学习任务中，模型参数的数量都很大（如VGG16有$1.38*10^8$个参数），这时的loss function的表现会复杂很多，图二展示了模型参数中的两个参数构成的loss function的形态，可见其中有很多区域导数为零，但他们并不是global minimum，算法会在这些区域收敛，这时模型并不具备最优的性能。
 ![](https://cdn-images-1.medium.com/max/1600/1*t6OiVIMKw3SBjNzj-lp_Fw.png)
 ### 凸性？非凸性？
 how to check convexity?
@@ -127,9 +129,9 @@ center loss
 - [A comparison of loss function on deep embedding](https://www.slideshare.net/CenkBircanolu/a-comparison-of-loss-function-on-deep-embedding)
 - [神经网络如何设计自己的loss function，如果需要修改或设计自己的loss，需要遵循什么规则](https://www.zhihu.com/question/59797824)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNzI3MDg3ODUsMTczOTkyNTc2NCwtODYzMj
-I0NDg0LDEwNDQ1ODM1NDIsLTIzNzY1NzIzNCwxOTkyNzQ1NjI2
-LDE4MjA4NjEwNSwtMTMwODEwMTkwMCw2MTc4ODcyNzIsLTEzNz
-g4NDM0ODMsLTgwODk1NjgxNSwtMTM3ODg0MzQ4MywtMTAwMTkz
-MDk2Niw2Mjg3NzEzNDddfQ==
+eyJoaXN0b3J5IjpbLTMzNTM4MzU5NSwxNzM5OTI1NzY0LC04Nj
+MyMjQ0ODQsMTA0NDU4MzU0MiwtMjM3NjU3MjM0LDE5OTI3NDU2
+MjYsMTgyMDg2MTA1LC0xMzA4MTAxOTAwLDYxNzg4NzI3MiwtMT
+M3ODg0MzQ4MywtODA4OTU2ODE1LC0xMzc4ODQzNDgzLC0xMDAx
+OTMwOTY2LDYyODc3MTM0N119
 -->
