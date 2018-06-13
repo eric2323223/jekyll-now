@@ -13,13 +13,16 @@
 这个方法看上去简单有效，但是在实际的机器学习任务中，模型参数的数量都很大（如VGG16有$1.38*10^8$个参数），这时的loss function的表现会复杂很多，图二展示了模型参数中的两个参数构成的loss function的形态，可见其中有很多区域导数为零，但他们并不是global minimum，算法会在这些区域收敛，这时模型并不具备最优的性能。
 
 
+
+
+
+![](https://i.stack.imgur.com/TY1L1.png)
 how to check convexity?
 -  function lies above all tangents
 $$f(y).=f(x)+\theta f(x)*(y-x)$$
 - second derivative is non-negative
 ### loss and generalization
 
-![](https://i.stack.imgur.com/TY1L1.png)
 #### 那么为什么还要使用GD呢？
 数学意义上的的优化问题一般有两类解法，一个是解析方法（analytical optimization），适用于在解析解（closed-form solution），另一种是迭代优化（iterative optimization）方法用于不存在解析解的情况，GD就属于迭代优化的一种典型方法。所有基于神经网络的的优化过程由于存在nolinear activation所以不存在解析解使得$\frac {dl(w)}{dw}=0$，因此只能使用GD方法
 - there is no closed form solution
@@ -130,7 +133,7 @@ center loss
 - [A comparison of loss function on deep embedding](https://www.slideshare.net/CenkBircanolu/a-comparison-of-loss-function-on-deep-embedding)
 - [神经网络如何设计自己的loss function，如果需要修改或设计自己的loss，需要遵循什么规则](https://www.zhihu.com/question/59797824)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE4MzYwNTMzMDksLTMzNTM4MzU5NSwxNz
+eyJoaXN0b3J5IjpbLTE1ODU2MDAyNjMsLTMzNTM4MzU5NSwxNz
 M5OTI1NzY0LC04NjMyMjQ0ODQsMTA0NDU4MzU0MiwtMjM3NjU3
 MjM0LDE5OTI3NDU2MjYsMTgyMDg2MTA1LC0xMzA4MTAxOTAwLD
 YxNzg4NzI3MiwtMTM3ODg0MzQ4MywtODA4OTU2ODE1LC0xMzc4
