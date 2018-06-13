@@ -44,7 +44,7 @@ it looks like GD is the only option for machine learning tasks but unfortunately
 ### Non-convexity
 
 
-![](https://www.cs.umd.edu/~tdescent）
+![](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXO0VH3DZzCGdWtWOQPzyuU1cElGYZtPnSrwl0dyQzShX_knMugQ）
 的方法求loss function的最小值，这使得loss function的优化问题具有
 
 - convex vs. non-convex
@@ -133,9 +133,10 @@ center loss
 - [A comparison of loss function on deep embedding](https://www.slideshare.net/CenkBircanolu/a-comparison-of-loss-function-on-deep-embedding)
 - [神经网络如何设计自己的loss function，如果需要修改或设计自己的loss，需要遵循什么规则](https://www.zhihu.com/question/59797824)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1ODU2MDAyNjMsLTMzNTM4MzU5NSwxNz
-M5OTI1NzY0LC04NjMyMjQ0ODQsMTA0NDU4MzU0MiwtMjM3NjU3
-MjM0LDE5OTI3NDU2MjYsMTgyMDg2MTA1LC0xMzA4MTAxOTAwLD
-YxNzg4NzI3MiwtMTM3ODg0MzQ4MywtODA4OTU2ODE1LC0xMzc4
-ODQzNDgzLC0xMDAxOTMwOTY2LDYyODc3MTM0N119
+eyJoaXN0b3J5IjpbMTA1MzcxNTE3MywtMTU4NTYwMDI2MywtMz
+M1MzgzNTk1LDE3Mzk5MjU3NjQsLTg2MzIyNDQ4NCwxMDQ0NTgz
+NTQyLC0yMzc2NTcyMzQsMTk5Mjc0NTYyNiwxODIwODYxMDUsLT
+EzMDgxMDE5MDAsNjE3ODg3MjcyLC0xMzc4ODQzNDgzLC04MDg5
+NTY4MTUsLTEzNzg4NDM0ODMsLTEwMDE5MzA5NjYsNjI4NzcxMz
+Q3XX0=
 -->
