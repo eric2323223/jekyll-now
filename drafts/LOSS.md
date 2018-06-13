@@ -21,7 +21,7 @@ how to check convexity?
 -  function lies above all tangents
 $$f(y).=f(x)+\theta f(x)*(y-x)$$
 - second derivative is non-negative
-### loss and generalization
+
 
 #### 那么为什么还要使用GD呢？
 数学意义上的的优化问题一般有两类解法，一个是解析方法（analytical optimization），适用于在解析解（closed-form solution），另一种是迭代优化（iterative optimization）方法用于不存在解析解的情况，GD就属于迭代优化的一种典型方法。所有基于神经网络的的优化过程由于存在nolinear activation所以不存在解析解使得$\frac {dl(w)}{dw}=0$，因此只能使用GD方法
@@ -41,7 +41,8 @@ it looks like GD is the only option for machine learning tasks but unfortunately
     - surrogate loss function
 - SGD  
 - Parameter initialization
-### Non-convexity
+
+### loss and generalization
 
 
 ![](https://www.cs.umd.edu/~tomg/img/landscapes/noshort.png)
@@ -133,10 +134,10 @@ center loss
 - [A comparison of loss function on deep embedding](https://www.slideshare.net/CenkBircanolu/a-comparison-of-loss-function-on-deep-embedding)
 - [神经网络如何设计自己的loss function，如果需要修改或设计自己的loss，需要遵循什么规则](https://www.zhihu.com/question/59797824)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2NjI5NjExNjcsMTA1MzcxNTE3MywtMT
-U4NTYwMDI2MywtMzM1MzgzNTk1LDE3Mzk5MjU3NjQsLTg2MzIy
-NDQ4NCwxMDQ0NTgzNTQyLC0yMzc2NTcyMzQsMTk5Mjc0NTYyNi
-wxODIwODYxMDUsLTEzMDgxMDE5MDAsNjE3ODg3MjcyLC0xMzc4
-ODQzNDgzLC04MDg5NTY4MTUsLTEzNzg4NDM0ODMsLTEwMDE5Mz
-A5NjYsNjI4NzcxMzQ3XX0=
+eyJoaXN0b3J5IjpbLTU4MDUxMTkzMSwxMDUzNzE1MTczLC0xNT
+g1NjAwMjYzLC0zMzUzODM1OTUsMTczOTkyNTc2NCwtODYzMjI0
+NDg0LDEwNDQ1ODM1NDIsLTIzNzY1NzIzNCwxOTkyNzQ1NjI2LD
+E4MjA4NjEwNSwtMTMwODEwMTkwMCw2MTc4ODcyNzIsLTEzNzg4
+NDM0ODMsLTgwODk1NjgxNSwtMTM3ODg0MzQ4MywtMTAwMTkzMD
+k2Niw2Mjg3NzEzNDddfQ==
 -->
