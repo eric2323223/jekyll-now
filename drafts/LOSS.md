@@ -127,9 +127,9 @@ center loss
 - [A comparison of loss function on deep embedding](https://www.slideshare.net/CenkBircanolu/a-comparison-of-loss-function-on-deep-embedding)
 - [神经网络如何设计自己的loss function，如果需要修改或设计自己的loss，需要遵循什么规则](https://www.zhihu.com/question/59797824)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTczOTkyNTc2NCwtODYzMjI0NDg0LDEwND
-Q1ODM1NDIsLTIzNzY1NzIzNCwxOTkyNzQ1NjI2LDE4MjA4NjEw
-NSwtMTMwODEwMTkwMCw2MTc4ODcyNzIsLTEzNzg4NDM0ODMsLT
-gwODk1NjgxNSwtMTM3ODg0MzQ4MywtMTAwMTkzMDk2NiwzNjE2
-NTg4NDYsNjI4NzcxMzQ3XX0=
+eyJoaXN0b3J5IjpbODg3Mzk3MjcsMTczOTkyNTc2NCwtODYzMj
+I0NDg0LDEwNDQ1ODM1NDIsLTIzNzY1NzIzNCwxOTkyNzQ1NjI2
+LDE4MjA4NjEwNSwtMTMwODEwMTkwMCw2MTc4ODcyNzIsLTEzNz
+g4NDM0ODMsLTgwODk1NjgxNSwtMTM3ODg0MzQ4MywtMTAwMTkz
+MDk2Niw2Mjg3NzEzNDddfQ==
 -->
