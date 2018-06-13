@@ -26,7 +26,7 @@ $$f(y).=f(x)+\theta f(x)*(y-x)$$
 - 0 gradient is not nessisarily global minimum
    - flat region，即图1中1
    - local minimum， 如图1中点2
-   - 鞍点（saddle point），如图1中点3处，鞍点是指在该点上一个纬度。。。事实上，on the surface of a high dimensional loss function, saddle points take majority part of all 0-gradient points, consider a loss function with 100000 parameters, soppose there are  50% possiblity a 0-gradient point is at its minimum and 50% possiblity at its maximum, the possibilty of this point being global/local minimum is $0.5^100000 \approx 1*10^{-30103}$ 
+   - 鞍点（saddle point），如图1中点3处，鞍点是指在该点上一个纬度。。。事实上，on the surface of a high dimensional loss function, saddle points take majority part of all 0-gradient points, consider a loss function with 100000 parameters, soppose there are  50% possiblity a 0-gradient point is at its minimum and 50% possiblity at its maximum, the possibilty of this point being global/local minimum is $0.5^{100000} \approx 1*10^{-30103}$ 
      - global minimum is not differenciable
 
 #### how to solve these problem?
@@ -127,9 +127,9 @@ center loss
 - [A comparison of loss function on deep embedding](https://www.slideshare.net/CenkBircanolu/a-comparison-of-loss-function-on-deep-embedding)
 - [神经网络如何设计自己的loss function，如果需要修改或设计自己的loss，需要遵循什么规则](https://www.zhihu.com/question/59797824)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODg3Mzk3MjcsMTczOTkyNTc2NCwtODYzMj
-I0NDg0LDEwNDQ1ODM1NDIsLTIzNzY1NzIzNCwxOTkyNzQ1NjI2
-LDE4MjA4NjEwNSwtMTMwODEwMTkwMCw2MTc4ODcyNzIsLTEzNz
-g4NDM0ODMsLTgwODk1NjgxNSwtMTM3ODg0MzQ4MywtMTAwMTkz
-MDk2Niw2Mjg3NzEzNDddfQ==
+eyJoaXN0b3J5IjpbLTE1MDc3NDAwMTMsMTczOTkyNTc2NCwtOD
+YzMjI0NDg0LDEwNDQ1ODM1NDIsLTIzNzY1NzIzNCwxOTkyNzQ1
+NjI2LDE4MjA4NjEwNSwtMTMwODEwMTkwMCw2MTc4ODcyNzIsLT
+EzNzg4NDM0ODMsLTgwODk1NjgxNSwtMTM3ODg0MzQ4MywtMTAw
+MTkzMDk2Niw2Mjg3NzEzNDddfQ==
 -->
