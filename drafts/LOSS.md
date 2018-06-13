@@ -5,12 +5,6 @@
 简单来说loss function是一种量化模型拟合程度的工具，我们知道机器学习（监督式机器学习）的基本思想设计一个由参数$\theta$决定的模型$f_\theta$，使得输入$x$经过模型$f_\theta(x)$计算后得到接近真实$y$的结果，模型的训练过程是用标签数据（$x_i, y_i$）输入模型$f_w(x_i) = \hat y_i$并计算预测值和真实值的差距$L_w$，求$w$使得$L_w$取最小值，这时模型$f_x$达到最优状态，那么如何判断模型和现实的接近程度呢？如何判断模型已经足够好呢？loss function可以回答这些问题，loss function的loss表示了模型和真实的差距$L_w(\hat y, y)$，当这个距离达到最小值的时候我们就认为模型达到最好的状态。所以机器学习实际上是一个求loss function最小值的问题，radent om/im
 
 ## 特性
-### 凸性？非凸性？
-how to check convexity?
--  function lies above all tangents
-$$f(y).=f(x)+\theta f(x)*(y-x)$$
-- second derivative is non-negative
-### loss and generalization
 
 ### Gradient based(GD) optimization
 与数学中的求极值问题不同的地方是，机器学习中的求极值使用。机器学习的领域主要使用基于梯度下降（graidient based(GD)的方法，如图一所示对于一个可导的凸函数，从任意一点出发，沿着倒数下降的方向前进直到倒数为零的点，就是函数的最小值。这个方法看上去简单有效，但是在实际的机器学习任务中，模型参数的数量都很大（如VGG16有$1.38*10^8$个参数），这时的loss function的表现会复杂很多，图二展示了模型参数中的两个参数构成的loss function的形态，可见其中有很多区域导数为零，但他们并不是global minimum，算法会在这些区域收敛，这时模型并不具备最优的性能。
@@ -127,9 +121,9 @@ center loss
 - [A comparison of loss function on deep embedding](https://www.slideshare.net/CenkBircanolu/a-comparison-of-loss-function-on-deep-embedding)
 - [神经网络如何设计自己的loss function，如果需要修改或设计自己的loss，需要遵循什么规则](https://www.zhihu.com/question/59797824)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE4OTE2NjI1NDMsMTczOTkyNTc2NCwtOD
-YzMjI0NDg0LDEwNDQ1ODM1NDIsLTIzNzY1NzIzNCwxOTkyNzQ1
-NjI2LDE4MjA4NjEwNSwtMTMwODEwMTkwMCw2MTc4ODcyNzIsLT
-EzNzg4NDM0ODMsLTgwODk1NjgxNSwtMTM3ODg0MzQ4MywtMTAw
-MTkzMDk2Niw2Mjg3NzEzNDddfQ==
+eyJoaXN0b3J5IjpbNTY4NDM1NzYyLDE3Mzk5MjU3NjQsLTg2Mz
+IyNDQ4NCwxMDQ0NTgzNTQyLC0yMzc2NTcyMzQsMTk5Mjc0NTYy
+NiwxODIwODYxMDUsLTEzMDgxMDE5MDAsNjE3ODg3MjcyLC0xMz
+c4ODQzNDgzLC04MDg5NTY4MTUsLTEzNzg4NDM0ODMsLTEwMDE5
+MzA5NjYsNjI4NzcxMzQ3XX0=
 -->
