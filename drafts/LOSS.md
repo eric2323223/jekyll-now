@@ -9,7 +9,7 @@
 ### Gradient based(GD) optimization
 与数学中的求极值问题不同的地方是，机器学习中的求极值使用。机器学习的领域主要使用基于梯度下降（graidient based(GD)的方法，如图一所示对于一个可导的凸函数，从任意一点出发，沿着倒数下降的方向前进直到倒数为零的点，就是函数的最小值。
 ![](https://cdn-images-1.medium.com/max/1600/1*t6OiVIMKw3SBjNzj-lp_Fw.png)
-### 凸性？非凸性？
+### 非凸性
 这个方法看上去简单有效，但是在实际的机器学习任务中，模型参数的数量都很大（如VGG16有$1.38*10^8$个参数），这时的loss function的表现会复杂很多，图二展示了模型参数中的两个参数构成的loss function的形态，可见其中有很多区域导数为零，但他们并不是global minimum，算法会在这些区域收敛，这时模型并不具备最优的性能。
 
 
@@ -44,7 +44,7 @@ it looks like GD is the only option for machine learning tasks but unfortunately
 ### Non-convexity
 
 
-![(https://www.cs.umd.edu/~tomg/img/landscapes/noshort.png
+![](https://www.cs.umd.edu/~tomg/img/landscapes/noshort.png)
 的方法求loss function的最小值，这使得loss function的优化问题具有
 
 - convex vs. non-convex
@@ -133,10 +133,10 @@ center loss
 - [A comparison of loss function on deep embedding](https://www.slideshare.net/CenkBircanolu/a-comparison-of-loss-function-on-deep-embedding)
 - [神经网络如何设计自己的loss function，如果需要修改或设计自己的loss，需要遵循什么规则](https://www.zhihu.com/question/59797824)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIyMzEzNDkzMCwxMDUzNzE1MTczLC0xNT
-g1NjAwMjYzLC0zMzUzODM1OTUsMTczOTkyNTc2NCwtODYzMjI0
-NDg0LDEwNDQ1ODM1NDIsLTIzNzY1NzIzNCwxOTkyNzQ1NjI2LD
-E4MjA4NjEwNSwtMTMwODEwMTkwMCw2MTc4ODcyNzIsLTEzNzg4
-NDM0ODMsLTgwODk1NjgxNSwtMTM3ODg0MzQ4MywtMTAwMTkzMD
-k2Niw2Mjg3NzEzNDddfQ==
+eyJoaXN0b3J5IjpbLTE2NjI5NjExNjcsMTA1MzcxNTE3MywtMT
+U4NTYwMDI2MywtMzM1MzgzNTk1LDE3Mzk5MjU3NjQsLTg2MzIy
+NDQ4NCwxMDQ0NTgzNTQyLC0yMzc2NTcyMzQsMTk5Mjc0NTYyNi
+wxODIwODYxMDUsLTEzMDgxMDE5MDAsNjE3ODg3MjcyLC0xMzc4
+ODQzNDgzLC04MDg5NTY4MTUsLTEzNzg4NDM0ODMsLTEwMDE5Mz
+A5NjYsNjI4NzcxMzQ3XX0=
 -->
