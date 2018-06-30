@@ -96,6 +96,8 @@ NOTE: this is example of non-differenciable loss function
 
 ## 设计样例
 - use regression such as mse in classification (consider margin)
+- softmax -> contrastive loss -> triplet loss
+				- -> center loss
 
 #### Example of loss function design
 
@@ -133,6 +135,6 @@ center loss
 - [A comparison of loss function on deep embedding](https://www.slideshare.net/CenkBircanolu/a-comparison-of-loss-function-on-deep-embedding)
 - [神经网络如何设计自己的loss function，如果需要修改或设计自己的loss，需要遵循什么规则](https://www.zhihu.com/question/59797824)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTQ0MjM3MjczMCwyMTcwODUwNjcsNzYzOT
-Q1NTU2XX0=
+eyJoaXN0b3J5IjpbMTU3MjE3OTgyOSwxNDQyMzcyNzMwLDIxNz
+A4NTA2Nyw3NjM5NDU1NTZdfQ==
 -->
