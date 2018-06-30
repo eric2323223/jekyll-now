@@ -10,9 +10,14 @@
 与数学中的求极值问题不同的地方是，机器学习中的求极值使用。机器学习的领域主要使用基于梯度下降（graidient based(GD)的方法，如图一所示对于一个可导的凸函数，从任意一点出发，沿着倒数下降的方向前进直到倒数为零的点，就是函数的最小值。
 ![](https://cdn-images-1.medium.com/max/1600/1*t6OiVIMKw3SBjNzj-lp_Fw.png)
 ### 非凸性
-这个方法看上去简单有效，但是在实际的机器学习任务中，模型参数的数量都很大（如VGG16有$1.38*10^8$个参数），这时的loss function的表现会复杂很多，图二展示了模型参数中的两个参数构成的loss function的形态，可见其中有很多区域导数为零，但显然他们并不都是最小值，甚至不是局部最小值，GD算法会在这些区域收敛，但这时模型并不具备最优的性能。
+这个方法看上去简单有效，但是在实际的机器学习任务中，模型参数的数量都很大（如VGG16有$1.38*10^8$个参数），这时的loss function的表现会复杂很多，图二展示了模型参数中的两个参数构成的loss function的形态，可见其中有很多区域导数为零，但显然他们并不都是最小值，甚至不是局部最小值，~~GD算法会在这些区域收敛，但这时模型并不具备最优的性能。~~
 
 
+根据GD在导数为0处收敛的特性，可知在高维loss function中，除了global minimum，GD还可能会收敛于如下区域
+- 0 gradient is not nessisarily global minimum
+   - flat region，即图1中1
+   - local minimum， 如图1中点2
+   - 鞍点（saddle point），如图1中点3处，鞍点是指在该点上一个纬度。。。事实上，on the surface of a high dimensional loss function, saddle points take majority part of all 0-gradient points, consider a loss function with 100000 parameters, soppose there are  50% possiblity a 0-gradient point is at its minimum and 50% possiblity at its maximum, the possibilty of this point being global/local minimum is $0.5^{100000} \approx 1*10^{-30103}$ 
 
 
 
@@ -134,5 +139,6 @@ center loss
 - [A comparison of loss function on deep embedding](https://www.slideshare.net/CenkBircanolu/a-comparison-of-loss-function-on-deep-embedding)
 - [神经网络如何设计自己的loss function，如果需要修改或设计自己的loss，需要遵循什么规则](https://www.zhihu.com/question/59797824)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjE3MDg1MDY3LDc2Mzk0NTU1Nl19
+eyJoaXN0b3J5IjpbMjAwNTg0MjE4OSwyMTcwODUwNjcsNzYzOT
+Q1NTU2XX0=
 -->
