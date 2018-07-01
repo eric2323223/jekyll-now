@@ -27,13 +27,6 @@
    - local minimum， 如图1中点2
    - 鞍点（saddle point），如图1中点3处，鞍点是指在该点上一个纬度。。。~~事实上，on the surface of a high dimensional loss function, saddle points take majority part of all 0-gradient points, consider a loss function with 100000 parameters, soppose there are  50% possiblity a 0-gradient point is at its minimum and 50% possiblity at its maximum, the possibilty of this point being global/local minimum is $0.5^{100000} \approx 1*10^{-30103}$~~ 
 
-
-
-
-
-
-
-
 > ### 那么为什么还要使用GD呢？ 
 > 数学意义上的的优化问题一般有两类解法，一个是解析方法（analytical optimization），适用于在解析解（closed-form solution），另一种是迭代优化（iterative
 > optimization）方法用于不存在解析解的情况，GD就属于迭代优化的一种典型方法。所有基于神经网络的的优化过程由于存在nolinear
@@ -41,6 +34,7 @@
 > - there is no closed form solution
 > - it is computational impossible to use analytical solution when data is huge
 
+简单总结，SGD+合适的optimizer可以有效
 
 #### how to solve these problem?
 it looks like GD is the only option for machine learning tasks but unfortunately have very few chance  to  find a global minimum of a practical loss function, then how can we solve this issue? The answer is SGD by adding randomness in GD process.
@@ -143,7 +137,7 @@ center loss
 - [A comparison of loss function on deep embedding](https://www.slideshare.net/CenkBircanolu/a-comparison-of-loss-function-on-deep-embedding)
 - [神经网络如何设计自己的loss function，如果需要修改或设计自己的loss，需要遵循什么规则](https://www.zhihu.com/question/59797824)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE5MDg0MjA1ODMsMTkzNTkxNTg1OCw0ND
-Y5MjUzMDYsLTE5MzMxMjM0Myw0NDY5MjUzMDYsMTU3MjE3OTgy
-OSwxNDQyMzcyNzMwLDIxNzA4NTA2Nyw3NjM5NDU1NTZdfQ==
+eyJoaXN0b3J5IjpbMjAxMzE0Mzg3NywxOTM1OTE1ODU4LDQ0Nj
+kyNTMwNiwtMTkzMzEyMzQzLDQ0NjkyNTMwNiwxNTcyMTc5ODI5
+LDE0NDIzNzI3MzAsMjE3MDg1MDY3LDc2Mzk0NTU1Nl19
 -->
