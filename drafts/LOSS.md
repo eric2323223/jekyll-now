@@ -26,6 +26,7 @@
    - flat region，即图1中1
    - local minimum， 如图1中点2
    - 鞍点（saddle point），如图1中点3处，鞍点是指在该点上一个纬度。。。~~事实上，on the surface of a high dimensional loss function, saddle points take majority part of all 0-gradient points, consider a loss function with 100000 parameters, soppose there are  50% possiblity a 0-gradient point is at its minimum and 50% possiblity at its maximum, the possibilty of this point being global/local minimum is $0.5^{100000} \approx 1*10^{-30103}$~~ 
+![](http://rinuboney.github.io/img/saddle_point.png)
 
 > ### 那么为什么还要使用GD呢？ 
 > 数学意义上的的优化问题一般有两类解法，一个是解析方法（analytical optimization），适用于在解析解（closed-form solution），另一种是迭代优化（iterative
@@ -139,8 +140,8 @@ center loss
 - [神经网络如何设计自己的loss function，如果需要修改或设计自己的loss，需要遵循什么规则](https://www.zhihu.com/question/59797824)
 - [An overview of gradient descent optimization algorithms](http://ruder.io/optimizing-gradient-descent)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTA4NzY1Nzg4OCwzOTUwODcyMjAsNjgxMT
-E2OTc1LDE5MzU5MTU4NTgsNDQ2OTI1MzA2LC0xOTMzMTIzNDMs
-NDQ2OTI1MzA2LDE1NzIxNzk4MjksMTQ0MjM3MjczMCwyMTcwOD
-UwNjcsNzYzOTQ1NTU2XX0=
+eyJoaXN0b3J5IjpbLTE5NTUzMDM1MjYsMTA4NzY1Nzg4OCwzOT
+UwODcyMjAsNjgxMTE2OTc1LDE5MzU5MTU4NTgsNDQ2OTI1MzA2
+LC0xOTMzMTIzNDMsNDQ2OTI1MzA2LDE1NzIxNzk4MjksMTQ0Mj
+M3MjczMCwyMTcwODUwNjcsNzYzOTQ1NTU2XX0=
 -->
