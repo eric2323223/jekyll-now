@@ -36,7 +36,7 @@
 > - it is computational impossible to use analytical solution when data is huge
 
 ![](http://ruder.io/content/images/2016/09/saddle_point_evaluation_optimizers.gif)
-简单总结，SGD+合适的optimizer(such as momentum)可以有效找到非凸函数的minima
+简单总结，SGD+合适的optimizer(such as momentum) + (ini)可以有效找到非凸函数的minima
 
 #### how to solve these problem?
 it looks like GD is the only option for machine learning tasks but unfortunately have very few chance  to  find a global minimum of a practical loss function, then how can we solve this issue? The answer is SGD by adding randomness in GD process.
@@ -140,8 +140,9 @@ center loss
 - [神经网络如何设计自己的loss function，如果需要修改或设计自己的loss，需要遵循什么规则](https://www.zhihu.com/question/59797824)
 - [An overview of gradient descent optimization algorithms](http://ruder.io/optimizing-gradient-descent)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEyMzA3Mzc3NjYsMTA4NzY1Nzg4OCwzOT
-UwODcyMjAsNjgxMTE2OTc1LDE5MzU5MTU4NTgsNDQ2OTI1MzA2
-LC0xOTMzMTIzNDMsNDQ2OTI1MzA2LDE1NzIxNzk4MjksMTQ0Mj
-M3MjczMCwyMTcwODUwNjcsNzYzOTQ1NTU2XX0=
+eyJoaXN0b3J5IjpbMTE0OTk5MzIxOCwtMTIzMDczNzc2NiwxMD
+g3NjU3ODg4LDM5NTA4NzIyMCw2ODExMTY5NzUsMTkzNTkxNTg1
+OCw0NDY5MjUzMDYsLTE5MzMxMjM0Myw0NDY5MjUzMDYsMTU3Mj
+E3OTgyOSwxNDQyMzcyNzMwLDIxNzA4NTA2Nyw3NjM5NDU1NTZd
+fQ==
 -->
