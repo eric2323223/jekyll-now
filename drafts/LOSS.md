@@ -136,8 +136,10 @@ center loss
 - [Surrogate loss functions](http://fa.bianp.net/blog/2014/surrogate-loss-functions-in-machine-learning/)
 - [A comparison of loss function on deep embedding](https://www.slideshare.net/CenkBircanolu/a-comparison-of-loss-function-on-deep-embedding)
 - [神经网络如何设计自己的loss function，如果需要修改或设计自己的loss，需要遵循什么规则](https://www.zhihu.com/question/59797824)
+- [An overview of gradient descent optimization algorithms](http://ruder.io/optimizing-gradient-descent)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjgxMTE2OTc1LDE5MzU5MTU4NTgsNDQ2OT
-I1MzA2LC0xOTMzMTIzNDMsNDQ2OTI1MzA2LDE1NzIxNzk4Mjks
-MTQ0MjM3MjczMCwyMTcwODUwNjcsNzYzOTQ1NTU2XX0=
+eyJoaXN0b3J5IjpbMzk1MDg3MjIwLDY4MTExNjk3NSwxOTM1OT
+E1ODU4LDQ0NjkyNTMwNiwtMTkzMzEyMzQzLDQ0NjkyNTMwNiwx
+NTcyMTc5ODI5LDE0NDIzNzI3MzAsMjE3MDg1MDY3LDc2Mzk0NT
+U1Nl19
 -->
