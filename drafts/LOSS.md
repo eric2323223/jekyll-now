@@ -38,7 +38,7 @@
 ![](http://ruder.io/content/images/2016/09/saddle_point_evaluation_optimizers.gif)
 简单总结，SGD+合适的optimizer(such as momentum) + (random initilization)可以有效找到非凸函数的minima
 
-#### how to solve these problem?
+>#### how to escapte from Plateaus
 it looks like GD is the only option for machine learning tasks but unfortunately have very few chance  to  find a global minimum of a practical loss function, then how can we solve this issue? The answer is SGD by adding randomness in GD process.
 - choose better loss function
     - surrogate loss function
@@ -140,9 +140,9 @@ center loss
 - [神经网络如何设计自己的loss function，如果需要修改或设计自己的loss，需要遵循什么规则](https://www.zhihu.com/question/59797824)
 - [An overview of gradient descent optimization algorithms](http://ruder.io/optimizing-gradient-descent)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTg0NTI3MjEyNCwtMTIzMDczNzc2NiwxMD
-g3NjU3ODg4LDM5NTA4NzIyMCw2ODExMTY5NzUsMTkzNTkxNTg1
-OCw0NDY5MjUzMDYsLTE5MzMxMjM0Myw0NDY5MjUzMDYsMTU3Mj
-E3OTgyOSwxNDQyMzcyNzMwLDIxNzA4NTA2Nyw3NjM5NDU1NTZd
-fQ==
+eyJoaXN0b3J5IjpbOTMzMDk4MTU0LDE4NDUyNzIxMjQsLTEyMz
+A3Mzc3NjYsMTA4NzY1Nzg4OCwzOTUwODcyMjAsNjgxMTE2OTc1
+LDE5MzU5MTU4NTgsNDQ2OTI1MzA2LC0xOTMzMTIzNDMsNDQ2OT
+I1MzA2LDE1NzIxNzk4MjksMTQ0MjM3MjczMCwyMTcwODUwNjcs
+NzYzOTQ1NTU2XX0=
 -->
