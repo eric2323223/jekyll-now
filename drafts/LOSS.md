@@ -39,7 +39,7 @@
 简单总结，SGD+合适的optimizer(such as momentum) + (random initilization)可以有效找到非凸函数的minima
 
 >#### how to escapte from Plateaus
-> Surrogate loss function can help, for example in http://fa.bianp.net/blog/2014/surrogate-loss-functions-in-machine-learning/
+> It's still a hard problem. Surrogate loss function can help, for example in http://fa.bianp.net/blog/2014/surrogate-loss-functions-in-machine-learning/
 
 ### loss and generalization
 
@@ -136,9 +136,9 @@ center loss
 - [神经网络如何设计自己的loss function，如果需要修改或设计自己的loss，需要遵循什么规则](https://www.zhihu.com/question/59797824)
 - [An overview of gradient descent optimization algorithms](http://ruder.io/optimizing-gradient-descent)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2MzI0NTQ1ODIsMTg0NTI3MjEyNCwtMT
-IzMDczNzc2NiwxMDg3NjU3ODg4LDM5NTA4NzIyMCw2ODExMTY5
-NzUsMTkzNTkxNTg1OCw0NDY5MjUzMDYsLTE5MzMxMjM0Myw0ND
-Y5MjUzMDYsMTU3MjE3OTgyOSwxNDQyMzcyNzMwLDIxNzA4NTA2
-Nyw3NjM5NDU1NTZdfQ==
+eyJoaXN0b3J5IjpbMTY3MjM1MzgxNCwxODQ1MjcyMTI0LC0xMj
+MwNzM3NzY2LDEwODc2NTc4ODgsMzk1MDg3MjIwLDY4MTExNjk3
+NSwxOTM1OTE1ODU4LDQ0NjkyNTMwNiwtMTkzMzEyMzQzLDQ0Nj
+kyNTMwNiwxNTcyMTc5ODI5LDE0NDIzNzI3MzAsMjE3MDg1MDY3
+LDc2Mzk0NTU1Nl19
 -->
