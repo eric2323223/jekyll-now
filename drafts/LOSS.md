@@ -10,7 +10,7 @@
 与数学中的求极值问题不同的地方是，机器学习中的求极值使用。机器学习的领域主要使用基于梯度下降（graidient based(GD)的方法，如图一所示对于一个可导的凸函数，从任意一点出发，沿着倒数下降的方向前进直到倒数为零的点，就是函数的最小值。
 
 > ### 如何判断凸函数？
-> "_If the function is twice differentiable, and the second derivative is always greater than or equal to zero for its entire domain, then the function is convex._"pa
+> "_If the function is twice differentiable, and the second derivative is always greater than or equal to zero for its entire domain, then the function is convex._"
 
 ![](https://cdn-images-1.medium.com/max/1600/1*t6OiVIMKw3SBjNzj-lp_Fw.png)
 ### 非凸性
@@ -141,7 +141,7 @@ center loss
 - [A comparison of loss function on deep embedding](https://www.slideshare.net/CenkBircanolu/a-comparison-of-loss-function-on-deep-embedding)
 - [神经网络如何设计自己的loss function，如果需要修改或设计自己的loss，需要遵循什么规则](https://www.zhihu.com/question/59797824)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE5MzMxMjM0Myw0NDY5MjUzMDYsMTU3Mj
-E3OTgyOSwxNDQyMzcyNzMwLDIxNzA4NTA2Nyw3NjM5NDU1NTZd
-fQ==
+eyJoaXN0b3J5IjpbNDQ2OTI1MzA2LC0xOTMzMTIzNDMsNDQ2OT
+I1MzA2LDE1NzIxNzk4MjksMTQ0MjM3MjczMCwyMTcwODUwNjcs
+NzYzOTQ1NTU2XX0=
 -->
