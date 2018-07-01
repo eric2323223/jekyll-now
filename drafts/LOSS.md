@@ -9,7 +9,8 @@
 ### Gradient based(GD) optimization
 与数学中的求极值问题不同的地方是，机器学习中的求极值使用。机器学习的领域主要使用基于梯度下降（graidient based(GD)的方法，如图一所示对于一个可导的凸函数，从任意一点出发，沿着倒数下降的方向前进直到倒数为零的点，就是函数的最小值。
 
-> 如何判断凸函数
+> ### 如何判断凸函数？
+> 
 
 ![](https://cdn-images-1.medium.com/max/1600/1*t6OiVIMKw3SBjNzj-lp_Fw.png)
 ### 非凸性
@@ -31,10 +32,12 @@ $$f(y)=f(x)+\theta f(x)*(y-x)$$
 - second derivative is non-negative
 
 
-### [sidebar]那么为什么还要使用GD呢？
-数学意义上的的优化问题一般有两类解法，一个是解析方法（analytical optimization），适用于在解析解（closed-form solution），另一种是迭代优化（iterative optimization）方法用于不存在解析解的情况，GD就属于迭代优化的一种典型方法。所有基于神经网络的的优化过程由于存在nolinear activation所以不存在解析解使得$\frac {dl(w)}{dw}=0$，因此只能使用GD方法
-- there is no closed form solution
-- it is computational impossible to use analytical solution when data is huge
+> ### 那么为什么还要使用GD呢？ 
+> 数学意义上的的优化问题一般有两类解法，一个是解析方法（analytical optimization），适用于在解析解（closed-form solution），另一种是迭代优化（iterative
+> optimization）方法用于不存在解析解的情况，GD就属于迭代优化的一种典型方法。所有基于神经网络的的优化过程由于存在nolinear
+> activation所以不存在解析解使得$\frac {dl(w)}{dw}=0$，因此只能使用GD方法
+> - there is no closed form solution
+> - it is computational impossible to use analytical solution when data is huge
 
 
 #### how to solve these problem?
@@ -138,6 +141,6 @@ center loss
 - [A comparison of loss function on deep embedding](https://www.slideshare.net/CenkBircanolu/a-comparison-of-loss-function-on-deep-embedding)
 - [神经网络如何设计自己的loss function，如果需要修改或设计自己的loss，需要遵循什么规则](https://www.zhihu.com/question/59797824)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzNTkxNTkzMCwxNTcyMTc5ODI5LDE0ND
-IzNzI3MzAsMjE3MDg1MDY3LDc2Mzk0NTU1Nl19
+eyJoaXN0b3J5IjpbLTExMjE1NzQzMzYsMTU3MjE3OTgyOSwxND
+QyMzcyNzMwLDIxNzA4NTA2Nyw3NjM5NDU1NTZdfQ==
 -->
