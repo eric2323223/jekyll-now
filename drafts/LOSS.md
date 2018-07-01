@@ -33,7 +33,8 @@
 > activation所以不存在解析解使得$\frac {dl(w)}{dw}=0$，因此只能使用GD方法
 > - there is no closed form solution
 > - it is computational impossible to use analytical solution when data is huge
-![]()
+
+![](http://ruder.io/content/images/2016/09/saddle_point_evaluation_optimizers.gif)
 简单总结，SGD+合适的optimizer(such as momentum)可以有效找到非凸函数的minima
 
 #### how to solve these problem?
@@ -138,8 +139,8 @@ center loss
 - [神经网络如何设计自己的loss function，如果需要修改或设计自己的loss，需要遵循什么规则](https://www.zhihu.com/question/59797824)
 - [An overview of gradient descent optimization algorithms](http://ruder.io/optimizing-gradient-descent)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwMTkwMjkwNjIsMzk1MDg3MjIwLDY4MT
-ExNjk3NSwxOTM1OTE1ODU4LDQ0NjkyNTMwNiwtMTkzMzEyMzQz
-LDQ0NjkyNTMwNiwxNTcyMTc5ODI5LDE0NDIzNzI3MzAsMjE3MD
-g1MDY3LDc2Mzk0NTU1Nl19
+eyJoaXN0b3J5IjpbMTA4NzY1Nzg4OCwzOTUwODcyMjAsNjgxMT
+E2OTc1LDE5MzU5MTU4NTgsNDQ2OTI1MzA2LC0xOTMzMTIzNDMs
+NDQ2OTI1MzA2LDE1NzIxNzk4MjksMTQ0MjM3MjczMCwyMTcwOD
+UwNjcsNzYzOTQ1NTU2XX0=
 -->
