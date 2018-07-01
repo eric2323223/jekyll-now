@@ -34,7 +34,7 @@
 > - there is no closed form solution
 > - it is computational impossible to use analytical solution when data is huge
 
-简单总结，SGD+合适的optimizer可以有效
+简单总结，SGD+合适的optimizer可以有效找到非凸函数的
 
 #### how to solve these problem?
 it looks like GD is the only option for machine learning tasks but unfortunately have very few chance  to  find a global minimum of a practical loss function, then how can we solve this issue? The answer is SGD by adding randomness in GD process.
@@ -137,7 +137,7 @@ center loss
 - [A comparison of loss function on deep embedding](https://www.slideshare.net/CenkBircanolu/a-comparison-of-loss-function-on-deep-embedding)
 - [神经网络如何设计自己的loss function，如果需要修改或设计自己的loss，需要遵循什么规则](https://www.zhihu.com/question/59797824)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjAxMzE0Mzg3NywxOTM1OTE1ODU4LDQ0Nj
-kyNTMwNiwtMTkzMzEyMzQzLDQ0NjkyNTMwNiwxNTcyMTc5ODI5
-LDE0NDIzNzI3MzAsMjE3MDg1MDY3LDc2Mzk0NTU1Nl19
+eyJoaXN0b3J5IjpbLTEyOTcwNjk3NjgsMTkzNTkxNTg1OCw0ND
+Y5MjUzMDYsLTE5MzMxMjM0Myw0NDY5MjUzMDYsMTU3MjE3OTgy
+OSwxNDQyMzcyNzMwLDIxNzA4NTA2Nyw3NjM5NDU1NTZdfQ==
 -->
