@@ -53,7 +53,7 @@
 ## 分类
 
 ### By purpose
-- classification
+- 分类问题（classification）
 - regression
 - multi-task learning
 	- image semantic segmentation as an example.
@@ -135,9 +135,10 @@ center loss
 - [神经网络如何设计自己的loss function，如果需要修改或设计自己的loss，需要遵循什么规则](https://www.zhihu.com/question/59797824)
 - [An overview of gradient descent optimization algorithms](http://ruder.io/optimizing-gradient-descent)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTA1OTU5Nzk2LC04Njc5OTMyMCwxNjcyMz
-UzODE0LDE4NDUyNzIxMjQsLTEyMzA3Mzc3NjYsMTA4NzY1Nzg4
-OCwzOTUwODcyMjAsNjgxMTE2OTc1LDE5MzU5MTU4NTgsNDQ2OT
-I1MzA2LC0xOTMzMTIzNDMsNDQ2OTI1MzA2LDE1NzIxNzk4Mjks
-MTQ0MjM3MjczMCwyMTcwODUwNjcsNzYzOTQ1NTU2XX0=
+eyJoaXN0b3J5IjpbMjEzODAxOTUyOCw1MDU5NTk3OTYsLTg2Nz
+k5MzIwLDE2NzIzNTM4MTQsMTg0NTI3MjEyNCwtMTIzMDczNzc2
+NiwxMDg3NjU3ODg4LDM5NTA4NzIyMCw2ODExMTY5NzUsMTkzNT
+kxNTg1OCw0NDY5MjUzMDYsLTE5MzMxMjM0Myw0NDY5MjUzMDYs
+MTU3MjE3OTgyOSwxNDQyMzcyNzMwLDIxNzA4NTA2Nyw3NjM5ND
+U1NTZdfQ==
 -->
