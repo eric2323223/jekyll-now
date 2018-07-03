@@ -51,7 +51,9 @@
 - semantics
 
 ## 常见误差函数
-
+ - cross entropy loss
+ - MSE/MAE
+ - 
 ### By purpose
 - 分类问题（classification）
 - 回归问题（regression）
@@ -135,10 +137,11 @@ center loss
 - [神经网络如何设计自己的loss function，如果需要修改或设计自己的loss，需要遵循什么规则](https://www.zhihu.com/question/59797824)
 - [An overview of gradient descent optimization algorithms](http://ruder.io/optimizing-gradient-descent)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjg2ODg3MjMxLDE2ODI4Njg0ODIsLTEzMD
-Q2OTMxMjQsMjEzODAxOTUyOCw1MDU5NTk3OTYsMTY3MjM1Mzgx
-NCwxODQ1MjcyMTI0LC0xMjMwNzM3NzY2LDEwODc2NTc4ODgsMz
-k1MDg3MjIwLDY4MTExNjk3NSwxOTM1OTE1ODU4LDQ0NjkyNTMw
-NiwtMTkzMzEyMzQzLDQ0NjkyNTMwNiwxNTcyMTc5ODI5LDE0ND
-IzNzI3MzAsMjE3MDg1MDY3LDc2Mzk0NTU1Nl19
+eyJoaXN0b3J5IjpbODczMTExODY3LDI4Njg4NzIzMSwxNjgyOD
+Y4NDgyLC0xMzA0NjkzMTI0LDIxMzgwMTk1MjgsNTA1OTU5Nzk2
+LDE2NzIzNTM4MTQsMTg0NTI3MjEyNCwtMTIzMDczNzc2NiwxMD
+g3NjU3ODg4LDM5NTA4NzIyMCw2ODExMTY5NzUsMTkzNTkxNTg1
+OCw0NDY5MjUzMDYsLTE5MzMxMjM0Myw0NDY5MjUzMDYsMTU3Mj
+E3OTgyOSwxNDQyMzcyNzMwLDIxNzA4NTA2Nyw3NjM5NDU1NTZd
+fQ==
 -->
