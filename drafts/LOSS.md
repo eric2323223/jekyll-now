@@ -57,7 +57,7 @@
  - Composite loss
 机器学习任务主要可以分为三类
 - 分类问题（classification）
-	- Cross entropy lo
+	- Cross entropy loss
 - 回归问题（regression）
 	- MSE/MAE
 	- 
@@ -142,11 +142,11 @@ center loss
 - [神经网络如何设计自己的loss function，如果需要修改或设计自己的loss，需要遵循什么规则](https://www.zhihu.com/question/59797824)
 - [An overview of gradient descent optimization algorithms](http://ruder.io/optimizing-gradient-descent)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjYxMTA4OTIyLC0xOTEzNjY3NTQzLDI4Nj
-g4NzIzMSwxNjgyODY4NDgyLC0xMzA0NjkzMTI0LDIxMzgwMTk1
-MjgsNTA1OTU5Nzk2LDE2NzIzNTM4MTQsMTg0NTI3MjEyNCwtMT
-IzMDczNzc2NiwxMDg3NjU3ODg4LDM5NTA4NzIyMCw2ODExMTY5
-NzUsMTkzNTkxNTg1OCw0NDY5MjUzMDYsLTE5MzMxMjM0Myw0ND
-Y5MjUzMDYsMTU3MjE3OTgyOSwxNDQyMzcyNzMwLDIxNzA4NTA2
-N119
+eyJoaXN0b3J5IjpbLTI5NjEwNjE1MCwtMTkxMzY2NzU0MywyOD
+Y4ODcyMzEsMTY4Mjg2ODQ4MiwtMTMwNDY5MzEyNCwyMTM4MDE5
+NTI4LDUwNTk1OTc5NiwxNjcyMzUzODE0LDE4NDUyNzIxMjQsLT
+EyMzA3Mzc3NjYsMTA4NzY1Nzg4OCwzOTUwODcyMjAsNjgxMTE2
+OTc1LDE5MzU5MTU4NTgsNDQ2OTI1MzA2LC0xOTMzMTIzNDMsND
+Q2OTI1MzA2LDE1NzIxNzk4MjksMTQ0MjM3MjczMCwyMTcwODUw
+NjddfQ==
 -->
