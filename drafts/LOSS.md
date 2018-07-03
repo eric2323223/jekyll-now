@@ -50,7 +50,7 @@
 - Regularization
 - semantics
 
-## 分类
+## 常见误差函数
 
 ### By purpose
 - 分类问题（classification）
@@ -135,10 +135,10 @@ center loss
 - [神经网络如何设计自己的loss function，如果需要修改或设计自己的loss，需要遵循什么规则](https://www.zhihu.com/question/59797824)
 - [An overview of gradient descent optimization algorithms](http://ruder.io/optimizing-gradient-descent)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzMDQ2OTMxMjQsMjEzODAxOTUyOCw1MD
-U5NTk3OTYsMTY3MjM1MzgxNCwxODQ1MjcyMTI0LC0xMjMwNzM3
-NzY2LDEwODc2NTc4ODgsMzk1MDg3MjIwLDY4MTExNjk3NSwxOT
-M1OTE1ODU4LDQ0NjkyNTMwNiwtMTkzMzEyMzQzLDQ0NjkyNTMw
-NiwxNTcyMTc5ODI5LDE0NDIzNzI3MzAsMjE3MDg1MDY3LDc2Mz
-k0NTU1Nl19
+eyJoaXN0b3J5IjpbMTY4Mjg2ODQ4MiwtMTMwNDY5MzEyNCwyMT
+M4MDE5NTI4LDUwNTk1OTc5NiwxNjcyMzUzODE0LDE4NDUyNzIx
+MjQsLTEyMzA3Mzc3NjYsMTA4NzY1Nzg4OCwzOTUwODcyMjAsNj
+gxMTE2OTc1LDE5MzU5MTU4NTgsNDQ2OTI1MzA2LC0xOTMzMTIz
+NDMsNDQ2OTI1MzA2LDE1NzIxNzk4MjksMTQ0MjM3MjczMCwyMT
+cwODUwNjcsNzYzOTQ1NTU2XX0=
 -->
