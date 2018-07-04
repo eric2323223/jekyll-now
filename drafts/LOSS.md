@@ -96,7 +96,7 @@ NOTE: this is example of non-differenciable loss function
 - loss functin semantic
 - strict theoretical minimum of 0
 - Convergence
-- differenciable
+- differenciable-su
 - computation effort
 	- log likelihood example
 - experiment
@@ -147,11 +147,11 @@ center loss
 - [神经网络如何设计自己的loss function，如果需要修改或设计自己的loss，需要遵循什么规则](https://www.zhihu.com/question/59797824)
 - [An overview of gradient descent optimization algorithms](http://ruder.io/optimizing-gradient-descent)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEwNDYzMzQ0OSwtMTU4Mjg1MzQ0NCwtNz
-Q2MDgwNTA2LDExNzE3NDA4NSwtMjk2MTA2MTUwLC0xOTEzNjY3
-NTQzLDI4Njg4NzIzMSwxNjgyODY4NDgyLC0xMzA0NjkzMTI0LD
-IxMzgwMTk1MjgsNTA1OTU5Nzk2LDE2NzIzNTM4MTQsMTg0NTI3
-MjEyNCwtMTIzMDczNzc2NiwxMDg3NjU3ODg4LDM5NTA4NzIyMC
-w2ODExMTY5NzUsMTkzNTkxNTg1OCw0NDY5MjUzMDYsLTE5MzMx
-MjM0M119
+eyJoaXN0b3J5IjpbLTMzODUxMDg2MCwtMTA0NjMzNDQ5LC0xNT
+gyODUzNDQ0LC03NDYwODA1MDYsMTE3MTc0MDg1LC0yOTYxMDYx
+NTAsLTE5MTM2Njc1NDMsMjg2ODg3MjMxLDE2ODI4Njg0ODIsLT
+EzMDQ2OTMxMjQsMjEzODAxOTUyOCw1MDU5NTk3OTYsMTY3MjM1
+MzgxNCwxODQ1MjcyMTI0LC0xMjMwNzM3NzY2LDEwODc2NTc4OD
+gsMzk1MDg3MjIwLDY4MTExNjk3NSwxOTM1OTE1ODU4LDQ0Njky
+NTMwNl19
 -->
