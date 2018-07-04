@@ -96,7 +96,7 @@ NOTE: this is example of non-differenciable loss function
 - loss functin semantic
 - strict theoretical minimum of 0
 - Convergence
-- differenciable-su
+- differenciable-surrogate loss function
 - computation effort
 	- log likelihood example
 - experiment
@@ -147,7 +147,7 @@ center loss
 - [神经网络如何设计自己的loss function，如果需要修改或设计自己的loss，需要遵循什么规则](https://www.zhihu.com/question/59797824)
 - [An overview of gradient descent optimization algorithms](http://ruder.io/optimizing-gradient-descent)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTMzODUxMDg2MCwtMTA0NjMzNDQ5LC0xNT
+eyJoaXN0b3J5IjpbMTQ5MjUyOTAxNSwtMTA0NjMzNDQ5LC0xNT
 gyODUzNDQ0LC03NDYwODA1MDYsMTE3MTc0MDg1LC0yOTYxMDYx
 NTAsLTE5MTM2Njc1NDMsMjg2ODg3MjMxLDE2ODI4Njg0ODIsLT
 EzMDQ2OTMxMjQsMjEzODAxOTUyOCw1MDU5NTk3OTYsMTY3MjM1
