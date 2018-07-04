@@ -61,7 +61,7 @@
 - 回归问题（regression）
 	- MSE
 	- MAE
-	- 
+	- compare MSE and MAE
 - 多任务问题
 	- 
 	- Object detection
@@ -145,11 +145,11 @@ center loss
 - [神经网络如何设计自己的loss function，如果需要修改或设计自己的loss，需要遵循什么规则](https://www.zhihu.com/question/59797824)
 - [An overview of gradient descent optimization algorithms](http://ruder.io/optimizing-gradient-descent)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjUyNjc2MDA2LC03NDYwODA1MDYsMTE3MT
-c0MDg1LC0yOTYxMDYxNTAsLTE5MTM2Njc1NDMsMjg2ODg3MjMx
-LDE2ODI4Njg0ODIsLTEzMDQ2OTMxMjQsMjEzODAxOTUyOCw1MD
-U5NTk3OTYsMTY3MjM1MzgxNCwxODQ1MjcyMTI0LC0xMjMwNzM3
-NzY2LDEwODc2NTc4ODgsMzk1MDg3MjIwLDY4MTExNjk3NSwxOT
-M1OTE1ODU4LDQ0NjkyNTMwNiwtMTkzMzEyMzQzLDQ0NjkyNTMw
-Nl19
+eyJoaXN0b3J5IjpbLTE1ODI4NTM0NDQsLTc0NjA4MDUwNiwxMT
+cxNzQwODUsLTI5NjEwNjE1MCwtMTkxMzY2NzU0MywyODY4ODcy
+MzEsMTY4Mjg2ODQ4MiwtMTMwNDY5MzEyNCwyMTM4MDE5NTI4LD
+UwNTk1OTc5NiwxNjcyMzUzODE0LDE4NDUyNzIxMjQsLTEyMzA3
+Mzc3NjYsMTA4NzY1Nzg4OCwzOTUwODcyMjAsNjgxMTE2OTc1LD
+E5MzU5MTU4NTgsNDQ2OTI1MzA2LC0xOTMzMTIzNDMsNDQ2OTI1
+MzA2XX0=
 -->
