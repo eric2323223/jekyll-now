@@ -62,6 +62,7 @@
 	- MSE
 	- MAE
 - 多任务问题
+	- 
 	- Object detection
 - multi-task learning
 	- image semantic segmentation as an example.
@@ -143,11 +144,11 @@ center loss
 - [神经网络如何设计自己的loss function，如果需要修改或设计自己的loss，需要遵循什么规则](https://www.zhihu.com/question/59797824)
 - [An overview of gradient descent optimization algorithms](http://ruder.io/optimizing-gradient-descent)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTc0NjA4MDUwNiwxMTcxNzQwODUsLTI5Nj
-EwNjE1MCwtMTkxMzY2NzU0MywyODY4ODcyMzEsMTY4Mjg2ODQ4
-MiwtMTMwNDY5MzEyNCwyMTM4MDE5NTI4LDUwNTk1OTc5NiwxNj
-cyMzUzODE0LDE4NDUyNzIxMjQsLTEyMzA3Mzc3NjYsMTA4NzY1
-Nzg4OCwzOTUwODcyMjAsNjgxMTE2OTc1LDE5MzU5MTU4NTgsND
-Q2OTI1MzA2LC0xOTMzMTIzNDMsNDQ2OTI1MzA2LDE1NzIxNzk4
-MjldfQ==
+eyJoaXN0b3J5IjpbNjE4Mzk2OTMxLC03NDYwODA1MDYsMTE3MT
+c0MDg1LC0yOTYxMDYxNTAsLTE5MTM2Njc1NDMsMjg2ODg3MjMx
+LDE2ODI4Njg0ODIsLTEzMDQ2OTMxMjQsMjEzODAxOTUyOCw1MD
+U5NTk3OTYsMTY3MjM1MzgxNCwxODQ1MjcyMTI0LC0xMjMwNzM3
+NzY2LDEwODc2NTc4ODgsMzk1MDg3MjIwLDY4MTExNjk3NSwxOT
+M1OTE1ODU4LDQ0NjkyNTMwNiwtMTkzMzEyMzQzLDQ0NjkyNTMw
+Nl19
 -->
