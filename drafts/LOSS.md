@@ -104,7 +104,9 @@ NOTE: this is example of non-differenciable loss function
   - MSE vs MAE
 
 ## 设计样例
-- use regression such as mse in classification (consider margin)
+-
+人脸识别的loss function设计
+ use regression such as mse in classification (consider margin)
 - softmax -> contrastive loss -> triplet loss
 				- -> center loss
 
@@ -145,11 +147,11 @@ center loss
 - [神经网络如何设计自己的loss function，如果需要修改或设计自己的loss，需要遵循什么规则](https://www.zhihu.com/question/59797824)
 - [An overview of gradient descent optimization algorithms](http://ruder.io/optimizing-gradient-descent)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1ODI4NTM0NDQsLTc0NjA4MDUwNiwxMT
-cxNzQwODUsLTI5NjEwNjE1MCwtMTkxMzY2NzU0MywyODY4ODcy
-MzEsMTY4Mjg2ODQ4MiwtMTMwNDY5MzEyNCwyMTM4MDE5NTI4LD
-UwNTk1OTc5NiwxNjcyMzUzODE0LDE4NDUyNzIxMjQsLTEyMzA3
-Mzc3NjYsMTA4NzY1Nzg4OCwzOTUwODcyMjAsNjgxMTE2OTc1LD
-E5MzU5MTU4NTgsNDQ2OTI1MzA2LC0xOTMzMTIzNDMsNDQ2OTI1
-MzA2XX0=
+eyJoaXN0b3J5IjpbLTEwNDYzMzQ0OSwtMTU4Mjg1MzQ0NCwtNz
+Q2MDgwNTA2LDExNzE3NDA4NSwtMjk2MTA2MTUwLC0xOTEzNjY3
+NTQzLDI4Njg4NzIzMSwxNjgyODY4NDgyLC0xMzA0NjkzMTI0LD
+IxMzgwMTk1MjgsNTA1OTU5Nzk2LDE2NzIzNTM4MTQsMTg0NTI3
+MjEyNCwtMTIzMDczNzc2NiwxMDg3NjU3ODg4LDM5NTA4NzIyMC
+w2ODExMTY5NzUsMTkzNTkxNTg1OCw0NDY5MjUzMDYsLTE5MzMx
+MjM0M119
 -->
