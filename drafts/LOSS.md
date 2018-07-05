@@ -147,11 +147,11 @@ center loss
 - [神经网络如何设计自己的loss function，如果需要修改或设计自己的loss，需要遵循什么规则](https://www.zhihu.com/question/59797824)
 - [An overview of gradient descent optimization algorithms](http://ruder.io/optimizing-gradient-descent)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTExMDk3MjMyMjEsMTQ5MjUyOTAxNSwtMT
-A0NjMzNDQ5LC0xNTgyODUzNDQ0LC03NDYwODA1MDYsMTE3MTc0
-MDg1LC0yOTYxMDYxNTAsLTE5MTM2Njc1NDMsMjg2ODg3MjMxLD
-E2ODI4Njg0ODIsLTEzMDQ2OTMxMjQsMjEzODAxOTUyOCw1MDU5
-NTk3OTYsMTY3MjM1MzgxNCwxODQ1MjcyMTI0LC0xMjMwNzM3Nz
-Y2LDEwODc2NTc4ODgsMzk1MDg3MjIwLDY4MTExNjk3NSwxOTM1
-OTE1ODU4XX0=
+eyJoaXN0b3J5IjpbMTQ5MjUyOTAxNSwtMTEwOTcyMzIyMSwxND
+kyNTI5MDE1LC0xMDQ2MzM0NDksLTE1ODI4NTM0NDQsLTc0NjA4
+MDUwNiwxMTcxNzQwODUsLTI5NjEwNjE1MCwtMTkxMzY2NzU0My
+wyODY4ODcyMzEsMTY4Mjg2ODQ4MiwtMTMwNDY5MzEyNCwyMTM4
+MDE5NTI4LDUwNTk1OTc5NiwxNjcyMzUzODE0LDE4NDUyNzIxMj
+QsLTEyMzA3Mzc3NjYsMTA4NzY1Nzg4OCwzOTUwODcyMjAsNjgx
+MTE2OTc1XX0=
 -->
