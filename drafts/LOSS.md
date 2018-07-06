@@ -8,6 +8,7 @@
 
 ### Gradient based(GD) optimization
 与数学中的求极值问题不同的地方是，机器学习中的求极值使用。机器学习的领域主要使用基于梯度下降（graidient based(GD)的方法，如图一所示对于一个可导的凸函数，从任意一点出发，沿着倒数下降的方向前进直到倒数为零的点，就是函数的最小值。
+### 连续性
 
 > #### 如何判断凸函数？
 > "_If the function is twice differentiable, and the second derivative is always greater than or equal to zero for its entire domain, then the function is convex._"
@@ -147,11 +148,11 @@ center loss
 - [神经网络如何设计自己的loss function，如果需要修改或设计自己的loss，需要遵循什么规则](https://www.zhihu.com/question/59797824)
 - [An overview of gradient descent optimization algorithms](http://ruder.io/optimizing-gradient-descent)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTExMDk3MjMyMjEsMTQ5MjUyOTAxNSwtMT
-EwOTcyMzIyMSwxNDkyNTI5MDE1LC0xMDQ2MzM0NDksLTE1ODI4
-NTM0NDQsLTc0NjA4MDUwNiwxMTcxNzQwODUsLTI5NjEwNjE1MC
-wtMTkxMzY2NzU0MywyODY4ODcyMzEsMTY4Mjg2ODQ4MiwtMTMw
-NDY5MzEyNCwyMTM4MDE5NTI4LDUwNTk1OTc5NiwxNjcyMzUzOD
-E0LDE4NDUyNzIxMjQsLTEyMzA3Mzc3NjYsMTA4NzY1Nzg4OCwz
-OTUwODcyMjBdfQ==
+eyJoaXN0b3J5IjpbMTQ3OTcwNDQ0OCwtMTEwOTcyMzIyMSwxND
+kyNTI5MDE1LDE0OTI1MjkwMTUsLTEwNDYzMzQ0OSwtMTU4Mjg1
+MzQ0NCwtNzQ2MDgwNTA2LDExNzE3NDA4NSwtMjk2MTA2MTUwLC
+0xOTEzNjY3NTQzLDI4Njg4NzIzMSwxNjgyODY4NDgyLC0xMzA0
+NjkzMTI0LDIxMzgwMTk1MjgsNTA1OTU5Nzk2LDE2NzIzNTM4MT
+QsMTg0NTI3MjEyNCwtMTIzMDczNzc2NiwxMDg3NjU3ODg4LDM5
+NTA4NzIyMF19
 -->
