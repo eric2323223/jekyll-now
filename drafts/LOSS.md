@@ -45,7 +45,7 @@ minibatch GD允许loss function在个别点不连续
 > It's still a hard problem. Surrogate loss function can help, for example in http://fa.bianp.net/blog/2014/surrogate-loss-functions-in-machine-learning/
 
 ### loss and generalization
-- L1 L2 in loss function an
+- L1 L2 in loss function and regularization
 
 ![](https://www.cs.umd.edu/~tomg/img/landscapes/noshort.png)
 的方法求loss function的最小值，这使得loss function的优化问题具有
@@ -150,7 +150,7 @@ center loss
 - [神经网络如何设计自己的loss function，如果需要修改或设计自己的loss，需要遵循什么规则](https://www.zhihu.com/question/59797824)
 - [An overview of gradient descent optimization algorithms](http://ruder.io/optimizing-gradient-descent)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTczMTE2MTQ1NywtMTcyMjMzNjI0OCwtMT
+eyJoaXN0b3J5IjpbLTE5MjU3NjI2NywtMTcyMjMzNjI0OCwtMT
 EwOTcyMzIyMSwxNDkyNTI5MDE1LDE0OTI1MjkwMTUsLTEwNDYz
 MzQ0OSwtMTU4Mjg1MzQ0NCwtNzQ2MDgwNTA2LDExNzE3NDA4NS
 wtMjk2MTA2MTUwLC0xOTEzNjY3NTQzLDI4Njg4NzIzMSwxNjgy
