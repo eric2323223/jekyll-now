@@ -60,7 +60,7 @@ minibatch GD允许loss function在个别点不连续
  - Composite loss
 机器学习任务主要可以分为三类
 - 分类问题（classification）
-	- Cross entropy loss
+	- Cross entropy loss （Maximum likelyhood estimation）
 - 回归问题（regression）
 	- MSE
 	- MAE
@@ -150,11 +150,11 @@ center loss
 - [神经网络如何设计自己的loss function，如果需要修改或设计自己的loss，需要遵循什么规则](https://www.zhihu.com/question/59797824)
 - [An overview of gradient descent optimization algorithms](http://ruder.io/optimizing-gradient-descent)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTIyNzI5MDA0OSwtMTkyNTc2MjY3LC0xNz
-IyMzM2MjQ4LC0xMTA5NzIzMjIxLDE0OTI1MjkwMTUsMTQ5MjUy
-OTAxNSwtMTA0NjMzNDQ5LC0xNTgyODUzNDQ0LC03NDYwODA1MD
-YsMTE3MTc0MDg1LC0yOTYxMDYxNTAsLTE5MTM2Njc1NDMsMjg2
-ODg3MjMxLDE2ODI4Njg0ODIsLTEzMDQ2OTMxMjQsMjEzODAxOT
-UyOCw1MDU5NTk3OTYsMTY3MjM1MzgxNCwxODQ1MjcyMTI0LC0x
-MjMwNzM3NzY2XX0=
+eyJoaXN0b3J5IjpbMTgxMTI0NTgzMSwxMjI3MjkwMDQ5LC0xOT
+I1NzYyNjcsLTE3MjIzMzYyNDgsLTExMDk3MjMyMjEsMTQ5MjUy
+OTAxNSwxNDkyNTI5MDE1LC0xMDQ2MzM0NDksLTE1ODI4NTM0ND
+QsLTc0NjA4MDUwNiwxMTcxNzQwODUsLTI5NjEwNjE1MCwtMTkx
+MzY2NzU0MywyODY4ODcyMzEsMTY4Mjg2ODQ4MiwtMTMwNDY5Mz
+EyNCwyMTM4MDE5NTI4LDUwNTk1OTc5NiwxNjcyMzUzODE0LDE4
+NDUyNzIxMjRdfQ==
 -->
