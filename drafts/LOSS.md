@@ -119,10 +119,7 @@ NOTE: this is example of non-differenciable loss function
 
 ## 总结
 
-center loss
 
-### Distance-based Loss function
-### Prediction error-based loss function 
 
 
 
@@ -152,11 +149,11 @@ center loss
 - [神经网络如何设计自己的loss function，如果需要修改或设计自己的loss，需要遵循什么规则](https://www.zhihu.com/question/59797824)
 - [An overview of gradient descent optimization algorithms](http://ruder.io/optimizing-gradient-descent)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTc3NjE2NzEzNywtMTA2NDk1ODMxOCwxOD
-ExMjQ1ODMxLDEyMjcyOTAwNDksLTE5MjU3NjI2NywtMTcyMjMz
-NjI0OCwtMTEwOTcyMzIyMSwxNDkyNTI5MDE1LDE0OTI1MjkwMT
-UsLTEwNDYzMzQ0OSwtMTU4Mjg1MzQ0NCwtNzQ2MDgwNTA2LDEx
-NzE3NDA4NSwtMjk2MTA2MTUwLC0xOTEzNjY3NTQzLDI4Njg4Nz
-IzMSwxNjgyODY4NDgyLC0xMzA0NjkzMTI0LDIxMzgwMTk1Mjgs
-NTA1OTU5Nzk2XX0=
+eyJoaXN0b3J5IjpbLTY2NzEzMTA3MywtNzc2MTY3MTM3LC0xMD
+Y0OTU4MzE4LDE4MTEyNDU4MzEsMTIyNzI5MDA0OSwtMTkyNTc2
+MjY3LC0xNzIyMzM2MjQ4LC0xMTA5NzIzMjIxLDE0OTI1MjkwMT
+UsMTQ5MjUyOTAxNSwtMTA0NjMzNDQ5LC0xNTgyODUzNDQ0LC03
+NDYwODA1MDYsMTE3MTc0MDg1LC0yOTYxMDYxNTAsLTE5MTM2Nj
+c1NDMsMjg2ODg3MjMxLDE2ODI4Njg0ODIsLTEzMDQ2OTMxMjQs
+MjEzODAxOTUyOF19
 -->
