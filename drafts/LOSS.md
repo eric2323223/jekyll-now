@@ -109,7 +109,7 @@ NOTE: this is example of non-differenciable loss function
 ## 设计样例
 人脸识别的loss function设计。
 - 面部识别和图像识别的区别
-	- 面部识别的目标是识别不同
+	- 面部识别的目标是识别不同环境中的某一类（某个人）的面部特征
 - 
  use regression such as mse in classification (consider margin)
 - softmax -> contrastive loss -> triplet loss
@@ -152,11 +152,11 @@ center loss
 - [神经网络如何设计自己的loss function，如果需要修改或设计自己的loss，需要遵循什么规则](https://www.zhihu.com/question/59797824)
 - [An overview of gradient descent optimization algorithms](http://ruder.io/optimizing-gradient-descent)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE4NjYwNDY1OTAsLTEwNjQ5NTgzMTgsMT
-gxMTI0NTgzMSwxMjI3MjkwMDQ5LC0xOTI1NzYyNjcsLTE3MjIz
-MzYyNDgsLTExMDk3MjMyMjEsMTQ5MjUyOTAxNSwxNDkyNTI5MD
-E1LC0xMDQ2MzM0NDksLTE1ODI4NTM0NDQsLTc0NjA4MDUwNiwx
-MTcxNzQwODUsLTI5NjEwNjE1MCwtMTkxMzY2NzU0MywyODY4OD
-cyMzEsMTY4Mjg2ODQ4MiwtMTMwNDY5MzEyNCwyMTM4MDE5NTI4
-LDUwNTk1OTc5Nl19
+eyJoaXN0b3J5IjpbMTAyMjUzMjk0OSwtMTA2NDk1ODMxOCwxOD
+ExMjQ1ODMxLDEyMjcyOTAwNDksLTE5MjU3NjI2NywtMTcyMjMz
+NjI0OCwtMTEwOTcyMzIyMSwxNDkyNTI5MDE1LDE0OTI1MjkwMT
+UsLTEwNDYzMzQ0OSwtMTU4Mjg1MzQ0NCwtNzQ2MDgwNTA2LDEx
+NzE3NDA4NSwtMjk2MTA2MTUwLC0xOTEzNjY3NTQzLDI4Njg4Nz
+IzMSwxNjgyODY4NDgyLC0xMzA0NjkzMTI0LDIxMzgwMTk1Mjgs
+NTA1OTU5Nzk2XX0=
 -->
