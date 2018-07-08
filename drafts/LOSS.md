@@ -107,7 +107,7 @@ NOTE: this is example of non-differenciable loss function
   - MSE vs MAE
 
 ## 设计样例
-人脸识别的loss function设计。
+从人脸识别探讨loss function设计。
 - 面部识别和图像识别的区别
 	- 面部识别的目标是识别不同环境中的某一类（某个人）的面部特征
 - 
@@ -152,7 +152,7 @@ center loss
 - [神经网络如何设计自己的loss function，如果需要修改或设计自己的loss，需要遵循什么规则](https://www.zhihu.com/question/59797824)
 - [An overview of gradient descent optimization algorithms](http://ruder.io/optimizing-gradient-descent)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTAyMjUzMjk0OSwtMTA2NDk1ODMxOCwxOD
+eyJoaXN0b3J5IjpbLTc3NjE2NzEzNywtMTA2NDk1ODMxOCwxOD
 ExMjQ1ODMxLDEyMjcyOTAwNDksLTE5MjU3NjI2NywtMTcyMjMz
 NjI0OCwtMTEwOTcyMzIyMSwxNDkyNTI5MDE1LDE0OTI1MjkwMT
 UsLTEwNDYzMzQ0OSwtMTU4Mjg1MzQ0NCwtNzQ2MDgwNTA2LDEx
