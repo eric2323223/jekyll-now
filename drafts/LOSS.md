@@ -145,11 +145,11 @@ NOTE: this is example of non-differenciable loss function
 - [神经网络如何设计自己的loss function，如果需要修改或设计自己的loss，需要遵循什么规则](https://www.zhihu.com/question/59797824)
 - [An overview of gradient descent optimization algorithms](http://ruder.io/optimizing-gradient-descent)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjY5Nzk4MDYxLC05MDQwNzEyNjMsLTEwOT
-gzMzg0MzQsLTE1Mjc5NzUwOTIsLTEwMDAzNzk1MTIsLTE4MDc1
-OTI2NTUsMjAwMDEwOTcwNywtNjY3MTMxMDczLC03NzYxNjcxMz
-csLTEwNjQ5NTgzMTgsMTgxMTI0NTgzMSwxMjI3MjkwMDQ5LC0x
-OTI1NzYyNjcsLTE3MjIzMzYyNDgsLTExMDk3MjMyMjEsMTQ5Mj
-UyOTAxNSwxNDkyNTI5MDE1LC0xMDQ2MzM0NDksLTE1ODI4NTM0
-NDQsLTc0NjA4MDUwNl19
+eyJoaXN0b3J5IjpbMjA0MjI5NDExMyw2Njk3OTgwNjEsLTkwND
+A3MTI2MywtMTA5ODMzODQzNCwtMTUyNzk3NTA5MiwtMTAwMDM3
+OTUxMiwtMTgwNzU5MjY1NSwyMDAwMTA5NzA3LC02NjcxMzEwNz
+MsLTc3NjE2NzEzNywtMTA2NDk1ODMxOCwxODExMjQ1ODMxLDEy
+MjcyOTAwNDksLTE5MjU3NjI2NywtMTcyMjMzNjI0OCwtMTEwOT
+cyMzIyMSwxNDkyNTI5MDE1LDE0OTI1MjkwMTUsLTEwNDYzMzQ0
+OSwtMTU4Mjg1MzQ0NF19
 -->
