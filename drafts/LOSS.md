@@ -53,11 +53,6 @@ Loss function虽然可以引导GD进行模型的优化，但是一个常见的�
 - L1 L2 in loss function and regularization
 
 ![](https://www.cs.umd.edu/~tomg/img/landscapes/noshort.png)
-的方法求loss function的最小值，这使得loss function的优化问题具有
-
-- Regularization
-- semantics
-
 ## 常见误差函数
  - Cross entropy loss
  - MSE/MAE
@@ -154,11 +149,11 @@ NOTE: this is example of non-differenciable loss function
 - [神经网络如何设计自己的loss function，如果需要修改或设计自己的loss，需要遵循什么规则](https://www.zhihu.com/question/59797824)
 - [An overview of gradient descent optimization algorithms](http://ruder.io/optimizing-gradient-descent)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEwOTgzMzg0MzQsLTE1Mjc5NzUwOTIsLT
-EwMDAzNzk1MTIsLTE4MDc1OTI2NTUsMjAwMDEwOTcwNywtNjY3
-MTMxMDczLC03NzYxNjcxMzcsLTEwNjQ5NTgzMTgsMTgxMTI0NT
-gzMSwxMjI3MjkwMDQ5LC0xOTI1NzYyNjcsLTE3MjIzMzYyNDgs
-LTExMDk3MjMyMjEsMTQ5MjUyOTAxNSwxNDkyNTI5MDE1LC0xMD
-Q2MzM0NDksLTE1ODI4NTM0NDQsLTc0NjA4MDUwNiwxMTcxNzQw
-ODUsLTI5NjEwNjE1MF19
+eyJoaXN0b3J5IjpbLTkwNDA3MTI2MywtMTA5ODMzODQzNCwtMT
+UyNzk3NTA5MiwtMTAwMDM3OTUxMiwtMTgwNzU5MjY1NSwyMDAw
+MTA5NzA3LC02NjcxMzEwNzMsLTc3NjE2NzEzNywtMTA2NDk1OD
+MxOCwxODExMjQ1ODMxLDEyMjcyOTAwNDksLTE5MjU3NjI2Nywt
+MTcyMjMzNjI0OCwtMTEwOTcyMzIyMSwxNDkyNTI5MDE1LDE0OT
+I1MjkwMTUsLTEwNDYzMzQ0OSwtMTU4Mjg1MzQ0NCwtNzQ2MDgw
+NTA2LDExNzE3NDA4NV19
 -->
