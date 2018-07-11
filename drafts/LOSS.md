@@ -4,7 +4,7 @@
 ## 概念/原理
 简单来说loss function是一种量化模型拟合程度的工具，我们知道机器学习（监督式机器学习）的基本思想设计一个由参数$\theta$决定的模型$f_\theta$，使得输入$x$经过模型$f_\theta(x)$计算后得到接近真实$y$的结果，模型的训练过程是用标签数据（$x_i, y_i$）输入模型$f_w(x_i) = \hat y_i$并计算预测值和真实值的差距$L_w$，求$w$使得$L_w$取最小值，这时模型$f_x$达到最优状态，那么如何判断模型和现实的接近程度呢？如何判断模型已经足够好呢？loss function可以回答这些问题，loss function的loss表示了模型和真实的差距$L_w(\hat y, y)$，当这个距离达到最小值的时候我们就认为模型达到最好的状态。所以机器学习实际上是一个求loss function最小值的问题，radent om/im
 
-$$J(\theta) = \frac{1}{m} \sum L(y_i, $$
+$$J(\theta) = \frac{1}{m} \sum L(y_i, \hat y)$$
 ## 特性
 
 ### Gradient based(GD) optimization
@@ -150,11 +150,11 @@ NOTE: this is example of non-differenciable loss function
 - [神经网络如何设计自己的loss function，如果需要修改或设计自己的loss，需要遵循什么规则](https://www.zhihu.com/question/59797824)
 - [An overview of gradient descent optimization algorithms](http://ruder.io/optimizing-gradient-descent)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNDMxMDYxODIwLDIwMDAxMDk3MDcsLTY2Nz
-EzMTA3MywtNzc2MTY3MTM3LC0xMDY0OTU4MzE4LDE4MTEyNDU4
-MzEsMTIyNzI5MDA0OSwtMTkyNTc2MjY3LC0xNzIyMzM2MjQ4LC
-0xMTA5NzIzMjIxLDE0OTI1MjkwMTUsMTQ5MjUyOTAxNSwtMTA0
-NjMzNDQ5LC0xNTgyODUzNDQ0LC03NDYwODA1MDYsMTE3MTc0MD
-g1LC0yOTYxMDYxNTAsLTE5MTM2Njc1NDMsMjg2ODg3MjMxLDE2
-ODI4Njg0ODJdfQ==
+eyJoaXN0b3J5IjpbLTE4MDc1OTI2NTUsMjAwMDEwOTcwNywtNj
+Y3MTMxMDczLC03NzYxNjcxMzcsLTEwNjQ5NTgzMTgsMTgxMTI0
+NTgzMSwxMjI3MjkwMDQ5LC0xOTI1NzYyNjcsLTE3MjIzMzYyND
+gsLTExMDk3MjMyMjEsMTQ5MjUyOTAxNSwxNDkyNTI5MDE1LC0x
+MDQ2MzM0NDksLTE1ODI4NTM0NDQsLTc0NjA4MDUwNiwxMTcxNz
+QwODUsLTI5NjEwNjE1MCwtMTkxMzY2NzU0MywyODY4ODcyMzEs
+MTY4Mjg2ODQ4Ml19
 -->
