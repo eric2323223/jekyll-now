@@ -49,7 +49,7 @@ $$J(\theta) = \frac{1}{m} \sum L(y_i, \hat y)$$
 > It's still a hard problem. Surrogate loss function can help, for example in http://fa.bianp.net/blog/2014/surrogate-loss-functions-in-machine-learning/
 
 ### loss and generalization
-Loss function虽然可以指引优化的方向
+Loss function虽然可以指引优化的方向，但是一个常见的问题是
 - L1 L2 in loss function and regularization
 
 ![](https://www.cs.umd.edu/~tomg/img/landscapes/noshort.png)
@@ -154,7 +154,7 @@ NOTE: this is example of non-differenciable loss function
 - [神经网络如何设计自己的loss function，如果需要修改或设计自己的loss，需要遵循什么规则](https://www.zhihu.com/question/59797824)
 - [An overview of gradient descent optimization algorithms](http://ruder.io/optimizing-gradient-descent)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTI1MzgzOTIxLC0xODA3NTkyNjU1LDIwMD
+eyJoaXN0b3J5IjpbMjM0NzQ5NjI4LC0xODA3NTkyNjU1LDIwMD
 AxMDk3MDcsLTY2NzEzMTA3MywtNzc2MTY3MTM3LC0xMDY0OTU4
 MzE4LDE4MTEyNDU4MzEsMTIyNzI5MDA0OSwtMTkyNTc2MjY3LC
 0xNzIyMzM2MjQ4LC0xMTA5NzIzMjIxLDE0OTI1MjkwMTUsMTQ5
