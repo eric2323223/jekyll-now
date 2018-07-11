@@ -54,10 +54,6 @@ Loss function虽然可以引导GD进行模型的优化，但是一个常见的�
 
 ![](https://www.cs.umd.edu/~tomg/img/landscapes/noshort.png)
 ## 常见误差函数
- - Cross entropy loss
- - MSE/MAE
- - Contrastive loss
- - Composite loss
 机器学习任务主要可以分为三类
 - 分类问题（classification）
 	- Cross entropy loss （Maximum likelyhood estimation）
@@ -149,11 +145,11 @@ NOTE: this is example of non-differenciable loss function
 - [神经网络如何设计自己的loss function，如果需要修改或设计自己的loss，需要遵循什么规则](https://www.zhihu.com/question/59797824)
 - [An overview of gradient descent optimization algorithms](http://ruder.io/optimizing-gradient-descent)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTkwNDA3MTI2MywtMTA5ODMzODQzNCwtMT
-UyNzk3NTA5MiwtMTAwMDM3OTUxMiwtMTgwNzU5MjY1NSwyMDAw
-MTA5NzA3LC02NjcxMzEwNzMsLTc3NjE2NzEzNywtMTA2NDk1OD
-MxOCwxODExMjQ1ODMxLDEyMjcyOTAwNDksLTE5MjU3NjI2Nywt
-MTcyMjMzNjI0OCwtMTEwOTcyMzIyMSwxNDkyNTI5MDE1LDE0OT
-I1MjkwMTUsLTEwNDYzMzQ0OSwtMTU4Mjg1MzQ0NCwtNzQ2MDgw
-NTA2LDExNzE3NDA4NV19
+eyJoaXN0b3J5IjpbNjY5Nzk4MDYxLC05MDQwNzEyNjMsLTEwOT
+gzMzg0MzQsLTE1Mjc5NzUwOTIsLTEwMDAzNzk1MTIsLTE4MDc1
+OTI2NTUsMjAwMDEwOTcwNywtNjY3MTMxMDczLC03NzYxNjcxMz
+csLTEwNjQ5NTgzMTgsMTgxMTI0NTgzMSwxMjI3MjkwMDQ5LC0x
+OTI1NzYyNjcsLTE3MjIzMzYyNDgsLTExMDk3MjMyMjEsMTQ5Mj
+UyOTAxNSwxNDkyNTI5MDE1LC0xMDQ2MzM0NDksLTE1ODI4NTM0
+NDQsLTc0NjA4MDUwNl19
 -->
