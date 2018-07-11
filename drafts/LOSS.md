@@ -10,7 +10,7 @@
 与数学中的求极值问题不同的地方是，机器学习中的求极值使用。机器学习的领域主要使用基于梯度下降（graidient based(GD)的方法，如图一所示对于一个可导的凸函数，从任意一点出发，沿着倒数下降的方向前进直到倒数为零的点，就是函数的最小值。
 
 ### 连续性
-虽然GD要求loss function连续可导，但在实践中loss function可以存在不连续的点，这是因为计算是使用一组（batch）数据的loss均值进行求导，这样使得落在不可导的点上的概率显著降低，因此minibatch GD允许loss function在个别点不连续
+虽然GD要求loss function连续可导，但在实践中loss function可以存在不连续的点，这是因为计算是使用一组（batch）数据的loss均值进行求导，这样使得落在不可导的点上的概率显著降低，因此可以使用0-1loss这样的不连续的hanshminibatch GD允许loss function在个别点不连续
 
 > #### 如何判断凸函数？
 > "_If the function is twice differentiable, and the second derivative is always greater than or equal to zero for its entire domain, then the function is convex._"
@@ -149,11 +149,11 @@ NOTE: this is example of non-differenciable loss function
 - [神经网络如何设计自己的loss function，如果需要修改或设计自己的loss，需要遵循什么规则](https://www.zhihu.com/question/59797824)
 - [An overview of gradient descent optimization algorithms](http://ruder.io/optimizing-gradient-descent)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTc1NDA5NTA5MiwyMDAwMTA5NzA3LC02Nj
-cxMzEwNzMsLTc3NjE2NzEzNywtMTA2NDk1ODMxOCwxODExMjQ1
-ODMxLDEyMjcyOTAwNDksLTE5MjU3NjI2NywtMTcyMjMzNjI0OC
-wtMTEwOTcyMzIyMSwxNDkyNTI5MDE1LDE0OTI1MjkwMTUsLTEw
-NDYzMzQ0OSwtMTU4Mjg1MzQ0NCwtNzQ2MDgwNTA2LDExNzE3ND
-A4NSwtMjk2MTA2MTUwLC0xOTEzNjY3NTQzLDI4Njg4NzIzMSwx
-NjgyODY4NDgyXX0=
+eyJoaXN0b3J5IjpbLTE5ODM0NDU0MDgsMjAwMDEwOTcwNywtNj
+Y3MTMxMDczLC03NzYxNjcxMzcsLTEwNjQ5NTgzMTgsMTgxMTI0
+NTgzMSwxMjI3MjkwMDQ5LC0xOTI1NzYyNjcsLTE3MjIzMzYyND
+gsLTExMDk3MjMyMjEsMTQ5MjUyOTAxNSwxNDkyNTI5MDE1LC0x
+MDQ2MzM0NDksLTE1ODI4NTM0NDQsLTc0NjA4MDUwNiwxMTcxNz
+QwODUsLTI5NjEwNjE1MCwtMTkxMzY2NzU0MywyODY4ODcyMzEs
+MTY4Mjg2ODQ4Ml19
 -->
