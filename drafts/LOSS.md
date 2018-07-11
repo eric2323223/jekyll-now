@@ -49,7 +49,7 @@ $$J(\theta) = \frac{1}{m} \sum L(y_i, \hat y)$$
 > It's still a hard problem. Surrogate loss function can help, for example in http://fa.bianp.net/blog/2014/surrogate-loss-functions-in-machine-learning/
 
 ### loss and generalization
-Loss function虽然可以指引优化的方向，但是一个常见的问题是模型虽然达到了很高的训练准确率，但是测试准确率却有较大的落差，这就是过拟合（over fitting）现象。这种问题源自于模型为了提高训练准确率xu
+Loss function虽然可以指引优化的方向，但是一个常见的问题是模型虽然达到了很高的训练准确率，但是测试准确率却有较大的落差，这就是过拟合（over fitting）现象。这种问题源自于模型为了提高训练准确率学习了训练数据中的噪声从而导致和真实
 - L1 L2 in loss function and regularization
 
 ![](https://www.cs.umd.edu/~tomg/img/landscapes/noshort.png)
@@ -154,7 +154,7 @@ NOTE: this is example of non-differenciable loss function
 - [神经网络如何设计自己的loss function，如果需要修改或设计自己的loss，需要遵循什么规则](https://www.zhihu.com/question/59797824)
 - [An overview of gradient descent optimization algorithms](http://ruder.io/optimizing-gradient-descent)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIxMjkyNzY4OTQsLTE4MDc1OTI2NTUsMj
+eyJoaXN0b3J5IjpbLTE3NDU1NjgzODcsLTE4MDc1OTI2NTUsMj
 AwMDEwOTcwNywtNjY3MTMxMDczLC03NzYxNjcxMzcsLTEwNjQ5
 NTgzMTgsMTgxMTI0NTgzMSwxMjI3MjkwMDQ5LC0xOTI1NzYyNj
 csLTE3MjIzMzYyNDgsLTExMDk3MjMyMjEsMTQ5MjUyOTAxNSwx
