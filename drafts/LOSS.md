@@ -66,15 +66,16 @@ Loss function虽然可以引导GD进行模型的优化，但是一个常见的�
 	- Object detection
 
 ## 设计
-### loss functin semantic
+### (loss functin) semantic
+- outliers effect
+  - MSE vs MAE
 - strict theoretical minimum of 0
 - Convergence
 - differenciable-surrogate loss function
 ### computation effort
 	- log likelihood example
 - experiment
-- outliers effect
-  - MSE vs MAE
+
 
 ## 设计样例
 从人脸识别探讨loss function设计。
@@ -119,11 +120,11 @@ Loss function虽然可以引导GD进行模型的优化，但是一个常见的�
 - [神经网络如何设计自己的loss function，如果需要修改或设计自己的loss，需要遵循什么规则](https://www.zhihu.com/question/59797824)
 - [An overview of gradient descent optimization algorithms](http://ruder.io/optimizing-gradient-descent)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjk5MjcyNzYzLDE3MTgzODMwOTksLTM3NT
-g3MDU3NywyMDMwNTY0MTkxLDE4NTQ4NzE5ODIsLTEwOTA4NjU5
-OTYsMTcyNTk4NTMzNiwyMDQyMjk0MTEzLDY2OTc5ODA2MSwtOT
-A0MDcxMjYzLC0xMDk4MzM4NDM0LC0xNTI3OTc1MDkyLC0xMDAw
-Mzc5NTEyLC0xODA3NTkyNjU1LDIwMDAxMDk3MDcsLTY2NzEzMT
-A3MywtNzc2MTY3MTM3LC0xMDY0OTU4MzE4LDE4MTEyNDU4MzEs
-MTIyNzI5MDA0OV19
+eyJoaXN0b3J5IjpbMTkwMzQ1ODEzMiw2OTkyNzI3NjMsMTcxOD
+M4MzA5OSwtMzc1ODcwNTc3LDIwMzA1NjQxOTEsMTg1NDg3MTk4
+MiwtMTA5MDg2NTk5NiwxNzI1OTg1MzM2LDIwNDIyOTQxMTMsNj
+Y5Nzk4MDYxLC05MDQwNzEyNjMsLTEwOTgzMzg0MzQsLTE1Mjc5
+NzUwOTIsLTEwMDAzNzk1MTIsLTE4MDc1OTI2NTUsMjAwMDEwOT
+cwNywtNjY3MTMxMDczLC03NzYxNjcxMzcsLTEwNjQ5NTgzMTgs
+MTgxMTI0NTgzMV19
 -->
