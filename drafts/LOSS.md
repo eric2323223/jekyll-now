@@ -6,6 +6,8 @@
 
 $$J(\theta) = \frac{1}{m} \sum L(y_i, \hat y)$$
 
+### 指导优化的方向
+
 ## 特性
 
 ### Gradient based(GD) optimization
@@ -13,9 +15,6 @@ $$J(\theta) = \frac{1}{m} \sum L(y_i, \hat y)$$
 
 ### 连续性
 虽然从数学原理上GD要求loss function连续可导，但在实践中loss function可以存在不连续的点，这是因为计算是使用一组（batch）数据的误差均值进行求导，这样使得落在不可导的点上的概率显著降低，因此可以对0-1loss这样的不连续的函数使用GD来进行优化。事实上即使在某组数据真的发生小概率时间导致求导失败，由于minibatch GD算法使用了大量的分组，绝大多数可求导的分组仍然可以保证GD在整个数据集上有效运行。
-
-### 指导优化的方向
-
 
 > #### 如何判断凸函数？
 > "_If the function is twice differentiable, and the second derivative is always greater than or equal to zero for its entire domain, then the function is convex._"
@@ -146,11 +145,11 @@ NOTE: this is example of non-differenciable loss function
 - [神经网络如何设计自己的loss function，如果需要修改或设计自己的loss，需要遵循什么规则](https://www.zhihu.com/question/59797824)
 - [An overview of gradient descent optimization algorithms](http://ruder.io/optimizing-gradient-descent)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2MTI1MTY1NzQsLTEwOTA4NjU5OTYsMT
-cyNTk4NTMzNiwyMDQyMjk0MTEzLDY2OTc5ODA2MSwtOTA0MDcx
-MjYzLC0xMDk4MzM4NDM0LC0xNTI3OTc1MDkyLC0xMDAwMzc5NT
-EyLC0xODA3NTkyNjU1LDIwMDAxMDk3MDcsLTY2NzEzMTA3Mywt
-Nzc2MTY3MTM3LC0xMDY0OTU4MzE4LDE4MTEyNDU4MzEsMTIyNz
-I5MDA0OSwtMTkyNTc2MjY3LC0xNzIyMzM2MjQ4LC0xMTA5NzIz
-MjIxLDE0OTI1MjkwMTVdfQ==
+eyJoaXN0b3J5IjpbMTg1NDg3MTk4MiwtMTA5MDg2NTk5NiwxNz
+I1OTg1MzM2LDIwNDIyOTQxMTMsNjY5Nzk4MDYxLC05MDQwNzEy
+NjMsLTEwOTgzMzg0MzQsLTE1Mjc5NzUwOTIsLTEwMDAzNzk1MT
+IsLTE4MDc1OTI2NTUsMjAwMDEwOTcwNywtNjY3MTMxMDczLC03
+NzYxNjcxMzcsLTEwNjQ5NTgzMTgsMTgxMTI0NTgzMSwxMjI3Mj
+kwMDQ5LC0xOTI1NzYyNjcsLTE3MjIzMzYyNDgsLTExMDk3MjMy
+MjEsMTQ5MjUyOTAxNV19
 -->
