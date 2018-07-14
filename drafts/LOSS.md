@@ -62,34 +62,9 @@ Loss function虽然可以引导GD进行模型的优化，但是一个常见的�
 	- MAE
 	- compare MSE and MAE
 - 多任务问题
-	- 
 	- Object detection
 - multi-task learning
 	- image semantic segmentation as an example.
-### By number of inputs
-- class-wise loss function
-$$X={x_1, x_2, ..., x_n}  and  Y={y_1, y_2,..., y_n}$$
-	- categorical corss entropy loss
-	$$L(X, Y)= \frac {1}{n} \sigma_{i=1}^n y_i ln(x_i) $$
-- pairwise loss function
-$$L(x_1, x_2)=\left\{ {positive}{negative}$$
-	- cosine similarity loss
-	- double margin loss
-	- siamese loss with global loss
-	- KL divergence loss
-- triplet loss function
-$$(x_1, x_2, x_3)$$
-- quadruplet loss function
-- hybrid loss function
-
-- MSE
-- Cross entropy
-- Cosine loss
-- Contrastive loss
-$$l(i,j);=y_{ij}d_{ij}^2 + (1-y_{ij})[ \alpha - D_{ij}]^2$$
-NOTE: this is example of non-differenciable loss function
-- CTC
-- Triplet loss
 
 ## 设计
 - loss functin semantic
@@ -145,11 +120,11 @@ NOTE: this is example of non-differenciable loss function
 - [神经网络如何设计自己的loss function，如果需要修改或设计自己的loss，需要遵循什么规则](https://www.zhihu.com/question/59797824)
 - [An overview of gradient descent optimization algorithms](http://ruder.io/optimizing-gradient-descent)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTg1NDg3MTk4MiwtMTA5MDg2NTk5NiwxNz
-I1OTg1MzM2LDIwNDIyOTQxMTMsNjY5Nzk4MDYxLC05MDQwNzEy
-NjMsLTEwOTgzMzg0MzQsLTE1Mjc5NzUwOTIsLTEwMDAzNzk1MT
-IsLTE4MDc1OTI2NTUsMjAwMDEwOTcwNywtNjY3MTMxMDczLC03
-NzYxNjcxMzcsLTEwNjQ5NTgzMTgsMTgxMTI0NTgzMSwxMjI3Mj
-kwMDQ5LC0xOTI1NzYyNjcsLTE3MjIzMzYyNDgsLTExMDk3MjMy
-MjEsMTQ5MjUyOTAxNV19
+eyJoaXN0b3J5IjpbMjAzMDU2NDE5MSwxODU0ODcxOTgyLC0xMD
+kwODY1OTk2LDE3MjU5ODUzMzYsMjA0MjI5NDExMyw2Njk3OTgw
+NjEsLTkwNDA3MTI2MywtMTA5ODMzODQzNCwtMTUyNzk3NTA5Mi
+wtMTAwMDM3OTUxMiwtMTgwNzU5MjY1NSwyMDAwMTA5NzA3LC02
+NjcxMzEwNzMsLTc3NjE2NzEzNywtMTA2NDk1ODMxOCwxODExMj
+Q1ODMxLDEyMjcyOTAwNDksLTE5MjU3NjI2NywtMTcyMjMzNjI0
+OCwtMTEwOTcyMzIyMV19
 -->
