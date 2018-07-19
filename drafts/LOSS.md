@@ -120,11 +120,11 @@ Loss function虽然可以引导GD进行模型的优化，但是一个常见的�
 - [神经网络如何设计自己的loss function，如果需要修改或设计自己的loss，需要遵循什么规则](https://www.zhihu.com/question/59797824)
 - [An overview of gradient descent optimization algorithms](http://ruder.io/optimizing-gradient-descent)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTkwMzQ1ODEzMiw2OTkyNzI3NjMsMTcxOD
-M4MzA5OSwtMzc1ODcwNTc3LDIwMzA1NjQxOTEsMTg1NDg3MTk4
-MiwtMTA5MDg2NTk5NiwxNzI1OTg1MzM2LDIwNDIyOTQxMTMsNj
-Y5Nzk4MDYxLC05MDQwNzEyNjMsLTEwOTgzMzg0MzQsLTE1Mjc5
-NzUwOTIsLTEwMDAzNzk1MTIsLTE4MDc1OTI2NTUsMjAwMDEwOT
-cwNywtNjY3MTMxMDczLC03NzYxNjcxMzcsLTEwNjQ5NTgzMTgs
-MTgxMTI0NTgzMV19
+eyJoaXN0b3J5IjpbLTE1MzIzNjMwNzMsMTkwMzQ1ODEzMiw2OT
+kyNzI3NjMsMTcxODM4MzA5OSwtMzc1ODcwNTc3LDIwMzA1NjQx
+OTEsMTg1NDg3MTk4MiwtMTA5MDg2NTk5NiwxNzI1OTg1MzM2LD
+IwNDIyOTQxMTMsNjY5Nzk4MDYxLC05MDQwNzEyNjMsLTEwOTgz
+Mzg0MzQsLTE1Mjc5NzUwOTIsLTEwMDAzNzk1MTIsLTE4MDc1OT
+I2NTUsMjAwMDEwOTcwNywtNjY3MTMxMDczLC03NzYxNjcxMzcs
+LTEwNjQ5NTgzMThdfQ==
 -->
