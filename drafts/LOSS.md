@@ -61,6 +61,7 @@ Loss function虽然可以引导GD进行模型的优化，但是一个常见的�
 	- compare MSE and MAE
 - 分类问题（classification）
 	- Cross entropy loss （Maximum likelyhood estimation）
+![]()
 	- MSE/MAE with thresh hold
 - 多任务问题
 	- Object detection
@@ -120,11 +121,11 @@ Loss function虽然可以引导GD进行模型的优化，但是一个常见的�
 - [神经网络如何设计自己的loss function，如果需要修改或设计自己的loss，需要遵循什么规则](https://www.zhihu.com/question/59797824)
 - [An overview of gradient descent optimization algorithms](http://ruder.io/optimizing-gradient-descent)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODc1MTg3NzUsMTk1MDM2MDY0MywtODQ0MT
-IwNDQ5LC0xNTMyMzYzMDczLDE5MDM0NTgxMzIsNjk5MjcyNzYz
-LDE3MTgzODMwOTksLTM3NTg3MDU3NywyMDMwNTY0MTkxLDE4NT
-Q4NzE5ODIsLTEwOTA4NjU5OTYsMTcyNTk4NTMzNiwyMDQyMjk0
-MTEzLDY2OTc5ODA2MSwtOTA0MDcxMjYzLC0xMDk4MzM4NDM0LC
-0xNTI3OTc1MDkyLC0xMDAwMzc5NTEyLC0xODA3NTkyNjU1LDIw
-MDAxMDk3MDddfQ==
+eyJoaXN0b3J5IjpbLTIxODk5NTQ5LDg3NTE4Nzc1LDE5NTAzNj
+A2NDMsLTg0NDEyMDQ0OSwtMTUzMjM2MzA3MywxOTAzNDU4MTMy
+LDY5OTI3Mjc2MywxNzE4MzgzMDk5LC0zNzU4NzA1NzcsMjAzMD
+U2NDE5MSwxODU0ODcxOTgyLC0xMDkwODY1OTk2LDE3MjU5ODUz
+MzYsMjA0MjI5NDExMyw2Njk3OTgwNjEsLTkwNDA3MTI2MywtMT
+A5ODMzODQzNCwtMTUyNzk3NTA5MiwtMTAwMDM3OTUxMiwtMTgw
+NzU5MjY1NV19
 -->
