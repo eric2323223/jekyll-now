@@ -57,16 +57,13 @@ $$J(\theta) = \frac{1}{m} \sum L(y_i, \hat y)$$
 ## 常见误差函数
 根据不同类型机器学习任务可以将loss function主要可以以下三类：
 - 适用于回归问题，。。。。
-
-- - MSE（Mean Squared Error）
-
-- $$MSE=\frac{1}{n}\sum_{i=1}^n (y-\hat y)^2$$
-
-- - MAE（Mean Absolute Error）
-
-- $$MAE=\frac{1}{n}\sum_{i=1}^n \mathopen|y-\hat y \mathclose| $$
+	 - MSE（Mean Squared Error）
+$$MSE=\frac{1}{n}\sum_{i=1}^n (y-\hat y)^2$$
+	- MAE（Mean Absolute Error）
+$$MAE=\frac{1}{n}\sum_{i=1}^n \mathopen|y-\hat y \mathclose| $$
 - 分类问题（classification）
 	- Cross entropy loss （Maximum likelyhood estimation）
+	- 
 	- MSE/MAE with thresh hold
 - 多任务问题
 	- Object detection
@@ -126,6 +123,6 @@ $$J(\theta) = \frac{1}{m} \sum L(y_i, \hat y)$$
 - [神经网络如何设计自己的loss function，如果需要修改或设计自己的loss，需要遵循什么规则](https://www.zhihu.com/question/59797824)
 - [An overview of gradient descent optimization algorithms](http://ruder.io/optimizing-gradient-descent)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTY1NTEyMTk4OCwzNzYwODMwNiw3MDU2NT
-A4MzNdfQ==
+eyJoaXN0b3J5IjpbLTIwNDkxMTQ2NjEsMzc2MDgzMDYsNzA1Nj
+UwODMzXX0=
 -->
