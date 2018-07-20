@@ -55,18 +55,18 @@ Loss function虽然可以引导GD进行模型的优化，但是一个常见的�
 ![](https://www.cs.umd.edu/~tomg/img/landscapes/noshort.png)
 ## 常见误差函数
 根据不同类型机器学习任务可以将loss function主要可以以下三类：
-- 适用于回归问题，
+- 适用于回归问题，。。。。
 	- MSE（Mean Squared Error）
 	$$MSE=\frac{1}{n}\sum_{i=1}^n (y-\hat y)^2$$
 	- MAE（Mean Absolute Error）
 	$$MAE=\frac{1}{n}\sum_{i=1}^n \mathopen|y-\hat y \mathclose| $$
 	- compare MSE and MAE
-- 分类问题（classification）
+- 适用于分类问题（classification）
 	- Cross entropy loss （Maximum likelyhood estimation）
 	$$H(p,q) = -\sum_x p(x) log q(x)$$
 ![](https://datawookie.netlify.com/img/2015/12/log-loss-curve.png)
 	- MSE/MAE with thresh hold
-- 多任务问题
+- 适用于多任务问题
 	- Object detection
 
 ## 设计
@@ -124,7 +124,7 @@ Loss function虽然可以引导GD进行模型的优化，但是一个常见的�
 - [神经网络如何设计自己的loss function，如果需要修改或设计自己的loss，需要遵循什么规则](https://www.zhihu.com/question/59797824)
 - [An overview of gradient descent optimization algorithms](http://ruder.io/optimizing-gradient-descent)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODM1OTM2NjI0LDM5OTc1MzA2OSwtMTU4Mz
+eyJoaXN0b3J5IjpbODgzMzA4MDgwLDM5OTc1MzA2OSwtMTU4Mz
 EwMzM3NCwxMDU3ODQ4ODQwLDg3MTI1NjE2MSwtMjE4OTk1NDks
 ODc1MTg3NzUsMTk1MDM2MDY0MywtODQ0MTIwNDQ5LC0xNTMyMz
 YzMDczLDE5MDM0NTgxMzIsNjk5MjcyNzYzLDE3MTgzODMwOTks
