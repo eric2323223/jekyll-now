@@ -73,6 +73,7 @@ Loss function虽然可以引导GD进行模型的优化，但是一个常见的�
 ### (loss functin) semantic
 - outliers effect
   - MSE vs MAE
+  虽然MSE和MAEdou
 - strict theoretical minimum of 0
 - Convergence
 - differenciable-surrogate loss function
@@ -123,11 +124,11 @@ Loss function虽然可以引导GD进行模型的优化，但是一个常见的�
 - [神经网络如何设计自己的loss function，如果需要修改或设计自己的loss，需要遵循什么规则](https://www.zhihu.com/question/59797824)
 - [An overview of gradient descent optimization algorithms](http://ruder.io/optimizing-gradient-descent)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTgwMDYxMTIxMiw4ODMzMDgwODAsMzk5Nz
-UzMDY5LC0xNTgzMTAzMzc0LDEwNTc4NDg4NDAsODcxMjU2MTYx
-LC0yMTg5OTU0OSw4NzUxODc3NSwxOTUwMzYwNjQzLC04NDQxMj
-A0NDksLTE1MzIzNjMwNzMsMTkwMzQ1ODEzMiw2OTkyNzI3NjMs
-MTcxODM4MzA5OSwtMzc1ODcwNTc3LDIwMzA1NjQxOTEsMTg1ND
-g3MTk4MiwtMTA5MDg2NTk5NiwxNzI1OTg1MzM2LDIwNDIyOTQx
-MTNdfQ==
+eyJoaXN0b3J5IjpbOTA2MDI1NTA3LDg4MzMwODA4MCwzOTk3NT
+MwNjksLTE1ODMxMDMzNzQsMTA1Nzg0ODg0MCw4NzEyNTYxNjEs
+LTIxODk5NTQ5LDg3NTE4Nzc1LDE5NTAzNjA2NDMsLTg0NDEyMD
+Q0OSwtMTUzMjM2MzA3MywxOTAzNDU4MTMyLDY5OTI3Mjc2Mywx
+NzE4MzgzMDk5LC0zNzU4NzA1NzcsMjAzMDU2NDE5MSwxODU0OD
+cxOTgyLC0xMDkwODY1OTk2LDE3MjU5ODUzMzYsMjA0MjI5NDEx
+M119
 -->
