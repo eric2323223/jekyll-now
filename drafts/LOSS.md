@@ -71,6 +71,7 @@ Loss function虽然可以引导GD进行模型的优化，但是一个常见的�
 
 ## 设计
 ### 需求驱动
+选择误差函数最根本的决定因素是
 ### (loss functin) semantic
 - outliers effect
   - MSE vs MAE
@@ -125,7 +126,7 @@ Loss function虽然可以引导GD进行模型的优化，但是一个常见的�
 - [神经网络如何设计自己的loss function，如果需要修改或设计自己的loss，需要遵循什么规则](https://www.zhihu.com/question/59797824)
 - [An overview of gradient descent optimization algorithms](http://ruder.io/optimizing-gradient-descent)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTk2NTcwMjQ4OCw4ODMzMDgwODAsMzk5Nz
+eyJoaXN0b3J5IjpbMTQxMzA1MjMwNyw4ODMzMDgwODAsMzk5Nz
 UzMDY5LC0xNTgzMTAzMzc0LDEwNTc4NDg4NDAsODcxMjU2MTYx
 LC0yMTg5OTU0OSw4NzUxODc3NSwxOTUwMzYwNjQzLC04NDQxMj
 A0NDksLTE1MzIzNjMwNzMsMTkwMzQ1ODEzMiw2OTkyNzI3NjMs
