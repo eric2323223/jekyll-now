@@ -64,7 +64,6 @@ $$MAE=\frac{1}{n}\sum_{i=1}^n \mathopen|y-\hat y \mathclose| $$
 - 分类问题（classification）
 	- Cross entropy loss （Maximum likelyhood estimation)
 $$H(p,q) = -\sum_x p(x) log q(x)$$
-
 ![](https://datawookie.netlify.com/img/2015/12/log-loss-curve.png)
 	- MSE/MAE with thresh hold
 - 多任务问题
@@ -74,6 +73,7 @@ $$H(p,q) = -\sum_x p(x) log q(x)$$
 ### (loss functin) semantic
 - outliers effect
   - MSE vs MAE
+  虽然MSE和MAE都能用于regression预测，但是由于MSE对于大误差有更大的惩罚，所以更适合需要避免大误差的预测场景。
 - strict theoretical minimum of 0
 ~~- Convergence~~
 - differenciable-surrogate loss function
@@ -125,6 +125,6 @@ $$H(p,q) = -\sum_x p(x) log q(x)$$
 - [神经网络如何设计自己的loss function，如果需要修改或设计自己的loss，需要遵循什么规则](https://www.zhihu.com/question/59797824)
 - [An overview of gradient descent optimization algorithms](http://ruder.io/optimizing-gradient-descent)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE4NzQ0OTE0MjcsMzc2MDgzMDYsNzA1Nj
+eyJoaXN0b3J5IjpbLTEwNzI5OTczNjMsMzc2MDgzMDYsNzA1Nj
 UwODMzXX0=
 -->
