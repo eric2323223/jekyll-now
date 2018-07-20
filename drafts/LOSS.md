@@ -63,7 +63,7 @@ $$MSE=\frac{1}{n}\sum_{i=1}^n (y-\hat y)^2$$
 $$MAE=\frac{1}{n}\sum_{i=1}^n \mathopen|y-\hat y \mathclose| $$
 - 分类问题（classification）
 	- Cross entropy loss （Maximum likelyhood estimation)
-$$H(p,q) = -\sum_x p(x) log q(x)$$
+$$H(p,q) = -\sum_x p(x) ln q(x)$$
 ![](https://datawookie.netlify.com/img/2015/12/log-loss-curve.png)
 	- MSE/MAE with thresh hold
 - 多任务问题
@@ -125,6 +125,6 @@ $$H(p,q) = -\sum_x p(x) log q(x)$$
 - [神经网络如何设计自己的loss function，如果需要修改或设计自己的loss，需要遵循什么规则](https://www.zhihu.com/question/59797824)
 - [An overview of gradient descent optimization algorithms](http://ruder.io/optimizing-gradient-descent)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTg3NzU5NjY2OSwtMTA3Mjk5NzM2MywzNz
-YwODMwNiw3MDU2NTA4MzNdfQ==
+eyJoaXN0b3J5IjpbLTI3NjUwMTcyOSwtODc3NTk2NjY5LC0xMD
+cyOTk3MzYzLDM3NjA4MzA2LDcwNTY1MDgzM119
 -->
