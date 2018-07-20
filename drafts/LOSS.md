@@ -48,7 +48,6 @@ $$J(\theta) = \frac{1}{m} \sum L(y_i, \hat y)$$
 >#### how to escapte from Plateaus
 > It's still a hard problem. Surrogate loss function can help, for example in http://fa.bianp.net/blog/2014/surrogate-loss-functions-in-machine-learning/
 
-
 ### loss and regularization
 
 -Loss function虽然可以引导GD进行模型的优化，但是一个常见的问题是模型虽然达到了很高的训练准确率，但是测试准确率却有较大的落差，这就是过拟合（over fitting）现象。这种问题源自于模型为了提高训练准确率学习了训练数据中的噪声从而导致模型和真实规律产生偏差。regularization就是解决过拟合问题的常见方法之一，它的原理是把参数加入loss function作为新的loss function，这样可以避免为了适应训练数据而产生过于复杂模型而。。。
@@ -56,11 +55,17 @@ $$J(\theta) = \frac{1}{m} \sum L(y_i, \hat y)$$
 
 ![](https://www.cs.umd.edu/~tomg/img/landscapes/noshort.png)
 ## 常见误差函数
-机器学习任务主要可以以下类：
-- 回归问题regression， Error）
-	- $$MSE
-	- MAE=\frac{1}{
-	- compare MSE and MAE
+根据不同类型机器学习任务可以将loss function主要可以以下三类：
+
+- 适用于回归问题，。。。。
+
+- - MSE（Mean Squared Error）
+
+- $$MSE=\frac{1}{n}\sum_{i=1}^n (y-\hat y)^2$$
+
+- - MAE（Mean Absolute Error）
+
+- $$MAE=\frac{1}{n}\sum_{i=1}^n \mathopen|y-\hat y \mathclose| $$
 - 分类问题（classification）
 	- Cross entropy loss （Maximum likelyhood estimation）
 	- MSE/MAE with thresh hold
@@ -122,5 +127,5 @@ $$J(\theta) = \frac{1}{m} \sum L(y_i, \hat y)$$
 - [神经网络如何设计自己的loss function，如果需要修改或设计自己的loss，需要遵循什么规则](https://www.zhihu.com/question/59797824)
 - [An overview of gradient descent optimization algorithms](http://ruder.io/optimizing-gradient-descent)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTY5MjgwOTIxMyw3MDU2NTA4MzNdfQ==
+eyJoaXN0b3J5IjpbMzc2MDgzMDYsNzA1NjUwODMzXX0=
 -->
