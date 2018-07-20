@@ -59,7 +59,7 @@ Loss function虽然可以引导GD进行模型的优化，但是一个常见的�
 	- MSE（Mean Squared Error）
 	$$MSE=\frac{1}{n}\sum_{i=1}^n (y-\hat y)^2$$
 	- MAE（Mean Absolute Error）
-	$$MAE=\frac{1}{n}\sum_{i=1}^n$$
+	$$MAE=\frac{1}{n}\sum_{i=1}^n \mathopen|y-\hat y \mathclose| $$
 	- compare MSE and MAE
 - 分类问题（classification）
 	- Cross entropy loss （Maximum likelyhood estimation）
@@ -123,11 +123,11 @@ Loss function虽然可以引导GD进行模型的优化，但是一个常见的�
 - [神经网络如何设计自己的loss function，如果需要修改或设计自己的loss，需要遵循什么规则](https://www.zhihu.com/question/59797824)
 - [An overview of gradient descent optimization algorithms](http://ruder.io/optimizing-gradient-descent)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTA1Nzg0ODg0MCw4NzEyNTYxNjEsLTIxOD
-k5NTQ5LDg3NTE4Nzc1LDE5NTAzNjA2NDMsLTg0NDEyMDQ0OSwt
-MTUzMjM2MzA3MywxOTAzNDU4MTMyLDY5OTI3Mjc2MywxNzE4Mz
-gzMDk5LC0zNzU4NzA1NzcsMjAzMDU2NDE5MSwxODU0ODcxOTgy
-LC0xMDkwODY1OTk2LDE3MjU5ODUzMzYsMjA0MjI5NDExMyw2Nj
-k3OTgwNjEsLTkwNDA3MTI2MywtMTA5ODMzODQzNCwtMTUyNzk3
-NTA5Ml19
+eyJoaXN0b3J5IjpbLTE5ODk5MTE0MCwxMDU3ODQ4ODQwLDg3MT
+I1NjE2MSwtMjE4OTk1NDksODc1MTg3NzUsMTk1MDM2MDY0Mywt
+ODQ0MTIwNDQ5LC0xNTMyMzYzMDczLDE5MDM0NTgxMzIsNjk5Mj
+cyNzYzLDE3MTgzODMwOTksLTM3NTg3MDU3NywyMDMwNTY0MTkx
+LDE4NTQ4NzE5ODIsLTEwOTA4NjU5OTYsMTcyNTk4NTMzNiwyMD
+QyMjk0MTEzLDY2OTc5ODA2MSwtOTA0MDcxMjYzLC0xMDk4MzM4
+NDM0XX0=
 -->
