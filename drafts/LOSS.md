@@ -80,8 +80,7 @@ Loss function虽然可以引导GD进行模型的优化，但是一个常见的�
 	- log likelihood example
 - experiment
 
-
-## 设计样例
+## 误差函数设计样例
 从人脸识别探讨loss function设计。
 - 面部识别和图像识别的区别
 	- 面部识别的目标是识别不同环境中的某一类（某个人）的面部特征
@@ -124,11 +123,11 @@ Loss function虽然可以引导GD进行模型的优化，但是一个常见的�
 - [神经网络如何设计自己的loss function，如果需要修改或设计自己的loss，需要遵循什么规则](https://www.zhihu.com/question/59797824)
 - [An overview of gradient descent optimization algorithms](http://ruder.io/optimizing-gradient-descent)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODgzMzA4MDgwLDM5OTc1MzA2OSwtMTU4Mz
-EwMzM3NCwxMDU3ODQ4ODQwLDg3MTI1NjE2MSwtMjE4OTk1NDks
-ODc1MTg3NzUsMTk1MDM2MDY0MywtODQ0MTIwNDQ5LC0xNTMyMz
-YzMDczLDE5MDM0NTgxMzIsNjk5MjcyNzYzLDE3MTgzODMwOTks
-LTM3NTg3MDU3NywyMDMwNTY0MTkxLDE4NTQ4NzE5ODIsLTEwOT
-A4NjU5OTYsMTcyNTk4NTMzNiwyMDQyMjk0MTEzLDY2OTc5ODA2
-MV19
+eyJoaXN0b3J5IjpbLTgwMDYxMTIxMiw4ODMzMDgwODAsMzk5Nz
+UzMDY5LC0xNTgzMTAzMzc0LDEwNTc4NDg4NDAsODcxMjU2MTYx
+LC0yMTg5OTU0OSw4NzUxODc3NSwxOTUwMzYwNjQzLC04NDQxMj
+A0NDksLTE1MzIzNjMwNzMsMTkwMzQ1ODEzMiw2OTkyNzI3NjMs
+MTcxODM4MzA5OSwtMzc1ODcwNTc3LDIwMzA1NjQxOTEsMTg1ND
+g3MTk4MiwtMTA5MDg2NTk5NiwxNzI1OTg1MzM2LDIwNDIyOTQx
+MTNdfQ==
 -->
