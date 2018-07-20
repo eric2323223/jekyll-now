@@ -63,7 +63,7 @@ Loss function虽然可以引导GD进行模型的优化，但是一个常见的�
 	- compare MSE and MAE
 - 分类问题（classification）
 	- Cross entropy loss （Maximum likelyhood estimation）
-	$$H(p,q) = -\sum_x p(x)log q(x)$$
+	$$H(p,q) = -\sum_x p(x) log q(x)$$
 ![](https://datawookie.netlify.com/img/2015/12/log-loss-curve.png)
 	- MSE/MAE with thresh hold
 - 多任务问题
@@ -124,7 +124,7 @@ Loss function虽然可以引导GD进行模型的优化，但是一个常见的�
 - [神经网络如何设计自己的loss function，如果需要修改或设计自己的loss，需要遵循什么规则](https://www.zhihu.com/question/59797824)
 - [An overview of gradient descent optimization algorithms](http://ruder.io/optimizing-gradient-descent)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNzU4MzY2MzQ3LC0xNTgzMTAzMzc0LDEwNT
+eyJoaXN0b3J5IjpbMzk5NzUzMDY5LC0xNTgzMTAzMzc0LDEwNT
 c4NDg4NDAsODcxMjU2MTYxLC0yMTg5OTU0OSw4NzUxODc3NSwx
 OTUwMzYwNjQzLC04NDQxMjA0NDksLTE1MzIzNjMwNzMsMTkwMz
 Q1ODEzMiw2OTkyNzI3NjMsMTcxODM4MzA5OSwtMzc1ODcwNTc3
