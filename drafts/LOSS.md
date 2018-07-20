@@ -73,7 +73,7 @@ Loss function虽然可以引导GD进行模型的优化，但是一个常见的�
 ### (loss functin) semantic
 - outliers effect
   - MSE vs MAE
-  虽然MSE和MAE都能用于regression task，但是由于MSE
+  虽然MSE和MAE都能用于regression task，但是由于MSE对于大误差有更大的惩罚，所以更适合
 - strict theoretical minimum of 0
 - Convergence
 - differenciable-surrogate loss function
@@ -124,7 +124,7 @@ Loss function虽然可以引导GD进行模型的优化，但是一个常见的�
 - [神经网络如何设计自己的loss function，如果需要修改或设计自己的loss，需要遵循什么规则](https://www.zhihu.com/question/59797824)
 - [An overview of gradient descent optimization algorithms](http://ruder.io/optimizing-gradient-descent)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTg0Njk5ODg3OCw4ODMzMDgwODAsMzk5Nz
+eyJoaXN0b3J5IjpbMTE5NDA1NTc1Myw4ODMzMDgwODAsMzk5Nz
 UzMDY5LC0xNTgzMTAzMzc0LDEwNTc4NDg4NDAsODcxMjU2MTYx
 LC0yMTg5OTU0OSw4NzUxODc3NSwxOTUwMzYwNjQzLC04NDQxMj
 A0NDksLTE1MzIzNjMwNzMsMTkwMzQ1ODEzMiw2OTkyNzI3NjMs
