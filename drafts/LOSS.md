@@ -13,8 +13,8 @@ $$J(\theta) = \frac{1}{m} \sum L(y_i, \hat y)$$
 ### Gradient based(GD) optimization
 与数学中的求极值问题不同的地方是，机器学习中的求极值使用。机器学习的领域主要使用基于梯度下降（graidient based(GD)的方法，如图一所示对于一个可导的凸函数，从任意一点出发，沿着倒数下降的方向前进直到倒数为零的点，就是函数的最小值。
 
-### 可导性
-虽然从数学原理上GD要求loss function连续可导，但在实践中loss function可以存在不可导的点，这是因为计算是使用一组（batch）数据的误差均值进行求导，这样使得落在不可导的点上的概率显著降低，因此可以对hinge loss这样的不连续的函数使用GD来进行优化。事实上即使在某组数据真的发生小概率事件导致求导失败，由于minibatch GD算法使用了大量的分组，绝大多数可求导的分组仍然可以保证GD在整个数据集上有效运行。
+### 连续性
+虽然从数学原理上GD要求loss function连续可导，但在实践中loss function可以存在不连续的点，这是因为计算是使用一组（batch）数据的误差均值进行求导，这样使得落在不可导的点上的概率显著降低，因此可以对0-1loss这样的不连续的函数使用GD来进行优化。事实上即使在某组数据真的发生小概率时间导致求导失败，由于minibatch GD算法使用了大量的分组，绝大多数可求导的分组仍然可以保证GD在整个数据集上有效运行。
 
 > #### 如何判断凸函数？
 > "_If the function is twice differentiable, and the second derivative is always greater than or equal to zero for its entire domain, then the function is convex._"
@@ -48,42 +48,36 @@ $$J(\theta) = \frac{1}{m} \sum L(y_i, \hat y)$$
 >#### how to escapte from Plateaus
 > It's still a hard problem. Surrogate loss function can help, for example in http://fa.bianp.net/blog/2014/surrogate-loss-functions-in-machine-learning/
 
-### loss and regularization
-Loss function虽然可以引导GD进行模型的优化，但是一个常见的问题是模型虽然达到了很高的训练准确率，但是测试准确率却有较大的落差，这就是过拟合（over fitting）现象。这种问题源自于模型为了提高训练准确率学习了训练数据中的噪声从而导致模型和真实规律产生偏差。regularization就是解决过拟合问题的常见方法之一，它的原理是把参数加入loss function作为新的loss function，这样可以避免为了适应训练数据而产生过于复杂模型而。。。
+### loss and generalization
+Loss function虽然可以引导GD进行模型的优化，但是一个常见的问题是模型虽然达到了很高的训练准确率，但是测试准确率却有较大的落差，这就是过拟合（over fitting）现象。这种问题源自于模型为了提高训练准确率学习了训练数据中的噪声从而导致模型和真实规律产生偏差。generalization就是解决过拟合问题的常见方法之一，它的原理是把参数加入loss function作为新的loss function，这样可以避免为了适应训练数据而产生过于复杂模型而。。。
 - L1 L2 in loss function and regularization
 
 ![](https://www.cs.umd.edu/~tomg/img/landscapes/noshort.png)
 ## 常见误差函数
-根据不同类型机器学习任务可以将loss function主要可以以下三类：
-- 适用于回归问题，。。。。
-	- MSE（Mean Squared Error）
-	$$MSE=\frac{1}{n}\sum_{i=1}^n (y-\hat y)^2$$
-	- MAE（Mean Absolute Error）
-	$$MAE=\frac{1}{n}\sum_{i=1}^n \mathopen|y-\hat y \mathclose| $$
+机器学习任务主要可以分为三类
+- 回归问题（regression）
+	- MSE
+	- MAE
 	- compare MSE and MAE
-- 适用于分类问题（classification）
+- 分类问题（classification）
 	- Cross entropy loss （Maximum likelyhood estimation）
-	$$H(p,q) = -\sum_x p(x) log q(x)$$
-![](https://datawookie.netlify.com/img/2015/12/log-loss-curve.png)
 	- MSE/MAE with thresh hold
-- 适用于多任务问题
+- 多任务问题
 	- Object detection
 
 ## 设计
-### 目标驱动
-选择误差函数最根本的决定因素是目标问题本身，这意味着需要对目标问题有深入的了解。比如
 ### (loss functin) semantic
 - outliers effect
   - MSE vs MAE
-  虽然MSE和MAE都能用于regression预测，但是由于MSE对于大误差有更大的惩罚，所以更适合需要避免大误差的预测场景。
 - strict theoretical minimum of 0
-- Convergence
+~~- Convergence~~
 - differenciable-surrogate loss function
 ### computation effort
 	- log likelihood example
 - experiment
 
-## 误差函数设计样例
+
+## 设计样例
 从人脸识别探讨loss function设计。
 - 面部识别和图像识别的区别
 	- 面部识别的目标是识别不同环境中的某一类（某个人）的面部特征
@@ -126,11 +120,5 @@ Loss function虽然可以引导GD进行模型的优化，但是一个常见的�
 - [神经网络如何设计自己的loss function，如果需要修改或设计自己的loss，需要遵循什么规则](https://www.zhihu.com/question/59797824)
 - [An overview of gradient descent optimization algorithms](http://ruder.io/optimizing-gradient-descent)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNzEyNzY0NTA2LDg4MzMwODA4MCwzOTk3NT
-MwNjksLTE1ODMxMDMzNzQsMTA1Nzg0ODg0MCw4NzEyNTYxNjEs
-LTIxODk5NTQ5LDg3NTE4Nzc1LDE5NTAzNjA2NDMsLTg0NDEyMD
-Q0OSwtMTUzMjM2MzA3MywxOTAzNDU4MTMyLDY5OTI3Mjc2Mywx
-NzE4MzgzMDk5LC0zNzU4NzA1NzcsMjAzMDU2NDE5MSwxODU0OD
-cxOTgyLC0xMDkwODY1OTk2LDE3MjU5ODUzMzYsMjA0MjI5NDEx
-M119
+eyJoaXN0b3J5IjpbMTU1OTM0MzA2MF19
 -->
