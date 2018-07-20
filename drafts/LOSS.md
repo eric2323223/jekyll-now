@@ -55,7 +55,7 @@ Loss function虽然可以引导GD进行模型的优化，但是一个常见的�
 ![](https://www.cs.umd.edu/~tomg/img/landscapes/noshort.png)
 ## 常见误差函数
 机器学习任务主要可以分为三类
-- 回归问题（regression）
+- 回归问题（regression），回归问题主要
 	- MSE（Mean Squared Error）
 	- MAE（Mean Absolute Error）
 	- compare MSE and MAE
@@ -120,11 +120,11 @@ Loss function虽然可以引导GD进行模型的优化，但是一个常见的�
 - [神经网络如何设计自己的loss function，如果需要修改或设计自己的loss，需要遵循什么规则](https://www.zhihu.com/question/59797824)
 - [An overview of gradient descent optimization algorithms](http://ruder.io/optimizing-gradient-descent)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTk1MDM2MDY0MywtODQ0MTIwNDQ5LC0xNT
-MyMzYzMDczLDE5MDM0NTgxMzIsNjk5MjcyNzYzLDE3MTgzODMw
-OTksLTM3NTg3MDU3NywyMDMwNTY0MTkxLDE4NTQ4NzE5ODIsLT
-EwOTA4NjU5OTYsMTcyNTk4NTMzNiwyMDQyMjk0MTEzLDY2OTc5
-ODA2MSwtOTA0MDcxMjYzLC0xMDk4MzM4NDM0LC0xNTI3OTc1MD
-kyLC0xMDAwMzc5NTEyLC0xODA3NTkyNjU1LDIwMDAxMDk3MDcs
-LTY2NzEzMTA3M119
+eyJoaXN0b3J5IjpbODc1MTg3NzUsMTk1MDM2MDY0MywtODQ0MT
+IwNDQ5LC0xNTMyMzYzMDczLDE5MDM0NTgxMzIsNjk5MjcyNzYz
+LDE3MTgzODMwOTksLTM3NTg3MDU3NywyMDMwNTY0MTkxLDE4NT
+Q4NzE5ODIsLTEwOTA4NjU5OTYsMTcyNTk4NTMzNiwyMDQyMjk0
+MTEzLDY2OTc5ODA2MSwtOTA0MDcxMjYzLC0xMDk4MzM4NDM0LC
+0xNTI3OTc1MDkyLC0xMDAwMzc5NTEyLC0xODA3NTkyNjU1LDIw
+MDAxMDk3MDddfQ==
 -->
