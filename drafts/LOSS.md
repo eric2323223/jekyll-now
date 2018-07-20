@@ -1,5 +1,6 @@
  # 漫谈误差函数（Loss function）
-说起机器学习就不能不提到误差函数（ loss function），因为所有的机器学习问题都可以抽象成loss function的优化过程。Loss function的设计从根本上决定了机器学习任务的成败，本文我们就聊聊loss function
+说起机器学习就不能不提到误差函数（ loss function），因为所有的机器学习问题都可以抽象成loss function的优化过程。Loss function的设计从根本上决定了机器学习任务的成败，本文我们就来聊聊loss function
+![](https://www.cs.umd.edu/~tomg/img/landscapes/noshort.png)
 
 ## 概念/原理
 简单来说loss function是一种量化模型拟合程度的工具，我们知道机器学习（监督式机器学习）的基本思想设计一个由参数$\theta$决定的模型$f_\theta$，使得输入$x$经过模型$f_\theta(x)$计算后得到接近真实$y$的结果，模型的训练过程是用标签数据（$x_i, y_i$）输入模型$f_w(x_i) = \hat y_i$并计算预测值和真实值的差距$L_w$，求$w$使得$L_w$取最小值，这时模型$f_x$达到最优状态，那么如何判断模型和现实的接近程度呢？如何判断模型已经足够好呢？loss function可以回答这些问题，loss function的loss表示了模型和真实的差距$L_w(\hat y, y)$，当这个距离达到最小值的时候我们就认为模型达到最好的状态。所以机器学习实际上是一个求loss function最小值的问题，radent om/im
@@ -48,22 +49,23 @@ $$J(\theta) = \frac{1}{m} \sum L(y_i, \hat y)$$
 >#### how to escapte from Plateaus
 > It's still a hard problem. Surrogate loss function can help, for example in http://fa.bianp.net/blog/2014/surrogate-loss-functions-in-machine-learning/
 
-### loss and regularization
+### 泛化（generalization）
 
--Loss function虽然可以引导GD进行模型的优化，但是一个常见的问题是模型虽然达到了很高的训练准确率，但是测试准确率却有较大的落差，这就是过拟合（over fitting）现象。这种问题源自于模型为了提高训练准确率学习了训练数据中的噪声从而导致模型和真实规律产生偏差。regularization就是解决过拟合问题的常见方法之一，它的原理是把参数加入loss function作为新的loss function，这样可以避免为了适应训练数据而产生过于复杂模型而。。。
+Loss function虽然可以引导GD进行模型的优化，但是一个常见的问题是模型虽然达到了很高的训练准确率，但是测试准确率却有较大的落差，这就是过拟合（over fitting）现象。这种问题源自于模型为了提高训练准确率学习了训练数据中的噪声从而导致模型和真实规律产生偏差。正则化（regularization）就是解决过拟合问题的常见方法之一，它的原理是把参数加入loss function作为新的loss function，这样可以避免为了适应训练数据而产生过于复杂模型而。。。
 - L1 L2 in loss function and regularization
+![](https://cdn-images-1.medium.com/max/1600/1*o6H_R3Do1zpch-3MZk_fjQ.png)
 
-![](https://www.cs.umd.edu/~tomg/img/landscapes/noshort.png)
+
 ## 常见误差函数
 根据不同类型机器学习任务可以将loss function主要可以以下三类：
 - 适用于回归问题（Regression）的误差函数
-	 - MSE（Mean Squared Error）
+	 - MSE（Mean Squared Error，L2）
 $$MSE=\frac{1}{n}\sum_{i=1}^n (y-\hat y)^2$$
-	- MAE（Mean Absolute Error）
+	- MAE（Mean Absolute Error， L1）
 $$MAE=\frac{1}{n}\sum_{i=1}^n \mathopen|y-\hat y \mathclose| $$
 - 适用于分类问题（classification）的误差函数
 	- Cross entropy loss （Maximum likelyhood estimation)
-$$H(p,q) = -\sum_x p(x) 、ln q(x)$$
+$$H(p,q) = -\sum_x p(x) \log q(x)$$
 ![](https://datawookie.netlify.com/img/2015/12/log-loss-curve.png)
 	- MSE/MAE with thresh hold
 - 多任务问题
@@ -125,7 +127,7 @@ $$H(p,q) = -\sum_x p(x) 、ln q(x)$$
 - [神经网络如何设计自己的loss function，如果需要修改或设计自己的loss，需要遵循什么规则](https://www.zhihu.com/question/59797824)
 - [An overview of gradient descent optimization algorithms](http://ruder.io/optimizing-gradient-descent)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEyOTk3MzIzMTEsNDkxNTI4NTAwLC04Nz
-c1OTY2NjksLTEwNzI5OTczNjMsMzc2MDgzMDYsNzA1NjUwODMz
-XX0=
+eyJoaXN0b3J5IjpbLTExMTMyMDM2MDgsLTEyOTk3MzIzMTEsLT
+g3NzU5NjY2OSwtMTA3Mjk5NzM2MywzNzYwODMwNiw3MDU2NTA4
+MzNdfQ==
 -->
