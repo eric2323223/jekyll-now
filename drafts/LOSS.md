@@ -79,7 +79,7 @@ $$H(p,q) = -\sum_x p(x) \log q(x)$$
 - strict theoretical minimum of 0
 ~~- Convergence~~
 ### Surrogate loss function
-youshi
+有时根据问题目标loss function
 ### computation effort
 	- surrogate loss
 	- log likelihood example
@@ -129,5 +129,6 @@ youshi
 - [神经网络如何设计自己的loss function，如果需要修改或设计自己的loss，需要遵循什么规则](https://www.zhihu.com/question/59797824)
 - [An overview of gradient descent optimization algorithms](http://ruder.io/optimizing-gradient-descent)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTQ5OTU1NDE2OCwtMTExMTE3Njc2NV19
+eyJoaXN0b3J5IjpbLTE0ODA0NTM3NjUsLTExMTExNzY3NjVdfQ
+==
 -->
