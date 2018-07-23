@@ -126,7 +126,7 @@ $$H(p,q) = -\sum_x p(x) \log q(x)$$
 - [神经网络如何设计自己的loss function，如果需要修改或设计自己的loss，需要遵循什么规则](https://www.zhihu.com/question/59797824)
 - [An overview of gradient descent optimization algorithms](http://ruder.io/optimizing-gradient-descent)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjA4MDkwOTM3MSwtMTI5OTczMjMxMSwtOD
+eyJoaXN0b3J5IjpbLTE3NDMyNDYxMDYsMjA4MDkwOTM3MSwtOD
 c3NTk2NjY5LC0xMDcyOTk3MzYzLDM3NjA4MzA2LDcwNTY1MDgz
 M119
 -->
