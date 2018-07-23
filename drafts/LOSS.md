@@ -85,7 +85,7 @@ $$H(p,q) = -\sum_x p(x) \log q(x)$$
 ### computation effort
 - log likelihood example: why log?
 	- log is monotonic
-	- much easier to computer j
+	- much easier to computer joint likelihood
 - experiment
 
 
@@ -132,6 +132,6 @@ $$H(p,q) = -\sum_x p(x) \log q(x)$$
 - [神经网络如何设计自己的loss function，如果需要修改或设计自己的loss，需要遵循什么规则](https://www.zhihu.com/question/59797824)
 - [An overview of gradient descent optimization algorithms](http://ruder.io/optimizing-gradient-descent)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTY4NDk3MTg5LC0zNzgwNjA1ODEsLTExMT
+eyJoaXN0b3J5IjpbMTAyNTY1NTM3LC0zNzgwNjA1ODEsLTExMT
 ExNzY3NjVdfQ==
 -->
