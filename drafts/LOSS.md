@@ -62,7 +62,7 @@ $$J(\theta) = \frac{1}{m} \sum L(y_i, \hat y)$$
 $$MSE=\frac{1}{n}\sum_{i=1}^n (y-\hat y)^2$$
 	- MAE（Mean Absolute Error， L1）
 $$MAE=\frac{1}{n}\sum_{i=1}^n \mathopen|y-\hat y \mathclose| $$
-- 适用于分类问题（classification）的误差函数，分类问题的目标是推测出正确的类型，一般使用概率描述推测结果属于某种类型的可能性，因此误差函数就需要能够计算两个概率分布之间的”距离“，最
+- 适用于分类问题（classification）的误差函数，分类问题的目标是推测出正确的类型，一般使用概率描述推测结果属于某种类型的可能性，因此误差函数就需要能够计算两个概率分布之间的”距离“，最changyong
 	- Cross entropy loss （Maximum likelyhood estimation)
 $$H(p,q) = -\sum_x p(x) \log q(x)$$
 ![](https://datawookie.netlify.com/img/2015/12/log-loss-curve.png)
@@ -127,7 +127,8 @@ $$H(p,q) = -\sum_x p(x) \log q(x)$$
 - [神经网络如何设计自己的loss function，如果需要修改或设计自己的loss，需要遵循什么规则](https://www.zhihu.com/question/59797824)
 - [An overview of gradient descent optimization algorithms](http://ruder.io/optimizing-gradient-descent)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTkzMTA5MTc1MCw1MTY4ODA2MjAsLTE1ND
-A2NDE5MTAsLTE3NDMyNDYxMDYsMjA4MDkwOTM3MSwtODc3NTk2
-NjY5LC0xMDcyOTk3MzYzLDM3NjA4MzA2LDcwNTY1MDgzM119
+eyJoaXN0b3J5IjpbLTUyOTIwODIxNCwtOTMxMDkxNzUwLDUxNj
+g4MDYyMCwtMTU0MDY0MTkxMCwtMTc0MzI0NjEwNiwyMDgwOTA5
+MzcxLC04Nzc1OTY2NjksLTEwNzI5OTczNjMsMzc2MDgzMDYsNz
+A1NjUwODMzXX0=
 -->
