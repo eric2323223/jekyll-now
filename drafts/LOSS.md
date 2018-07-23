@@ -78,7 +78,8 @@ $$H(p,q) = -\sum_x p(x) \log q(x)$$
   - 0-1 loss is not good for GD because it's gradient is always 0, thus GD cannot learn anything.
 - strict theoretical minimum of 0
 ~~- Convergence~~
-- differenciable-surrogate loss function
+### Surrogate loss function
+youshi
 ### computation effort
 	- surrogate loss
 	- log likelihood example
@@ -128,5 +129,5 @@ $$H(p,q) = -\sum_x p(x) \log q(x)$$
 - [神经网络如何设计自己的loss function，如果需要修改或设计自己的loss，需要遵循什么规则](https://www.zhihu.com/question/59797824)
 - [An overview of gradient descent optimization algorithms](http://ruder.io/optimizing-gradient-descent)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTgwMTUxODQ1LC0xMTExMTc2NzY1XX0=
+eyJoaXN0b3J5IjpbMTQ5OTU1NDE2OCwtMTExMTE3Njc2NV19
 -->
