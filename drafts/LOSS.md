@@ -68,7 +68,7 @@ $$H(p,q) = -\sum_x p(x) \log q(x)$$
 ![](https://datawookie.netlify.com/img/2015/12/log-loss-curve.png)
 	- MSE/MAE with thresh hold
 - 多任务问题
-此类问题是指同时
+此类问题是指可以一次tui
 
 ## 设计
 ### (loss functin) semantic
@@ -127,5 +127,5 @@ $$H(p,q) = -\sum_x p(x) \log q(x)$$
 - [神经网络如何设计自己的loss function，如果需要修改或设计自己的loss，需要遵循什么规则](https://www.zhihu.com/question/59797824)
 - [An overview of gradient descent optimization algorithms](http://ruder.io/optimizing-gradient-descent)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTQwOTI1Nzk3NF19
+eyJoaXN0b3J5IjpbLTExMTExNzY3NjVdfQ==
 -->
