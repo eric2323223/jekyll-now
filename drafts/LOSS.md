@@ -57,7 +57,7 @@ $$J(\theta) = \frac{1}{m} \sum L(y_i, \hat y)$$
 
 ## 常见误差函数
 根据不同类型机器学习任务可以将loss function主要可以以下三类：
-- 适用于回归问题（Regression）的误差函数，这种误差函数的目标是量化推测值和真实值的逻辑距离，直觉上我们可以使用能够dul因此以下两种距离比较适合
+- 适用于回归问题（Regression）的误差函数，这种误差函数的目标是量化推测值和真实值的逻辑距离，理论上我们可以使用任何距离计算公式作为误差函数因此以下两种距离比较适合
 	 - MSE（Mean Squared Error，L2）
 $$MSE=\frac{1}{n}\sum_{i=1}^n (y-\hat y)^2$$
 	- MAE（Mean Absolute Error， L1）
@@ -126,7 +126,7 @@ $$H(p,q) = -\sum_x p(x) \log q(x)$$
 - [神经网络如何设计自己的loss function，如果需要修改或设计自己的loss，需要遵循什么规则](https://www.zhihu.com/question/59797824)
 - [An overview of gradient descent optimization algorithms](http://ruder.io/optimizing-gradient-descent)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjg2ODg1MTM4LC0xNTQwNjQxOTEwLC0xNz
-QzMjQ2MTA2LDIwODA5MDkzNzEsLTg3NzU5NjY2OSwtMTA3Mjk5
-NzM2MywzNzYwODMwNiw3MDU2NTA4MzNdfQ==
+eyJoaXN0b3J5IjpbLTIzMDAwMzA0NywtMTU0MDY0MTkxMCwtMT
+c0MzI0NjEwNiwyMDgwOTA5MzcxLC04Nzc1OTY2NjksLTEwNzI5
+OTczNjMsMzc2MDgzMDYsNzA1NjUwODMzXX0=
 -->
