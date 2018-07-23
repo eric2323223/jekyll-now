@@ -75,7 +75,7 @@ $$H(p,q) = -\sum_x p(x) \log q(x)$$
 - outliers effect
   - MSE vs MAE
   虽然MSE和MAE都能用于regression预测，但是由于MSE对于大误差有更大的惩罚，所以更适合需要避免大误差的预测场景。
-  - 0-1 loss is not good for GD because it's gradient is always 0, thus GD cannot le
+  - 0-1 loss is not good for GD because it's gradient is always 0, thus GD cannot learn anything.
 - strict theoretical minimum of 0
 ~~- Convergence~~
 - differenciable-surrogate loss function
@@ -127,8 +127,7 @@ $$H(p,q) = -\sum_x p(x) \log q(x)$$
 - [神经网络如何设计自己的loss function，如果需要修改或设计自己的loss，需要遵循什么规则](https://www.zhihu.com/question/59797824)
 - [An overview of gradient descent optimization algorithms](http://ruder.io/optimizing-gradient-descent)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1MzgxMjA5NzMsNTE2ODgwNjIwLC0xNT
-QwNjQxOTEwLC0xNzQzMjQ2MTA2LDIwODA5MDkzNzEsLTg3NzU5
-NjY2OSwtMTA3Mjk5NzM2MywzNzYwODMwNiw3MDU2NTA4MzNdfQ
-==
+eyJoaXN0b3J5IjpbLTkzMTA5MTc1MCw1MTY4ODA2MjAsLTE1ND
+A2NDE5MTAsLTE3NDMyNDYxMDYsMjA4MDkwOTM3MSwtODc3NTk2
+NjY5LC0xMDcyOTk3MzYzLDM3NjA4MzA2LDcwNTY1MDgzM119
 -->
