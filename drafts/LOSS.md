@@ -56,18 +56,20 @@ $$J(\theta) = \frac{1}{m} \sum L(y_i, \hat y)$$
 
 ## 常见误差函数
 根据不同类型机器学习任务可以将loss function主要可以以下三类：
-- 适用于回归问题（Regression）的误差函数，这种误差函数的目标是量化推测值和真实值的逻辑距离，理论上我们可以使用任何距离计算公式作为误差函数。实践中为常用的是以下两种距离：
+- 回归问题（Regression），这种误差函数的目标是量化推测值和真实值的逻辑距离，理论上我们可以使用任何距离计算公式作为误差函数。实践中为常用的是以下两种距离：
 	 - MSE（Mean Squared Error，L2）
 $$MSE=\frac{1}{n}\sum_{i=1}^n (y-\hat y)^2$$
 	- MAE（Mean Absolute Error， L1）
 $$MAE=\frac{1}{n}\sum_{i=1}^n \mathopen|y-\hat y \mathclose| $$
-- 适用于分类问题（classification）的误差函数，分类问题的目标是推测出正确的类型，一般使用概率描述推测结果属于某种类型的可能性，因此误差函数就需要能够计算两个概率分布之间的”距离“，最常用的此类方法是
+- 分类问题（classification），分类问题的目标是推测出正确的类型，一般使用概率描述推测结果属于某种类型的可能性，因此误差函数就需要能够计算两个概率分布之间的”距离“，最常用的此类方法是
 	- Cross entropy loss （Maximum likelyhood estimation)
 $$H(p,q) = -\sum_x p(x) \log q(x)$$
 ![](https://datawookie.netlify.com/img/2015/12/log-loss-curve.png)
 	- MSE/MAE with thresh hold
-- 多任务问题
-此类问题是指可
+- 多任务问题（multi task learning)，此类问题是指使用一个模型同时学习多个指标，比如使用深度学习解决计算机视觉中的目标定位（object localization）问题，模型需要同时学习对象类型和对象位置两个指标，因此loss function需要具备同时衡量类型误差和位置误差的能力，常见的做法是先分别设计类型误差函数和位置误差函数，在按一定比例合并这两个误差从而形成一个loss function来综合的反应总误差
+$$L_{class} = $$
+$$L_{position} = $$
+$$L = \alpha L_{class} + \beta L_{position}$$
 
 ## 设计
 ### (loss functin) semantic
@@ -131,7 +133,7 @@ $$H(p,q) = -\sum_x p(x) \log q(x)$$
 - [神经网络如何设计自己的loss function，如果需要修改或设计自己的loss，需要遵循什么规则](https://www.zhihu.com/question/59797824)
 - [An overview of gradient descent optimization algorithms](http://ruder.io/optimizing-gradient-descent)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTU3NzU1MzE0LC0xOTUxNjM3MjI5LC04Mj
-M1MjYwNDksMTAyNTY1NTM3LC0zNzgwNjA1ODEsLTExMTExNzY3
-NjVdfQ==
+eyJoaXN0b3J5IjpbLTEyOTg5MjkxMDAsLTE5NTE2MzcyMjksLT
+gyMzUyNjA0OSwxMDI1NjU1MzcsLTM3ODA2MDU4MSwtMTExMTE3
+Njc2NV19
 -->
