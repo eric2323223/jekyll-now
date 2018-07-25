@@ -136,7 +136,7 @@ $$L = \alpha L_{class} + \beta L_{position}$$
 - [神经网络如何设计自己的loss function，如果需要修改或设计自己的loss，需要遵循什么规则](https://www.zhihu.com/question/59797824)
 - [An overview of gradient descent optimization algorithms](http://ruder.io/optimizing-gradient-descent)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTk1OTE1OTcyLC0xNTg1Mjc2MTgzLC0xMj
-k4OTI5MTAwLC0xOTUxNjM3MjI5LC04MjM1MjYwNDksMTAyNTY1
-NTM3LC0zNzgwNjA1ODEsLTExMTExNzY3NjVdfQ==
+eyJoaXN0b3J5IjpbLTEyOTI0ODQ3LC05NTkxNTk3MiwtMTU4NT
+I3NjE4MywtMTk1MTYzNzIyOSwtODIzNTI2MDQ5LDEwMjU2NTUz
+NywtMzc4MDYwNTgxLC0xMTExMTc2NzY1XX0=
 -->
