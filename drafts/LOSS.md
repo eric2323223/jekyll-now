@@ -72,7 +72,7 @@ $$L_{position} = $$
 $$L = \alpha L_{class} + \beta L_{position}$$
 
 ## 设计
-
+我们知道loss function不光只是
 ### (loss functin) semantic
 - outliers effect
   - MSE vs MAE
@@ -134,7 +134,7 @@ $$L = \alpha L_{class} + \beta L_{position}$$
 - [神经网络如何设计自己的loss function，如果需要修改或设计自己的loss，需要遵循什么规则](https://www.zhihu.com/question/59797824)
 - [An overview of gradient descent optimization algorithms](http://ruder.io/optimizing-gradient-descent)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTc4MTU2NTIzOCwtMTU4NTI3NjE4MywtMT
+eyJoaXN0b3J5IjpbMTEwNTMyNjY5OSwtMTU4NTI3NjE4MywtMT
 I5ODkyOTEwMCwtMTk1MTYzNzIyOSwtODIzNTI2MDQ5LDEwMjU2
 NTUzNywtMzc4MDYwNTgxLC0xMTExMTc2NzY1XX0=
 -->
