@@ -72,9 +72,9 @@ $$L_{position} = $$
 $$L = \alpha L_{class} + \beta L_{position}$$
 
 ## 设计
-我们知道loss function不光只是误差衡量的工具，更重要的是它决定了模型学习的方向。通过不同的loss function我们可以从完全相同的模型架构（model architeture）中学习不同的模型参数，来实现不同的目的。模型设计决定了了模型的能力，loss function设计决定了模型学习的方向，（划船）
-那么如何设计（或者选择）loss function呢？我们可以从以下几个方面kaolv
-
+Loss function不仅仅只是误差的度量工具，更重要的是GD会为了不断缩小误差而根据loss function规定的方向（导数方向）调整模型参数，因此可以说loss function决定了模型学习的目标。使用不同的loss function我们可以在完全相同的模型架构（model architeture）上学习不同的模型参数，来达到不同的目的。比如，在多层卷积神经网络架构上使用cross entropy loss可以判断图像对象的类型（是猫还是狗），而同样的网络架构配合triplet loss则可以用来提取分辨不同个体的特征（面部识别）。从某种程度上说模型设计决定了了模型的能力，loss function设计决定了模型学习的方向，（划船的比喻）
+那么如何设计（或者选择）loss function呢？我们可以从以下几个方面考虑
+### 任务需求
 ### (loss functin) semantic
 - outliers effect
   - MSE vs MAE
@@ -136,7 +136,8 @@ $$L = \alpha L_{class} + \beta L_{position}$$
 - [神经网络如何设计自己的loss function，如果需要修改或设计自己的loss，需要遵循什么规则](https://www.zhihu.com/question/59797824)
 - [An overview of gradient descent optimization algorithms](http://ruder.io/optimizing-gradient-descent)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEyOTI0ODQ3LC05NTkxNTk3MiwtMTU4NT
-I3NjE4MywtMTk1MTYzNzIyOSwtODIzNTI2MDQ5LDEwMjU2NTUz
-NywtMzc4MDYwNTgxLC0xMTExMTc2NzY1XX0=
+eyJoaXN0b3J5IjpbMTUwMjI0Mjg2MywtMTI5MjQ4NDcsLTk1OT
+E1OTcyLC0xNTg1Mjc2MTgzLC0xOTUxNjM3MjI5LC04MjM1MjYw
+NDksMTAyNTY1NTM3LC0zNzgwNjA1ODEsLTExMTExNzY3NjVdfQ
+==
 -->
