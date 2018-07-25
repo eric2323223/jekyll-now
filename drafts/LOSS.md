@@ -12,7 +12,7 @@ $$J(\theta) = \frac{1}{m} \sum L(y_i, \hat y)$$
 ## 特性
 
 ### Gradient based(GD) optimization
-与数学中的求极值问题不同的地方是，机器学习中的求极值使用。机器学习的领域主要使用基于梯度下降（graidient based(GD)的方法，如图一所示对于一个可导的凸函数，从任意一点出发，沿着倒数下降的方向前进直到倒数为零的点，就是函数的最小值。
+与数学中的求极值问题不同的地方是，机器学习中的求极值使用。机器学习的领域主要使用基于梯度下降（gradient based(GD)的方法，如图一所示对于一个可导的凸函数，从任意一点出发，沿着倒数下降的方向前进直到倒数为零的点，就是函数的最小值。
 
 ### 可导性
 虽然从数学原理上GD要求loss function连续可导，但在实践中loss function可以存在不可导的点，这是因为计算是使用一组（batch）数据的误差均值进行求导，这样使得落在不可导的点上的概率显著降低，因此可以对hinge loss这样的不连续的函数使用GD来进行优化。事实上即使在某组数据真的发生小概率事件导致求导失败，由于minibatch GD算法使用了大量的分组，绝大多数可求导的分组仍然可以保证GD在整个数据集上有效运行。
@@ -133,7 +133,7 @@ $$L = \alpha L_{class} + \beta L_{position}$$
 - [神经网络如何设计自己的loss function，如果需要修改或设计自己的loss，需要遵循什么规则](https://www.zhihu.com/question/59797824)
 - [An overview of gradient descent optimization algorithms](http://ruder.io/optimizing-gradient-descent)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1ODUyNzYxODMsLTEyOTg5MjkxMDAsLT
-E5NTE2MzcyMjksLTgyMzUyNjA0OSwxMDI1NjU1MzcsLTM3ODA2
-MDU4MSwtMTExMTE3Njc2NV19
+eyJoaXN0b3J5IjpbLTExMTYxMDQ2NDgsLTE1ODUyNzYxODMsLT
+EyOTg5MjkxMDAsLTE5NTE2MzcyMjksLTgyMzUyNjA0OSwxMDI1
+NjU1MzcsLTM3ODA2MDU4MSwtMTExMTE3Njc2NV19
 -->
