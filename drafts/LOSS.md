@@ -72,7 +72,8 @@ $$L_{position} = $$
 $$L = \alpha L_{class} + \beta L_{position}$$
 
 ## 设计
-我们知道loss function不光只是误差衡量的工具，更重要的是它决定了模型学习的方向。通过不同的loss function我们可以从完全相同的模型架构（model architeture）中学习不同的模型参数，来实现不同的目的。模型设计决定了了模型的能力，loss function设计决定了模型学习的方向
+我们知道loss function不光只是误差衡量的工具，更重要的是它决定了模型学习的方向。通过不同的loss function我们可以从完全相同的模型架构（model architeture）中学习不同的模型参数，来实现不同的目的。模型设计决定了了模型的能力，loss function设计决定了模型学习的方向，（划船）
+那么如何设计loss function
 
 ### (loss functin) semantic
 - outliers effect
@@ -135,7 +136,7 @@ $$L = \alpha L_{class} + \beta L_{position}$$
 - [神经网络如何设计自己的loss function，如果需要修改或设计自己的loss，需要遵循什么规则](https://www.zhihu.com/question/59797824)
 - [An overview of gradient descent optimization algorithms](http://ruder.io/optimizing-gradient-descent)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1MjgzNDEwNTQsLTE1ODUyNzYxODMsLT
+eyJoaXN0b3J5IjpbLTIxMjE4ODEwMjAsLTE1ODUyNzYxODMsLT
 EyOTg5MjkxMDAsLTE5NTE2MzcyMjksLTgyMzUyNjA0OSwxMDI1
 NjU1MzcsLTM3ODA2MDU4MSwtMTExMTE3Njc2NV19
 -->
