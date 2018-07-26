@@ -86,7 +86,7 @@ Loss function不仅仅光只是误差的度量衡量的工具，更重要的是G
 - strict theoretical minimum of 0
 ~~- Convergence~~
 ### 代理误差函数（Surrogate loss function）
-有写情况下根据问题目标得到的loss function很难使用GD进行优化，例如左图中的loss function在所有可导处导数都是0（水平区域）， 意味着GD无法工作。这时可以使用一个如右图所示的近似的凸函数进行模拟，通过求代理误差函数的最小值来实现优化原来的误差函数的目的。
+有些情况下根据问题目标得到的loss function很难使用GD进行优化，例如左图中的loss function在所有可导处导数都是0（水平区域）， 意味着GD无法工作。这时可以使用一个如右图所示的近似的凸函数进行模拟，通过求代理误差函数的最小值来实现优化原来的误差函数的目的。
 ![](http://fa.bianp.net/blog/images/2014/loss_01.png)
 ![](http://fa.bianp.net/blog/images/2014/loss_log.png)
 Designing of the good surrogate function is a research topic, as defining such function actually leads to the construction of new machine learning model. There is no "rule" to do so - it is what research is about. From practical perspective you rather should explore numerous existing functions, as they are not "just popular" - they are simply good, well understood and usefull.
@@ -145,8 +145,8 @@ And how do you check whether a loss function bounds your current one? You provid
 - [神经网络如何设计自己的loss function，如果需要修改或设计自己的loss，需要遵循什么规则](https://www.zhihu.com/question/59797824)
 - [An overview of gradient descent optimization algorithms](http://ruder.io/optimizing-gradient-descent)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTUyNzE5MTM5OCwtNDQyMTk3NjAxLDIwND
-g4MDUwNzYsLTc0MTI3NjI5NiwtMTI5MjQ4NDcsLTE1ODUyNzYx
-ODMsLTE5NTE2MzcyMjksLTgyMzUyNjA0OSwxMDI1NjU1MzcsLT
-M3ODA2MDU4MSwtMTExMTE3Njc2NV19
+eyJoaXN0b3J5IjpbOTgwODE2NCwtNDQyMTk3NjAxLDIwNDg4MD
+UwNzYsLTc0MTI3NjI5NiwtMTI5MjQ4NDcsLTE1ODUyNzYxODMs
+LTE5NTE2MzcyMjksLTgyMzUyNjA0OSwxMDI1NjU1MzcsLTM3OD
+A2MDU4MSwtMTExMTE3Njc2NV19
 -->
