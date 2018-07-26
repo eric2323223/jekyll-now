@@ -85,8 +85,11 @@ Loss function不仅仅光只是误差的度量衡量的工具，更重要的是G
   - 0-1 loss is not good for GD because it's gradient is always 0, thus GD cannot learn anything.
 - strict theoretical minimum of 0
 ~~- Convergence~~
-### Surrogate loss function
-有时根据问题目标得到的loss function很难使用GD进行优化，例如0-1 loss function 在所有可导处导数都是0， 意味着GD无法工作，但是如果
+### 代理误差函数（Surrogate loss function）
+有写情况下根据问题目标得到的loss function很难使用GD进行优化，例如0-1 loss function 在所有可导处导数都是0， 意味着GD无法工作。这是可以使用一个近似的函数（比如hinge loss）进行模拟，通过求代理误差函数的最小值来实现优化原来的误差函数的目的。
+![](http://fa.bianp.net/blog/images/2014/loss_01.png)
+![](http://fa.bianp.net/blog/images/2014/loss_log.png)
+
 ![](fa.bianp.net/blog/static/images/2013/loss_functions.png)
 
 ### computation effort
@@ -139,8 +142,8 @@ Loss function不仅仅光只是误差的度量衡量的工具，更重要的是G
 - [神经网络如何设计自己的loss function，如果需要修改或设计自己的loss，需要遵循什么规则](https://www.zhihu.com/question/59797824)
 - [An overview of gradient descent optimization algorithms](http://ruder.io/optimizing-gradient-descent)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQ0MjE5NzYwMSwyMDQ4ODA1MDc2LC03ND
-EyNzYyOTYsLTEyOTI0ODQ3LC0xNTg1Mjc2MTgzLC0xOTUxNjM3
-MjI5LC04MjM1MjYwNDksMTAyNTY1NTM3LC0zNzgwNjA1ODEsLT
-ExMTExNzY3NjVdfQ==
+eyJoaXN0b3J5IjpbLTg1NDU4OTg1MCwtNDQyMTk3NjAxLDIwND
+g4MDUwNzYsLTc0MTI3NjI5NiwtMTI5MjQ4NDcsLTE1ODUyNzYx
+ODMsLTE5NTE2MzcyMjksLTgyMzUyNjA0OSwxMDI1NjU1MzcsLT
+M3ODA2MDU4MSwtMTExMTE3Njc2NV19
 -->
