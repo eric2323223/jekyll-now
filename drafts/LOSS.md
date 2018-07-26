@@ -139,8 +139,8 @@ Loss function不仅仅光只是误差的度量衡量的工具，更重要的是G
 - [神经网络如何设计自己的loss function，如果需要修改或设计自己的loss，需要遵循什么规则](https://www.zhihu.com/question/59797824)
 - [An overview of gradient descent optimization algorithms](http://ruder.io/optimizing-gradient-descent)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjA0ODgwNTA3NiwtNzQxMjc2Mjk2LC0xMj
-kyNDg0NywtMTU4NTI3NjE4MywtMTk1MTYzNzIyOSwtODIzNTI2
-MDQ5LDEwMjU2NTUzNywtMzc4MDYwNTgxLC0xMTExMTc2NzY1XX
-0=
+eyJoaXN0b3J5IjpbLTQ0MjE5NzYwMSwyMDQ4ODA1MDc2LC03ND
+EyNzYyOTYsLTEyOTI0ODQ3LC0xNTg1Mjc2MTgzLC0xOTUxNjM3
+MjI5LC04MjM1MjYwNDksMTAyNTY1NTM3LC0zNzgwNjA1ODEsLT
+ExMTExNzY3NjVdfQ==
 -->
