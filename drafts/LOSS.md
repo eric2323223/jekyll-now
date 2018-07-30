@@ -95,7 +95,7 @@ And how do you check whether a loss function bounds your current one? You provid
 ![](fa.bianp.net/blog/static/images/2013/loss_functions.png)
 
 ### 运算量computation effort
-在相同的效果情况下选择复杂度小的loss function能够加快学习
+在相同的效果情况下选择复杂度小的loss function能够加快学习速度
 - log likelihood example: why log?
 	- log is monotonic
 	- much easier to computer joint
@@ -147,7 +147,7 @@ And how do you check whether a loss function bounds your current one? You provid
 - [神经网络如何设计自己的loss function，如果需要修改或设计自己的loss，需要遵循什么规则](https://www.zhihu.com/question/59797824)
 - [An overview of gradient descent optimization algorithms](http://ruder.io/optimizing-gradient-descent)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjA0OTg0MjExLC0xMDc1MjAyNDU2LDk4MD
+eyJoaXN0b3J5IjpbNzcwMzU2MTA4LC0xMDc1MjAyNDU2LDk4MD
 gxNjQsOTgwODE2NCwtNDQyMTk3NjAxLDIwNDg4MDUwNzYsLTc0
 MTI3NjI5NiwtMTI5MjQ4NDcsLTE1ODUyNzYxODMsLTE5NTE2Mz
 cyMjksLTgyMzUyNjA0OSwxMDI1NjU1MzcsLTM3ODA2MDU4MSwt
