@@ -106,7 +106,9 @@ And how do you check whether a loss function bounds your current one? You provid
 从人脸识别探讨loss function设计。
 - 面部识别和图像识别的区别
 	- 面部识别的目标是识别不同环境中的某一类（某个人）的面部特征
-- 
+- why naive CR is not working
+- 欧式距离
+- 角度
  use regression such as mse in classification (consider margin)
 - softmax -> contrastive loss -> triplet loss
 				- -> center loss
@@ -145,7 +147,7 @@ And how do you check whether a loss function bounds your current one? You provid
 - [神经网络如何设计自己的loss function，如果需要修改或设计自己的loss，需要遵循什么规则](https://www.zhihu.com/question/59797824)
 - [An overview of gradient descent optimization algorithms](http://ruder.io/optimizing-gradient-descent)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTE0NDE5ODgzMyw5ODA4MTY0LDk4MDgxNj
+eyJoaXN0b3J5IjpbMTI2NDI5NDUwNyw5ODA4MTY0LDk4MDgxNj
 QsLTQ0MjE5NzYwMSwyMDQ4ODA1MDc2LC03NDEyNzYyOTYsLTEy
 OTI0ODQ3LC0xNTg1Mjc2MTgzLC0xOTUxNjM3MjI5LC04MjM1Mj
 YwNDksMTAyNTY1NTM3LC0zNzgwNjA1ODEsLTExMTExNzY3NjVd
