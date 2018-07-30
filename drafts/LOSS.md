@@ -95,7 +95,7 @@ And how do you check whether a loss function bounds your current one? You provid
 ![](fa.bianp.net/blog/static/images/2013/loss_functions.png)
 
 ### 运算量computation effort
-
+在xiangtongxi
 - log likelihood example: why log?
 	- log is monotonic
 	- much easier to computer joint
@@ -147,9 +147,9 @@ And how do you check whether a loss function bounds your current one? You provid
 - [神经网络如何设计自己的loss function，如果需要修改或设计自己的loss，需要遵循什么规则](https://www.zhihu.com/question/59797824)
 - [An overview of gradient descent optimization algorithms](http://ruder.io/optimizing-gradient-descent)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEwNzUyMDI0NTYsOTgwODE2NCw5ODA4MT
-Y0LC00NDIxOTc2MDEsMjA0ODgwNTA3NiwtNzQxMjc2Mjk2LC0x
-MjkyNDg0NywtMTU4NTI3NjE4MywtMTk1MTYzNzIyOSwtODIzNT
-I2MDQ5LDEwMjU2NTUzNywtMzc4MDYwNTgxLC0xMTExMTc2NzY1
-XX0=
+eyJoaXN0b3J5IjpbMTQ2MzM0MzA3NCwtMTA3NTIwMjQ1Niw5OD
+A4MTY0LDk4MDgxNjQsLTQ0MjE5NzYwMSwyMDQ4ODA1MDc2LC03
+NDEyNzYyOTYsLTEyOTI0ODQ3LC0xNTg1Mjc2MTgzLC0xOTUxNj
+M3MjI5LC04MjM1MjYwNDksMTAyNTY1NTM3LC0zNzgwNjA1ODEs
+LTExMTExNzY3NjVdfQ==
 -->
