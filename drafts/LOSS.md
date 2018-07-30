@@ -109,11 +109,10 @@ And how do you check whether a loss function bounds your current one? You provid
 - why naive CR is not working
 - 欧式距离
 - 角度
+	- w
  use regression such as mse in classification (consider margin)
 - softmax -> contrastive loss -> triplet loss
 				- -> center loss
-
-#### Example of loss function design
 
 ## 总结
 
@@ -147,9 +146,9 @@ And how do you check whether a loss function bounds your current one? You provid
 - [神经网络如何设计自己的loss function，如果需要修改或设计自己的loss，需要遵循什么规则](https://www.zhihu.com/question/59797824)
 - [An overview of gradient descent optimization algorithms](http://ruder.io/optimizing-gradient-descent)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTI2NDI5NDUwNyw5ODA4MTY0LDk4MDgxNj
-QsLTQ0MjE5NzYwMSwyMDQ4ODA1MDc2LC03NDEyNzYyOTYsLTEy
-OTI0ODQ3LC0xNTg1Mjc2MTgzLC0xOTUxNjM3MjI5LC04MjM1Mj
-YwNDksMTAyNTY1NTM3LC0zNzgwNjA1ODEsLTExMTExNzY3NjVd
-fQ==
+eyJoaXN0b3J5IjpbMzY1MTQ4NjY3LDk4MDgxNjQsOTgwODE2NC
+wtNDQyMTk3NjAxLDIwNDg4MDUwNzYsLTc0MTI3NjI5NiwtMTI5
+MjQ4NDcsLTE1ODUyNzYxODMsLTE5NTE2MzcyMjksLTgyMzUyNj
+A0OSwxMDI1NjU1MzcsLTM3ODA2MDU4MSwtMTExMTE3Njc2NV19
+
 -->
