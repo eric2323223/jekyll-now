@@ -78,6 +78,7 @@ Loss function不仅仅光只是误差的度量衡量的工具，更重要的是G
 ### 任务目标
 决定loss function设计的最重要的因素就是任务目标，有时任务目标和loss function的关系很直接，比如。。。， 有时他们的关系就不那么明显，需要一些的专业知识（domain knowledge）才能和loss function建立联系，比如CTC loss。另外对目标的理解程度也很关键，有时一些细节会对loss function的设计起到关键的作用，比如MSE和MAE是相似的loss function，如何选择取决于任务目标，如果需要避免较大误差则应选择MSE。
 无论如何，任务都应该是设计loss function最先考虑的东西。
+
 ### (loss functin) semantic
 - outliers effect
   - MSE vs MAE
@@ -85,6 +86,7 @@ Loss function不仅仅光只是误差的度量衡量的工具，更重要的是G
   - 0-1 loss is not good for GD because it's gradient is always 0, thus GD cannot learn anything.
 - strict theoretical minimum of 0
 ~~- Convergence~~
+
 ### 代理误差函数（Surrogate loss function）
 有些情况下根据问题目标得到的loss function很难使用GD进行优化，例如左图中的loss function在所有可导处导数都是0（水平区域）， 意味着GD无法工作。这时可以使用一个如右图所示的近似的凸函数进行模拟，通过求代理误差函数的最小值来实现优化原来的误差函数的目的。
 ![](http://fa.bianp.net/blog/images/2014/loss_01.png)
@@ -146,10 +148,10 @@ And how do you check whether a loss function bounds your current one? You provid
 - [神经网络如何设计自己的loss function，如果需要修改或设计自己的loss，需要遵循什么规则](https://www.zhihu.com/question/59797824)
 - [An overview of gradient descent optimization algorithms](http://ruder.io/optimizing-gradient-descent)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTQ2MTc5MjgwMiwyMzAwNTA2MTIsLTEwND
-gyMzM2MDEsMjMwMDUwNjEyLC0xMDc1MjAyNDU2LDk4MDgxNjQs
-OTgwODE2NCwtNDQyMTk3NjAxLDIwNDg4MDUwNzYsLTc0MTI3Nj
-I5NiwtMTI5MjQ4NDcsLTE1ODUyNzYxODMsLTE5NTE2MzcyMjks
-LTgyMzUyNjA0OSwxMDI1NjU1MzcsLTM3ODA2MDU4MSwtMTExMT
-E3Njc2NV19
+eyJoaXN0b3J5IjpbLTM1MDI2MTQzNCwxNDYxNzkyODAyLDIzMD
+A1MDYxMiwtMTA0ODIzMzYwMSwyMzAwNTA2MTIsLTEwNzUyMDI0
+NTYsOTgwODE2NCw5ODA4MTY0LC00NDIxOTc2MDEsMjA0ODgwNT
+A3NiwtNzQxMjc2Mjk2LC0xMjkyNDg0NywtMTU4NTI3NjE4Mywt
+MTk1MTYzNzIyOSwtODIzNTI2MDQ5LDEwMjU2NTUzNywtMzc4MD
+YwNTgxLC0xMTExMTc2NzY1XX0=
 -->
