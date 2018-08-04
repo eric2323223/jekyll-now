@@ -3,7 +3,7 @@
 ![](https://www.cs.umd.edu/~tomg/img/landscapes/noshort.png)
 
 ## 概念/原理
-是一种量化模型拟合程度的工具，我们知道机器学习（监督式机器学习）的基本思想设计一个由参数$$决定的模型$f_$，使得输入$x$经过模型$f_(x)$计算后得到接近真实$y$的结果，模型的训练过程是用标签数据（$x_i, y_i$）输入模型$f_\theta(x_i) = \hat y_i$并计算预测值和真实值的差距$L_\theta$，求$\theta$使得$L_\theta$取最小值，这时模型$f_\theta$达到最优状态，那么如何判断模型和现实的接近程度呢？如何判断模型已经足够好呢？loss function可以回答这些问题，loss function的loss表示了模型和真实的差距$L_\thetaw(\hat y, y)$，当这个距离达到最小值的时候我们就认为模型达到最好的状态。所以机器学习实际上是一个求loss function最小值的问题，radent om/im
+是一种量化模型拟合程度的工具，我们知道机器学习（监督式机器学习）的基本思想设计一个由参数$$决定的模型$f_$，使得输入$x$经过模型$f_(x)$计算后得到接近真实$y$的结果，模型的训练过程是用标签数据（$x_i, y_i$）输入模型$f_\theta(x_i) = \hat y_i$并计算预测值和真实值的差距$Leta(\ha$，求$\theta$使得$L_\theta$取最小值，这时模型$f_\theta$达到最优状态，那么如何判断模型和现实的接近程度呢？如何判断模型已经足够好呢？loss function可以回答这些问题，loss function的loss表示了模型和真实的差距$L_\thetaw(\hat y, y)$，当这个距离达到最小值的时候我们就认为模型达到最好的状态。所以机器学习实际上是一个求loss function最小值的问题，radent om/im
 
 $$J(\theta) = \frac{1}{m} \sum L(y_i, \hat y)$$
 
@@ -16,7 +16,7 @@ $$J(\theta) = \frac{1}{m} \sum L(y_i, \hat y)$$
 
 ### 可导性
 虽然从数学原理上GD要求loss function连续可导，但在实践中loss function可以存在不可导的点，这是因为计算是使用一组（batch）数据的误差均值进行求导，这样使得落在不可导的点上的概率显著降低，因此可以对hinge loss这样的不连续的函数使用GD来进行优化。事实上即使在某组数据真的发生小概率事件导致求导失败，由于minibatch GD算法使用了大量的分组，绝大多数可求导的分组仍然可以保证GD在整个数据集上有效运行。
-
+![](https://cdn-images-1.medium.com/max/1600/1*t6OiVIMKw3SBjNzj-lp_Fw.png)
 > #### 如何判断凸函数？
 > "_If the function is twice differentiable, and the second derivative is always greater than or equal to zero for its entire domain, then the function is convex._"
 > how to check convexity?
@@ -24,7 +24,9 @@ $$J(\theta) = \frac{1}{m} \sum L(y_i, \hat y)$$
 >$$f(y)=f(x)+\theta f(x)*(y-x)$$
 >- second derivative is non-negative
 
-![](https://cdn-images-1.medium.com/max/1600/1*t6OiVIMKw3SBjNzj-lp_Fw.png)
+### 可导性
+虽然从数学原理上GD要求loss function连续可导，但在实践中loss function可以存在不可导的点，这是因为计算是使用一组（batch）数据的误差均值进行求导，这样使得落在不可导的点上的概率很低，因此可以对hinge loss这样的不连续的函数使用GD来进行优化。事实上即使在某组数据真的发生小概率事件导致求导失败，由于minibatch GD算法使用了大量的分组，绝大多数可求导的分组仍然可以保证GD在整个数据集上有效运行。
+
 ### 非凸性
 对于所有的凸函数，使用GD都可以找到最小值，但是在实际的机器学习任务中，由于模型参数的数量都很大（如VGG16有$1.38*10^8$个参数），这时的loss function是凸函数的概率非常低，loss function 的表面会复杂很多，图二展示了模型参数中的两个参数构成的loss function的形态，可见其中有很多区域导数为零，但显然他们并不都是最小值，甚至不是局部最小值，~~GD算法会在这些区域收敛，但这时模型并不具备最优的性能。~~
 ![](http://1L1.png)
@@ -39,12 +41,12 @@ $$J(\theta) = \frac{1}{m} \sum L(y_i, \hat y)$$
 - there is no closed form solution
 - it is computational impossible to use analytical solution when data is huge
 #### what problem caused by GD?
-- 0 gradient is not nessisarily global minimum
+-e there are  50% possiblity a 0 -gradient is not nessisarily global minimum
    - flat region
    - saddle point
    - global minimum is not differenciable
 
-#### how to solve therse are  50% possiblity a 0-gradient point is at its minimum and all dimension are independent, the possibilty of this point being global/local minimum is $0.5^{100} \approx 7.89*10^{-31}$ 
+#### how to solve therse are  50% possiblity a 0-gradient point is at its minimum and all dimension are independentpoint is at its minimum and 50% possiblity at its maximum, the possibilty of this point being global/local minimum is $0.5^{100} \approx 7.89*10^{-3~~ 
 ![](https://www.researchgate.net/profile/David_Laughlin2/publication/283946342/figure/fig2/AS:297125729587204@1447851702481/Schematic-of-a-saddle-point-illustrating-their-necessity-in-free-energy-critical-point.png)
 
 > #### 那么为什么还要使用GD呢？ 
@@ -116,30 +118,31 @@ $$H(p,q) = -\sum_x p(x) \log q(x)$$
 - strict theoretical minimum of 0
 ~~- Convergence~~
 ### Surrogate loss function
-有时根据问题目标得到的loss function很难使用GD进行优化，例如0-1 loss function 在所有可导处导数都是0， 意味着GD无法工作，但是如果
+有根据问题目标得到的loss function很难使用GD进行优化，例如0-1 loss function 在所有可导处导数都是0， 意味着GD无法工作，但是如果
 ![](fa.bianp.net/blog/static/images/2013/loss_functions.png)
 
 ### computation effort
+在相同的效果情况下选择复杂度小的loss function能够加快学习速度。比如
 - log likelihood example: why log?
 	- log is monotonic
-	- much easier to computer joint likelihood
-- experiment
+	- much easier to computer joint
+	- cross entropy and maximum likelihood estitmation
 
 
 ## 设计样例
 从人脸识别探讨loss function设计。
 - 面部识别和图像识别的区别
 	- 面部识别的目标是识别不同环境中的某一类（某个人）的面部特征
-- 
+- why naive CR is not working
+- 欧式距离
+- 角度
+	- weight normalization
+	- margin
  use regression such as mse in classification (consider margin)
 - softmax -> contrastive loss -> triplet loss
 				- -> center loss
 
-#### Example of loss function design
-
-## 总结
-
-Convergence
+##Convergence
 - differenciable
 
 #### Example of loss function design
@@ -149,7 +152,9 @@ Convergence
 
 
 ### Distance-based Loss function
-### Prediction error-based loss function 
+### Prediction error-based loss function  总结
+
+
 
 
 
@@ -179,6 +184,7 @@ Convergence
 - [神经网络如何设计自己的loss function，如果需要修改或设计自己的loss，需要遵循什么规则](https://www.zhihu.com/question/59797824)
 - [An overview of gradient descent optimization algorithms](http://ruder.io/optimizing-gradient-descent)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTkwMzkyMTYwLDEyMTAxOTgxNzYsMTk4MD
-I4NjMxNiwtMTIyMDA5ODI1MCwtMTE0MTA5NjIyNF19
+eyJoaXN0b3J5IjpbLTEzODc4OTU3MDMsNTkwMzkyMTYwLDEyMT
+AxOTgxNzYsMTk4MDI4NjMxNiwtMTIyMDA5ODI1MCwtMTE0MTA5
+NjIyNF19
 -->
