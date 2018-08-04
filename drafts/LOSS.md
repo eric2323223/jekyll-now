@@ -29,7 +29,7 @@ $$J(\theta) = \frac{1}{m} \sum L(y_i, \hat y)$$
 对于所有的凸函数，使用GD都可以找到最小值，但是在实际的机器学习任务中，由于模型参数的数量都很大（如VGG16有$1.38*10^8$个参数），这时的loss function是凸函数的概率非常低，loss function 的表面会复杂很多，图二展示了模型参数中的两个参数构成的loss function的形态，可见其中有很多区域导数为零，但显然他们并不都是最小值，甚至不是局部最小值，~~GD算法会在这些区域收敛，但这时模型并不具备最优的性能。~~
 ![](https://i.stack.imgur.com/TY1L1.png)
 
-根据GD~~在导数为0处收敛~~的特性，可知在高维loss function中，除了global minimum，GD还可能会收敛于如下区域
+根据GD~~在导数为0处收敛~~的特性，可知在高维loss function中，除了global minimum，GD还可能会收敛于如下关键点（critical points）
 - 0 gradient is not nessisarily global minimum
    - flat region，即图1中1
    - local minimum， 如图1中点2
@@ -132,5 +132,6 @@ $$H(p,q) = -\sum_x p(x) \log q(x)$$
 - [神经网络如何设计自己的loss function，如果需要修改或设计自己的loss，需要遵循什么规则](https://www.zhihu.com/question/59797824)
 - [An overview of gradient descent optimization algorithms](http://ruder.io/optimizing-gradient-descent)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTExNDEwOTYyMjRdfQ==
+eyJoaXN0b3J5IjpbLTEyMjAwOTgyNTAsLTExNDEwOTYyMjRdfQ
+==
 -->
