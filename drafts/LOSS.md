@@ -33,7 +33,7 @@ $$J(\theta) = \frac{1}{m} \sum L(y_i, \hat y)$$
 - 0 gradient is not nessisarily global minimum
    - flat region，即图1中1
    - local minimum， 如图1中点2
-   - 鞍点（saddle point），如图1中点3处，鞍点是指在该点上一个纬度。。。~~事实上，on the surface of a high dimensional loss function, saddle points take majority part of all 0-gradient points, consider a loss function with 100 parameters, soppose there are  50% possiblity a 0-gradient point is at its minimum and all dimension are independent, the possibilty of this point being global/local minimum is $0.5^{100} \approx 7.89*10^{-31}$~~ 
+   - 鞍点（saddle point），如图1中点3处，鞍点是指在该点上一个纬度。。。事实上，on the surface of a high dimensional loss function, saddle points take majority part of all 0-gradient points, consider a loss function with 100 parameters, soppose there are  50% possiblity a 0-gradient point is at its minimum and all dimension are independent, the possibilty of this point being global/local minimum is $0.5^{100} \approx 7.89*10^{-31}$ 
 ![](https://www.researchgate.net/profile/David_Laughlin2/publication/283946342/figure/fig2/AS:297125729587204@1447851702481/Schematic-of-a-saddle-point-illustrating-their-necessity-in-free-energy-critical-point.png)
 
 > #### 那么为什么还要使用GD呢？ 
@@ -132,6 +132,6 @@ $$H(p,q) = -\sum_x p(x) \log q(x)$$
 - [神经网络如何设计自己的loss function，如果需要修改或设计自己的loss，需要遵循什么规则](https://www.zhihu.com/question/59797824)
 - [An overview of gradient descent optimization algorithms](http://ruder.io/optimizing-gradient-descent)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIzNTM1NzcyOCwxOTgwMjg2MzE2LC0xMj
+eyJoaXN0b3J5IjpbMTIxMDE5ODE3NiwxOTgwMjg2MzE2LC0xMj
 IwMDk4MjUwLC0xMTQxMDk2MjI0XX0=
 -->
