@@ -1,9 +1,9 @@
  # 漫谈误差函数（Loss function）
-说起机器学习就不能不提到误差函数（ loss function），因为所有的机器学习问题都可以抽象成loss function的优化过程。Loss function的设计从根本上决定了机器学习任务的成败，本文我们就来聊聊loss function
+说起机器学习就不能不提到误差函数（ loss function），因为所有的机器学习问题都可以抽象成loss function的优化过程。Loss function的设计上决定了机器学习任务的成败，本文我们就来聊聊loss functionaientaseD)e thee
 ![](https://www.cs.umd.edu/~tomg/img/landscapes/noshort.png)
 
 ## 概念/原理
-简单来说loss function是一种量化模型拟合程度的工具，我们知道机器学习（监督式机器学习）的基本思想设计一个由参数$\theta$决定的模型$f_\theta$，使得输入$x$经过模型$f_\theta(x)$计算后得到接近真实$y$的结果，模型的训练过程是用标签数据（$x_i, y_i$）输入模型$f_\theta(x_i) = \hat y_i$并计算预测值和真实值的差距$L_\theta$，求$\theta$使得$L_\theta$取最小值，这时模型$f_\theta$达到最优状态，那么如何判断模型和现实的接近程度呢？如何判断模型已经足够好呢？loss function可以回答这些问题，loss function的loss表示了模型和真实的差距$L_\theta(\hat y, y)$，当这个距离达到最小值的时候我们就认为模型达到最好的状态。所以机器学习实际上是一个求loss function最小值的问题，radent om/im
+是一种量化模型拟合程度的工具，我们知道机器学习（监督式机器学习）的基本思想设计一个由参数$$决定的模型$f_$，使得输入$x$经过模型$f_(x)$计算后得到接近真实$y$的结果，模型的训练过程是用标签数据（$x_i, y_i$）输入模型$f_\theta(x_i) = \hat y_i$并计算预测值和真实值的差距$L_\theta$，求$\theta$使得$L_\theta$取最小值，这时模型$f_\theta$达到最优状态，那么如何判断模型和现实的接近程度呢？如何判断模型已经足够好呢？loss function可以回答这些问题，loss function的loss表示了模型和真实的差距$L_\thetaw(\hat y, y)$，当这个距离达到最小值的时候我们就认为模型达到最好的状态。所以机器学习实际上是一个求loss function最小值的问题，radent om/im
 
 $$J(\theta) = \frac{1}{m} \sum L(y_i, \hat y)$$
 
@@ -27,13 +27,24 @@ $$J(\theta) = \frac{1}{m} \sum L(y_i, \hat y)$$
 ![](https://cdn-images-1.medium.com/max/1600/1*t6OiVIMKw3SBjNzj-lp_Fw.png)
 ### 非凸性
 对于所有的凸函数，使用GD都可以找到最小值，但是在实际的机器学习任务中，由于模型参数的数量都很大（如VGG16有$1.38*10^8$个参数），这时的loss function是凸函数的概率非常低，loss function 的表面会复杂很多，图二展示了模型参数中的两个参数构成的loss function的形态，可见其中有很多区域导数为零，但显然他们并不都是最小值，甚至不是局部最小值，~~GD算法会在这些区域收敛，但这时模型并不具备最优的性能。~~
-![](https://i.stack.imgur.com/TY1L1.png)
+![](http://1L1.png)
 
 根据GD~~在导数为0处收敛~~的特性，可知在高维loss function中，除了global minimum，GD还可能会收敛于如下关键点（critical points）
 - 0 gradient is not nessisarily global minimum
    - flat region，即图1中1
    - local minimum， 如图1中点2
-   - 鞍点（saddle point），如图1中点3处，鞍点是指在该点上一个纬度。。。事实上，on the surface of a high dimensional loss function, saddle points take majority part of all 0-gradient points, consider a loss function with 100 parameters, soppose there are  50% possiblity a 0-gradient point is at its minimum and all dimension are independent, the possibilty of this point being global/local minimum is $0.5^{100} \approx 7.89*10^{-31}$ 
+   - 鞍点（saddle point），如图1中点3处，鞍点是指在该点上一个纬度。。。事实上，on the surface of a high dimensional loss function, saddle points take majority part of all 0-gradient points, consider a loss function with 100 parameters, soppos的的在学习的开始阶段我们最常见到的loss function是这样的，如图一所示
+
+#### 为什么 GD?
+- there is no closed form solution
+- it is computational impossible to use analytical solution when data is huge
+#### what problem caused by GD?
+- 0 gradient is not nessisarily global minimum
+   - flat region
+   - saddle point
+   - global minimum is not differenciable
+
+#### how to solve therse are  50% possiblity a 0-gradient point is at its minimum and all dimension are independent, the possibilty of this point being global/local minimum is $0.5^{100} \approx 7.89*10^{-31}$ 
 ![](https://www.researchgate.net/profile/David_Laughlin2/publication/283946342/figure/fig2/AS:297125729587204@1447851702481/Schematic-of-a-saddle-point-illustrating-their-necessity-in-free-energy-critical-point.png)
 
 > #### 那么为什么还要使用GD呢？ 
@@ -42,15 +53,22 @@ $$J(\theta) = \frac{1}{m} \sum L(y_i, \hat y)$$
 > activation所以不存在解析解使得$\frac {dl(w)}{dw}=0$，因此只能使用GD方法
 > - there is no closed form solution
 > - it is computational impossible to use analytical solution when data is huge
-
-![](http://ruder.io/content/images/2016/09/saddle_point_evaluation_optimizers.gif)
+problem?
+- choose better loss function
+    - surrogate loss function
+- SGD  
+- Parameter initialization
+### Non-convexity
+![](https://ruder.io/content/images/2016/09/saddle_point_evaluation_optimizers.gif)
 简单总结，SGD+合适的optimizer(such as momentum) + (random initilization)可以有效找到非凸函数的minima
 
 >#### how to escapte from Plateaus
-> It's still a hard problem. Surrogate loss function can help, for example in http://fa.bianp.net/blog/2014/surrogate-loss-functions-in-machine-learning/
+> It's still a hard problem. Surrogate loss function can help, for example in cdn-images-1.medium.com/max/1600/1*t6OiVIMKw3SBjNzj-lp_Fw.png)
+![](https://i.stack.imgur.com/TY1L1.png)
+![](https://fa.bianp.net/blog/2014/surrogate-loss-functions-in-machine-learning/
 
 ### 泛化（generalization）
-机器学习的最终目的是提高对未知的XX进行判断的准确率，也就是提高泛化能力。Loss function虽然可以引导GD进行模型的优化，但是一个常见的问题是模型虽然达到了很高的训练准确率，但是泛化能力并没有提高甚至反而降低，这就是过拟合（over fitting）现象。这种问题源自于模型为了提高训练准确率学习了训练数据中的噪声从而导致模型和真实规律产生偏差。正则化（regularization）就是解决过拟合问题的常见方法之一，它的原理是把参数加入loss function作为新的loss function，这样可以避免为了适应训练数据而产生过于复杂模型而。。。
+机器学习的最终目的是提高对未知的XX进行判断的准确率，也就是提高泛化能力。Loss function虽然可以引导GD进行模型的优化，但是一个常见的问题是模型虽然达到了很高的训练准确率，但是泛化能力并没有提高甚至反而降低，这就是过拟合（over fitting）现象。这种问题源自于模型为了提高训练准确率学习了训练数据中的噪声从而导致模型和真实规律产生偏差。正则化（regularization）就是解决过拟合问题的常见方法之一，它的原理是把参数加入www.cs.umd.edu/~tdescent）的方法求loss function作为新的的最小值，这使得loss function，这样可以避免为了适应训练数据而产生过于复杂模型而。。。
 - L1 L2 in loss function and regularization
 ![](https://cdn-images-1.medium.com/max/1600/1*o6H_R3Do1zpch-3MZk_fjQ.png)
 
@@ -68,10 +86,29 @@ $$H(p,q) = -\sum_x p(x) \log q(x)$$
 ![](https://datawookie.netlify.com/img/2015/12/log-loss-curve.png)
 	- MSE/MAE with thresh hold
 - 多任务问题
-此类问题是指可以一次tui
+此类问题是指可以一次tui的优化问题具有
+
+- convex vs. non-convex
+- Regularization
+- semantics
+
+## 分类
+
+### By purpose
+- classification
+- regression
+- multi-task learning
+### By ...
+
+- MSE
+- Cross entropy
+- Cosine loss
+- Contrastive loss
+- CTC
+- Triplet loss
 
 ## 设计
-### (loss functin) semantic
+### (- loss functin) semantic
 - outliers effect
   - MSE vs MAE
   虽然MSE和MAE都能用于regression预测，但是由于MSE对于大误差有更大的惩罚，所以更适合需要避免大误差的预测场景。
@@ -102,7 +139,17 @@ $$H(p,q) = -\sum_x p(x) \log q(x)$$
 
 ## 总结
 
+Convergence
+- differenciable
 
+#### Example of loss function design
+
+## 总结
+
+
+
+### Distance-based Loss function
+### Prediction error-based loss function 
 
 
 
@@ -132,6 +179,6 @@ $$H(p,q) = -\sum_x p(x) \log q(x)$$
 - [神经网络如何设计自己的loss function，如果需要修改或设计自己的loss，需要遵循什么规则](https://www.zhihu.com/question/59797824)
 - [An overview of gradient descent optimization algorithms](http://ruder.io/optimizing-gradient-descent)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTIxMDE5ODE3NiwxOTgwMjg2MzE2LC0xMj
-IwMDk4MjUwLC0xMTQxMDk2MjI0XX0=
+eyJoaXN0b3J5IjpbNTkwMzkyMTYwLDEyMTAxOTgxNzYsMTk4MD
+I4NjMxNiwtMTIyMDA5ODI1MCwtMTE0MTA5NjIyNF19
 -->
