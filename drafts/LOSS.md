@@ -23,7 +23,7 @@ $$J(\theta) = \frac{1}{m} \sum L(y_i, \hat y)$$
 
 
 ### 可导性
-虽然从数学原理上GD要求loss function连续可导，但在实践中loss function可以存在不可导的点，这是因为计算是使用一组（batch）数据的误差均值进行求导，这样使得落在不可导的点上的概率很低，因此可以对hinge loss这样的不连续的函数使用GD来进行优化。事实上即使在某组数据真的发生小概率事件导致求导失败，由于minibatch GD算法使用了大量的分组，绝大多数可求导的分组仍然可以保证GD在整个数据集上有效运行。
+虽然从数学原理上GD要求loss function连续可导，但在实践中loss function可以存在不可导的点，这是因为计算是使用一组（batch）数据的误差均值进行求导，这样使得落在不可导的点上的概率很低，因此可以对hinge loss这样的不连续的函数使用GD来进行优化。事实上即使在某组数据真的发生小概率事件导致求导失效，由于minibatch GD算法使用了大量的分组，绝大多数可求导的分组仍然可以保证GD在整个数据集上有效运行。
 
 ### 非凸性
 对于所有的凸函数，使用GD都可以找到最小值，但是在实际的机器学习任务中，由于模型参数的数量都很大（如VGG16有$1.38*10^8$个参数），这时的loss function是凸函数的概率非常低，loss function 的表面会复杂很多，图二展示了模型参数中的两个参数构成的loss function的形态，可见其中有很多区域导数为零，但显然他们并不都是最小值，甚至不是局部最小值，~~GD算法会在这些区域收敛，但这时模型并不具备最优的性能。~~
@@ -32,13 +32,24 @@ $$J(\theta) = \frac{1}{m} \sum L(y_i, \hat y)$$
 
 根据GD~~在导数为0处收敛~~的特性，可知在高维loss function中，除了global minimum，GD还可能会收敛于如下关键点（critical points）
 - 0 gradient is not nessisarily global minimum
-   - flat region，即图1中1
+   - flat region，是指在一个其中所有的点的导数都为0的区域，在三维空间中的flat region就是水平面，即图1中1
    - local minimum， 如图1中点2
-   - 鞍点（saddle point），是一种导数为零但却不是极值的点，如图1中点3处，鞍点是指在该点上一个纬度。。。事实上在高维度函数的所有导数为0的点中，鞍点占了绝大多数。我们假设on the surface of a high dimensional loss function, saddle points take majority part of all 0-gradient points, consider a loss function with 100 parameters, soppos的的在学习的开始阶段我们最常见到的loss function是这样的，如图一所示
-
-
-#### how to solve therse are  50% possiblity a 0-gradient point is at its minimum and all dimension are independentpoint is at its minimum and 50% possiblity at its maximum, the possibilty of this point being global/local minimum is $0.5^{100} \approx 7.89*10^{-3~~ 
+   - 鞍点（saddle point），是一种导数为零但却不是极值的点，如图1中点3处，鞍点是指在该点上一个纬度。。。由于在高维度loss function的所有导数为0的点中，只有在所有维度同时具有相同的凹凸性（即二阶导数都大于0或小于0）的时候loss function才会处于local minimum（说global minimum），任何一个维度的凹凸性不同于其他的维度都会使loss function处于鞍点，考虑到实际的loss function通常会有万或十万（甚至百万）级的维度数量，因此鞍点是非常普遍的。
 ![](https://www.researchgate.net/profile/David_Laughlin2/publication/283946342/figure/fig2/AS:297125729587204@1447851702481/Schematic-of-a-saddle-point-illustrating-their-necessity-in-free-energy-critical-point.png)
+
+
+- choose better loss function
+    - surrogate loss function
+- SGD  
+- Parameter initialization
+
+![](https://ruder.io/content/images/2016/09/saddle_point_evaluation_optimizers.gif)
+简单总结，SGD+合适的optimizer(such as momentum) + (random initilization)可以有效找到非凸函数的minima
+
+>#### how to escapte from Plateaus
+> It's still a hard problem. Surrogate loss function can help, for example in cdn-images-1.medium.com/max/1600/1*t6OiVIMKw3SBjNzj-lp_Fw.png)
+
+![](https://fa.bianp.net/blog/2014/surrogate-loss-functions-in-machine-learning/
 
 > #### 那么为什么还要使用GD呢？ 
 > 数学意义上的的优化问题一般有两类解法，一个是解析方法（analytical optimization），适用于在解析解（closed-form solution），另一种是迭代优化（iterative
@@ -47,18 +58,6 @@ $$J(\theta) = \frac{1}{m} \sum L(y_i, \hat y)$$
 > - there is no closed form solution
 > - it is computational impossible to use analytical solution when data is huge
 problem?
-- choose better loss function
-    - surrogate loss function
-- SGD  
-- Parameter initialization
-### Non-convexity
-![](https://ruder.io/content/images/2016/09/saddle_point_evaluation_optimizers.gif)
-简单总结，SGD+合适的optimizer(such as momentum) + (random initilization)可以有效找到非凸函数的minima
-
->#### how to escapte from Plateaus
-> It's still a hard problem. Surrogate loss function can help, for example in cdn-images-1.medium.com/max/1600/1*t6OiVIMKw3SBjNzj-lp_Fw.png)
-
-![](https://fa.bianp.net/blog/2014/surrogate-loss-functions-in-machine-learning/
 
 ### 泛化（generalization）
 机器学习的最终目的是提高对未知的XX进行判断的准确率，也就是提高泛化能力。Loss function虽然可以引导GD进行模型的优化，但是一个常见的问题是模型虽然达到了很高的训练准确率，但是泛化能力并没有提高甚至反而降低，这就是过拟合（over fitting）现象。这种问题源自于模型为了提高训练准确率学习了训练数据中的噪声从而导致模型和真实规律产生偏差。正则化（regularization）就是解决过拟合问题的常见方法之一，它的原理是把参数加入www.cs.umd.edu/~tdescent）的方法求loss function作为新的的最小值，这使得loss function，这样可以避免为了适应训练数据而产生过于复杂模型而。。。
@@ -93,7 +92,7 @@ $$L = \alpha L_{class} + \beta L_{position}$$
 
 ## 设计
 Loss function不仅仅光只是误差的度量衡量的工具，更重要的是GD会为了不断缩小误差而根据loss function规定的方向（导数方向）调整模型参数，因此可以说loss function它决定了模型学习的目标。使用过不同的loss function我们可以在完全相同的模型架构（model architeture）上学习不同的模型参数，来达到不同的目的。比如，在多层卷积神经网络架构上使用cross entropy loss可以判断图像对象的类型（是猫还是狗），而同样的网络架构配合triplet loss则可以用来提取分辨不同个体的特征（面部识别）。从某种程度上说模型设计决定了了模型的能力，loss function设计决定了模型学习的方向，（划船的比喻）
-
+那么如何设计（或者选择）loss function呢？我们可以从以下几个方面考虑
 ### 任务目标
 
 决定loss function设计的最重要的因素就是任务目标，有时任务目标和loss function的关系很直接，比如。。。， 有时他们的关系就不那么明显，需要一些的专业知识（domain knowledge）才能和loss function建立联系，比如CTC loss。另外对目标的理解程度也很关键，有时一些细节会对loss function的设计起到关键的作用，比如MSE和MAE是相似的loss function，如何选择取决于任务目标，如果需要避免较大误差则应选择MSE。
@@ -184,7 +183,7 @@ And how do you check whether a loss function bounds your current one? You provid
 - [神经网络如何设计自己的loss function，如果需要修改或设计自己的loss，需要遵循什么规则](https://www.zhihu.com/question/59797824)
 - [An overview of gradient descent optimization algorithms](http://ruder.io/optimizing-gradient-descent)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEwNjg0MDgwOSw1OTAzOTIxNjAsMTIxMD
+eyJoaXN0b3J5IjpbLTQyNDE0MDIyOSw1OTAzOTIxNjAsMTIxMD
 E5ODE3NiwxOTgwMjg2MzE2LC0xMjIwMDk4MjUwLC0xMTQxMDk2
 MjI0XX0=
 -->
