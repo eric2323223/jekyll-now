@@ -79,28 +79,28 @@ $$H(p,q) = -\sum_x p(x) \log q(x)$$
 ![](https://datawookie.netlify.com/img/2015/12/log-loss-curve.png)
 	- MSE/MAE with thresh hold
 - 多任务问题
-此类问题是指可以一次tui的优化问题具有
+此类问题是指使用一个模型同时学习多个指标，比如使用深度学习解决计算机视觉中的目标定位（object localization）问题，模型需要同时学习对象类型和对象位置两个指标，因此loss function需要具备同时衡量类型误差和位置误差的能力，常见的做法是先分别设计类型误差函数和位置误差函数，在按一定比例合并这两个误差从而形成一个loss function来综合的反应总误差
+$$L_{class} = $$
+
+$$L_{position} = $$
+
+$$L = \alpha L_{class} + \beta L_{position}$$
 
 - convex vs. non-convex
 - Regularization
 - semantics
 
-## 分类
-
-### By purpose
-- classification
-- regression
-- multi-task learning
-### By ...
-
-- MSE
-- Cross entropy
-- Cosine loss
-- Contrastive loss
-- CTC
-- Triplet loss
 
 ## 设计
+Loss function不仅仅光只是误差的度量衡量的工具，更重要的是GD会为了不断缩小误差而根据loss function规定的方向（导数方向）调整模型参数，因此可以说loss function它决定了模型学习的目标。使用过不同的loss function我们可以在完全相同的模型架构（model architeture）上学习不同的模型参数，来达到不同的目的。比如，在多层卷积神经网络架构上使用cross entropy loss可以判断图像对象的类型（是猫还是狗），而同样的网络架构配合triplet loss则可以用来提取分辨不同个体的特征（面部识别）。从某种程度上说模型设计决定了了模型的能力，loss function设计决定了模型学习的方向，（划船的比喻）
+
+### 任务目标
+
+决定loss function设计的最重要的因素就是任务目标，有时任务目标和loss function的关系很直接，比如。。。， 有时他们的关系就不那么明显，需要一些的专业知识（domain knowledge）才能和loss function建立联系，比如CTC loss。另外对目标的理解程度也很关键，有时一些细节会对loss function的设计起到关键的作用，比如MSE和MAE是相似的loss function，如何选择取决于任务目标，如果需要避免较大误差则应选择MSE。
+
+无论如何，任务都应该是设计loss function最先考虑的东西。
+
+那么如何设计（或者选择）loss function呢？我们可以从以下几个方面
 ### (- loss functin) semantic
 - outliers effect
   - MSE vs MAE
@@ -108,8 +108,21 @@ $$H(p,q) = -\sum_x p(x) \log q(x)$$
   - 0-1 loss is not good for GD because it's gradient is always 0, thus GD cannot learn anything.
 - strict theoretical minimum of 0
 ~~- Convergence~~
-### Surrogate loss function
-有根据问题目标得到的loss function很难使用GD进行优化，例如0-1 loss function 在所有可导处导数都是0， 意味着GD无法工作，但是如果
+
+### 代理误差函数（Surrogate loss function）
+
+有时根据问题目标得到的loss function很难使用GD进行优化，例如0-1 loss function 在所有可导处导数都是0， 意味着GD无法工作，但是如果
+
+有些情况下根据问题目标得到的loss function很难使用GD进行优化，例如左图中的loss function在所有可导处导数都是0（水平区域）， 意味着GD无法工作。这时可以使用一个如右图所示的近似的凸函数进行模拟，通过求代理误差函数的最小值来实现优化原来的误差函数的目的。
+
+![](http://fa.bianp.net/blog/images/2014/loss_01.png)
+
+![](http://fa.bianp.net/blog/images/2014/loss_log.png)
+
+Designing of the good surrogate function is a research topic, as defining such function actually leads to the construction of new machine learning model. There is no "rule" to do so - it is what research is about. From practical perspective you rather should explore numerous existing functions, as they are not "just popular" - they are simply good, well understood and usefull.
+
+And how do you check whether a loss function bounds your current one? You provide a mathematical proof. You have true loss `l(x,y,p)` and a surrogate `s(x,y,p)` and all you have to do is to show that `l(x,y,p)<=s(x,y,p)`, so you provide a proof of inequality. Again, there is no one rule, this is just applied mathematics, analysis 101.
+
 ![](fa.bianp.net/blog/static/images/2013/loss_functions.png)
 
 ### computation effort
@@ -142,10 +155,6 @@ $$H(p,q) = -\sum_x p(x) \log q(x)$$
 
 
 
-### Distance-based Loss function
-### Prediction error-based loss function  总结
-
-
 
 
 
@@ -175,7 +184,7 @@ $$H(p,q) = -\sum_x p(x) \log q(x)$$
 - [神经网络如何设计自己的loss function，如果需要修改或设计自己的loss，需要遵循什么规则](https://www.zhihu.com/question/59797824)
 - [An overview of gradient descent optimization algorithms](http://ruder.io/optimizing-gradient-descent)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQ3OTU2NDM4NSw1OTAzOTIxNjAsMTIxMD
+eyJoaXN0b3J5IjpbLTEwNjg0MDgwOSw1OTAzOTIxNjAsMTIxMD
 E5ODE3NiwxOTgwMjg2MzE2LC0xMjIwMDk4MjUwLC0xMTQxMDk2
 MjI0XX0=
 -->
