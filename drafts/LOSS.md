@@ -53,7 +53,8 @@ $$J(\theta) = \frac{1}{m} \sum L(y_i, \hat y)$$
 problem?
 
 ### 泛化（generalization）
-机器学习的最终目的是提高对未知的输入进行判断的准确率，也就是提高泛化能力。Loss function虽然可以引导GD进行模型的优化，但是一个常见的问题是模型虽然达到了很高的训练准确率，但是泛化能力并没有提高甚至反而降低，这就是过拟合（over fitting）现象。这种问题源自于模型为了提高训练准确率学习了训练数据中的噪声从而导致模型和真实规律产生偏差。正则化（regularization）就是解决过拟合问题的常见方法之一，它把原误差函数和参数的模（norm）相加形成新的目标函数（objective function），在使用GD对目标函数求最小值。这么做的目的在于降低参数维度从而增加模型的泛化能力，这是由于参数的模变成了目标函数的一部分，因此GD也会尽力降低参数的模，而参数的模和参数的维度正相关，因此GD会降低参数的维度，从而最终实现增强泛化能力的目的。 
+机器学习的最终目的是提高对未知的输入进行判断的准确率，也就是提高泛化能力。Loss function虽然可以引导GD进行模型的优化，但是一个常见的问题是模型虽然达到了很高的训练准确率，但是泛化能力并没有提高甚至反而降低，这就是过拟合（over fitting）现象，如图所示，蓝色表示一个过拟合的模型，它是一个过度复杂的函数。这种问题源自于模型为了提高训练准确率学习了训练数据中的噪声从而导致模型和真实规律产生偏差。正则化（regularization）就是解决过拟合问题的常见方法之一，它把原误差函数和参数的模（norm）相加形成新的目标函数（objective function），在使用GD对目标函数求最小值。这么做的目的在于降低参数维度从而增加模型的泛化能力，这是由于参数的模变成了目标函数的一部分，因此GD也会尽力降低参数的模，而参数的模和参数的维度正相关，因此GD会降低参数的维度，从而最终实现增强泛化能力的目的。 
+![](https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Regularization.svg/354px-Regularization.svg.png)
 - L1 L2 in loss function and regularization
 ![](https://cdn-images-1.medium.com/max/1600/1*o6H_R3Do1zpch-3MZk_fjQ.png)
 
@@ -67,20 +68,16 @@ $$MSE=\frac{1}{n}\sum_{i=1}^n (y-\hat y)^2$$
 $$MAE=\frac{1}{n}\sum_{i=1}^n \mathopen|y-\hat y \mathclose| $$
 - 适用于分类问题（classification）的误差函数，分类问题的目标是推测出正确的类型，一般使用概率描述推测结果属于某种类型的可能性，因此误差函数就需要能够计算两个概率分布之间的”距离“，最常用的此类方法是
 	- Cross entropy loss （Maximum likelyhood estimation)
-$$H(p,q) = -\sum_x p(x) \log q(x)$$
+$$CE(p,q) = -\sum_x p(x) \log q(x)$$
 ![](https://datawookie.netlify.com/img/2015/12/log-loss-curve.png)
 	- MSE/MAE with thresh hold
 - 多任务问题
 此类问题是指使用一个模型同时学习多个指标，比如使用深度学习解决计算机视觉中的目标定位（object localization）问题，模型需要同时学习对象类型和对象位置两个指标，因此loss function需要具备同时衡量类型误差和位置误差的能力，常见的做法是先分别设计类型误差函数和位置误差函数，在按一定比例合并这两个误差从而形成一个loss function来综合的反应总误差
-$$L_{class} = $$
+$$L_{class} = CE$$
 
-$$L_{position} = $$
+$$L_{position} = MSE$$
 
 $$L = \alpha L_{class} + \beta L_{position}$$
-
-- convex vs. non-convex
-- Regularization
-- semantics
 
 
 ## 设计
@@ -93,19 +90,12 @@ Loss function不仅仅光只是误差的度量衡量的工具，更重要的是G
 无论如何，任务都应该是设计loss function最先考虑的东西。
 
 那么如何设计（或者选择）loss function呢？我们可以从以下几个方面
-### (- loss functin) semantic
-- outliers effect
-  - MSE vs MAE
-  虽然MSE和MAE都能用于regression预测，但是由于MSE对于大误差有更大的惩罚，所以更适合需要避免大误差的预测场景。
-  - 0-1 loss is not good for GD because it's gradient is always 0, thus GD cannot learn anything.
-- strict theoretical minimum of 0
-~~- Convergence~~
 
 ### 替代误差函数（Surrogate loss function）
 
 有时根据问题目标得到的loss function很难使用GD进行优化，例如0-1 loss function 在所有可导处导数都是0， 意味着GD无法工作，但是如果
 
-有些情况下根据问题目标得到的loss function很难使用GD进行优化，例如左图中的loss function在所有可导处导数都是0（水平区域）， 意味着GD无法工作。这时可以使用一个如右图所示的近似的凸函数进行模拟，通过求代理误差函数的最小值来实现优化原来的误差函数的目的。
+有些情况下根据问题目标得到的loss function很难使用GD进行优化，例如左图中的loss function在所有可导处导数都是0（水平区域）， 意味着GD无法工作。这时可以使用一个如右图所示的近似的凸函数进行模拟，通过求代理误差函数的最小值来实现优化原来的误差函数的目的。当然这只是只是一个理想化的例子，并且建立在了解loss function的surface的基础上，但是实际的loss function的surface通常是很难得到的，因此替代损失函数在实际中如何应用还是一个有待进一步研究的领域。
 
 ![](http://fa.bianp.net/blog/images/2014/loss_01.png)
 
@@ -176,7 +166,7 @@ And how do you check whether a loss function bounds your current one? You provid
 - [神经网络如何设计自己的loss function，如果需要修改或设计自己的loss，需要遵循什么规则](https://www.zhihu.com/question/59797824)
 - [An overview of gradient descent optimization algorithms](http://ruder.io/optimizing-gradient-descent)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbOTg0ODU2MDU4LC00MjQxNDAyMjksNTkwMz
-kyMTYwLDEyMTAxOTgxNzYsMTk4MDI4NjMxNiwtMTIyMDA5ODI1
-MCwtMTE0MTA5NjIyNF19
+eyJoaXN0b3J5IjpbLTExMTA0OTA0NDksLTQyNDE0MDIyOSw1OT
+AzOTIxNjAsMTIxMDE5ODE3NiwxOTgwMjg2MzE2LC0xMjIwMDk4
+MjUwLC0xMTQxMDk2MjI0XX0=
 -->
