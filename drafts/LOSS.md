@@ -72,7 +72,7 @@ $$CE(p,q) = -\sum_x p(x) \log q(x)$$
 ![](https://datawookie.netlify.com/img/2015/12/log-loss-curve.png)
 	- MSE/MAE with thresh hold
 - 多任务问题
-此类问题是指使用一个模型同时学习多个指标，比如使用深度学习解决计算机视觉中的目标定位（object localization）问题，模型需要同时学习对象类型和对象位置两个指标，因此loss function需要具备同时衡量类型误差和位置误差的能力，常见的做法是先分别设计类型误差函数和位置误差函数，在按一定比例合并这两个误差从而形成一个loss function来综合的反应总误差
+此类问题是指使用一个模型同时学习多个指标，比如使用深度学习解决计算机视觉中的目标定位（object localization）问题，模型需要同时学习对象类型和对象位置两个指标，因此loss function需要具备同时衡量类型误差和位置误差的能力，常见的做法是先分别设计类型误差函数$L_{class}$和位置误差函数$L$，在按一定比例合并这两个误差从而形成一个loss function来综合的反应总误差
 $$L_{class} = CE$$
 
 $$L_{position} = MSE$$
@@ -166,7 +166,8 @@ And how do you check whether a loss function bounds your current one? You provid
 - [神经网络如何设计自己的loss function，如果需要修改或设计自己的loss，需要遵循什么规则](https://www.zhihu.com/question/59797824)
 - [An overview of gradient descent optimization algorithms](http://ruder.io/optimizing-gradient-descent)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTcyMzE2NTk3OCwtMTExMDQ5MDQ0OSwtND
-I0MTQwMjI5LDU5MDM5MjE2MCwxMjEwMTk4MTc2LDE5ODAyODYz
-MTYsLTEyMjAwOTgyNTAsLTExNDEwOTYyMjRdfQ==
+eyJoaXN0b3J5IjpbLTEwNjI1ODc3NjMsLTcyMzE2NTk3OCwtMT
+ExMDQ5MDQ0OSwtNDI0MTQwMjI5LDU5MDM5MjE2MCwxMjEwMTk4
+MTc2LDE5ODAyODYzMTYsLTEyMjAwOTgyNTAsLTExNDEwOTYyMj
+RdfQ==
 -->
