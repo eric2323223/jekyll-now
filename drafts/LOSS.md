@@ -105,14 +105,6 @@ Loss function不仅仅光只是误差的度量衡量的工具，更重要的是G
 
 ![](http://fa.bianp.net/blog/images/2014/loss_log.png)
 
-### computation effort
-在相同的效果情况下选择复杂度小的loss function能够加快学习速度。比如
-- log likelihood example: why log?
-	- log is monotonic
-	- much easier to computer joint
-	- cross entropy and maximum likelihood estitmation
-
-
 ## 设计样例
 从人脸识别探讨loss function设计。
 - 面部识别和图像识别的区别
@@ -163,7 +155,7 @@ Loss function不仅仅光只是误差的度量衡量的工具，更重要的是G
 - [神经网络如何设计自己的loss function，如果需要修改或设计自己的loss，需要遵循什么规则](https://www.zhihu.com/question/59797824)
 - [An overview of gradient descent optimization algorithms](http://ruder.io/optimizing-gradient-descent)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTgyMTgzNTQ3NywtMjQzMzUxOTY5LDExMj
+eyJoaXN0b3J5IjpbLTM1NjE1NzkxMywtMjQzMzUxOTY5LDExMj
 gwNzc3LC0xNjkyNzc4MDY4LDU5NTc3MTgwMCwtNzIzMTY1OTc4
 LC0xMTEwNDkwNDQ5LC00MjQxNDAyMjksNTkwMzkyMTYwLDEyMT
 AxOTgxNzYsMTk4MDI4NjMxNiwtMTIyMDA5ODI1MCwtMTE0MTA5
