@@ -95,7 +95,7 @@ Loss function不仅仅光只是误差的度量衡量的工具，更重要的是G
 
 有时根据问题目标得到的loss function很难使用GD进行优化，例如0-1 loss function 在所有可导处导数都是0， 意味着GD无法工作，但是如果
 
-有些情况下根据问题目标得到的loss function很难使用GD进行优化，例如左图中的loss function在所有可导处导数都是0（水平区域）， 意味着GD无法工作。这时可以使用一个如右图所示的近似的凸函数进行模拟，通过求代理误差函数的最小值来实现优化原来的误差函数的目的。当然这只是一个理想化的例子，并且建立在了解loss function的形态的基础上，但是实际中这种信息通常是很难得到的，因此替代损失函数在实际中如何应用还是一个有待进一步研究的领域。
+有些情况下根据问题目标得到的loss function很难使用GD进行优化，例如左图中的loss function在所有可导处导数都是0（水平区域）， 意味着GD无法工作。这时可以使用一个如右图所示的近似的凸函数进行模拟，通过求代理误差函数的最小值来实现优化原来的误差函数的目的。当然这只是一个理想化的例子，并且建立在了解loss function的形态的基础上，但是实际中这种信息通常是很难得到的，因此替代损失函数在实际中如何应用是一个比较复杂的w还是一个有待进一步研究的领域。
 
 ![](http://fa.bianp.net/blog/images/2014/loss_01.png)
 
@@ -166,8 +166,8 @@ And how do you check whether a loss function bounds your current one? You provid
 - [神经网络如何设计自己的loss function，如果需要修改或设计自己的loss，需要遵循什么规则](https://www.zhihu.com/question/59797824)
 - [An overview of gradient descent optimization algorithms](http://ruder.io/optimizing-gradient-descent)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2OTI3NzgwNjgsNTk1NzcxODAwLC03Mj
-MxNjU5NzgsLTExMTA0OTA0NDksLTQyNDE0MDIyOSw1OTAzOTIx
-NjAsMTIxMDE5ODE3NiwxOTgwMjg2MzE2LC0xMjIwMDk4MjUwLC
-0xMTQxMDk2MjI0XX0=
+eyJoaXN0b3J5IjpbLTE4ODE0MDA0MCwtMTY5Mjc3ODA2OCw1OT
+U3NzE4MDAsLTcyMzE2NTk3OCwtMTExMDQ5MDQ0OSwtNDI0MTQw
+MjI5LDU5MDM5MjE2MCwxMjEwMTk4MTc2LDE5ODAyODYzMTYsLT
+EyMjAwOTgyNTAsLTExNDEwOTYyMjRdfQ==
 -->
