@@ -93,19 +93,11 @@ Loss function不仅仅光只是误差的度量衡量的工具，更重要的是G
 
 ### 替代误差函数（Surrogate loss function）
 
-有时根据问题目标得到的loss function很难使用GD进行优化，例如0-1 loss function 在所有可导处导数都是0， 意味着GD无法工作，但是如果
-
 有些情况下根据问题目标得到的loss function很难使用GD进行优化，例如左图中的loss function在所有可导处导数都是0（水平区域）， 意味着GD无法工作。这时可以使用一个如右图所示的近似的凸函数进行模拟，通过求代理误差函数的最小值来实现优化原来的误差函数的目的。当然这只是一个理想化的例子，并且建立在了解loss function的形态的基础上，但是实际中这种信息通常不容易得到，因此替代损失函数在实际中如何应用是一个比较复杂的问题，有待于进一步研究。
 
 ![](http://fa.bianp.net/blog/images/2014/loss_01.png)
 
 ![](http://fa.bianp.net/blog/images/2014/loss_log.png)
-
-Designing of the good surrogate function is a research topic, as defining such function actually leads to the construction of new machine learning model. There is no "rule" to do so - it is what research is about. From practical perspective you rather should explore numerous existing functions, as they are not "just popular" - they are simply good, well understood and usefull.
-
-And how do you check whether a loss function bounds your current one? You provide a mathematical proof. You have true loss `l(x,y,p)` and a surrogate `s(x,y,p)` and all you have to do is to show that `l(x,y,p)<=s(x,y,p)`, so you provide a proof of inequality. Again, there is no one rule, this is just applied mathematics, analysis 101.
-
-![](fa.bianp.net/blog/static/images/2013/loss_functions.png)
 
 ### computation effort
 在相同的效果情况下选择复杂度小的loss function能够加快学习速度。比如
@@ -166,8 +158,8 @@ And how do you check whether a loss function bounds your current one? You provid
 - [神经网络如何设计自己的loss function，如果需要修改或设计自己的loss，需要遵循什么规则](https://www.zhihu.com/question/59797824)
 - [An overview of gradient descent optimization algorithms](http://ruder.io/optimizing-gradient-descent)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTQ1MTYwOTExLC0xNjkyNzc4MDY4LDU5NT
-c3MTgwMCwtNzIzMTY1OTc4LC0xMTEwNDkwNDQ5LC00MjQxNDAy
-MjksNTkwMzkyMTYwLDEyMTAxOTgxNzYsMTk4MDI4NjMxNiwtMT
-IyMDA5ODI1MCwtMTE0MTA5NjIyNF19
+eyJoaXN0b3J5IjpbMTEyODA3NzcsLTE2OTI3NzgwNjgsNTk1Nz
+cxODAwLC03MjMxNjU5NzgsLTExMTA0OTA0NDksLTQyNDE0MDIy
+OSw1OTAzOTIxNjAsMTIxMDE5ODE3NiwxOTgwMjg2MzE2LC0xMj
+IwMDk4MjUwLC0xMTQxMDk2MjI0XX0=
 -->
