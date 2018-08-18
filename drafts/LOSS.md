@@ -89,7 +89,7 @@ Loss function不仅仅光只是误差的度量衡量的工具，更重要的是G
 
 无论如何，任务都应该是设计loss function最先考虑的东西。
 
-那么如何设计（或者选择）loss function呢？我们可以从以下几个方面
+### 可计算性
 
 ### 替代误差函数（Surrogate loss function）
 
@@ -157,8 +157,8 @@ Loss function不仅仅光只是误差的度量衡量的工具，更重要的是G
 - [神经网络如何设计自己的loss function，如果需要修改或设计自己的loss，需要遵循什么规则](https://www.zhihu.com/question/59797824)
 - [An overview of gradient descent optimization algorithms](http://ruder.io/optimizing-gradient-descent)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEyNDMwNTc2ODgsMTEyODA3NzcsLTE2OT
-I3NzgwNjgsNTk1NzcxODAwLC03MjMxNjU5NzgsLTExMTA0OTA0
-NDksLTQyNDE0MDIyOSw1OTAzOTIxNjAsMTIxMDE5ODE3NiwxOT
-gwMjg2MzE2LC0xMjIwMDk4MjUwLC0xMTQxMDk2MjI0XX0=
+eyJoaXN0b3J5IjpbMjEwOTM2MDgyMiwxMTI4MDc3NywtMTY5Mj
+c3ODA2OCw1OTU3NzE4MDAsLTcyMzE2NTk3OCwtMTExMDQ5MDQ0
+OSwtNDI0MTQwMjI5LDU5MDM5MjE2MCwxMjEwMTk4MTc2LDE5OD
+AyODYzMTYsLTEyMjAwOTgyNTAsLTExNDEwOTYyMjRdfQ==
 -->
