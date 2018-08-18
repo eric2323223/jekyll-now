@@ -166,7 +166,7 @@ And how do you check whether a loss function bounds your current one? You provid
 - [神经网络如何设计自己的loss function，如果需要修改或设计自己的loss，需要遵循什么规则](https://www.zhihu.com/question/59797824)
 - [An overview of gradient descent optimization algorithms](http://ruder.io/optimizing-gradient-descent)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTExMTA0OTA0NDksLTQyNDE0MDIyOSw1OT
-AzOTIxNjAsMTIxMDE5ODE3NiwxOTgwMjg2MzE2LC0xMjIwMDk4
-MjUwLC0xMTQxMDk2MjI0XX0=
+eyJoaXN0b3J5IjpbLTcyMzE2NTk3OCwtMTExMDQ5MDQ0OSwtND
+I0MTQwMjI5LDU5MDM5MjE2MCwxMjEwMTk4MTc2LDE5ODAyODYz
+MTYsLTEyMjAwOTgyNTAsLTExNDEwOTYyMjRdfQ==
 -->
