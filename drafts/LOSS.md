@@ -84,8 +84,7 @@ $$L = \alpha L_{class} + \beta L_{position}$$
 Loss function不仅仅光只是误差的度量衡量的工具，更重要的是GD会为了不断缩小误差而根据loss function规定的方向（导数方向）调整模型参数，因此可以说loss function它决定了模型学习的目标。使用过不同的loss function我们可以在完全相同的模型架构（model architeture）上学习不同的模型参数，来达到不同的目的。比如，在多层卷积神经网络架构上使用cross entropy loss可以判断图像对象的类型（是猫还是狗），而同样的网络架构配合triplet loss则可以用来提取分辨不同个体的特征（面部识别）。从某种程度上说模型设计决定了了模型的能力，loss function设计决定了模型学习的方向，（划船的比喻）
 那么如何设计（或者选择）loss function呢？我们可以从以下几个方面考虑
 ### 任务目标
-
-决定loss function设计的最重要的因素就是任务目标，有时任务目标和loss function的关系很直接，比如。。。， 有时他们的关系就不那么明显，需要一些的专业知识（domain knowledge）才能和loss function建立联系，比如CTC loss。另外对目标的理解程度也很关键，有时一些细节会对loss function的设计起到关键的作用，比如MSE和MAE是相似的loss function，如何选择取决于任务目标，如果需要避免较大误差则应选择MSE。
+决定loss function设计的最重要的因素就是任务目标，有时任务目标和loss function的关系很直接，比如MSE， 有时他们的关系就不那么明显，需要一些的专业知识（domain knowledge）才能和loss function建立联系，比如CTC loss。另外对目标的理解程度也很关键，有时一些细节会对loss function的设计起到关键的作用，比如MSE和MAE是相似的loss function，如何选择取决于任务目标，如果需要避免较大误差则应选择MSE。
 
 无论如何，任务都应该是设计loss function最先考虑的东西。
 
@@ -158,7 +157,7 @@ Loss function不仅仅光只是误差的度量衡量的工具，更重要的是G
 - [神经网络如何设计自己的loss function，如果需要修改或设计自己的loss，需要遵循什么规则](https://www.zhihu.com/question/59797824)
 - [An overview of gradient descent optimization algorithms](http://ruder.io/optimizing-gradient-descent)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTQzMzk4NDgxNiwxMTI4MDc3NywtMTY5Mj
+eyJoaXN0b3J5IjpbLTI0MzM1MTk2OSwxMTI4MDc3NywtMTY5Mj
 c3ODA2OCw1OTU3NzE4MDAsLTcyMzE2NTk3OCwtMTExMDQ5MDQ0
 OSwtNDI0MTQwMjI5LDU5MDM5MjE2MCwxMjEwMTk4MTc2LDE5OD
 AyODYzMTYsLTEyMjAwOTgyNTAsLTExNDEwOTYyMjRdfQ==
