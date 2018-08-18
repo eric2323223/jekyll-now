@@ -90,7 +90,7 @@ Loss function不仅仅光只是误差的度量衡量的工具，更重要的是G
 无论如何，任务都应该是设计loss function最先考虑的东西。
 
 ### 可计算性
-通过需求分析得到了初始的误差函数之后，还需要进行数学上的分析使之能适应GD算法高效的运行，毕竟
+通过需求分析得到了初始的误差函数之后，还需要进行数学上的分析使之能zaiGD算法高效的运行，毕竟每一次迭代
 
 ### 替代误差函数（Surrogate loss function）
 
@@ -158,7 +158,7 @@ Loss function不仅仅光只是误差的度量衡量的工具，更重要的是G
 - [神经网络如何设计自己的loss function，如果需要修改或设计自己的loss，需要遵循什么规则](https://www.zhihu.com/question/59797824)
 - [An overview of gradient descent optimization algorithms](http://ruder.io/optimizing-gradient-descent)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTkyNTQ4NjUwNSwxMTI4MDc3NywtMTY5Mj
+eyJoaXN0b3J5IjpbLTQzNjQ0NTU0MywxMTI4MDc3NywtMTY5Mj
 c3ODA2OCw1OTU3NzE4MDAsLTcyMzE2NTk3OCwtMTExMDQ5MDQ0
 OSwtNDI0MTQwMjI5LDU5MDM5MjE2MCwxMjEwMTk4MTc2LDE5OD
 AyODYzMTYsLTEyMjAwOTgyNTAsLTExNDEwOTYyMjRdfQ==
