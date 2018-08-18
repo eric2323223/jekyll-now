@@ -90,6 +90,12 @@ Loss function不仅仅光只是误差的度量衡量的工具，更重要的是G
 
 ### 可计算性
 通过需求分析得到了初始的误差函数之后，还需要进行数学上的分析来确保它能在GD算法下高效的运行，毕竟整个模型的学习是由大量的误差函数求导过程组成的，误差函数对学习效率的影响是决定性的。
+比如
+- log likelihood example: why log?
+	- log is monotonic
+	- much easier to computer joint
+	- cross entropy and maximum likelihood estitmation
+
 
 ### 替代误差函数（Surrogate loss function）
 
@@ -157,8 +163,9 @@ Loss function不仅仅光只是误差的度量衡量的工具，更重要的是G
 - [神经网络如何设计自己的loss function，如果需要修改或设计自己的loss，需要遵循什么规则](https://www.zhihu.com/question/59797824)
 - [An overview of gradient descent optimization algorithms](http://ruder.io/optimizing-gradient-descent)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTI0MzM1MTk2OSwxMTI4MDc3NywtMTY5Mj
-c3ODA2OCw1OTU3NzE4MDAsLTcyMzE2NTk3OCwtMTExMDQ5MDQ0
-OSwtNDI0MTQwMjI5LDU5MDM5MjE2MCwxMjEwMTk4MTc2LDE5OD
-AyODYzMTYsLTEyMjAwOTgyNTAsLTExNDEwOTYyMjRdfQ==
+eyJoaXN0b3J5IjpbLTgyMTgzNTQ3NywtMjQzMzUxOTY5LDExMj
+gwNzc3LC0xNjkyNzc4MDY4LDU5NTc3MTgwMCwtNzIzMTY1OTc4
+LC0xMTEwNDkwNDQ5LC00MjQxNDAyMjksNTkwMzkyMTYwLDEyMT
+AxOTgxNzYsMTk4MDI4NjMxNiwtMTIyMDA5ODI1MCwtMTE0MTA5
+NjIyNF19
 -->
