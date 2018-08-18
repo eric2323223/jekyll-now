@@ -59,7 +59,7 @@ problem?
 ![](https://cdn-images-1.medium.com/max/1600/1*o6H_R3Do1zpch-3MZk_fjQ.png)
 
 
-## 常见误差函数
+## 误差函数的分类
 根据不同类型机器学习任务可以将loss function主要可以以下三类：
 - 适用于回归问题（Regression）的误差函数，这种误差函数的目标是量化推测值和真实值的逻辑距离，理论上我们可以使用任何距离计算公式作为误差函数。实践中为常用的是以下两种距离：
 	 - MSE（Mean Squared Error，L2）
@@ -166,8 +166,8 @@ And how do you check whether a loss function bounds your current one? You provid
 - [神经网络如何设计自己的loss function，如果需要修改或设计自己的loss，需要遵循什么规则](https://www.zhihu.com/question/59797824)
 - [An overview of gradient descent optimization algorithms](http://ruder.io/optimizing-gradient-descent)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTk1NzcxODAwLC03MjMxNjU5NzgsLTExMT
-A0OTA0NDksLTQyNDE0MDIyOSw1OTAzOTIxNjAsMTIxMDE5ODE3
-NiwxOTgwMjg2MzE2LC0xMjIwMDk4MjUwLC0xMTQxMDk2MjI0XX
-0=
+eyJoaXN0b3J5IjpbLTE2OTI3NzgwNjgsNTk1NzcxODAwLC03Mj
+MxNjU5NzgsLTExMTA0OTA0NDksLTQyNDE0MDIyOSw1OTAzOTIx
+NjAsMTIxMDE5ODE3NiwxOTgwMjg2MzE2LC0xMjIwMDk4MjUwLC
+0xMTQxMDk2MjI0XX0=
 -->
