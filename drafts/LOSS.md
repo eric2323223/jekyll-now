@@ -114,7 +114,7 @@ Loss function不仅仅光只是误差的度量衡量的工具，更重要的是G
 - 
 - 
 ### 误差函数设计
-基于前两条特征，简单CE
+基于前两条特征，简单CE误差函数显然是不适合的。特别是第二条特征，要求mo'xing'neng'gou'zai
 - 面部识别和图像识别的区别
 	- 面部识别的目标是识别不同环境中的某一类（某个人）的面部特征
 - why naive CR is not working
@@ -163,10 +163,10 @@ Loss function不仅仅光只是误差的度量衡量的工具，更重要的是G
 - [神经网络如何设计自己的loss function，如果需要修改或设计自己的loss，需要遵循什么规则](https://www.zhihu.com/question/59797824)
 - [An overview of gradient descent optimization algorithms](http://ruder.io/optimizing-gradient-descent)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjE0ODE2Njc0LDQ5ODgyNDM4MSwtMTU1MD
-UyMDg2NSwtMTU1MDUyMDg2NSwtMjQzMzUxOTY5LDExMjgwNzc3
-LC0xNjkyNzc4MDY4LDU5NTc3MTgwMCwtNzIzMTY1OTc4LC0xMT
-EwNDkwNDQ5LC00MjQxNDAyMjksNTkwMzkyMTYwLDEyMTAxOTgx
-NzYsMTk4MDI4NjMxNiwtMTIyMDA5ODI1MCwtMTE0MTA5NjIyNF
-19
+eyJoaXN0b3J5IjpbLTQ3NTYyNTY0NCw0OTg4MjQzODEsLTE1NT
+A1MjA4NjUsLTE1NTA1MjA4NjUsLTI0MzM1MTk2OSwxMTI4MDc3
+NywtMTY5Mjc3ODA2OCw1OTU3NzE4MDAsLTcyMzE2NTk3OCwtMT
+ExMDQ5MDQ0OSwtNDI0MTQwMjI5LDU5MDM5MjE2MCwxMjEwMTk4
+MTc2LDE5ODAyODYzMTYsLTEyMjAwOTgyNTAsLTExNDEwOTYyMj
+RdfQ==
 -->
