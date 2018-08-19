@@ -105,8 +105,14 @@ Loss function不仅仅光只是误差的度量衡量的工具，更重要的是G
 
 ![](http://fa.bianp.net/blog/images/2014/loss_log.png)
 
-## 设计样例
+## 设计实例-人脸识别
 从人脸识别探讨loss function设计。
+### 需求分析
+人脸识别是一个非常有用的功能，它的用户很广，门禁，安保都是典型的使用场景。从机器学习的实现角度来看，人脸识别有如下特征：
+- 单个个体的训练数据较少
+- 
+### 误差函数设计
+
 - 面部识别和图像识别的区别
 	- 面部识别的目标是识别不同环境中的某一类（某个人）的面部特征
 - why naive CR is not working
@@ -155,7 +161,7 @@ Loss function不仅仅光只是误差的度量衡量的工具，更重要的是G
 - [神经网络如何设计自己的loss function，如果需要修改或设计自己的loss，需要遵循什么规则](https://www.zhihu.com/question/59797824)
 - [An overview of gradient descent optimization algorithms](http://ruder.io/optimizing-gradient-descent)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1NTA1MjA4NjUsNDg0OTcwMDg4LC0xNT
+eyJoaXN0b3J5IjpbNDk4ODI0MzgxLC0xNTUwNTIwODY1LC0xNT
 UwNTIwODY1LC0yNDMzNTE5NjksMTEyODA3NzcsLTE2OTI3Nzgw
 NjgsNTk1NzcxODAwLC03MjMxNjU5NzgsLTExMTA0OTA0NDksLT
 QyNDE0MDIyOSw1OTAzOTIxNjAsMTIxMDE5ODE3NiwxOTgwMjg2
