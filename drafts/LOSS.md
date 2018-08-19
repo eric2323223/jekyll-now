@@ -115,7 +115,7 @@ Loss function不仅仅光只是误差的度量衡量的工具，更重要的是G
 - 
 ### 误差函数设计
 基于前两条特征，简单CE误差函数显然是不适合的。特别是第二条特征，要求模型能够直接判别未知的个体，这就排除了使用图像识别的方法（每个不同个体都是一个类型）。传统的面部识别技术设计了一系列指标，如双眼的距离，鼻尖到嘴的距离等来作为标识不同个体的特征，我们也可以使用相同的思路来通过类似的特征分离不同的个体，只不过这些特征并不是提前设计好的，而是通过神经网络学习出来的。由此，我们的模型的目标就变成了关键特征提取。
-那么如何引导模型选取合适的关键特征呢？
+那么如何引导模型选取合适的关键特征呢？最直接的方法就是算不同个体特征
 
 Large margin softmax loss function 在论文中介绍了一种有趣方法，我们知道
 - 面部识别和图像识别的区别
@@ -166,11 +166,11 @@ Large margin softmax loss function 在论文中介绍了一种有趣方法，我
 - [神经网络如何设计自己的loss function，如果需要修改或设计自己的loss，需要遵循什么规则](https://www.zhihu.com/question/59797824)
 - [An overview of gradient descent optimization algorithms](http://ruder.io/optimizing-gradient-descent)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTcwMzYyNDI0OCwtMjU5MzUyNjgsLTE4Mz
-Y2Mjg1OTcsMTc5MjUxOTUzOSwxMjM4NzY1NjAyLC0yMDQ3Njc3
-OTQyLC0xMDAyOTYzOTczLDQ5ODgyNDM4MSwtMTU1MDUyMDg2NS
-wtMTU1MDUyMDg2NSwtMjQzMzUxOTY5LDExMjgwNzc3LC0xNjky
-Nzc4MDY4LDU5NTc3MTgwMCwtNzIzMTY1OTc4LC0xMTEwNDkwND
-Q5LC00MjQxNDAyMjksNTkwMzkyMTYwLDEyMTAxOTgxNzYsMTk4
-MDI4NjMxNl19
+eyJoaXN0b3J5IjpbLTEyNjI1MzA0NTgsLTI1OTM1MjY4LC0xOD
+M2NjI4NTk3LDE3OTI1MTk1MzksMTIzODc2NTYwMiwtMjA0NzY3
+Nzk0MiwtMTAwMjk2Mzk3Myw0OTg4MjQzODEsLTE1NTA1MjA4Nj
+UsLTE1NTA1MjA4NjUsLTI0MzM1MTk2OSwxMTI4MDc3NywtMTY5
+Mjc3ODA2OCw1OTU3NzE4MDAsLTcyMzE2NTk3OCwtMTExMDQ5MD
+Q0OSwtNDI0MTQwMjI5LDU5MDM5MjE2MCwxMjEwMTk4MTc2LDE5
+ODAyODYzMTZdfQ==
 -->
