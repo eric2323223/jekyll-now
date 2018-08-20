@@ -169,11 +169,11 @@ Large margin softmax loss function 在论文中介绍了一种有趣方法，我
 - [神经网络如何设计自己的loss function，如果需要修改或设计自己的loss，需要遵循什么规则](https://www.zhihu.com/question/59797824)
 - [An overview of gradient descent optimization algorithms](http://ruder.io/optimizing-gradient-descent)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEyNDgzMjkxNDAsLTEzMTE3NzUzNDIsLT
-IxMDk0NDAzNzUsMTAwODk2Mzc1LC0xMzI2MjgwNTkyLC0xODE2
-NDA4NDQ5LC0yNTkzNTI2OCwtMTgzNjYyODU5NywxNzkyNTE5NT
-M5LDEyMzg3NjU2MDIsLTIwNDc2Nzc5NDIsLTEwMDI5NjM5NzMs
-NDk4ODI0MzgxLC0xNTUwNTIwODY1LC0xNTUwNTIwODY1LC0yND
-MzNTE5NjksMTEyODA3NzcsLTE2OTI3NzgwNjgsNTk1NzcxODAw
-LC03MjMxNjU5NzhdfQ==
+eyJoaXN0b3J5IjpbMTY3NDAxODUxMCwtMTI0ODMyOTE0MCwtMj
+EwOTQ0MDM3NSwxMDA4OTYzNzUsLTEzMjYyODA1OTIsLTE4MTY0
+MDg0NDksLTI1OTM1MjY4LC0xODM2NjI4NTk3LDE3OTI1MTk1Mz
+ksMTIzODc2NTYwMiwtMjA0NzY3Nzk0MiwtMTAwMjk2Mzk3Myw0
+OTg4MjQzODEsLTE1NTA1MjA4NjUsLTE1NTA1MjA4NjUsLTI0Mz
+M1MTk2OSwxMTI4MDc3NywtMTY5Mjc3ODA2OCw1OTU3NzE4MDAs
+LTcyMzE2NTk3OF19
 -->
