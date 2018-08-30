@@ -1,19 +1,21 @@
  # 漫谈误差函数（Loss function）
-说起机器学习就不能不提到误差函数（ loss function），因为所有的机器学习问题都可以抽象成loss function的优化过程。Loss function的设计上决定了机器学习任务的成败，本文我们就来聊聊aientaseD)e thee
+说起机器学习就不能不提到误差函数（ loss function），因为所有的机器学习问题都可以抽象成loss function的优化过程。Loss function的设计上决定了机器学习任务的成败，本文我们就来聊聊误差函数。
 ![](https://www.cs.umd.edu/~tomg/img/landscapes/noshort.png)
 
 ## 概念/原理
-是一种量化模型拟合程度的工具，我们知道机器学习（监督式机器学习）的基本思想设计一个由参数$\theta$决定的模型$f_\theta$，使得输入$x$经过模型$f_\theta(x)$计算后得到接近真实$y$的结果，模型的训练过程是用数据（$x_i, y_i$）输入模型$f_\theta(x_i) = \hat y_i$并计算预测值和真实值的差距$L_\theteta(\ha$，求$\theta$使得$L\tht$取最小值，这时模型$f_\theta$达到最优状态，那么如何判断模型和现实的接近程度呢？如何判断模型已经足够好呢？loss function可以回答这些问题，loss function的loss表示了模型和真实的差距$L_\theta(\haa$，当这个距离达到最小值的时候我们就认为模型达到最好的状态。所以机器学习实际上是一个求loss function最小值的问题，radent om/im
+误差函数（loss function）是一种量化模型拟合程度的工具，我们知道机器学习（监督式机器学习）的基本思想设计一个由参数$\theta$决定的模型$f_\theta$，使得输入$x$经过模型$f_\theta(x)$计算后得到接近真实$y$的结果，模型的训练过程是用数据（$x_i, y_i$）输入模型$f_\theta(x_i) = \hat y_i$并计算预测值和真实值的差距$L_\theta(y_i, \hat y_i)$，求$\theta$使得$L_\theta$取最小值，这时模型$f_\theta$达到最优状态，那么如何判断模型和现实的接近程度呢？如何判断模型已经足够好呢？loss function可以回答这些问题，loss function的loss表示了模型和真实的差距$L_\theta$，当这个距离达到最小值的时候我们就认为模型达到最好的状态。所以机器学习实际上是一个通过优化$L_\theta$（求最小值）来计算$\theta$的过程。
 
-$$J(\theta) = \frac{1}{m} \sum L(y_i, \hat y)$$
+$$J(\theta) = \frac{1}{m} \sum L_\theta(y_i, \hat y)$$
 
-### 指导优化的方向
+~~### 指导优化的方向~~
+
 
 ## 特性
 
 ### Gradient based(GD) optimization
-与数学中的求极值问题不同的地方是，机器学习中的求极值使用。机器学习的领域主要使用基于梯度下降（graidient based(GD)的方法，如图一所示对于一个可导的凸函数，从任意一点出发，沿着倒数下降的方向前进直到倒数为零的点，就是函数的最小值。
-snisucoatiMlwn
+机器学习的领域主要使用基于梯度下降（graidient based(GD)的方法，如图一所示对于一个可导的凸函数，从任意一点出发，沿着倒数下降的方向前进直到倒数为零的点，就是函数的最小值。
+![](https://cdn-images-1.medium.com/max/1600/1*t6OiVIMKw3SBjNzj-lp_Fw.png)
+
 > #### 如何判断凸函数？
 > "_If the function is twice differentiable, and the second derivative is always greater than or equal to zero for its entire domain, then the function is convex._"
 > how to check convexity?
@@ -21,10 +23,13 @@ snisucoatiMlwn
 >$$f(y)=f(x)+\theta f(x)*(y-x)$$
 >- second derivative is non-negative
 
-效（使用ML工具如tensorflow计算不可导的点上的导数实际上并不会报错，而是返回该点一侧的导数），由于minibtscnigesmiat
+
+### 可导性
+
+虽然从数学原理上GD要求loss function连续可导，但在实践中loss function可以存在不可导的点，这是因为计算是使用一组（batch）数据的误差均值进行求导，这样使得落在不可导的点上的概率很低，因此可以对hinge loss这样的不连续的函数使用GD来进行优化。事实上即使在某组数据真的发生小概率事件导致求导失效（使用ML工具如tensorflow计算不可导的点上的导数实际上并不会报错，而是返回该点一侧的导数），由于minibatch GD算法使用了大量的分组，绝大多数可求导的分组仍然可以保证GD在整个数据集上有效运行。
 ### 非凸性
 对于所有的凸函数，使用GD都可以找到最小值，但是在实际的机器学习任务中，由于模型参数的数量都很大（如VGG16有$1.38*10^8$个参数），这时的loss function是凸函数的概率非常低，loss function 的表面会复杂很多，图二展示了模型参数中的两个参数构成的loss function的形态，可见其中有很多区域导数为零，但显然他们并不都是最小值，甚至不是局部最小值，~~GD算法会在这些区域收敛，但这时模型并不具备最优的性能。~~
-![](http://1L1.png)daamentum
+
 ![](https://i.stack.imgur.com/TY1L1.png)
 
 根据GD~~在导数为0处收敛~~的特性，可知在高维loss function中，除了global minimum，GD还可能会收敛于如下关键点（critical points）
@@ -38,7 +43,6 @@ snisucoatiMlwn
 ![](https://www.researchgate.net/profile/David_Laughlin2/publication/283946342/figure/fig2/AS:297125729587204@1447851702481/Schematic-of-a-saddle-point-illustrating-their-necessity-in-free-energy-critical-point.png)
 
 
-![](https://ruder.io/content/images/2016/09/saddle_point_evaluation_optimizers.gif)
 简单总结，SGD+合适的optimizer(such as momentum) + 合适的参数初始化可以有效找到非凸函数的minima
 
 > #### 那么为什么还要使用GD呢？ 
@@ -70,7 +74,7 @@ $$MSE=\frac{1}{n}\sum_{i=1}^n (y-\hat y)^2$$
 $$MAE=\frac{1}{n}\sum_{i=1}^n \mathopen|y-\hat y \mathclose| $$
 - 适用于分类问题（classification）的误差函数，分类问题的目标是推测出正确的类型，一般使用概率描述推测结果属于某种类型的可能性，因此误差函数就需要能够计算两个概率分布之间的”距离“，最常用的此类方法是
 	- Cross entropy loss （Maximum likelyhood estimation)
-$$(p,q) = -\sum_x p(x) \log q(x)$$
+$$CE= -\sum_x p(x) \log q(x)$$
 ![](https://datawookie.netlify.com/img/2015/12/log-loss-curve.png)
 	- MSE/MAE with thresh hold
 - 多任务问题
@@ -82,9 +86,11 @@ $$L_{position} = MSE$$
 $$L = \alpha L_{class} + \beta L_{position}$$
 
 
-##设计
+## 设计
+
 Loss function不仅仅光只是误差的度量衡量的工具，更重要的是GD会为了不断缩小误差而根据规定的方向（导数方向）调整模型参数，因此可以说loss function它决定了模型学习的目标。使用过不同的loss function我们可以在完全相同的模型架构（model architeture）上学习不同的模型参数，来达到不同的目的。比如，在多层卷积神经网络架构上使用cross entropy loss可以判断图像对象的类型（是猫还是狗），而同样的网络架构配合triplet loss则可以用来提取分辨不同个体的特征（面部识别）。从某种程度上说模型设计决定了了模型的能力，loss function设计决定了模型学习的方向，（划船的比喻）
-那么如何设计（或者选择）loss function呢？我们可以从以下几个方面考虑### 任务目标
+那么如何设计（或者选择）loss function呢？我们可以从以下几个方面考虑
+### 任务目标
 决定loss function设计的最重要的因素就是任务目标，有时任务目标和loss function的关系很直接，比如， 有时他们的关系就不那么明显，需要一些的专业知识（domain knowledge）才能和loss function建立联系，比如CTC loss。另外对目标的理解程度也很关键，有时一些细节会对loss function的设计起到关键的作用，比如MSE和MAE是相似的loss function，如何选择取决于任务目标，如果需要避免较大误差则应选择MSE。
 
 无论如何，任务都应该是设计loss function最先考虑的东西。
@@ -98,8 +104,7 @@ Loss function不仅仅光只是误差的度量衡量的工具，更重要的是G
 	- cross entropy and maximum likelihood estitmation
 
 
-### 
-替代误差函数（Surrogate loss function）
+### 替代误差函数（Surrogate loss function）
 
 有些情况下根据问题目标得到的loss function很难使用GD，例如左图中的loss function在所有可导处导数都是0（水平区域）， 意味着GD无法工作。这时可以使用一个如右图所示的近似的凸函数进行模拟，通过求代理误差函数的最小值来实现优化原来的误差函数的目的。当然这只是一个理想化的例子，并且建立在了解loss function的形态的基础上，但是实际中这种信息通常不容易得到，因此替代损失函数在实际中如何应用是一个比较复杂的问题，有待于进一步研究。
 
@@ -169,8 +174,8 @@ Large margin softmax loss function 在论文中介绍了一种有趣方法，我
 - [神经网络如何设计自己的loss function，如果需要修改或设计自己的loss，需要遵循什么规则](https://www.zhihu.com/question/59797824)
 - [An overview of gradient descent optimization algorithms](http://ruder.io/optimizing-gradient-descent)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTY3NDAxODUxMCwtMTI0ODMyOTE0MCwtOD
-Y2MjUwMjk5LDE2NzQwMTg1MTAsLTEyNDgzMjkxNDAsLTIxMDk0
+eyJoaXN0b3J5IjpbMTY3ODYxNzYzMiwxNjc0MDE4NTEwLC0xMj
+Q4MzI5MTQwLC04NjYyNTAyOTksLTEyNDgzMjkxNDAsLTIxMDk0
 NDAzNzUsMTAwODk2Mzc1LC0xMzI2MjgwNTkyLC0xODE2NDA4ND
 Q5LC0yNTkzNTI2OCwtMTgzNjYyODU5NywxNzkyNTE5NTM5LDEy
 Mzg3NjU2MDIsLTIwNDc2Nzc5NDIsLTEwMDI5NjM5NzMsNDk4OD
