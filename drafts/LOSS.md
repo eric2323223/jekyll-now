@@ -84,14 +84,12 @@ Loss function不仅仅是误差的度量衡量的工具，更重要的是GD会�
 决定loss function设计的最重要的因素就是任务目标，有时任务目标和loss function的关系很直接，比如， 有时他们的关系就不那么明显，需要一些的专业知识（domain knowledge）才能和loss function建立联系。另外对目标的理解程度也很关键，有时一些细节会对loss function的设计起到关键的作用，比如MSE和MAE是相似的loss function，如何选择取决于任务目标，如果需要避免较大误差则应选择MSE。
 
 无论如何，任务都应该是设计loss function最先考虑的东西。
+### 可计算性／计算效率
+通过需求分析得到了初始的误差函数之后，还需要进行数学上的分析来确保它能在GD算法下高效的运行，毕竟整个模型的学习是由大量的误差函数求导（在反向传递过程）组成的，误差函数对学习效率的影响是决定性的。
+举例来说，当我们把一个分类机器学习（样本数量$n$，类型数量$k$， 模型参数$\theta$）看作最大似然估计（Maximum Likelihood Estimation）问题时（即求模型$\theta$使得样本（）出现的概率最大）
+$$\hat{\theta}^{MLE} =\arg\max_\theta \prod_n \prod_k P(y_n=k|x_n, \theta)$$, 通过最大化样本的概率我们能够得到$\theta$的最大似然估计$\hat{\theta}^{MLE}$，由于$\log$函数的单调性，将上市中右侧取$\log$不会改变$\theta$，再根据$\log$的运算特性可得
+$$\hat{\theta}^{MLE} = \arg \max_\theta \sum_n \sum_k \log P(y_n=k|x_n, \theta)$$这样使得原来的乘积运算变成了加法运算，能够提高运算效率。至此
 
-> ### 可计算性 
-> 通过需求分析得到了初始的误差函数之后，还需要进行数学上的分析来确保它能在GD算法下高效的运行，毕竟整个模型的学习是由大量的误差函数求导（在反向传递过程）组成的，误差函数对学习效率的影响是决定性的。
-> 比如
-> - log likelihood example: why log?
-> 	- log is monotonic
-> 	- much easier to computer joint
-> 	- cross entropy and maximum likelihood estitmation
 
 
 ### 替代误差函数（Surrogate loss function）
@@ -108,8 +106,6 @@ Loss function不仅仅是误差的度量衡量的工具，更重要的是GD会�
 人脸识别是一个非常有用的功能，它的用户很广，门禁，安保都是典型的使用场景。从机器学习的实现角度来看，应用于门禁的人脸识别有如下特征：
 - 单个个体的训练数据较少
 - 模型的目标是对未知分类进行准确的判别	
-- 
-
 ### 误差函数设计
 基于前两条特征，最常用的CE误差函数显然是不适合的。特别是第二条特征，要求模型能够直接判别未知的个体，这就排除了使用图像识别的方法（每个不同个体都是一个类型）。传统的面部识别技术设计了一系列指标，如双眼的距离，鼻尖到嘴的距离等来作为标识不同个体的特征，我们也可以使用相同的思路来通过类似的特征分离不同的个体，只不过这些特征并不是提前设计好的，而是通过神经网络学习出来的。面部图像的特征学习可使用典型的多层卷积神经网络（convolutional neural network）来实现，由此我们的模型的目标就变成了关键特征提取。
 那么如何引导模型选取合适的关键特征呢？答案是损失函数。~~最直接的方法就是不做筛选使用全部的特征来计算不同个体特征之间的距离，当两个个体之间的特征距离足够近的时候，就认为是同一个体，反之就是不同的个体。~~这就是对比误差函数（contrastive loss） **softmax loss?**
@@ -171,11 +167,11 @@ $$
 - [神经网络如何设计自己的loss function，如果需要修改或设计自己的loss，需要遵循什么规则](https://www.zhihu.com/question/59797824)
 - [An overview of gradient descent optimization algorithms](http://ruder.io/optimizing-gradient-descent)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTA4NDc0MjY3MSwtMTM5Njg5NjgxNywxOD
-A3NDYzNTU1LDE2Nzg2MTc2MzIsMTY3NDAxODUxMCwtMTI0ODMy
-OTE0MCwtODY2MjUwMjk5LC0xMjQ4MzI5MTQwLC0yMTA5NDQwMz
-c1LDEwMDg5NjM3NSwtMTMyNjI4MDU5MiwtMTgxNjQwODQ0OSwt
-MjU5MzUyNjgsLTE4MzY2Mjg1OTcsMTc5MjUxOTUzOSwxMjM4Nz
-Y1NjAyLC0yMDQ3Njc3OTQyLC0xMDAyOTYzOTczLDQ5ODgyNDM4
-MSwtMTU1MDUyMDg2NV19
+eyJoaXN0b3J5IjpbLTY5OTA5MDg3OCwxMDg0NzQyNjcxLC0xMz
+k2ODk2ODE3LDE4MDc0NjM1NTUsMTY3ODYxNzYzMiwxNjc0MDE4
+NTEwLC0xMjQ4MzI5MTQwLC04NjYyNTAyOTksLTEyNDgzMjkxND
+AsLTIxMDk0NDAzNzUsMTAwODk2Mzc1LC0xMzI2MjgwNTkyLC0x
+ODE2NDA4NDQ5LC0yNTkzNTI2OCwtMTgzNjYyODU5NywxNzkyNT
+E5NTM5LDEyMzg3NjU2MDIsLTIwNDc2Nzc5NDIsLTEwMDI5NjM5
+NzMsNDk4ODI0MzgxXX0=
 -->
