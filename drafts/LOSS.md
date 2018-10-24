@@ -4,7 +4,7 @@
 
 ## 概念/原理
 误差函数（loss function）是一种量化模型拟合程度的工具，机器学习（监督式机器学习）的基本思想设计一个由参数$\theta$决定的模型$f_\theta$，使得输入$x$经过模型$f_\theta(x)$计算后得到接近真实$y$的结果，模型的训练过程是用数据（$x_i, y_i$）输入模型计算得到预测值$\hat y_i$并计算预测值和真实值的差距$L$，通过调整模型的参数$\theta$来减小差距$L$直到这个差距不再减小为止，这时模型$f_\theta$达到最优状态。
-误差函数$L_\theta$就是被设计出来的一个关于$\theta$的用来衡量预测值和真实值之间的差距的函数，这样通过求$L_\theta$的最小值，就可以获得知个确定的$\theta$, 即能够得到zui求当这个距离达到最小值的时候我们就认为模型达到最好的状态。所以机器学习实际上是一个通过优化$L_\theta$（求最小值）来计算$\theta$的过程。
+误差函数$L_\theta$就是被设计出来的一个关于$\theta$的用来衡量预测值和真实值之间的差距的函数，这样通过求$L_\theta$的最小值，就可以获得一个确定的$\theta$, 也就能够得到最佳预测结果的模型。所以机器学习实际上是一个通过优化$L_\theta$（求最小值）来计算$\theta$的过程。
 
 $$J(\theta) = \frac{1}{m} \sum L_\theta(y_i, \hat y)$$
 
@@ -168,11 +168,11 @@ $$
 - [神经网络如何设计自己的loss function，如果需要修改或设计自己的loss，需要遵循什么规则](https://www.zhihu.com/question/59797824)
 - [An overview of gradient descent optimization algorithms](http://ruder.io/optimizing-gradient-descent)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzk3MTUzNzQwLC02OTkwOTA4NzgsMTA4ND
-c0MjY3MSwtMTM5Njg5NjgxNywxODA3NDYzNTU1LDE2Nzg2MTc2
-MzIsMTY3NDAxODUxMCwtMTI0ODMyOTE0MCwtODY2MjUwMjk5LC
-0xMjQ4MzI5MTQwLC0yMTA5NDQwMzc1LDEwMDg5NjM3NSwtMTMy
-NjI4MDU5MiwtMTgxNjQwODQ0OSwtMjU5MzUyNjgsLTE4MzY2Mj
-g1OTcsMTc5MjUxOTUzOSwxMjM4NzY1NjAyLC0yMDQ3Njc3OTQy
-LC0xMDAyOTYzOTczXX0=
+eyJoaXN0b3J5IjpbLTkzMzQyNTE4MSwtNjk5MDkwODc4LDEwOD
+Q3NDI2NzEsLTEzOTY4OTY4MTcsMTgwNzQ2MzU1NSwxNjc4NjE3
+NjMyLDE2NzQwMTg1MTAsLTEyNDgzMjkxNDAsLTg2NjI1MDI5OS
+wtMTI0ODMyOTE0MCwtMjEwOTQ0MDM3NSwxMDA4OTYzNzUsLTEz
+MjYyODA1OTIsLTE4MTY0MDg0NDksLTI1OTM1MjY4LC0xODM2Nj
+I4NTk3LDE3OTI1MTk1MzksMTIzODc2NTYwMiwtMjA0NzY3Nzk0
+MiwtMTAwMjk2Mzk3M119
 -->
