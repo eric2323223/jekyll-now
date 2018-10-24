@@ -3,7 +3,7 @@
 ![](https://www.cs.umd.edu/~tomg/img/landscapes/noshort.png)
 
 ## 概念/原理
-误差函数（loss function）是一种量化模型拟合程度的工具，机器学习（监督式机器学习）的基本思想设计一个由参数$\theta$决定的模型$f_\theta$，使得输入$x$经过模型$f_\theta(x)$计算后得到接近真实$y$的结果，模型的训练过程是用数据（$x_i, y_i$）输入模型计算得到预测值$\hat y_i$并计算预测值和真实值的差距$L$，通过调整模型的参数$\theta$来减小差距$L$直到这个差距不再减小为止，这时模型$f_\theta$达到最优状态，那么如何判断模型和现实的接近程度呢？如何判断模型已经足够好呢？loss function可以回答这些问题，loss function的loss表示了模型和真实的差距$L_\theta$，当这个距离达到最小值的时候我们就认为模型达到最好的状态。所以机器学习实际上是一个通过优化$L_\theta$（求最小值）来计算$\theta$的过程。
+误差函数（loss function）是一种量化模型拟合程度的工具，机器学习（监督式机器学习）的基本思想设计一个由参数$\theta$决定的模型$f_\theta$，使得输入$x$经过模型$f_\theta(x)$计算后得到接近真实$y$的结果，模型的训练过程是用数据（$x_i, y_i$）输入模型计算得到预测值$\hat y_i$并计算预测值和真实值的差距$L$，通过调整模型的参数$\theta$来减小差距$L$直到这个差距不再减小为止，这时模型$f_\theta$达到最优状态。那么如何量化这个差距$L$呢？loss function可以回答这些问题，loss function的loss表示了模型和真实的差距$L_\theta$，当这个距离达到最小值的时候我们就认为模型达到最好的状态。所以机器学习实际上是一个通过优化$L_\theta$（求最小值）来计算$\theta$的过程。
 
 $$J(\theta) = \frac{1}{m} \sum L_\theta(y_i, \hat y)$$
 
@@ -167,11 +167,11 @@ $$
 - [神经网络如何设计自己的loss function，如果需要修改或设计自己的loss，需要遵循什么规则](https://www.zhihu.com/question/59797824)
 - [An overview of gradient descent optimization algorithms](http://ruder.io/optimizing-gradient-descent)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTQ0MjM4MzY4MCwtNjk5MDkwODc4LDEwOD
-Q3NDI2NzEsLTEzOTY4OTY4MTcsMTgwNzQ2MzU1NSwxNjc4NjE3
-NjMyLDE2NzQwMTg1MTAsLTEyNDgzMjkxNDAsLTg2NjI1MDI5OS
-wtMTI0ODMyOTE0MCwtMjEwOTQ0MDM3NSwxMDA4OTYzNzUsLTEz
-MjYyODA1OTIsLTE4MTY0MDg0NDksLTI1OTM1MjY4LC0xODM2Nj
-I4NTk3LDE3OTI1MTk1MzksMTIzODc2NTYwMiwtMjA0NzY3Nzk0
-MiwtMTAwMjk2Mzk3M119
+eyJoaXN0b3J5IjpbLTExMDQzODgzNzAsLTY5OTA5MDg3OCwxMD
+g0NzQyNjcxLC0xMzk2ODk2ODE3LDE4MDc0NjM1NTUsMTY3ODYx
+NzYzMiwxNjc0MDE4NTEwLC0xMjQ4MzI5MTQwLC04NjYyNTAyOT
+ksLTEyNDgzMjkxNDAsLTIxMDk0NDAzNzUsMTAwODk2Mzc1LC0x
+MzI2MjgwNTkyLC0xODE2NDA4NDQ5LC0yNTkzNTI2OCwtMTgzNj
+YyODU5NywxNzkyNTE5NTM5LDEyMzg3NjU2MDIsLTIwNDc2Nzc5
+NDIsLTEwMDI5NjM5NzNdfQ==
 -->
