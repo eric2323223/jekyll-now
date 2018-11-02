@@ -5,27 +5,28 @@
 ## 概念/原理
 误差函数（loss function）是一种量化模型拟合程度的工具，机器学习（监督式机器学习）的基本思想设计一个由参数$\theta$决定的模型$f_\theta$，使得输入$x$经过模型$f_\theta(x)$计算后得到接近真实$y$的结果，模型的训练过程是用数据（$x_i, y_i$）输入模型计算得到预测值$\hat y_i$并计算预测值和真实值的差距$L$，通过调整模型的参数$\theta$来减小差距$L$直到这个差距不再减小为止，这时模型$f_\theta$达到最优状态。
 误差函数$L_\theta$就是被设计出来的一个关于$\theta$的用来衡量预测值和真实值之间的差距的函数，这样通过求$L_\theta$的最小值，就可以获得一个确定的$\theta$, 也就能够得到最佳预测结果的模型。所以机器学习实际上是一个通过优化$L_\theta$（求最小值）来计算$\theta$的过程。
+ 在mini batch SGD中，通常求平均值作为batch的误差$J(\theta)$来作为反向传递计算的输入，即batch_size=$m$时,
 
-$$J(\theta) = \frac{1}{m} \sum L_\theta(y_i, \hat y)$$
+$$J(\theta) = \frac{1}{m} \sum_{i=0}^m L_\theta(y_i, \hat y_i)$$
 
-~~### 指导优化的方向~~
+
 
 
 ## 特性
 
 ### Gradient based(GD) optimization
-数学意义上的的优化问题一般有两类解法，一个是解析方法（analytical optimization），适用于存在解析解（closed-form solution），另一种是迭代优化（iterative optimization）方法用于不存在解析解的情况，GD就属于迭代优化的一种典型方法。机器学习的模型中由于使用nolinear activation所以不存在解析解使得$\frac {dl(w)}{dw}=0$，因此使用基于梯度下降GD的优化方法，如图一所示对于一个可导的凸函数，从任意一点出发，沿着倒数下降的方向前进直到倒数为零的点，就是函数的最小值。
+数学意义上的的优化问题一般有两类解法，一个是解析方法（analytical optimization），适用于存在解析解（closed-form solution），另一种是迭代优化（iterative optimization）方法用于不存在解析解的情况，GD属于迭代优化的一种典型方法。现实中的机器学习模型中由于使用nolinear activation所以不存在解析解使得$\frac {dl(w)}{dw}=0$，因此只能使用基于梯度下降GD的优化方法，如图一所示对于一个可导的凸函数，从任意一点出发，沿着倒数下降的方向前进直到倒数为零的点，就是函数的最小值。
 - there is no closed form solution
 - it is computational impossible to use analytical solution when data is huge problem?
 
 ![](https://cdn-images-1.medium.com/max/1600/1*t6OiVIMKw3SBjNzj-lp_Fw.png)
 
 > #### 如何判断凸函数？
-> "_If the function is twice differentiable, and the second derivative is always greater than or equal to zero for its entire domain, then the function is convex._"
-> how to check convexity?
-> -  function lies above all tangents
->$$f(y)=f(x)+\theta f(x)*(y-x)$$
->- second derivative is non-negative
+> - $f(x)$是定义在集合X上的一阶可微函数，$x_,x_2\in X$且 $x_1<x_2$
+> $$f(x_2 ) - f(x_1) \ge \triangledown f(x_1)'(x_2 -x_1) $$
+> - $f(x)$是定义在集合X上的二次可微函数，$\forall x_i\in X$
+>$$f(x_i)'' < 0$$
+
 
 
 ### 可导性
@@ -168,11 +169,11 @@ $$
 - [神经网络如何设计自己的loss function，如果需要修改或设计自己的loss，需要遵循什么规则](https://www.zhihu.com/question/59797824)
 - [An overview of gradient descent optimization algorithms](http://ruder.io/optimizing-gradient-descent)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTI3NTUxNzI0OCwtOTMzNDI1MTgxLC02OT
-kwOTA4NzgsMTA4NDc0MjY3MSwtMTM5Njg5NjgxNywxODA3NDYz
-NTU1LDE2Nzg2MTc2MzIsMTY3NDAxODUxMCwtMTI0ODMyOTE0MC
-wtODY2MjUwMjk5LC0xMjQ4MzI5MTQwLC0yMTA5NDQwMzc1LDEw
-MDg5NjM3NSwtMTMyNjI4MDU5MiwtMTgxNjQwODQ0OSwtMjU5Mz
-UyNjgsLTE4MzY2Mjg1OTcsMTc5MjUxOTUzOSwxMjM4NzY1NjAy
-LC0yMDQ3Njc3OTQyXX0=
+eyJoaXN0b3J5IjpbLTE1NjUyNDE4NTQsLTkzMzQyNTE4MSwtNj
+k5MDkwODc4LDEwODQ3NDI2NzEsLTEzOTY4OTY4MTcsMTgwNzQ2
+MzU1NSwxNjc4NjE3NjMyLDE2NzQwMTg1MTAsLTEyNDgzMjkxND
+AsLTg2NjI1MDI5OSwtMTI0ODMyOTE0MCwtMjEwOTQ0MDM3NSwx
+MDA4OTYzNzUsLTEzMjYyODA1OTIsLTE4MTY0MDg0NDksLTI1OT
+M1MjY4LC0xODM2NjI4NTk3LDE3OTI1MTk1MzksMTIzODc2NTYw
+MiwtMjA0NzY3Nzk0Ml19
 -->
