@@ -52,7 +52,7 @@ $$J(\theta) = \frac{1}{m} \sum L_\theta(y_i, \hat y)$$
 ![](http://ruder.io/content/images/2016/09/saddle_point_evaluation_optimizers.gif)
 简单总结，SGD+合适的optimizer(such as momentum) + (random initilization)可以有效找到非凸函数的minima
 
-### 泛化（eneralization）
+### 泛化（Generalization）
 机器学习的最终目的是提高对未知的输入进行的准确率，也就是提高泛化能力。Loss function虽然可以引导GD进行模型的优化，但是一个常见的问题是模型虽然达到了很高的训练准确率，但是泛化能力并没有提高甚至反而降低，这就是过拟合（over fitting）现象，如图所示，蓝色表示一个过拟合的模型，它是一个过度复杂的函数。这种问题源自于模型为了提高训练准确率学习了训练数据中的噪声从而导致模型和真实规律产生偏差。正则化（regularization）就是解决过拟合问题的常见方法之一，它把原误差函数和参数的模（norm）相加形成新的目标函数（objective function），在使用GD对目标函数求最小值。这么做的目的在于降低参数维度从而增加模型的泛化能力，这是由于参数的模变成了目标函数的一部分，因此GD也会尽力降低参数的模，而参数的模和参数的维度正相关，因此GD会降低参数的维度，从而最终实现增强泛化能力的目的。 
 ![](https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Regularization.svg/354px-Regularization.svg.png)
 
@@ -168,11 +168,11 @@ $$
 - [神经网络如何设计自己的loss function，如果需要修改或设计自己的loss，需要遵循什么规则](https://www.zhihu.com/question/59797824)
 - [An overview of gradient descent optimization algorithms](http://ruder.io/optimizing-gradient-descent)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTkzMzQyNTE4MSwtNjk5MDkwODc4LDEwOD
-Q3NDI2NzEsLTEzOTY4OTY4MTcsMTgwNzQ2MzU1NSwxNjc4NjE3
-NjMyLDE2NzQwMTg1MTAsLTEyNDgzMjkxNDAsLTg2NjI1MDI5OS
-wtMTI0ODMyOTE0MCwtMjEwOTQ0MDM3NSwxMDA4OTYzNzUsLTEz
-MjYyODA1OTIsLTE4MTY0MDg0NDksLTI1OTM1MjY4LC0xODM2Nj
-I4NTk3LDE3OTI1MTk1MzksMTIzODc2NTYwMiwtMjA0NzY3Nzk0
-MiwtMTAwMjk2Mzk3M119
+eyJoaXN0b3J5IjpbLTI3NTUxNzI0OCwtOTMzNDI1MTgxLC02OT
+kwOTA4NzgsMTA4NDc0MjY3MSwtMTM5Njg5NjgxNywxODA3NDYz
+NTU1LDE2Nzg2MTc2MzIsMTY3NDAxODUxMCwtMTI0ODMyOTE0MC
+wtODY2MjUwMjk5LC0xMjQ4MzI5MTQwLC0yMTA5NDQwMzc1LDEw
+MDg5NjM3NSwtMTMyNjI4MDU5MiwtMTgxNjQwODQ0OSwtMjU5Mz
+UyNjgsLTE4MzY2Mjg1OTcsMTc5MjUxOTUzOSwxMjM4NzY1NjAy
+LC0yMDQ3Njc3OTQyXX0=
 -->
