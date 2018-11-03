@@ -21,19 +21,17 @@ $$J(\theta) = \frac{1}{m} \sum_{i=0}^m L_\theta(y_i, \hat y_i)$$
 
 ![](https://cdn-images-1.medium.com/max/1600/1*t6OiVIMKw3SBjNzj-lp_Fw.png)
 
-> #### 如何判断凸函数？
-> - $f(x)$是定义在集合X上的一阶可微函数，$x_,x_2\in X$且 $x_1<x_2$
+> #### 凸函数的判定方法
+> - 当$f(x)$是定义在集合$X$上的一阶可微函数，$x_,x_2\in X$且 $x_1<x_2$
 > $$f(x_2 ) - f(x_1) \ge \triangledown f(x_1)'(x_2 -x_1) $$
-> - $f(x)$是定义在集合X上的二次可微函数，$\forall x_i\in X$
+> - 当$f(x)$是定义在集合$X$上的二次可微函数，$\forall x_i\in X$
 >$$f(x_i)'' < 0$$
-
-
 
 ### 可导性
 虽然从数学原理上GD要求loss function连续可导，但在实践中loss function可以存在不可导的点，这是因为计算是使用一组（batch）数据的误差均值进行求导，这样使得落在不可导的点上的概率很低，因此可以对hinge loss这样的不连续的函数使用GD来进行优化。事实上即使在某组数据真的发生小概率事件导致求导失效（使用ML工具如tensorflow计算不可导的点上的导数实际上并不会报错，而是返回该点一侧的导数），由于minibatch GD算法使用了大量的分组，绝大多数可求导的分组仍然可以保证GD在整个数据集上有效运行。
 
 ### 非凸性
-对于所有的凸函数，使用GD都可以找到最小值，但是在实际的机器学习任务中，由于模型参数的数量都很大（如VGG16有$1.38*10^8$个参数），这时的loss function是凸函数的概率非常低，loss function 的表面会复杂很多，图二展示了模型参数中的两个参数构成的loss function的形态，可见其中有很多区域导数为零，但显然他们并不都是最小值，甚至不是局部最小值，~~GD算法会在这些区域收敛，但这时模型并不具备最优的性能。~~
+对于所有的凸函数，使用GD都可以找到最小值，但是在实际的机器学习任务中，由于模型参数的数量都很大（如VGG16有$1.38*10^8$个参数），这时的loss function是凸函数的概率非常低，loss function 的表面会复杂很多，图二展示了模型参数中的两个参数构成的loss function的形态，可见其中有很多区域导数为零，但显然他们并不都是最小值，甚至不是局部最小值，
 
 ![](https://i.stack.imgur.com/TY1L1.png)
 
@@ -169,11 +167,11 @@ $$
 - [神经网络如何设计自己的loss function，如果需要修改或设计自己的loss，需要遵循什么规则](https://www.zhihu.com/question/59797824)
 - [An overview of gradient descent optimization algorithms](http://ruder.io/optimizing-gradient-descent)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1NjUyNDE4NTQsLTkzMzQyNTE4MSwtNj
-k5MDkwODc4LDEwODQ3NDI2NzEsLTEzOTY4OTY4MTcsMTgwNzQ2
-MzU1NSwxNjc4NjE3NjMyLDE2NzQwMTg1MTAsLTEyNDgzMjkxND
-AsLTg2NjI1MDI5OSwtMTI0ODMyOTE0MCwtMjEwOTQ0MDM3NSwx
-MDA4OTYzNzUsLTEzMjYyODA1OTIsLTE4MTY0MDg0NDksLTI1OT
-M1MjY4LC0xODM2NjI4NTk3LDE3OTI1MTk1MzksMTIzODc2NTYw
-MiwtMjA0NzY3Nzk0Ml19
+eyJoaXN0b3J5IjpbLTcxMTkyMTcwMiwtOTMzNDI1MTgxLC02OT
+kwOTA4NzgsMTA4NDc0MjY3MSwtMTM5Njg5NjgxNywxODA3NDYz
+NTU1LDE2Nzg2MTc2MzIsMTY3NDAxODUxMCwtMTI0ODMyOTE0MC
+wtODY2MjUwMjk5LC0xMjQ4MzI5MTQwLC0yMTA5NDQwMzc1LDEw
+MDg5NjM3NSwtMTMyNjI4MDU5MiwtMTgxNjQwODQ0OSwtMjU5Mz
+UyNjgsLTE4MzY2Mjg1OTcsMTc5MjUxOTUzOSwxMjM4NzY1NjAy
+LC0yMDQ3Njc3OTQyXX0=
 -->
