@@ -31,29 +31,32 @@ $$J(\theta) = \frac{1}{m} \sum_{i=0}^m L_\theta(y_i, \hat y_i)$$
 虽然从数学原理上GD要求loss function连续可导，但在实践中loss function可以存在不可导的点，这是因为计算是使用一组（batch）数据的误差均值进行求导，这样使得落在不可导的点上的概率很低，因此可以对hinge loss这样的不连续的函数使用GD来进行优化。事实上即使在某组数据真的发生小概率事件导致求导失效（使用ML工具如tensorflow计算不可导的点上的导数实际上并不会报错，而是返回该点一侧的导数），由于minibatch GD算法使用了大量的分组，绝大多数可求导的分组仍然可以保证GD在整个数据集上有效运行。
 
 ### 非凸性
-对于所有的凸函数，使用GD都可以找到最小值，但是在实际的机器学习任务中，由于模型参数的数量都很大（如VGG16有$1.38*10^8$个参数），这时的loss function是凸函数的概率非常低，loss function 的表面会复杂很多，图二展示了模型参数中的两个参数构成的loss function的形态，可见其中有很多区域导数为零，但显然他们并不都是最小值，甚至不是局部最小值，
+对于所有的凸函数，使用GD都可以找到最小值，但是在实际的机器学习任务中，由于模型参数的数量很大（如VGG16有$1.38*10^8$个参数），这时的loss function是凸函数的概率非常低，loss function 的表面会复杂很多，图二展示了模型参数中的两个参数构成的loss function的形态，可见其中有很多区域导数为零，但显然他们并不都是最小值，甚至不是局部最小值。数学中将导数为0的点称为关键点（critical point），有以下几类：
 
 ![](https://i.stack.imgur.com/TY1L1.png)
 
 根据GD~~在导数为0处收敛~~的特性，可知在高维loss function中，除了global minimum，GD还可能会收敛于如下关键点（critical points）
-- 0 gradient is not nessisarily global minimum
-   - flat plateu，是指在一个其中所有的点的导数都为0的区域，在三维空间中的flat region就是水平面，即图1中1, 如何避免陷入plateau一直是一个讨论较多的话题，目前常见的方法有：
+
+   - 水平区域flat plateu，是指在一个其中所有的点的导数都为0的区域，在三维空间中的flat region就是水平面，即图1中1, 如何避免陷入plateau一直是一个讨论较多的话题，目前常见的方法有：
 	   - 适当的参数初始化
 	   - 使用替代误差函数（surrogate function）
 	   - 调整优化器（如增加动量momentum）
-   - local minimum， 如图1中点2
-   - 鞍点（saddle point），是一种导数为零但却不是极值的点，如图1中点3处，鞍点是指在该点上一个纬度。。。由于在高维度loss function的所有导数为0的点中，只有在所有维度同时具有相同的凹凸性（即二阶导数都大于0或小于0）的时候loss function才会处于local minimum（说global minimum），任何一个维度的凹凸性不同于其他的维度都会使loss function处于鞍点，考虑到实际的loss function通常会有万或十万（甚至百万）级的维度数量，因此鞍点是非常普遍的。经过试验发现，使用SGD选择具有动量或可变学习率（adaptive learning rate）的优化器（如Adagrad，Momentum）就可以有效的脱离鞍点
+  - 鞍点（saddle point），是一种导数为零但却不是极值的点，如图1中点3处，鞍点是指在该点上一个纬度。。。由于在高维度loss function的所有导数为0的点中，只有在所有维度同时具有相同的凹凸性（即二阶导数都大于0或小于0）的时候loss function才会处于local minimum（说global minimum），任何一个维度的凹凸性不同于其他的维度都会使loss function处于鞍点，考虑到实际的loss function通常会有万或十万（甚至百万）级的维度数量，因此鞍点是非常普遍的。经过大量的试验发现，使用SGD选择具有动量或可变学习率（adaptive learning rate）的优化器（如Adagrad，Momentum）就可以有效的脱离鞍点
+   - 局部最小值local minimum， 在高维度的优化问题中，局部最小值和全局最小值通常没有太大的区别，甚至在有些情况下比全局最小值有更好的归纳能力（泛化能力）。**比鞍点问题小很多**
+   
 ![](https://www.researchgate.net/profile/David_Laughlin2/publication/283946342/figure/fig2/AS:297125729587204@1447851702481/Schematic-of-a-saddle-point-illustrating-their-necessity-in-free-energy-critical-point.png)
 
 
-简单总结，SGD+合适的optimizer(such as momentum) + 合适的参数初始化可以有效找到非凸函数的minima
+总结来说，SGD+合适的optimizer(such as momentum) + 合适的参数初始化可以有效找到非凸函数的最优解（接近最优解）
 
 ![](http://ruder.io/content/images/2016/09/saddle_point_evaluation_optimizers.gif)
-简单总结，SGD+合适的optimizer(such as momentum) + (random initilization)可以有效找到非凸函数的minima
+
 
 ### 泛化（Generalization）
 机器学习的最终目的是提高对未知的输入进行的准确率，也就是提高泛化能力。Loss function虽然可以引导GD进行模型的优化，但是一个常见的问题是模型虽然达到了很高的训练准确率，但是泛化能力并没有提高甚至反而降低，这就是过拟合（over fitting）现象，如图所示，蓝色表示一个过拟合的模型，它是一个过度复杂的函数。这种问题源自于模型为了提高训练准确率学习了训练数据中的噪声从而导致模型和真实规律产生偏差。正则化（regularization）就是解决过拟合问题的常见方法之一，它把原误差函数和参数的模（norm）相加形成新的目标函数（objective function），在使用GD对目标函数求最小值。这么做的目的在于降低参数维度从而增加模型的泛化能力，这是由于参数的模变成了目标函数的一部分，因此GD也会尽力降低参数的模，而参数的模和参数的维度正相关，因此GD会降低参数的维度，从而最终实现增强泛化能力的目的。 
 ![](https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Regularization.svg/354px-Regularization.svg.png)
+![](https://qph.fs.quoracdn.net/main-qimg-17ec84ff3f63f77f6b368f0eb6ef1890)
+![](https://wp.wwu.edu/machinelearning/files/2017/01/mlconcepts_image5-rnehsa.png)
 
 ## 误差函数的分类
 根据不同类型机器学习任务可以将loss function主要可以以下三类：
@@ -88,7 +91,7 @@ Loss function不仅仅是误差的度量衡量的工具，更重要的是GD会�
 通过需求分析得到了初始的误差函数之后，还需要进行数学上的分析来确保它能在GD算法下高效的运行，毕竟整个模型的学习是由大量的误差函数求导（在反向传递过程）组成的，误差函数对学习效率的影响是决定性的。
 举例来说，当我们把一个分类机器学习（样本数量$n$，类型数量$k$， 模型参数$\theta$）看作最大似然估计（Maximum Likelihood Estimation）问题时（即求模型$\theta$使得样本（）出现的概率最大）
 $$\hat{\theta}^{MLE} =\arg\max_\theta \prod_n \prod_k P(y_n=k|x_n, \theta)$$, 通过最大化样本的概率我们能够得到$\theta$的最大似然估计$\hat{\theta}^{MLE}$，由于$\log$函数的单调性，将上市中右侧取$\log$不会改变$\theta$，再根据$\log$的运算特性可得
-$$\hat{\theta}^{MLE} = \arg \max_\theta \sum_n \sum_k \log P(y_n=k|x_n, \theta)$$这样使得原来的乘积运算变成了加法运算，能够提高运算效率。至此
+$$\hat{\theta}^{MLE} = \arg \max_\theta \sum_n \sum_k \log P(y_n=k|x_n, \theta)$$这样使得原来的乘积运算变成了加法运算，能够提高运算效率。在这个例子中，通过将目标函数由$P$转化成$\log P$ ，不影响模型但却能有效的提高计算的效率。这启示我们在设计损失函数时要对。。。
 
 
 
@@ -166,8 +169,9 @@ $$
 - [A comparison of loss function on deep embedding](https://www.slideshare.net/CenkBircanolu/a-comparison-of-loss-function-on-deep-embedding)
 - [神经网络如何设计自己的loss function，如果需要修改或设计自己的loss，需要遵循什么规则](https://www.zhihu.com/question/59797824)
 - [An overview of gradient descent optimization algorithms](http://ruder.io/optimizing-gradient-descent)
+- [The Loss Surfaces of Multilayer Networks](https://arxiv.org/pdf/1412.0233.pdf)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTcxMTkyMTcwMiwtOTMzNDI1MTgxLC02OT
+eyJoaXN0b3J5IjpbMTM5MDYyOTkwNywtOTMzNDI1MTgxLC02OT
 kwOTA4NzgsMTA4NDc0MjY3MSwtMTM5Njg5NjgxNywxODA3NDYz
 NTU1LDE2Nzg2MTc2MzIsMTY3NDAxODUxMCwtMTI0ODMyOTE0MC
 wtODY2MjUwMjk5LC0xMjQ4MzI5MTQwLC0yMTA5NDQwMzc1LDEw
