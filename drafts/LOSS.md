@@ -89,11 +89,9 @@ Loss function不仅仅是误差的度量衡量的工具，更重要的是GD会�
 无论如何，任务都应该是设计loss function最先考虑的东西。
 ### 可计算性／计算效率
 通过需求分析得到了初始的误差函数之后，还需要进行数学上的分析来确保它能在GD算法下高效的运行，毕竟整个模型的学习是由大量的误差函数求导（在反向传递过程）组成的，误差函数对学习效率的影响是决定性的。
-举例来说，当我们把一个分类机器学习（样本数量$n$，类型数量$k$， 模型参数$\theta$）看作最大似然估计（Maximum Likelihood Estimation）问题时（即求模型$\theta$使得样本（）出现的概率最大）
+举例来说，当我们把一个分类机器学习（样本数量$n$，类型数量$k$， 模型参数$\theta$）看作最大似然估计（Maximum Likelihood Estimation）问题时（即求模型$\theta$使得样本$x_1, x_2 ... x_n$出现的概率最大）
 $$\hat{\theta}^{MLE} =\arg\max_\theta \prod_n \prod_k P(y_n=k|x_n, \theta)$$, 通过最大化样本的概率我们能够得到$\theta$的最大似然估计$\hat{\theta}^{MLE}$，由于$\log$函数的单调性，将上市中右侧取$\log$不会改变$\theta$，再根据$\log$的运算特性可得
-$$\hat{\theta}^{MLE} = \arg \max_\theta \sum_n \sum_k \log P(y_n=k|x_n, \theta)$$这样使得原来的乘积运算变成了加法运算，能够提高运算效率。在这个例子中，通过将目标函数由$P$转化成$\log P$ ，不影响模型但却能有效的提高计算的效率。这启示我们在设计损失函数时要对。。。
-
-
+$$\hat{\theta}^{MLE} = \arg \max_\theta \sum_n \sum_k \log P(y_n=k|x_n, \theta)$$这样使得原来的乘积运算变成了加法运算，能够提高运算效率。在这个例子中，通过将目标函数由$P$转化成$\log P$ ，不影响模型但却能有效的提高计算的效率，事实上诶一2u9‘；，ok j h t r x。由此可见，这启示我们在设计损失函数时要对。。。
 
 ### 替代误差函数（Surrogate loss function）
 
@@ -110,7 +108,7 @@ $$\hat{\theta}^{MLE} = \arg \max_\theta \sum_n \sum_k \log P(y_n=k|x_n, \theta)$
 - 单个个体的训练数据较少
 - 模型的目标是对未知分类进行准确的判别	
 ### 误差函数设计
-基于前两条特征，最常用的CE误差函数显然是不适合的。特别是第二条特征，要求模型能够直接判别未知的个体，这就排除了使用图像识别的方法（每个不同个体都是一个类型）。传统的面部识别技术设计了一系列指标，如双眼的距离，鼻尖到嘴的距离等来作为标识不同个体的特征，我们也可以使用相同的思路来通过类似的特征分离不同的个体，只不过这些特征并不是提前设计好的，而是通过神经网络学习出来的。面部图像的特征学习可使用典型的多层卷积神经网络（convolutional neural network）来实现，由此我们的模型的目标就变成了关键特征提取。
+基于前两条特征，最常用的CE误差函数显然是不适合的。特别是第二条特征，要求模型能够直接判别未知的个体（类型），这就排除了使用图像识别的方法（每个不同个体都是一个类型）。传统的面部识别技术设计了一系列指标，如双眼的距离，鼻尖到嘴的距离等来作为标识不同个体的特征，我们也可以使用相同的思路来通过类似的特征分离不同的个体，只不过这些特征并不是提前设计好的，而是通过神经网络学习出来的。面部图像的特征学习可使用典型的多层卷积神经网络（convolutional neural network）来实现，由此我们的模型的目标就变成了关键特征提取。
 那么如何引导模型选取合适的关键特征呢？答案是损失函数。~~最直接的方法就是不做筛选使用全部的特征来计算不同个体特征之间的距离，当两个个体之间的特征距离足够近的时候，就认为是同一个体，反之就是不同的个体。~~这就是对比误差函数（contrastive loss） **softmax loss?**
 $$L(x_1, x_2) = (1-Y)\frac{1} {2} (D_{x_1x_2})^2 + Y\frac 1 2 [max(0, m-D_{x_1x_2})]^2$$
 其中$x_1,x_2$分别表示代表两个个体的特征向量，$D_{x_1x_2}$表示两个特征向量之间的距离，$Y$可以取两个值：0表示两个向量表示同一个体，1表示两个向量表示不同个体。$m$是一个超参数（hyperparameter），它描述了不同分类之间的理想距离。上式可以理解为表示当$Y=0$（ 即$x_1, x_2$为同一类型）为了最小化$D_{x_1x_2}$，BP会朝着尽量缩短$x_1, x_2$之间的距离的方向更新参数，同理$Y=1$时（即$x_1, x_2$为不同类型），训练参数使得$x_1,x_2$之间的距离尽量接近$m$。
@@ -171,11 +169,11 @@ $$
 - [An overview of gradient descent optimization algorithms](http://ruder.io/optimizing-gradient-descent)
 - [The Loss Surfaces of Multilayer Networks](https://arxiv.org/pdf/1412.0233.pdf)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTM5MDYyOTkwNywtOTMzNDI1MTgxLC02OT
-kwOTA4NzgsMTA4NDc0MjY3MSwtMTM5Njg5NjgxNywxODA3NDYz
-NTU1LDE2Nzg2MTc2MzIsMTY3NDAxODUxMCwtMTI0ODMyOTE0MC
-wtODY2MjUwMjk5LC0xMjQ4MzI5MTQwLC0yMTA5NDQwMzc1LDEw
-MDg5NjM3NSwtMTMyNjI4MDU5MiwtMTgxNjQwODQ0OSwtMjU5Mz
-UyNjgsLTE4MzY2Mjg1OTcsMTc5MjUxOTUzOSwxMjM4NzY1NjAy
-LC0yMDQ3Njc3OTQyXX0=
+eyJoaXN0b3J5IjpbLTUzNjAyOTkyMCwxMzkwNjI5OTA3LC05Mz
+M0MjUxODEsLTY5OTA5MDg3OCwxMDg0NzQyNjcxLC0xMzk2ODk2
+ODE3LDE4MDc0NjM1NTUsMTY3ODYxNzYzMiwxNjc0MDE4NTEwLC
+0xMjQ4MzI5MTQwLC04NjYyNTAyOTksLTEyNDgzMjkxNDAsLTIx
+MDk0NDAzNzUsMTAwODk2Mzc1LC0xMzI2MjgwNTkyLC0xODE2ND
+A4NDQ5LC0yNTkzNTI2OCwtMTgzNjYyODU5NywxNzkyNTE5NTM5
+LDEyMzg3NjU2MDJdfQ==
 -->
