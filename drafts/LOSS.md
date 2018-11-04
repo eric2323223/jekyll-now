@@ -89,7 +89,7 @@ Loss function不仅仅是误差的度量衡量的工具，更重要的是GD会�
 无论如何，任务都应该是设计loss function最先考虑的东西。
 ### 可计算性／计算效率
 通过需求分析得到了初始的误差函数之后，还需要进行数学上的分析来确保它能在GD算法下高效的运行，毕竟整个模型的学习是由大量的误差函数求导（在反向传递过程）组成的，误差函数对学习效率的影响是决定性的。
-举例来说，当我们把一个分类机器学习（样本数量$n$，类型数量$k$， 模型参数$\theta$）看作最大似然估计（Maximum Likelihood Estimation）问题时（即求模型$\theta$使得样本$x_1, x_2 ... x_n$出现的概率最大）$$\hat{\theta}^{MLE} =\arg\max_\theta \prod_n \prod_k P(y_n=k|x_n, \theta)$$, 通过最大化样本的概率我们能够得到$\theta$的最大似然估计$\hat{\theta}^{MLE}$，由于$\log$函数的单调性，将上市中右侧取$\log$不会改变$\theta$，再根据$\log$的运算特性可得$$\hat{\theta}^{MLE} = \arg \max_\theta \sum_n \sum_k \log P(y_n=k|x_n, \theta)$$这样使得原来的乘积运算变成了加法运算，能够提高运算效率。$$Error_n=-\sum \log Ple,3oprk4 6h5dugxgashfea	 5天挺好      韩国 v   $$在这个例子中，通过将目标函数由$P$转化成$\log P$ ，不影响模型但却能有效的提高计算的效率，事实上CE。由此可见，这启示我们在设计损失函数时要对。。。
+举例来说，当我们把一个分类机器学习（样本数量$n$，类型数量$k$， 模型参数$\theta$）看作最大似然估计（Maximum Likelihood Estimation）问题时（即求模型$\theta$使得样本$x_1, x_2 ... x_n$出现的概率最大）$$\hat{\theta}^{MLE} =\arg\max_\theta \prod_n \prod_k P(y_n=k|x_n, \theta)$$, 通过最大化样本的概率我们能够得到$\theta$的最大似然估计$\hat{\theta}^{MLE}$，由于$\log$函数的单调性，将上市中右侧取$\log$不会改变$\theta$，再根据$\log$的运算特性可得$$\hat{\theta}^{MLE} = \arg \max_\theta \sum_n \sum_k \log P(y_n=k|x_n, \theta)$$这样使得原来的乘积运算变成了加法运算，能够提高运算效率。$$L=-\sum \log P  $$在这个例子中，通过将目标函数由$P$转化成$\log P$ ，不影响模型但却能有效的提高计算的效率，事实上CE。由此可见，这启示我们在设计损失函数时要对。。。
 
 ### 替代误差函数（Surrogate loss function）
 
@@ -167,11 +167,11 @@ $$
 - [An overview of gradient descent optimization algorithms](http://ruder.io/optimizing-gradient-descent)
 - [The Loss Surfaces of Multilayer Networks](https://arxiv.org/pdf/1412.0233.pdf)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE5MDMxMTE5NzYsMTM5MDYyOTkwNywtOT
-MzNDI1MTgxLC02OTkwOTA4NzgsMTA4NDc0MjY3MSwtMTM5Njg5
-NjgxNywxODA3NDYzNTU1LDE2Nzg2MTc2MzIsMTY3NDAxODUxMC
-wtMTI0ODMyOTE0MCwtODY2MjUwMjk5LC0xMjQ4MzI5MTQwLC0y
-MTA5NDQwMzc1LDEwMDg5NjM3NSwtMTMyNjI4MDU5MiwtMTgxNj
-QwODQ0OSwtMjU5MzUyNjgsLTE4MzY2Mjg1OTcsMTc5MjUxOTUz
-OSwxMjM4NzY1NjAyXX0=
+eyJoaXN0b3J5IjpbMjAzNzMzMDUyMCwxMzkwNjI5OTA3LC05Mz
+M0MjUxODEsLTY5OTA5MDg3OCwxMDg0NzQyNjcxLC0xMzk2ODk2
+ODE3LDE4MDc0NjM1NTUsMTY3ODYxNzYzMiwxNjc0MDE4NTEwLC
+0xMjQ4MzI5MTQwLC04NjYyNTAyOTksLTEyNDgzMjkxNDAsLTIx
+MDk0NDAzNzUsMTAwODk2Mzc1LC0xMzI2MjgwNTkyLC0xODE2ND
+A4NDQ5LC0yNTkzNTI2OCwtMTgzNjYyODU5NywxNzkyNTE5NTM5
+LDEyMzg3NjU2MDJdfQ==
 -->
