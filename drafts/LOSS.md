@@ -41,11 +41,8 @@ $$J(\theta) = \frac{1}{m} \sum_{i=0}^m L_\theta(y_i, \hat y_i)$$
 	   - 适当的参数初始化
 	   - 使用替代误差函数（surrogate function）
 	   - 调整优化器（如增加动量momentum）
-  - 鞍点（saddle point），是一种导数为零但却不是极值的点，如图1中点3处，鞍点是指在该点上一个纬度。。。由于在高维度loss function的所有导数为0的点中，只有在所有维度同时具有相同的凹凸性（即二阶导数都大于0或小于0）的时候loss function才会处于local minimum（说global minimum），任何一个维度的凹凸性不同于其他的维度都会使loss function处于鞍点，考虑到实际的loss function通常会有万或十万（甚至百万）级的维度数量，因此鞍点是非常普遍的。经过大量的试验发现，使用SGD选择具有动量或可变学习率（adaptive learning rate）的优化器（如Adagrad，Momentum）就可以有效的脱离鞍点
+  - 鞍点（saddle point），是一种导数为零但却不是极值的点，如图1中点3处，鞍点是指在该点上一个纬度。。。由于在高维度loss function的所有导数为0的点中，只有在所有维度同时具有相同的凹凸性（即二阶导数都大于0或小于0）的时候loss function才会处于local minimum（说global minimum），任何一个维度的凹凸性不同于其他的维度都会使loss function处于鞍点，考虑到实际的loss function通常会有万或十万（甚至百万）级的维度数量，因此鞍点是非常普遍的。试验发现，使用SGD选择具有动量或可变学习率（adaptive learning rate）的优化器（如Adagrad, Rmsprop）就可以有效的脱离鞍点，如图X所示
    - 局部最小值local minimum， 在高维度的优化问题中，局部最小值和全局最小值通常没有太大的区别，甚至在有些情况下比全局最小值有更好的归纳能力（泛化能力）。**比鞍点问题小很多**
-   
-![](https://www.researchgate.net/profile/David_Laughlin2/publication/283946342/figure/fig2/AS:297125729587204@1447851702481/Schematic-of-a-saddle-point-illustrating-their-necessity-in-free-energy-critical-point.png)
-
 
 总结来说，SGD+合适的optimizer(such as momentum) + 合适的参数初始化可以有效找到非凸函数的最优解（接近最优解）
 
@@ -54,9 +51,8 @@ $$J(\theta) = \frac{1}{m} \sum_{i=0}^m L_\theta(y_i, \hat y_i)$$
 
 ### 泛化（Generalization）
 机器学习的最终目的是提高对未知的输入进行的准确率，也就是提高泛化能力。Loss function虽然可以引导GD进行模型的优化，但是一个常见的问题是模型虽然达到了很高的训练准确率，但是泛化能力并没有提高甚至反而降低，这就是过拟合（over fitting）现象，如图所示，蓝色表示一个过拟合的模型，它是一个过度复杂的函数。这种问题源自于模型为了提高训练准确率学习了训练数据中的噪声从而导致模型和真实规律产生偏差。正则化（regularization）就是解决过拟合问题的常见方法之一，它把原误差函数和参数的模（norm）相加形成新的目标函数（objective function），在使用GD对目标函数求最小值。这么做的目的在于降低参数维度从而增加模型的泛化能力，这是由于参数的模变成了目标函数的一部分，因此GD也会尽力降低参数的模，而参数的模和参数的维度正相关，因此GD会降低参数的维度，从而最终实现增强泛化能力的目的。 
-![](https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Regularization.svg/354px-Regularization.svg.png)
+
 ![](https://qph.fs.quoracdn.net/main-qimg-17ec84ff3f63f77f6b368f0eb6ef1890)
-![](https://wp.wwu.edu/machinelearning/files/2017/01/mlconcepts_image5-rnehsa.png)
 
 ## 误差函数的分类
 根据不同类型机器学习任务可以将loss function主要可以以下三类：
@@ -68,7 +64,7 @@ $$MAE=\frac{1}{n}\sum_{i=1}^n \mathopen|y-\hat y \mathclose| $$
 - 适用于分类问题（classification）的误差函数，分类问题的目标是推测出正确的类型，一般使用概率描述推测结果属于某种类型的可能性，因此误差函数就需要能够计算两个概率分布之间的”距离“，最常用的此类方法是
 	- Cross entropy loss （Maximum likelyhood estimation)
 $$CE= -\sum_x p(x) \log q(x)$$
-![](https://datawookie.netlify.com/img/2015/12/log-loss-curve.png)
+
 	- MSE/MAE with thresh hold？
 - 多任务问题
 此类问题是指使用一个模型同时学习多个指标，比如使用深度学习解决计算机视觉中的目标定位（object localization）问题，模型需要同时学习对象类型和对象位置两个指标，因此loss function需要具备同时衡量类型误差和位置误差的能力，常见的做法是先分别设计类型误差函数$L_{class}$和位置误差函数$L_{position}$，在按一定比例合并这两个误差从而形成一个新的误差函数$L$来综合的反应总误差
@@ -168,11 +164,11 @@ Additive angular margin loss
 - [An overview of gradient descent optimization algorithms](http://ruder.io/optimizing-gradient-descent)
 - [The Loss Surfaces of Multilayer Networks](https://arxiv.org/pdf/1412.0233.pdf)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE5NzI3MTY3NjIsMTM5MDYyOTkwNywtOT
-MzNDI1MTgxLC02OTkwOTA4NzgsMTA4NDc0MjY3MSwtMTM5Njg5
-NjgxNywxODA3NDYzNTU1LDE2Nzg2MTc2MzIsMTY3NDAxODUxMC
-wtMTI0ODMyOTE0MCwtODY2MjUwMjk5LC0xMjQ4MzI5MTQwLC0y
-MTA5NDQwMzc1LDEwMDg5NjM3NSwtMTMyNjI4MDU5MiwtMTgxNj
-QwODQ0OSwtMjU5MzUyNjgsLTE4MzY2Mjg1OTcsMTc5MjUxOTUz
-OSwxMjM4NzY1NjAyXX0=
+eyJoaXN0b3J5IjpbMTYwNzQ4Mjc4MCwtMTk3MjcxNjc2MiwxMz
+kwNjI5OTA3LC05MzM0MjUxODEsLTY5OTA5MDg3OCwxMDg0NzQy
+NjcxLC0xMzk2ODk2ODE3LDE4MDc0NjM1NTUsMTY3ODYxNzYzMi
+wxNjc0MDE4NTEwLC0xMjQ4MzI5MTQwLC04NjYyNTAyOTksLTEy
+NDgzMjkxNDAsLTIxMDk0NDAzNzUsMTAwODk2Mzc1LC0xMzI2Mj
+gwNTkyLC0xODE2NDA4NDQ5LC0yNTkzNTI2OCwtMTgzNjYyODU5
+NywxNzkyNTE5NTM5XX0=
 -->
