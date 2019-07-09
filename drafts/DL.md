@@ -2,7 +2,9 @@
 
 ## Difficulties
 ### Gradient vanishing/exploding
-### Inbalance
+### Imbalance
+### Overfitting
+### 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE5MTM0OTc3NzEsMTY3MTE2ODE1OF19
+eyJoaXN0b3J5IjpbNjQ4OTc1Mjg1LDE2NzExNjgxNThdfQ==
 -->
