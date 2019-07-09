@@ -10,10 +10,10 @@
 - dropout
 ### Deep model
 - Identity shortcut
-### Hyperparameters
+### Hyper parameters
 - K-fold CV
 - Grid search/random search/GP
 ### 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTExMjYzMDEzLDE2NzExNjgxNThdfQ==
+eyJoaXN0b3J5IjpbMzEwODg3NTg5LDE2NzExNjgxNThdfQ==
 -->
