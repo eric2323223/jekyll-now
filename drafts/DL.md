@@ -5,10 +5,11 @@
 ### Imbalance
 ### Overfitting
 ### Deep model
+- Identity s
 ### Hyperparameters
 - K-fold CV
-- 
+- Grid search/random search/GP
 ### 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTAxMTQ2OTU3NiwxNjcxMTY4MTU4XX0=
+eyJoaXN0b3J5IjpbOTY3ODYwODE4LDE2NzExNjgxNThdfQ==
 -->
