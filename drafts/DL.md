@@ -9,7 +9,7 @@
 - regularization
 - dropout
 ### Deeper?
-- Identity shortcut
+- Skip connection
 ### Hyper parameters
 - K-fold CV
 - Grid search/random search/GP
@@ -17,6 +17,6 @@
 - inception module
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTU0NjczNzkzNiwxNDU3Mzc2OTA1LDE2Nz
-ExNjgxNThdfQ==
+eyJoaXN0b3J5IjpbLTM5NjA1NDkwNSwxNTQ2NzM3OTM2LDE0NT
+czNzY5MDUsMTY3MTE2ODE1OF19
 -->
