@@ -5,7 +5,10 @@
 ### Imbalance
 ### Overfitting
 ### Deep model
+### Hyperparameters
+- K-fold CV
+- 
 ### 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEyNjEyMzA3MDMsMTY3MTE2ODE1OF19
+eyJoaXN0b3J5IjpbMTAxMTQ2OTU3NiwxNjcxMTY4MTU4XX0=
 -->
