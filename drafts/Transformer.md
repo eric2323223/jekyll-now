@@ -1,6 +1,6 @@
 # Transformer
 ## Attention
-### multi-head attention VS convolution on 
+### multi-head attention VS convolution on multiple channels
 ## Vector similarity
 ## Positional encoding
 - why not positional index?
@@ -9,6 +9,6 @@
 ## Mask
 ## 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTExOTk2NDQyNDcsLTEzMTU5MTUwNSwxMj
-E5MDIzMDIxXX0=
+eyJoaXN0b3J5IjpbLTIyNzU0MTEyOSwtMTMxNTkxNTA1LDEyMT
+kwMjMwMjFdfQ==
 -->
