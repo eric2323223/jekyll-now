@@ -1,10 +1,11 @@
 # Transformer
 
 ## Vector similarity
-## Position encoding
+## Positional encoding
+- 
 ## Residual connection
 ## Mask
 ## 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTIxOTAyMzAyMV19
+eyJoaXN0b3J5IjpbLTczMDAwMzUwMSwxMjE5MDIzMDIxXX0=
 -->
