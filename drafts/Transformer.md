@@ -7,10 +7,13 @@
 ### Positional encoding
 - why not positional index?
 ### Residual connection
-## point-wise FFN
-## Mask
+### point-wise FFN
+### Mask
 ## Training tricks
+### layer normalizaion
+### residual connection
+### warn-up learning rate
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTg1NDg4NzE2MSwtMjI3NTQxMTI5LC0xMz
-E1OTE1MDUsMTIxOTAyMzAyMV19
+eyJoaXN0b3J5IjpbLTE3NDA5ODQzNjMsLTIyNzU0MTEyOSwtMT
+MxNTkxNTA1LDEyMTkwMjMwMjFdfQ==
 -->
