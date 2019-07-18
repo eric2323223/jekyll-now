@@ -2,7 +2,7 @@
 ## Theory and Model
 ### Attention
 - one stone(attention), two birds(parallelize and long-range dependencies)
-- multi-head attention VS convolution on multiple channels
+- **multi-head attention** VS convolution on multiple channels
 ### Vector similarity
 ### Positional encoding
 - why not positional index? extrapolate training samples
@@ -19,6 +19,6 @@
 ## Resources
 [Attention is all you need review]([https://ricardokleinklein.github.io/2017/11/16/Attention-is-all-you-need.html](https://ricardokleinklein.github.io/2017/11/16/Attention-is-all-you-need.html))
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTU3NjI4NzIwMywtMjAwNzM1Mzc0NSwtMj
-I3NTQxMTI5LC0xMzE1OTE1MDUsMTIxOTAyMzAyMV19
+eyJoaXN0b3J5IjpbLTE0NjMxNTM0MzcsLTIwMDczNTM3NDUsLT
+IyNzU0MTEyOSwtMTMxNTkxNTA1LDEyMTkwMjMwMjFdfQ==
 -->
