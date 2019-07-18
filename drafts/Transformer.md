@@ -15,7 +15,10 @@
 ### warn-up learning rate
 ### regularization
 - dropout
+
+## Resources
+[Att]([https://ricardokleinklein.github.io/2017/11/16/Attention-is-all-you-need.html](https://ricardokleinklein.github.io/2017/11/16/Attention-is-all-you-need.html))
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNDc2MDM0ODc2LC0yMjc1NDExMjksLTEzMT
-U5MTUwNSwxMjE5MDIzMDIxXX0=
+eyJoaXN0b3J5IjpbLTU4Mjk2MTcwOCwtMjI3NTQxMTI5LC0xMz
+E1OTE1MDUsMTIxOTAyMzAyMV19
 -->
