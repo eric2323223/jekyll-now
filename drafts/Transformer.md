@@ -1,6 +1,6 @@
 # Transformer
 ## Attention
-
+- one stone(attention), two birds(parallelize and long-range dependencies)
 ### multi-head attention VS convolution on multiple channels
 ## Vector similarity
 ## Positional encoding
@@ -10,6 +10,6 @@
 ## Mask
 ## 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTY5NjkxOTI1OSwtMjI3NTQxMTI5LC0xMz
-E1OTE1MDUsMTIxOTAyMzAyMV19
+eyJoaXN0b3J5IjpbNzU5NTIwNzgwLC0yMjc1NDExMjksLTEzMT
+U5MTUwNSwxMjE5MDIzMDIxXX0=
 -->
