@@ -17,8 +17,8 @@
 - dropout
 
 ## Resources
-[Att]([https://ricardokleinklein.github.io/2017/11/16/Attention-is-all-you-need.html](https://ricardokleinklein.github.io/2017/11/16/Attention-is-all-you-need.html))
+[Attention is all you need review]([https://ricardokleinklein.github.io/2017/11/16/Attention-is-all-you-need.html](https://ricardokleinklein.github.io/2017/11/16/Attention-is-all-you-need.html))
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTU4Mjk2MTcwOCwtMjI3NTQxMTI5LC0xMz
+eyJoaXN0b3J5IjpbMTUxNzI4Nzc0OSwtMjI3NTQxMTI5LC0xMz
 E1OTE1MDUsMTIxOTAyMzAyMV19
 -->
