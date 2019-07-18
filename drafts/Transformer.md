@@ -10,7 +10,7 @@
 ### point-wise FFN
 ### Mask
 ## Training tricks
-### layer normalizaion
+### layer normalization
 ### residual connection
 ### warn-up learning rate
 ### regularization
@@ -19,6 +19,6 @@
 ## Resources
 [Attention is all you need review]([https://ricardokleinklein.github.io/2017/11/16/Attention-is-all-you-need.html](https://ricardokleinklein.github.io/2017/11/16/Attention-is-all-you-need.html))
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwMDczNTM3NDUsLTIyNzU0MTEyOSwtMT
-MxNTkxNTA1LDEyMTkwMjMwMjFdfQ==
+eyJoaXN0b3J5IjpbMTU3NjI4NzIwMywtMjAwNzM1Mzc0NSwtMj
+I3NTQxMTI5LC0xMzE1OTE1MDUsMTIxOTAyMzAyMV19
 -->
