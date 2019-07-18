@@ -13,7 +13,9 @@
 ### layer normalizaion
 ### residual connection
 ### warn-up learning rate
+### regularization
+- 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE3NDA5ODQzNjMsLTIyNzU0MTEyOSwtMT
-MxNTkxNTA1LDEyMTkwMjMwMjFdfQ==
+eyJoaXN0b3J5IjpbLTU1MTEwNjM0MywtMjI3NTQxMTI5LC0xMz
+E1OTE1MDUsMTIxOTAyMzAyMV19
 -->
