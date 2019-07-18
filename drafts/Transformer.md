@@ -14,8 +14,8 @@
 ### residual connection
 ### warn-up learning rate
 ### regularization
-- 
+- dropout
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTU1MTEwNjM0MywtMjI3NTQxMTI5LC0xMz
-E1OTE1MDUsMTIxOTAyMzAyMV19
+eyJoaXN0b3J5IjpbNDc2MDM0ODc2LC0yMjc1NDExMjksLTEzMT
+U5MTUwNSwxMjE5MDIzMDIxXX0=
 -->
