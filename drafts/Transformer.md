@@ -18,6 +18,7 @@
 ## Training tricks
 ### layer normalization
 ### residual connection
+- h
 ### warn-up learning rate
 ### regularization
 - dropout
@@ -26,8 +27,8 @@
 [Attention is all you need review]([https://ricardokleinklein.github.io/2017/11/16/Attention-is-all-you-need.html](https://ricardokleinklein.github.io/2017/11/16/Attention-is-all-you-need.html))
 [The transformer - Attention is all you need]([https://mchromiak.github.io/articles/2017/Sep/12/Transformer-Attention-is-all-you-need/#.XTEl6ugzZPY](https://mchromiak.github.io/articles/2017/Sep/12/Transformer-Attention-is-all-you-need/#.XTEl6ugzZPY))
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTA1MjkyNTcsMTM2OTYzOTg0NCwtMTExND
-g0MTI5MiwyMTI1NjQzNjUwLC0xNDYzMTUzNDM3LC0yMDA3MzUz
-NzQ1LC0yMjc1NDExMjksLTEzMTU5MTUwNSwxMjE5MDIzMDIxXX
-0=
+eyJoaXN0b3J5IjpbMTY5Njk3Mjg5MCwxMzY5NjM5ODQ0LC0xMT
+E0ODQxMjkyLDIxMjU2NDM2NTAsLTE0NjMxNTM0MzcsLTIwMDcz
+NTM3NDUsLTIyNzU0MTEyOSwtMTMxNTkxNTA1LDEyMTkwMjMwMj
+FdfQ==
 -->
