@@ -5,6 +5,7 @@
 - can be used in different tasks (text, visual, voice ...)
 - one stone(attention), two birds(parallelize(within attention layer) and long-range dependencies)
 - 3 types of attention
+- attention operation is essentially feature reconstruction
 - **multi-head attention** VS convolution on multiple channels
 ### Why multiple layer of attention layers?
 ### Vector similarity
@@ -23,7 +24,7 @@
 [Attention is all you need review]([https://ricardokleinklein.github.io/2017/11/16/Attention-is-all-you-need.html](https://ricardokleinklein.github.io/2017/11/16/Attention-is-all-you-need.html))
 [The transformer - Attention is all you need]([https://mchromiak.github.io/articles/2017/Sep/12/Transformer-Attention-is-all-you-need/#.XTEl6ugzZPY](https://mchromiak.github.io/articles/2017/Sep/12/Transformer-Attention-is-all-you-need/#.XTEl6ugzZPY))
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTkwNTQwMTMzNywtMTExNDg0MTI5MiwyMT
+eyJoaXN0b3J5IjpbMTM2OTYzOTg0NCwtMTExNDg0MTI5MiwyMT
 I1NjQzNjUwLC0xNDYzMTUzNDM3LC0yMDA3MzUzNzQ1LC0yMjc1
 NDExMjksLTEzMTU5MTUwNSwxMjE5MDIzMDIxXX0=
 -->
