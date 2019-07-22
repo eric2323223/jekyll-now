@@ -38,7 +38,7 @@ Transformer的创新主要有以下几点
 ## Training tricks
 ### layer normalization
 ### residual connection
-- Help gradient BP through stacked decoders and encoders
+- Help gradient Gra through stacked decoders and encoders
 - Residuals carry positional information to higher layers, among other information.
 ### warn-up learning rate
 ### regularization
@@ -49,11 +49,11 @@ Transformer的创新主要有以下几点
 [Attention is all you need review]([https://ricardokleinklein.github.io/2017/11/16/Attention-is-all-you-need.html](https://ricardokleinklein.github.io/2017/11/16/Attention-is-all-you-need.html))
 [The transformer - Attention is all you need]([https://mchromiak.github.io/articles/2017/Sep/12/Transformer-Attention-is-all-you-need/#.XTEl6ugzZPY](https://mchromiak.github.io/articles/2017/Sep/12/Transformer-Attention-is-all-you-need/#.XTEl6ugzZPY))
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTc5NzUyNTU2NywtMzUwMDUzNzc3LC0xND
-A5MDQwNDEzLDEwMDU3OTA0NTksLTEyMjQ5ODY5NjgsMTA3MzYw
-ODAzOSwtMTQ4MjU0MzI1NCwxNDEwMjgyMTM2LC00NTkzMzEyNT
-gsLTU2NzY3NTM1OCw2NTg5OTk3NDQsLTE4NjkxNzgyNiwxMzY5
-NjM5ODQ0LC0xMTE0ODQxMjkyLDIxMjU2NDM2NTAsLTE0NjMxNT
-M0MzcsLTIwMDczNTM3NDUsLTIyNzU0MTEyOSwtMTMxNTkxNTA1
-LDEyMTkwMjMwMjFdfQ==
+eyJoaXN0b3J5IjpbNDczMzQ0MDYzLC03OTc1MjU1NjcsLTM1MD
+A1Mzc3NywtMTQwOTA0MDQxMywxMDA1NzkwNDU5LC0xMjI0OTg2
+OTY4LDEwNzM2MDgwMzksLTE0ODI1NDMyNTQsMTQxMDI4MjEzNi
+wtNDU5MzMxMjU4LC01Njc2NzUzNTgsNjU4OTk5NzQ0LC0xODY5
+MTc4MjYsMTM2OTYzOTg0NCwtMTExNDg0MTI5MiwyMTI1NjQzNj
+UwLC0xNDYzMTUzNDM3LC0yMDA3MzUzNzQ1LC0yMjc1NDExMjks
+LTEzMTU5MTUwNV19
 -->
