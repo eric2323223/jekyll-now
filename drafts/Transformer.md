@@ -22,7 +22,7 @@ Transformer的创新主要有以下几点
 - Multiple Attention Head
 - Position encoding
 
-Ess
+Essence of Attention mechnism: Feature reconstruction
 
 - can be used in different tasks (text, visual, voice ...)
 - one stone(attention), two birds(parallelize(within attention layer) and long-range dependencies)
@@ -51,11 +51,11 @@ Ess
 [Attention is all you need review]([https://ricardokleinklein.github.io/2017/11/16/Attention-is-all-you-need.html](https://ricardokleinklein.github.io/2017/11/16/Attention-is-all-you-need.html))
 [The transformer - Attention is all you need]([https://mchromiak.github.io/articles/2017/Sep/12/Transformer-Attention-is-all-you-need/#.XTEl6ugzZPY](https://mchromiak.github.io/articles/2017/Sep/12/Transformer-Attention-is-all-you-need/#.XTEl6ugzZPY))
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTM2MjEwNDA2NCwtMzUwMDUzNzc3LC0xND
-A5MDQwNDEzLDEwMDU3OTA0NTksLTEyMjQ5ODY5NjgsMTA3MzYw
-ODAzOSwtMTQ4MjU0MzI1NCwxNDEwMjgyMTM2LC00NTkzMzEyNT
-gsLTU2NzY3NTM1OCw2NTg5OTk3NDQsLTE4NjkxNzgyNiwxMzY5
-NjM5ODQ0LC0xMTE0ODQxMjkyLDIxMjU2NDM2NTAsLTE0NjMxNT
-M0MzcsLTIwMDczNTM3NDUsLTIyNzU0MTEyOSwtMTMxNTkxNTA1
-LDEyMTkwMjMwMjFdfQ==
+eyJoaXN0b3J5IjpbLTE4NjE5NDA0ODQsLTM1MDA1Mzc3NywtMT
+QwOTA0MDQxMywxMDA1NzkwNDU5LC0xMjI0OTg2OTY4LDEwNzM2
+MDgwMzksLTE0ODI1NDMyNTQsMTQxMDI4MjEzNiwtNDU5MzMxMj
+U4LC01Njc2NzUzNTgsNjU4OTk5NzQ0LC0xODY5MTc4MjYsMTM2
+OTYzOTg0NCwtMTExNDg0MTI5MiwyMTI1NjQzNjUwLC0xNDYzMT
+UzNDM3LC0yMDA3MzUzNzQ1LC0yMjc1NDExMjksLTEzMTU5MTUw
+NSwxMjE5MDIzMDIxXX0=
 -->
