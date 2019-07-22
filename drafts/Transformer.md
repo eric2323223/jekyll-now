@@ -7,7 +7,7 @@
 - 无法并行运算
 - Long memory problem
 ### CNN
-- CNN由于使用尺寸受限的卷积核（convolution kernel）扫描输入数据，同样面临着long memory problem，要使CNN能够一次扫描大量的输入（长句子）就需要叠加多层卷积运算来实现，代价是增加了模型的复杂度，使运算变慢，这和初衷不符。
+- CNN由于使用尺寸受限的卷积核（convolution kernel）扫描输入数据，同样面临着long memory problem，要使CNN能够一次扫描大量的输入（长句子）就需要叠加多层卷积运算来实现，这样做的代价是增加了模型的复杂度，使运算变慢，这和初衷不符。
 
 ## Theory and Model
 - 解决long memory problem
@@ -49,10 +49,10 @@ Transformer的创新主要有以下几点
 [Attention is all you need review]([https://ricardokleinklein.github.io/2017/11/16/Attention-is-all-you-need.html](https://ricardokleinklein.github.io/2017/11/16/Attention-is-all-you-need.html))
 [The transformer - Attention is all you need]([https://mchromiak.github.io/articles/2017/Sep/12/Transformer-Attention-is-all-you-need/#.XTEl6ugzZPY](https://mchromiak.github.io/articles/2017/Sep/12/Transformer-Attention-is-all-you-need/#.XTEl6ugzZPY))
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTAwNTc5MDQ1OSwtMTIyNDk4Njk2OCwxMD
-czNjA4MDM5LC0xNDgyNTQzMjU0LDE0MTAyODIxMzYsLTQ1OTMz
-MTI1OCwtNTY3Njc1MzU4LDY1ODk5OTc0NCwtMTg2OTE3ODI2LD
-EzNjk2Mzk4NDQsLTExMTQ4NDEyOTIsMjEyNTY0MzY1MCwtMTQ2
-MzE1MzQzNywtMjAwNzM1Mzc0NSwtMjI3NTQxMTI5LC0xMzE1OT
-E1MDUsMTIxOTAyMzAyMV19
+eyJoaXN0b3J5IjpbLTE0MDkwNDA0MTMsMTAwNTc5MDQ1OSwtMT
+IyNDk4Njk2OCwxMDczNjA4MDM5LC0xNDgyNTQzMjU0LDE0MTAy
+ODIxMzYsLTQ1OTMzMTI1OCwtNTY3Njc1MzU4LDY1ODk5OTc0NC
+wtMTg2OTE3ODI2LDEzNjk2Mzk4NDQsLTExMTQ4NDEyOTIsMjEy
+NTY0MzY1MCwtMTQ2MzE1MzQzNywtMjAwNzM1Mzc0NSwtMjI3NT
+QxMTI5LC0xMzE1OTE1MDUsMTIxOTAyMzAyMV19
 -->
