@@ -21,8 +21,8 @@ Transformer的创新主要有以下几点
 	- Stacking of encoder/decoder
 - Multiple Attention Head
 - Position encoding
-
-Essence of Attention mechnism: Feature reconstruction
+Attention 
+Essence of Attention mechanism: **Feature reconstruction**
 
 - can be used in different tasks (text, visual, voice ...)
 - one stone(attention), two birds(parallelize(within attention layer) and long-range dependencies)
@@ -51,7 +51,7 @@ Essence of Attention mechnism: Feature reconstruction
 [Attention is all you need review]([https://ricardokleinklein.github.io/2017/11/16/Attention-is-all-you-need.html](https://ricardokleinklein.github.io/2017/11/16/Attention-is-all-you-need.html))
 [The transformer - Attention is all you need]([https://mchromiak.github.io/articles/2017/Sep/12/Transformer-Attention-is-all-you-need/#.XTEl6ugzZPY](https://mchromiak.github.io/articles/2017/Sep/12/Transformer-Attention-is-all-you-need/#.XTEl6ugzZPY))
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE4NjE5NDA0ODQsLTM1MDA1Mzc3NywtMT
+eyJoaXN0b3J5IjpbLTE3NTU2MTU3NzMsLTM1MDA1Mzc3NywtMT
 QwOTA0MDQxMywxMDA1NzkwNDU5LC0xMjI0OTg2OTY4LDEwNzM2
 MDgwMzksLTE0ODI1NDMyNTQsMTQxMDI4MjEzNiwtNDU5MzMxMj
 U4LC01Njc2NzUzNTgsNjU4OTk5NzQ0LC0xODY5MTc4MjYsMTM2
