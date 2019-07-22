@@ -1,4 +1,4 @@
-# Transformer
+# Transformer? Attention?
 ## Theory and Model
 ### Encoder-Decoder architecture
 ### Attention
@@ -29,8 +29,8 @@
 [Attention is all you need review]([https://ricardokleinklein.github.io/2017/11/16/Attention-is-all-you-need.html](https://ricardokleinklein.github.io/2017/11/16/Attention-is-all-you-need.html))
 [The transformer - Attention is all you need]([https://mchromiak.github.io/articles/2017/Sep/12/Transformer-Attention-is-all-you-need/#.XTEl6ugzZPY](https://mchromiak.github.io/articles/2017/Sep/12/Transformer-Attention-is-all-you-need/#.XTEl6ugzZPY))
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE4NjkxNzgyNiwxMzY5NjM5ODQ0LC0xMT
-E0ODQxMjkyLDIxMjU2NDM2NTAsLTE0NjMxNTM0MzcsLTIwMDcz
-NTM3NDUsLTIyNzU0MTEyOSwtMTMxNTkxNTA1LDEyMTkwMjMwMj
-FdfQ==
+eyJoaXN0b3J5IjpbNjU4OTk5NzQ0LC0xODY5MTc4MjYsMTM2OT
+YzOTg0NCwtMTExNDg0MTI5MiwyMTI1NjQzNjUwLC0xNDYzMTUz
+NDM3LC0yMDA3MzUzNzQ1LC0yMjc1NDExMjksLTEzMTU5MTUwNS
+wxMjE5MDIzMDIxXX0=
 -->
