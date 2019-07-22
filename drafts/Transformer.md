@@ -21,13 +21,11 @@ Transformer的创新主要有以下几点
 	- Stacking of encoder/decoder
 - Multiple Attention Head
 - Position encoding
-Attention 
-Essence of Attention mechanism: **Feature reconstruction**
+- Attention 
+	- Essence of Attention mechanism: **Feature reconstruction**
+	- can be used in different tasks (text, visual, voice ...)
+	- 3 types of attention
 
-- can be used in different tasks (text, visual, voice ...)
-- one stone(attention), two birds(parallelize(within attention layer) and long-range dependencies)
-- 3 types of attention
-- attention operation is essentially feature reconstruction
 - **multi-head attention** VS convolution on multiple channels
 	- Convolution: Different linear transformations by relative position
 	- MHA: a weighted average 
@@ -40,6 +38,7 @@ Essence of Attention mechanism: **Feature reconstruction**
 ## Training tricks
 ### layer normalization
 ### residual connection
+- stack of encoder/dec
 - Help gradient BP
 - Residuals carry positional information to higher layers, among other information.
 ### warn-up learning rate
@@ -51,11 +50,11 @@ Essence of Attention mechanism: **Feature reconstruction**
 [Attention is all you need review]([https://ricardokleinklein.github.io/2017/11/16/Attention-is-all-you-need.html](https://ricardokleinklein.github.io/2017/11/16/Attention-is-all-you-need.html))
 [The transformer - Attention is all you need]([https://mchromiak.github.io/articles/2017/Sep/12/Transformer-Attention-is-all-you-need/#.XTEl6ugzZPY](https://mchromiak.github.io/articles/2017/Sep/12/Transformer-Attention-is-all-you-need/#.XTEl6ugzZPY))
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE3NTU2MTU3NzMsLTM1MDA1Mzc3NywtMT
-QwOTA0MDQxMywxMDA1NzkwNDU5LC0xMjI0OTg2OTY4LDEwNzM2
-MDgwMzksLTE0ODI1NDMyNTQsMTQxMDI4MjEzNiwtNDU5MzMxMj
-U4LC01Njc2NzUzNTgsNjU4OTk5NzQ0LC0xODY5MTc4MjYsMTM2
-OTYzOTg0NCwtMTExNDg0MTI5MiwyMTI1NjQzNjUwLC0xNDYzMT
-UzNDM3LC0yMDA3MzUzNzQ1LC0yMjc1NDExMjksLTEzMTU5MTUw
-NSwxMjE5MDIzMDIxXX0=
+eyJoaXN0b3J5IjpbODgxNzkxNjU1LC0zNTAwNTM3NzcsLTE0MD
+kwNDA0MTMsMTAwNTc5MDQ1OSwtMTIyNDk4Njk2OCwxMDczNjA4
+MDM5LC0xNDgyNTQzMjU0LDE0MTAyODIxMzYsLTQ1OTMzMTI1OC
+wtNTY3Njc1MzU4LDY1ODk5OTc0NCwtMTg2OTE3ODI2LDEzNjk2
+Mzk4NDQsLTExMTQ4NDEyOTIsMjEyNTY0MzY1MCwtMTQ2MzE1Mz
+QzNywtMjAwNzM1Mzc0NSwtMjI3NTQxMTI5LC0xMzE1OTE1MDUs
+MTIxOTAyMzAyMV19
 -->
