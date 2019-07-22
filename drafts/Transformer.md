@@ -22,7 +22,7 @@ Transformer的创新主要有以下几点
 - Multiple Attention Head
 - Position encoding
 - Attention 
-	- Use of self-attention...
+	- Use of self-attention to improve accuracy
 	- Assumption: the more similar the more it contribute
 	- Essence of Attention mechanism: **Feature reconstruction** based on all other inputs
 	- Mathematically: weighted average
@@ -53,11 +53,11 @@ Transformer的创新主要有以下几点
 [Attention is all you need review]([https://ricardokleinklein.github.io/2017/11/16/Attention-is-all-you-need.html](https://ricardokleinklein.github.io/2017/11/16/Attention-is-all-you-need.html))
 [The transformer - Attention is all you need]([https://mchromiak.github.io/articles/2017/Sep/12/Transformer-Attention-is-all-you-need/#.XTEl6ugzZPY](https://mchromiak.github.io/articles/2017/Sep/12/Transformer-Attention-is-all-you-need/#.XTEl6ugzZPY))
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTExNzAwMjEsOTk3MjAzMDM2LC03OTc1Mj
-U1NjcsLTM1MDA1Mzc3NywtMTQwOTA0MDQxMywxMDA1NzkwNDU5
-LC0xMjI0OTg2OTY4LDEwNzM2MDgwMzksLTE0ODI1NDMyNTQsMT
-QxMDI4MjEzNiwtNDU5MzMxMjU4LC01Njc2NzUzNTgsNjU4OTk5
-NzQ0LC0xODY5MTc4MjYsMTM2OTYzOTg0NCwtMTExNDg0MTI5Mi
-wyMTI1NjQzNjUwLC0xNDYzMTUzNDM3LC0yMDA3MzUzNzQ1LC0y
-Mjc1NDExMjldfQ==
+eyJoaXN0b3J5IjpbLTI1MjUxMTY1LDExMTcwMDIxLDk5NzIwMz
+AzNiwtNzk3NTI1NTY3LC0zNTAwNTM3NzcsLTE0MDkwNDA0MTMs
+MTAwNTc5MDQ1OSwtMTIyNDk4Njk2OCwxMDczNjA4MDM5LC0xND
+gyNTQzMjU0LDE0MTAyODIxMzYsLTQ1OTMzMTI1OCwtNTY3Njc1
+MzU4LDY1ODk5OTc0NCwtMTg2OTE3ODI2LDEzNjk2Mzk4NDQsLT
+ExMTQ4NDEyOTIsMjEyNTY0MzY1MCwtMTQ2MzE1MzQzNywtMjAw
+NzM1Mzc0NV19
 -->
