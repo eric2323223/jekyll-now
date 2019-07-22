@@ -22,6 +22,7 @@ Transformer的创新主要有以下几点
 - Multiple Attention Head
 - Position encoding
 - Attention 
+	- Assumption: if a 
 	- Essence of Attention mechanism: **Feature reconstruction**
 	- can be used in different tasks (text, visual, voice ...)
 	- 3 types of attention
@@ -38,7 +39,7 @@ Transformer的创新主要有以下几点
 ## Training tricks
 ### layer normalization
 ### residual connection
-- Help gradient Gra through stacked decoders and encoders
+- Help gradient propagated back through stacked decoders and encoders
 - Residuals carry positional information to higher layers, among other information.
 ### warn-up learning rate
 ### regularization
@@ -49,11 +50,11 @@ Transformer的创新主要有以下几点
 [Attention is all you need review]([https://ricardokleinklein.github.io/2017/11/16/Attention-is-all-you-need.html](https://ricardokleinklein.github.io/2017/11/16/Attention-is-all-you-need.html))
 [The transformer - Attention is all you need]([https://mchromiak.github.io/articles/2017/Sep/12/Transformer-Attention-is-all-you-need/#.XTEl6ugzZPY](https://mchromiak.github.io/articles/2017/Sep/12/Transformer-Attention-is-all-you-need/#.XTEl6ugzZPY))
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNDczMzQ0MDYzLC03OTc1MjU1NjcsLTM1MD
-A1Mzc3NywtMTQwOTA0MDQxMywxMDA1NzkwNDU5LC0xMjI0OTg2
-OTY4LDEwNzM2MDgwMzksLTE0ODI1NDMyNTQsMTQxMDI4MjEzNi
-wtNDU5MzMxMjU4LC01Njc2NzUzNTgsNjU4OTk5NzQ0LC0xODY5
-MTc4MjYsMTM2OTYzOTg0NCwtMTExNDg0MTI5MiwyMTI1NjQzNj
-UwLC0xNDYzMTUzNDM3LC0yMDA3MzUzNzQ1LC0yMjc1NDExMjks
-LTEzMTU5MTUwNV19
+eyJoaXN0b3J5IjpbLTcxMDY5NTI4MSwtNzk3NTI1NTY3LC0zNT
+AwNTM3NzcsLTE0MDkwNDA0MTMsMTAwNTc5MDQ1OSwtMTIyNDk4
+Njk2OCwxMDczNjA4MDM5LC0xNDgyNTQzMjU0LDE0MTAyODIxMz
+YsLTQ1OTMzMTI1OCwtNTY3Njc1MzU4LDY1ODk5OTc0NCwtMTg2
+OTE3ODI2LDEzNjk2Mzk4NDQsLTExMTQ4NDEyOTIsMjEyNTY0Mz
+Y1MCwtMTQ2MzE1MzQzNywtMjAwNzM1Mzc0NSwtMjI3NTQxMTI5
+LC0xMzE1OTE1MDVdfQ==
 -->
