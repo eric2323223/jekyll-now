@@ -1,5 +1,5 @@
 # Transformer? Attention?
-在自然语言处理(NLP)领域，RNN一直是The first model do NLP task with out RNN and CNN
+在自然语言处理(NLP)领域，RNN一直是被最广泛使用的深度机器学习模型，随着CNNThe first model do NLP task with out RNN and CNN
 ## Theory and Model
 ### Encoder-Decoder architecture
 ### Attention
@@ -30,7 +30,7 @@
 [Attention is all you need review]([https://ricardokleinklein.github.io/2017/11/16/Attention-is-all-you-need.html](https://ricardokleinklein.github.io/2017/11/16/Attention-is-all-you-need.html))
 [The transformer - Attention is all you need]([https://mchromiak.github.io/articles/2017/Sep/12/Transformer-Attention-is-all-you-need/#.XTEl6ugzZPY](https://mchromiak.github.io/articles/2017/Sep/12/Transformer-Attention-is-all-you-need/#.XTEl6ugzZPY))
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2MDA2OTQyNzAsNjU4OTk5NzQ0LC0xOD
+eyJoaXN0b3J5IjpbLTEzNzcwNzYxMTEsNjU4OTk5NzQ0LC0xOD
 Y5MTc4MjYsMTM2OTYzOTg0NCwtMTExNDg0MTI5MiwyMTI1NjQz
 NjUwLC0xNDYzMTUzNDM3LC0yMDA3MzUzNzQ1LC0yMjc1NDExMj
 ksLTEzMTU5MTUwNSwxMjE5MDIzMDIxXX0=
