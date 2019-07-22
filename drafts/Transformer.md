@@ -1,7 +1,9 @@
 # Transformer? Attention?
 在自然语言处理(NLP)领域，RNN一直是被最广泛使用的深度机器学习模型，近年来CNN也逐渐被用于进行。。。然而这两类模型都有一些难以克服的问题，Transformer就是为了解决这些问题的新型模型，并取得了非常好的效果，大有取代RNN在NLP领域的统治地位的趋势，本文我们就来解释Transformer取得巨大成功背后的原因。
 
-##
+## RNN和CNN
+rnn的问题
+-
 ## Theory and Model
 ### Encoder-Decoder architecture
 ### Attention
@@ -32,8 +34,9 @@
 [Attention is all you need review]([https://ricardokleinklein.github.io/2017/11/16/Attention-is-all-you-need.html](https://ricardokleinklein.github.io/2017/11/16/Attention-is-all-you-need.html))
 [The transformer - Attention is all you need]([https://mchromiak.github.io/articles/2017/Sep/12/Transformer-Attention-is-all-you-need/#.XTEl6ugzZPY](https://mchromiak.github.io/articles/2017/Sep/12/Transformer-Attention-is-all-you-need/#.XTEl6ugzZPY))
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjM5NDU4NDcwLC01Njc2NzUzNTgsNjU4OT
-k5NzQ0LC0xODY5MTc4MjYsMTM2OTYzOTg0NCwtMTExNDg0MTI5
-MiwyMTI1NjQzNjUwLC0xNDYzMTUzNDM3LC0yMDA3MzUzNzQ1LC
-0yMjc1NDExMjksLTEzMTU5MTUwNSwxMjE5MDIzMDIxXX0=
+eyJoaXN0b3J5IjpbLTIwNTU5NDY0MDIsLTU2NzY3NTM1OCw2NT
+g5OTk3NDQsLTE4NjkxNzgyNiwxMzY5NjM5ODQ0LC0xMTE0ODQx
+MjkyLDIxMjU2NDM2NTAsLTE0NjMxNTM0MzcsLTIwMDczNTM3ND
+UsLTIyNzU0MTEyOSwtMTMxNTkxNTA1LDEyMTkwMjMwMjFdfQ==
+
 -->
