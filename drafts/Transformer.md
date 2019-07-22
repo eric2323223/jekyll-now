@@ -22,8 +22,9 @@ Transformer的创新主要有以下几点
 - Multiple Attention Head
 - Position encoding
 - Attention 
-	- Assumption: if a 
-	- Essence of Attention mechanism: **Feature reconstruction**
+	- Assumption: the more similar the more it contribute
+	- Essence of Attention mechanism: **Feature reconstruction** 
+	- Mathm
 	- can be used in different tasks (text, visual, voice ...)
 	- 3 types of attention
 
@@ -50,7 +51,7 @@ Transformer的创新主要有以下几点
 [Attention is all you need review]([https://ricardokleinklein.github.io/2017/11/16/Attention-is-all-you-need.html](https://ricardokleinklein.github.io/2017/11/16/Attention-is-all-you-need.html))
 [The transformer - Attention is all you need]([https://mchromiak.github.io/articles/2017/Sep/12/Transformer-Attention-is-all-you-need/#.XTEl6ugzZPY](https://mchromiak.github.io/articles/2017/Sep/12/Transformer-Attention-is-all-you-need/#.XTEl6ugzZPY))
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTcxMDY5NTI4MSwtNzk3NTI1NTY3LC0zNT
+eyJoaXN0b3J5IjpbLTQxODgxOTY2OCwtNzk3NTI1NTY3LC0zNT
 AwNTM3NzcsLTE0MDkwNDA0MTMsMTAwNTc5MDQ1OSwtMTIyNDk4
 Njk2OCwxMDczNjA4MDM5LC0xNDgyNTQzMjU0LDE0MTAyODIxMz
 YsLTQ1OTMzMTI1OCwtNTY3Njc1MzU4LDY1ODk5OTc0NCwtMTg2
