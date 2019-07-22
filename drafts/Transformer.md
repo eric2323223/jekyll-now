@@ -15,8 +15,9 @@
 - 提高了准确率
 - bonus：为BERT打下了基础
 ### Encoder-Decoder architecture
-### Attention
-Transformer 
+
+- Attention
+
 
 - can be used in different tasks (text, visual, voice ...)
 - one stone(attention), two birds(parallelize(within attention layer) and long-range dependencies)
@@ -45,10 +46,10 @@ Transformer
 [Attention is all you need review]([https://ricardokleinklein.github.io/2017/11/16/Attention-is-all-you-need.html](https://ricardokleinklein.github.io/2017/11/16/Attention-is-all-you-need.html))
 [The transformer - Attention is all you need]([https://mchromiak.github.io/articles/2017/Sep/12/Transformer-Attention-is-all-you-need/#.XTEl6ugzZPY](https://mchromiak.github.io/articles/2017/Sep/12/Transformer-Attention-is-all-you-need/#.XTEl6ugzZPY))
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEyMjQ5ODY5NjgsMTA3MzYwODAzOSwtMT
-Q4MjU0MzI1NCwxNDEwMjgyMTM2LC00NTkzMzEyNTgsLTU2NzY3
-NTM1OCw2NTg5OTk3NDQsLTE4NjkxNzgyNiwxMzY5NjM5ODQ0LC
-0xMTE0ODQxMjkyLDIxMjU2NDM2NTAsLTE0NjMxNTM0MzcsLTIw
-MDczNTM3NDUsLTIyNzU0MTEyOSwtMTMxNTkxNTA1LDEyMTkwMj
-MwMjFdfQ==
+eyJoaXN0b3J5IjpbLTUxNjU1ODIxNSwtMTIyNDk4Njk2OCwxMD
+czNjA4MDM5LC0xNDgyNTQzMjU0LDE0MTAyODIxMzYsLTQ1OTMz
+MTI1OCwtNTY3Njc1MzU4LDY1ODk5OTc0NCwtMTg2OTE3ODI2LD
+EzNjk2Mzk4NDQsLTExMTQ4NDEyOTIsMjEyNTY0MzY1MCwtMTQ2
+MzE1MzQzNywtMjAwNzM1Mzc0NSwtMjI3NTQxMTI5LC0xMzE1OT
+E1MDUsMTIxOTAyMzAyMV19
 -->
