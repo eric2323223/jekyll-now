@@ -18,7 +18,7 @@
 Transformer的创新主要有以下几点
 - Model architecture
 	- RNN CNN free - help to speed up training
-	- Stacking of attention layers - 
+	- Stacking of encoder/decoder
 - Multiple Attention Head
 - Position encoding
 
@@ -51,11 +51,11 @@ Transformer的创新主要有以下几点
 [Attention is all you need review]([https://ricardokleinklein.github.io/2017/11/16/Attention-is-all-you-need.html](https://ricardokleinklein.github.io/2017/11/16/Attention-is-all-you-need.html))
 [The transformer - Attention is all you need]([https://mchromiak.github.io/articles/2017/Sep/12/Transformer-Attention-is-all-you-need/#.XTEl6ugzZPY](https://mchromiak.github.io/articles/2017/Sep/12/Transformer-Attention-is-all-you-need/#.XTEl6ugzZPY))
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjE4MjE3ODA1LC0xNDA5MDQwNDEzLDEwMD
-U3OTA0NTksLTEyMjQ5ODY5NjgsMTA3MzYwODAzOSwtMTQ4MjU0
-MzI1NCwxNDEwMjgyMTM2LC00NTkzMzEyNTgsLTU2NzY3NTM1OC
-w2NTg5OTk3NDQsLTE4NjkxNzgyNiwxMzY5NjM5ODQ0LC0xMTE0
-ODQxMjkyLDIxMjU2NDM2NTAsLTE0NjMxNTM0MzcsLTIwMDczNT
-M3NDUsLTIyNzU0MTEyOSwtMTMxNTkxNTA1LDEyMTkwMjMwMjFd
-fQ==
+eyJoaXN0b3J5IjpbLTM1MDA1Mzc3NywtMTQwOTA0MDQxMywxMD
+A1NzkwNDU5LC0xMjI0OTg2OTY4LDEwNzM2MDgwMzksLTE0ODI1
+NDMyNTQsMTQxMDI4MjEzNiwtNDU5MzMxMjU4LC01Njc2NzUzNT
+gsNjU4OTk5NzQ0LC0xODY5MTc4MjYsMTM2OTYzOTg0NCwtMTEx
+NDg0MTI5MiwyMTI1NjQzNjUwLC0xNDYzMTUzNDM3LC0yMDA3Mz
+UzNzQ1LC0yMjc1NDExMjksLTEzMTU5MTUwNSwxMjE5MDIzMDIx
+XX0=
 -->
