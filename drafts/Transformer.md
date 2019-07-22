@@ -11,7 +11,8 @@
 
 ## Theory and Model
 - 实现了部分并行运算，极大缩短了训练时间
-- 
+- 提高了准确率
+- bonus：为BERT打下了基础
 ### Encoder-Decoder architecture
 ### Attention
 - can be used in different tasks (text, visual, voice ...)
@@ -41,9 +42,8 @@
 [Attention is all you need review]([https://ricardokleinklein.github.io/2017/11/16/Attention-is-all-you-need.html](https://ricardokleinklein.github.io/2017/11/16/Attention-is-all-you-need.html))
 [The transformer - Attention is all you need]([https://mchromiak.github.io/articles/2017/Sep/12/Transformer-Attention-is-all-you-need/#.XTEl6ugzZPY](https://mchromiak.github.io/articles/2017/Sep/12/Transformer-Attention-is-all-you-need/#.XTEl6ugzZPY))
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEwNDgyMTkwNzYsLTU2NzY3NTM1OCw2NT
-g5OTk3NDQsLTE4NjkxNzgyNiwxMzY5NjM5ODQ0LC0xMTE0ODQx
-MjkyLDIxMjU2NDM2NTAsLTE0NjMxNTM0MzcsLTIwMDczNTM3ND
-UsLTIyNzU0MTEyOSwtMTMxNTkxNTA1LDEyMTkwMjMwMjFdfQ==
-
+eyJoaXN0b3J5IjpbLTQ1OTMzMTI1OCwtNTY3Njc1MzU4LDY1OD
+k5OTc0NCwtMTg2OTE3ODI2LDEzNjk2Mzk4NDQsLTExMTQ4NDEy
+OTIsMjEyNTY0MzY1MCwtMTQ2MzE1MzQzNywtMjAwNzM1Mzc0NS
+wtMjI3NTQxMTI5LC0xMzE1OTE1MDUsMTIxOTAyMzAyMV19
 -->
