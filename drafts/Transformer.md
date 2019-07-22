@@ -1,4 +1,5 @@
 # Transformer? Attention?
+RNN and CNN ahsThe first model do NLP task with out RNN and CNN
 ## Theory and Model
 ### Encoder-Decoder architecture
 ### Attention
@@ -29,8 +30,8 @@
 [Attention is all you need review]([https://ricardokleinklein.github.io/2017/11/16/Attention-is-all-you-need.html](https://ricardokleinklein.github.io/2017/11/16/Attention-is-all-you-need.html))
 [The transformer - Attention is all you need]([https://mchromiak.github.io/articles/2017/Sep/12/Transformer-Attention-is-all-you-need/#.XTEl6ugzZPY](https://mchromiak.github.io/articles/2017/Sep/12/Transformer-Attention-is-all-you-need/#.XTEl6ugzZPY))
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjU4OTk5NzQ0LC0xODY5MTc4MjYsMTM2OT
-YzOTg0NCwtMTExNDg0MTI5MiwyMTI1NjQzNjUwLC0xNDYzMTUz
-NDM3LC0yMDA3MzUzNzQ1LC0yMjc1NDExMjksLTEzMTU5MTUwNS
-wxMjE5MDIzMDIxXX0=
+eyJoaXN0b3J5IjpbLTE3MzM4OTQyMjAsNjU4OTk5NzQ0LC0xOD
+Y5MTc4MjYsMTM2OTYzOTg0NCwtMTExNDg0MTI5MiwyMTI1NjQz
+NjUwLC0xNDYzMTUzNDM3LC0yMDA3MzUzNzQ1LC0yMjc1NDExMj
+ksLTEzMTU5MTUwNSwxMjE5MDIzMDIxXX0=
 -->
