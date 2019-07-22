@@ -31,6 +31,7 @@ Transformer的创新主要有以下几点
 - **multi-head attention** VS convolution on multiple channels
 	- Convolution: Different linear transformations by relative position
 	- MHA: a weighted average 
+	- It is found empirically that multi-head attention works better than the usual “single-head” in the context of machine translation. And the intuition behind such an improvement is that “multi-head attention allows the model to jointly attend to information from different representation subspaces at different positions”
 ### Why multiple layer of attention layers?
 ### Vector similarity
 ### Positional encoding
@@ -51,11 +52,11 @@ Transformer的创新主要有以下几点
 [Attention is all you need review]([https://ricardokleinklein.github.io/2017/11/16/Attention-is-all-you-need.html](https://ricardokleinklein.github.io/2017/11/16/Attention-is-all-you-need.html))
 [The transformer - Attention is all you need]([https://mchromiak.github.io/articles/2017/Sep/12/Transformer-Attention-is-all-you-need/#.XTEl6ugzZPY](https://mchromiak.github.io/articles/2017/Sep/12/Transformer-Attention-is-all-you-need/#.XTEl6ugzZPY))
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbOTk3MjAzMDM2LC03OTc1MjU1NjcsLTM1MD
-A1Mzc3NywtMTQwOTA0MDQxMywxMDA1NzkwNDU5LC0xMjI0OTg2
-OTY4LDEwNzM2MDgwMzksLTE0ODI1NDMyNTQsMTQxMDI4MjEzNi
-wtNDU5MzMxMjU4LC01Njc2NzUzNTgsNjU4OTk5NzQ0LC0xODY5
-MTc4MjYsMTM2OTYzOTg0NCwtMTExNDg0MTI5MiwyMTI1NjQzNj
-UwLC0xNDYzMTUzNDM3LC0yMDA3MzUzNzQ1LC0yMjc1NDExMjks
-LTEzMTU5MTUwNV19
+eyJoaXN0b3J5IjpbLTE4MTYxODgwNTcsOTk3MjAzMDM2LC03OT
+c1MjU1NjcsLTM1MDA1Mzc3NywtMTQwOTA0MDQxMywxMDA1Nzkw
+NDU5LC0xMjI0OTg2OTY4LDEwNzM2MDgwMzksLTE0ODI1NDMyNT
+QsMTQxMDI4MjEzNiwtNDU5MzMxMjU4LC01Njc2NzUzNTgsNjU4
+OTk5NzQ0LC0xODY5MTc4MjYsMTM2OTYzOTg0NCwtMTExNDg0MT
+I5MiwyMTI1NjQzNjUwLC0xNDYzMTUzNDM3LC0yMDA3MzUzNzQ1
+LC0yMjc1NDExMjldfQ==
 -->
