@@ -10,13 +10,13 @@
 - CNN由于使用尺寸受限的卷积核（convolution kernel）扫描输入数据，同样面临着long memory problem，要使CNN能够一次扫描大量的输入（长句子）就需要叠加多层卷积运算来实现，代价是增加了模型的复杂度，使运算变慢，这和初衷不符。
 
 ## Theory and Model
-- 彻底解决long memory problem
+- 解决long memory problem
 - 实现了部分并行运算，极大缩短了训练时间
 - 提高了准确率
 - bonus：为BERT打下了基础
 ### Encoder-Decoder architecture
 ### Attention
-
+Transformer 
 
 - can be used in different tasks (text, visual, voice ...)
 - one stone(attention), two birds(parallelize(within attention layer) and long-range dependencies)
@@ -45,9 +45,10 @@
 [Attention is all you need review]([https://ricardokleinklein.github.io/2017/11/16/Attention-is-all-you-need.html](https://ricardokleinklein.github.io/2017/11/16/Attention-is-all-you-need.html))
 [The transformer - Attention is all you need]([https://mchromiak.github.io/articles/2017/Sep/12/Transformer-Attention-is-all-you-need/#.XTEl6ugzZPY](https://mchromiak.github.io/articles/2017/Sep/12/Transformer-Attention-is-all-you-need/#.XTEl6ugzZPY))
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTA3MzYwODAzOSwtMTQ4MjU0MzI1NCwxND
-EwMjgyMTM2LC00NTkzMzEyNTgsLTU2NzY3NTM1OCw2NTg5OTk3
-NDQsLTE4NjkxNzgyNiwxMzY5NjM5ODQ0LC0xMTE0ODQxMjkyLD
-IxMjU2NDM2NTAsLTE0NjMxNTM0MzcsLTIwMDczNTM3NDUsLTIy
-NzU0MTEyOSwtMTMxNTkxNTA1LDEyMTkwMjMwMjFdfQ==
+eyJoaXN0b3J5IjpbLTEyMjQ5ODY5NjgsMTA3MzYwODAzOSwtMT
+Q4MjU0MzI1NCwxNDEwMjgyMTM2LC00NTkzMzEyNTgsLTU2NzY3
+NTM1OCw2NTg5OTk3NDQsLTE4NjkxNzgyNiwxMzY5NjM5ODQ0LC
+0xMTE0ODQxMjkyLDIxMjU2NDM2NTAsLTE0NjMxNTM0MzcsLTIw
+MDczNTM3NDUsLTIyNzU0MTEyOSwtMTMxNTkxNTA1LDEyMTkwMj
+MwMjFdfQ==
 -->
