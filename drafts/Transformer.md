@@ -6,7 +6,7 @@
 - 无法并行运算
 - Long memory problem
 ### CNN
-- CNN由于使用尺寸受限的视场扫描输入数据，同样面临着long memory problem，要使CNN能够一次扫描大量的输入（长句子）
+- CNN由于使用尺寸受限的视场扫描输入数据，同样面临着long memory problem，要使CNN能够一次扫描大量的输入（长句子）就需要叠加多层卷积运算来实现，代价是
 ## Theory and Model
 ### Encoder-Decoder architecture
 ### Attention
@@ -37,8 +37,8 @@
 [Attention is all you need review]([https://ricardokleinklein.github.io/2017/11/16/Attention-is-all-you-need.html](https://ricardokleinklein.github.io/2017/11/16/Attention-is-all-you-need.html))
 [The transformer - Attention is all you need]([https://mchromiak.github.io/articles/2017/Sep/12/Transformer-Attention-is-all-you-need/#.XTEl6ugzZPY](https://mchromiak.github.io/articles/2017/Sep/12/Transformer-Attention-is-all-you-need/#.XTEl6ugzZPY))
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTM2NzA2OTYxMSwtNTY3Njc1MzU4LDY1OD
-k5OTc0NCwtMTg2OTE3ODI2LDEzNjk2Mzk4NDQsLTExMTQ4NDEy
-OTIsMjEyNTY0MzY1MCwtMTQ2MzE1MzQzNywtMjAwNzM1Mzc0NS
-wtMjI3NTQxMTI5LC0xMzE1OTE1MDUsMTIxOTAyMzAyMV19
+eyJoaXN0b3J5IjpbLTQzMDEzOTE4LC01Njc2NzUzNTgsNjU4OT
+k5NzQ0LC0xODY5MTc4MjYsMTM2OTYzOTg0NCwtMTExNDg0MTI5
+MiwyMTI1NjQzNjUwLC0xNDYzMTUzNDM3LC0yMDA3MzUzNzQ1LC
+0yMjc1NDExMjksLTEzMTU5MTUwNSwxMjE5MDIzMDIxXX0=
 -->
