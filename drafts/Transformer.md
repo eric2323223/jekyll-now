@@ -17,6 +17,7 @@
 ### Encoder-Decoder architecture
 Transformer的创新主要有以下几点
 - Model architecture
+	- 最大创新是不使用RNN或CNN
 	- RNN CNN free - help to speed up training
 	- Stacking of encoder/decoder
 - Multiple Attention Head
@@ -53,11 +54,11 @@ Transformer的创新主要有以下几点
 [Attention is all you need review]([https://ricardokleinklein.github.io/2017/11/16/Attention-is-all-you-need.html](https://ricardokleinklein.github.io/2017/11/16/Attention-is-all-you-need.html))
 [The transformer - Attention is all you need]([https://mchromiak.github.io/articles/2017/Sep/12/Transformer-Attention-is-all-you-need/#.XTEl6ugzZPY](https://mchromiak.github.io/articles/2017/Sep/12/Transformer-Attention-is-all-you-need/#.XTEl6ugzZPY))
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTI1MjUxMTY1LDExMTcwMDIxLDk5NzIwMz
-AzNiwtNzk3NTI1NTY3LC0zNTAwNTM3NzcsLTE0MDkwNDA0MTMs
-MTAwNTc5MDQ1OSwtMTIyNDk4Njk2OCwxMDczNjA4MDM5LC0xND
-gyNTQzMjU0LDE0MTAyODIxMzYsLTQ1OTMzMTI1OCwtNTY3Njc1
-MzU4LDY1ODk5OTc0NCwtMTg2OTE3ODI2LDEzNjk2Mzk4NDQsLT
-ExMTQ4NDEyOTIsMjEyNTY0MzY1MCwtMTQ2MzE1MzQzNywtMjAw
-NzM1Mzc0NV19
+eyJoaXN0b3J5IjpbMTkxMzI2Mzk5OCwtMjUyNTExNjUsMTExNz
+AwMjEsOTk3MjAzMDM2LC03OTc1MjU1NjcsLTM1MDA1Mzc3Nywt
+MTQwOTA0MDQxMywxMDA1NzkwNDU5LC0xMjI0OTg2OTY4LDEwNz
+M2MDgwMzksLTE0ODI1NDMyNTQsMTQxMDI4MjEzNiwtNDU5MzMx
+MjU4LC01Njc2NzUzNTgsNjU4OTk5NzQ0LC0xODY5MTc4MjYsMT
+M2OTYzOTg0NCwtMTExNDg0MTI5MiwyMTI1NjQzNjUwLC0xNDYz
+MTUzNDM3XX0=
 -->
