@@ -21,6 +21,7 @@ Transformer的创新主要有以下几点
 	- RNN CNN free - help to speed up training
 	- Stacking of encoder/decoder
 - Multiple Attention Head
+multiple random initial weights matrix may lead to different 
 - Position encoding
 - Attention 
 	- Use of self-attention to improve accuracy
@@ -54,11 +55,11 @@ Transformer的创新主要有以下几点
 [Attention is all you need review]([https://ricardokleinklein.github.io/2017/11/16/Attention-is-all-you-need.html](https://ricardokleinklein.github.io/2017/11/16/Attention-is-all-you-need.html))
 [The transformer - Attention is all you need]([https://mchromiak.github.io/articles/2017/Sep/12/Transformer-Attention-is-all-you-need/#.XTEl6ugzZPY](https://mchromiak.github.io/articles/2017/Sep/12/Transformer-Attention-is-all-you-need/#.XTEl6ugzZPY))
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTMyMDEzMzYxLDI3MDMzMzUzNywxOTEzMj
-YzOTk4LC0yNTI1MTE2NSwxMTE3MDAyMSw5OTcyMDMwMzYsLTc5
-NzUyNTU2NywtMzUwMDUzNzc3LC0xNDA5MDQwNDEzLDEwMDU3OT
-A0NTksLTEyMjQ5ODY5NjgsMTA3MzYwODAzOSwtMTQ4MjU0MzI1
-NCwxNDEwMjgyMTM2LC00NTkzMzEyNTgsLTU2NzY3NTM1OCw2NT
-g5OTk3NDQsLTE4NjkxNzgyNiwxMzY5NjM5ODQ0LC0xMTE0ODQx
-MjkyXX0=
+eyJoaXN0b3J5IjpbLTE4NjAzMTg5MTksNTMyMDEzMzYxLDI3MD
+MzMzUzNywxOTEzMjYzOTk4LC0yNTI1MTE2NSwxMTE3MDAyMSw5
+OTcyMDMwMzYsLTc5NzUyNTU2NywtMzUwMDUzNzc3LC0xNDA5MD
+QwNDEzLDEwMDU3OTA0NTksLTEyMjQ5ODY5NjgsMTA3MzYwODAz
+OSwtMTQ4MjU0MzI1NCwxNDEwMjgyMTM2LC00NTkzMzEyNTgsLT
+U2NzY3NTM1OCw2NTg5OTk3NDQsLTE4NjkxNzgyNiwxMzY5NjM5
+ODQ0XX0=
 -->
