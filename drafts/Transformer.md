@@ -1,4 +1,4 @@
-# Transformer? Attention?
+# Transformer-如何设计和构建高效的时序模型
 在自然语言处理(NLP)领域，RNN一直是被最广泛使用的深度机器学习模型，近年来CNN也逐渐被用于进行。。。然而这两类模型都有一些难以克服的问题，Transformer就是为了解决这些问题的新型模型，并取得了非常好的效果，大有取代RNN在NLP领域的统治地位的趋势，本文我们就来解释Transformer取得巨大成功背后的原因。
 
 ## RNN和CNN
@@ -10,6 +10,8 @@
 - CNN由于使用尺寸受限的卷积核（convolution kernel）扫描输入数据，同样面临着long memory problem，要使CNN能够一次扫描大量的输入（长句子）就需要叠加多层卷积运算来实现，这样做的代价是增加了模型的复杂度，使运算变慢，这和初衷不符。
 
 ## Theory and Model
+RNN解决了哪些问题，如何替代它？
+
 - 解决long memory problem
 - 实现了部分并行运算，极大缩短了训练时间
 - 提高了准确率
@@ -56,11 +58,11 @@ different random initial weights matrix may lead to different representation sub
 [Attention is all you need review]([https://ricardokleinklein.github.io/2017/11/16/Attention-is-all-you-need.html](https://ricardokleinklein.github.io/2017/11/16/Attention-is-all-you-need.html))
 [The transformer - Attention is all you need]([https://mchromiak.github.io/articles/2017/Sep/12/Transformer-Attention-is-all-you-need/#.XTEl6ugzZPY](https://mchromiak.github.io/articles/2017/Sep/12/Transformer-Attention-is-all-you-need/#.XTEl6ugzZPY))
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEwODg3NTQ1MzIsNTMyMDEzMzYxLDI3MD
-MzMzUzNywxOTEzMjYzOTk4LC0yNTI1MTE2NSwxMTE3MDAyMSw5
-OTcyMDMwMzYsLTc5NzUyNTU2NywtMzUwMDUzNzc3LC0xNDA5MD
-QwNDEzLDEwMDU3OTA0NTksLTEyMjQ5ODY5NjgsMTA3MzYwODAz
-OSwtMTQ4MjU0MzI1NCwxNDEwMjgyMTM2LC00NTkzMzEyNTgsLT
-U2NzY3NTM1OCw2NTg5OTk3NDQsLTE4NjkxNzgyNiwxMzY5NjM5
-ODQ0XX0=
+eyJoaXN0b3J5IjpbNTcyNzkzMDE4LC0xMDg4NzU0NTMyLDUzMj
+AxMzM2MSwyNzAzMzM1MzcsMTkxMzI2Mzk5OCwtMjUyNTExNjUs
+MTExNzAwMjEsOTk3MjAzMDM2LC03OTc1MjU1NjcsLTM1MDA1Mz
+c3NywtMTQwOTA0MDQxMywxMDA1NzkwNDU5LC0xMjI0OTg2OTY4
+LDEwNzM2MDgwMzksLTE0ODI1NDMyNTQsMTQxMDI4MjEzNiwtND
+U5MzMxMjU4LC01Njc2NzUzNTgsNjU4OTk5NzQ0LC0xODY5MTc4
+MjZdfQ==
 -->
