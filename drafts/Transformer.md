@@ -1,5 +1,5 @@
 # Transformer-如何设计和构建高效的时序模型
-在自然语言处理(NLP)领域，RNN一直是被最广泛使用的深度机器学习模型，近年来CNN也逐渐被用于进行。。。然而这两类模型都有一些难以克服的问题，Transformer就是为了解决这些问题的新型模型，并取得了非常好的效果，大有取代RNN在NLP领域的统治地位的趋势，本文我们就来一步步的分析如何设计和实现这个优秀的seq2seq模型。
+在自然语言处理(NLP)领域，RNN一直是被最广泛使用的深度机器学习模型，近年来CNN也逐渐被用于进行。。。然而这两类模型都有一些难以克服的问题，Transformer就是为了解决这些问题的新型模型，并取得了非常好的效果，大有取代RNN在NLP领域的统治地位的趋势，本文我们就来一步步的分析和理解这个优秀的seq2seq模型。
 
 ## 序列到序列问题（seq2seq）
 seq2seq问题是使用机器学习（特别是深度学习）解决的一类常见问题，例如机器翻译，语态分析，摘要生成等自然语言处理问题（NLP），还包括_______。 这类问题的最大特点是输入（或输出）以序列的形式出现，序列的长度可变，任务通常要求分析整个序列才能产生输出————————。
@@ -63,11 +63,11 @@ different random initial weights matrix may lead to different representation sub
 [Attention is all you need review]([https://ricardokleinklein.github.io/2017/11/16/Attention-is-all-you-need.html](https://ricardokleinklein.github.io/2017/11/16/Attention-is-all-you-need.html))
 [The transformer - Attention is all you need]([https://mchromiak.github.io/articles/2017/Sep/12/Transformer-Attention-is-all-you-need/#.XTEl6ugzZPY](https://mchromiak.github.io/articles/2017/Sep/12/Transformer-Attention-is-all-you-need/#.XTEl6ugzZPY))
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1MTEyMTMxMiwzNjg2MDYyMjAsMjk0Mj
-YyMzY3LDIwODA4MjIwNDIsMzQzNTA3MjI1LDI5MDI0NzU2Miw1
-Nzc5MzIwMjgsMTMyMDk3NjYxOSwxODE4ODk4OTA2LC0xMjQ1Mz
-I2OTYwLDEyOTYyMzM0NDYsMjAzOTQ4NTcyOSw1NzI3OTMwMTgs
-LTEwODg3NTQ1MzIsNTMyMDEzMzYxLDI3MDMzMzUzNywxOTEzMj
-YzOTk4LC0yNTI1MTE2NSwxMTE3MDAyMSw5OTcyMDMwMzZdfQ==
+eyJoaXN0b3J5IjpbLTEzNDA5NzMxMSwtMTUxMTIxMzEyLDM2OD
+YwNjIyMCwyOTQyNjIzNjcsMjA4MDgyMjA0MiwzNDM1MDcyMjUs
+MjkwMjQ3NTYyLDU3NzkzMjAyOCwxMzIwOTc2NjE5LDE4MTg4OT
+g5MDYsLTEyNDUzMjY5NjAsMTI5NjIzMzQ0NiwyMDM5NDg1NzI5
+LDU3Mjc5MzAxOCwtMTA4ODc1NDUzMiw1MzIwMTMzNjEsMjcwMz
+MzNTM3LDE5MTMyNjM5OTgsLTI1MjUxMTY1LDExMTcwMDIxXX0=
 
 -->
