@@ -20,8 +20,9 @@ CNN可以同时处理序列中的所有元素，但是由于卷及运算的视�
 - 解决long memory problem
 - 实现了部分并行运算，极大缩短了训练时间
 - 提高了准确率
-- bonus：为BERT打下了基础
+
 ### Encoder-Decoder architecture
+从moxingjiegoush
 Transformer的创新主要有以下几点
 - Model architecture
 	- 最大创新是只使用普通神经网络来实现seq2seq task，避免RNN和CNN的问题，在训练速度和准确率方面取得了双赢
@@ -63,11 +64,11 @@ different random initial weights matrix may lead to different representation sub
 [Attention is all you need review]([https://ricardokleinklein.github.io/2017/11/16/Attention-is-all-you-need.html](https://ricardokleinklein.github.io/2017/11/16/Attention-is-all-you-need.html))
 [The transformer - Attention is all you need]([https://mchromiak.github.io/articles/2017/Sep/12/Transformer-Attention-is-all-you-need/#.XTEl6ugzZPY](https://mchromiak.github.io/articles/2017/Sep/12/Transformer-Attention-is-all-you-need/#.XTEl6ugzZPY))
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjEzNjcwNjkyNCwtMTMxNTc3NDc5MCwzNT
-MzOTQxODUsLTE1MTEyMTMxMiwzNjg2MDYyMjAsMjk0MjYyMzY3
-LDIwODA4MjIwNDIsMzQzNTA3MjI1LDI5MDI0NzU2Miw1Nzc5Mz
-IwMjgsMTMyMDk3NjYxOSwxODE4ODk4OTA2LC0xMjQ1MzI2OTYw
-LDEyOTYyMzM0NDYsMjAzOTQ4NTcyOSw1NzI3OTMwMTgsLTEwOD
-g3NTQ1MzIsNTMyMDEzMzYxLDI3MDMzMzUzNywxOTEzMjYzOTk4
-XX0=
+eyJoaXN0b3J5IjpbOTU5MzgxODM5LDIxMzY3MDY5MjQsLTEzMT
+U3NzQ3OTAsMzUzMzk0MTg1LC0xNTExMjEzMTIsMzY4NjA2MjIw
+LDI5NDI2MjM2NywyMDgwODIyMDQyLDM0MzUwNzIyNSwyOTAyND
+c1NjIsNTc3OTMyMDI4LDEzMjA5NzY2MTksMTgxODg5ODkwNiwt
+MTI0NTMyNjk2MCwxMjk2MjMzNDQ2LDIwMzk0ODU3MjksNTcyNz
+kzMDE4LC0xMDg4NzU0NTMyLDUzMjAxMzM2MSwyNzAzMzM1Mzdd
+fQ==
 -->
