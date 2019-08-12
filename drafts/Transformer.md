@@ -2,7 +2,7 @@
 在自然语言处理(NLP)领域，RNN一直是被最广泛使用的深度机器学习模型，近年来CNN也逐渐被用于进行。。。然而这两类模型都有一些难以克服的问题，Transformer就是为了解决这些问题的新型模型，并取得了非常好的效果，大有取代RNN在NLP领域的统治地位的趋势，本文我们就来一步步的分析如何设计和实现transformer
 
 ## 序列到序列问题（seq2seq）
-seq2seq问题是使用机器学习（）
+seq2seq问题是使用机器学习（特别是深度学习）解决
 
 ## RNN和CNN
 为什么要引入新的模型？加速训练，提高准确性
@@ -61,11 +61,11 @@ different random initial weights matrix may lead to different representation sub
 [Attention is all you need review]([https://ricardokleinklein.github.io/2017/11/16/Attention-is-all-you-need.html](https://ricardokleinklein.github.io/2017/11/16/Attention-is-all-you-need.html))
 [The transformer - Attention is all you need]([https://mchromiak.github.io/articles/2017/Sep/12/Transformer-Attention-is-all-you-need/#.XTEl6ugzZPY](https://mchromiak.github.io/articles/2017/Sep/12/Transformer-Attention-is-all-you-need/#.XTEl6ugzZPY))
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTM3NDc1OTc5LDU3Mjc5MzAxOCwtMTA4OD
-c1NDUzMiw1MzIwMTMzNjEsMjcwMzMzNTM3LDE5MTMyNjM5OTgs
-LTI1MjUxMTY1LDExMTcwMDIxLDk5NzIwMzAzNiwtNzk3NTI1NT
-Y3LC0zNTAwNTM3NzcsLTE0MDkwNDA0MTMsMTAwNTc5MDQ1OSwt
-MTIyNDk4Njk2OCwxMDczNjA4MDM5LC0xNDgyNTQzMjU0LDE0MT
-AyODIxMzYsLTQ1OTMzMTI1OCwtNTY3Njc1MzU4LDY1ODk5OTc0
-NF19
+eyJoaXN0b3J5IjpbMjAzOTQ4NTcyOSw1NzI3OTMwMTgsLTEwOD
+g3NTQ1MzIsNTMyMDEzMzYxLDI3MDMzMzUzNywxOTEzMjYzOTk4
+LC0yNTI1MTE2NSwxMTE3MDAyMSw5OTcyMDMwMzYsLTc5NzUyNT
+U2NywtMzUwMDUzNzc3LC0xNDA5MDQwNDEzLDEwMDU3OTA0NTks
+LTEyMjQ5ODY5NjgsMTA3MzYwODAzOSwtMTQ4MjU0MzI1NCwxND
+EwMjgyMTM2LC00NTkzMzEyNTgsLTU2NzY3NTM1OCw2NTg5OTk3
+NDRdfQ==
 -->
