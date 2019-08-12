@@ -1,5 +1,5 @@
 # Transformer-如何设计和构建高效的时序模型
-在自然语言处理(NLP)领域，RNN一直是被最广泛使用的深度机器学习模型，近年来CNN也逐渐被用于进行。。。然而这两类模型都有一些难以克服的问题，Transformer就是为了解决这些问题的新型模型，并取得了非常好的效果，大有取代RNN在NLP领域的统治地位的趋势，本文我们就来解释Transformer取得巨大成功背后的原因。
+在自然语言处理(NLP)领域，RNN一直是被最广泛使用的深度机器学习模型，近年来CNN也逐渐被用于进行。。。然而这两类模型都有一些难以克服的问题，Transformer就是为了解决这些问题的新型模型，并取得了非常好的效果，大有取代RNN在NLP领域的统治地位的趋势，本文我们就来一步步的分析如何设计和实现transformer
 
 ## RNN和CNN
 为什么要引入新的模型？加速训练，提高准确性
@@ -58,11 +58,11 @@ different random initial weights matrix may lead to different representation sub
 [Attention is all you need review]([https://ricardokleinklein.github.io/2017/11/16/Attention-is-all-you-need.html](https://ricardokleinklein.github.io/2017/11/16/Attention-is-all-you-need.html))
 [The transformer - Attention is all you need]([https://mchromiak.github.io/articles/2017/Sep/12/Transformer-Attention-is-all-you-need/#.XTEl6ugzZPY](https://mchromiak.github.io/articles/2017/Sep/12/Transformer-Attention-is-all-you-need/#.XTEl6ugzZPY))
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTcyNzkzMDE4LC0xMDg4NzU0NTMyLDUzMj
-AxMzM2MSwyNzAzMzM1MzcsMTkxMzI2Mzk5OCwtMjUyNTExNjUs
-MTExNzAwMjEsOTk3MjAzMDM2LC03OTc1MjU1NjcsLTM1MDA1Mz
-c3NywtMTQwOTA0MDQxMywxMDA1NzkwNDU5LC0xMjI0OTg2OTY4
-LDEwNzM2MDgwMzksLTE0ODI1NDMyNTQsMTQxMDI4MjEzNiwtND
-U5MzMxMjU4LC01Njc2NzUzNTgsNjU4OTk5NzQ0LC0xODY5MTc4
-MjZdfQ==
+eyJoaXN0b3J5IjpbLTEyMDY1NzM4OSw1NzI3OTMwMTgsLTEwOD
+g3NTQ1MzIsNTMyMDEzMzYxLDI3MDMzMzUzNywxOTEzMjYzOTk4
+LC0yNTI1MTE2NSwxMTE3MDAyMSw5OTcyMDMwMzYsLTc5NzUyNT
+U2NywtMzUwMDUzNzc3LC0xNDA5MDQwNDEzLDEwMDU3OTA0NTks
+LTEyMjQ5ODY5NjgsMTA3MzYwODAzOSwtMTQ4MjU0MzI1NCwxND
+EwMjgyMTM2LC00NTkzMzEyNTgsLTU2NzY3NTM1OCw2NTg5OTk3
+NDRdfQ==
 -->
