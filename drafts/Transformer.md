@@ -9,7 +9,7 @@ seq2seq问题是使用机器学习（特别是深度学习）解决的一类常�
 2. 只能顺序执行，效率比较差
 3. 固定的存储不适合长序列
 ### CNN
-
+CNN可以
 
 ## RNN和CNN
 为什么要引入新的模型？加速训练，提高准确性
@@ -68,11 +68,11 @@ different random initial weights matrix may lead to different representation sub
 [Attention is all you need review]([https://ricardokleinklein.github.io/2017/11/16/Attention-is-all-you-need.html](https://ricardokleinklein.github.io/2017/11/16/Attention-is-all-you-need.html))
 [The transformer - Attention is all you need]([https://mchromiak.github.io/articles/2017/Sep/12/Transformer-Attention-is-all-you-need/#.XTEl6ugzZPY](https://mchromiak.github.io/articles/2017/Sep/12/Transformer-Attention-is-all-you-need/#.XTEl6ugzZPY))
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEyNDUzMjY5NjAsMTI5NjIzMzQ0NiwyMD
-M5NDg1NzI5LDU3Mjc5MzAxOCwtMTA4ODc1NDUzMiw1MzIwMTMz
-NjEsMjcwMzMzNTM3LDE5MTMyNjM5OTgsLTI1MjUxMTY1LDExMT
-cwMDIxLDk5NzIwMzAzNiwtNzk3NTI1NTY3LC0zNTAwNTM3Nzcs
-LTE0MDkwNDA0MTMsMTAwNTc5MDQ1OSwtMTIyNDk4Njk2OCwxMD
-czNjA4MDM5LC0xNDgyNTQzMjU0LDE0MTAyODIxMzYsLTQ1OTMz
-MTI1OF19
+eyJoaXN0b3J5IjpbLTIzOTA5NjYxLC0xMjQ1MzI2OTYwLDEyOT
+YyMzM0NDYsMjAzOTQ4NTcyOSw1NzI3OTMwMTgsLTEwODg3NTQ1
+MzIsNTMyMDEzMzYxLDI3MDMzMzUzNywxOTEzMjYzOTk4LC0yNT
+I1MTE2NSwxMTE3MDAyMSw5OTcyMDMwMzYsLTc5NzUyNTU2Nywt
+MzUwMDUzNzc3LC0xNDA5MDQwNDEzLDEwMDU3OTA0NTksLTEyMj
+Q5ODY5NjgsMTA3MzYwODAzOSwtMTQ4MjU0MzI1NCwxNDEwMjgy
+MTM2XX0=
 -->
