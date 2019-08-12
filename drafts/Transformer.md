@@ -31,7 +31,11 @@ Transformer的创新主要有以下几点
 - Multiple Attention Head
 different random initial weights matrix may lead to different representation subspace, thus give transformer ability to understand different meaning of a word
 - 位置编码Positional encoding
-由于transformer不使用RNN和CNN，仅仅计算不同元素之间的相似度，因此必须加入位置信息来保证transformer正确的理解输入序列。最直接的位置编码是输入元素的序号，但这种方式对输入序列的长度敏感，当训练数据和测试数据长度不同时， 
+由于transformer不使用RNN和CNN，仅仅计算不同元素之间的相似度，因此必须加入位置信息来保证transformer正确的理解输入序列。最直接的位置编码是使用元素的序号，但这种方式对输入序列的长度敏感，当训练数据和测试数据长度不同时， 
+sin/cos位置编码
+1. 计算方便
+2. 能够体现相对位置关系
+3. 可处理变长序列
 - Attention 
 	- Use of self-attention to improve accuracy
 	- Assumption: the more similar the more it contribute
@@ -64,7 +68,7 @@ different random initial weights matrix may lead to different representation sub
 [Attention is all you need review]([https://ricardokleinklein.github.io/2017/11/16/Attention-is-all-you-need.html](https://ricardokleinklein.github.io/2017/11/16/Attention-is-all-you-need.html))
 [The transformer - Attention is all you need]([https://mchromiak.github.io/articles/2017/Sep/12/Transformer-Attention-is-all-you-need/#.XTEl6ugzZPY](https://mchromiak.github.io/articles/2017/Sep/12/Transformer-Attention-is-all-you-need/#.XTEl6ugzZPY))
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwOTMzNDkzMDcsLTE2MDQ3NDA5OTUsOT
+eyJoaXN0b3J5IjpbLTE4MTUwNzA0NTcsLTE2MDQ3NDA5OTUsOT
 A3MzE5OTM4LDIxMzY3MDY5MjQsLTEzMTU3NzQ3OTAsMzUzMzk0
 MTg1LC0xNTExMjEzMTIsMzY4NjA2MjIwLDI5NDI2MjM2NywyMD
 gwODIyMDQyLDM0MzUwNzIyNSwyOTAyNDc1NjIsNTc3OTMyMDI4
