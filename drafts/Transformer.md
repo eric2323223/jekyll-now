@@ -4,14 +4,14 @@
 ## 序列到序列问题（seq2seq）
 seq2seq问题是使用机器学习（特别是深度学习）解决的一类常见问题，例如机器翻译，语态分析，摘要生成等自然语言处理问题（NLP），还包括_______。 这类问题的最大特点是输入（或输出）以序列的形式出现，序列的长度可变，任务通常要求分析整个序列才能产生输出————————。
 ### RNN
-处理seq2seq问题的传统方法是使用RNN模型，RNN能够保存状态，它将输入分为多步，依靠每步输入和上一步的状态决定下一步的状态（和输出），从模型结构上来说特别适合序列到序列问题。问题有三点
+处理seq2seq问题的传统方法是使用RNN模型，RNN能够保存状态，它将输入分为多步，依靠每步输入和上一步的状态更新当前的状态（和输出），从模型结构上来说特别适合序列到序列问题。问题有三点
 1. 长序列的训练很困难
 2. 只能顺序执行，训练速度很慢
 3. 固定的存储不适合长序列
 ### CNN
 CNN可以同时处理序列中的所有元素，但是由于卷及运算的视域有限，一次卷积操作只能处理有限的元素，对于较长的序列无法处理。解决办法是通过叠加多层卷积操作来逐渐增加视域，但这样会不可避免的导致信息丢失，并且仍没有完全解决长序列输入的处理问题，————————而且增加了模型的复杂度，使运算变慢，这和初衷不符。
 ### Attention机制
-总结上述两种模型的处理方式，我们发现对于长序列的输入，无论是在预测准确度还是训练速度都有不足，那么如何改进这些不足呢？有没有一种方法能让我们一次性的看到全部输入（无论序列有多长），并且能根据这些输入信息分析他们之间的关联关系呢？答案就是attention机制
+总结上述两种模型的处理方式，我们发现对于长序列的输入，无论是在预测准确度还是训练速度都有不足，那么如何改进这些不足呢？有没有一种方法能让我们一次性的看到全部输入（无论序列有多长），并且能根据这些输入信息分析他们之间的关联关系呢？答案就是attention机制，
 
 
 ## Theory and Model
@@ -63,11 +63,11 @@ different random initial weights matrix may lead to different representation sub
 [Attention is all you need review]([https://ricardokleinklein.github.io/2017/11/16/Attention-is-all-you-need.html](https://ricardokleinklein.github.io/2017/11/16/Attention-is-all-you-need.html))
 [The transformer - Attention is all you need]([https://mchromiak.github.io/articles/2017/Sep/12/Transformer-Attention-is-all-you-need/#.XTEl6ugzZPY](https://mchromiak.github.io/articles/2017/Sep/12/Transformer-Attention-is-all-you-need/#.XTEl6ugzZPY))
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjk0MjYyMzY3LDIwODA4MjIwNDIsMzQzNT
-A3MjI1LDI5MDI0NzU2Miw1Nzc5MzIwMjgsMTMyMDk3NjYxOSwx
-ODE4ODk4OTA2LC0xMjQ1MzI2OTYwLDEyOTYyMzM0NDYsMjAzOT
-Q4NTcyOSw1NzI3OTMwMTgsLTEwODg3NTQ1MzIsNTMyMDEzMzYx
-LDI3MDMzMzUzNywxOTEzMjYzOTk4LC0yNTI1MTE2NSwxMTE3MD
-AyMSw5OTcyMDMwMzYsLTc5NzUyNTU2NywtMzUwMDUzNzc3XX0=
+eyJoaXN0b3J5IjpbMzY4NjA2MjIwLDI5NDI2MjM2NywyMDgwOD
+IyMDQyLDM0MzUwNzIyNSwyOTAyNDc1NjIsNTc3OTMyMDI4LDEz
+MjA5NzY2MTksMTgxODg5ODkwNiwtMTI0NTMyNjk2MCwxMjk2Mj
+MzNDQ2LDIwMzk0ODU3MjksNTcyNzkzMDE4LC0xMDg4NzU0NTMy
+LDUzMjAxMzM2MSwyNzAzMzM1MzcsMTkxMzI2Mzk5OCwtMjUyNT
+ExNjUsMTExNzAwMjEsOTk3MjAzMDM2LC03OTc1MjU1NjddfQ==
 
 -->
