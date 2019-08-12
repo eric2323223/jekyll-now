@@ -11,7 +11,7 @@ seq2seq问题是使用机器学习（特别是深度学习）解决的一类常�
 ### CNN
 CNN可以同时处理序列中的所有元素，但是由于卷及运算的视域有限，一次卷积操作只能处理有限的元素，对于较长的序列无法处理。解决办法是叠加多层卷积操作，增大视域，但这仍没有完全解决长序列输入的处理问题，————————而且增加了模型的复杂度，使运算变慢，这和初衷不符。
 ### Attention机制
-总结上述两种模型的
+总结上述两种模型的处理方式，我们发现对于长序列的输入，无论是在训练方法还是
 
 
 ## Theory and Model
@@ -63,11 +63,11 @@ different random initial weights matrix may lead to different representation sub
 [Attention is all you need review]([https://ricardokleinklein.github.io/2017/11/16/Attention-is-all-you-need.html](https://ricardokleinklein.github.io/2017/11/16/Attention-is-all-you-need.html))
 [The transformer - Attention is all you need]([https://mchromiak.github.io/articles/2017/Sep/12/Transformer-Attention-is-all-you-need/#.XTEl6ugzZPY](https://mchromiak.github.io/articles/2017/Sep/12/Transformer-Attention-is-all-you-need/#.XTEl6ugzZPY))
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTU3Mjg5NzE1NSwyOTAyNDc1NjIsNTc3OT
-MyMDI4LDEzMjA5NzY2MTksMTgxODg5ODkwNiwtMTI0NTMyNjk2
-MCwxMjk2MjMzNDQ2LDIwMzk0ODU3MjksNTcyNzkzMDE4LC0xMD
-g4NzU0NTMyLDUzMjAxMzM2MSwyNzAzMzM1MzcsMTkxMzI2Mzk5
-OCwtMjUyNTExNjUsMTExNzAwMjEsOTk3MjAzMDM2LC03OTc1Mj
-U1NjcsLTM1MDA1Mzc3NywtMTQwOTA0MDQxMywxMDA1NzkwNDU5
-XX0=
+eyJoaXN0b3J5IjpbMzQzNTA3MjI1LDI5MDI0NzU2Miw1Nzc5Mz
+IwMjgsMTMyMDk3NjYxOSwxODE4ODk4OTA2LC0xMjQ1MzI2OTYw
+LDEyOTYyMzM0NDYsMjAzOTQ4NTcyOSw1NzI3OTMwMTgsLTEwOD
+g3NTQ1MzIsNTMyMDEzMzYxLDI3MDMzMzUzNywxOTEzMjYzOTk4
+LC0yNTI1MTE2NSwxMTE3MDAyMSw5OTcyMDMwMzYsLTc5NzUyNT
+U2NywtMzUwMDUzNzc3LC0xNDA5MDQwNDEzLDEwMDU3OTA0NTld
+fQ==
 -->
