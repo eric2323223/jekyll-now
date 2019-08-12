@@ -31,7 +31,7 @@ Transformer的创新主要有以下几点
 - Multiple Attention Head
 different random initial weights matrix may lead to different representation subspace, thus give transformer ability to understand different meaning of a word
 - 位置编码Positional encoding
-由于transformer不使用RNN和CNN，仅仅计算不同元素之间的相似度，因此必须加入位置信息来保证transformer正确的理解输入序列。最直接的位置编码是使用元素的序号，但这种方式对输入序列的长度敏感，当训练数据和测试数据长度不同时， 
+由于transformer不使用RNN和CNN，仅仅计算不同元素之间的相似度，因此必须加入位置信息来保证transformer正确的理解输入序列。最简单的位置编码是直接使用元素的序号，但这种方式对输入序列的长度过于敏感，对相对位置关系的表达——————。 
 sin/cos位置编码
 1. 计算方便
 2. 能够体现相对位置关系
@@ -68,11 +68,11 @@ sin/cos位置编码
 [Attention is all you need review]([https://ricardokleinklein.github.io/2017/11/16/Attention-is-all-you-need.html](https://ricardokleinklein.github.io/2017/11/16/Attention-is-all-you-need.html))
 [The transformer - Attention is all you need]([https://mchromiak.github.io/articles/2017/Sep/12/Transformer-Attention-is-all-you-need/#.XTEl6ugzZPY](https://mchromiak.github.io/articles/2017/Sep/12/Transformer-Attention-is-all-you-need/#.XTEl6ugzZPY))
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE4MTUwNzA0NTcsLTE2MDQ3NDA5OTUsOT
-A3MzE5OTM4LDIxMzY3MDY5MjQsLTEzMTU3NzQ3OTAsMzUzMzk0
-MTg1LC0xNTExMjEzMTIsMzY4NjA2MjIwLDI5NDI2MjM2NywyMD
-gwODIyMDQyLDM0MzUwNzIyNSwyOTAyNDc1NjIsNTc3OTMyMDI4
-LDEzMjA5NzY2MTksMTgxODg5ODkwNiwtMTI0NTMyNjk2MCwxMj
-k2MjMzNDQ2LDIwMzk0ODU3MjksNTcyNzkzMDE4LC0xMDg4NzU0
-NTMyXX0=
+eyJoaXN0b3J5IjpbNzc2ODY3ODU3LC0xODE1MDcwNDU3LC0xNj
+A0NzQwOTk1LDkwNzMxOTkzOCwyMTM2NzA2OTI0LC0xMzE1Nzc0
+NzkwLDM1MzM5NDE4NSwtMTUxMTIxMzEyLDM2ODYwNjIyMCwyOT
+QyNjIzNjcsMjA4MDgyMjA0MiwzNDM1MDcyMjUsMjkwMjQ3NTYy
+LDU3NzkzMjAyOCwxMzIwOTc2NjE5LDE4MTg4OTg5MDYsLTEyND
+UzMjY5NjAsMTI5NjIzMzQ0NiwyMDM5NDg1NzI5LDU3Mjc5MzAx
+OF19
 -->
