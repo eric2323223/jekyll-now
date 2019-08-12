@@ -4,7 +4,7 @@
 ## 序列到序列问题（seq2seq）
 seq2seq问题是使用机器学习（特别是深度学习）解决的一类常见问题，例如机器翻译，语态分析，摘要生成等自然语言处理问题（NLP），还包括_______。 这类问题的最大特点是输入（或输出）以序列的形式出现，序列的长度可变，任务通常要求分析整个序列才能产生输出————————。
 ### RNN
-处理seq2seq问题的传统方法是使用RNN模型，RNN能够保存状态，它将输入分为多步，依靠每步输入和上一步的状态更新当前的状态（和输出），通过重复这种步骤在读入所有序列元素后从模型结构上来说特别适合序列到序列问题。问题有三点
+处理seq2seq问题的传统方法是使用RNN模型，RNN能够保存状态，它将输入分为多步，依靠每步输入和上一步的状态更新当前的状态（和输出），通过重复这种步骤在读入所有序列元素后得到整个序列的内部表示（latent feature vector）。从模型结构上来说特别适合序列到序列问题。问题有三点
 1. 长序列的训练很困难
 2. 只能顺序执行，训练速度很慢
 3. 固定的存储不适合长序列
@@ -63,11 +63,11 @@ different random initial weights matrix may lead to different representation sub
 [Attention is all you need review]([https://ricardokleinklein.github.io/2017/11/16/Attention-is-all-you-need.html](https://ricardokleinklein.github.io/2017/11/16/Attention-is-all-you-need.html))
 [The transformer - Attention is all you need]([https://mchromiak.github.io/articles/2017/Sep/12/Transformer-Attention-is-all-you-need/#.XTEl6ugzZPY](https://mchromiak.github.io/articles/2017/Sep/12/Transformer-Attention-is-all-you-need/#.XTEl6ugzZPY))
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzkzMDg1Mjg4LC0xMzE1Nzc0NzkwLDM1Mz
-M5NDE4NSwtMTUxMTIxMzEyLDM2ODYwNjIyMCwyOTQyNjIzNjcs
-MjA4MDgyMjA0MiwzNDM1MDcyMjUsMjkwMjQ3NTYyLDU3NzkzMj
-AyOCwxMzIwOTc2NjE5LDE4MTg4OTg5MDYsLTEyNDUzMjY5NjAs
-MTI5NjIzMzQ0NiwyMDM5NDg1NzI5LDU3Mjc5MzAxOCwtMTA4OD
-c1NDUzMiw1MzIwMTMzNjEsMjcwMzMzNTM3LDE5MTMyNjM5OThd
-fQ==
+eyJoaXN0b3J5IjpbMjEzNjcwNjkyNCwtMTMxNTc3NDc5MCwzNT
+MzOTQxODUsLTE1MTEyMTMxMiwzNjg2MDYyMjAsMjk0MjYyMzY3
+LDIwODA4MjIwNDIsMzQzNTA3MjI1LDI5MDI0NzU2Miw1Nzc5Mz
+IwMjgsMTMyMDk3NjYxOSwxODE4ODk4OTA2LC0xMjQ1MzI2OTYw
+LDEyOTYyMzM0NDYsMjAzOTQ4NTcyOSw1NzI3OTMwMTgsLTEwOD
+g3NTQ1MzIsNTMyMDEzMzYxLDI3MDMzMzUzNywxOTEzMjYzOTk4
+XX0=
 -->
