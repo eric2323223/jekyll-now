@@ -31,7 +31,7 @@ Transformer的创新主要有以下几点
 - Multiple Attention Head
 different random initial weights matrix may lead to different representation subspace, thus give transformer ability to understand different meaning of a word
 - Position encoding
-
+由于transformer不使用RNN和CNN，
 - Attention 
 	- Use of self-attention to improve accuracy
 	- Assumption: the more similar the more it contribute
@@ -64,11 +64,11 @@ different random initial weights matrix may lead to different representation sub
 [Attention is all you need review]([https://ricardokleinklein.github.io/2017/11/16/Attention-is-all-you-need.html](https://ricardokleinklein.github.io/2017/11/16/Attention-is-all-you-need.html))
 [The transformer - Attention is all you need]([https://mchromiak.github.io/articles/2017/Sep/12/Transformer-Attention-is-all-you-need/#.XTEl6ugzZPY](https://mchromiak.github.io/articles/2017/Sep/12/Transformer-Attention-is-all-you-need/#.XTEl6ugzZPY))
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbOTA3MzE5OTM4LDIxMzY3MDY5MjQsLTEzMT
-U3NzQ3OTAsMzUzMzk0MTg1LC0xNTExMjEzMTIsMzY4NjA2MjIw
-LDI5NDI2MjM2NywyMDgwODIyMDQyLDM0MzUwNzIyNSwyOTAyND
-c1NjIsNTc3OTMyMDI4LDEzMjA5NzY2MTksMTgxODg5ODkwNiwt
-MTI0NTMyNjk2MCwxMjk2MjMzNDQ2LDIwMzk0ODU3MjksNTcyNz
-kzMDE4LC0xMDg4NzU0NTMyLDUzMjAxMzM2MSwyNzAzMzM1Mzdd
+eyJoaXN0b3J5IjpbMzUzODkyMzg5LDkwNzMxOTkzOCwyMTM2Nz
+A2OTI0LC0xMzE1Nzc0NzkwLDM1MzM5NDE4NSwtMTUxMTIxMzEy
+LDM2ODYwNjIyMCwyOTQyNjIzNjcsMjA4MDgyMjA0MiwzNDM1MD
+cyMjUsMjkwMjQ3NTYyLDU3NzkzMjAyOCwxMzIwOTc2NjE5LDE4
+MTg4OTg5MDYsLTEyNDUzMjY5NjAsMTI5NjIzMzQ0NiwyMDM5ND
+g1NzI5LDU3Mjc5MzAxOCwtMTA4ODc1NDUzMiw1MzIwMTMzNjFd
 fQ==
 -->
