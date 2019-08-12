@@ -3,9 +3,10 @@
 
 ## 序列到序列问题（seq2seq）
 seq2seq问题是使用机器学习（特别是深度学习）解决的一类常见问题，例如机器翻译，语态分析，摘要生成等自然语言处理问题（NLP），还包括_______。 这类问题的最大特点是输入随着时间依次到来，输出————————。处理seq2seq的传统方法是使用RNN模型，RNN能够保存状态，它将输入分为多步，依靠每步输入和上一步的状态决定下一步的状态（和输出），从模型结构上来说特别适合序列到序列问题。问题有三点
-1. 长序列记忆
+1. 长序列的训练很困难
 2. 只能顺序执行，效率比较差
-3. 固定的记忆bu
+3. 固定的存储不适合长序列
+
 
 ## RNN和CNN
 为什么要引入新的模型？加速训练，提高准确性
@@ -64,7 +65,7 @@ different random initial weights matrix may lead to different representation sub
 [Attention is all you need review]([https://ricardokleinklein.github.io/2017/11/16/Attention-is-all-you-need.html](https://ricardokleinklein.github.io/2017/11/16/Attention-is-all-you-need.html))
 [The transformer - Attention is all you need]([https://mchromiak.github.io/articles/2017/Sep/12/Transformer-Attention-is-all-you-need/#.XTEl6ugzZPY](https://mchromiak.github.io/articles/2017/Sep/12/Transformer-Attention-is-all-you-need/#.XTEl6ugzZPY))
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEyOTUwNDYwLDIwMzk0ODU3MjksNTcyNz
+eyJoaXN0b3J5IjpbOTAzODM2NzMzLDIwMzk0ODU3MjksNTcyNz
 kzMDE4LC0xMDg4NzU0NTMyLDUzMjAxMzM2MSwyNzAzMzM1Mzcs
 MTkxMzI2Mzk5OCwtMjUyNTExNjUsMTExNzAwMjEsOTk3MjAzMD
 M2LC03OTc1MjU1NjcsLTM1MDA1Mzc3NywtMTQwOTA0MDQxMywx
