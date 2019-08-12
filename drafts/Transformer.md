@@ -9,15 +9,9 @@ seq2seq问题是使用机器学习（特别是深度学习）解决的一类常�
 2. 只能顺序执行，效率比较差
 3. 固定的存储不适合长序列
 ### CNN
-CNN可以同时处理序列中的所有元素，但是由于卷及运算的视域有限，一次卷积操作只能处理有限的元素，对于较长的序列无法处理。解决办法是叠加多层卷积操作，增大视域，但这仍没有完全解决长序列输入的处理问题，————————。
+CNN可以同时处理序列中的所有元素，但是由于卷及运算的视域有限，一次卷积操作只能处理有限的元素，对于较长的序列无法处理。解决办法是叠加多层卷积操作，增大视域，但这仍没有完全解决长序列输入的处理问题，————————而且增加了模型的复杂度，使运算变慢，这和初衷不符。
 
-## RNN和CNN
-为什么要引入新的模型？加速训练，提高准确性
-### RNN
-- 无法并行运算
-- Long memory problem
-### CNN
-- CNN由于使用尺寸受限的卷积核（convolution kernel）扫描输入数据，同样面临着long memory problem，要使CNN能够一次扫描大量的输入（长句子）就需要叠加多层卷积运算来实现，这样做的代价是增加了模型的复杂度，使运算变慢，这和初衷不符。
+
 
 ## Theory and Model
 RNN解决了哪些问题，如何替代它？
@@ -68,11 +62,11 @@ different random initial weights matrix may lead to different representation sub
 [Attention is all you need review]([https://ricardokleinklein.github.io/2017/11/16/Attention-is-all-you-need.html](https://ricardokleinklein.github.io/2017/11/16/Attention-is-all-you-need.html))
 [The transformer - Attention is all you need]([https://mchromiak.github.io/articles/2017/Sep/12/Transformer-Attention-is-all-you-need/#.XTEl6ugzZPY](https://mchromiak.github.io/articles/2017/Sep/12/Transformer-Attention-is-all-you-need/#.XTEl6ugzZPY))
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTc3OTMyMDI4LDEzMjA5NzY2MTksMTgxOD
-g5ODkwNiwtMTI0NTMyNjk2MCwxMjk2MjMzNDQ2LDIwMzk0ODU3
-MjksNTcyNzkzMDE4LC0xMDg4NzU0NTMyLDUzMjAxMzM2MSwyNz
-AzMzM1MzcsMTkxMzI2Mzk5OCwtMjUyNTExNjUsMTExNzAwMjEs
-OTk3MjAzMDM2LC03OTc1MjU1NjcsLTM1MDA1Mzc3NywtMTQwOT
-A0MDQxMywxMDA1NzkwNDU5LC0xMjI0OTg2OTY4LDEwNzM2MDgw
-MzldfQ==
+eyJoaXN0b3J5IjpbMjkwMjQ3NTYyLDU3NzkzMjAyOCwxMzIwOT
+c2NjE5LDE4MTg4OTg5MDYsLTEyNDUzMjY5NjAsMTI5NjIzMzQ0
+NiwyMDM5NDg1NzI5LDU3Mjc5MzAxOCwtMTA4ODc1NDUzMiw1Mz
+IwMTMzNjEsMjcwMzMzNTM3LDE5MTMyNjM5OTgsLTI1MjUxMTY1
+LDExMTcwMDIxLDk5NzIwMzAzNiwtNzk3NTI1NTY3LC0zNTAwNT
+M3NzcsLTE0MDkwNDA0MTMsMTAwNTc5MDQ1OSwtMTIyNDk4Njk2
+OF19
 -->
