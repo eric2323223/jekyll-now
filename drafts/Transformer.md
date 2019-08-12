@@ -2,7 +2,7 @@
 在自然语言处理(NLP)领域，RNN一直是被最广泛使用的深度机器学习模型，近年来CNN也逐渐被用于进行。。。然而这两类模型都有一些难以克服的问题，Transformer就是为了解决这些问题的新型模型，并取得了非常好的效果，大有取代RNN在NLP领域的统治地位的趋势，本文我们就来一步步的分析如何设计和实现transformer
 
 ## 序列到序列问题（seq2seq）
-seq2seq问题是使用机器学习（特别是深度学习）解决的一类常见问题，例如机器翻译，语态分析，摘要生成等自然语言处理问题（NLP），还包括_______。 这类问题的最大特点是输入随着时间依次到来，输出————————。
+seq2seq问题是使用机器学习（特别是深度学习）解决的一类常见问题，例如机器翻译，语态分析，摘要生成等自然语言处理问题（NLP），还包括_______。 这类问题的最大特点是输入（或输出）以序列的形式出现，序列的长度可变，输出————————。
 ### RNN
 处理seq2seq问题的传统方法是使用RNN模型，RNN能够保存状态，它将输入分为多步，依靠每步输入和上一步的状态决定下一步的状态（和输出），从模型结构上来说特别适合序列到序列问题。问题有三点
 1. 长序列的训练很困难
@@ -68,7 +68,7 @@ different random initial weights matrix may lead to different representation sub
 [Attention is all you need review]([https://ricardokleinklein.github.io/2017/11/16/Attention-is-all-you-need.html](https://ricardokleinklein.github.io/2017/11/16/Attention-is-all-you-need.html))
 [The transformer - Attention is all you need]([https://mchromiak.github.io/articles/2017/Sep/12/Transformer-Attention-is-all-you-need/#.XTEl6ugzZPY](https://mchromiak.github.io/articles/2017/Sep/12/Transformer-Attention-is-all-you-need/#.XTEl6ugzZPY))
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIzOTA5NjYxLC0xMjQ1MzI2OTYwLDEyOT
+eyJoaXN0b3J5IjpbNzM5NTA1Nzc5LC0xMjQ1MzI2OTYwLDEyOT
 YyMzM0NDYsMjAzOTQ4NTcyOSw1NzI3OTMwMTgsLTEwODg3NTQ1
 MzIsNTMyMDEzMzYxLDI3MDMzMzUzNywxOTEzMjYzOTk4LC0yNT
 I1MTE2NSwxMTE3MDAyMSw5OTcyMDMwMzYsLTc5NzUyNTU2Nywt
