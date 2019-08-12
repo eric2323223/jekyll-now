@@ -9,7 +9,7 @@ seq2seq问题是使用机器学习（特别是深度学习）解决的一类常�
 2. 只能顺序执行，效率比较差
 3. 固定的存储不适合长序列
 ### CNN
-CNN可以chuli
+CNN可以同时处理序列中的所有元素，但是由于CNN的视域有限，次卷积操作只能处理有限的元素
 
 ## RNN和CNN
 为什么要引入新的模型？加速训练，提高准确性
@@ -68,11 +68,11 @@ different random initial weights matrix may lead to different representation sub
 [Attention is all you need review]([https://ricardokleinklein.github.io/2017/11/16/Attention-is-all-you-need.html](https://ricardokleinklein.github.io/2017/11/16/Attention-is-all-you-need.html))
 [The transformer - Attention is all you need]([https://mchromiak.github.io/articles/2017/Sep/12/Transformer-Attention-is-all-you-need/#.XTEl6ugzZPY](https://mchromiak.github.io/articles/2017/Sep/12/Transformer-Attention-is-all-you-need/#.XTEl6ugzZPY))
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0MjQ0ODg4NzMsLTEyNDUzMjY5NjAsMT
-I5NjIzMzQ0NiwyMDM5NDg1NzI5LDU3Mjc5MzAxOCwtMTA4ODc1
-NDUzMiw1MzIwMTMzNjEsMjcwMzMzNTM3LDE5MTMyNjM5OTgsLT
-I1MjUxMTY1LDExMTcwMDIxLDk5NzIwMzAzNiwtNzk3NTI1NTY3
-LC0zNTAwNTM3NzcsLTE0MDkwNDA0MTMsMTAwNTc5MDQ1OSwtMT
-IyNDk4Njk2OCwxMDczNjA4MDM5LC0xNDgyNTQzMjU0LDE0MTAy
-ODIxMzZdfQ==
+eyJoaXN0b3J5IjpbLTk3MjYyMjU1OSwtMTI0NTMyNjk2MCwxMj
+k2MjMzNDQ2LDIwMzk0ODU3MjksNTcyNzkzMDE4LC0xMDg4NzU0
+NTMyLDUzMjAxMzM2MSwyNzAzMzM1MzcsMTkxMzI2Mzk5OCwtMj
+UyNTExNjUsMTExNzAwMjEsOTk3MjAzMDM2LC03OTc1MjU1Njcs
+LTM1MDA1Mzc3NywtMTQwOTA0MDQxMywxMDA1NzkwNDU5LC0xMj
+I0OTg2OTY4LDEwNzM2MDgwMzksLTE0ODI1NDMyNTQsMTQxMDI4
+MjEzNl19
 -->
