@@ -14,7 +14,8 @@ CNN可以同时处理序列中的所有元素，但是由于卷及运算的视�
 总结上述两种模型的处理方式，我们发现对于长序列的输入，无论是在预测准确度还是训练速度都有不足，那么如何改进这些不足呢？有没有一种方法能让我们一次性的看到全部输入（无论序列有多长），并且能根据这些输入信息分析他们之间的关联关系呢？答案就是attention机制，
 
 
-## Theory and Model
+
+## Transformer模型
 RNN解决了哪些问题，如何替代它？
 
 - 解决long memory problem
@@ -63,11 +64,10 @@ different random initial weights matrix may lead to different representation sub
 [Attention is all you need review]([https://ricardokleinklein.github.io/2017/11/16/Attention-is-all-you-need.html](https://ricardokleinklein.github.io/2017/11/16/Attention-is-all-you-need.html))
 [The transformer - Attention is all you need]([https://mchromiak.github.io/articles/2017/Sep/12/Transformer-Attention-is-all-you-need/#.XTEl6ugzZPY](https://mchromiak.github.io/articles/2017/Sep/12/Transformer-Attention-is-all-you-need/#.XTEl6ugzZPY))
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzY4NjA2MjIwLDI5NDI2MjM2NywyMDgwOD
-IyMDQyLDM0MzUwNzIyNSwyOTAyNDc1NjIsNTc3OTMyMDI4LDEz
-MjA5NzY2MTksMTgxODg5ODkwNiwtMTI0NTMyNjk2MCwxMjk2Mj
-MzNDQ2LDIwMzk0ODU3MjksNTcyNzkzMDE4LC0xMDg4NzU0NTMy
-LDUzMjAxMzM2MSwyNzAzMzM1MzcsMTkxMzI2Mzk5OCwtMjUyNT
-ExNjUsMTExNzAwMjEsOTk3MjAzMDM2LC03OTc1MjU1NjddfQ==
-
+eyJoaXN0b3J5IjpbNDY4OTE1OTQ2LDM2ODYwNjIyMCwyOTQyNj
+IzNjcsMjA4MDgyMjA0MiwzNDM1MDcyMjUsMjkwMjQ3NTYyLDU3
+NzkzMjAyOCwxMzIwOTc2NjE5LDE4MTg4OTg5MDYsLTEyNDUzMj
+Y5NjAsMTI5NjIzMzQ0NiwyMDM5NDg1NzI5LDU3Mjc5MzAxOCwt
+MTA4ODc1NDUzMiw1MzIwMTMzNjEsMjcwMzMzNTM3LDE5MTMyNj
+M5OTgsLTI1MjUxMTY1LDExMTcwMDIxLDk5NzIwMzAzNl19
 -->
