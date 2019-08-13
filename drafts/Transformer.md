@@ -27,7 +27,7 @@ Transformer的最大的创新在于它只使用普通神经网络来实现seq2se
 
 全新模型的也同时带来了一些新问题
 1. 位置编码
-
+extrapolate training samples
 除了解决新问题，transformer还通过以下增强
  2. MHA
  3. self attention
@@ -37,9 +37,7 @@ Transformer的最大的创新在于它只使用普通神经网络来实现seq2se
 	- self attention， encoding-decoding attention
 - Multiple Attention Head
 different random initial weights matrix may lead to different representation subspace, thus give transformer ability to understand different meaning of a word
-- 位置编码Positional encoding
-由于transformer不使用RNN和CNN，仅仅计算不同元素之间的相似度，因此必须加入位置信息来保证transformer正确的理解输入序列。最简单的位置编码是直接使用元素的序号，但这种方式对输入序列的长度过于敏感，对相对位置关系的表达——————。 
-Transformer中使用了sin/cos位置编码
+
 5. 计算方便
 6. 能够体现相对位置关系
 7. 可处理变长序列
@@ -58,7 +56,7 @@ Transformer中使用了sin/cos位置编码
 ### Why multiple layer of attention layers?
 ### Vector similarity
 ### Positional encoding
-- why not positional index? extrapolate training samples
+- why not positional index? 
 ### point-wise FFN
 ### Mask
 ## Transformer实现
@@ -75,11 +73,11 @@ Transformer中使用了sin/cos位置编码
 [Attention is all you need review]([https://ricardokleinklein.github.io/2017/11/16/Attention-is-all-you-need.html](https://ricardokleinklein.github.io/2017/11/16/Attention-is-all-you-need.html))
 [The transformer - Attention is all you need]([https://mchromiak.github.io/articles/2017/Sep/12/Transformer-Attention-is-all-you-need/#.XTEl6ugzZPY](https://mchromiak.github.io/articles/2017/Sep/12/Transformer-Attention-is-all-you-need/#.XTEl6ugzZPY))
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE5NTA2Nzk1NTEsNTc0MTc3NzgsNzg3Nj
-g1MjM2LDE3MzA4NzA2NzQsLTE4MTUwNzA0NTcsLTE2MDQ3NDA5
-OTUsOTA3MzE5OTM4LDIxMzY3MDY5MjQsLTEzMTU3NzQ3OTAsMz
-UzMzk0MTg1LC0xNTExMjEzMTIsMzY4NjA2MjIwLDI5NDI2MjM2
-NywyMDgwODIyMDQyLDM0MzUwNzIyNSwyOTAyNDc1NjIsNTc3OT
-MyMDI4LDEzMjA5NzY2MTksMTgxODg5ODkwNiwtMTI0NTMyNjk2
-MF19
+eyJoaXN0b3J5IjpbMTAwMzU1NzY3LDU3NDE3Nzc4LDc4NzY4NT
+IzNiwxNzMwODcwNjc0LC0xODE1MDcwNDU3LC0xNjA0NzQwOTk1
+LDkwNzMxOTkzOCwyMTM2NzA2OTI0LC0xMzE1Nzc0NzkwLDM1Mz
+M5NDE4NSwtMTUxMTIxMzEyLDM2ODYwNjIyMCwyOTQyNjIzNjcs
+MjA4MDgyMjA0MiwzNDM1MDcyMjUsMjkwMjQ3NTYyLDU3NzkzMj
+AyOCwxMzIwOTc2NjE5LDE4MTg4OTg5MDYsLTEyNDUzMjY5NjBd
+fQ==
 -->
