@@ -28,9 +28,10 @@ Transformer的最大的创新在于它只使用普通神经网络来实现seq2se
 全新模型的也同时带来了一些新问题
 1. 位置编码
 
-除了解决xin增强
-2. MHA
-3. 
+除了解决新问题，transformer还通过以下增强
+ 2. MHA
+ 3. self attention
+ 4.  
 	- RNN CNN free - help to speed up training
 	- Stacking of encoder/decoder
 	- self attention， encoding-decoding attention
@@ -39,9 +40,9 @@ different random initial weights matrix may lead to different representation sub
 - 位置编码Positional encoding
 由于transformer不使用RNN和CNN，仅仅计算不同元素之间的相似度，因此必须加入位置信息来保证transformer正确的理解输入序列。最简单的位置编码是直接使用元素的序号，但这种方式对输入序列的长度过于敏感，对相对位置关系的表达——————。 
 Transformer中使用了sin/cos位置编码
-4. 计算方便
-5. 能够体现相对位置关系
-6. 可处理变长序列
+5. 计算方便
+6. 能够体现相对位置关系
+7. 可处理变长序列
 - Attention 
 	- Use of self-attention to improve accuracy
 	- Assumption: the more similar the more it contribute
@@ -74,11 +75,11 @@ Transformer中使用了sin/cos位置编码
 [Attention is all you need review]([https://ricardokleinklein.github.io/2017/11/16/Attention-is-all-you-need.html](https://ricardokleinklein.github.io/2017/11/16/Attention-is-all-you-need.html))
 [The transformer - Attention is all you need]([https://mchromiak.github.io/articles/2017/Sep/12/Transformer-Attention-is-all-you-need/#.XTEl6ugzZPY](https://mchromiak.github.io/articles/2017/Sep/12/Transformer-Attention-is-all-you-need/#.XTEl6ugzZPY))
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjA0NjgyMjEwLDc4NzY4NTIzNiwxNzMwOD
-cwNjc0LC0xODE1MDcwNDU3LC0xNjA0NzQwOTk1LDkwNzMxOTkz
-OCwyMTM2NzA2OTI0LC0xMzE1Nzc0NzkwLDM1MzM5NDE4NSwtMT
-UxMTIxMzEyLDM2ODYwNjIyMCwyOTQyNjIzNjcsMjA4MDgyMjA0
-MiwzNDM1MDcyMjUsMjkwMjQ3NTYyLDU3NzkzMjAyOCwxMzIwOT
-c2NjE5LDE4MTg4OTg5MDYsLTEyNDUzMjY5NjAsMTI5NjIzMzQ0
-Nl19
+eyJoaXN0b3J5IjpbNTc0MTc3NzgsNzg3Njg1MjM2LDE3MzA4Nz
+A2NzQsLTE4MTUwNzA0NTcsLTE2MDQ3NDA5OTUsOTA3MzE5OTM4
+LDIxMzY3MDY5MjQsLTEzMTU3NzQ3OTAsMzUzMzk0MTg1LC0xNT
+ExMjEzMTIsMzY4NjA2MjIwLDI5NDI2MjM2NywyMDgwODIyMDQy
+LDM0MzUwNzIyNSwyOTAyNDc1NjIsNTc3OTMyMDI4LDEzMjA5Nz
+Y2MTksMTgxODg5ODkwNiwtMTI0NTMyNjk2MCwxMjk2MjMzNDQ2
+XX0=
 -->
