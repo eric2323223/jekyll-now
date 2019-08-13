@@ -31,7 +31,7 @@ Transformer的最大的创新在于它只使用普通神经网络来实现seq2se
 除了解决新问题，transformer还通过以下增强
  2. MHA
  3. self attention
- 4.  
+ 4.  stack of encoder/decoder layer
 	- RNN CNN free - help to speed up training
 	- Stacking of encoder/decoder
 	- self attention， encoding-decoding attention
@@ -75,11 +75,11 @@ Transformer中使用了sin/cos位置编码
 [Attention is all you need review]([https://ricardokleinklein.github.io/2017/11/16/Attention-is-all-you-need.html](https://ricardokleinklein.github.io/2017/11/16/Attention-is-all-you-need.html))
 [The transformer - Attention is all you need]([https://mchromiak.github.io/articles/2017/Sep/12/Transformer-Attention-is-all-you-need/#.XTEl6ugzZPY](https://mchromiak.github.io/articles/2017/Sep/12/Transformer-Attention-is-all-you-need/#.XTEl6ugzZPY))
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTc0MTc3NzgsNzg3Njg1MjM2LDE3MzA4Nz
-A2NzQsLTE4MTUwNzA0NTcsLTE2MDQ3NDA5OTUsOTA3MzE5OTM4
-LDIxMzY3MDY5MjQsLTEzMTU3NzQ3OTAsMzUzMzk0MTg1LC0xNT
-ExMjEzMTIsMzY4NjA2MjIwLDI5NDI2MjM2NywyMDgwODIyMDQy
-LDM0MzUwNzIyNSwyOTAyNDc1NjIsNTc3OTMyMDI4LDEzMjA5Nz
-Y2MTksMTgxODg5ODkwNiwtMTI0NTMyNjk2MCwxMjk2MjMzNDQ2
-XX0=
+eyJoaXN0b3J5IjpbLTE5NTA2Nzk1NTEsNTc0MTc3NzgsNzg3Nj
+g1MjM2LDE3MzA4NzA2NzQsLTE4MTUwNzA0NTcsLTE2MDQ3NDA5
+OTUsOTA3MzE5OTM4LDIxMzY3MDY5MjQsLTEzMTU3NzQ3OTAsMz
+UzMzk0MTg1LC0xNTExMjEzMTIsMzY4NjA2MjIwLDI5NDI2MjM2
+NywyMDgwODIyMDQyLDM0MzUwNzIyNSwyOTAyNDc1NjIsNTc3OT
+MyMDI4LDEzMjA5NzY2MTksMTgxODg5ODkwNiwtMTI0NTMyNjk2
+MF19
 -->
