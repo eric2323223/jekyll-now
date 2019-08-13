@@ -9,9 +9,9 @@ seq2seq问题是使用机器学习（特别是深度学习）解决的一类常�
 2. 只能顺序执行，训练速度很慢
 3. 固定的存储不适合长序列
 ### CNN
-CNN可以同时处理序列中的所有元素，但是由于卷及运算的视域有限，一次卷积操作只能处理有限的元素，对于较长的序列无法处理。解决办法是通过叠加多层卷积操作来逐渐增加视域，但这样会不可避免的导致信息丢失，并且仍没有完全解决长序列输入的处理问题，————————而且增加了模型的复杂度，使运算变慢，这和初衷不符。
+CNN可以同时处理序列中的所有元素，但是由于卷及运算的视域有限，一次卷积操作只能处理有限的元素，较长的序列无法处理法是通过叠加多层卷积操作来逐渐增加视域，但这样会不可避免的导致信息丢失，并且仍没有完全解决长序列输入的处理问题，————————而且增加了模型的复杂度，使运算变慢，这和初衷不符。
 ### Attention机制
-总结上述两种模型的处理方式，我们发现对于长序列的输入，无论是在预测准确度还是训练速度都有不足，有没有一种方法能从根本上解决这些问题，让我们一次性的看到全部输入（无论序列有多长），并且能根据这些输入信息分析他们之间的关联关系呢？答案就是attention机制，
+总结上述两种模型的处理方式，我们发现对于长序列的输入，无论是在预测准确度还是训练速度都有不足，有没有一种方法能从根本上解决这些问题，让我们一次性的看到全部输入（无论序列有多长），并且能根据这些输入信息分析序列元素之间的关联关系呢？答案就是attention机制，
 图
 
 
@@ -23,21 +23,21 @@ CNN可以同时处理序列中的所有元素，但是由于卷及运算的视�
 
 ### 模型架构
 整体架构上看，transformer仍属于Encoder-Decoder架构，通过encoder将输入序列转换成内部表示，在通过不通过不同decoder实现不同的预测功能。
-Transformer的最大的创新在于它只使用普通神经网络来实现seq2seq task，避免使用RNN和CNN从而使得在训练速度和准确率上全面超越了已有的方法。具体来讲
+Transformer的最大的创在于它是只使用普通神经网络来实现seq2seq task，避免使用RNN和CNN从而使得在训练速度和准确率上全面超越了已有的方法。具体来讲
 
 #### 全新模型的也同时带来了一些新问题
-- 位置编码Positional encoding
-由于transformer不使用RNN和CNN，仅仅计算不同元素之间的相似度，因此必须加入位置信息来保证transformer正确的理解输入序列。最简单的位置编码是直接使用元素的序号，但这种方式对输入序列的长度过于敏感，对相对位置关系的表达——————。 extrapolate training samples
+RNNCN不同元素之间的相似度，因此必须加入位置信息来保证transformer正确的理解输入序列。最简单的位置编码是直接使用元素的序号，但这种方式对输入序列的长度过于敏感，对相对位置关系的表达——————。 extrapolate training samples
 Transformer中使用了sin/cos位置编码
 	1. 计算方便
 	2. 能够体现相对位置关系
 	3. 可处理变长序列
-#### 除了解决新问题，transformer还通过以下增强
+#### 除了解决新问题，transformer还通过以下增强 free 
 - Multiple Attention Head(MHA)
 different random initial weights matrix may lead to different representation subspace, thus give transformer ability to understand different meaning of a word
  3. self attention
  4.  stack of encoder/decoder layer
-	- RNN CNN free - help to speed up training
+	- - 位置编码Positional encoding
+由于transformer不使用RNN 和CNN free - help to speed up training
 	- Stacking of encoder/decoder
 	- self attention， encoding-decoding attention
 
@@ -75,11 +75,11 @@ different random initial weights matrix may lead to different representation sub
 [Attention is all you need review]([https://ricardokleinklein.github.io/2017/11/16/Attention-is-all-you-need.html](https://ricardokleinklein.github.io/2017/11/16/Attention-is-all-you-need.html))
 [The transformer - Attention is all you need]([https://mchromiak.github.io/articles/2017/Sep/12/Transformer-Attention-is-all-you-need/#.XTEl6ugzZPY](https://mchromiak.github.io/articles/2017/Sep/12/Transformer-Attention-is-all-you-need/#.XTEl6ugzZPY))
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTc5NjAwNDMxLDU3NDE3Nzc4LDc4NzY4NT
-IzNiwxNzMwODcwNjc0LC0xODE1MDcwNDU3LC0xNjA0NzQwOTk1
-LDkwNzMxOTkzOCwyMTM2NzA2OTI0LC0xMzE1Nzc0NzkwLDM1Mz
-M5NDE4NSwtMTUxMTIxMzEyLDM2ODYwNjIyMCwyOTQyNjIzNjcs
-MjA4MDgyMjA0MiwzNDM1MDcyMjUsMjkwMjQ3NTYyLDU3NzkzMj
-AyOCwxMzIwOTc2NjE5LDE4MTg4OTg5MDYsLTEyNDUzMjY5NjBd
-fQ==
+eyJoaXN0b3J5IjpbLTM3ODY2NjU0MCw1Nzk2MDA0MzEsNTc0MT
+c3NzgsNzg3Njg1MjM2LDE3MzA4NzA2NzQsLTE4MTUwNzA0NTcs
+LTE2MDQ3NDA5OTUsOTA3MzE5OTM4LDIxMzY3MDY5MjQsLTEzMT
+U3NzQ3OTAsMzUzMzk0MTg1LC0xNTExMjEzMTIsMzY4NjA2MjIw
+LDI5NDI2MjM2NywyMDgwODIyMDQyLDM0MzUwNzIyNSwyOTAyND
+c1NjIsNTc3OTMyMDI4LDEzMjA5NzY2MTksMTgxODg5ODkwNl19
+
 -->
