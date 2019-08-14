@@ -23,6 +23,7 @@ CNN可以同时处理序列中的所有元素，但是由于卷积运算的视�
 
 ### 模型架构
 整体架构上看，transformer仍属于Encoder-Decoder架构，通过encoder将输入序列转换成内部表示，在通过不同decoder实现不同的预测功能。
+![enter image description here](http://armancohan.com/img/transformer-1.png)
 Transformer的最大的创在于它使用attention和全连接网络来实现seq2seq task，避免使用RNN和CNN从而使得在训练速度和准确率上全面超越了已有的方法。具体来讲
 
 #### 新问题
@@ -81,11 +82,11 @@ Despite not having any explicit recurrency, implicitly the model is built as an 
 [Attention is all you need review]([https://ricardokleinklein.github.io/2017/11/16/Attention-is-all-you-need.html](https://ricardokleinklein.github.io/2017/11/16/Attention-is-all-you-need.html))
 [The transformer - Attention is all you need]([https://mchromiak.github.io/articles/2017/Sep/12/Transformer-Attention-is-all-you-need/#.XTEl6ugzZPY](https://mchromiak.github.io/articles/2017/Sep/12/Transformer-Attention-is-all-you-need/#.XTEl6ugzZPY))
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTExNjE4NjU3MzMsLTE0Nzc0MDYyOTMsLT
-ExMDkyMTkxMjEsNTc5NjAwNDMxLDU3NDE3Nzc4LDc4NzY4NTIz
-NiwxNzMwODcwNjc0LC0xODE1MDcwNDU3LC0xNjA0NzQwOTk1LD
-kwNzMxOTkzOCwyMTM2NzA2OTI0LC0xMzE1Nzc0NzkwLDM1MzM5
-NDE4NSwtMTUxMTIxMzEyLDM2ODYwNjIyMCwyOTQyNjIzNjcsMj
-A4MDgyMjA0MiwzNDM1MDcyMjUsMjkwMjQ3NTYyLDU3NzkzMjAy
-OF19
+eyJoaXN0b3J5IjpbLTE4MjExMTIxOTgsLTExNjE4NjU3MzMsLT
+E0Nzc0MDYyOTMsLTExMDkyMTkxMjEsNTc5NjAwNDMxLDU3NDE3
+Nzc4LDc4NzY4NTIzNiwxNzMwODcwNjc0LC0xODE1MDcwNDU3LC
+0xNjA0NzQwOTk1LDkwNzMxOTkzOCwyMTM2NzA2OTI0LC0xMzE1
+Nzc0NzkwLDM1MzM5NDE4NSwtMTUxMTIxMzEyLDM2ODYwNjIyMC
+wyOTQyNjIzNjcsMjA4MDgyMjA0MiwzNDM1MDcyMjUsMjkwMjQ3
+NTYyXX0=
 -->
