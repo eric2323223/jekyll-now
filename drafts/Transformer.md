@@ -23,7 +23,7 @@ CNN可以同时处理序列中的所有元素，但是由于卷积运算的视�
 
 ### 模型架构
 整体架构上看，transformer仍属于Encoder-Decoder架构，通过encoder将输入序列转换成内部表示，在通过不同decoder实现不同的预测功能。
-Transformer的最大的创在于它是只使用普通神经网络来实现seq2seq task，避免使用RNN和CNN从而使得在训练速度和准确率上全面超越了已有的方法。具体来讲
+Transformer的最大的创在于它使用attention和全连接网络来实现seq2seq task，避免使用RNN和CNN从而使得在训练速度和准确率上全面超越了已有的方法。具体来讲
 
 #### 新问题
 - 位置编码Positional encoding
@@ -78,11 +78,11 @@ different random initial weights matrix may lead to different representation sub
 [Attention is all you need review]([https://ricardokleinklein.github.io/2017/11/16/Attention-is-all-you-need.html](https://ricardokleinklein.github.io/2017/11/16/Attention-is-all-you-need.html))
 [The transformer - Attention is all you need]([https://mchromiak.github.io/articles/2017/Sep/12/Transformer-Attention-is-all-you-need/#.XTEl6ugzZPY](https://mchromiak.github.io/articles/2017/Sep/12/Transformer-Attention-is-all-you-need/#.XTEl6ugzZPY))
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0Nzc0MDYyOTMsLTExMDkyMTkxMjEsNT
-c5NjAwNDMxLDU3NDE3Nzc4LDc4NzY4NTIzNiwxNzMwODcwNjc0
-LC0xODE1MDcwNDU3LC0xNjA0NzQwOTk1LDkwNzMxOTkzOCwyMT
-M2NzA2OTI0LC0xMzE1Nzc0NzkwLDM1MzM5NDE4NSwtMTUxMTIx
-MzEyLDM2ODYwNjIyMCwyOTQyNjIzNjcsMjA4MDgyMjA0MiwzND
-M1MDcyMjUsMjkwMjQ3NTYyLDU3NzkzMjAyOCwxMzIwOTc2NjE5
-XX0=
+eyJoaXN0b3J5IjpbNzUzNzk4MjE4LC0xNDc3NDA2MjkzLC0xMT
+A5MjE5MTIxLDU3OTYwMDQzMSw1NzQxNzc3OCw3ODc2ODUyMzYs
+MTczMDg3MDY3NCwtMTgxNTA3MDQ1NywtMTYwNDc0MDk5NSw5MD
+czMTk5MzgsMjEzNjcwNjkyNCwtMTMxNTc3NDc5MCwzNTMzOTQx
+ODUsLTE1MTEyMTMxMiwzNjg2MDYyMjAsMjk0MjYyMzY3LDIwOD
+A4MjIwNDIsMzQzNTA3MjI1LDI5MDI0NzU2Miw1Nzc5MzIwMjhd
+fQ==
 -->
