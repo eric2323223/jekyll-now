@@ -71,6 +71,9 @@ different random initial weights matrix may lead to different representation sub
 - Residuals carry positional information to higher layers, among other information.
 ### warn-up learning rate
 ### regularization
+## Transformer的改进
+Despite not having any explicit recurrency, implicitly the model is built as an autoregressive one. It implies that in order to generate an output (both while training or during inference), the model needs to compute previous outputs, which is extremely costly, for the whole net has to be run for every output. That’s the main idea to overcome in a recent paper by researchers at [_Salesforce Research_](https://einstein.ai/research/non-autoregressive-neural-machine-translation) and the University of Hong Kong, who tried to make the whole process parallelizable[23](https://ricardokleinklein.github.io/2017/11/16/Attention-is-all-you-need.html#fn:23). Their proposal is to compute _fertilities_ for every input word in the sequence, and use it instead of previous outputs in order to compute the current output. This is summarized in the figure below.
+## 总结
 - dropout
 - layer normalization
 
@@ -78,11 +81,11 @@ different random initial weights matrix may lead to different representation sub
 [Attention is all you need review]([https://ricardokleinklein.github.io/2017/11/16/Attention-is-all-you-need.html](https://ricardokleinklein.github.io/2017/11/16/Attention-is-all-you-need.html))
 [The transformer - Attention is all you need]([https://mchromiak.github.io/articles/2017/Sep/12/Transformer-Attention-is-all-you-need/#.XTEl6ugzZPY](https://mchromiak.github.io/articles/2017/Sep/12/Transformer-Attention-is-all-you-need/#.XTEl6ugzZPY))
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNzUzNzk4MjE4LC0xNDc3NDA2MjkzLC0xMT
-A5MjE5MTIxLDU3OTYwMDQzMSw1NzQxNzc3OCw3ODc2ODUyMzYs
-MTczMDg3MDY3NCwtMTgxNTA3MDQ1NywtMTYwNDc0MDk5NSw5MD
-czMTk5MzgsMjEzNjcwNjkyNCwtMTMxNTc3NDc5MCwzNTMzOTQx
-ODUsLTE1MTEyMTMxMiwzNjg2MDYyMjAsMjk0MjYyMzY3LDIwOD
-A4MjIwNDIsMzQzNTA3MjI1LDI5MDI0NzU2Miw1Nzc5MzIwMjhd
-fQ==
+eyJoaXN0b3J5IjpbLTExNjE4NjU3MzMsLTE0Nzc0MDYyOTMsLT
+ExMDkyMTkxMjEsNTc5NjAwNDMxLDU3NDE3Nzc4LDc4NzY4NTIz
+NiwxNzMwODcwNjc0LC0xODE1MDcwNDU3LC0xNjA0NzQwOTk1LD
+kwNzMxOTkzOCwyMTM2NzA2OTI0LC0xMzE1Nzc0NzkwLDM1MzM5
+NDE4NSwtMTUxMTIxMzEyLDM2ODYwNjIyMCwyOTQyNjIzNjcsMj
+A4MDgyMjA0MiwzNDM1MDcyMjUsMjkwMjQ3NTYyLDU3NzkzMjAy
+OF19
 -->
