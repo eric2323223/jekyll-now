@@ -43,7 +43,6 @@ different random initial weights matrix may lead to different representation sub
 	- self attention， encoding-decoding attention
 
 
-
 - Attention 
 	- Use of self-attention to improve accuracy
 	- Assumption: the more similar the more it contribute
@@ -62,6 +61,9 @@ different random initial weights matrix may lead to different representation sub
 - why not positional index? 
 ### point-wise FFN
 ### Mask
+
+
+
 ## Transformer实现
 ### layer normalization
 ### residual connection
@@ -76,11 +78,11 @@ different random initial weights matrix may lead to different representation sub
 [Attention is all you need review]([https://ricardokleinklein.github.io/2017/11/16/Attention-is-all-you-need.html](https://ricardokleinklein.github.io/2017/11/16/Attention-is-all-you-need.html))
 [The transformer - Attention is all you need]([https://mchromiak.github.io/articles/2017/Sep/12/Transformer-Attention-is-all-you-need/#.XTEl6ugzZPY](https://mchromiak.github.io/articles/2017/Sep/12/Transformer-Attention-is-all-you-need/#.XTEl6ugzZPY))
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTExMDkyMTkxMjEsNTc5NjAwNDMxLDU3ND
-E3Nzc4LDc4NzY4NTIzNiwxNzMwODcwNjc0LC0xODE1MDcwNDU3
-LC0xNjA0NzQwOTk1LDkwNzMxOTkzOCwyMTM2NzA2OTI0LC0xMz
-E1Nzc0NzkwLDM1MzM5NDE4NSwtMTUxMTIxMzEyLDM2ODYwNjIy
-MCwyOTQyNjIzNjcsMjA4MDgyMjA0MiwzNDM1MDcyMjUsMjkwMj
-Q3NTYyLDU3NzkzMjAyOCwxMzIwOTc2NjE5LDE4MTg4OTg5MDZd
-fQ==
+eyJoaXN0b3J5IjpbLTE0Nzc0MDYyOTMsLTExMDkyMTkxMjEsNT
+c5NjAwNDMxLDU3NDE3Nzc4LDc4NzY4NTIzNiwxNzMwODcwNjc0
+LC0xODE1MDcwNDU3LC0xNjA0NzQwOTk1LDkwNzMxOTkzOCwyMT
+M2NzA2OTI0LC0xMzE1Nzc0NzkwLDM1MzM5NDE4NSwtMTUxMTIx
+MzEyLDM2ODYwNjIyMCwyOTQyNjIzNjcsMjA4MDgyMjA0MiwzND
+M1MDcyMjUsMjkwMjQ3NTYyLDU3NzkzMjAyOCwxMzIwOTc2NjE5
+XX0=
 -->
