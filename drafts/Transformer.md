@@ -40,7 +40,7 @@ Transformer中使用了sin/cos位置编码
 	1. 计算方便
 	2. 能够体现相对位置关系
 	3. 可处理变长序列
-#### 多头注意力（ Multiple Attention Head(MHA)
+### 多头注意力（ Multiple Headed Attention)
 different random initial weights matrix may lead to different representation subspace, thus give transformer ability to understand different meaning of a word
  
  4.  stack of encoder/decoder layer
@@ -88,7 +88,7 @@ Despite not having any explicit recurrency, implicitly the model is built as an 
 [Attention is all you need review]([https://ricardokleinklein.github.io/2017/11/16/Attention-is-all-you-need.html](https://ricardokleinklein.github.io/2017/11/16/Attention-is-all-you-need.html))
 [The transformer - Attention is all you need]([https://mchromiak.github.io/articles/2017/Sep/12/Transformer-Attention-is-all-you-need/#.XTEl6ugzZPY](https://mchromiak.github.io/articles/2017/Sep/12/Transformer-Attention-is-all-you-need/#.XTEl6ugzZPY))
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTQ0NTE3ODUxNiwtNzgxNjMwNzgwLDgxMj
+eyJoaXN0b3J5IjpbLTU0MDc0NzMzNCwtNzgxNjMwNzgwLDgxMj
 A2MTYwMywxNTM5MDQ4ODIxLDgxOTY1NTAzNywtMTIzMTgyNzIy
 NSw1ODExMjMyNTksLTM3NzgyMjcyNSwtMTUxMTg2MTI3LDYxMj
 IyODE1OSwtNzg3OTk1NDEyLC0xODIxMTEyMTk4LC0xMTYxODY1
