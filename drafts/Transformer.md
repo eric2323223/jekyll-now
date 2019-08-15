@@ -40,8 +40,14 @@ Attention是transformer最核心的部分，它不仅作用在encoder到docoder�
 时序问题（特别是NLP问题）中的序列元素表示的含义通常不止该单个元素的的字面意义，而是与整个序列上下文有关系，因此在encoding过程中需要考虑整个序列来决定其中每个元素的意义。self-attention机制就是基于这种由全局确定局部的思想，简单来说它使用整个序列所有元素的**加权**平均来确定每一个元素的含义。
 其中的权值来自该元素与其他元素的相似度，这是基于这样的假设-相似度越高的元素对确定该元素在整个序列中的含义的贡献度越大，由于序列元素以向量表示（word4vec），通常使用点积运算，其结果是一个数值。
 
+![enter image description here](http://www.c-jump.com/bcc/common/Talk3/Math/Vectors/const_images/v06_dot.png)
 
-![enter image description here](http://www.c-jump.com/bcc/common/Talk3/Math/Vectors/const_images/v06_dot.png)平均是指——————
+> *self-attention层的好处是能够一步到位捕捉到全局的联系，解决了长距离依赖，因为它直接把序列两两比较（代价是计算量变为 O(n2)，当然由于是纯矩阵运算，这个计算量相当也不是很严重），而且最重要的是可以进行并行计算。 相比之下，RNN
+> 需要一步步递推才能捕捉到，并且对于长距离依赖很难捕捉。而 CNN 则需要通过层叠来扩大感受野，这是 Attention 层的明显优势。*
+> 
+> self-attention其实和cnn，rnn一样，也是为了对输入进行编码，为了获得更多的信息。所以应把self-attention也看成网络中的一个层加进去。
+
+平均是指——————
 在transformer中的encoder和decoder中都使用了自注意力机制，他们的实现基本相同，稍有不同的是在decoder中使用mask来*屏蔽当前元素之后的元素*
 #### encoder-decoder attention
 
@@ -89,11 +95,11 @@ Despite not having any explicit recurrency, implicitly the model is built as an 
 [Attention is all you need review]([https://ricardokleinklein.github.io/2017/11/16/Attention-is-all-you-need.html](https://ricardokleinklein.github.io/2017/11/16/Attention-is-all-you-need.html))
 [The transformer - Attention is all you need]([https://mchromiak.github.io/articles/2017/Sep/12/Transformer-Attention-is-all-you-need/#.XTEl6ugzZPY](https://mchromiak.github.io/articles/2017/Sep/12/Transformer-Attention-is-all-you-need/#.XTEl6ugzZPY))
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjA2MDg5NDEyMiwxMTIxNTI1ODM4LDEyNT
-A3NTAwNDUsLTU0MDc0NzMzNCwtNzgxNjMwNzgwLDgxMjA2MTYw
-MywxNTM5MDQ4ODIxLDgxOTY1NTAzNywtMTIzMTgyNzIyNSw1OD
-ExMjMyNTksLTM3NzgyMjcyNSwtMTUxMTg2MTI3LDYxMjIyODE1
-OSwtNzg3OTk1NDEyLC0xODIxMTEyMTk4LC0xMTYxODY1NzMzLC
-0xNDc3NDA2MjkzLC0xMTA5MjE5MTIxLDU3OTYwMDQzMSw1NzQx
-Nzc3OF19
+eyJoaXN0b3J5IjpbODcwNTcxODMzLDExMjE1MjU4MzgsMTI1MD
+c1MDA0NSwtNTQwNzQ3MzM0LC03ODE2MzA3ODAsODEyMDYxNjAz
+LDE1MzkwNDg4MjEsODE5NjU1MDM3LC0xMjMxODI3MjI1LDU4MT
+EyMzI1OSwtMzc3ODIyNzI1LC0xNTExODYxMjcsNjEyMjI4MTU5
+LC03ODc5OTU0MTIsLTE4MjExMTIxOTgsLTExNjE4NjU3MzMsLT
+E0Nzc0MDYyOTMsLTExMDkyMTkxMjEsNTc5NjAwNDMxLDU3NDE3
+Nzc4XX0=
 -->
