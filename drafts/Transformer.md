@@ -30,7 +30,7 @@ Transformer的最大的创在于它使用attention和全连接网络来实现seq
 #### Attention
 Attention是transformer最核心的部分，它不仅作用在encoder到docoder的转换中，还被用在encoder和decoder内部，也被称为self-attention。
 #### 自注意力（self attention）
-时序问题（特别是NLP问题）中的序列元素表示的含义通常不止该单个元素的的字面意义，而是与整个序列上下文有关系，因此在encoding过程中需要考虑整个序列来决定其中每个元素的意义。self-attention机制就是基于这种由全局确定局部的思想，简单来说它使用整个序列所有元素的**加权**平均来确定每一个元素的含义。其中的权值来自该元素与其他元素的相似度，由于序列元素以向量表示（word4vec），通常使用点积运算，其结果是一个数值。平均是指——————
+时序问题（特别是NLP问题）中的序列元素表示的含义通常不止该单个元素的的字面意义，而是与整个序列上下文有关系，因此在encoding过程中需要考虑整个序列来决定其中每个元素的意义。self-attention机制就是基于这种由全局确定局部的思想，简单来说它使用整个序列所有元素的**加权**平均来确定每一个元素的含义。其中的权值来自该元素与其他元素的相似度，这是yuyi，由于序列元素以向量表示（word4vec），通常使用点积运算，其结果是一个数值。平均是指——————
 在transformer中的encoder和decoder中都使用了自注意力机制，他们的实现基本相同，稍有不同的是在decoder中使用mask来*屏蔽当前元素之后的元素*
 #### encoder-decoder attention
 
@@ -88,11 +88,11 @@ Despite not having any explicit recurrency, implicitly the model is built as an 
 [Attention is all you need review]([https://ricardokleinklein.github.io/2017/11/16/Attention-is-all-you-need.html](https://ricardokleinklein.github.io/2017/11/16/Attention-is-all-you-need.html))
 [The transformer - Attention is all you need]([https://mchromiak.github.io/articles/2017/Sep/12/Transformer-Attention-is-all-you-need/#.XTEl6ugzZPY](https://mchromiak.github.io/articles/2017/Sep/12/Transformer-Attention-is-all-you-need/#.XTEl6ugzZPY))
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTU1MjU4ODU4LC01NDA3NDczMzQsLTc4MT
-YzMDc4MCw4MTIwNjE2MDMsMTUzOTA0ODgyMSw4MTk2NTUwMzcs
-LTEyMzE4MjcyMjUsNTgxMTIzMjU5LC0zNzc4MjI3MjUsLTE1MT
-E4NjEyNyw2MTIyMjgxNTksLTc4Nzk5NTQxMiwtMTgyMTExMjE5
-OCwtMTE2MTg2NTczMywtMTQ3NzQwNjI5MywtMTEwOTIxOTEyMS
-w1Nzk2MDA0MzEsNTc0MTc3NzgsNzg3Njg1MjM2LDE3MzA4NzA2
-NzRdfQ==
+eyJoaXN0b3J5IjpbNjQwMDEyNDYsLTU0MDc0NzMzNCwtNzgxNj
+MwNzgwLDgxMjA2MTYwMywxNTM5MDQ4ODIxLDgxOTY1NTAzNywt
+MTIzMTgyNzIyNSw1ODExMjMyNTksLTM3NzgyMjcyNSwtMTUxMT
+g2MTI3LDYxMjIyODE1OSwtNzg3OTk1NDEyLC0xODIxMTEyMTk4
+LC0xMTYxODY1NzMzLC0xNDc3NDA2MjkzLC0xMTA5MjE5MTIxLD
+U3OTYwMDQzMSw1NzQxNzc3OCw3ODc2ODUyMzYsMTczMDg3MDY3
+NF19
 -->
