@@ -27,7 +27,7 @@ CNN可以同时处理序列中的所有元素，但是由于卷积运算的视�
 Transformer的最大的创在于它使用attention和全连接网络来实现seq2seq task，避免使用RNN和CNN从而使得在训练速度和准确率上全面超越了已有的方法。具体来讲
 
 #### Attention
-Attention是transformer最核心的部分，它不仅作用在encoder到docoder的转换中，还被用在encoder和decoder内部，也被称为self-attention。时序问题（特备是NLP问题）中的序列元素表示的意义通常不止该单个元素的的yiyi
+Attention是transformer最核心的部分，它不仅作用在encoder到docoder的转换中，还被用在encoder和decoder内部，也被称为self-attention。时序问题（特备是NLP问题）中的序列元素表示的意义通常不止该单个元素的的意义，而是与整个序列上下文有关系，因此在encoding过程中需要考虑整个序列来决定其中每个yuansu
 - 位置编码Positional encoding
 由于transformer不使用RNN和CNN，仅仅计算不同元素之间的相似度，因此必须加入位置信息来保证transformer正确的理解输入序列。最简单的位置编码是直接使用元素的序号，但这种方式对输入序列的长度过于敏感，对相对位置关系的表达——————。 extrapolate training samples
 Transformer中使用了sin/cos位置编码
@@ -83,7 +83,7 @@ Despite not having any explicit recurrency, implicitly the model is built as an 
 [Attention is all you need review]([https://ricardokleinklein.github.io/2017/11/16/Attention-is-all-you-need.html](https://ricardokleinklein.github.io/2017/11/16/Attention-is-all-you-need.html))
 [The transformer - Attention is all you need]([https://mchromiak.github.io/articles/2017/Sep/12/Transformer-Attention-is-all-you-need/#.XTEl6ugzZPY](https://mchromiak.github.io/articles/2017/Sep/12/Transformer-Attention-is-all-you-need/#.XTEl6ugzZPY))
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTY4MTIyOTUxMywtNzg3OTk1NDEyLC0xOD
+eyJoaXN0b3J5IjpbLTQ5NjY3OTQ3OSwtNzg3OTk1NDEyLC0xOD
 IxMTEyMTk4LC0xMTYxODY1NzMzLC0xNDc3NDA2MjkzLC0xMTA5
 MjE5MTIxLDU3OTYwMDQzMSw1NzQxNzc3OCw3ODc2ODUyMzYsMT
 czMDg3MDY3NCwtMTgxNTA3MDQ1NywtMTYwNDc0MDk5NSw5MDcz
