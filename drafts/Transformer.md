@@ -13,7 +13,7 @@ CNN可以同时处理序列中的所有元素，但是由于卷积运算的视�
 ### Attention机制
 总结上述两种模型的处理方式，我们发现对于长序列的输入，无论是在预测准确度还是训练速度都有不足，有没有一种方法能从根本上解决这些问题，让我们一次性的看到全部输入（无论序列有多长），并且能根据这些输入信息分析序列元素之间的关联关系呢？答案就是attention机制，
 图
-
+可以看到attention可以一次扫描全部
 
 ## Transformer模型
 基于attention机制
@@ -86,7 +86,7 @@ Despite not having any explicit recurrency, implicitly the model is built as an 
 [Attention is all you need review]([https://ricardokleinklein.github.io/2017/11/16/Attention-is-all-you-need.html](https://ricardokleinklein.github.io/2017/11/16/Attention-is-all-you-need.html))
 [The transformer - Attention is all you need]([https://mchromiak.github.io/articles/2017/Sep/12/Transformer-Attention-is-all-you-need/#.XTEl6ugzZPY](https://mchromiak.github.io/articles/2017/Sep/12/Transformer-Attention-is-all-you-need/#.XTEl6ugzZPY))
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTUzOTA0ODgyMSw4MTk2NTUwMzcsLTEyMz
+eyJoaXN0b3J5IjpbMTg3NjAzNjE0Nyw4MTk2NTUwMzcsLTEyMz
 E4MjcyMjUsNTgxMTIzMjU5LC0zNzc4MjI3MjUsLTE1MTE4NjEy
 Nyw2MTIyMjgxNTksLTc4Nzk5NTQxMiwtMTgyMTExMjE5OCwtMT
 E2MTg2NTczMywtMTQ3NzQwNjI5MywtMTEwOTIxOTEyMSw1Nzk2
