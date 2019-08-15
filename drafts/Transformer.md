@@ -40,10 +40,9 @@ Transformer中使用了sin/cos位置编码
 	1. 计算方便
 	2. 能够体现相对位置关系
 	3. 可处理变长序列
-#### 改进和增强 
-- Multiple Attention Head(MHA)
+#### 多头注意力（ Multiple Attention Head(MHA)
 different random initial weights matrix may lead to different representation subspace, thus give transformer ability to understand different meaning of a word
- 3. self attention
+ 
  4.  stack of encoder/decoder layer
 	- - 位置编码Positional encoding
 由于transformer不使用RNN 和CNN free - help to speed up training
@@ -89,11 +88,11 @@ Despite not having any explicit recurrency, implicitly the model is built as an 
 [Attention is all you need review]([https://ricardokleinklein.github.io/2017/11/16/Attention-is-all-you-need.html](https://ricardokleinklein.github.io/2017/11/16/Attention-is-all-you-need.html))
 [The transformer - Attention is all you need]([https://mchromiak.github.io/articles/2017/Sep/12/Transformer-Attention-is-all-you-need/#.XTEl6ugzZPY](https://mchromiak.github.io/articles/2017/Sep/12/Transformer-Attention-is-all-you-need/#.XTEl6ugzZPY))
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTc4MTYzMDc4MCw4MTIwNjE2MDMsMTUzOT
-A0ODgyMSw4MTk2NTUwMzcsLTEyMzE4MjcyMjUsNTgxMTIzMjU5
-LC0zNzc4MjI3MjUsLTE1MTE4NjEyNyw2MTIyMjgxNTksLTc4Nz
-k5NTQxMiwtMTgyMTExMjE5OCwtMTE2MTg2NTczMywtMTQ3NzQw
-NjI5MywtMTEwOTIxOTEyMSw1Nzk2MDA0MzEsNTc0MTc3NzgsNz
-g3Njg1MjM2LDE3MzA4NzA2NzQsLTE4MTUwNzA0NTcsLTE2MDQ3
-NDA5OTVdfQ==
+eyJoaXN0b3J5IjpbMTQ0NTE3ODUxNiwtNzgxNjMwNzgwLDgxMj
+A2MTYwMywxNTM5MDQ4ODIxLDgxOTY1NTAzNywtMTIzMTgyNzIy
+NSw1ODExMjMyNTksLTM3NzgyMjcyNSwtMTUxMTg2MTI3LDYxMj
+IyODE1OSwtNzg3OTk1NDEyLC0xODIxMTEyMTk4LC0xMTYxODY1
+NzMzLC0xNDc3NDA2MjkzLC0xMTA5MjE5MTIxLDU3OTYwMDQzMS
+w1NzQxNzc3OCw3ODc2ODUyMzYsMTczMDg3MDY3NCwtMTgxNTA3
+MDQ1N119
 -->
