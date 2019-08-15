@@ -26,7 +26,8 @@ CNN可以同时处理序列中的所有元素，但是由于卷积运算的视�
 ![enter image description here](http://armancohan.com/img/transformer-1.png)
 Transformer的最大的创在于它使用attention和全连接网络来实现seq2seq task，避免使用RNN和CNN从而使得在训练速度和准确率上全面超越了已有的方法。具体来讲
 
-#### 新问题
+#### Attention
+Attention是transformer最核心d
 - 位置编码Positional encoding
 由于transformer不使用RNN和CNN，仅仅计算不同元素之间的相似度，因此必须加入位置信息来保证transformer正确的理解输入序列。最简单的位置编码是直接使用元素的序号，但这种方式对输入序列的长度过于敏感，对相对位置关系的表达——————。 extrapolate training samples
 Transformer中使用了sin/cos位置编码
@@ -82,11 +83,11 @@ Despite not having any explicit recurrency, implicitly the model is built as an 
 [Attention is all you need review]([https://ricardokleinklein.github.io/2017/11/16/Attention-is-all-you-need.html](https://ricardokleinklein.github.io/2017/11/16/Attention-is-all-you-need.html))
 [The transformer - Attention is all you need]([https://mchromiak.github.io/articles/2017/Sep/12/Transformer-Attention-is-all-you-need/#.XTEl6ugzZPY](https://mchromiak.github.io/articles/2017/Sep/12/Transformer-Attention-is-all-you-need/#.XTEl6ugzZPY))
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE4MjExMTIxOTgsLTExNjE4NjU3MzMsLT
-E0Nzc0MDYyOTMsLTExMDkyMTkxMjEsNTc5NjAwNDMxLDU3NDE3
-Nzc4LDc4NzY4NTIzNiwxNzMwODcwNjc0LC0xODE1MDcwNDU3LC
-0xNjA0NzQwOTk1LDkwNzMxOTkzOCwyMTM2NzA2OTI0LC0xMzE1
-Nzc0NzkwLDM1MzM5NDE4NSwtMTUxMTIxMzEyLDM2ODYwNjIyMC
-wyOTQyNjIzNjcsMjA4MDgyMjA0MiwzNDM1MDcyMjUsMjkwMjQ3
-NTYyXX0=
+eyJoaXN0b3J5IjpbLTU5MjMwOTk0NSwtMTgyMTExMjE5OCwtMT
+E2MTg2NTczMywtMTQ3NzQwNjI5MywtMTEwOTIxOTEyMSw1Nzk2
+MDA0MzEsNTc0MTc3NzgsNzg3Njg1MjM2LDE3MzA4NzA2NzQsLT
+E4MTUwNzA0NTcsLTE2MDQ3NDA5OTUsOTA3MzE5OTM4LDIxMzY3
+MDY5MjQsLTEzMTU3NzQ3OTAsMzUzMzk0MTg1LC0xNTExMjEzMT
+IsMzY4NjA2MjIwLDI5NDI2MjM2NywyMDgwODIyMDQyLDM0MzUw
+NzIyNV19
 -->
