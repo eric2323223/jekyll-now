@@ -63,7 +63,6 @@ different random initial weights matrix may lead to different representation sub
 	- MHA: a weighted average 
 	- It is found empirically that multi-head attention works better than the usual “single-head” in the context of machine translation. And the intuition behind such an improvement is that “multi-head attention allows the model to jointly attend to information from different representation subspaces at different positions”
 ### Why multiple layer of attention layers?
-### Vector similarity
 ### Positional encoding
 - why not positional index? 
 ### point-wise FFN
@@ -88,11 +87,11 @@ Despite not having any explicit recurrency, implicitly the model is built as an 
 [Attention is all you need review]([https://ricardokleinklein.github.io/2017/11/16/Attention-is-all-you-need.html](https://ricardokleinklein.github.io/2017/11/16/Attention-is-all-you-need.html))
 [The transformer - Attention is all you need]([https://mchromiak.github.io/articles/2017/Sep/12/Transformer-Attention-is-all-you-need/#.XTEl6ugzZPY](https://mchromiak.github.io/articles/2017/Sep/12/Transformer-Attention-is-all-you-need/#.XTEl6ugzZPY))
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTI1MDc1MDA0NSwtNTQwNzQ3MzM0LC03OD
-E2MzA3ODAsODEyMDYxNjAzLDE1MzkwNDg4MjEsODE5NjU1MDM3
-LC0xMjMxODI3MjI1LDU4MTEyMzI1OSwtMzc3ODIyNzI1LC0xNT
-ExODYxMjcsNjEyMjI4MTU5LC03ODc5OTU0MTIsLTE4MjExMTIx
-OTgsLTExNjE4NjU3MzMsLTE0Nzc0MDYyOTMsLTExMDkyMTkxMj
-EsNTc5NjAwNDMxLDU3NDE3Nzc4LDc4NzY4NTIzNiwxNzMwODcw
-Njc0XX0=
+eyJoaXN0b3J5IjpbMTEyMTUyNTgzOCwxMjUwNzUwMDQ1LC01ND
+A3NDczMzQsLTc4MTYzMDc4MCw4MTIwNjE2MDMsMTUzOTA0ODgy
+MSw4MTk2NTUwMzcsLTEyMzE4MjcyMjUsNTgxMTIzMjU5LC0zNz
+c4MjI3MjUsLTE1MTE4NjEyNyw2MTIyMjgxNTksLTc4Nzk5NTQx
+MiwtMTgyMTExMjE5OCwtMTE2MTg2NTczMywtMTQ3NzQwNjI5My
+wtMTEwOTIxOTEyMSw1Nzk2MDA0MzEsNTc0MTc3NzgsNzg3Njg1
+MjM2XX0=
 -->
