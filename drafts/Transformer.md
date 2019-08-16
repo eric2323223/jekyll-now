@@ -51,7 +51,7 @@ Attention是transformer最核心的部分，它不仅作用在encoder到docoder�
 在transformer中的encoder和decoder中都使用了自注意力机制，他们的实现基本相同，稍有不同的是在decoder中使用mask来*屏蔽当前元素之后的元素*
 #### encoder-decoder attention
 
-- 位置编码Positional encoding
+![enter image description here](https://cntk.ai/jup/cntk204_s2s2.png)- 位置编码Positional encoding
 由于transformer不使用RNN和CNN，仅仅计算不同元素之间的相似度，因此必须加入位置信息来保证transformer正确的理解输入序列。最简单的位置编码是直接使用元素的序号，但这种方式对输入序列的长度过于敏感，对相对位置关系的表达——————。 extrapolate training samples
 Transformer中使用了sin/cos位置编码
 	1. 计算方便
@@ -95,11 +95,11 @@ Despite not having any explicit recurrency, implicitly the model is built as an 
 [Attention is all you need review]([https://ricardokleinklein.github.io/2017/11/16/Attention-is-all-you-need.html](https://ricardokleinklein.github.io/2017/11/16/Attention-is-all-you-need.html))
 [The transformer - Attention is all you need]([https://mchromiak.github.io/articles/2017/Sep/12/Transformer-Attention-is-all-you-need/#.XTEl6ugzZPY](https://mchromiak.github.io/articles/2017/Sep/12/Transformer-Attention-is-all-you-need/#.XTEl6ugzZPY))
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODcwNTcxODMzLDExMjE1MjU4MzgsMTI1MD
-c1MDA0NSwtNTQwNzQ3MzM0LC03ODE2MzA3ODAsODEyMDYxNjAz
-LDE1MzkwNDg4MjEsODE5NjU1MDM3LC0xMjMxODI3MjI1LDU4MT
-EyMzI1OSwtMzc3ODIyNzI1LC0xNTExODYxMjcsNjEyMjI4MTU5
-LC03ODc5OTU0MTIsLTE4MjExMTIxOTgsLTExNjE4NjU3MzMsLT
-E0Nzc0MDYyOTMsLTExMDkyMTkxMjEsNTc5NjAwNDMxLDU3NDE3
-Nzc4XX0=
+eyJoaXN0b3J5IjpbLTEwOTM2ODI0NjYsODcwNTcxODMzLDExMj
+E1MjU4MzgsMTI1MDc1MDA0NSwtNTQwNzQ3MzM0LC03ODE2MzA3
+ODAsODEyMDYxNjAzLDE1MzkwNDg4MjEsODE5NjU1MDM3LC0xMj
+MxODI3MjI1LDU4MTEyMzI1OSwtMzc3ODIyNzI1LC0xNTExODYx
+MjcsNjEyMjI4MTU5LC03ODc5OTU0MTIsLTE4MjExMTIxOTgsLT
+ExNjE4NjU3MzMsLTE0Nzc0MDYyOTMsLTExMDkyMTkxMjEsNTc5
+NjAwNDMxXX0=
 -->
