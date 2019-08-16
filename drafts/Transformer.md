@@ -10,6 +10,7 @@ seq2seq问题是使用机器学习（特别是深度学习）解决的一类常�
 3. 固定的存储不适合长序列
 ### CNN
 CNN可以同时处理序列中的所有元素，但是由于卷积运算的视域有限，一次卷积操作只能处理有限的元素，对于较长的序列无法处理。解决办法是通过叠加多层卷积操作来逐渐增加视域，但这样会不可避免的导致信息丢失，并且仍没有完全解决长序列输入的处理问题，————————而且增加了模型的复杂度，使运算变慢，这和初衷不符。
+
 > In these models, the number of operations required to relate signals from two arbitrary input or output positions grows in the distance between positions, linearly for ConvS2S and logarithmically for ByteNet. This makes it more difficult to learn dependencies between distant positions. In the Transformer this is reduced to a constant number of operations, albeit at the cost of reduced effective resolution due to averaging attention-weighted positions, an effect we counteract with Multi-Head Attention.
 ### Attention机制
 总结上述两种模型的处理方式，我们发现对于长序列的输入，无论是在预测准确度还是训练速度都有不足，有没有一种方法能从根本上解决这些问题，让我们一次性的看到全部输入（无论序列有多长），并且能根据这些输入信息分析序列元素之间的关联关系呢？答案就是attention机制，
@@ -21,6 +22,46 @@ Attention机制的本质来自于人类视觉注意力机制。人们视觉在�
 	- Mathematically: weighted average
 	- can be used in different tasks (text, visual, voice ...)
 	- 3 types of attention
+> Attention is a method for aggregating a set of vectors  vivi  into just one vector, often via a lookup vector  uu. Usually,  vivi  is either the inputs to the model or the hidden states of previous time-steps, or the hidden states one level down (in the case of stacked LSTMs).
+> 
+> The result is often called the context vector  cc, since it contains
+> the  _context_  relevant to the current time-step.
+> 
+> This additional context vector  cc  is then fed into the RNN/LSTM as
+> well (it can be simply concatenated with the original input).
+> Therefore, the context can be used to help with prediction.
+> 
+> The simplest way to do this is to compute probability vector 
+> p=softmax(VTu)p=softmax(VTu)  and  c=∑ipivic=∑ipiviwhere  VV  is the
+> concatenation of all previous  vivi. A common lookup vector  uu  is
+> the current hidden state  htht.
+> 
+> There are many variations on this, and you can make things as
+> complicated as you want. For example, instead using  vTiuviTu  as the
+> logits, one may choose  f(vi,u)f(vi,u)  instead, where  ff  is an
+> arbitrary neural network.
+> 
+> A common attention mechanism for sequence-to-sequence models uses 
+> p=softmax(qTtanh(W1vi+W2ht))p=softmax(qTtanh⁡(W1vi+W2ht)), where  vv 
+> are the hidden states of the encoder, and  htht  is the current hidden
+> state of the decoder.  qq  and both  WWs are parameters.
+> 
+> Some papers which show off different variations on the attention idea:
+> 
+> [Pointer Networks](https://arxiv.org/abs/1506.03134)  use attention to
+> reference inputs in order to solve combinatorial optimization
+> problems.
+> 
+> [Recurrent Entity Networks](https://arxiv.org/abs/1612.03969) 
+> maintain separate memory states for different entities
+> (people/objects) while reading text, and update the correct memory
+> state using attention.
+> 
+> [Transformer](https://arxiv.org/pdf/1706.03762.pdf)  models also make
+> extensive use of attention. Their formulation of attention is slightly
+> more general and also involves key vectors  kiki: the attention
+> weights  pp  are actually computed between the keys and the lookup,
+> and the context is then constructed with the  vivi.
 
 
 
@@ -100,11 +141,11 @@ Despite not having any explicit recurrency, implicitly the model is built as an 
 [Attention is all you need review]([https://ricardokleinklein.github.io/2017/11/16/Attention-is-all-you-need.html](https://ricardokleinklein.github.io/2017/11/16/Attention-is-all-you-need.html))
 [The transformer - Attention is all you need]([https://mchromiak.github.io/articles/2017/Sep/12/Transformer-Attention-is-all-you-need/#.XTEl6ugzZPY](https://mchromiak.github.io/articles/2017/Sep/12/Transformer-Attention-is-all-you-need/#.XTEl6ugzZPY))
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTU5NzQyMDEzNiwtMTAzNjM2ODAzMCwtMT
-AxODQxNTE2MiwtMTI1MTc3MjE0OCwtMTA5MzY4MjQ2Niw4NzA1
-NzE4MzMsMTEyMTUyNTgzOCwxMjUwNzUwMDQ1LC01NDA3NDczMz
-QsLTc4MTYzMDc4MCw4MTIwNjE2MDMsMTUzOTA0ODgyMSw4MTk2
-NTUwMzcsLTEyMzE4MjcyMjUsNTgxMTIzMjU5LC0zNzc4MjI3Mj
-UsLTE1MTE4NjEyNyw2MTIyMjgxNTksLTc4Nzk5NTQxMiwtMTgy
-MTExMjE5OF19
+eyJoaXN0b3J5IjpbMjg0MjQwODcyLDE1OTc0MjAxMzYsLTEwMz
+YzNjgwMzAsLTEwMTg0MTUxNjIsLTEyNTE3NzIxNDgsLTEwOTM2
+ODI0NjYsODcwNTcxODMzLDExMjE1MjU4MzgsMTI1MDc1MDA0NS
+wtNTQwNzQ3MzM0LC03ODE2MzA3ODAsODEyMDYxNjAzLDE1Mzkw
+NDg4MjEsODE5NjU1MDM3LC0xMjMxODI3MjI1LDU4MTEyMzI1OS
+wtMzc3ODIyNzI1LC0xNTExODYxMjcsNjEyMjI4MTU5LC03ODc5
+OTU0MTJdfQ==
 -->
