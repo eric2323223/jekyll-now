@@ -47,6 +47,7 @@ Attention是transformer最核心的部分，它不仅作用在encoder到docoder�
 > 
 > self-attention其实和cnn，rnn一样，也是为了对输入进行编码，为了获得更多的信息。所以应把self-attention也看成网络中的一个层加进去。
 
+> 对于使用自注意力机制的原因，论文中提到主要从三个方面考虑（每一层的复杂度，是否可以并行，长距离依赖学习），并给出了和RNN，CNN计算复杂度的比较。可以看到，如果输入序列n小于表示维度d的话，每一层的时间复杂度self-attention是比较有优势的。当n比较大时，作者也给出了一种解决方案self-attention（restricted）即每个词不是和所有词计算attention，而是只与限制的r个词去计算attention。在并行方面，多头attention和CNN一样不依赖于前一时刻的计算，可以很好的并行，优于RNN。在长距离依赖上，由于self-attention是每个词和所有词都要计算attention，所以不管他们中间有多长距离，最大的路径长度也都只是1。可以捕获长距离依赖关系。
 
 平均是指——————
 在transformer中的encoder和decoder中都使用了自注意力机制，他们的实现基本相同，稍有不同的是在decoder中使用mask来*屏蔽当前元素之后的元素*
@@ -96,7 +97,7 @@ Despite not having any explicit recurrency, implicitly the model is built as an 
 [Attention is all you need review]([https://ricardokleinklein.github.io/2017/11/16/Attention-is-all-you-need.html](https://ricardokleinklein.github.io/2017/11/16/Attention-is-all-you-need.html))
 [The transformer - Attention is all you need]([https://mchromiak.github.io/articles/2017/Sep/12/Transformer-Attention-is-all-you-need/#.XTEl6ugzZPY](https://mchromiak.github.io/articles/2017/Sep/12/Transformer-Attention-is-all-you-need/#.XTEl6ugzZPY))
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzNjIwODkzOTYsLTEwOTM2ODI0NjYsOD
+eyJoaXN0b3J5IjpbLTEyNTE3NzIxNDgsLTEwOTM2ODI0NjYsOD
 cwNTcxODMzLDExMjE1MjU4MzgsMTI1MDc1MDA0NSwtNTQwNzQ3
 MzM0LC03ODE2MzA3ODAsODEyMDYxNjAzLDE1MzkwNDg4MjEsOD
 E5NjU1MDM3LC0xMjMxODI3MjI1LDU4MTEyMzI1OSwtMzc3ODIy
