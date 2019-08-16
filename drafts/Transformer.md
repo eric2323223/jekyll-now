@@ -40,7 +40,7 @@ Attention是transformer最核心的部分，它不仅作用在encoder到docoder�
 #### 自注意力（self attention）
 时序问题（特别是NLP问题）中的序列元素表示的含义通常不止该单个元素的的字面意义，而是与整个序列上下文有关系，因此在encoding过程中需要考虑整个序列来决定其中每个元素的意义。self-attention机制就是基于这种由全局确定局部的思想，简单来说它使用整个序列所有元素的**加权**平均来确定每一个元素的含义。
 Scaled Dot-Product Attention
-其中的权值来自该元素与其他元素的相似度，这是基于这样的假设-相似度越高的元素对确定该元素在整个序列中的含义的贡献度越大，由于序列元素以向量表示（word4vec），在transformer中使用点积运算，其结果是一个数值。
+其中的权值来自该元素与其他元素的相似度，这是基于这样的假设-相似度越高的元素对确定该元素在整个序列中的含义的贡献度越大，由于序列元素以向量表示（word4vec），在transformer中使用点积运算来确定相似度，其结果是一个数值。
 
 ![enter image description here](http://www.c-jump.com/bcc/common/Talk3/Math/Vectors/const_images/v06_dot.png)
 
@@ -100,11 +100,11 @@ Despite not having any explicit recurrency, implicitly the model is built as an 
 [Attention is all you need review]([https://ricardokleinklein.github.io/2017/11/16/Attention-is-all-you-need.html](https://ricardokleinklein.github.io/2017/11/16/Attention-is-all-you-need.html))
 [The transformer - Attention is all you need]([https://mchromiak.github.io/articles/2017/Sep/12/Transformer-Attention-is-all-you-need/#.XTEl6ugzZPY](https://mchromiak.github.io/articles/2017/Sep/12/Transformer-Attention-is-all-you-need/#.XTEl6ugzZPY))
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTExMTkxMTgxNTEsLTEwMzYzNjgwMzAsLT
-EwMTg0MTUxNjIsLTEyNTE3NzIxNDgsLTEwOTM2ODI0NjYsODcw
-NTcxODMzLDExMjE1MjU4MzgsMTI1MDc1MDA0NSwtNTQwNzQ3Mz
-M0LC03ODE2MzA3ODAsODEyMDYxNjAzLDE1MzkwNDg4MjEsODE5
-NjU1MDM3LC0xMjMxODI3MjI1LDU4MTEyMzI1OSwtMzc3ODIyNz
-I1LC0xNTExODYxMjcsNjEyMjI4MTU5LC03ODc5OTU0MTIsLTE4
-MjExMTIxOThdfQ==
+eyJoaXN0b3J5IjpbMTU5NzQyMDEzNiwtMTAzNjM2ODAzMCwtMT
+AxODQxNTE2MiwtMTI1MTc3MjE0OCwtMTA5MzY4MjQ2Niw4NzA1
+NzE4MzMsMTEyMTUyNTgzOCwxMjUwNzUwMDQ1LC01NDA3NDczMz
+QsLTc4MTYzMDc4MCw4MTIwNjE2MDMsMTUzOTA0ODgyMSw4MTk2
+NTUwMzcsLTEyMzE4MjcyMjUsNTgxMTIzMjU5LC0zNzc4MjI3Mj
+UsLTE1MTE4NjEyNyw2MTIyMjgxNTksLTc4Nzk5NTQxMiwtMTgy
+MTExMjE5OF19
 -->
