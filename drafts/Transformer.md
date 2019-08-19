@@ -111,7 +111,6 @@ different random initial weights matrix may lead to different representation sub
 由于transformer不使用RNN 和CNN free - help to speed up training
 	- Stacking of encoder/decoder
 	- sel-decoding attention
-
 - **multi-head attention** VS convolution on multiple channels
 	- Convolution: Different linear transformations by relative position
 	- MHA: a weighted average 
@@ -123,11 +122,9 @@ different random initial weights matrix may lead to different representation sub
 ### Mask
 > We also modify the self-attention sub-layer in the decoder stack to prevent positions from attending to subsequent positions. This masking, combined with fact that the output embeddings are offset by one position, ensures that the predictions for position ii can depend only on the known outputs at positions less than ii.
 
-
-
 ## Transformer的改进
 Despite not having any explicit recurrency, implicitly the model is built as an autoregressive one. It implies that in order to generate an output (both while training or during inference), the model needs to compute previous outputs, which is extremely costly, for the whole net has to be run for every output. That’s the main idea to overcome in a recent paper by researchers at [_Salesforce Research_](https://einstein.ai/research/non-autoregressive-neural-machine-translation) and the University of Hong Kong, who tried to make the whole process parallelizable[23](https://ricardokleinklein.github.io/2017/11/16/Attention-is-all-you-need.html#fn:23). Their proposal is to compute _fertilities_ for every input word in the sequence, and use it instead of previous outputs in order to compute the current output. This is summarized in the figure below.
-## 总结## Transformer实现
+## Transformer实现
 ### layer normalization
 ### residual connection
 - Help gradient propagated back through stacked decoders and encoders
@@ -136,16 +133,17 @@ Despite not having any explicit recurrency, implicitly the model is built as an 
 ### regularization
 - dropout
 - layer normalization
+## 总结
 
 ## Resources
 [Attention is all you need review]([https://ricardokleinklein.github.io/2017/11/16/Attention-is-all-you-need.html](https://ricardokleinklein.github.io/2017/11/16/Attention-is-all-you-need.html))
 [The transformer - Attention is all you need]([https://mchromiak.github.io/articles/2017/Sep/12/Transformer-Attention-is-all-you-need/#.XTEl6ugzZPY](https://mchromiak.github.io/articles/2017/Sep/12/Transformer-Attention-is-all-you-need/#.XTEl6ugzZPY))
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTk4MTQ2OTEyMiwxMDI5OTkwMDc4LC05Nj
-Y5NjgyNjgsLTUzMjM2ODg5MywyODQyNDA4NzIsMTU5NzQyMDEz
-NiwtMTAzNjM2ODAzMCwtMTAxODQxNTE2MiwtMTI1MTc3MjE0OC
-wtMTA5MzY4MjQ2Niw4NzA1NzE4MzMsMTEyMTUyNTgzOCwxMjUw
-NzUwMDQ1LC01NDA3NDczMzQsLTc4MTYzMDc4MCw4MTIwNjE2MD
-MsMTUzOTA0ODgyMSw4MTk2NTUwMzcsLTEyMzE4MjcyMjUsNTgx
-MTIzMjU5XX0=
+eyJoaXN0b3J5IjpbMTkwMjMzNTI2LDEwMjk5OTAwNzgsLTk2Nj
+k2ODI2OCwtNTMyMzY4ODkzLDI4NDI0MDg3MiwxNTk3NDIwMTM2
+LC0xMDM2MzY4MDMwLC0xMDE4NDE1MTYyLC0xMjUxNzcyMTQ4LC
+0xMDkzNjgyNDY2LDg3MDU3MTgzMywxMTIxNTI1ODM4LDEyNTA3
+NTAwNDUsLTU0MDc0NzMzNCwtNzgxNjMwNzgwLDgxMjA2MTYwMy
+wxNTM5MDQ4ODIxLDgxOTY1NTAzNywtMTIzMTgyNzIyNSw1ODEx
+MjMyNTldfQ==
 -->
