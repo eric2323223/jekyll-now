@@ -9,7 +9,7 @@ seq2seq问题是使用机器学习（特别是深度学习）解决的一类常�
 2. 只能顺序执行，训练速度很慢
 3. 固定的存储不适合长序列
 ### CNN
-CNN可以同时处理序列中的所有元素，但是由于卷运算的视域有限，一次卷积操作只能处理有限的元素，对于较长的序列无法处理。解决办法是通过叠加多层卷积操作来逐渐增加视域，但这样会不可避免的导致信息丢失，并且仍没有完全解决长序列输入的处理问题，————————而且增加了模型的复杂度，使运算变慢，这和初衷不符。
+CNN可以同时处理序列中的所有元素，但是由于卷积运算的视域有限，一次卷积操作只能处理有限的元素，对于较长的序列无法处理。解决办法是通过叠加多层卷积操作来逐渐增加视域，但这样会不可避免的导致信息丢失，并且仍没有完全解决长序列输入的处理问题，————————而且增加了模型的复杂度，使运算变慢，这和初衷不符。
 
 > In these models, the number of operations required to relate signals from two arbitrary input or output positions grows in the distance between positions, linearly for ConvS2S and logarithmically for ByteNet. This makes it more difficult to learn dependencies between distant positions. In the Transformer this is reduced to a constant number of operations, albeit at the cost of reduced effective resolution due to averaging attention-weighted positions, an effect we counteract with Multi-Head Attention.
 Attention机制的本质来自于人类视觉注意力机制。人们视觉在感知东西的时候一般不会是一个场景从到头看到尾每次全部都看，而往往是根据需求观察注意特定的一部分。而且当人们发现一个场景经常在某部分出现自己想观察的东西时，人们会进行学习在将来再出现类似场景时把注意力放到该部分上。
@@ -153,11 +153,11 @@ Despite not having any explicit recurrency, implicitly the model is built as an 
 [Attention is all you need review]([https://ricardokleinklein.github.io/2017/11/16/Attention-is-all-you-need.html](https://ricardokleinklein.github.io/2017/11/16/Attention-is-all-you-need.html))
 [The transformer - Attention is all you need]([https://mchromiak.github.io/articles/2017/Sep/12/Transformer-Attention-is-all-you-need/#.XTEl6ugzZPY](https://mchromiak.github.io/articles/2017/Sep/12/Transformer-Attention-is-all-you-need/#.XTEl6ugzZPY))
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTUzMjM2ODg5MywyODQyNDA4NzIsMTU5Nz
-QyMDEzNiwtMTAzNjM2ODAzMCwtMTAxODQxNTE2MiwtMTI1MTc3
-MjE0OCwtMTA5MzY4MjQ2Niw4NzA1NzE4MzMsMTEyMTUyNTgzOC
-wxMjUwNzUwMDQ1LC01NDA3NDczMzQsLTc4MTYzMDc4MCw4MTIw
-NjE2MDMsMTUzOTA0ODgyMSw4MTk2NTUwMzcsLTEyMzE4MjcyMj
-UsNTgxMTIzMjU5LC0zNzc4MjI3MjUsLTE1MTE4NjEyNyw2MTIy
-MjgxNTldfQ==
+eyJoaXN0b3J5IjpbODkyNTc5OTM4LC01MzIzNjg4OTMsMjg0Mj
+QwODcyLDE1OTc0MjAxMzYsLTEwMzYzNjgwMzAsLTEwMTg0MTUx
+NjIsLTEyNTE3NzIxNDgsLTEwOTM2ODI0NjYsODcwNTcxODMzLD
+ExMjE1MjU4MzgsMTI1MDc1MDA0NSwtNTQwNzQ3MzM0LC03ODE2
+MzA3ODAsODEyMDYxNjAzLDE1MzkwNDg4MjEsODE5NjU1MDM3LC
+0xMjMxODI3MjI1LDU4MTEyMzI1OSwtMzc3ODIyNzI1LC0xNTEx
+ODYxMjddfQ==
 -->
