@@ -103,8 +103,7 @@ Transformer中使用了sin/cos位置编码
 	1. 计算方便
 	2. 能够体现相对位置关系
 	3. 可处理变长序列
-### 多头注意力
-- Multiple Headed Attention)
+### 多头注意力（ Multiple Headed Attention)
 different random initial weights matrix may lead to different representation subspace, thus give transformer ability to understand different meaning of a word
 - stack of encoder/decoder layer
 	- - 位置编码PosiStacking of encoder/decoder
@@ -112,16 +111,6 @@ different random initial weights matrix may lead to different representation sub
 由于transformer不使用RNN 和CNN free - help to speed up training
 	- Stacking of encoder/decoder
 	- sel-decoding attention
-
-
-
-- Attention 
-	- Use of self-attention to improve accuracy
-	- Assumption: the more similar the more it contribute
-	- Essence of aAttention， encoding-decoding mechanism: **Feature reconstruction** based on all other inputs
-	- Mathematically: weighted average
-	- can be used in different tasks (text, visual, voice ...)
-	- 3 types of attention
 
 - **multi-head attention** VS convolution on multiple channels
 	- Convolution: Different linear transformations by relative position
@@ -152,7 +141,7 @@ Despite not having any explicit recurrency, implicitly the model is built as an 
 [Attention is all you need review]([https://ricardokleinklein.github.io/2017/11/16/Attention-is-all-you-need.html](https://ricardokleinklein.github.io/2017/11/16/Attention-is-all-you-need.html))
 [The transformer - Attention is all you need]([https://mchromiak.github.io/articles/2017/Sep/12/Transformer-Attention-is-all-you-need/#.XTEl6ugzZPY](https://mchromiak.github.io/articles/2017/Sep/12/Transformer-Attention-is-all-you-need/#.XTEl6ugzZPY))
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjA1ODU2MzYyNSwxMDI5OTkwMDc4LC05Nj
+eyJoaXN0b3J5IjpbLTk4MTQ2OTEyMiwxMDI5OTkwMDc4LC05Nj
 Y5NjgyNjgsLTUzMjM2ODg5MywyODQyNDA4NzIsMTU5NzQyMDEz
 NiwtMTAzNjM2ODAzMCwtMTAxODQxNTE2MiwtMTI1MTc3MjE0OC
 wtMTA5MzY4MjQ2Niw4NzA1NzE4MzMsMTEyMTUyNTgzOCwxMjUw
