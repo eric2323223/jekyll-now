@@ -119,6 +119,7 @@ different random initial weights matrix may lead to different representation sub
 ### Positional encoding
 - why not positional index? 
 ### point-wise FFN
+point-wise 对序列中每个元素分别进行2层全连接运算
 ### Mask
 > We also modify the self-attention sub-layer in the decoder stack to prevent positions from attending to subsequent positions. This masking, combined with fact that the output embeddings are offset by one position, ensures that the predictions for position ii can depend only on the known outputs at positions less than ii.
 
@@ -139,11 +140,11 @@ Despite not having any explicit recurrency, implicitly the model is built as an 
 [Attention is all you need review]([https://ricardokleinklein.github.io/2017/11/16/Attention-is-all-you-need.html](https://ricardokleinklein.github.io/2017/11/16/Attention-is-all-you-need.html))
 [The transformer - Attention is all you need]([https://mchromiak.github.io/articles/2017/Sep/12/Transformer-Attention-is-all-you-need/#.XTEl6ugzZPY](https://mchromiak.github.io/articles/2017/Sep/12/Transformer-Attention-is-all-you-need/#.XTEl6ugzZPY))
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTkwMjMzNTI2LDEwMjk5OTAwNzgsLTk2Nj
-k2ODI2OCwtNTMyMzY4ODkzLDI4NDI0MDg3MiwxNTk3NDIwMTM2
-LC0xMDM2MzY4MDMwLC0xMDE4NDE1MTYyLC0xMjUxNzcyMTQ4LC
-0xMDkzNjgyNDY2LDg3MDU3MTgzMywxMTIxNTI1ODM4LDEyNTA3
-NTAwNDUsLTU0MDc0NzMzNCwtNzgxNjMwNzgwLDgxMjA2MTYwMy
-wxNTM5MDQ4ODIxLDgxOTY1NTAzNywtMTIzMTgyNzIyNSw1ODEx
-MjMyNTldfQ==
+eyJoaXN0b3J5IjpbLTc2NTIyMjYzMywxOTAyMzM1MjYsMTAyOT
+k5MDA3OCwtOTY2OTY4MjY4LC01MzIzNjg4OTMsMjg0MjQwODcy
+LDE1OTc0MjAxMzYsLTEwMzYzNjgwMzAsLTEwMTg0MTUxNjIsLT
+EyNTE3NzIxNDgsLTEwOTM2ODI0NjYsODcwNTcxODMzLDExMjE1
+MjU4MzgsMTI1MDc1MDA0NSwtNTQwNzQ3MzM0LC03ODE2MzA3OD
+AsODEyMDYxNjAzLDE1MzkwNDg4MjEsODE5NjU1MDM3LC0xMjMx
+ODI3MjI1XX0=
 -->
