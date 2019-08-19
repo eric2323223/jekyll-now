@@ -75,6 +75,7 @@ Attention机制的本质来自于人类视觉注意力机制。人们视觉在�
 整体架构上看，transformer仍属于Encoder-Decoder架构，通过encoder将输入序列转换成内部表示，在通过不同decoder实现不同的预测功能。
 ![enter image description here](http://armancohan.com/img/transformer-1.png)
 Transformer的最大的创新在于它使用只attention机制来实现seq2seq task，避免使用RNN和CNN从而使得在训练速度和准确率上全面超越了已有的方法。具体来讲
+![enter image description here](https://3.bp.blogspot.com/-aZ3zvPiCoXM/WaiKQO7KRnI/AAAAAAAAB_8/7a1CYjp40nUg4lKpW7covGZJQAySxlg8QCLcBGAs/s640/transform20fps.gif)
 
 #### Attention
 Attention是transformer最核心的部分，它不仅作用在encoder到docoder的转换中，还被用在encoder和decoder内部，也被称为self-attention。
@@ -140,11 +141,11 @@ Despite not having any explicit recurrency, implicitly the model is built as an 
 [Attention is all you need review]([https://ricardokleinklein.github.io/2017/11/16/Attention-is-all-you-need.html](https://ricardokleinklein.github.io/2017/11/16/Attention-is-all-you-need.html))
 [The transformer - Attention is all you need]([https://mchromiak.github.io/articles/2017/Sep/12/Transformer-Attention-is-all-you-need/#.XTEl6ugzZPY](https://mchromiak.github.io/articles/2017/Sep/12/Transformer-Attention-is-all-you-need/#.XTEl6ugzZPY))
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTc2NTIyMjYzMywxOTAyMzM1MjYsMTAyOT
-k5MDA3OCwtOTY2OTY4MjY4LC01MzIzNjg4OTMsMjg0MjQwODcy
-LDE1OTc0MjAxMzYsLTEwMzYzNjgwMzAsLTEwMTg0MTUxNjIsLT
-EyNTE3NzIxNDgsLTEwOTM2ODI0NjYsODcwNTcxODMzLDExMjE1
-MjU4MzgsMTI1MDc1MDA0NSwtNTQwNzQ3MzM0LC03ODE2MzA3OD
-AsODEyMDYxNjAzLDE1MzkwNDg4MjEsODE5NjU1MDM3LC0xMjMx
-ODI3MjI1XX0=
+eyJoaXN0b3J5IjpbOTcyNDgyMjQ0LC03NjUyMjI2MzMsMTkwMj
+MzNTI2LDEwMjk5OTAwNzgsLTk2Njk2ODI2OCwyODQyNDA4NzIs
+MTU5NzQyMDEzNiwtMTAzNjM2ODAzMCwtMTAxODQxNTE2MiwtMT
+I1MTc3MjE0OCwtMTA5MzY4MjQ2Niw4NzA1NzE4MzMsMTEyMTUy
+NTgzOCwxMjUwNzUwMDQ1LC01NDA3NDczMzQsLTc4MTYzMDc4MC
+w4MTIwNjE2MDMsMTUzOTA0ODgyMSw4MTk2NTUwMzcsLTEyMzE4
+MjcyMjVdfQ==
 -->
