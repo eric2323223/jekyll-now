@@ -61,7 +61,7 @@ Attention机制的本质来自于人类视觉注意力机制。人们视觉在�
 > weights  pp  are actually computed between the keys and the lookup,
 > and the context is then constructed with the  vivi.
 ### Attention机制
-总结上述两种模型的处理方式，我们发现对于长序列的输入，无论是在预测准确度还是训练速度都有不足，有没有一种方法能从根本上解决这些问题，让我们一次性的看到全部输入（无论序列有多长），并且能根据这些输入信息分析序列元素之间的关联关系呢？答案就是attention机制，
+总结上述两种模型的处理方式，我们发现对于长序列的处理都有天然的缺陷，有没有一种方法能从根本上解决这些问题，让我们一次性的看到全部输入（无论序列有多长），并且能根据这些输入信息分析序列元素之间的关联关系呢？答案就是attention机制，
 图
 
 
@@ -153,11 +153,11 @@ Despite not having any explicit recurrency, implicitly the model is built as an 
 [Attention is all you need review]([https://ricardokleinklein.github.io/2017/11/16/Attention-is-all-you-need.html](https://ricardokleinklein.github.io/2017/11/16/Attention-is-all-you-need.html))
 [The transformer - Attention is all you need]([https://mchromiak.github.io/articles/2017/Sep/12/Transformer-Attention-is-all-you-need/#.XTEl6ugzZPY](https://mchromiak.github.io/articles/2017/Sep/12/Transformer-Attention-is-all-you-need/#.XTEl6ugzZPY))
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODkyNTc5OTM4LC01MzIzNjg4OTMsMjg0Mj
-QwODcyLDE1OTc0MjAxMzYsLTEwMzYzNjgwMzAsLTEwMTg0MTUx
-NjIsLTEyNTE3NzIxNDgsLTEwOTM2ODI0NjYsODcwNTcxODMzLD
-ExMjE1MjU4MzgsMTI1MDc1MDA0NSwtNTQwNzQ3MzM0LC03ODE2
-MzA3ODAsODEyMDYxNjAzLDE1MzkwNDg4MjEsODE5NjU1MDM3LC
-0xMjMxODI3MjI1LDU4MTEyMzI1OSwtMzc3ODIyNzI1LC0xNTEx
-ODYxMjddfQ==
+eyJoaXN0b3J5IjpbLTk2Njk2ODI2OCwtNTMyMzY4ODkzLDI4ND
+I0MDg3MiwxNTk3NDIwMTM2LC0xMDM2MzY4MDMwLC0xMDE4NDE1
+MTYyLC0xMjUxNzcyMTQ4LC0xMDkzNjgyNDY2LDg3MDU3MTgzMy
+wxMTIxNTI1ODM4LDEyNTA3NTAwNDUsLTU0MDc0NzMzNCwtNzgx
+NjMwNzgwLDgxMjA2MTYwMywxNTM5MDQ4ODIxLDgxOTY1NTAzNy
+wtMTIzMTgyNzIyNSw1ODExMjMyNTksLTM3NzgyMjcyNSwtMTUx
+MTg2MTI3XX0=
 -->
