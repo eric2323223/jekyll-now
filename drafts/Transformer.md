@@ -106,6 +106,7 @@ Transformer中使用了sin/cos位置编码
 	2. 能够体现相对位置关系
 	3. 可处理变长序列
 ### 多头注意力（ Multiple Headed Attention)
+![enter image description here](https://miro.medium.com/max/600/1*Vb9UizPn0AHejEYW9CWxNQ.png)
 different random initial weights matrix may lead to different representation subspace, thus give transformer ability to understand different meaning of a word
 - stack of encoder/decoder layer
 	- - 位置编码PosiStacking of encoder/decoder
@@ -142,11 +143,11 @@ Despite not having any explicit recurrency, implicitly the model is built as an 
 [Attention is all you need review]([https://ricardokleinklein.github.io/2017/11/16/Attention-is-all-you-need.html](https://ricardokleinklein.github.io/2017/11/16/Attention-is-all-you-need.html))
 [The transformer - Attention is all you need]([https://mchromiak.github.io/articles/2017/Sep/12/Transformer-Attention-is-all-you-need/#.XTEl6ugzZPY](https://mchromiak.github.io/articles/2017/Sep/12/Transformer-Attention-is-all-you-need/#.XTEl6ugzZPY))
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0OTgxMjM1ODAsOTcyNDgyMjQ0LC03Nj
-UyMjI2MzMsMTkwMjMzNTI2LDEwMjk5OTAwNzgsLTk2Njk2ODI2
-OCwyODQyNDA4NzIsMTU5NzQyMDEzNiwtMTAzNjM2ODAzMCwtMT
-AxODQxNTE2MiwtMTI1MTc3MjE0OCwtMTA5MzY4MjQ2Niw4NzA1
-NzE4MzMsMTEyMTUyNTgzOCwxMjUwNzUwMDQ1LC01NDA3NDczMz
-QsLTc4MTYzMDc4MCw4MTIwNjE2MDMsMTUzOTA0ODgyMSw4MTk2
-NTUwMzddfQ==
+eyJoaXN0b3J5IjpbMTk4NzIwNDE2NCw5NzI0ODIyNDQsLTc2NT
+IyMjYzMywxOTAyMzM1MjYsMTAyOTk5MDA3OCwtOTY2OTY4MjY4
+LDI4NDI0MDg3MiwxNTk3NDIwMTM2LC0xMDM2MzY4MDMwLC0xMD
+E4NDE1MTYyLC0xMjUxNzcyMTQ4LC0xMDkzNjgyNDY2LDg3MDU3
+MTgzMywxMTIxNTI1ODM4LDEyNTA3NTAwNDUsLTU0MDc0NzMzNC
+wtNzgxNjMwNzgwLDgxMjA2MTYwMywxNTM5MDQ4ODIxLDgxOTY1
+NTAzN119
 -->
