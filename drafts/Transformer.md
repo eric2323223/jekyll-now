@@ -100,6 +100,8 @@ self-attention其实和cnn，rnn一样，也是为了对输入进行编码，为
 
 ![enter image description here](https://cntk.ai/jup/cntk204_s2s2.png)新问题
 - 位置编码Positional encoding
+![enter image description here](https://www.researchgate.net/publication/327068570/figure/fig3/AS:660457148928000@1534476663109/The-original-positional-encoding-used-in-Attention-Is-All-You-Need-VSP-17-composed.png)
+![enter image description here](https://www.d2l.ai/_images/output_transformer_ee2e4a_21_0.svg)
 由于transformer不使用RNN和CNN，仅仅计算不同元素之间的相似度，因此必须加入位置信息来保证transformer正确的理解输入序列。最简单的位置编码是直接使用元素的序号，但这种方式对输入序列的长度过于敏感，对相对位置关系的表达——————。 extrapolate training samples
 Transformer中使用了sin/cos位置编码
 	1. 计算方便
@@ -123,9 +125,19 @@ different random initial weights matrix may lead to different representation sub
 - why not positional index? 
 ### point-wise FFN
 point-wise 对序列中每个元素分别进行2层全连接运算
+> Like the name indicates, this is a regular feedforward network applied to _each_ time step of the Multi Head attention outputs. The network has three layers with a non-linearity like ReLU for the hidden layer. You might be wondering why do we need a feedforward network after attention; after all isn’t attention all we need 😈 ? I suspect it is needed to improve model expressiveness. As we saw earlier the multi head attention partitioned the inputs and applied attention independently. There was only a linear projection to the outputs, i.e. the partitions were combined only linearly. The _Positionwise Feedforward_ network thus brings in some non-linear ‘mixing’ if we call it that. In fact for the sequence tagging task we use convolutions instead of fully connected layers. A filter of width 3 allows interactions to happen with adjacent time steps to improve performance.
 ### Mask
+由于attention机制可以看到全部输入，所以需要mask来防止attention在训练时看到正确的输出 
 > We also modify the self-attention sub-layer in the decoder stack to prevent positions from attending to subsequent positions. This masking, combined with fact that the output embeddings are offset by one position, ensures that the predictions for position ii can depend only on the known outputs at positions less than ii.
+> I mentioned I would cover attention bias mask later when going through the code of  `MultiHeadAttention`. For tasks like translation the decoder is fed previous outputs as input to predict the next output. During training the quick way to get the previous outputs is to  _shift_  the training labels right (The first time step gets a special symbol) and feed them as decoder inputs — a technique known as  _Teacher Forcing_  in machine learning parlance. However this presents a problem for the Transformer decoder as it can ‘cheat’ by using inputs from future time steps. The places where the short circuiting can happen is the self attention step and both the feedforward steps. (Can you figure out why it cannot happen in the normal attention step?)
 
+> In the self attention step we feed values from all time steps to the  `MultiHeadAttention`  component. Recall that we do a weighted linear combination of the  _Values_  input:
+
+![](https://miro.medium.com/max/504/1*aJiWfOaTCktprHEgNdeJow.png)
+
+Consider the first row of  _OUTPUT_  in the above diagram. It corresponds to the attention output at time  _t=1_. But it is computed from values right up till  _t=10_  which are future time steps. To prevent reading these future values we zero out all weights in the  _WEIGHTS_  tensor above the main diagonal. This will ensure that future values cannot creep in:
+
+![](https://miro.medium.com/max/204/1*6aTQQSmXUfCQxj3drNEweg.png)
 ## Transformer的改进
 Despite not having any explicit recurrency, implicitly the model is built as an autoregressive one. It implies that in order to generate an output (both while training or during inference), the model needs to compute previous outputs, which is extremely costly, for the whole net has to be run for every output. That’s the main idea to overcome in a recent paper by researchers at [_Salesforce Research_](https://einstein.ai/research/non-autoregressive-neural-machine-translation) and the University of Hong Kong, who tried to make the whole process parallelizable[23](https://ricardokleinklein.github.io/2017/11/16/Attention-is-all-you-need.html#fn:23). Their proposal is to compute _fertilities_ for every input word in the sequence, and use it instead of previous outputs in order to compute the current output. This is summarized in the figure below.
 ## Transformer实现
@@ -142,12 +154,13 @@ Despite not having any explicit recurrency, implicitly the model is built as an 
 ## Resources
 [Attention is all you need review]([https://ricardokleinklein.github.io/2017/11/16/Attention-is-all-you-need.html](https://ricardokleinklein.github.io/2017/11/16/Attention-is-all-you-need.html))
 [The transformer - Attention is all you need]([https://mchromiak.github.io/articles/2017/Sep/12/Transformer-Attention-is-all-you-need/#.XTEl6ugzZPY](https://mchromiak.github.io/articles/2017/Sep/12/Transformer-Attention-is-all-you-need/#.XTEl6ugzZPY))
+[# Building the Mighty Transformer for Sequence Tagging in PyTorch]([https://medium.com/@kolloldas/building-the-mighty-transformer-for-sequence-tagging-in-pytorch-part-i-a1815655cd8](https://medium.com/@kolloldas/building-the-mighty-transformer-for-sequence-tagging-in-pytorch-part-i-a1815655cd8))
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE4ODY0NjkxNzYsMTk4NzIwNDE2NCw5Nz
-I0ODIyNDQsLTc2NTIyMjYzMywxOTAyMzM1MjYsMTAyOTk5MDA3
-OCwtOTY2OTY4MjY4LDI4NDI0MDg3MiwxNTk3NDIwMTM2LC0xMD
-M2MzY4MDMwLC0xMDE4NDE1MTYyLC0xMjUxNzcyMTQ4LC0xMDkz
-NjgyNDY2LDg3MDU3MTgzMywxMTIxNTI1ODM4LDEyNTA3NTAwND
-UsLTU0MDc0NzMzNCwtNzgxNjMwNzgwLDgxMjA2MTYwMywxNTM5
-MDQ4ODIxXX0=
+eyJoaXN0b3J5IjpbMTAyOTc4ODYzOSwtMTg4NjQ2OTE3NiwxOT
+g3MjA0MTY0LDk3MjQ4MjI0NCwtNzY1MjIyNjMzLDE5MDIzMzUy
+NiwxMDI5OTkwMDc4LC05NjY5NjgyNjgsMjg0MjQwODcyLDE1OT
+c0MjAxMzYsLTEwMzYzNjgwMzAsLTEwMTg0MTUxNjIsLTEyNTE3
+NzIxNDgsLTEwOTM2ODI0NjYsODcwNTcxODMzLDExMjE1MjU4Mz
+gsMTI1MDc1MDA0NSwtNTQwNzQ3MzM0LC03ODE2MzA3ODAsODEy
+MDYxNjAzXX0=
 -->
