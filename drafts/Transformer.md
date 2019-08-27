@@ -61,7 +61,7 @@ CNN可以同时处理序列中的所有元素，但是由于卷积运算的视�
 > weights  pp  are actually computed between the keys and the lookup,
 > and the context is then constructed with the  vivi.
 ### Attention机制
-总结上述两种模型对于长序列的处理都有天然的缺陷，有没有一种方法能从根本上解决这些问题，让我们一次性的看到全部输入（无论序列有多长），并且能根据这些输入信息分析序列元素之间的关联关系呢？Attention机制的本质来自于人类视觉注意力机制。人们视觉在感知东西的时候一般不会是一个场景从到头看到尾每次全部都看，而往往是根据需求观察注意特定的一部分。而且当人们发现一个场景经常在某部分出现自己想观察的东西时，人们会进行学习在将来再出现类似场景时把注意力放到该部分上。
+总结上述两种模型对于长序列的处理都有天然的缺陷，有没有一种方法能从根本上解决这些问题，让我们一次性的看到全部输入（无论序列有多长），并且能根据这些输入信息分析序列元素之间的关联关系呢？Attention机制的本质来自于人类视觉注意力机制。人们视觉在感知东西的时候一般不会是一个场景从到头看到尾每次全部都看，而往往是根据需求观察注意特定的一部分。而且当人们发现一个场景经常在某部分出现自己想观察的东西时，人们会进行学习在将来再出现类似场景时把注意力放到该部分上。，
 图
 
 
@@ -154,13 +154,14 @@ Despite not having any explicit recurrency, implicitly the model is built as an 
 ## Resources
 [Attention is all you need review]([https://ricardokleinklein.github.io/2017/11/16/Attention-is-all-you-need.html](https://ricardokleinklein.github.io/2017/11/16/Attention-is-all-you-need.html))
 [The transformer - Attention is all you need]([https://mchromiak.github.io/articles/2017/Sep/12/Transformer-Attention-is-all-you-need/#.XTEl6ugzZPY](https://mchromiak.github.io/articles/2017/Sep/12/Transformer-Attention-is-all-you-need/#.XTEl6ugzZPY))
-[# Building the Mighty Transformer for Sequence Tagging in PyTorch]([https://medium.com/@kolloldas/building-the-mighty-transformer-for-sequence-tagging-in-pytorch-part-i-a1815655cd8](https://medium.com/@kolloldas/building-the-mighty-transformer-for-sequence-tagging-in-pytorch-part-i-a1815655cd8))
+[Building the Mighty Transformer for Sequence Tagging in PyTorch](https://medium.com/@kolloldas/building-the-mighty-transformer-for-sequence-tagging-in-pytorch-part-i-a1815655cd8](https://medium.com/@kolloldas/building-the-mighty-transformer-for-sequence-tagging-in-pytorch-part-i-a1815655cd8))
+[The Transformer: Attention Is All You Need](https://glassboxmedicine.com/2019/08/15/the-transformer-attention-is-all-you-need/)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTI0MTI1MjUwNSwxMDI5Nzg4NjM5LC0xOD
-g2NDY5MTc2LDE5ODcyMDQxNjQsOTcyNDgyMjQ0LC03NjUyMjI2
-MzMsMTkwMjMzNTI2LDEwMjk5OTAwNzgsLTk2Njk2ODI2OCwyOD
-QyNDA4NzIsMTU5NzQyMDEzNiwtMTAzNjM2ODAzMCwtMTAxODQx
-NTE2MiwtMTI1MTc3MjE0OCwtMTA5MzY4MjQ2Niw4NzA1NzE4Mz
-MsMTEyMTUyNTgzOCwxMjUwNzUwMDQ1LC01NDA3NDczMzQsLTc4
-MTYzMDc4MF19
+eyJoaXN0b3J5IjpbLTIwMzI4NjU0NDIsMTI0MTI1MjUwNSwtMT
+g4NjQ2OTE3NiwxOTg3MjA0MTY0LDk3MjQ4MjI0NCwtNzY1MjIy
+NjMzLDE5MDIzMzUyNiwxMDI5OTkwMDc4LC05NjY5NjgyNjgsMj
+g0MjQwODcyLDE1OTc0MjAxMzYsLTEwMzYzNjgwMzAsLTEwMTg0
+MTUxNjIsLTEyNTE3NzIxNDgsLTEwOTM2ODI0NjYsODcwNTcxOD
+MzLDExMjE1MjU4MzgsMTI1MDc1MDA0NSwtNTQwNzQ3MzM0LC03
+ODE2MzA3ODBdfQ==
 -->
