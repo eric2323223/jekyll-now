@@ -64,7 +64,15 @@ CNN可以同时处理序列中的所有元素，但是由于卷积运算的视�
 总结上述两种模型对于长序列的处理都有天然的缺陷，有没有一种方法能从根本上解决这些问题，让我们一次性的看到全部输入（无论序列有多长），并且能根据这些输入信息分析序列元素之间的关联关系呢？Attention机制的本质来自于人类视觉注意力机制。人们视觉在感知东西的时候一般不会是一个场景从到头看到尾每次全部都看，而往往是根据需求观察注意特定的一部分。而且当人们发现一个场景经常在某部分出现自己想观察的东西时，人们会进行学习在将来再出现类似场景时把注意力放到该部分上。
 图
 
-
+- core model
+	- embedding -> attention -> 
+- add position into model
+	- embedding -> positional encoding -> attention -> Dense -> softmax
+- add self-attention
+	- embedding -> positional encoding -> self-attention -> encoder-decoder attention -> self-attention ->
+- fix attention side affect (average)
+	- embedding -> positional encoding -> mutiple-headed attention -> FFN -> encoder-decoder attention -> Dense -> softmax
+- 
 ## Transformer模型
 基于attention机制
 - 解决long memory problem
@@ -163,11 +171,11 @@ Despite not having any explicit recurrency, implicitly the model is built as an 
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNzQ3NTcyOTUwLDEyNDEyNTI1MDUsLTE4OD
-Y0NjkxNzYsMTk4NzIwNDE2NCw5NzI0ODIyNDQsLTc2NTIyMjYz
-MywxOTAyMzM1MjYsMTAyOTk5MDA3OCwtOTY2OTY4MjY4LDI4ND
-I0MDg3MiwxNTk3NDIwMTM2LC0xMDM2MzY4MDMwLC0xMDE4NDE1
-MTYyLC0xMjUxNzcyMTQ4LC0xMDkzNjgyNDY2LDg3MDU3MTgzMy
-wxMTIxNTI1ODM4LDEyNTA3NTAwNDUsLTU0MDc0NzMzNCwtNzgx
-NjMwNzgwXX0=
+eyJoaXN0b3J5IjpbMTM3MjU2Mzc4MywxMjQxMjUyNTA1LC0xOD
+g2NDY5MTc2LDE5ODcyMDQxNjQsOTcyNDgyMjQ0LC03NjUyMjI2
+MzMsMTkwMjMzNTI2LDEwMjk5OTAwNzgsLTk2Njk2ODI2OCwyOD
+QyNDA4NzIsMTU5NzQyMDEzNiwtMTAzNjM2ODAzMCwtMTAxODQx
+NTE2MiwtMTI1MTc3MjE0OCwtMTA5MzY4MjQ2Niw4NzA1NzE4Mz
+MsMTEyMTUyNTgzOCwxMjUwNzUwMDQ1LC01NDA3NDczMzQsLTc4
+MTYzMDc4MF19
 -->
