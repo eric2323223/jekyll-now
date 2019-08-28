@@ -139,6 +139,9 @@ different random initial weights matrix may lead to different representation sub
 point-wise 对序列中每个元素分别进行2层全连接运算
 > Like the name indicates, this is a regular feedforward network applied to _each_ time step of the Multi Head attention outputs. The network has three layers with a non-linearity like ReLU for the hidden layer. You might be wondering why do we need a feedforward network after attention; after all isn’t attention all we need 😈 ? I suspect it is needed to improve model expressiveness. As we saw earlier the multi head attention partitioned the inputs and applied attention independently. There was only a linear projection to the outputs, i.e. the partitions were combined only linearly. The _Positionwise Feedforward_ network thus brings in some non-linear ‘mixing’ if we call it that. In fact for the sequence tagging task we use convolutions instead of fully connected layers. A filter of width 3 allows interactions to happen with adjacent time steps to improve performance.
 ### Mask
+> -   In the encoder and decoder: To zero attention outputs wherever there is just padding in the input sentences.
+> -   In the decoder: To prevent the decoder ‘peaking’ ahead at the rest of the translated sentence when predicting the next word.
+
 由于attention机制可以看到全部输入，所以需要mask来防止attention在训练时看到正确的输出 
 > We also modify the self-attention sub-layer in the decoder stack to prevent positions from attending to subsequent positions. This masking, combined with fact that the output embeddings are offset by one position, ensures that the predictions for position ii can depend only on the known outputs at positions less than ii.
 > I mentioned I would cover attention bias mask later when going through the code of  `MultiHeadAttention`. For tasks like translation the decoder is fed previous outputs as input to predict the next output. During training the quick way to get the previous outputs is to  _shift_  the training labels right (The first time step gets a special symbol) and feed them as decoder inputs — a technique known as  _Teacher Forcing_  in machine learning parlance. However this presents a problem for the Transformer decoder as it can ‘cheat’ by using inputs from future time steps. The places where the short circuiting can happen is the self attention step and both the feedforward steps. (Can you figure out why it cannot happen in the normal attention step?)
@@ -171,7 +174,7 @@ Despite not having any explicit recurrency, implicitly the model is built as an 
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTM3MjU2Mzc4MywxMjQxMjUyNTA1LC0xOD
+eyJoaXN0b3J5IjpbMjA5OTU3MDI2MywxMjQxMjUyNTA1LC0xOD
 g2NDY5MTc2LDE5ODcyMDQxNjQsOTcyNDgyMjQ0LC03NjUyMjI2
 MzMsMTkwMjMzNTI2LDEwMjk5OTAwNzgsLTk2Njk2ODI2OCwyOD
 QyNDA4NzIsMTU5NzQyMDEzNiwtMTAzNjM2ODAzMCwtMTAxODQx
