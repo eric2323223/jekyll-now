@@ -66,7 +66,7 @@ CNN可以同时处理序列中的所有元素，但是由于卷积运算的视�
 图attention mechanism
 
 let's think about how to design a seq-seq model with only attention.
-![enter image description here](https://docs.google.com/drawings/d/e/2PACX-1vQpyCEO_5eiGEU2qG6G7ktzfhyjPRtMxtvGluMcFmeuEFoQYEMHIzAtvWAIH67v5uL1k5AKHS6Xn4cA/pub?w=340&h=128)
+![enter image description here](https://docs.google.com/drawings/d/e/2PACX-1vQpyCEO_5eiGEU2qG6G7ktzfhyjPRtMxtvGluMcFmeuEFoQYEMHIzAtvWAIH67v5uL1k5AKHS6Xn4cA/pub?w=680&h=256)
 
 - bear minimal core model
 - 
@@ -187,11 +187,11 @@ Despite not having any explicit recurrency, implicitly the model is built as an 
 [The Transformer – Attention is all you need.](https://mchromiak.github.io/articles/2017/Sep/12/Transformer-Attention-is-all-you-need/)
 [The Annotated Transformer](http://nlp.seas.harvard.edu/2018/04/03/attention.html)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0OTM4Nzg3NjcsOTE5OTE4NjMyLDQyND
-gzNDM0OSwtMTA0Mzg5NzA3MiwxMzM5MTM0ODg3LDIxMzk4OTE5
-ODksMTI0MTI1MjUwNSwtMTg4NjQ2OTE3NiwxOTg3MjA0MTY0LD
-k3MjQ4MjI0NCwtNzY1MjIyNjMzLDE5MDIzMzUyNiwxMDI5OTkw
-MDc4LC05NjY5NjgyNjgsMjg0MjQwODcyLDE1OTc0MjAxMzYsLT
-EwMzYzNjgwMzAsLTEwMTg0MTUxNjIsLTEyNTE3NzIxNDgsLTEw
-OTM2ODI0NjZdfQ==
+eyJoaXN0b3J5IjpbMTYxNzYzNzkxMCw5MTk5MTg2MzIsNDI0OD
+M0MzQ5LC0xMDQzODk3MDcyLDEzMzkxMzQ4ODcsMjEzOTg5MTk4
+OSwxMjQxMjUyNTA1LC0xODg2NDY5MTc2LDE5ODcyMDQxNjQsOT
+cyNDgyMjQ0LC03NjUyMjI2MzMsMTkwMjMzNTI2LDEwMjk5OTAw
+NzgsLTk2Njk2ODI2OCwyODQyNDA4NzIsMTU5NzQyMDEzNiwtMT
+AzNjM2ODAzMCwtMTAxODQxNTE2MiwtMTI1MTc3MjE0OCwtMTA5
+MzY4MjQ2Nl19
 -->
