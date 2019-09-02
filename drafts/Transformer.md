@@ -68,7 +68,7 @@ CNN可以同时处理序列中的所有元素，但是由于卷积运算的视�
 let's think about how to design a seq-seq model with only attention.
 
 
-- core model
+- bear minimal core model
 	- embedding -> attention -> 
 - add position into model
 	- embedding -> positional encoding -> attention -> Dense -> softmax
@@ -186,11 +186,11 @@ Despite not having any explicit recurrency, implicitly the model is built as an 
 [The Transformer – Attention is all you need.](https://mchromiak.github.io/articles/2017/Sep/12/Transformer-Attention-is-all-you-need/)
 [The Annotated Transformer](http://nlp.seas.harvard.edu/2018/04/03/attention.html)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEwNDM4OTcwNzIsMTMzOTEzNDg4NywyMT
-M5ODkxOTg5LDEyNDEyNTI1MDUsLTE4ODY0NjkxNzYsMTk4NzIw
-NDE2NCw5NzI0ODIyNDQsLTc2NTIyMjYzMywxOTAyMzM1MjYsMT
-AyOTk5MDA3OCwtOTY2OTY4MjY4LDI4NDI0MDg3MiwxNTk3NDIw
-MTM2LC0xMDM2MzY4MDMwLC0xMDE4NDE1MTYyLC0xMjUxNzcyMT
-Q4LC0xMDkzNjgyNDY2LDg3MDU3MTgzMywxMTIxNTI1ODM4LDEy
-NTA3NTAwNDVdfQ==
+eyJoaXN0b3J5IjpbNDI0ODM0MzQ5LC0xMDQzODk3MDcyLDEzMz
+kxMzQ4ODcsMjEzOTg5MTk4OSwxMjQxMjUyNTA1LC0xODg2NDY5
+MTc2LDE5ODcyMDQxNjQsOTcyNDgyMjQ0LC03NjUyMjI2MzMsMT
+kwMjMzNTI2LDEwMjk5OTAwNzgsLTk2Njk2ODI2OCwyODQyNDA4
+NzIsMTU5NzQyMDEzNiwtMTAzNjM2ODAzMCwtMTAxODQxNTE2Mi
+wtMTI1MTc3MjE0OCwtMTA5MzY4MjQ2Niw4NzA1NzE4MzMsMTEy
+MTUyNTgzOF19
 -->
