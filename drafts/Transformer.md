@@ -186,12 +186,13 @@ Despite not having any explicit recurrency, implicitly the model is built as an 
 [Attention? Attention!](https://lilianweng.github.io/lil-log/2018/06/24/attention-attention.html#a-family-of-attention-mechanisms)
 [The Transformer – Attention is all you need.](https://mchromiak.github.io/articles/2017/Sep/12/Transformer-Attention-is-all-you-need/)
 [The Annotated Transformer](http://nlp.seas.harvard.edu/2018/04/03/attention.html)
+[Create The Transformer With Tensorflow 2.0](https://machinetalk.org/2019/04/29/create-the-transformer-with-tensorflow-2-0/)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEwNzQ4NDgyNDUsMTYxNzYzNzkxMCw5MT
-k5MTg2MzIsNDI0ODM0MzQ5LC0xMDQzODk3MDcyLDEzMzkxMzQ4
-ODcsMjEzOTg5MTk4OSwxMjQxMjUyNTA1LC0xODg2NDY5MTc2LD
-E5ODcyMDQxNjQsOTcyNDgyMjQ0LC03NjUyMjI2MzMsMTkwMjMz
-NTI2LDEwMjk5OTAwNzgsLTk2Njk2ODI2OCwyODQyNDA4NzIsMT
-U5NzQyMDEzNiwtMTAzNjM2ODAzMCwtMTAxODQxNTE2MiwtMTI1
-MTc3MjE0OF19
+eyJoaXN0b3J5IjpbODgzNjUwNiwtMTA3NDg0ODI0NSwxNjE3Nj
+M3OTEwLDkxOTkxODYzMiw0MjQ4MzQzNDksLTEwNDM4OTcwNzIs
+MTMzOTEzNDg4NywyMTM5ODkxOTg5LDEyNDEyNTI1MDUsLTE4OD
+Y0NjkxNzYsMTk4NzIwNDE2NCw5NzI0ODIyNDQsLTc2NTIyMjYz
+MywxOTAyMzM1MjYsMTAyOTk5MDA3OCwtOTY2OTY4MjY4LDI4ND
+I0MDg3MiwxNTk3NDIwMTM2LC0xMDM2MzY4MDMwLC0xMDE4NDE1
+MTYyXX0=
 -->
