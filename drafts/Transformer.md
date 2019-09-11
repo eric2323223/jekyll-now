@@ -69,7 +69,7 @@ let's think about how to design a seq-seq model with only attention.
 ![enter image description here](https://docs.google.com/drawings/d/e/2PACX-1vQpyCEO_5eiGEU2qG6G7ktzfhyjPRtMxtvGluMcFmeuEFoQYEMHIzAtvWAIH67v5uL1k5AKHS6Xn4cA/pub?w=680&h=256)
 
 - bear minimal core model
-- 
+- ![enter image description here](https://docs.google.com/drawings/d/e/2PACX-1vSqvRProLcHw7CSGx4TGpXvLAKwMiy6dEfUa1vnlhQqkx0liKnOUmE1Bm-LQogtMfT1L44jo8y_wjPB/pub?w=883&h=458)
 	- embedding -> attention -> 
 - add position into model
 	- embedding -> positional encoding -> attention -> Dense -> softmax
@@ -188,11 +188,11 @@ Despite not having any explicit recurrency, implicitly the model is built as an 
 [The Annotated Transformer](http://nlp.seas.harvard.edu/2018/04/03/attention.html)
 [Create The Transformer With Tensorflow 2.0](https://machinetalk.org/2019/04/29/create-the-transformer-with-tensorflow-2-0/)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTg2NTA1OTMzMiw4ODM2NTA2LC0xMDc0OD
-Q4MjQ1LDE2MTc2Mzc5MTAsOTE5OTE4NjMyLDQyNDgzNDM0OSwt
-MTA0Mzg5NzA3MiwxMzM5MTM0ODg3LDIxMzk4OTE5ODksMTI0MT
-I1MjUwNSwtMTg4NjQ2OTE3NiwxOTg3MjA0MTY0LDk3MjQ4MjI0
-NCwtNzY1MjIyNjMzLDE5MDIzMzUyNiwxMDI5OTkwMDc4LC05Nj
-Y5NjgyNjgsMjg0MjQwODcyLDE1OTc0MjAxMzYsLTEwMzYzNjgw
-MzBdfQ==
+eyJoaXN0b3J5IjpbLTcwNjM5ODczNiwxODY1MDU5MzMyLDg4Mz
+Y1MDYsLTEwNzQ4NDgyNDUsMTYxNzYzNzkxMCw5MTk5MTg2MzIs
+NDI0ODM0MzQ5LC0xMDQzODk3MDcyLDEzMzkxMzQ4ODcsMjEzOT
+g5MTk4OSwxMjQxMjUyNTA1LC0xODg2NDY5MTc2LDE5ODcyMDQx
+NjQsOTcyNDgyMjQ0LC03NjUyMjI2MzMsMTkwMjMzNTI2LDEwMj
+k5OTAwNzgsLTk2Njk2ODI2OCwyODQyNDA4NzIsMTU5NzQyMDEz
+Nl19
 -->
