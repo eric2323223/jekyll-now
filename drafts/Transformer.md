@@ -63,7 +63,7 @@ Attention机制来自于人类视觉注意力机制。人们视觉在感知东�
 > weights  pp  are actually computed between the keys and the lookup,
 > and the context is then constructed with the  vivi.
 ## 注意力机制（attention mechanism）
-注意力机制主要用于seq2seq任务，它的基本思想就是将人类快速阅读的方式应用在序列分析上。目前处理seq2seq问题主要使用编码器-解码器（encoder-decoder）架构，编码器负责将输入序列转换文整个
+注意力机制主要用于seq2seq任务，它的基本思想就是将人类快速阅读的方式应用在序列分析上。目前处理seq2seq问题主要使用编码器-解码器（encoder-decoder）架构，编码器负责将输入序列转换为整个序列的内部表示（context vector），解码器则对整个内部表示
 
 ![enter image description here](https://miro.medium.com/max/1420/1*9Lcq9ni9aujScFYyyHRhhA.png)
 图attention mechanism
@@ -191,7 +191,7 @@ Despite not having any explicit recurrency, implicitly the model is built as an 
 [The Annotated Transformer](http://nlp.seas.harvard.edu/2018/04/03/attention.html)
 [Create The Transformer With Tensorflow 2.0](https://machinetalk.org/2019/04/29/create-the-transformer-with-tensorflow-2-0/)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTI2NzQyNzQxOSwzMTc1MjEwMDYsNTA4Nz
+eyJoaXN0b3J5IjpbLTUwMzg4NjM4OSwzMTc1MjEwMDYsNTA4Nz
 U1NTU3LDE1NzgzNDA4NTksLTE5OTI3MTYxODMsMTE5NzUyNzMw
 MCw5MTU1NTYyNjEsLTI0Nzc3MTQ0MywxNzcxNDYxOTMwLC0xMD
 AxNTMwMjEzLC00MjEzNzU1MjMsLTcwNjM5ODczNiwxODY1MDU5
