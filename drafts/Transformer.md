@@ -11,7 +11,7 @@ seq2seq问题是使用机器学习（特别是深度学习）解决的一类常�
 - CNN
 CNN可以同时处理序列中的所有元素，但是由于卷积运算的视域有限，一次卷积操作只能处理有限的元素，对于较长的序列无法处理。解决办法是通过叠加多层卷积操作来逐渐增加视域，但这样会不可避免的导致信息丢失，并且仍没有完全解决长序列输入的处理问题，————————而且增加了模型的复杂度，使运算变慢，这和初衷不符。
 
-总结一下，上述两种模型对于输入序列的处理都有缺陷。RNN需要一步一步的处理输入序列，CNN做出了一些改进但并不彻底。从根本上的解决这个问题需要能一次性的处理全部输入（无论序列有多长），并且能根据这些输入信息分析序列元素之间的关联关系。人们从自己快速浏览的方式获得了启发，当人们需要快速浏览的时候一般不会一字一句的阅读，而会直接跳到需要关注的的部分，这种根据需要在不同位置跳跃的阅读方式和注意力相关，
+总结一下，上述两种模型对于长序列的处理都有缺陷。RNN需要一步一步的处理输入序列，CNN做出了一些改进但并不彻底。从根本上的解决这个问题需要能一次性的处理全部输入（无论序列有多长），并且能根据这些输入信息分析序列元素之间的关联关系。人们从自己快速浏览的方式获得了启发，当人们需要快速浏览的时候一般不会一字一句的阅读，而会直接跳到需要关注的的部分，这种根据需要在不同位置跳跃的阅读方式和注意力相关，因此这种新的序列处理方式被命名为注意力机制（attention me**）
 Attention机制来自于人类视觉注意力机制。人们视觉在感知东西的时候一般不会是一个场景从到头看到尾每次全部都看，而往往是根据需求观察注意特定的一部分。而且当人们发现一个场景经常在某部分出现自己想观察的东西时，人们会进行学习在将来再出现类似场景时把注意力放到该部分上。
 > In these models, the number of operations required to relate signals from two arbitrary input or output positions grows in the distance between positions, linearly for ConvS2S and logarithmically for ByteNet. This makes it more difficult to learn dependencies between distant positions. In the Transformer this is reduced to a constant number of operations, albeit at the cost of reduced effective resolution due to averaging attention-weighted positions, an effect we counteract with Multi-Head Attention.
 
@@ -190,11 +190,11 @@ Despite not having any explicit recurrency, implicitly the model is built as an 
 [The Annotated Transformer](http://nlp.seas.harvard.edu/2018/04/03/attention.html)
 [Create The Transformer With Tensorflow 2.0](https://machinetalk.org/2019/04/29/create-the-transformer-with-tensorflow-2-0/)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNzQwNjI2NzIxLDkxNTU1NjI2MSwtMjQ3Nz
-cxNDQzLDE3NzE0NjE5MzAsLTEwMDE1MzAyMTMsLTQyMTM3NTUy
-MywtNzA2Mzk4NzM2LDE4NjUwNTkzMzIsODgzNjUwNiwtMTA3ND
-g0ODI0NSwxNjE3NjM3OTEwLDkxOTkxODYzMiw0MjQ4MzQzNDks
-LTEwNDM4OTcwNzIsMTMzOTEzNDg4NywyMTM5ODkxOTg5LDEyND
-EyNTI1MDUsLTE4ODY0NjkxNzYsMTk4NzIwNDE2NCw5NzI0ODIy
-NDRdfQ==
+eyJoaXN0b3J5IjpbMTE5NzUyNzMwMCw5MTU1NTYyNjEsLTI0Nz
+c3MTQ0MywxNzcxNDYxOTMwLC0xMDAxNTMwMjEzLC00MjEzNzU1
+MjMsLTcwNjM5ODczNiwxODY1MDU5MzMyLDg4MzY1MDYsLTEwNz
+Q4NDgyNDUsMTYxNzYzNzkxMCw5MTk5MTg2MzIsNDI0ODM0MzQ5
+LC0xMDQzODk3MDcyLDEzMzkxMzQ4ODcsMjEzOTg5MTk4OSwxMj
+QxMjUyNTA1LC0xODg2NDY5MTc2LDE5ODcyMDQxNjQsOTcyNDgy
+MjQ0XX0=
 -->
