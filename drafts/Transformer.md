@@ -62,7 +62,7 @@ Attention机制来自于人类视觉注意力机制。人们视觉在感知东�
 > more general and also involves key vectors  kiki: the attention
 > weights  pp  are actually computed between the keys and the lookup,
 > and the context is then constructed with the  vivi.
-### Attention机制
+## Attention机制
 
 ![enter image description here](https://miro.medium.com/max/1420/1*9Lcq9ni9aujScFYyyHRhhA.png)
 图attention mechanism
@@ -190,11 +190,11 @@ Despite not having any explicit recurrency, implicitly the model is built as an 
 [The Annotated Transformer](http://nlp.seas.harvard.edu/2018/04/03/attention.html)
 [Create The Transformer With Tensorflow 2.0](https://machinetalk.org/2019/04/29/create-the-transformer-with-tensorflow-2-0/)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTE5NzUyNzMwMCw5MTU1NTYyNjEsLTI0Nz
-c3MTQ0MywxNzcxNDYxOTMwLC0xMDAxNTMwMjEzLC00MjEzNzU1
-MjMsLTcwNjM5ODczNiwxODY1MDU5MzMyLDg4MzY1MDYsLTEwNz
-Q4NDgyNDUsMTYxNzYzNzkxMCw5MTk5MTg2MzIsNDI0ODM0MzQ5
-LC0xMDQzODk3MDcyLDEzMzkxMzQ4ODcsMjEzOTg5MTk4OSwxMj
-QxMjUyNTA1LC0xODg2NDY5MTc2LDE5ODcyMDQxNjQsOTcyNDgy
-MjQ0XX0=
+eyJoaXN0b3J5IjpbLTE5OTI3MTYxODMsMTE5NzUyNzMwMCw5MT
+U1NTYyNjEsLTI0Nzc3MTQ0MywxNzcxNDYxOTMwLC0xMDAxNTMw
+MjEzLC00MjEzNzU1MjMsLTcwNjM5ODczNiwxODY1MDU5MzMyLD
+g4MzY1MDYsLTEwNzQ4NDgyNDUsMTYxNzYzNzkxMCw5MTk5MTg2
+MzIsNDI0ODM0MzQ5LC0xMDQzODk3MDcyLDEzMzkxMzQ4ODcsMj
+EzOTg5MTk4OSwxMjQxMjUyNTA1LC0xODg2NDY5MTc2LDE5ODcy
+MDQxNjRdfQ==
 -->
