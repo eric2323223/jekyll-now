@@ -2,7 +2,7 @@
 在自然语言处理(NLP)领域，RNN一直是被最广泛使用的深度机器学习模型，近年来CNN也逐渐被用于进行。。。然而这两类模型都有一些难以克服的问题，Transformer就是为了解决这些问题的新型模型，并取得了非常好的效果，大有取代RNN在NLP领域的统治地位的趋势，本文我们就来一步步的分析和理解这个优秀的seq2seq模型。
 
 ## 序列到序列问题（seq2seq）
-seq2seq问题是使用机器学习（特别是深度学习）解决的一类常见问题，例如机器翻译，语态分析，摘要生成等自然语言处理问题（NLP），还包括_______。 这类问题的最大特点是输入（或输出）以序列的形式出现，序列的长度可变，任务通常要求分析整个序列才能产生输出————————。
+seq2seq问题是使用机器学习（特别是深度学习）解决的一类常见问题，例如机器翻译，语态分析，摘要生成等自然语言处理问题（NLP），还包括_______。 这类问题的最大特点是输入（或输出）以序列的形式出现，序列的长度可变，任务通常要求分析整个序列才能产生输出————————。使用机器学习（深度学习）处理seq2seq任务c
 
 ### RNN
 处理seq2seq问题的传统方法是使用RNN模型，RNN能够保存状态，它将输入分为多步，依靠每步输入和上一步的状态更新当前的状态（和输出），通过重复这种步骤在读入所有序列元素后得到整个序列的内部表示（latent feature vector）。从模型结构上来说特别适合序列到序列问题。问题有三点
@@ -189,11 +189,11 @@ Despite not having any explicit recurrency, implicitly the model is built as an 
 [The Annotated Transformer](http://nlp.seas.harvard.edu/2018/04/03/attention.html)
 [Create The Transformer With Tensorflow 2.0](https://machinetalk.org/2019/04/29/create-the-transformer-with-tensorflow-2-0/)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjA3MDQ3NTM2MiwtNzA2Mzk4NzM2LDE4Nj
-UwNTkzMzIsODgzNjUwNiwtMTA3NDg0ODI0NSwxNjE3NjM3OTEw
-LDkxOTkxODYzMiw0MjQ4MzQzNDksLTEwNDM4OTcwNzIsMTMzOT
-EzNDg4NywyMTM5ODkxOTg5LDEyNDEyNTI1MDUsLTE4ODY0Njkx
-NzYsMTk4NzIwNDE2NCw5NzI0ODIyNDQsLTc2NTIyMjYzMywxOT
-AyMzM1MjYsMTAyOTk5MDA3OCwtOTY2OTY4MjY4LDI4NDI0MDg3
-Ml19
+eyJoaXN0b3J5IjpbLTg2ODk3MzUyLC03MDYzOTg3MzYsMTg2NT
+A1OTMzMiw4ODM2NTA2LC0xMDc0ODQ4MjQ1LDE2MTc2Mzc5MTAs
+OTE5OTE4NjMyLDQyNDgzNDM0OSwtMTA0Mzg5NzA3MiwxMzM5MT
+M0ODg3LDIxMzk4OTE5ODksMTI0MTI1MjUwNSwtMTg4NjQ2OTE3
+NiwxOTg3MjA0MTY0LDk3MjQ4MjI0NCwtNzY1MjIyNjMzLDE5MD
+IzMzUyNiwxMDI5OTkwMDc4LC05NjY5NjgyNjgsMjg0MjQwODcy
+XX0=
 -->
