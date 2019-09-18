@@ -5,7 +5,8 @@
 seq2seq问题是使用机器学习（特别是深度学习）解决的一类常见问题，例如机器翻译，语态分析，摘要生成等自然语言处理问题（NLP），还包括_______。 这类问题的最大特点是输入（或输出）以序列的形式出现，序列的长度可变，任务通常要求分析整个序列才能产生输出————————。使用机器学习（深度学习）处理seq2seq任务，通常使用编码器-解码器（encoder-decoder）架构，编码器负责将输入序列转换为整个序列的内部表示（context vector），解码器则对这个内部表示进行解释。
 ![enter image description here](https://img-blog.csdn.net/20180627114128329?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2hwdWxmYw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)传统上有两类模型：
 - RNN
-处理seq2seq问题的传统方法是使用RNN模型，RNN能够保存状态，它将输入分为多步，依靠每步输入和上一步的状态更新当前的状态（和输出），通过重复这种步骤在读入所有序列元素后得到整个序列的内部表示（latent feature vector）。从模型结构上来说特别适合序列到序列问题。问题有三点
+处理seq2seq问题的传统方法是使用RNN模型，RNN能够保存状态，它将输入分为多步，依靠每步输入和上一步的状态更新当前的状态（和输出），通过重复这种步骤在读入所有序列元素后得到整个序列的内部表示（latent feature vector）。![enter image description here](https://miro.medium.com/max/2658/1*Ismhi-muID5ooWf3ZIQFFg.png)
+从模型结构上来说特别适合序列到序列问题。问题有三点
 1. 长序列的训练很困难
 2. 只能顺序执行，训练速度很慢
 3. 固定的存储不适合长序列
@@ -192,11 +193,11 @@ Despite not having any explicit recurrency, implicitly the model is built as an 
 [The Annotated Transformer](http://nlp.seas.harvard.edu/2018/04/03/attention.html)
 [Create The Transformer With Tensorflow 2.0](https://machinetalk.org/2019/04/29/create-the-transformer-with-tensorflow-2-0/)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTU1NDM5NTM1NiwtOTkzNzIyNDU0LDMxNz
-UyMTAwNiw1MDg3NTU1NTcsMTU3ODM0MDg1OSwtMTk5MjcxNjE4
-MywxMTk3NTI3MzAwLDkxNTU1NjI2MSwtMjQ3NzcxNDQzLDE3Nz
-E0NjE5MzAsLTEwMDE1MzAyMTMsLTQyMTM3NTUyMywtNzA2Mzk4
-NzM2LDE4NjUwNTkzMzIsODgzNjUwNiwtMTA3NDg0ODI0NSwxNj
-E3NjM3OTEwLDkxOTkxODYzMiw0MjQ4MzQzNDksLTEwNDM4OTcw
-NzJdfQ==
+eyJoaXN0b3J5IjpbNTE2NTAyOTY1LC01NTQzOTUzNTYsLTk5Mz
+cyMjQ1NCwzMTc1MjEwMDYsNTA4NzU1NTU3LDE1NzgzNDA4NTks
+LTE5OTI3MTYxODMsMTE5NzUyNzMwMCw5MTU1NTYyNjEsLTI0Nz
+c3MTQ0MywxNzcxNDYxOTMwLC0xMDAxNTMwMjEzLC00MjEzNzU1
+MjMsLTcwNjM5ODczNiwxODY1MDU5MzMyLDg4MzY1MDYsLTEwNz
+Q4NDgyNDUsMTYxNzYzNzkxMCw5MTk5MTg2MzIsNDI0ODM0MzQ5
+XX0=
 -->
