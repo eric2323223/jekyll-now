@@ -72,6 +72,8 @@ Attention机制来自于人类视觉注意力机制。人们视觉在感知东�
 -   **最后**，从物理意义上Attention可以理解为**相似性度量**。
 图attention mechanism
 ![enter image description here](https://oscimg.oschina.net/oscnet/5bdc25e12070e665409112ee13ac9e76603.jpg)
+
+![enter image description here](https://mmbiz.qpic.cn/mmbiz_png/KmXPKA19gWicMiaqpI5cdFEvj2sOZVykZic5SwVXksjias1lA5ukFcJ4ficRgmwIyBLK8PcibmvT8Tq4iaIqMl0IaQfVw/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1)
 let's think about how to design a seq-seq model with only attention.
 ![enter image description here](https://docs.google.com/drawings/d/e/2PACX-1vQpyCEO_5eiGEU2qG6G7ktzfhyjPRtMxtvGluMcFmeuEFoQYEMHIzAtvWAIH67v5uL1k5AKHS6Xn4cA/pub?w=680&h=256)
 
@@ -196,11 +198,11 @@ Despite not having any explicit recurrency, implicitly the model is built as an 
 [Create The Transformer With Tensorflow 2.0](https://machinetalk.org/2019/04/29/create-the-transformer-with-tensorflow-2-0/)
 [深度学习中的注意力机制](https://blog.csdn.net/songbinxu/article/details/80739447)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTkxMDg5MzU3OCwzNzY1MTU2NjIsMTA4Nz
-gzMDY2Niw2NDM4MzA2NSw1MTY1MDI5NjUsLTU1NDM5NTM1Niwt
-OTkzNzIyNDU0LDMxNzUyMTAwNiw1MDg3NTU1NTcsMTU3ODM0MD
-g1OSwtMTk5MjcxNjE4MywxMTk3NTI3MzAwLDkxNTU1NjI2MSwt
-MjQ3NzcxNDQzLDE3NzE0NjE5MzAsLTEwMDE1MzAyMTMsLTQyMT
-M3NTUyMywtNzA2Mzk4NzM2LDE4NjUwNTkzMzIsODgzNjUwNl19
-
+eyJoaXN0b3J5IjpbMjE0MjU5ODM2OCwtOTEwODkzNTc4LDM3Nj
+UxNTY2MiwxMDg3ODMwNjY2LDY0MzgzMDY1LDUxNjUwMjk2NSwt
+NTU0Mzk1MzU2LC05OTM3MjI0NTQsMzE3NTIxMDA2LDUwODc1NT
+U1NywxNTc4MzQwODU5LC0xOTkyNzE2MTgzLDExOTc1MjczMDAs
+OTE1NTU2MjYxLC0yNDc3NzE0NDMsMTc3MTQ2MTkzMCwtMTAwMT
+UzMDIxMywtNDIxMzc1NTIzLC03MDYzOTg3MzYsMTg2NTA1OTMz
+Ml19
 -->
