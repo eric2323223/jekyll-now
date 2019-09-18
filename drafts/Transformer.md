@@ -65,7 +65,7 @@ Attention机制来自于人类视觉注意力机制。人们视觉在感知东�
 > weights  pp  are actually computed between the keys and the lookup,
 > and the context is then constructed with the  vivi.
 ## 注意力机制（attention mechanism）
-注意力机制主要用于seq2seq任务，它的基本思想就是将人类快速阅读的方式应用在序列分析上。不同于RNN中先通过依次分析输入元素来逐步生成context vector的方式，注意力机制对这些输入元素进行加权平均的方式来一步生成context vector。这样做的好处不仅大大加速了context vector的生成，而且避免了RNN
+注意力机制主要用于seq2seq任务，它的基本思想就是将人类快速阅读的方式应用在序列分析上。不同于RNN中先通过依次分析输入元素来逐步生成context vector的方式，注意力机制对这些输入元素进行加权平均的方式来一步生成context vector。这样做的好处不仅大大加速了context vector的生成，而且避免了RNN的长序列梯度传播困难的问题。
 
 ![enter image description here](https://miro.medium.com/max/1420/1*9Lcq9ni9aujScFYyyHRhhA.png)
 图attention mechanism
@@ -193,11 +193,11 @@ Despite not having any explicit recurrency, implicitly the model is built as an 
 [The Annotated Transformer](http://nlp.seas.harvard.edu/2018/04/03/attention.html)
 [Create The Transformer With Tensorflow 2.0](https://machinetalk.org/2019/04/29/create-the-transformer-with-tensorflow-2-0/)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0ODIyMjI2ODMsNjQzODMwNjUsNTE2NT
-AyOTY1LC01NTQzOTUzNTYsLTk5MzcyMjQ1NCwzMTc1MjEwMDYs
-NTA4NzU1NTU3LDE1NzgzNDA4NTksLTE5OTI3MTYxODMsMTE5Nz
-UyNzMwMCw5MTU1NTYyNjEsLTI0Nzc3MTQ0MywxNzcxNDYxOTMw
-LC0xMDAxNTMwMjEzLC00MjEzNzU1MjMsLTcwNjM5ODczNiwxOD
-Y1MDU5MzMyLDg4MzY1MDYsLTEwNzQ4NDgyNDUsMTYxNzYzNzkx
-MF19
+eyJoaXN0b3J5IjpbMjU5Mjk0MTcyLDY0MzgzMDY1LDUxNjUwMj
+k2NSwtNTU0Mzk1MzU2LC05OTM3MjI0NTQsMzE3NTIxMDA2LDUw
+ODc1NTU1NywxNTc4MzQwODU5LC0xOTkyNzE2MTgzLDExOTc1Mj
+czMDAsOTE1NTU2MjYxLC0yNDc3NzE0NDMsMTc3MTQ2MTkzMCwt
+MTAwMTUzMDIxMywtNDIxMzc1NTIzLC03MDYzOTg3MzYsMTg2NT
+A1OTMzMiw4ODM2NTA2LC0xMDc0ODQ4MjQ1LDE2MTc2Mzc5MTBd
+fQ==
 -->
