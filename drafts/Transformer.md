@@ -11,7 +11,7 @@ seq2seq问题是使用机器学习（特别是深度学习）解决的一类常�
 - CNN
 CNN可以同时处理序列中的所有元素，但是由于卷积运算的视域有限，一次卷积操作只能处理有限的元素，对于较长的序列无法处理。解决办法是通过叠加多层卷积操作来逐渐增加视域，但这样会不可避免的导致信息丢失，并且仍没有完全解决长序列输入的处理问题，————————而且增加了模型的复杂度，使运算变慢，这和初衷不符。
 
-总结一下，上述两种模型对于输入序列的处理都有缺陷。RNN需要一步一步的处理输入序列，CNN做出了一些改进但并不彻底。从根本上的解决这个问题需要能一次性的处理全部输入（无论序列有多长），并且能根据这些输入信息分析序列元素之间的关联关系。人们cong
+总结一下，上述两种模型对于输入序列的处理都有缺陷。RNN需要一步一步的处理输入序列，CNN做出了一些改进但并不彻底。从根本上的解决这个问题需要能一次性的处理全部输入（无论序列有多长），并且能根据这些输入信息分析序列元素之间的关联关系。人们从自己观察
 Attention机制来自于人类视觉注意力机制。人们视觉在感知东西的时候一般不会是一个场景从到头看到尾每次全部都看，而往往是根据需求观察注意特定的一部分。而且当人们发现一个场景经常在某部分出现自己想观察的东西时，人们会进行学习在将来再出现类似场景时把注意力放到该部分上。
 > In these models, the number of operations required to relate signals from two arbitrary input or output positions grows in the distance between positions, linearly for ConvS2S and logarithmically for ByteNet. This makes it more difficult to learn dependencies between distant positions. In the Transformer this is reduced to a constant number of operations, albeit at the cost of reduced effective resolution due to averaging attention-weighted positions, an effect we counteract with Multi-Head Attention.
 
@@ -190,11 +190,11 @@ Despite not having any explicit recurrency, implicitly the model is built as an 
 [The Annotated Transformer](http://nlp.seas.harvard.edu/2018/04/03/attention.html)
 [Create The Transformer With Tensorflow 2.0](https://machinetalk.org/2019/04/29/create-the-transformer-with-tensorflow-2-0/)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTI4ODc0MDM4MiwtMjQ3NzcxNDQzLDE3Nz
-E0NjE5MzAsLTEwMDE1MzAyMTMsLTQyMTM3NTUyMywtNzA2Mzk4
-NzM2LDE4NjUwNTkzMzIsODgzNjUwNiwtMTA3NDg0ODI0NSwxNj
-E3NjM3OTEwLDkxOTkxODYzMiw0MjQ4MzQzNDksLTEwNDM4OTcw
-NzIsMTMzOTEzNDg4NywyMTM5ODkxOTg5LDEyNDEyNTI1MDUsLT
-E4ODY0NjkxNzYsMTk4NzIwNDE2NCw5NzI0ODIyNDQsLTc2NTIy
-MjYzM119
+eyJoaXN0b3J5IjpbOTE1NTU2MjYxLC0yNDc3NzE0NDMsMTc3MT
+Q2MTkzMCwtMTAwMTUzMDIxMywtNDIxMzc1NTIzLC03MDYzOTg3
+MzYsMTg2NTA1OTMzMiw4ODM2NTA2LC0xMDc0ODQ4MjQ1LDE2MT
+c2Mzc5MTAsOTE5OTE4NjMyLDQyNDgzNDM0OSwtMTA0Mzg5NzA3
+MiwxMzM5MTM0ODg3LDIxMzk4OTE5ODksMTI0MTI1MjUwNSwtMT
+g4NjQ2OTE3NiwxOTg3MjA0MTY0LDk3MjQ4MjI0NCwtNzY1MjIy
+NjMzXX0=
 -->
