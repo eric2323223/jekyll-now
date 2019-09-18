@@ -2,16 +2,16 @@
 在自然语言处理(NLP)领域，RNN一直是被最广泛使用的深度机器学习模型，近年来CNN也逐渐被用于进行。。。然而这两类模型都有一些难以克服的问题，Transformer就是为了解决这些问题的新型模型，并取得了非常好的效果，大有取代RNN在NLP领域的统治地位的趋势，本文我们就来一步步的分析和理解这个优秀的seq2seq模型。
 
 ## 序列到序列问题（seq2seq）
-seq2seq问题是使用机器学习（特别是深度学习）解决的一类常见问题，例如机器翻译，语态分析，摘要生成等自然语言处理问题（NLP），还包括_______。 这类问题的最大特点是输入（或输出）以序列的形式出现，序列的长度可变，任务通常要求分析整个序列才能产生输出————————。使用机器学习（深度学习）处理seq2seq任务c
-
-### RNN
+seq2seq问题是使用机器学习（特别是深度学习）解决的一类常见问题，例如机器翻译，语态分析，摘要生成等自然语言处理问题（NLP），还包括_______。 这类问题的最大特点是输入（或输出）以序列的形式出现，序列的长度可变，任务通常要求分析整个序列才能产生输出————————。使用机器学习（深度学习）处理seq2seq任务，传统上有两类方法：
+- RNN
 处理seq2seq问题的传统方法是使用RNN模型，RNN能够保存状态，它将输入分为多步，依靠每步输入和上一步的状态更新当前的状态（和输出），通过重复这种步骤在读入所有序列元素后得到整个序列的内部表示（latent feature vector）。从模型结构上来说特别适合序列到序列问题。问题有三点
 1. 长序列的训练很困难
 2. 只能顺序执行，训练速度很慢
 3. 固定的存储不适合长序列
-### CNN
+- CNN
 CNN可以同时处理序列中的所有元素，但是由于卷积运算的视域有限，一次卷积操作只能处理有限的元素，对于较长的序列无法处理。解决办法是通过叠加多层卷积操作来逐渐增加视域，但这样会不可避免的导致信息丢失，并且仍没有完全解决长序列输入的处理问题，————————而且增加了模型的复杂度，使运算变慢，这和初衷不符。
-总结上述两种模型对于长序列的处理都有天然的缺陷，有没有一种方法能从根本上解决这些问题，让我们一次性的看到全部输入（无论序列有多长），并且能根据这些输入信息分析序列元素之间的关联关系呢？Attention机制的本质来自于人类视觉注意力机制。人们视觉在感知东西的时候一般不会是一个场景从到头看到尾每次全部都看，而往往是根据需求观察注意特定的一部分。而且当人们发现一个场景经常在某部分出现自己想观察的东西时，人们会进行学习在将来再出现类似场景时把注意力放到该部分上。
+
+上述两种模型对于长序列的处理都有根本的缺陷，有没有一种方法能从根本上解决这些问题，让我们一次性的看到全部输入（无论序列有多长），并且能根据这些输入信息分析序列元素之间的关联关系呢？Attention机制的本质来自于人类视觉注意力机制。人们视觉在感知东西的时候一般不会是一个场景从到头看到尾每次全部都看，而往往是根据需求观察注意特定的一部分。而且当人们发现一个场景经常在某部分出现自己想观察的东西时，人们会进行学习在将来再出现类似场景时把注意力放到该部分上。
 > In these models, the number of operations required to relate signals from two arbitrary input or output positions grows in the distance between positions, linearly for ConvS2S and logarithmically for ByteNet. This makes it more difficult to learn dependencies between distant positions. In the Transformer this is reduced to a constant number of operations, albeit at the cost of reduced effective resolution due to averaging attention-weighted positions, an effect we counteract with Multi-Head Attention.
 
 图
@@ -189,7 +189,7 @@ Despite not having any explicit recurrency, implicitly the model is built as an 
 [The Annotated Transformer](http://nlp.seas.harvard.edu/2018/04/03/attention.html)
 [Create The Transformer With Tensorflow 2.0](https://machinetalk.org/2019/04/29/create-the-transformer-with-tensorflow-2-0/)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTg2ODk3MzUyLC03MDYzOTg3MzYsMTg2NT
+eyJoaXN0b3J5IjpbOTk5Mjc3MTI2LC03MDYzOTg3MzYsMTg2NT
 A1OTMzMiw4ODM2NTA2LC0xMDc0ODQ4MjQ1LDE2MTc2Mzc5MTAs
 OTE5OTE4NjMyLDQyNDgzNDM0OSwtMTA0Mzg5NzA3MiwxMzM5MT
 M0ODg3LDIxMzk4OTE5ODksMTI0MTI1MjUwNSwtMTg4NjQ2OTE3
