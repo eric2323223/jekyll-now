@@ -66,7 +66,7 @@ Attention机制来自于人类视觉注意力机制。人们视觉在感知东�
 > weights  pp  are actually computed between the keys and the lookup,
 > and the context is then constructed with the  vivi.
 ## 注意力机制（attention mechanism）
-基于组成整体的各个元素在整体中发挥的作用不相同这样一个事实，注意力机制的基本思想是通对使用不同的权重组合各个序列元素来描述整体，这就好像我们在快速观察人物的照片时会把注意力放在人物的面部而几乎不会留意背景中的某一棵小草。本质上来讲，注意力机制是对组成整体的元素加权求和的过程。权值的计算方法由任务目标来确定，这就好像。。。对。。。的关注程度不一致是一个道理。在机器翻译（一种常见的seq2seq任务）中一种常见的权值衡量方法是计算序列元素（单词）之间的相似度。
+基于组成整体的各个元素在整体中发挥的作用不相同这样一个事实，注意力机制的基本思想是通对使用不同的权重组合各个序列元素来描述整体，这就好像我们在快速观察人物的照片时会把注意力更多的放在人物的面部而几乎不会留意背景中的某一棵小草。本质上来讲，注意力机制是对组成整体的元素加权求和的过程。权值的计算方法由任务目标来确定，这就好像。。。对。。。的关注程度不一致是一个道理。在机器翻译（一种常见的seq2seq任务）中一种常见的权值衡量方法是计算序列元素（单词）之间的相似度。
 注意力机制主要用于seq2seq任务，它的基本思想就是将人类快速阅读的方式应用在序列分析上。不同于RNN中先通过依次分析输入元素来逐步生成context vector的方式，注意力机制对这些输入元素进行加权平均的方式来一步生成context vector。这样做的好处不仅大大加速了context vector的生成，而且避免了RNN的长序列训练困难的问题。
 -   **首先**，从数学公式上和代码实现上Attention可以理解为**加权求和**。
 -   **其次**，从形式上Attention可以理解为**键值查询**。
@@ -199,11 +199,11 @@ Despite not having any explicit recurrency, implicitly the model is built as an 
 [Create The Transformer With Tensorflow 2.0](https://machinetalk.org/2019/04/29/create-the-transformer-with-tensorflow-2-0/)
 [深度学习中的注意力机制](https://blog.csdn.net/songbinxu/article/details/80739447)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTk2MDgwMjkwNSw4MTE1MTIyMTIsLTkxMD
-g5MzU3OCwzNzY1MTU2NjIsMTA4NzgzMDY2Niw2NDM4MzA2NSw1
-MTY1MDI5NjUsLTU1NDM5NTM1NiwtOTkzNzIyNDU0LDMxNzUyMT
-AwNiw1MDg3NTU1NTcsMTU3ODM0MDg1OSwtMTk5MjcxNjE4Mywx
-MTk3NTI3MzAwLDkxNTU1NjI2MSwtMjQ3NzcxNDQzLDE3NzE0Nj
-E5MzAsLTEwMDE1MzAyMTMsLTQyMTM3NTUyMywtNzA2Mzk4NzM2
-XX0=
+eyJoaXN0b3J5IjpbODI3MjkxMDE1LDE5NjA4MDI5MDUsODExNT
+EyMjEyLC05MTA4OTM1NzgsMzc2NTE1NjYyLDEwODc4MzA2NjYs
+NjQzODMwNjUsNTE2NTAyOTY1LC01NTQzOTUzNTYsLTk5MzcyMj
+Q1NCwzMTc1MjEwMDYsNTA4NzU1NTU3LDE1NzgzNDA4NTksLTE5
+OTI3MTYxODMsMTE5NzUyNzMwMCw5MTU1NTYyNjEsLTI0Nzc3MT
+Q0MywxNzcxNDYxOTMwLC0xMDAxNTMwMjEzLC00MjEzNzU1MjNd
+fQ==
 -->
