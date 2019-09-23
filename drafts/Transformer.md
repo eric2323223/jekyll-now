@@ -119,7 +119,7 @@ Attention是transformer的核心，它不仅作用在encoder到docoder的转换�
 - decoder attention
 #### 自注意力（self attention）
 时序问题（特别是NLP问题）中的序列元素表示的含义通常不止该单个元素的的字面意义，而是与整个序列上下文有关系，因此在encoding过程中需要考虑整个序列来决定其中每个元素的意义。self-attention机制就是基于这种由全局确定局部的思想，简单来说它使用整个序列所有元素的**加权**平均来确定每一个元素在所处序列（上下文）中的含义。
-在encoder-decoder模型中encoder负责将输入转化为输入序列的内部表示（context vector），传统方法使用RNN通过一步步的叠加分析过的输入来得到整个序列的内部表示（固定长度），Transformer模型中使用自注意力（self attention）机制来实现encoding，之所以称作自注意力是因为这是在输入序列内部进行的attention操作，由于attention操作就是对元素进行重新定义使其包含序列上下文信息，在输入序列元素进行attention的操作结果就是使该元素包含输入序列信息，因此经过self attention运算的整个输入序列的结果就是和输入大小一致的
+在encoder-decoder模型中encoder负责将输入转化为输入序列的内部表示（context vector），传统方法使用RNN通过一步步的叠加分析过的输入来得到整个序列的内部表示（固定长度），Transformer模型中使用自注意力（self attention）机制来实现encoding，之所以称作自注意力是因为这是在输入序列内部进行的attention操作，由于attention操作就是对元素进行重新定义使其包含序列上下文信息，在输入序列元素进行attention的操作结果就是使该元素包含输入序列信息，因此经过self attention运算的整个输入序列的结果就是和一个输入序列大小一致的context vector。显然，这个
 ![enter image description here](https://miro.medium.com/max/410/1*NlQPdpNY4d26l8Vu92a0Wg.png)
 Scaled Dot-Product Attention
 其中的权值来自该元素与其他元素的相似度，这是基于这样的假设-相似度越高的元素对确定该元素在整个序列中的含义的贡献度越大，由于序列元素以向量表示（word4vec），在transformer中使用点积运算来确定相似度，其结果是一个数值。
@@ -215,11 +215,11 @@ Despite not having any explicit recurrency, implicitly the model is built as an 
 [Create The Transformer With Tensorflow 2.0](https://machinetalk.org/2019/04/29/create-the-transformer-with-tensorflow-2-0/)
 [深度学习中的注意力机制](https://blog.csdn.net/songbinxu/article/details/80739447)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTE5Mjg4NTQwLDE5Mzg0MDY0NTcsMjQwNz
-kyMzYwLDg1NDY0NDMxNiwxNjc0NjM3ODY2LC03NTgzOTMwNjEs
-LTE3NTIwODc5NzEsLTE2MDkzNzM2MzcsLTE4NTc4ODYxNDUsLT
-ExODI3Nzk1Niw1OTAzODQ2MjksMTk2MDgwMjkwNSw4MTE1MTIy
-MTIsLTkxMDg5MzU3OCwzNzY1MTU2NjIsMTA4NzgzMDY2Niw2ND
-M4MzA2NSw1MTY1MDI5NjUsLTU1NDM5NTM1NiwtOTkzNzIyNDU0
-XX0=
+eyJoaXN0b3J5IjpbLTMxNzk3NDQwOSwxOTM4NDA2NDU3LDI0MD
+c5MjM2MCw4NTQ2NDQzMTYsMTY3NDYzNzg2NiwtNzU4MzkzMDYx
+LC0xNzUyMDg3OTcxLC0xNjA5MzczNjM3LC0xODU3ODg2MTQ1LC
+0xMTgyNzc5NTYsNTkwMzg0NjI5LDE5NjA4MDI5MDUsODExNTEy
+MjEyLC05MTA4OTM1NzgsMzc2NTE1NjYyLDEwODc4MzA2NjYsNj
+QzODMwNjUsNTE2NTAyOTY1LC01NTQzOTUzNTYsLTk5MzcyMjQ1
+NF19
 -->
