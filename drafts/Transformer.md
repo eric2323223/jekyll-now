@@ -118,7 +118,7 @@ Attention是transformer的核心，它不仅作用在encoder到docoder的转换�
 - decoder attention
 #### 自注意力（self attention）
 时序问题（特别是NLP问题）中的序列元素表示的含义通常不止该单个元素的的字面意义，而是与整个序列上下文有关系，因此在encoding过程中需要考虑整个序列来决定其中每个元素的意义。self-attention机制就是基于这种由全局确定局部的思想，简单来说它使用整个序列所有元素的**加权**平均来确定每一个元素在所处序列（上下文）中的含义。
-在encoder-decoder模型中encoder负责将输入转化为输入序列的内部表示（context vector），传统方法使用RNN通过一步步的叠加分析过的输入来得到整个序列的内部表示（固定长度），那么使用attention给如何做呢？
+在encoder-decoder模型中encoder负责将输入转化为输入序列的内部表示（context vector），传统方法使用RNN通过一步步的叠加分析过的输入来得到整个序列的内部表示（固定长度），Transformer模型中shiyong
 ![enter image description here](https://miro.medium.com/max/410/1*NlQPdpNY4d26l8Vu92a0Wg.png)
 Scaled Dot-Product Attention
 其中的权值来自该元素与其他元素的相似度，这是基于这样的假设-相似度越高的元素对确定该元素在整个序列中的含义的贡献度越大，由于序列元素以向量表示（word4vec），在transformer中使用点积运算来确定相似度，其结果是一个数值。
@@ -214,11 +214,11 @@ Despite not having any explicit recurrency, implicitly the model is built as an 
 [Create The Transformer With Tensorflow 2.0](https://machinetalk.org/2019/04/29/create-the-transformer-with-tensorflow-2-0/)
 [深度学习中的注意力机制](https://blog.csdn.net/songbinxu/article/details/80739447)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTY3NDYzNzg2NiwtNzU4MzkzMDYxLC0xNz
-UyMDg3OTcxLC0xNjA5MzczNjM3LC0xODU3ODg2MTQ1LC0xMTgy
-Nzc5NTYsNTkwMzg0NjI5LDE5NjA4MDI5MDUsODExNTEyMjEyLC
-05MTA4OTM1NzgsMzc2NTE1NjYyLDEwODc4MzA2NjYsNjQzODMw
-NjUsNTE2NTAyOTY1LC01NTQzOTUzNTYsLTk5MzcyMjQ1NCwzMT
-c1MjEwMDYsNTA4NzU1NTU3LDE1NzgzNDA4NTksLTE5OTI3MTYx
-ODNdfQ==
+eyJoaXN0b3J5IjpbLTc0MTM2MTU1NiwxNjc0NjM3ODY2LC03NT
+gzOTMwNjEsLTE3NTIwODc5NzEsLTE2MDkzNzM2MzcsLTE4NTc4
+ODYxNDUsLTExODI3Nzk1Niw1OTAzODQ2MjksMTk2MDgwMjkwNS
+w4MTE1MTIyMTIsLTkxMDg5MzU3OCwzNzY1MTU2NjIsMTA4Nzgz
+MDY2Niw2NDM4MzA2NSw1MTY1MDI5NjUsLTU1NDM5NTM1NiwtOT
+kzNzIyNDU0LDMxNzUyMTAwNiw1MDg3NTU1NTcsMTU3ODM0MDg1
+OV19
 -->
