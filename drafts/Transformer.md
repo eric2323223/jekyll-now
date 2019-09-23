@@ -79,7 +79,7 @@ $W^Q_i \in \mathbb{R}^{d_{\text{model}} \times d_k}$, $W^K_i \in \mathbb{R}^{d_{
 $$\mathrm{Attention}(Q, K, V) = \mathrm{softmax}(\frac{QK^T}{\sqrt{d_k}})V$$
 注意力机制主要用于seq2seq任务，它的基本思想就是将人类快速阅读的方式应用在序列分析上。不同于RNN中先通过依次分析输入元素来逐步生成context vector的方式，注意力机制对这些输入元素进行加权平均的方式来一步生成context vector。这样做的好处不仅大大加速了context vector的生成，而且避免了RNN的长序列训练困难的问题。
 -   **首先**，从数学公式上和代码实现上Attention可以理解为**加权求和**。
--  **本质**，对元素在序列的上下文环境中重定义
+-  **本质**，***对元素在序列的上下文环境中重定义***
 -   **其次**，从形式上Attention可以理解为**键值查询**。
 -   **最后**，从物理意义上Attention可以理解为**相似性度量**。
 图attention mechanism
@@ -119,7 +119,7 @@ Attention是transformer的核心，它不仅作用在encoder到docoder的转换�
 - decoder attention
 #### 自注意力（self attention）
 时序问题（特别是NLP问题）中的序列元素表示的含义通常不止该单个元素的的字面意义，而是与整个序列上下文有关系，因此在encoding过程中需要考虑整个序列来决定其中每个元素的意义。self-attention机制就是基于这种由全局确定局部的思想，简单来说它使用整个序列所有元素的**加权**平均来确定每一个元素在所处序列（上下文）中的含义。
-在encoder-decoder模型中encoder负责将输入转化为输入序列的内部表示（context vector），传统方法使用RNN通过一步步的叠加分析过的输入来得到整个序列的内部表示（固定长度），Transformer模型中使用自注意力（self attention）机制来实现encoding，之所以称作自注意力是因为这是在输入序列内部进行的attention操作，由于attention
+在encoder-decoder模型中encoder负责将输入转化为输入序列的内部表示（context vector），传统方法使用RNN通过一步步的叠加分析过的输入来得到整个序列的内部表示（固定长度），Transformer模型中使用自注意力（self attention）机制来实现encoding，之所以称作自注意力是因为这是在输入序列内部进行的attention操作，由于attention操作就是对元素进行序列上下文
 ![enter image description here](https://miro.medium.com/max/410/1*NlQPdpNY4d26l8Vu92a0Wg.png)
 Scaled Dot-Product Attention
 其中的权值来自该元素与其他元素的相似度，这是基于这样的假设-相似度越高的元素对确定该元素在整个序列中的含义的贡献度越大，由于序列元素以向量表示（word4vec），在transformer中使用点积运算来确定相似度，其结果是一个数值。
@@ -215,11 +215,11 @@ Despite not having any explicit recurrency, implicitly the model is built as an 
 [Create The Transformer With Tensorflow 2.0](https://machinetalk.org/2019/04/29/create-the-transformer-with-tensorflow-2-0/)
 [深度学习中的注意力机制](https://blog.csdn.net/songbinxu/article/details/80739447)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjQwNzkyMzYwLDg1NDY0NDMxNiwxNjc0Nj
-M3ODY2LC03NTgzOTMwNjEsLTE3NTIwODc5NzEsLTE2MDkzNzM2
-MzcsLTE4NTc4ODYxNDUsLTExODI3Nzk1Niw1OTAzODQ2MjksMT
-k2MDgwMjkwNSw4MTE1MTIyMTIsLTkxMDg5MzU3OCwzNzY1MTU2
-NjIsMTA4NzgzMDY2Niw2NDM4MzA2NSw1MTY1MDI5NjUsLTU1ND
-M5NTM1NiwtOTkzNzIyNDU0LDMxNzUyMTAwNiw1MDg3NTU1NTdd
-fQ==
+eyJoaXN0b3J5IjpbMTMzODY1Nzg5MCwyNDA3OTIzNjAsODU0Nj
+Q0MzE2LDE2NzQ2Mzc4NjYsLTc1ODM5MzA2MSwtMTc1MjA4Nzk3
+MSwtMTYwOTM3MzYzNywtMTg1Nzg4NjE0NSwtMTE4Mjc3OTU2LD
+U5MDM4NDYyOSwxOTYwODAyOTA1LDgxMTUxMjIxMiwtOTEwODkz
+NTc4LDM3NjUxNTY2MiwxMDg3ODMwNjY2LDY0MzgzMDY1LDUxNj
+UwMjk2NSwtNTU0Mzk1MzU2LC05OTM3MjI0NTQsMzE3NTIxMDA2
+XX0=
 -->
