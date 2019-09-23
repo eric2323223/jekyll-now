@@ -79,7 +79,7 @@ $W^Q_i \in \mathbb{R}^{d_{\text{model}} \times d_k}$, $W^K_i \in \mathbb{R}^{d_{
 $$\mathrm{Attention}(Q, K, V) = \mathrm{softmax}(\frac{QK^T}{\sqrt{d_k}})V$$
 注意力机制主要用于seq2seq任务，它的基本思想就是将人类快速阅读的方式应用在序列分析上。不同于RNN中先通过依次分析输入元素来逐步生成context vector的方式，注意力机制对这些输入元素进行加权平均的方式来一步生成context vector。这样做的好处不仅大大加速了context vector的生成，而且避免了RNN的长序列训练困难的问题。
 -   **首先**，从数学公式上和代码实现上Attention可以理解为**加权求和**。
--  **本质**，根据上下文重定义某个
+-  **本质**，对元素在序列的上下文环境中重定义
 -   **其次**，从形式上Attention可以理解为**键值查询**。
 -   **最后**，从物理意义上Attention可以理解为**相似性度量**。
 图attention mechanism
@@ -215,11 +215,11 @@ Despite not having any explicit recurrency, implicitly the model is built as an 
 [Create The Transformer With Tensorflow 2.0](https://machinetalk.org/2019/04/29/create-the-transformer-with-tensorflow-2-0/)
 [深度学习中的注意力机制](https://blog.csdn.net/songbinxu/article/details/80739447)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTI4MDM3MTAsODU0NjQ0MzE2LDE2NzQ2Mz
-c4NjYsLTc1ODM5MzA2MSwtMTc1MjA4Nzk3MSwtMTYwOTM3MzYz
-NywtMTg1Nzg4NjE0NSwtMTE4Mjc3OTU2LDU5MDM4NDYyOSwxOT
-YwODAyOTA1LDgxMTUxMjIxMiwtOTEwODkzNTc4LDM3NjUxNTY2
-MiwxMDg3ODMwNjY2LDY0MzgzMDY1LDUxNjUwMjk2NSwtNTU0Mz
-k1MzU2LC05OTM3MjI0NTQsMzE3NTIxMDA2LDUwODc1NTU1N119
-
+eyJoaXN0b3J5IjpbMjQwNzkyMzYwLDg1NDY0NDMxNiwxNjc0Nj
+M3ODY2LC03NTgzOTMwNjEsLTE3NTIwODc5NzEsLTE2MDkzNzM2
+MzcsLTE4NTc4ODYxNDUsLTExODI3Nzk1Niw1OTAzODQ2MjksMT
+k2MDgwMjkwNSw4MTE1MTIyMTIsLTkxMDg5MzU3OCwzNzY1MTU2
+NjIsMTA4NzgzMDY2Niw2NDM4MzA2NSw1MTY1MDI5NjUsLTU1ND
+M5NTM1NiwtOTkzNzIyNDU0LDMxNzUyMTAwNiw1MDg3NTU1NTdd
+fQ==
 -->
