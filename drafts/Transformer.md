@@ -104,7 +104,7 @@ let's think about how to design a seq-seq model with only attention.
 - 解决long memory problem
 - 实现了部分并行运算，极大缩短了训练时间
 - 提高了准确率
-
+![enter image description here](https://docs.google.com/drawings/d/e/2PACX-1vSBNAHsyf_HP3_CkV1cygicnt0LhGxWcvw2PofecPP9TYJj41bghsAXTM6l6OSonSMvAjjgFInVDxC4/pub?w=961&h=590)
 
 ### 模型架构
 整体架构上看，transformer仍属于Encoder-Decoder架构，通过encoder将输入序列转换成内部表示，在通过不同decoder实现不同的预测功能。
@@ -217,7 +217,7 @@ Despite not having any explicit recurrency, implicitly the model is built as an 
 [Create The Transformer With Tensorflow 2.0](https://machinetalk.org/2019/04/29/create-the-transformer-with-tensorflow-2-0/)
 [深度学习中的注意力机制](https://blog.csdn.net/songbinxu/article/details/80739447)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTEyODgwNjE2OCwtOTQ3Nzc3OTQsNzUxNT
+eyJoaXN0b3J5IjpbLTQxMTY4NzkwMSwtOTQ3Nzc3OTQsNzUxNT
 M4NTEwLDE5Mzg0MDY0NTcsMjQwNzkyMzYwLDg1NDY0NDMxNiwx
 Njc0NjM3ODY2LC03NTgzOTMwNjEsLTE3NTIwODc5NzEsLTE2MD
 kzNzM2MzcsLTE4NTc4ODYxNDUsLTExODI3Nzk1Niw1OTAzODQ2
