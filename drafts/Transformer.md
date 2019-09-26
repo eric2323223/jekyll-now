@@ -225,12 +225,13 @@ Despite not having any explicit recurrency, implicitly the model is built as an 
 [The Annotated Transformer](http://nlp.seas.harvard.edu/2018/04/03/attention.html)
 [Create The Transformer With Tensorflow 2.0](https://machinetalk.org/2019/04/29/create-the-transformer-with-tensorflow-2-0/)
 [深度学习中的注意力机制](https://blog.csdn.net/songbinxu/article/details/80739447)
+[nlp中的Attention注意力机制+Transformer详解](https://zhuanlan.zhihu.com/p/53682800)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTYzMzUwNzMzLC0yMTc5ODMzMzksOTc3Nz
-gxNzM3LDEwNzIzNTYzNDMsLTEzNjIxNzczMjQsMTAwNzM5NzYw
-OCwtNDExNjg3OTAxLC05NDc3Nzc5NCw3NTE1Mzg1MTAsMTkzOD
-QwNjQ1NywyNDA3OTIzNjAsODU0NjQ0MzE2LDE2NzQ2Mzc4NjYs
-LTc1ODM5MzA2MSwtMTc1MjA4Nzk3MSwtMTYwOTM3MzYzNywtMT
-g1Nzg4NjE0NSwtMTE4Mjc3OTU2LDU5MDM4NDYyOSwxOTYwODAy
-OTA1XX0=
+eyJoaXN0b3J5IjpbMTgzMTUyOTI2MywxNjMzNTA3MzMsLTIxNz
+k4MzMzOSw5Nzc3ODE3MzcsMTA3MjM1NjM0MywtMTM2MjE3NzMy
+NCwxMDA3Mzk3NjA4LC00MTE2ODc5MDEsLTk0Nzc3Nzk0LDc1MT
+UzODUxMCwxOTM4NDA2NDU3LDI0MDc5MjM2MCw4NTQ2NDQzMTYs
+MTY3NDYzNzg2NiwtNzU4MzkzMDYxLC0xNzUyMDg3OTcxLC0xNj
+A5MzczNjM3LC0xODU3ODg2MTQ1LC0xMTgyNzc5NTYsNTkwMzg0
+NjI5XX0=
 -->
