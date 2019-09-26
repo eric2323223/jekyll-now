@@ -145,7 +145,7 @@ comparison with RNN and CNN
 
 
 ### 位置编码（positional encoding）
-由于attention运算不考虑位置关系，会导致
+由于attention机制不考虑位置关系，因此必须要在在attention操作qian
 - why not positional index? 
 
 ![enter image description here](https://www.researchgate.net/publication/327068570/figure/fig3/AS:660457148928000@1534476663109/The-original-positional-encoding-used-in-Attention-Is-All-You-Need-VSP-17-composed.png)
@@ -226,11 +226,11 @@ Despite not having any explicit recurrency, implicitly the model is built as an 
 [Create The Transformer With Tensorflow 2.0](https://machinetalk.org/2019/04/29/create-the-transformer-with-tensorflow-2-0/)
 [深度学习中的注意力机制](https://blog.csdn.net/songbinxu/article/details/80739447)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzNTMyMTkyNzUsOTc3NzgxNzM3LDEwNz
-IzNTYzNDMsLTEzNjIxNzczMjQsMTAwNzM5NzYwOCwtNDExNjg3
-OTAxLC05NDc3Nzc5NCw3NTE1Mzg1MTAsMTkzODQwNjQ1NywyND
-A3OTIzNjAsODU0NjQ0MzE2LDE2NzQ2Mzc4NjYsLTc1ODM5MzA2
-MSwtMTc1MjA4Nzk3MSwtMTYwOTM3MzYzNywtMTg1Nzg4NjE0NS
-wtMTE4Mjc3OTU2LDU5MDM4NDYyOSwxOTYwODAyOTA1LDgxMTUx
-MjIxMl19
+eyJoaXN0b3J5IjpbLTM3NzM1ODE2OSw5Nzc3ODE3MzcsMTA3Mj
+M1NjM0MywtMTM2MjE3NzMyNCwxMDA3Mzk3NjA4LC00MTE2ODc5
+MDEsLTk0Nzc3Nzk0LDc1MTUzODUxMCwxOTM4NDA2NDU3LDI0MD
+c5MjM2MCw4NTQ2NDQzMTYsMTY3NDYzNzg2NiwtNzU4MzkzMDYx
+LC0xNzUyMDg3OTcxLC0xNjA5MzczNjM3LC0xODU3ODg2MTQ1LC
+0xMTgyNzc5NTYsNTkwMzg0NjI5LDE5NjA4MDI5MDUsODExNTEy
+MjEyXX0=
 -->
