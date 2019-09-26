@@ -199,7 +199,9 @@ Consider the first row of  _OUTPUT_  in the above diagram. It corresponds to the
 ### regularization
 - dropout
 - layer normalization
-- 
+
+## Transformer的改进
+Despite not having any explicit recurrency, implicitly the model is built as an autoregressive one. It implies that in order to generate an output (both while training or during inference), the model needs to compute previous outputs, which is extremely costly, for the whole net has to be run for every output. That’s the main idea to overcome in a recent paper by researchers at [_Salesforce Research_](https://einstein.ai/research/non-autoregressive-neural-machine-translation) and the University of Hong Kong, who tried to make the whole process parallelizable[23](https://ricardokleinklein.github.io/2017/11/16/Attention-is-all-you-need.html#fn:23). Their proposal is to compute _fertilities_ for every input word in the sequence, and use it instead of previous outputs in order to compute the current output. This is summarized in the figure below.
 ## 总结
 
 ## Resources
@@ -220,7 +222,7 @@ Consider the first row of  _OUTPUT_  in the above diagram. It corresponds to the
 [Create The Transformer With Tensorflow 2.0](https://machinetalk.org/2019/04/29/create-the-transformer-with-tensorflow-2-0/)
 [深度学习中的注意力机制](https://blog.csdn.net/songbinxu/article/details/80739447)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTAxMDI3ODU0MCwtNDExNjg3OTAxLC05ND
+eyJoaXN0b3J5IjpbMTAwNzM5NzYwOCwtNDExNjg3OTAxLC05ND
 c3Nzc5NCw3NTE1Mzg1MTAsMTkzODQwNjQ1NywyNDA3OTIzNjAs
 ODU0NjQ0MzE2LDE2NzQ2Mzc4NjYsLTc1ODM5MzA2MSwtMTc1Mj
 A4Nzk3MSwtMTYwOTM3MzYzNywtMTg1Nzg4NjE0NSwtMTE4Mjc3
