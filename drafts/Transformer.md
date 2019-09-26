@@ -73,10 +73,7 @@ $$c_i=\sum_{j=1}\alpha_{ij}h_j$$
 $$\alpha_{ij}=\frac{exp(e_{ij})}{\sum_{k=1}exp(e_{ik})}$$
 Instead of encoding the input sequence into a  **single fixed context vector**, we let the model  learn **how to generate a context vector** for each output time step. That is we let the model  **learn**  what to attend based on the input sentence and what it has produced so far.
 ![enter image description here](https://oscimg.oschina.net/oscnet/5bdc25e12070e665409112ee13ac9e76603.jpg)
-注意力机制可以形式化的定义为
-$W^Q_i \in \mathbb{R}^{d_{\text{model}} \times d_k}$, $W^K_i \in \mathbb{R}^{d_{\text{model}} \times d_k}$, $W^V_i \in \mathbb{R}^{d_{\text{model}} \times d_v}$ and $W^O \in \mathbb{R}^{hd_v \times d_{\text{model}}}$
 
-$$\mathrm{Attention}(Q, K, V) = \mathrm{softmax}(\frac{QK^T}{\sqrt{d_k}})V$$
 注意力机制主要用于seq2seq任务，它的基本思想就是将人类快速阅读的方式应用在序列分析上。不同于RNN中先通过依次分析输入元素来逐步生成context vector的方式，注意力机制对这些输入元素进行加权平均的方式来一步生成context vector。这样做的好处不仅大大加速了context vector的生成，而且避免了RNN的长序列训练困难的问题。
 -   **首先**，从数学公式上和代码实现上Attention可以理解为**加权求和**。
 -  **本质**，***对元素在序列的上下文环境中重定义***
@@ -121,6 +118,9 @@ Attention是transformer的核心，它不仅作用在encoder到docoder的转换�
 时序问题（特别是NLP问题）中的序列元素表示的含义通常不止该单个元素的的字面意义，而是与整个序列上下文有关系，因此在encoding过程中需要考虑整个序列来决定其中每个元素的意义。self-attention机制就是基于这种由全局确定局部的思想，简单来说它使用整个序列所有元素的**加权**平均来确定每一个元素在所处序列（上下文）中的含义。
 在encoder-decoder模型中encoder负责将输入转化为输入序列的内部表示（context vector），传统方法使用RNN通过一步步的叠加分析过的输入来得到整个序列的内部表示（固定长度），Transformer模型中使用自注意力（self attention）机制来实现encoding，之所以称作自注意力是因为这是在输入序列内部进行的attention操作，由于attention操作就是对元素进行重新定义使其包含序列上下文信息，在输入序列元素进行attention的操作结果就是使该元素包含输入序列信息，因此经过self attention运算的整个输入序列的结果就是和一个输入序列大小一致的context vector。显然，self attention不需要想RNN那样一步步的出入输入，而是可以同时对每个元素进行attention运算，
 ![enter image description here](https://docs.google.com/drawings/d/e/2PACX-1vQZ5I4YZtpZOU8xnxqqJ2WVd7o9eeo0sHQa119cWm4qR85KanMs7-Z1DV1EfKxJLQrZaVglHLUJGPF2/pub?w=856&h=225)
+注意力机制可以形式化的定义为
+$W^Q_i \in \mathbb{R}^{d_{\text{model}} \times d_k}$, $W^K_i \in \mathbb{R}^{d_{\text{model}} \times d_k}$, $W^V_i \in \mathbb{R}^{d_{\text{model}} \times d_v}$ and $W^O \in \mathbb{R}^{hd_v \times d_{\text{model}}}$
+$$\mathrm{Attention}(Q, K, V) = \mathrm{softmax}(\frac{QK^T}{\sqrt{d_k}})V$$
 ![enter image description here](https://miro.medium.com/max/410/1*NlQPdpNY4d26l8Vu92a0Wg.png)
 Scaled Dot-Product Attention
 其中的权值来自该元素与其他元素的相似度，这是基于这样的假设-相似度越高的元素对确定该元素在整个序列中的含义的贡献度越大，由于序列元素以向量表示（word4vec），在transformer中使用点积运算来确定相似度，其结果是一个数值。
@@ -224,11 +224,11 @@ Despite not having any explicit recurrency, implicitly the model is built as an 
 [Create The Transformer With Tensorflow 2.0](https://machinetalk.org/2019/04/29/create-the-transformer-with-tensorflow-2-0/)
 [深度学习中的注意力机制](https://blog.csdn.net/songbinxu/article/details/80739447)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODA5MTk0MjMxLC0xMzYyMTc3MzI0LDEwMD
-czOTc2MDgsLTQxMTY4NzkwMSwtOTQ3Nzc3OTQsNzUxNTM4NTEw
-LDE5Mzg0MDY0NTcsMjQwNzkyMzYwLDg1NDY0NDMxNiwxNjc0Nj
-M3ODY2LC03NTgzOTMwNjEsLTE3NTIwODc5NzEsLTE2MDkzNzM2
-MzcsLTE4NTc4ODYxNDUsLTExODI3Nzk1Niw1OTAzODQ2MjksMT
-k2MDgwMjkwNSw4MTE1MTIyMTIsLTkxMDg5MzU3OCwzNzY1MTU2
-NjJdfQ==
+eyJoaXN0b3J5IjpbMTA3MjM1NjM0MywtMTM2MjE3NzMyNCwxMD
+A3Mzk3NjA4LC00MTE2ODc5MDEsLTk0Nzc3Nzk0LDc1MTUzODUx
+MCwxOTM4NDA2NDU3LDI0MDc5MjM2MCw4NTQ2NDQzMTYsMTY3ND
+YzNzg2NiwtNzU4MzkzMDYxLC0xNzUyMDg3OTcxLC0xNjA5Mzcz
+NjM3LC0xODU3ODg2MTQ1LC0xMTgyNzc5NTYsNTkwMzg0NjI5LD
+E5NjA4MDI5MDUsODExNTEyMjEyLC05MTA4OTM1NzgsMzc2NTE1
+NjYyXX0=
 -->
