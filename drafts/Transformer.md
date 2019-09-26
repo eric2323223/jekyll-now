@@ -164,9 +164,12 @@ different random initial weights matrix may lead to different representation sub
 	- Convolution: Different linear transformations by relative position
 	- MHA: a weighted average 
 	- It is found empirically that multi-head attention works better than the usual “single-head” in the context of machine translation. And the intuition behind such an improvement is that “multi-head attention allows the model to jointly attend to information from different representation subspaces at different positions”
-### Why multiple layer of attention layers?
-### 位置编码（p）
+### 位置编码（positional encoding）
 - why not positional index? 
+
+### Why multiple layer of attention layers?
+
+
 ### point-wise FFN
 point-wise 对序列中每个元素分别进行2层全连接运算
 > Like the name indicates, this is a regular feedforward network applied to _each_ time step of the Multi Head attention outputs. The network has three layers with a non-linearity like ReLU for the hidden layer. You might be wondering why do we need a feedforward network after attention; after all isn’t attention all we need 😈 ? I suspect it is needed to improve model expressiveness. As we saw earlier the multi head attention partitioned the inputs and applied attention independently. There was only a linear projection to the outputs, i.e. the partitions were combined only linearly. The _Positionwise Feedforward_ network thus brings in some non-linear ‘mixing’ if we call it that. In fact for the sequence tagging task we use convolutions instead of fully connected layers. A filter of width 3 allows interactions to happen with adjacent time steps to improve performance.
@@ -185,8 +188,8 @@ point-wise 对序列中每个元素分别进行2层全连接运算
 Consider the first row of  _OUTPUT_  in the above diagram. It corresponds to the attention output at time  _t=1_. But it is computed from values right up till  _t=10_  which are future time steps. To prevent reading these future values we zero out all weights in the  _WEIGHTS_  tensor above the main diagonal. This will ensure that future values cannot creep in:
 
 ![](https://miro.medium.com/max/204/1*6aTQQSmXUfCQxj3drNEweg.png)
-## Transformer的改进
-Despite not having any explicit recurrency, implicitly the model is built as an autoregressive one. It implies that in order to generate an output (both while training or during inference), the model needs to compute previous outputs, which is extremely costly, for the whole net has to be run for every output. That’s the main idea to overcome in a recent paper by researchers at [_Salesforce Research_](https://einstein.ai/research/non-autoregressive-neural-machine-translation) and the University of Hong Kong, who tried to make the whole process parallelizable[23](https://ricardokleinklein.github.io/2017/11/16/Attention-is-all-you-need.html#fn:23). Their proposal is to compute _fertilities_ for every input word in the sequence, and use it instead of previous outputs in order to compute the current output. This is summarized in the figure below.
+
+
 ## Transformer实现
 ### layer normalization
 ### residual connection
@@ -196,6 +199,7 @@ Despite not having any explicit recurrency, implicitly the model is built as an 
 ### regularization
 - dropout
 - layer normalization
+- 
 ## 总结
 
 ## Resources
@@ -216,7 +220,7 @@ Despite not having any explicit recurrency, implicitly the model is built as an 
 [Create The Transformer With Tensorflow 2.0](https://machinetalk.org/2019/04/29/create-the-transformer-with-tensorflow-2-0/)
 [深度学习中的注意力机制](https://blog.csdn.net/songbinxu/article/details/80739447)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTYzNzE4MDA4OSwtNDExNjg3OTAxLC05ND
+eyJoaXN0b3J5IjpbMTAxMDI3ODU0MCwtNDExNjg3OTAxLC05ND
 c3Nzc5NCw3NTE1Mzg1MTAsMTkzODQwNjQ1NywyNDA3OTIzNjAs
 ODU0NjQ0MzE2LDE2NzQ2Mzc4NjYsLTc1ODM5MzA2MSwtMTc1Mj
 A4Nzk3MSwtMTYwOTM3MzYzNywtMTg1Nzg4NjE0NSwtMTE4Mjc3
