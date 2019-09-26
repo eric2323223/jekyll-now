@@ -145,7 +145,7 @@ comparison with RNN and CNN
 
 
 ### 位置编码（positional encoding）
-由于attention机制不考虑位置关系，因此必须要在在attention操作前加入位置信息。一个最直接的想法就是对输入加入序号
+由于attention机制不考虑位置关系，因此必须要在在attention操作前对序列中的每个元素加入位置信息。一个最直接的想法就是对输入加入序号，但是这种方法的问题在于
 - why not positional index? 
 
 ![enter image description here](https://www.researchgate.net/publication/327068570/figure/fig3/AS:660457148928000@1534476663109/The-original-positional-encoding-used-in-Attention-Is-All-You-Need-VSP-17-composed.png)
@@ -226,7 +226,7 @@ Despite not having any explicit recurrency, implicitly the model is built as an 
 [Create The Transformer With Tensorflow 2.0](https://machinetalk.org/2019/04/29/create-the-transformer-with-tensorflow-2-0/)
 [深度学习中的注意力机制](https://blog.csdn.net/songbinxu/article/details/80739447)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNzQ4MDMxNDAwLC0yMTc5ODMzMzksOTc3Nz
+eyJoaXN0b3J5IjpbMTYzMzUwNzMzLC0yMTc5ODMzMzksOTc3Nz
 gxNzM3LDEwNzIzNTYzNDMsLTEzNjIxNzczMjQsMTAwNzM5NzYw
 OCwtNDExNjg3OTAxLC05NDc3Nzc5NCw3NTE1Mzg1MTAsMTkzOD
 QwNjQ1NywyNDA3OTIzNjAsODU0NjQ0MzE2LDE2NzQ2Mzc4NjYs
