@@ -142,6 +142,8 @@ comparison with RNN and CNN
 #### encoder-decoder attention
 
 ![enter image description here](https://cntk.ai/jup/cntk204_s2s2.png)
+
+
 ### 位置编码（positional encoding）
 - why not positional index? 
 
@@ -223,11 +225,11 @@ Despite not having any explicit recurrency, implicitly the model is built as an 
 [Create The Transformer With Tensorflow 2.0](https://machinetalk.org/2019/04/29/create-the-transformer-with-tensorflow-2-0/)
 [深度学习中的注意力机制](https://blog.csdn.net/songbinxu/article/details/80739447)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEwMzEyODU1NjMsMTA3MjM1NjM0MywtMT
-M2MjE3NzMyNCwxMDA3Mzk3NjA4LC00MTE2ODc5MDEsLTk0Nzc3
-Nzk0LDc1MTUzODUxMCwxOTM4NDA2NDU3LDI0MDc5MjM2MCw4NT
-Q2NDQzMTYsMTY3NDYzNzg2NiwtNzU4MzkzMDYxLC0xNzUyMDg3
-OTcxLC0xNjA5MzczNjM3LC0xODU3ODg2MTQ1LC0xMTgyNzc5NT
-YsNTkwMzg0NjI5LDE5NjA4MDI5MDUsODExNTEyMjEyLC05MTA4
-OTM1NzhdfQ==
+eyJoaXN0b3J5IjpbOTc3NzgxNzM3LDEwNzIzNTYzNDMsLTEzNj
+IxNzczMjQsMTAwNzM5NzYwOCwtNDExNjg3OTAxLC05NDc3Nzc5
+NCw3NTE1Mzg1MTAsMTkzODQwNjQ1NywyNDA3OTIzNjAsODU0Nj
+Q0MzE2LDE2NzQ2Mzc4NjYsLTc1ODM5MzA2MSwtMTc1MjA4Nzk3
+MSwtMTYwOTM3MzYzNywtMTg1Nzg4NjE0NSwtMTE4Mjc3OTU2LD
+U5MDM4NDYyOSwxOTYwODAyOTA1LDgxMTUxMjIxMiwtOTEwODkz
+NTc4XX0=
 -->
