@@ -112,9 +112,8 @@ let's think about how to design a seq-seq model with only attention.
 Transformer的最大的创新在于它使用只attention机制来实现seq2seq task，避免使用RNN和CNN从而使得在训练速度和准确率上全面超越了已有的方法。具体来讲
 ![enter image description here](https://3.bp.blogspot.com/-aZ3zvPiCoXM/WaiKQO7KRnI/AAAAAAAAB_8/7a1CYjp40nUg4lKpW7covGZJQAySxlg8QCLcBGAs/s640/transform20fps.gif)
 
-#### Attention
+#### Attention is all you need
 Attention是transformer的核心，它不仅作用在encoder到docoder的转换中，还被用在encoder和decoder内部，也被称为self-attention。
-
 - encoder-decoder attention
 - encoder attention
 - decoder attention
@@ -166,7 +165,7 @@ different random initial weights matrix may lead to different representation sub
 	- MHA: a weighted average 
 	- It is found empirically that multi-head attention works better than the usual “single-head” in the context of machine translation. And the intuition behind such an improvement is that “multi-head attention allows the model to jointly attend to information from different representation subspaces at different positions”
 ### Why multiple layer of attention layers?
-### Positional encoding
+### 位置编码（p）
 - why not positional index? 
 ### point-wise FFN
 point-wise 对序列中每个元素分别进行2层全连接运算
@@ -217,11 +216,11 @@ Despite not having any explicit recurrency, implicitly the model is built as an 
 [Create The Transformer With Tensorflow 2.0](https://machinetalk.org/2019/04/29/create-the-transformer-with-tensorflow-2-0/)
 [深度学习中的注意力机制](https://blog.csdn.net/songbinxu/article/details/80739447)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQxMTY4NzkwMSwtOTQ3Nzc3OTQsNzUxNT
-M4NTEwLDE5Mzg0MDY0NTcsMjQwNzkyMzYwLDg1NDY0NDMxNiwx
-Njc0NjM3ODY2LC03NTgzOTMwNjEsLTE3NTIwODc5NzEsLTE2MD
-kzNzM2MzcsLTE4NTc4ODYxNDUsLTExODI3Nzk1Niw1OTAzODQ2
-MjksMTk2MDgwMjkwNSw4MTE1MTIyMTIsLTkxMDg5MzU3OCwzNz
-Y1MTU2NjIsMTA4NzgzMDY2Niw2NDM4MzA2NSw1MTY1MDI5NjVd
-fQ==
+eyJoaXN0b3J5IjpbLTYzNzE4MDA4OSwtNDExNjg3OTAxLC05ND
+c3Nzc5NCw3NTE1Mzg1MTAsMTkzODQwNjQ1NywyNDA3OTIzNjAs
+ODU0NjQ0MzE2LDE2NzQ2Mzc4NjYsLTc1ODM5MzA2MSwtMTc1Mj
+A4Nzk3MSwtMTYwOTM3MzYzNywtMTg1Nzg4NjE0NSwtMTE4Mjc3
+OTU2LDU5MDM4NDYyOSwxOTYwODAyOTA1LDgxMTUxMjIxMiwtOT
+EwODkzNTc4LDM3NjUxNTY2MiwxMDg3ODMwNjY2LDY0MzgzMDY1
+XX0=
 -->
