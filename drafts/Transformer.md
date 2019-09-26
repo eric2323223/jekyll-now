@@ -1,4 +1,4 @@
-# Transformer-如何设计和构建高效的时序模型
+# Transformer-设计和构建高效的时序模型
 在自然语言处理(NLP)领域，RNN一直是被最广泛使用的深度机器学习模型，近年来CNN也逐渐被用于进行。。。然而这两类模型都有一些难以克服的问题，Transformer就是为了解决这些问题的新型模型，并取得了非常好的效果，大有取代RNN在NLP领域的统治地位的趋势，本文我们就来一步步的分析和理解这个优秀的seq2seq模型。
 
 ## 序列到序列问题（seq2seq）
@@ -227,11 +227,11 @@ Despite not having any explicit recurrency, implicitly the model is built as an 
 [深度学习中的注意力机制](https://blog.csdn.net/songbinxu/article/details/80739447)
 [nlp中的Attention注意力机制+Transformer详解](https://zhuanlan.zhihu.com/p/53682800)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTgzMTUyOTI2MywxNjMzNTA3MzMsLTIxNz
-k4MzMzOSw5Nzc3ODE3MzcsMTA3MjM1NjM0MywtMTM2MjE3NzMy
-NCwxMDA3Mzk3NjA4LC00MTE2ODc5MDEsLTk0Nzc3Nzk0LDc1MT
-UzODUxMCwxOTM4NDA2NDU3LDI0MDc5MjM2MCw4NTQ2NDQzMTYs
-MTY3NDYzNzg2NiwtNzU4MzkzMDYxLC0xNzUyMDg3OTcxLC0xNj
-A5MzczNjM3LC0xODU3ODg2MTQ1LC0xMTgyNzc5NTYsNTkwMzg0
-NjI5XX0=
+eyJoaXN0b3J5IjpbLTEwMTY0NzExMzQsMTgzMTUyOTI2MywxNj
+MzNTA3MzMsLTIxNzk4MzMzOSw5Nzc3ODE3MzcsMTA3MjM1NjM0
+MywtMTM2MjE3NzMyNCwxMDA3Mzk3NjA4LC00MTE2ODc5MDEsLT
+k0Nzc3Nzk0LDc1MTUzODUxMCwxOTM4NDA2NDU3LDI0MDc5MjM2
+MCw4NTQ2NDQzMTYsMTY3NDYzNzg2NiwtNzU4MzkzMDYxLC0xNz
+UyMDg3OTcxLC0xNjA5MzczNjM3LC0xODU3ODg2MTQ1LC0xMTgy
+Nzc5NTZdfQ==
 -->
