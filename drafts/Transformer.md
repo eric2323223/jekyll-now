@@ -153,7 +153,8 @@ comparison with RNN and CNN
 ### 位置编码（positional encoding）
 由于attention机制不考虑位置关系，因此必须要在在attention操作前对序列中的每个元素加入位置信息。一个最直接的想法就是对输入加入序号，但是这种方法的问题在于
 - why not positional index? 
-> This technique is used because there is **no notion of word order** (1st word, 2nd word, ..) in the proposed architecture. All words of input sequence are fed to the network with no special order or position (unlike common RNN or ConvNet architectures), thus, model has no idea how the words are ordered. Consequently, a position-dependent signal is added to each word-embedding to help the model incorporate the order of words. Based on experiments, this addition not only avoids destroying the embedding information but also adds the vital position information. In the case of RNNs, we feed the words sequentially to RNN, i.e. nn-th word is fed at step nn, which helps the model incorporate the order of words.
+> 之所以使用这种技术，是因为在所提出的体系结构中没有词序的概念（第一个词，第二个词等）。 输入序列的所有单词都以没有特殊顺序或位置的方式馈入网络（与普通的RNN或ConvNet体系结构不同），因此模型不知道单词的顺序。 因此，与位置相关的信号会添加到每个词嵌入中，以帮助模型合并词的顺序。 根据实验，这种增加不仅避免破坏嵌入信息，而且还增加了重要位置信息。 对于RNN，我们将单词顺序地馈送到RNN，即在步骤n馈送第n个单词，这有助于模型合并单词的顺序。
+> 位置编码是单词值及其在句子中位置的重新表示（假定开头和结尾或中间的开头和开头不相同）。但是您必须考虑到句子的长度可以是任意长度，因此，如果句子的长度不同，则说“ X”是句子中的第三个单词是没有意义的：3词句中的第3个完全是 在20个单词的句子中不同于第三。位置编码器的作用是获得sin（x）和cos（x）函数的循环特性的帮助，以返回单词在句子中的位置信息。
 
 ![enter image description here](https://www.researchgate.net/publication/327068570/figure/fig3/AS:660457148928000@1534476663109/The-original-positional-encoding-used-in-Attention-Is-All-You-Need-VSP-17-composed.png)
 ![enter image description here](https://www.d2l.ai/_images/output_transformer_ee2e4a_21_0.svg)
@@ -236,7 +237,7 @@ Despite not having any explicit recurrency, implicitly the model is built as an 
 [Attention and its Different Forms](https://towardsdatascience.com/attention-and-its-different-forms-7fc3674d14dc)
 [Attn: Illustrated Attention](https://towardsdatascience.com/attn-illustrated-attention-5ec4ad276ee3)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzQ3ODkwNTA0LC0xODE0MTA5ODgxLC02MD
+eyJoaXN0b3J5IjpbOTg1NDUzOTAxLC0xODE0MTA5ODgxLC02MD
 YyNTYyMjEsLTE5NjU0NzUwODksLTExODEzMDc3ODYsOTUwNzcw
 MDk4LDE2NTM4MTg1OSwxMzIxNDMyNDExLC0xMDE2NDcxMTM0LD
 E4MzE1MjkyNjMsMTYzMzUwNzMzLC0yMTc5ODMzMzksOTc3Nzgx
