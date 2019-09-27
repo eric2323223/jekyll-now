@@ -129,7 +129,17 @@ Attention是transformer的核心，它不仅作用在encoder到docoder的转换�
 > 对于使用自注意力机制的原因，论文中提到主要从三个方面考虑（每一层的复杂度，是否可以并行，长距离依赖学习），并给出了和RNN，CNN计算复杂度的比较。可以看到，如果输入序列n小于表示维度d的话，每一层的时间复杂度self-attention是比较有优势的。当n比较大时，作者也给出了一种解决方案self-attention（restricted）即每个词不是和所有词计算attention，而是只与限制的r个词去计算attention。在并行方面，多头attention和CNN一样不依赖于前一时刻的计算，可以很好的并行，优于RNN。在长距离依赖上，由于self-attention是每个词和所有词都要计算attention，所以不管他们中间有多长距离，最大的路径长度也都只是1。可以捕获长距离依赖关系。
 > In these models, the number of operations required to relate signals from two arbitrary input or output positions grows in the distance between positions, linearly for ConvS2S and logarithmically for ByteNet. This makes it more difficult to learn dependencies between distant positions. In the Transformer this is reduced to a constant number of operations, albeit at the cost of reduced effective resolution due to averaging attention-weighted positions, an effect we counteract with Multi-Head Attention.
 
-Scaled Dot-Product Attention
+> Authors motivates the use of self-attention layers instead of recurrent or convolutional layers with three desiderata:
+
+1.  Minimize total computational complexity per layer
+    
+    -   **Pros:**  self-attention layers connects all positions with  O(1)O(1)  number of sequentially executed operations (eg. vs  O(n)O(n)  in RNN)
+2.  Maximize amount of parallelizable computations, measured by minimum number of sequential operations required
+    
+    -   **Pros:**  for sequence length  nn  < representation dimensionality  dd  (true for SOTA sequence representation models like  _word-piece, byte-pair_). For very long sequences  n>dn>d  self-attention can consider only neighborhood of some size  rr  in the input sequence centered around the respective output position, thus increasing the max path length to  O(n/r)O(n/r)
+3.  Minimize maximum path length between any two input and output positions in network composed of the different layer types . The shorter the path between any combination of positions in the input and output sequences, the easier to learn long-range dependencies. (See why  [Hochreiter et al, 2001](http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.24.7321) ) 
+
+**Scaled Dot-Product Attention**
 其中的权值来自该元素与其他元素的相似度，这是基于这样的假设-相似度越高的元素对确定该元素在整个序列中的含义的贡献度越大，由于序列元素以向量表示（word4vec），在transformer中使用点积运算来确定相似度，其结果是一个数值。形式化的定义为
 $W^Q_i \in \mathbb{R}^{d_{\text{model}} \times d_k}$, $W^K_i \in \mathbb{R}^{d_{\text{model}} \times d_k}$, $W^V_i \in \mathbb{R}^{d_{\text{model}} \times d_v}$ and $W^O \in \mathbb{R}^{hd_v \times d_{\text{model}}}$
 $$\mathrm{Attention}(Q, K, V) = \mathrm{softmax}(\frac{QK^T}{\sqrt{d_k}})V$$
@@ -262,11 +272,11 @@ Despite not having any explicit recurrency, implicitly the model is built as an 
 [Attn: Illustrated Attention](https://towardsdatascience.com/attn-illustrated-attention-5ec4ad276ee3)
 [https://mchromiak.github.io/articles/2017/Sep/01/Primer-NN/#attention-basis](https://mchromiak.github.io/articles/2017/Sep/01/Primer-NN/#attention-basis)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTY4NTQ4OTEzNywtMTQ5NTQ4NjA3OSwxMT
-A3NjI2ODYxLC0xODI2Njk2MDAsMTYxMzcyNDQ5MSw5ODU0NTM5
-MDEsLTE4MTQxMDk4ODEsLTYwNjI1NjIyMSwtMTk2NTQ3NTA4OS
-wtMTE4MTMwNzc4Niw5NTA3NzAwOTgsMTY1MzgxODU5LDEzMjE0
-MzI0MTEsLTEwMTY0NzExMzQsMTgzMTUyOTI2MywxNjMzNTA3Mz
-MsLTIxNzk4MzMzOSw5Nzc3ODE3MzcsMTA3MjM1NjM0MywtMTM2
-MjE3NzMyNF19
+eyJoaXN0b3J5IjpbLTE0NDczMjQ0MjYsLTY4NTQ4OTEzNywtMT
+Q5NTQ4NjA3OSwxMTA3NjI2ODYxLC0xODI2Njk2MDAsMTYxMzcy
+NDQ5MSw5ODU0NTM5MDEsLTE4MTQxMDk4ODEsLTYwNjI1NjIyMS
+wtMTk2NTQ3NTA4OSwtMTE4MTMwNzc4Niw5NTA3NzAwOTgsMTY1
+MzgxODU5LDEzMjE0MzI0MTEsLTEwMTY0NzExMzQsMTgzMTUyOT
+I2MywxNjMzNTA3MzMsLTIxNzk4MzMzOSw5Nzc3ODE3MzcsMTA3
+MjM1NjM0M119
 -->
