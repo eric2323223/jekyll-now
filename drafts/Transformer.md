@@ -71,7 +71,7 @@ Attention机制来自于人类视觉注意力机制。人们视觉在感知东�
 
 $$c_i=\sum_{j=1}\alpha_{ij}h_j$$
 $$\alpha_{ij}=\frac{exp(e_{ij})}{\sum_{k=1}exp(e_{ik})}$$
-$$e_{ij}=align$$
+$$e_{ij}=alignment(h_i,x_j)$$
 Instead of encoding the input sequence into a  **single fixed context vector**, we let the model  learn **how to generate a context vector** for each output time step. That is we let the model  **learn**  what to attend based on the input sentence and what it has produced so far.
 ![enter image description here](https://oscimg.oschina.net/oscnet/5bdc25e12070e665409112ee13ac9e76603.jpg)
 
@@ -230,11 +230,11 @@ Despite not having any explicit recurrency, implicitly the model is built as an 
 [Attention and its Different Forms](https://towardsdatascience.com/attention-and-its-different-forms-7fc3674d14dc)
 [Attn: Illustrated Attention](https://towardsdatascience.com/attn-illustrated-attention-5ec4ad276ee3)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTc0MzcyMTkyMiwxNjUzODE4NTksMTMyMT
-QzMjQxMSwtMTAxNjQ3MTEzNCwxODMxNTI5MjYzLDE2MzM1MDcz
-MywtMjE3OTgzMzM5LDk3Nzc4MTczNywxMDcyMzU2MzQzLC0xMz
-YyMTc3MzI0LDEwMDczOTc2MDgsLTQxMTY4NzkwMSwtOTQ3Nzc3
-OTQsNzUxNTM4NTEwLDE5Mzg0MDY0NTcsMjQwNzkyMzYwLDg1ND
-Y0NDMxNiwxNjc0NjM3ODY2LC03NTgzOTMwNjEsLTE3NTIwODc5
-NzFdfQ==
+eyJoaXN0b3J5IjpbOTUwNzcwMDk4LDE2NTM4MTg1OSwxMzIxND
+MyNDExLC0xMDE2NDcxMTM0LDE4MzE1MjkyNjMsMTYzMzUwNzMz
+LC0yMTc5ODMzMzksOTc3NzgxNzM3LDEwNzIzNTYzNDMsLTEzNj
+IxNzczMjQsMTAwNzM5NzYwOCwtNDExNjg3OTAxLC05NDc3Nzc5
+NCw3NTE1Mzg1MTAsMTkzODQwNjQ1NywyNDA3OTIzNjAsODU0Nj
+Q0MzE2LDE2NzQ2Mzc4NjYsLTc1ODM5MzA2MSwtMTc1MjA4Nzk3
+MV19
 -->
