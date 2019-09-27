@@ -146,6 +146,7 @@ comparison with RNN and CNN
 平均是指——————
 在transformer中的encoder和decoder中都使用了自注意力机制，他们的实现基本相同，稍有不同的是在decoder中使用mask来*屏蔽当前元素之后的元素*
 #### encoder-decoder attention
+In terms of encoder-decoder, the **query** is usually the hidden state of the _decoder_. Whereas **key**, is the hidden state of the _encoder_, and the corresponding **value** is normalized weight, representing how much attention a _key_ gets. Output is calculated as a wighted sum – here the dot product of _query_ and _key_ is used to get a _value_.
 
 ![enter image description here](https://cntk.ai/jup/cntk204_s2s2.png)
 
@@ -239,11 +240,11 @@ Despite not having any explicit recurrency, implicitly the model is built as an 
 [Attn: Illustrated Attention](https://towardsdatascience.com/attn-illustrated-attention-5ec4ad276ee3)
 [https://mchromiak.github.io/articles/2017/Sep/01/Primer-NN/#attention-basis](https://mchromiak.github.io/articles/2017/Sep/01/Primer-NN/#attention-basis)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE4MjY2OTYwMCwxNjEzNzI0NDkxLDk4NT
-Q1MzkwMSwtMTgxNDEwOTg4MSwtNjA2MjU2MjIxLC0xOTY1NDc1
-MDg5LC0xMTgxMzA3Nzg2LDk1MDc3MDA5OCwxNjUzODE4NTksMT
-MyMTQzMjQxMSwtMTAxNjQ3MTEzNCwxODMxNTI5MjYzLDE2MzM1
-MDczMywtMjE3OTgzMzM5LDk3Nzc4MTczNywxMDcyMzU2MzQzLC
-0xMzYyMTc3MzI0LDEwMDczOTc2MDgsLTQxMTY4NzkwMSwtOTQ3
-Nzc3OTRdfQ==
+eyJoaXN0b3J5IjpbMTEwNzYyNjg2MSwtMTgyNjY5NjAwLDE2MT
+M3MjQ0OTEsOTg1NDUzOTAxLC0xODE0MTA5ODgxLC02MDYyNTYy
+MjEsLTE5NjU0NzUwODksLTExODEzMDc3ODYsOTUwNzcwMDk4LD
+E2NTM4MTg1OSwxMzIxNDMyNDExLC0xMDE2NDcxMTM0LDE4MzE1
+MjkyNjMsMTYzMzUwNzMzLC0yMTc5ODMzMzksOTc3NzgxNzM3LD
+EwNzIzNTYzNDMsLTEzNjIxNzczMjQsMTAwNzM5NzYwOCwtNDEx
+Njg3OTAxXX0=
 -->
