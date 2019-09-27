@@ -129,13 +129,12 @@ Attention是transformer的核心，它不仅作用在encoder到docoder的转换�
 > 对于使用自注意力机制的原因，论文中提到主要从三个方面考虑（每一层的复杂度，是否可以并行，长距离依赖学习），并给出了和RNN，CNN计算复杂度的比较。可以看到，如果输入序列n小于表示维度d的话，每一层的时间复杂度self-attention是比较有优势的。当n比较大时，作者也给出了一种解决方案self-attention（restricted）即每个词不是和所有词计算attention，而是只与限制的r个词去计算attention。在并行方面，多头attention和CNN一样不依赖于前一时刻的计算，可以很好的并行，优于RNN。在长距离依赖上，由于self-attention是每个词和所有词都要计算attention，所以不管他们中间有多长距离，最大的路径长度也都只是1。可以捕获长距离依赖关系。
 > In these models, the number of operations required to relate signals from two arbitrary input or output positions grows in the distance between positions, linearly for ConvS2S and logarithmically for ByteNet. This makes it more difficult to learn dependencies between distant positions. In the Transformer this is reduced to a constant number of operations, albeit at the cost of reduced effective resolution due to averaging attention-weighted positions, an effect we counteract with Multi-Head Attention.
 
-
-注意力机制可以形式化的定义为
+Scaled Dot-Product Attention
+其中的权值来自该元素与其他元素的相似度，这是基于这样的假设-相似度越高的元素对确定该元素在整个序列中的含义的贡献度越大，由于序列元素以向量表示（word4vec），在transformer中使用点积运算来确定相似度，其结果是一个数值。形式化的定义为
 $W^Q_i \in \mathbb{R}^{d_{\text{model}} \times d_k}$, $W^K_i \in \mathbb{R}^{d_{\text{model}} \times d_k}$, $W^V_i \in \mathbb{R}^{d_{\text{model}} \times d_v}$ and $W^O \in \mathbb{R}^{hd_v \times d_{\text{model}}}$
 $$\mathrm{Attention}(Q, K, V) = \mathrm{softmax}(\frac{QK^T}{\sqrt{d_k}})V$$
 ![enter image description here](https://miro.medium.com/max/410/1*NlQPdpNY4d26l8Vu92a0Wg.png)
-Scaled Dot-Product Attention
-其中的权值来自该元素与其他元素的相似度，这是基于这样的假设-相似度越高的元素对确定该元素在整个序列中的含义的贡献度越大，由于序列元素以向量表示（word4vec），在transformer中使用点积运算来确定相似度，其结果是一个数值。
+
 comparison with RNN and CNN
 - less complex
 - can be paralleled, faster
@@ -236,11 +235,11 @@ Despite not having any explicit recurrency, implicitly the model is built as an 
 [Attention and its Different Forms](https://towardsdatascience.com/attention-and-its-different-forms-7fc3674d14dc)
 [Attn: Illustrated Attention](https://towardsdatascience.com/attn-illustrated-attention-5ec4ad276ee3)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTI0MTk2MzA5OSwtNjA2MjU2MjIxLC0xOT
-Y1NDc1MDg5LC0xMTgxMzA3Nzg2LDk1MDc3MDA5OCwxNjUzODE4
-NTksMTMyMTQzMjQxMSwtMTAxNjQ3MTEzNCwxODMxNTI5MjYzLD
-E2MzM1MDczMywtMjE3OTgzMzM5LDk3Nzc4MTczNywxMDcyMzU2
-MzQzLC0xMzYyMTc3MzI0LDEwMDczOTc2MDgsLTQxMTY4NzkwMS
-wtOTQ3Nzc3OTQsNzUxNTM4NTEwLDE5Mzg0MDY0NTcsMjQwNzky
-MzYwXX0=
+eyJoaXN0b3J5IjpbLTE4MTQxMDk4ODEsLTYwNjI1NjIyMSwtMT
+k2NTQ3NTA4OSwtMTE4MTMwNzc4Niw5NTA3NzAwOTgsMTY1Mzgx
+ODU5LDEzMjE0MzI0MTEsLTEwMTY0NzExMzQsMTgzMTUyOTI2My
+wxNjMzNTA3MzMsLTIxNzk4MzMzOSw5Nzc3ODE3MzcsMTA3MjM1
+NjM0MywtMTM2MjE3NzMyNCwxMDA3Mzk3NjA4LC00MTE2ODc5MD
+EsLTk0Nzc3Nzk0LDc1MTUzODUxMCwxOTM4NDA2NDU3LDI0MDc5
+MjM2MF19
 -->
