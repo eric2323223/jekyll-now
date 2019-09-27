@@ -122,7 +122,7 @@ Attention是transformer的核心，它不仅作用在encoder到docoder的转换�
 时序问题（特别是NLP问题）中的序列元素表示的含义通常不止该单个元素的的字面意义，而是与整个序列上下文有关系，因此在encoding过程中需要考虑整个序列来决定其中每个元素的意义。self-attention机制就是基于这种由全局确定局部的思想，简单来说它使用整个序列所有元素的**加权**平均来确定每一个元素在所处序列（上下文）中的含义。
 在encoder-decoder模型中encoder负责将输入转化为输入序列的内部表示（context vector），传统方法使用RNN通过一步步的叠加分析过的输入来得到整个序列的内部表示（固定长度），Transformer模型中使用自注意力（self attention）机制来实现encoding，之所以称作自注意力是因为这是在输入序列内部进行的attention操作，由于attention操作就是对元素进行重新定义使其包含序列上下文信息，在输入序列元素进行attention的操作结果就是使该元素包含输入序列信息，因此经过self attention运算的整个输入序列的结果就是和一个输入序列大小一致的context vector。显然，self attention不需要想RNN那样一步步的出入输入，而是可以同时对每个元素进行attention运算，如图所示
 ![enter image description here](!%5Benter%20image%20description%20here%5D%28https://docs.google.com/drawings/d/e/2PACX-1vQZ5I4YZtpZOU8xnxqqJ2WVd7o9eeo0sHQa119cWm4qR85KanMs7-Z1DV1EfKxJLQrZaVglHLUJGPF2/pub?w=856&h=225%29)
-为什么
+为什么需要在encoder
 > ”`The animal didn't cross the street because it was too tired`”
 > What does “it” in this sentence refer to? Is it referring to the street or to the animal? It’s a simple question to a human, but not as simple to an algorithm.
 
@@ -236,7 +236,7 @@ Despite not having any explicit recurrency, implicitly the model is built as an 
 [Attention and its Different Forms](https://towardsdatascience.com/attention-and-its-different-forms-7fc3674d14dc)
 [Attn: Illustrated Attention](https://towardsdatascience.com/attn-illustrated-attention-5ec4ad276ee3)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTY1OTczNDk2OCwtMTk2NTQ3NTA4OSwtMT
+eyJoaXN0b3J5IjpbLTYwNjI1NjIyMSwtMTk2NTQ3NTA4OSwtMT
 E4MTMwNzc4Niw5NTA3NzAwOTgsMTY1MzgxODU5LDEzMjE0MzI0
 MTEsLTEwMTY0NzExMzQsMTgzMTUyOTI2MywxNjMzNTA3MzMsLT
 IxNzk4MzMzOSw5Nzc3ODE3MzcsMTA3MjM1NjM0MywtMTM2MjE3
