@@ -157,6 +157,25 @@ In terms of encoder-decoder, the **query** is usually the hidden state of the _d
 > 之所以使用这种技术，是因为在所提出的体系结构中没有词序的概念（第一个词，第二个词等）。 输入序列的所有单词都以没有特殊顺序或位置的方式馈入网络（与普通的RNN或ConvNet体系结构不同），因此模型不知道单词的顺序。 因此，与位置相关的信号会添加到每个词嵌入中，以帮助模型合并词的顺序。 根据实验，这种增加不仅避免破坏嵌入信息，而且还增加了重要位置信息。 对于RNN，我们将单词顺序地馈送到RNN，即在步骤n馈送第n个单词，这有助于模型合并单词的顺序。
 > 位置编码是单词值及其在句子中位置的重新表示（假定开头和结尾或中间的开头和开头不相同）。但是您必须考虑到句子的长度可以是任意长度，因此，如果句子的长度不同，则说“ X”是句子中的第三个单词是没有意义的：3词句中的第3个完全是 在20个单词的句子中不同于第三。位置编码器的作用是获得sin（x）和cos（x）函数的循环特性的帮助，以返回单词在句子中的位置信息。
 > 通常，将位置编码添加到输入嵌入是一个非常有趣的话题。一种方法是嵌入输入元素的绝对位置（如在ConvS2S中一样）。但是，作者使用“不同频率的正弦和余弦函数”。 “正弦波”版本非常复杂，同时具有与绝对位置版本相似的性能。然而，问题的关键在于，它可以使模型在测试时对更长的句子产生更好的翻译（至少比训练数据中的句子更长）。通过这种正弦方法，模型可以外推到更长的序列长度3。
+> In attention, we basically take two word embeddings (x and y), pass one through a Query transformation matrix (Q) and the second through a Key transformation matrix (K), and compare how similar the resulting query and key vectors are by their dot product. So, basically, we want the dot product between Qx and Ky, which we write as:
+
+(Qx)'(Ky) = x' (Q'Ky). So equivalently we just need to learn one joint Query-Key transformation (Q'K) that transform the secondary inputs y into a new space in which we can compare x.
+
+By adding positional encodings e and f to x and y, respectively, we essentially change the dot product to
+
+(Q(x+e))' (K(y+f)) = (Qx+Qe)' (Ky+Kf) = (Qx)' Ky + (Qx)' Kf + (Qe)' Ky + (Qe)' Kf = x' (Q'Ky) + x' (Q'Kf) + e' (Q'Ky) + e' (Q'K f), where in addition to the original x' (Q'Ky) term, which asks the question "how much attention should we pay to word x given word y", we also have x' (Q'Kf) + e' (Q'Ky) + e' (Q'K f), which ask the additional questions, "how much attention should we pay to word x given the position f of word y", "how much attention should we pay to y given the position e of word x", and "how much attention should we pay to the position e of word x given the position f of word y".
+
+Essentially, the learned transformation matrix Q'K with positional encodings has to do all four of these tasks simultaneously. This is the part that may appear inefficient, since intuitively, there should be a trade-off in the ability of Q'K to do four tasks simultaneously and well.
+
+HOWEVER, MY GUESS is that there isn't actually a trade-off when we force Q'K to do all four of these tasks, because of some approximate orthogonality condition that is satisfied of in high dimensions. The intuition for this is that randomly chosen vectors in high dimensions are almost always approximately orthogonal. There's no reason to think that the word vectors and position encoding vectors are related in any way. If the word embeddings form a smaller dimensional subspace and the positional encodings form another smaller dimensional subspace, then perhaps the two subspaces themselves are approximately orthogonal, so presumably these subspaces can be transformed approx. independently through the same learned Q'K transformation (since they basically exist on different axes in high dimensional space). I don't know if this is true, but it seems intuitively possible.
+
+If true, this would explain why adding positional encodings, instead of concatenation, is essentially fine. Concatenation would ensure that the positional dimensions are orthogonal to the word dimensions, but my guess is that, because these embedding spaces are so high dimensional, you can get approximate orthogonality for free even when adding, without the costs of concatenation (many more parameters to learn). Adding layers would only help with this, by allowing for nonlinearities.
+
+We also ultimately want e and f to behave in some nice ways, so that there's some kind of "closeness" in the vector representation with respect to small changes in positions. The sin and cos representation is nice since nearby positions have high similarity in their positional encodings, which may make it easier to learn transformations that "preserve" this desired closeness.
+
+(Maybe I'm wrong, and the approximate orthogonality arises from stacking multiple layers or non-linearities in the fully-connected parts of the transformer).
+
+tl;dr: It is intuitively possible that, in high dimensions, the word vectors form a smaller dimensional subspace within the full embedding space, and the positional vectors form a different smaller dimensional subspace approximately orthogonal to the one spanned by word vectors. Thus despite vector addition, the two subspaces can be manipulated essentially independently of each other by some single learned transformation. Thus, concatenation doesn't add much, but greatly increases cost in terms of parameters to learn.
 
 ![enter image description here](https://www.researchgate.net/publication/327068570/figure/fig3/AS:660457148928000@1534476663109/The-original-positional-encoding-used-in-Attention-Is-All-You-Need-VSP-17-composed.png)
 ![enter image description here](https://www.d2l.ai/_images/output_transformer_ee2e4a_21_0.svg)
@@ -240,11 +259,11 @@ Despite not having any explicit recurrency, implicitly the model is built as an 
 [Attn: Illustrated Attention](https://towardsdatascience.com/attn-illustrated-attention-5ec4ad276ee3)
 [https://mchromiak.github.io/articles/2017/Sep/01/Primer-NN/#attention-basis](https://mchromiak.github.io/articles/2017/Sep/01/Primer-NN/#attention-basis)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTEwNzYyNjg2MSwtMTgyNjY5NjAwLDE2MT
-M3MjQ0OTEsOTg1NDUzOTAxLC0xODE0MTA5ODgxLC02MDYyNTYy
-MjEsLTE5NjU0NzUwODksLTExODEzMDc3ODYsOTUwNzcwMDk4LD
-E2NTM4MTg1OSwxMzIxNDMyNDExLC0xMDE2NDcxMTM0LDE4MzE1
-MjkyNjMsMTYzMzUwNzMzLC0yMTc5ODMzMzksOTc3NzgxNzM3LD
-EwNzIzNTYzNDMsLTEzNjIxNzczMjQsMTAwNzM5NzYwOCwtNDEx
-Njg3OTAxXX0=
+eyJoaXN0b3J5IjpbLTE0OTU0ODYwNzksMTEwNzYyNjg2MSwtMT
+gyNjY5NjAwLDE2MTM3MjQ0OTEsOTg1NDUzOTAxLC0xODE0MTA5
+ODgxLC02MDYyNTYyMjEsLTE5NjU0NzUwODksLTExODEzMDc3OD
+YsOTUwNzcwMDk4LDE2NTM4MTg1OSwxMzIxNDMyNDExLC0xMDE2
+NDcxMTM0LDE4MzE1MjkyNjMsMTYzMzUwNzMzLC0yMTc5ODMzMz
+ksOTc3NzgxNzM3LDEwNzIzNTYzNDMsLTEzNjIxNzczMjQsMTAw
+NzM5NzYwOF19
 -->
