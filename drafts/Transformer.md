@@ -67,7 +67,7 @@ Attention机制来自于人类视觉注意力机制。人们视觉在感知东�
 > and the context is then constructed with the  vivi.
 ## 注意力机制（attention mechanism）
 基于组成整体的各个元素在整体中发挥的作用不相同这样一个事实，注意力机制的基本思想是通对使用不同的权重组合各个序列元素来描述整体，~~这就好像我们在快速观察人物的照片时会把注意力更多的放在人物的面部而几乎不会留意背景中的某一棵小草~~。从数学运算来讲，注意力机制是对组成整体的元素加权求和的过程。权值的计算方法由任务目标来确定，这就好像。。。对。。。的关注程度不一致是一个道理。在机器翻译（一种常见的seq2seq任务）中一种常见的权值衡量方法是计算序列元素（单词）之间的相似度。
-注意力机制最早使用在基于[RNN的机器翻译模型](https://arxiv.org/pdf/1409.0473.pdf)中，不同于以往使用固定的context vector， attention能够让解码器每次解码的时候关注更相关的输入元素（生成动态的context vector）从而提高翻译的准确度
+注意力机制最早使用在基于[RNN的机器翻译模型](https://arxiv.org/pdf/1409.0473.pdf)中，不同于以往使用固定的context vector， attention能够让解码器每次解码的时候关注更相关的输入元素（生成动态的context vector）从而提高翻译的准确度。
 Attention Mechanism allows the decoder to attend to different parts of the source sentence at each step of the output generation.
 $$c_i=\sum_{j=1}\alpha_{ij}h_j$$
 $$\alpha_{ij}=\frac{exp(e_{ij})}{\sum_{k=1}exp(e_{ik})}$$
@@ -227,7 +227,7 @@ Despite not having any explicit recurrency, implicitly the model is built as an 
 [深度学习中的注意力机制](https://blog.csdn.net/songbinxu/article/details/80739447)
 [nlp中的Attention注意力机制+Transformer详解](https://zhuanlan.zhihu.com/p/53682800)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjEwMzcyODU5MywtMTAxNjQ3MTEzNCwxOD
+eyJoaXN0b3J5IjpbMTMyMTQzMjQxMSwtMTAxNjQ3MTEzNCwxOD
 MxNTI5MjYzLDE2MzM1MDczMywtMjE3OTgzMzM5LDk3Nzc4MTcz
 NywxMDcyMzU2MzQzLC0xMzYyMTc3MzI0LDEwMDczOTc2MDgsLT
 QxMTY4NzkwMSwtOTQ3Nzc3OTQsNzUxNTM4NTEwLDE5Mzg0MDY0
