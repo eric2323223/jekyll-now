@@ -198,7 +198,8 @@ different random initial weights matrix may lead to different representation sub
 	- MHA: a weighted average 
 	- It is found empirically that multi-head attention works better than the usual “single-head” in the context of machine translation. And the intuition behind such an improvement is that “multi-head attention allows the model to jointly attend to information from different representation subspaces at different positions”
 
-
+> Transformer reduces the number of operations required to relate (especially distant) positions in input and output sequence to a O(1)O(1). However, this comes at cost of reduced effective resolution because of averaging attention-weighted positions.
+> 
 
 ### Why multiple layer of attention layers?
 
@@ -259,11 +260,11 @@ Despite not having any explicit recurrency, implicitly the model is built as an 
 [Attn: Illustrated Attention](https://towardsdatascience.com/attn-illustrated-attention-5ec4ad276ee3)
 [https://mchromiak.github.io/articles/2017/Sep/01/Primer-NN/#attention-basis](https://mchromiak.github.io/articles/2017/Sep/01/Primer-NN/#attention-basis)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0OTU0ODYwNzksMTEwNzYyNjg2MSwtMT
-gyNjY5NjAwLDE2MTM3MjQ0OTEsOTg1NDUzOTAxLC0xODE0MTA5
-ODgxLC02MDYyNTYyMjEsLTE5NjU0NzUwODksLTExODEzMDc3OD
-YsOTUwNzcwMDk4LDE2NTM4MTg1OSwxMzIxNDMyNDExLC0xMDE2
-NDcxMTM0LDE4MzE1MjkyNjMsMTYzMzUwNzMzLC0yMTc5ODMzMz
-ksOTc3NzgxNzM3LDEwNzIzNTYzNDMsLTEzNjIxNzczMjQsMTAw
-NzM5NzYwOF19
+eyJoaXN0b3J5IjpbLTEwODc1MjE0OTAsLTE0OTU0ODYwNzksMT
+EwNzYyNjg2MSwtMTgyNjY5NjAwLDE2MTM3MjQ0OTEsOTg1NDUz
+OTAxLC0xODE0MTA5ODgxLC02MDYyNTYyMjEsLTE5NjU0NzUwOD
+ksLTExODEzMDc3ODYsOTUwNzcwMDk4LDE2NTM4MTg1OSwxMzIx
+NDMyNDExLC0xMDE2NDcxMTM0LDE4MzE1MjkyNjMsMTYzMzUwNz
+MzLC0yMTc5ODMzMzksOTc3NzgxNzM3LDEwNzIzNTYzNDMsLTEz
+NjIxNzczMjRdfQ==
 -->
