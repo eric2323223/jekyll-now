@@ -153,6 +153,7 @@ comparison with RNN and CNN
 ### 位置编码（positional encoding）
 由于attention机制不考虑位置关系，因此必须要在在attention操作前对序列中的每个元素加入位置信息。一个最直接的想法就是对输入加入序号，但是这种方法的问题在于
 - why not positional index? 
+> This technique is used because there is **no notion of word order** (1st word, 2nd word, ..) in the proposed architecture. All words of input sequence are fed to the network with no special order or position (unlike common RNN or ConvNet architectures), thus, model has no idea how the words are ordered. Consequently, a position-dependent signal is added to each word-embedding to help the model incorporate the order of words. Based on experiments, this addition not only avoids destroying the embedding information but also adds the vital position information. In the case of RNNs, we feed the words sequentially to RNN, i.e. nn-th word is fed at step nn, which helps the model incorporate the order of words.
 
 ![enter image description here](https://www.researchgate.net/publication/327068570/figure/fig3/AS:660457148928000@1534476663109/The-original-positional-encoding-used-in-Attention-Is-All-You-Need-VSP-17-composed.png)
 ![enter image description here](https://www.d2l.ai/_images/output_transformer_ee2e4a_21_0.svg)
@@ -235,11 +236,11 @@ Despite not having any explicit recurrency, implicitly the model is built as an 
 [Attention and its Different Forms](https://towardsdatascience.com/attention-and-its-different-forms-7fc3674d14dc)
 [Attn: Illustrated Attention](https://towardsdatascience.com/attn-illustrated-attention-5ec4ad276ee3)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE4MTQxMDk4ODEsLTYwNjI1NjIyMSwtMT
-k2NTQ3NTA4OSwtMTE4MTMwNzc4Niw5NTA3NzAwOTgsMTY1Mzgx
-ODU5LDEzMjE0MzI0MTEsLTEwMTY0NzExMzQsMTgzMTUyOTI2My
-wxNjMzNTA3MzMsLTIxNzk4MzMzOSw5Nzc3ODE3MzcsMTA3MjM1
-NjM0MywtMTM2MjE3NzMyNCwxMDA3Mzk3NjA4LC00MTE2ODc5MD
-EsLTk0Nzc3Nzk0LDc1MTUzODUxMCwxOTM4NDA2NDU3LDI0MDc5
-MjM2MF19
+eyJoaXN0b3J5IjpbMzQ3ODkwNTA0LC0xODE0MTA5ODgxLC02MD
+YyNTYyMjEsLTE5NjU0NzUwODksLTExODEzMDc3ODYsOTUwNzcw
+MDk4LDE2NTM4MTg1OSwxMzIxNDMyNDExLC0xMDE2NDcxMTM0LD
+E4MzE1MjkyNjMsMTYzMzUwNzMzLC0yMTc5ODMzMzksOTc3Nzgx
+NzM3LDEwNzIzNTYzNDMsLTEzNjIxNzczMjQsMTAwNzM5NzYwOC
+wtNDExNjg3OTAxLC05NDc3Nzc5NCw3NTE1Mzg1MTAsMTkzODQw
+NjQ1N119
 -->
