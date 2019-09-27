@@ -199,7 +199,10 @@ different random initial weights matrix may lead to different representation sub
 	- It is found empirically that multi-head attention works better than the usual “single-head” in the context of machine translation. And the intuition behind such an improvement is that “multi-head attention allows the model to jointly attend to information from different representation subspaces at different positions”
 
 > Transformer reduces the number of operations required to relate (especially distant) positions in input and output sequence to a O(1)O(1). However, this comes at cost of reduced effective resolution because of averaging attention-weighted positions.
-> 
+> To reduce this cost authors propose the multi-head attention:
+> Transformer use multi-head (dmodel/hdmodel/h  parallel attention functions) attention instead of single (dmodeldmodel-dimensional) attention function (i.e.  q,k,vq,k,v  all  dmodeldmodel-dimensional). It is at similar computational cost as in the case of single-head attention due to reduced dimensions of each head.
+
+> Transformer imitates the classical attention mechanism (known e.g. from  [Bahdanau et al., 2014](https://arxiv.org/abs/1409.0473) or Conv2S2) where in encoder-decoder attention layers  _queries_  are form previous decoder layer, and the (memory)  _keys_  and  _values_  are from output of the encoder. Therefore, each position in decoder can attend over all positions in the input sequence.
 
 ### Why multiple layer of attention layers?
 
@@ -260,7 +263,7 @@ Despite not having any explicit recurrency, implicitly the model is built as an 
 [Attn: Illustrated Attention](https://towardsdatascience.com/attn-illustrated-attention-5ec4ad276ee3)
 [https://mchromiak.github.io/articles/2017/Sep/01/Primer-NN/#attention-basis](https://mchromiak.github.io/articles/2017/Sep/01/Primer-NN/#attention-basis)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEwODc1MjE0OTAsLTE0OTU0ODYwNzksMT
+eyJoaXN0b3J5IjpbLTEyODE4NzUwMTEsLTE0OTU0ODYwNzksMT
 EwNzYyNjg2MSwtMTgyNjY5NjAwLDE2MTM3MjQ0OTEsOTg1NDUz
 OTAxLC0xODE0MTA5ODgxLC02MDYyNTYyMjEsLTE5NjU0NzUwOD
 ksLTExODEzMDc3ODYsOTUwNzcwMDk4LDE2NTM4MTg1OSwxMzIx
