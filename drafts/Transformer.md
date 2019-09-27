@@ -237,12 +237,13 @@ Despite not having any explicit recurrency, implicitly the model is built as an 
 [nlp中的Attention注意力机制+Transformer详解](https://zhuanlan.zhihu.com/p/53682800)
 [Attention and its Different Forms](https://towardsdatascience.com/attention-and-its-different-forms-7fc3674d14dc)
 [Attn: Illustrated Attention](https://towardsdatascience.com/attn-illustrated-attention-5ec4ad276ee3)
+[https://mchromiak.github.io/articles/2017/Sep/01/Primer-NN/#attention-basis](https://mchromiak.github.io/articles/2017/Sep/01/Primer-NN/#attention-basis)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTYxMzcyNDQ5MSw5ODU0NTM5MDEsLTE4MT
-QxMDk4ODEsLTYwNjI1NjIyMSwtMTk2NTQ3NTA4OSwtMTE4MTMw
-Nzc4Niw5NTA3NzAwOTgsMTY1MzgxODU5LDEzMjE0MzI0MTEsLT
-EwMTY0NzExMzQsMTgzMTUyOTI2MywxNjMzNTA3MzMsLTIxNzk4
-MzMzOSw5Nzc3ODE3MzcsMTA3MjM1NjM0MywtMTM2MjE3NzMyNC
-wxMDA3Mzk3NjA4LC00MTE2ODc5MDEsLTk0Nzc3Nzk0LDc1MTUz
-ODUxMF19
+eyJoaXN0b3J5IjpbLTE4MjY2OTYwMCwxNjEzNzI0NDkxLDk4NT
+Q1MzkwMSwtMTgxNDEwOTg4MSwtNjA2MjU2MjIxLC0xOTY1NDc1
+MDg5LC0xMTgxMzA3Nzg2LDk1MDc3MDA5OCwxNjUzODE4NTksMT
+MyMTQzMjQxMSwtMTAxNjQ3MTEzNCwxODMxNTI5MjYzLDE2MzM1
+MDczMywtMjE3OTgzMzM5LDk3Nzc4MTczNywxMDcyMzU2MzQzLC
+0xMzYyMTc3MzI0LDEwMDczOTc2MDgsLTQxMTY4NzkwMSwtOTQ3
+Nzc3OTRdfQ==
 -->
