@@ -206,7 +206,7 @@ different random initial weights matrix may lead to different representation sub
 - **multi-head attention** VS convolution on multiple channels
 	- Convolution: Different linear transformations by relative position
 	- MHA: a weighted average 
-	- It is found empirically that multi-head attention works better than the usual “single-head” in the context of machine translation. And the intuition behind such an improvement is that “multi-head attention allows the model to jointly attend to information from different representation subspaces at different positions”
+	- It is found empirically that multi-head attention works better than the usual “single-head” in the context of machine translation. And the intuition behind such an improvement is that “multi-head attention allows the model to jointly attend to information from **different representation subspaces at different positions**”
 
 > Transformer reduces the number of operations required to relate (especially distant) positions in input and output sequence to a O(1)O(1). However, this comes at cost of reduced effective resolution because of averaging attention-weighted positions.
 > To reduce this cost authors propose the multi-head attention:
@@ -272,11 +272,11 @@ Despite not having any explicit recurrency, implicitly the model is built as an 
 [Attn: Illustrated Attention](https://towardsdatascience.com/attn-illustrated-attention-5ec4ad276ee3)
 [https://mchromiak.github.io/articles/2017/Sep/01/Primer-NN/#attention-basis](https://mchromiak.github.io/articles/2017/Sep/01/Primer-NN/#attention-basis)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0NDczMjQ0MjYsLTY4NTQ4OTEzNywtMT
-Q5NTQ4NjA3OSwxMTA3NjI2ODYxLC0xODI2Njk2MDAsMTYxMzcy
-NDQ5MSw5ODU0NTM5MDEsLTE4MTQxMDk4ODEsLTYwNjI1NjIyMS
-wtMTk2NTQ3NTA4OSwtMTE4MTMwNzc4Niw5NTA3NzAwOTgsMTY1
-MzgxODU5LDEzMjE0MzI0MTEsLTEwMTY0NzExMzQsMTgzMTUyOT
-I2MywxNjMzNTA3MzMsLTIxNzk4MzMzOSw5Nzc3ODE3MzcsMTA3
-MjM1NjM0M119
+eyJoaXN0b3J5IjpbLTE3OTczNTk0MzQsLTE0NDczMjQ0MjYsLT
+Y4NTQ4OTEzNywtMTQ5NTQ4NjA3OSwxMTA3NjI2ODYxLC0xODI2
+Njk2MDAsMTYxMzcyNDQ5MSw5ODU0NTM5MDEsLTE4MTQxMDk4OD
+EsLTYwNjI1NjIyMSwtMTk2NTQ3NTA4OSwtMTE4MTMwNzc4Niw5
+NTA3NzAwOTgsMTY1MzgxODU5LDEzMjE0MzI0MTEsLTEwMTY0Nz
+ExMzQsMTgzMTUyOTI2MywxNjMzNTA3MzMsLTIxNzk4MzMzOSw5
+Nzc3ODE3MzddfQ==
 -->
