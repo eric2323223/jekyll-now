@@ -201,7 +201,6 @@ different random initial weights matrix may lead to different representation sub
 > Transformer reduces the number of operations required to relate (especially distant) positions in input and output sequence to a O(1)O(1). However, this comes at cost of reduced effective resolution because of averaging attention-weighted positions.
 > To reduce this cost authors propose the multi-head attention:
 > Transformer use multi-head (dmodel/hdmodel/h  parallel attention functions) attention instead of single (dmodeldmodel-dimensional) attention function (i.e.  q,k,vq,k,v  all  dmodeldmodel-dimensional). It is at similar computational cost as in the case of single-head attention due to reduced dimensions of each head.
-
 > Transformer imitates the classical attention mechanism (known e.g. from  [Bahdanau et al., 2014](https://arxiv.org/abs/1409.0473) or Conv2S2) where in encoder-decoder attention layers  _queries_  are form previous decoder layer, and the (memory)  _keys_  and  _values_  are from output of the encoder. Therefore, each position in decoder can attend over all positions in the input sequence.
 
 ### Why multiple layer of attention layers?
@@ -263,11 +262,11 @@ Despite not having any explicit recurrency, implicitly the model is built as an 
 [Attn: Illustrated Attention](https://towardsdatascience.com/attn-illustrated-attention-5ec4ad276ee3)
 [https://mchromiak.github.io/articles/2017/Sep/01/Primer-NN/#attention-basis](https://mchromiak.github.io/articles/2017/Sep/01/Primer-NN/#attention-basis)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEyODE4NzUwMTEsLTE0OTU0ODYwNzksMT
-EwNzYyNjg2MSwtMTgyNjY5NjAwLDE2MTM3MjQ0OTEsOTg1NDUz
-OTAxLC0xODE0MTA5ODgxLC02MDYyNTYyMjEsLTE5NjU0NzUwOD
-ksLTExODEzMDc3ODYsOTUwNzcwMDk4LDE2NTM4MTg1OSwxMzIx
-NDMyNDExLC0xMDE2NDcxMTM0LDE4MzE1MjkyNjMsMTYzMzUwNz
-MzLC0yMTc5ODMzMzksOTc3NzgxNzM3LDEwNzIzNTYzNDMsLTEz
-NjIxNzczMjRdfQ==
+eyJoaXN0b3J5IjpbLTY4NTQ4OTEzNywtMTQ5NTQ4NjA3OSwxMT
+A3NjI2ODYxLC0xODI2Njk2MDAsMTYxMzcyNDQ5MSw5ODU0NTM5
+MDEsLTE4MTQxMDk4ODEsLTYwNjI1NjIyMSwtMTk2NTQ3NTA4OS
+wtMTE4MTMwNzc4Niw5NTA3NzAwOTgsMTY1MzgxODU5LDEzMjE0
+MzI0MTEsLTEwMTY0NzExMzQsMTgzMTUyOTI2MywxNjMzNTA3Mz
+MsLTIxNzk4MzMzOSw5Nzc3ODE3MzcsMTA3MjM1NjM0MywtMTM2
+MjE3NzMyNF19
 -->
