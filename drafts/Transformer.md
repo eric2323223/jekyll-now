@@ -151,6 +151,7 @@ comparison with RNN and CNN
 - easy to learn distant dependency
 
 ![enter image description here](http://www.c-jump.com/bcc/common/Talk3/Math/Vectors/const_images/v06_dot.png)
+![enter image description here](https://miro.medium.com/max/1452/1*oosK1XGaYr0AoSxfs9fx5A.png)
 
 
 平均是指——————
@@ -272,7 +273,7 @@ Despite not having any explicit recurrency, implicitly the model is built as an 
 [Attn: Illustrated Attention](https://towardsdatascience.com/attn-illustrated-attention-5ec4ad276ee3)
 [https://mchromiak.github.io/articles/2017/Sep/01/Primer-NN/#attention-basis](https://mchromiak.github.io/articles/2017/Sep/01/Primer-NN/#attention-basis)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE3OTczNTk0MzQsLTE0NDczMjQ0MjYsLT
+eyJoaXN0b3J5IjpbLTEwNjA2MjU2MjUsLTE0NDczMjQ0MjYsLT
 Y4NTQ4OTEzNywtMTQ5NTQ4NjA3OSwxMTA3NjI2ODYxLC0xODI2
 Njk2MDAsMTYxMzcyNDQ5MSw5ODU0NTM5MDEsLTE4MTQxMDk4OD
 EsLTYwNjI1NjIyMSwtMTk2NTQ3NTA4OSwtMTE4MTMwNzc4Niw5
