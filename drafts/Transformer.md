@@ -89,6 +89,9 @@ Instead of encoding the input sequence into a  **single fixed context vector**, 
 
 ![公式](https://mmbiz.qpic.cn/mmbiz_png/KmXPKA19gWicMiaqpI5cdFEvj2sOZVykZic5SwVXksjias1lA5ukFcJ4ficRgmwIyBLK8PcibmvT8Tq4iaIqMl0IaQfVw/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1)
 Attention机制处理seq2seq问题
+1. encoder
+	
+2. decoder
 ~~let's think about how to design a seq-seq model with only attention.
 - bear minimal core model
 - 
@@ -273,11 +276,11 @@ Despite not having any explicit recurrency, implicitly the model is built as an 
 [Attn: Illustrated Attention](https://towardsdatascience.com/attn-illustrated-attention-5ec4ad276ee3)
 [https://mchromiak.github.io/articles/2017/Sep/01/Primer-NN/#attention-basis](https://mchromiak.github.io/articles/2017/Sep/01/Primer-NN/#attention-basis)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTk1MDc1MDgyMSwtMjA4ODM2NDIzNywzND
-Y3NTA1NTksLTEzMDk4MzQxMDUsMTYwODYwNTY3MSwxNTE4ODI2
-ODEsLTEwNjA2MjU2MjUsLTE0NDczMjQ0MjYsLTY4NTQ4OTEzNy
-wtMTQ5NTQ4NjA3OSwxMTA3NjI2ODYxLC0xODI2Njk2MDAsMTYx
-MzcyNDQ5MSw5ODU0NTM5MDEsLTE4MTQxMDk4ODEsLTYwNjI1Nj
-IyMSwtMTk2NTQ3NTA4OSwtMTE4MTMwNzc4Niw5NTA3NzAwOTgs
-MTY1MzgxODU5XX0=
+eyJoaXN0b3J5IjpbLTEzNDEwODc3MTAsLTIwODgzNjQyMzcsMz
+Q2NzUwNTU5LC0xMzA5ODM0MTA1LDE2MDg2MDU2NzEsMTUxODgy
+NjgxLC0xMDYwNjI1NjI1LC0xNDQ3MzI0NDI2LC02ODU0ODkxMz
+csLTE0OTU0ODYwNzksMTEwNzYyNjg2MSwtMTgyNjY5NjAwLDE2
+MTM3MjQ0OTEsOTg1NDUzOTAxLC0xODE0MTA5ODgxLC02MDYyNT
+YyMjEsLTE5NjU0NzUwODksLTExODEzMDc3ODYsOTUwNzcwMDk4
+LDE2NTM4MTg1OV19
 -->
