@@ -79,7 +79,7 @@ Instead of encoding the input sequence into a  **single fixed context vector**, 
 注意力机制主要用于seq2seq任务，它的基本思想就是对序列中的每个元素以一定的规则加入上下文信息。不同于RNN中先通过依次分析输入元素来逐步生成上下文context vector的方式，注意力机制对这些输入元素进行加权平均的方式来一步加入所有元素信息来生成上下文context vector。这样做的好处是能够一步到位捕捉到全局的联系(序列元素直接进行两两比较),不仅大大加速（可以并行计算）了context vector的生成，而且避免了RNN的长序列训练困难的问题。
 ![enter image description here](https://docs.google.com/drawings/d/e/2PACX-1vQZ5I4YZtpZOU8xnxqqJ2WVd7o9eeo0sHQa119cWm4qR85KanMs7-Z1DV1EfKxJLQrZaVglHLUJGPF2/pub?w=856&h=225)
 -   **首先**，从数学公式上和代码实现上Attention可以理解为**加权求和**。
--  **本质**，***对元素在序列的上下文环境中重定义***
+-  **本质**，***对元素在序列的上下文环境中重定义*** 
 -   **其次**，从形式上Attention可以理解为**键值查询**。
 -   **最后**，从物理意义上Attention可以理解为**相似性度量**。
 ~~ *self-attention层的好处，解决了长距离依赖，因为它直接把序列两两比较（代价是计算量变为 O(n2)，当然由于是纯矩阵运算，这个计算量相当也不是很严重），而且最重要的是可以进行并行计算。 相比之下，RNN
@@ -274,11 +274,11 @@ Despite not having any explicit recurrency, implicitly the model is built as an 
 [Attn: Illustrated Attention](https://towardsdatascience.com/attn-illustrated-attention-5ec4ad276ee3)
 [https://mchromiak.github.io/articles/2017/Sep/01/Primer-NN/#attention-basis](https://mchromiak.github.io/articles/2017/Sep/01/Primer-NN/#attention-basis)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTc0NDQwMTY5MywzNDY3NTA1NTksLTEzMD
-k4MzQxMDUsMTYwODYwNTY3MSwxNTE4ODI2ODEsLTEwNjA2MjU2
-MjUsLTE0NDczMjQ0MjYsLTY4NTQ4OTEzNywtMTQ5NTQ4NjA3OS
-wxMTA3NjI2ODYxLC0xODI2Njk2MDAsMTYxMzcyNDQ5MSw5ODU0
-NTM5MDEsLTE4MTQxMDk4ODEsLTYwNjI1NjIyMSwtMTk2NTQ3NT
-A4OSwtMTE4MTMwNzc4Niw5NTA3NzAwOTgsMTY1MzgxODU5LDEz
-MjE0MzI0MTFdfQ==
+eyJoaXN0b3J5IjpbLTIwODgzNjQyMzcsMzQ2NzUwNTU5LC0xMz
+A5ODM0MTA1LDE2MDg2MDU2NzEsMTUxODgyNjgxLC0xMDYwNjI1
+NjI1LC0xNDQ3MzI0NDI2LC02ODU0ODkxMzcsLTE0OTU0ODYwNz
+ksMTEwNzYyNjg2MSwtMTgyNjY5NjAwLDE2MTM3MjQ0OTEsOTg1
+NDUzOTAxLC0xODE0MTA5ODgxLC02MDYyNTYyMjEsLTE5NjU0Nz
+UwODksLTExODEzMDc3ODYsOTUwNzcwMDk4LDE2NTM4MTg1OSwx
+MzIxNDMyNDExXX0=
 -->
