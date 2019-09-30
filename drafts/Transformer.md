@@ -76,7 +76,7 @@ $$e_{ij}=alignment(h_i,x_j)$$
 Instead of encoding the input sequence into a  **single fixed context vector**, we let the model  learn **how to generate a context vector** for each output time step. That is we let the model  **learn**  what to attend based on the input sentence and what it has produced so far.
 ![enter image description here](https://oscimg.oschina.net/oscnet/5bdc25e12070e665409112ee13ac9e76603.jpg)
 
-注意力机制主要用于seq2seq任务，它的基本思想就是对序列中的每个元素以一定的规则加入上下文信息。具体的做法是，不同于RNN中先通过依次分析输入元素来逐步生成context vector的方式，注意力机制对这些输入元素进行加权平均的方式来一步生成context vector。这样做的好处不仅大大加速了context vector的生成，而且避免了RNN的长序列训练困难的问题。
+注意力机制主要用于seq2seq任务，它的基本思想就是对序列中的每个元素以一定的规则加入上下文信息。不同于RNN中先通过依次分析输入元素来逐步生成上下文context vector的方式，注意力机制对这些输入元素进行加权平均的方式来一步加入所有元素xinxicontext vector。这样做的好处不仅大大加速了context vector的生成，而且避免了RNN的长序列训练困难的问题。
 -   **首先**，从数学公式上和代码实现上Attention可以理解为**加权求和**。
 -  **本质**，***对元素在序列的上下文环境中重定义***
 -   **其次**，从形式上Attention可以理解为**键值查询**。
@@ -273,11 +273,11 @@ Despite not having any explicit recurrency, implicitly the model is built as an 
 [Attn: Illustrated Attention](https://towardsdatascience.com/attn-illustrated-attention-5ec4ad276ee3)
 [https://mchromiak.github.io/articles/2017/Sep/01/Primer-NN/#attention-basis](https://mchromiak.github.io/articles/2017/Sep/01/Primer-NN/#attention-basis)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzMDk4MzQxMDUsMTYwODYwNTY3MSwxNT
-E4ODI2ODEsLTEwNjA2MjU2MjUsLTE0NDczMjQ0MjYsLTY4NTQ4
-OTEzNywtMTQ5NTQ4NjA3OSwxMTA3NjI2ODYxLC0xODI2Njk2MD
-AsMTYxMzcyNDQ5MSw5ODU0NTM5MDEsLTE4MTQxMDk4ODEsLTYw
-NjI1NjIyMSwtMTk2NTQ3NTA4OSwtMTE4MTMwNzc4Niw5NTA3Nz
-AwOTgsMTY1MzgxODU5LDEzMjE0MzI0MTEsLTEwMTY0NzExMzQs
-MTgzMTUyOTI2M119
+eyJoaXN0b3J5IjpbMTY4NzY2OTkxNSwtMTMwOTgzNDEwNSwxNj
+A4NjA1NjcxLDE1MTg4MjY4MSwtMTA2MDYyNTYyNSwtMTQ0NzMy
+NDQyNiwtNjg1NDg5MTM3LC0xNDk1NDg2MDc5LDExMDc2MjY4Nj
+EsLTE4MjY2OTYwMCwxNjEzNzI0NDkxLDk4NTQ1MzkwMSwtMTgx
+NDEwOTg4MSwtNjA2MjU2MjIxLC0xOTY1NDc1MDg5LC0xMTgxMz
+A3Nzg2LDk1MDc3MDA5OCwxNjUzODE4NTksMTMyMTQzMjQxMSwt
+MTAxNjQ3MTEzNF19
 -->
