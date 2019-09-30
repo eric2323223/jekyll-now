@@ -88,9 +88,7 @@ Instead of encoding the input sequence into a  **single fixed context vector**, 
 
 
 ![公式](https://mmbiz.qpic.cn/mmbiz_png/KmXPKA19gWicMiaqpI5cdFEvj2sOZVykZic5SwVXksjias1lA5ukFcJ4ficRgmwIyBLK8PcibmvT8Tq4iaIqMl0IaQfVw/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1)
-let's think about how to design a seq-seq model with only attention.
-
-
+~~let's think about how to design a seq-seq model with only attention.
 - bear minimal core model
 - 
 	- embedding -> attention -> 
@@ -99,7 +97,7 @@ let's think about how to design a seq-seq model with only attention.
 - add self-attention
 	- embedding -> positional encoding -> self-attention -> encoder-decoder attention -> self-attention ->
 - fix attention side affect (average)
-	- embedding -> positional encoding -> mutiple-headed attention -> FFN -> encoder-decoder attention -> Dense -> softmax
+	- embedding -> positional encoding -> mutiple-headed attention -> FFN -> encoder-decoder attention -> Dense -> softmax~~
 - 
 ## Transformer模型
 基于attention机制
@@ -274,11 +272,11 @@ Despite not having any explicit recurrency, implicitly the model is built as an 
 [Attn: Illustrated Attention](https://towardsdatascience.com/attn-illustrated-attention-5ec4ad276ee3)
 [https://mchromiak.github.io/articles/2017/Sep/01/Primer-NN/#attention-basis](https://mchromiak.github.io/articles/2017/Sep/01/Primer-NN/#attention-basis)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwODgzNjQyMzcsMzQ2NzUwNTU5LC0xMz
-A5ODM0MTA1LDE2MDg2MDU2NzEsMTUxODgyNjgxLC0xMDYwNjI1
-NjI1LC0xNDQ3MzI0NDI2LC02ODU0ODkxMzcsLTE0OTU0ODYwNz
-ksMTEwNzYyNjg2MSwtMTgyNjY5NjAwLDE2MTM3MjQ0OTEsOTg1
-NDUzOTAxLC0xODE0MTA5ODgxLC02MDYyNTYyMjEsLTE5NjU0Nz
-UwODksLTExODEzMDc3ODYsOTUwNzcwMDk4LDE2NTM4MTg1OSwx
-MzIxNDMyNDExXX0=
+eyJoaXN0b3J5IjpbMjEyNDcxODczNSwtMjA4ODM2NDIzNywzND
+Y3NTA1NTksLTEzMDk4MzQxMDUsMTYwODYwNTY3MSwxNTE4ODI2
+ODEsLTEwNjA2MjU2MjUsLTE0NDczMjQ0MjYsLTY4NTQ4OTEzNy
+wtMTQ5NTQ4NjA3OSwxMTA3NjI2ODYxLC0xODI2Njk2MDAsMTYx
+MzcyNDQ5MSw5ODU0NTM5MDEsLTE4MTQxMDk4ODEsLTYwNjI1Nj
+IyMSwtMTk2NTQ3NTA4OSwtMTE4MTMwNzc4Niw5NTA3NzAwOTgs
+MTY1MzgxODU5XX0=
 -->
