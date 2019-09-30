@@ -76,7 +76,7 @@ $$e_{ij}=alignment(h_i,x_j)$$
 Instead of encoding the input sequence into a  **single fixed context vector**, we let the model  learn **how to generate a context vector** for each output time step. That is we let the model  **learn**  what to attend based on the input sentence and what it has produced so far.
 ![enter image description here](https://oscimg.oschina.net/oscnet/5bdc25e12070e665409112ee13ac9e76603.jpg)
 
-注意力机制主要用于seq2seq任务，它的基本思想就是对序列中的每个元素以一定的规则加入上下文信息。不同于RNN中先通过依次分析输入元素来逐步生成上下文context vector的方式，注意力机制对这些输入元素进行加权平均的方式来一步加入所有元素信息来生成上下文context vector。这样做的好处是能够一步到位捕捉到全局的联系,不仅大大加速了context vector的生成，而且避免了RNN的长序列训练困难的问题。
+注意力机制主要用于seq2seq任务，它的基本思想就是对序列中的每个元素以一定的规则加入上下文信息。不同于RNN中先通过依次分析输入元素来逐步生成上下文context vector的方式，注意力机制对这些输入元素进行加权平均的方式来一步加入所有元素信息来生成上下文context vector。这样做的好处是能够一步到位捕捉到全局的联系(它直接把序列两两比较,代价是计算量变为 $O(n^2)$),不仅大大加速了context vector的生成，而且避免了RNN的长序列训练困难的问题。
 ![enter image description here](https://docs.google.com/drawings/d/e/2PACX-1vQZ5I4YZtpZOU8xnxqqJ2WVd7o9eeo0sHQa119cWm4qR85KanMs7-Z1DV1EfKxJLQrZaVglHLUJGPF2/pub?w=856&h=225)
 -   **首先**，从数学公式上和代码实现上Attention可以理解为**加权求和**。
 -  **本质**，***对元素在序列的上下文环境中重定义***
@@ -274,11 +274,11 @@ Despite not having any explicit recurrency, implicitly the model is built as an 
 [Attn: Illustrated Attention](https://towardsdatascience.com/attn-illustrated-attention-5ec4ad276ee3)
 [https://mchromiak.github.io/articles/2017/Sep/01/Primer-NN/#attention-basis](https://mchromiak.github.io/articles/2017/Sep/01/Primer-NN/#attention-basis)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNDg2Mjg3ODk5LDM0Njc1MDU1OSwtMTMwOT
-gzNDEwNSwxNjA4NjA1NjcxLDE1MTg4MjY4MSwtMTA2MDYyNTYy
-NSwtMTQ0NzMyNDQyNiwtNjg1NDg5MTM3LC0xNDk1NDg2MDc5LD
-ExMDc2MjY4NjEsLTE4MjY2OTYwMCwxNjEzNzI0NDkxLDk4NTQ1
-MzkwMSwtMTgxNDEwOTg4MSwtNjA2MjU2MjIxLC0xOTY1NDc1MD
-g5LC0xMTgxMzA3Nzg2LDk1MDc3MDA5OCwxNjUzODE4NTksMTMy
-MTQzMjQxMV19
+eyJoaXN0b3J5IjpbMTg2MTg1NTQxOSwzNDY3NTA1NTksLTEzMD
+k4MzQxMDUsMTYwODYwNTY3MSwxNTE4ODI2ODEsLTEwNjA2MjU2
+MjUsLTE0NDczMjQ0MjYsLTY4NTQ4OTEzNywtMTQ5NTQ4NjA3OS
+wxMTA3NjI2ODYxLC0xODI2Njk2MDAsMTYxMzcyNDQ5MSw5ODU0
+NTM5MDEsLTE4MTQxMDk4ODEsLTYwNjI1NjIyMSwtMTk2NTQ3NT
+A4OSwtMTE4MTMwNzc4Niw5NTA3NzAwOTgsMTY1MzgxODU5LDEz
+MjE0MzI0MTFdfQ==
 -->
