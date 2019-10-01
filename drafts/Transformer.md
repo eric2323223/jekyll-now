@@ -18,13 +18,6 @@ CNN可以同时处理序列中的所有元素，但是由于卷积运算的视�
 Attention机制来自于人类视觉注意力机制。人们视觉在感知东西的时候一般不会是一个场景从到头看到尾每次全部都看，而往往是根据需求观察注意特定的一部分。而且当人们发现一个场景经常在某部分出现自己想观察的东西时，人们会进行学习在将来再出现类似场景时把注意力放到该部分上。
 > In these models, the number of operations required to relate signals from two arbitrary input or output positions grows in the distance between positions, linearly for ConvS2S and logarithmically for ByteNet. This makes it more difficult to learn dependencies between distant positions. In the Transformer this is reduced to a constant number of operations, albeit at the cost of reduced effective resolution due to averaging attention-weighted positions, an effect we counteract with Multi-Head Attention.
 
-图
-	- Use of self-attention to improve accuracy
-	- Assumption: the more similar the more it contribute
-	- Essence of Attention mechanism: **Feature reconstruction** based on all other inputs
-	- Mathematically: weighted average
-	- can be used in different tasks (text, visual, voice ...)
-	- 3 types of attention
 > Attention is a method for aggregating a set of vectors  vivi  into just one vector, often via a lookup vector  uu. Usually,  vivi  is either the inputs to the model or the hidden states of previous time-steps, or the hidden states one level down (in the case of stacked LSTMs).
 > 
 > The result is often called the context vector  cc, since it contains
@@ -276,11 +269,11 @@ Despite not having any explicit recurrency, implicitly the model is built as an 
 [Attn: Illustrated Attention](https://towardsdatascience.com/attn-illustrated-attention-5ec4ad276ee3)
 [https://mchromiak.github.io/articles/2017/Sep/01/Primer-NN/#attention-basis](https://mchromiak.github.io/articles/2017/Sep/01/Primer-NN/#attention-basis)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzNDEwODc3MTAsLTIwODgzNjQyMzcsMz
-Q2NzUwNTU5LC0xMzA5ODM0MTA1LDE2MDg2MDU2NzEsMTUxODgy
-NjgxLC0xMDYwNjI1NjI1LC0xNDQ3MzI0NDI2LC02ODU0ODkxMz
-csLTE0OTU0ODYwNzksMTEwNzYyNjg2MSwtMTgyNjY5NjAwLDE2
-MTM3MjQ0OTEsOTg1NDUzOTAxLC0xODE0MTA5ODgxLC02MDYyNT
-YyMjEsLTE5NjU0NzUwODksLTExODEzMDc3ODYsOTUwNzcwMDk4
-LDE2NTM4MTg1OV19
+eyJoaXN0b3J5IjpbLTIwNDUwMzU1NzUsLTEzNDEwODc3MTAsLT
+IwODgzNjQyMzcsMzQ2NzUwNTU5LC0xMzA5ODM0MTA1LDE2MDg2
+MDU2NzEsMTUxODgyNjgxLC0xMDYwNjI1NjI1LC0xNDQ3MzI0ND
+I2LC02ODU0ODkxMzcsLTE0OTU0ODYwNzksMTEwNzYyNjg2MSwt
+MTgyNjY5NjAwLDE2MTM3MjQ0OTEsOTg1NDUzOTAxLC0xODE0MT
+A5ODgxLC02MDYyNTYyMjEsLTE5NjU0NzUwODksLTExODEzMDc3
+ODYsOTUwNzcwMDk4XX0=
 -->
