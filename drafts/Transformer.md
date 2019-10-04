@@ -13,7 +13,7 @@ seq2seq问题是使用机器学习（特别是深度学习）解决的一类常�
 - CNN
 CNN可以同时处理序列中的所有元素，但是由于卷积运算的视域有限，一次卷积操作只能处理有限的元素，对于较长的序列无法处理。解决办法是通过叠加多层卷积操作来逐渐增加视域，但这样会不可避免的导致信息丢失，并且仍没有完全解决长序列输入的处理问题，————————而且增加了模型的复杂度，使运算变慢，这和初衷不符。
 
-总结一下，上述两种模型对于长序列的处理都有缺陷。RNN需要一步一步的处理输入序列，CNN做出了一些改进但并不彻底。从根本上的解决这个问题需要能一次性的处理全部输入（无论序列有多长），并且能根据这些输入信息分析序列元素之间的关联关系。人们从自己快速浏览的方式获得了启发，当人们需要快速浏览的时候不会按输入的顺序逐步的阅读，而会直接跳到需要关注的的部分，这种根据需要在不同位置跳跃的阅读方式和注意力相关，因此这种新的序列处理方式被命名为注意力机制
+总结一下，上述两种模型对于长序列的处理都有缺陷。RNN需要一步一步的处理输入序列，CNN做出了一些改进但并不彻底。从根本上的解决这个问题需要能一次性的处理全部输入（无论序列有多长），并且能根据这些输入信息分析序列元素之间的关联关系。人们从自己快速浏览的方式获得了启发，当人们需要快速浏览的时候不会按输入的顺序逐步阅读，而会直接跳到需要关注的的部分，这种根据需要在不同位置跳跃的阅读方式和注意力相关，因此这种新的序列处理方式被命名为注意力机制
 ![enter image description here](https://www.visionears.nl/images/babyproduct.jpg)
 Attention机制来自于人类视觉注意力机制。人们视觉在感知东西的时候一般不会是一个场景从到头看到尾每次全部都看，而往往是根据需求观察注意特定的一部分。而且当人们发现一个场景经常在某部分出现自己想观察的东西时，人们会进行学习在将来再出现类似场景时把注意力放到该部分上。
 > Attention is a method for aggregating a set of vectors  vivi  into just one vector, often via a lookup vector  uu. Usually,  vivi  is either the inputs to the model or the hidden states of previous time-steps, or the hidden states one level down (in the case of stacked LSTMs).
@@ -269,11 +269,11 @@ Despite not having any explicit recurrency, implicitly the model is built as an 
 [Attn: Illustrated Attention](https://towardsdatascience.com/attn-illustrated-attention-5ec4ad276ee3)
 [https://mchromiak.github.io/articles/2017/Sep/01/Primer-NN/#attention-basis](https://mchromiak.github.io/articles/2017/Sep/01/Primer-NN/#attention-basis)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTUyNTMwOTgyMiw2MDk4NjQ1MTcsNzUwNz
-I4MDYzLC0yMDQ1MDM1NTc1LC0xMzQxMDg3NzEwLC0yMDg4MzY0
-MjM3LDM0Njc1MDU1OSwtMTMwOTgzNDEwNSwxNjA4NjA1NjcxLD
-E1MTg4MjY4MSwtMTA2MDYyNTYyNSwtMTQ0NzMyNDQyNiwtNjg1
-NDg5MTM3LC0xNDk1NDg2MDc5LDExMDc2MjY4NjEsLTE4MjY2OT
-YwMCwxNjEzNzI0NDkxLDk4NTQ1MzkwMSwtMTgxNDEwOTg4MSwt
-NjA2MjU2MjIxXX0=
+eyJoaXN0b3J5IjpbLTE4NDIzOTIyMjQsNjA5ODY0NTE3LDc1MD
+cyODA2MywtMjA0NTAzNTU3NSwtMTM0MTA4NzcxMCwtMjA4ODM2
+NDIzNywzNDY3NTA1NTksLTEzMDk4MzQxMDUsMTYwODYwNTY3MS
+wxNTE4ODI2ODEsLTEwNjA2MjU2MjUsLTE0NDczMjQ0MjYsLTY4
+NTQ4OTEzNywtMTQ5NTQ4NjA3OSwxMTA3NjI2ODYxLC0xODI2Nj
+k2MDAsMTYxMzcyNDQ5MSw5ODU0NTM5MDEsLTE4MTQxMDk4ODEs
+LTYwNjI1NjIyMV19
 -->
