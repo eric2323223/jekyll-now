@@ -239,6 +239,10 @@ Consider the first row of  _OUTPUT_  in the above diagram. It corresponds to the
 - Help gradient propagated back through stacked decoders and encoders
 - Residuals carry positional information to higher layers, among other information.
 ### warn-up learning rate
+> If your data set is highly differentiated, you can suffer from a sort of "early over-fitting". If your shuffled data happens to include a cluster of related, strongly-featured observations, your model's initial training can skew badly toward those features -- or worse, toward incidental features that aren't truly related to the topic at all. Warm-up is a way to reduce the primacy effect of the early training examples. Without it, you may need to run a few extra epochs to get the convergence desired, as the model un-trains those early superstitions.
+> Many models afford this as a command-line option. The learning rate is increased linearly over the warm-up period. If the target learning rate is  `p`  and the warm-up period is  `n`, then the first batch iteration uses  `1*p/n`  for its learning rate; the second uses  `2*p/n`, and so on: iteration  `i`  uses  `i*p/n`, until we hit the nominal rate at iteration  `n`.
+> This means that the first iteration gets only 1/n of the primacy effect. This does a reasonable job of balancing that influence.
+> Note that the ramp-up is commonly on the order of one epoch -- but is occasionally longer for particularly skewed data, or shorter for more homogeneous distributions. You may want to adjust, depending on how functionally extreme your batches can become when the shuffling algorithm is applied to the training set.
 ### regularization
 - dropout
 - layer normalization
@@ -273,11 +277,11 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [Attn: Illustrated Attention](https://towardsdatascience.com/attn-illustrated-attention-5ec4ad276ee3)
 [https://mchromiak.github.io/articles/2017/Sep/01/Primer-NN/#attention-basis](https://mchromiak.github.io/articles/2017/Sep/01/Primer-NN/#attention-basis)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTc5MTE5ODE0NywtMjcxNTUzNTQ1LDE5Mj
-ExNDAwOTQsLTY0ODMzNTc2LDEzNTI4MDAzNTUsLTEyMzI3NzQz
-NzksMjQxMTEzMjI0LC0xOTMxMDc2NzA1LC0xOTYyMjcwODU1LD
-E5MzY4Mzc3MTksLTE3MzE0MzcyOTgsMzI3NjQ4NDU5LC02MzQ2
-NjYzMDIsLTE3ODIwOTE5NTQsNjQ1ODQ2NDMyLDYzNjAxNDQwNC
-wxMzI4NTQ4MzI1LC0xNTYzMjg4OTE3LC0xODQyMzkyMjI0LDYw
-OTg2NDUxN119
+eyJoaXN0b3J5IjpbNjUwMDI4MDI4LC0yNzE1NTM1NDUsMTkyMT
+E0MDA5NCwtNjQ4MzM1NzYsMTM1MjgwMDM1NSwtMTIzMjc3NDM3
+OSwyNDExMTMyMjQsLTE5MzEwNzY3MDUsLTE5NjIyNzA4NTUsMT
+kzNjgzNzcxOSwtMTczMTQzNzI5OCwzMjc2NDg0NTksLTYzNDY2
+NjMwMiwtMTc4MjA5MTk1NCw2NDU4NDY0MzIsNjM2MDE0NDA0LD
+EzMjg1NDgzMjUsLTE1NjMyODg5MTcsLTE4NDIzOTIyMjQsNjA5
+ODY0NTE3XX0=
 -->
