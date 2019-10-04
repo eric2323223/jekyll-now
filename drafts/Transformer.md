@@ -7,7 +7,7 @@ seq2seq问题是使用机器学习（特别是深度学习）解决的一类常�
 - RNN
 处理seq2seq问题的传统方法是使用RNN模型，RNN能够保存状态，它将输入分为多步，依靠每步输入和上一步的状态更新当前的状态（和输出），通过重复这种步骤在读入所有序列元素后得到整个序列的内部表示（context vector）。![enter image description here](https://miro.medium.com/max/2658/1*Ismhi-muID5ooWf3ZIQFFg.png)
 从模型结构上来说特别适合序列到序列问题。问题有三点
-1. 长序列的训练很困难，梯度下降算法在长序列的训练中容易发生梯度爆炸或di
+1. 长序列的训练很困难，梯度下降算法在长序列的训练中容易发生梯度爆炸或梯度消失，虽然LSTM可以改善这个问题，但是在较长序列的训练zhong
 2. 只能顺序执行，训练速度很慢
 3. 固定的存储不适合长序列
 - CNN
@@ -269,7 +269,7 @@ Despite not having any explicit recurrency, implicitly the model is built as an 
 [Attn: Illustrated Attention](https://towardsdatascience.com/attn-illustrated-attention-5ec4ad276ee3)
 [https://mchromiak.github.io/articles/2017/Sep/01/Primer-NN/#attention-basis](https://mchromiak.github.io/articles/2017/Sep/01/Primer-NN/#attention-basis)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTQ1MzYxMjYyMyw3NTA3MjgwNjMsLTIwND
+eyJoaXN0b3J5IjpbMjA3OTQ1NDY0MCw3NTA3MjgwNjMsLTIwND
 UwMzU1NzUsLTEzNDEwODc3MTAsLTIwODgzNjQyMzcsMzQ2NzUw
 NTU5LC0xMzA5ODM0MTA1LDE2MDg2MDU2NzEsMTUxODgyNjgxLC
 0xMDYwNjI1NjI1LC0xNDQ3MzI0NDI2LC02ODU0ODkxMzcsLTE0
