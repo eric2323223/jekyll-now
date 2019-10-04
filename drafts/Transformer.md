@@ -239,10 +239,10 @@ Consider the first row of  _OUTPUT_  in the above diagram. It corresponds to the
 - Help gradient propagated back through stacked decoders and encoders
 - Residuals carry positional information to higher layers, among other information.
 ### warn-up learning rate
-### smooth 
 ### regularization
 - dropout
 - layer normalization
+- label smoothing
 
 ## Transformer的改进
 Despite not having any explicit recurrency, implicitly the model is built as an autoregressive one. It implies that in order to generate an output (both while training or during inference), the model needs to compute previous outputs, which is extremely costly, for the whole net has to be run for every output. That’s the main idea to overcome in a recent paper by researchers at [_Salesforce Research_](https://einstein.ai/research/non-autoregressive-neural-machine-translation) and the University of Hong Kong, who tried to make the whole process parallelizable[23](https://ricardokleinklein.github.io/2017/11/16/Attention-is-all-you-need.html#fn:23). Their proposal is to compute _fertilities_ for every input word in the sequence, and use it instead of previous outputs in order to compute the current output. This is summarized in the figure below.
@@ -273,11 +273,11 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [Attn: Illustrated Attention](https://towardsdatascience.com/attn-illustrated-attention-5ec4ad276ee3)
 [https://mchromiak.github.io/articles/2017/Sep/01/Primer-NN/#attention-basis](https://mchromiak.github.io/articles/2017/Sep/01/Primer-NN/#attention-basis)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTI3MTU1MzU0NSwxOTIxMTQwMDk0LC02ND
-gzMzU3NiwxMzUyODAwMzU1LC0xMjMyNzc0Mzc5LDI0MTExMzIy
-NCwtMTkzMTA3NjcwNSwtMTk2MjI3MDg1NSwxOTM2ODM3NzE5LC
-0xNzMxNDM3Mjk4LDMyNzY0ODQ1OSwtNjM0NjY2MzAyLC0xNzgy
-MDkxOTU0LDY0NTg0NjQzMiw2MzYwMTQ0MDQsMTMyODU0ODMyNS
-wtMTU2MzI4ODkxNywtMTg0MjM5MjIyNCw2MDk4NjQ1MTcsNzUw
-NzI4MDYzXX0=
+eyJoaXN0b3J5IjpbMTc5MTE5ODE0NywtMjcxNTUzNTQ1LDE5Mj
+ExNDAwOTQsLTY0ODMzNTc2LDEzNTI4MDAzNTUsLTEyMzI3NzQz
+NzksMjQxMTEzMjI0LC0xOTMxMDc2NzA1LC0xOTYyMjcwODU1LD
+E5MzY4Mzc3MTksLTE3MzE0MzcyOTgsMzI3NjQ4NDU5LC02MzQ2
+NjYzMDIsLTE3ODIwOTE5NTQsNjQ1ODQ2NDMyLDYzNjAxNDQwNC
+wxMzI4NTQ4MzI1LC0xNTYzMjg4OTE3LC0xODQyMzkyMjI0LDYw
+OTg2NDUxN119
 -->
