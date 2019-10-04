@@ -234,7 +234,7 @@ Consider the first row of  _OUTPUT_  in the above diagram. It corresponds to the
 
 
 ## Transformer实现
-### layer normalization
+
 ### residual connection
 - Help gradient propagated back through stacked decoders and encoders
 - Residuals carry positional information to higher layers, among other information.
@@ -277,11 +277,11 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [Attn: Illustrated Attention](https://towardsdatascience.com/attn-illustrated-attention-5ec4ad276ee3)
 [https://mchromiak.github.io/articles/2017/Sep/01/Primer-NN/#attention-basis](https://mchromiak.github.io/articles/2017/Sep/01/Primer-NN/#attention-basis)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjUwMDI4MDI4LC0yNzE1NTM1NDUsMTkyMT
-E0MDA5NCwtNjQ4MzM1NzYsMTM1MjgwMDM1NSwtMTIzMjc3NDM3
-OSwyNDExMTMyMjQsLTE5MzEwNzY3MDUsLTE5NjIyNzA4NTUsMT
-kzNjgzNzcxOSwtMTczMTQzNzI5OCwzMjc2NDg0NTksLTYzNDY2
-NjMwMiwtMTc4MjA5MTk1NCw2NDU4NDY0MzIsNjM2MDE0NDA0LD
-EzMjg1NDgzMjUsLTE1NjMyODg5MTcsLTE4NDIzOTIyMjQsNjA5
-ODY0NTE3XX0=
+eyJoaXN0b3J5IjpbMTYwMzU4MDYyNSwtMjcxNTUzNTQ1LDE5Mj
+ExNDAwOTQsLTY0ODMzNTc2LDEzNTI4MDAzNTUsLTEyMzI3NzQz
+NzksMjQxMTEzMjI0LC0xOTMxMDc2NzA1LC0xOTYyMjcwODU1LD
+E5MzY4Mzc3MTksLTE3MzE0MzcyOTgsMzI3NjQ4NDU5LC02MzQ2
+NjYzMDIsLTE3ODIwOTE5NTQsNjQ1ODQ2NDMyLDYzNjAxNDQwNC
+wxMzI4NTQ4MzI1LC0xNTYzMjg4OTE3LC0xODQyMzkyMjI0LDYw
+OTg2NDUxN119
 -->
