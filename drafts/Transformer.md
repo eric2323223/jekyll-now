@@ -155,6 +155,10 @@ In terms of encoder-decoder, the **query** is usually the hidden state of the _d
 
 
 ### 位置编码（positional encoding）
+之所以使用这种技术，是因为在所提出的体系结构中没有词序的概念（第一个词，第二个词等）。 输入序列的所有单词都以没有特殊顺序或位置的方式馈入网络（与普通的RNN或ConvNet体系结构不同），因此模型不知道单词的顺序。 因此，与位置相关的信号会添加到每个词嵌入中，以帮助模型合并词的顺序。 根据实验，这种增加不仅避免破坏嵌入信息，而且还增加了重要位置信息。 对于RNN，我们将单词顺序地馈送到RNN，即在步骤n馈送第n个单词，这有助于模型合并单词的顺序。
+位置编码是单词值及其在句子中位置的重新表示（假定开头和结尾或中间的开头和开头不相同）。但是您必须考虑到句子的长度可以是任意长度，因此，如果句子的长度不同，则说“ X”是句子中的第三个单词是没有意义的：3词句中的第3个完全是 在20个单词的句子中不同于第三。位置编码器的作用是获得sin（x）和cos（x）函数的循环特性的帮助，以返回单词在句子中的位置信息。
+> 通常，将位置编码添加到输入嵌入是一个非常有趣的话题。一种方法是嵌入输入元素的绝对位置（如在ConvS2S中一样）。但是，作者使用“不同频率的正弦和余弦函数”。 “正弦波”版本非常复杂，同时具有与绝对位置版本相似的性能。然而，问题的关键在于，它可以使模型在测试时对更长的句子产生更好的翻译（至少比训练数据中的句子更长）。通过这种正弦方法，模型可以外推到更长的序列长度3。
+
 由于attention机制不考虑位置关系，因此必须要在在attention操作前对序列中的每个元素加入位置信息。一个最直接的方法就是对输入加入序号，但是这种方法的问题在于无法处理长度超过训练数据的输入序列。在Transformer模型中使用的是sin/cos函数进行位置编码，主要目的是利用sin/cos函数的周期性来进行任意长度序列的位置编码。
 
 sin/cos embedding has 2 advantage
@@ -162,9 +166,7 @@ sin/cos embedding has 2 advantage
 	- most benefit of relative positional encoding is it can work with any size of the input, which is longer than the longest of the training data
 $$PE_{{pos,2i}}=sin(pos/10000^{2i/d_{model}})$$
 $$PE_{(pos, 2i+1)}=cos(pos/10000^{2i/d_{model}})$$
-> 之所以使用这种技术，是因为在所提出的体系结构中没有词序的概念（第一个词，第二个词等）。 输入序列的所有单词都以没有特殊顺序或位置的方式馈入网络（与普通的RNN或ConvNet体系结构不同），因此模型不知道单词的顺序。 因此，与位置相关的信号会添加到每个词嵌入中，以帮助模型合并词的顺序。 根据实验，这种增加不仅避免破坏嵌入信息，而且还增加了重要位置信息。 对于RNN，我们将单词顺序地馈送到RNN，即在步骤n馈送第n个单词，这有助于模型合并单词的顺序。
-> 位置编码是单词值及其在句子中位置的重新表示（假定开头和结尾或中间的开头和开头不相同）。但是您必须考虑到句子的长度可以是任意长度，因此，如果句子的长度不同，则说“ X”是句子中的第三个单词是没有意义的：3词句中的第3个完全是 在20个单词的句子中不同于第三。位置编码器的作用是获得sin（x）和cos（x）函数的循环特性的帮助，以返回单词在句子中的位置信息。
-> 通常，将位置编码添加到输入嵌入是一个非常有趣的话题。一种方法是嵌入输入元素的绝对位置（如在ConvS2S中一样）。但是，作者使用“不同频率的正弦和余弦函数”。 “正弦波”版本非常复杂，同时具有与绝对位置版本相似的性能。然而，问题的关键在于，它可以使模型在测试时对更长的句子产生更好的翻译（至少比训练数据中的句子更长）。通过这种正弦方法，模型可以外推到更长的序列长度3。
+
 > In attention, we basically take two word embeddings (x and y), pass one through a Query transformation matrix (Q) and the second through a Key transformation matrix (K), and compare how similar the resulting query and key vectors are by their dot product. So, basically, we want the dot product between Qx and Ky, which we write as:
 
 (Qx)'(Ky) = x' (Q'Ky). So equivalently we just need to learn one joint Query-Key transformation (Q'K) that transform the secondary inputs y into a new space in which we can compare x.
@@ -277,11 +279,11 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [Attn: Illustrated Attention](https://towardsdatascience.com/attn-illustrated-attention-5ec4ad276ee3)
 [https://mchromiak.github.io/articles/2017/Sep/01/Primer-NN/#attention-basis](https://mchromiak.github.io/articles/2017/Sep/01/Primer-NN/#attention-basis)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE4MTg2NzkzODIsLTE0NjcyMTE2NzYsMT
-YwMzU4MDYyNSwtMjcxNTUzNTQ1LDE5MjExNDAwOTQsLTY0ODMz
-NTc2LDEzNTI4MDAzNTUsLTEyMzI3NzQzNzksMjQxMTEzMjI0LC
-0xOTMxMDc2NzA1LC0xOTYyMjcwODU1LDE5MzY4Mzc3MTksLTE3
-MzE0MzcyOTgsMzI3NjQ4NDU5LC02MzQ2NjYzMDIsLTE3ODIwOT
-E5NTQsNjQ1ODQ2NDMyLDYzNjAxNDQwNCwxMzI4NTQ4MzI1LC0x
-NTYzMjg4OTE3XX0=
+eyJoaXN0b3J5IjpbNTUwNjU5NTgsLTE0NjcyMTE2NzYsMTYwMz
+U4MDYyNSwtMjcxNTUzNTQ1LDE5MjExNDAwOTQsLTY0ODMzNTc2
+LDEzNTI4MDAzNTUsLTEyMzI3NzQzNzksMjQxMTEzMjI0LC0xOT
+MxMDc2NzA1LC0xOTYyMjcwODU1LDE5MzY4Mzc3MTksLTE3MzE0
+MzcyOTgsMzI3NjQ4NDU5LC02MzQ2NjYzMDIsLTE3ODIwOTE5NT
+QsNjQ1ODQ2NDMyLDYzNjAxNDQwNCwxMzI4NTQ4MzI1LC0xNTYz
+Mjg4OTE3XX0=
 -->
