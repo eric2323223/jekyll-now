@@ -78,10 +78,10 @@ Instead of encoding the input sequence into a  **single fixed context vector**, 
 
 Attention is cheap
 | Self-attention | $O(length^2 \cdot dim)$ |
-| RNN | $O(length^$ |
-|  |  |
+| RNN | $O(length \cdot dim^2$ |
+| CNN | $O(length \cdot dim^2 \cdot kernel_width) $ |
 
-图attention mechanism
+图attention mech^2anism
 
 
 ![公式](https://mmbiz.qpic.cn/mmbiz_png/KmXPKA19gWicMiaqpI5cdFEvj2sOZVykZic5SwVXksjias1lA5ukFcJ4ficRgmwIyBLK8PcibmvT8Tq4iaIqMl0IaQfVw/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1)
@@ -262,11 +262,11 @@ Despite not having any explicit recurrency, implicitly the model is built as an 
 [Attn: Illustrated Attention](https://towardsdatascience.com/attn-illustrated-attention-5ec4ad276ee3)
 [https://mchromiak.github.io/articles/2017/Sep/01/Primer-NN/#attention-basis](https://mchromiak.github.io/articles/2017/Sep/01/Primer-NN/#attention-basis)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTIwNTE4ODU5MCwtMTU2MzI4ODkxNywtMT
-g0MjM5MjIyNCw2MDk4NjQ1MTcsNzUwNzI4MDYzLC0yMDQ1MDM1
-NTc1LC0xMzQxMDg3NzEwLC0yMDg4MzY0MjM3LDM0Njc1MDU1OS
-wtMTMwOTgzNDEwNSwxNjA4NjA1NjcxLDE1MTg4MjY4MSwtMTA2
-MDYyNTYyNSwtMTQ0NzMyNDQyNiwtNjg1NDg5MTM3LC0xNDk1ND
-g2MDc5LDExMDc2MjY4NjEsLTE4MjY2OTYwMCwxNjEzNzI0NDkx
-LDk4NTQ1MzkwMV19
+eyJoaXN0b3J5IjpbMTE0ODU3LC0xNTYzMjg4OTE3LC0xODQyMz
+kyMjI0LDYwOTg2NDUxNyw3NTA3MjgwNjMsLTIwNDUwMzU1NzUs
+LTEzNDEwODc3MTAsLTIwODgzNjQyMzcsMzQ2NzUwNTU5LC0xMz
+A5ODM0MTA1LDE2MDg2MDU2NzEsMTUxODgyNjgxLC0xMDYwNjI1
+NjI1LC0xNDQ3MzI0NDI2LC02ODU0ODkxMzcsLTE0OTU0ODYwNz
+ksMTEwNzYyNjg2MSwtMTgyNjY5NjAwLDE2MTM3MjQ0OTEsOTg1
+NDUzOTAxXX0=
 -->
