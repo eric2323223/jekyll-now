@@ -189,6 +189,8 @@ Transformer中使用了sin/cos位置编码
 	3. 可处理变长序列
 ### 多头注意力（ Multiple Headed Attention)
 ![enter image description here](https://miro.medium.com/max/600/1*Vb9UizPn0AHejEYW9CWxNQ.png)
+
+
 > In these models, the number of operations required to relate signals from two arbitrary input or output positions grows in the distance between positions, linearly for ConvS2S and logarithmically for ByteNet. This makes it more difficult to learn dependencies between distant positions. In the Transformer this is reduced to a constant number of operations, albeit at the cost of reduced effective resolution due to averaging attention-weighted positions, an effect we counteract with Multi-Head Attention.
 
 different random initial weights matrix may lead to different representation subspace, thus give transformer ability to understand different meaning of a word
@@ -267,11 +269,11 @@ Despite not having any explicit recurrency, implicitly the model is built as an 
 [Attn: Illustrated Attention](https://towardsdatascience.com/attn-illustrated-attention-5ec4ad276ee3)
 [https://mchromiak.github.io/articles/2017/Sep/01/Primer-NN/#attention-basis](https://mchromiak.github.io/articles/2017/Sep/01/Primer-NN/#attention-basis)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjM2MDE0NDA0LDEzMjg1NDgzMjUsLTE1Nj
-MyODg5MTcsLTE4NDIzOTIyMjQsNjA5ODY0NTE3LDc1MDcyODA2
-MywtMjA0NTAzNTU3NSwtMTM0MTA4NzcxMCwtMjA4ODM2NDIzNy
-wzNDY3NTA1NTksLTEzMDk4MzQxMDUsMTYwODYwNTY3MSwxNTE4
-ODI2ODEsLTEwNjA2MjU2MjUsLTE0NDczMjQ0MjYsLTY4NTQ4OT
-EzNywtMTQ5NTQ4NjA3OSwxMTA3NjI2ODYxLC0xODI2Njk2MDAs
-MTYxMzcyNDQ5MV19
+eyJoaXN0b3J5IjpbNjQ1ODQ2NDMyLDYzNjAxNDQwNCwxMzI4NT
+Q4MzI1LC0xNTYzMjg4OTE3LC0xODQyMzkyMjI0LDYwOTg2NDUx
+Nyw3NTA3MjgwNjMsLTIwNDUwMzU1NzUsLTEzNDEwODc3MTAsLT
+IwODgzNjQyMzcsMzQ2NzUwNTU5LC0xMzA5ODM0MTA1LDE2MDg2
+MDU2NzEsMTUxODgyNjgxLC0xMDYwNjI1NjI1LC0xNDQ3MzI0ND
+I2LC02ODU0ODkxMzcsLTE0OTU0ODYwNzksMTEwNzYyNjg2MSwt
+MTgyNjY5NjAwXX0=
 -->
