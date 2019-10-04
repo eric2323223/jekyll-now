@@ -194,7 +194,7 @@ Transformer中使用了sin/cos位置编码
 	3. 可处理变长序列
 ### 多头注意力（ Multiple Headed Attention)
 ![enter image description here](https://miro.medium.com/max/600/1*Vb9UizPn0AHejEYW9CWxNQ.png)
-Transformer仅仅使用attention进行输入encoding，由于attention本质上只是对输入进行加权平均运算，这导致特征提取能力不足，为了解决这个问题作者提出了多头注意力（）的方法。多头注意力的基本思想是对同一个元素进行多次attention运算， meici
+Transformer仅仅使用attention进行输入encoding，由于attention本质上只是对输入进行加权平均运算，这导致特征提取能力不足，为了解决这个问题作者提出了多头注意力（）的方法。多头注意力的基本思想是对同一个元素进行多次attention运算， 每次attention之前
 ![enter image description here](https://docs.google.com/drawings/d/e/2PACX-1vT4_Vn34rr1zN4OhXIo7oCGkzXDF__Y3CIVnZ_12fjqLHtKoRSJaVIyoR7ndQHtRlfNUmgecF5mucNg/pub?w=538&h=363)
 > In these models, the number of operations required to relate signals from two arbitrary input or output positions grows in the distance between positions, linearly for ConvS2S and logarithmically for ByteNet. This makes it more difficult to learn dependencies between distant positions. In the Transformer this is reduced to a constant number of operations, albeit at the cost of reduced effective resolution due to averaging attention-weighted positions, an effect we counteract with Multi-Head Attention.
 
@@ -268,7 +268,7 @@ Despite not having any explicit recurrency, implicitly the model is built as an 
 [Attn: Illustrated Attention](https://towardsdatascience.com/attn-illustrated-attention-5ec4ad276ee3)
 [https://mchromiak.github.io/articles/2017/Sep/01/Primer-NN/#attention-basis](https://mchromiak.github.io/articles/2017/Sep/01/Primer-NN/#attention-basis)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjcxMjI0ODgwLC0xOTYyMjcwODU1LDE5Mz
+eyJoaXN0b3J5IjpbNzkwNDEwMTE5LC0xOTYyMjcwODU1LDE5Mz
 Y4Mzc3MTksLTE3MzE0MzcyOTgsMzI3NjQ4NDU5LC02MzQ2NjYz
 MDIsLTE3ODIwOTE5NTQsNjQ1ODQ2NDMyLDYzNjAxNDQwNCwxMz
 I4NTQ4MzI1LC0xNTYzMjg4OTE3LC0xODQyMzkyMjI0LDYwOTg2
