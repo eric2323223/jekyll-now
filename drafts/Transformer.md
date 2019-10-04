@@ -77,8 +77,8 @@ Instead of encoding the input sequence into a  **single fixed context vector**, 
 需要一步步递推才能捕捉到，并且对于长距离依赖很难捕捉。而 CNN 则需要通过层叠来扩大感受野，这是 Attention 层的明显优势。*~~
 
 Attention is cheap
-| Self-attention | O($length^2 \product dim$) |
-|--|--|
+| Self-attention | $O(length^2 \cdot dim)$ |
+| RNN | $O(length^$ |
 |  |  |
 
 图attention mechanism
@@ -262,7 +262,7 @@ Despite not having any explicit recurrency, implicitly the model is built as an 
 [Attn: Illustrated Attention](https://towardsdatascience.com/attn-illustrated-attention-5ec4ad276ee3)
 [https://mchromiak.github.io/articles/2017/Sep/01/Primer-NN/#attention-basis](https://mchromiak.github.io/articles/2017/Sep/01/Primer-NN/#attention-basis)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTkyNDI2NTExMiwtMTU2MzI4ODkxNywtMT
+eyJoaXN0b3J5IjpbMTIwNTE4ODU5MCwtMTU2MzI4ODkxNywtMT
 g0MjM5MjIyNCw2MDk4NjQ1MTcsNzUwNzI4MDYzLC0yMDQ1MDM1
 NTc1LC0xMzQxMDg3NzEwLC0yMDg4MzY0MjM3LDM0Njc1MDU1OS
 wtMTMwOTgzNDEwNSwxNjA4NjA1NjcxLDE1MTg4MjY4MSwtMTA2
