@@ -246,7 +246,7 @@ Consider the first row of  _OUTPUT_  in the above diagram. It corresponds to the
 ## Transformer的改进
 Despite not having any explicit recurrency, implicitly the model is built as an autoregressive one. It implies that in order to generate an output (both while training or during inference), the model needs to compute previous outputs, which is extremely costly, for the whole net has to be run for every output. That’s the main idea to overcome in a recent paper by researchers at [_Salesforce Research_](https://einstein.ai/research/non-autoregressive-neural-machine-translation) and the University of Hong Kong, who tried to make the whole process parallelizable[23](https://ricardokleinklein.github.io/2017/11/16/Attention-is-all-you-need.html#fn:23). Their proposal is to compute _fertilities_ for every input word in the sequence, and use it instead of previous outputs in order to compute the current output. This is summarized in the figure below.
 ## 总结
-Transformer不是万能的，在NLP领域取得成绩是由于它针对机器翻译领域做了针对性的设计，比如positional self attention， multihead attention，并结合了多种相关的优化技巧，如residual connection，     需要针对任务目标进行设计才能取得好的效果
+Transformer不是万能的，在NLP领域取得成绩是由于它针对机器翻译领域做了针对性的设计，比如positional enbemdding， self attention， multihead attention，并结合了多种相关的优化技巧，如residual connection，layer normalization等。因此，对于任何任务，都 需要针对任务目标进行设计才能取得好的效果
 
 ## Resources
 [Attention is all you need review]([https://ricardokleinklein.github.io/2017/11/16/Attention-is-all-you-need.html](https://ricardokleinklein.github.io/2017/11/16/Attention-is-all-you-need.html))
@@ -270,7 +270,7 @@ Transformer不是万能的，在NLP领域取得成绩是由于它针对机器翻
 [Attn: Illustrated Attention](https://towardsdatascience.com/attn-illustrated-attention-5ec4ad276ee3)
 [https://mchromiak.github.io/articles/2017/Sep/01/Primer-NN/#attention-basis](https://mchromiak.github.io/articles/2017/Sep/01/Primer-NN/#attention-basis)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1NjQwNjU0NzMsMTkyMTE0MDA5NCwtNj
+eyJoaXN0b3J5IjpbLTEyMzgyOTU5ODcsMTkyMTE0MDA5NCwtNj
 Q4MzM1NzYsMTM1MjgwMDM1NSwtMTIzMjc3NDM3OSwyNDExMTMy
 MjQsLTE5MzEwNzY3MDUsLTE5NjIyNzA4NTUsMTkzNjgzNzcxOS
 wtMTczMTQzNzI5OCwzMjc2NDg0NTksLTYzNDY2NjMwMiwtMTc4
