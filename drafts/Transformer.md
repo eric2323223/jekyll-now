@@ -76,13 +76,13 @@ Instead of encoding the input sequence into a  **single fixed context vector**, 
 ~~ *self-attention层的好处，解决了长距离依赖，因为它直接把序列两两比较（代价是计算量变为 O(n2)，当然由于是纯矩阵运算，这个计算量相当也不是很严重），而且最重要的是可以进行并行计算。 相比之下，RNN
 需要一步步递推才能捕捉到，并且对于长距离依赖很难捕捉。而 CNN 则需要通过层叠来扩大感受野，这是 Attention 层的明显优势。*~~
 
-Attention is cheap
+Attention is cheap, 特别适合机器翻译的场景（dim>length）
 ||FLOPs|
 |--|--|
 | attention | $O(length^2 \cdot dim)$ |
 | RNN | $O(length \cdot dim^2)$ |
 | CNN | $O(length \cdot dim^2 \cdot kernelwidth)$ |
-由于通常dim要大于length，所以self-attention的运算量会少于
+由于通常dim要大于length，所以self-attention的运算量会少于RNN和CNN，
 
 
 
@@ -262,11 +262,11 @@ Despite not having any explicit recurrency, implicitly the model is built as an 
 [Attn: Illustrated Attention](https://towardsdatascience.com/attn-illustrated-attention-5ec4ad276ee3)
 [https://mchromiak.github.io/articles/2017/Sep/01/Primer-NN/#attention-basis](https://mchromiak.github.io/articles/2017/Sep/01/Primer-NN/#attention-basis)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTcwNDI1NjMxOCwtNjM0NjY2MzAyLC0xNz
-gyMDkxOTU0LDY0NTg0NjQzMiw2MzYwMTQ0MDQsMTMyODU0ODMy
-NSwtMTU2MzI4ODkxNywtMTg0MjM5MjIyNCw2MDk4NjQ1MTcsNz
-UwNzI4MDYzLC0yMDQ1MDM1NTc1LC0xMzQxMDg3NzEwLC0yMDg4
-MzY0MjM3LDM0Njc1MDU1OSwtMTMwOTgzNDEwNSwxNjA4NjA1Nj
-cxLDE1MTg4MjY4MSwtMTA2MDYyNTYyNSwtMTQ0NzMyNDQyNiwt
-Njg1NDg5MTM3XX0=
+eyJoaXN0b3J5IjpbMzI3NjQ4NDU5LC02MzQ2NjYzMDIsLTE3OD
+IwOTE5NTQsNjQ1ODQ2NDMyLDYzNjAxNDQwNCwxMzI4NTQ4MzI1
+LC0xNTYzMjg4OTE3LC0xODQyMzkyMjI0LDYwOTg2NDUxNyw3NT
+A3MjgwNjMsLTIwNDUwMzU1NzUsLTEzNDEwODc3MTAsLTIwODgz
+NjQyMzcsMzQ2NzUwNTU5LC0xMzA5ODM0MTA1LDE2MDg2MDU2Nz
+EsMTUxODgyNjgxLC0xMDYwNjI1NjI1LC0xNDQ3MzI0NDI2LC02
+ODU0ODkxMzddfQ==
 -->
