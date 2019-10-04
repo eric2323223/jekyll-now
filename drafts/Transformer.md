@@ -233,7 +233,7 @@ Consider the first row of  _OUTPUT_  in the above diagram. It corresponds to the
 ![](https://miro.medium.com/max/204/1*6aTQQSmXUfCQxj3drNEweg.png)
 
 
-## Transformer实现
+## Transformer优化技巧
 
 ### residual connection
 - Help gradient propagated back through stacked decoders and encoders
@@ -277,11 +277,11 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [Attn: Illustrated Attention](https://towardsdatascience.com/attn-illustrated-attention-5ec4ad276ee3)
 [https://mchromiak.github.io/articles/2017/Sep/01/Primer-NN/#attention-basis](https://mchromiak.github.io/articles/2017/Sep/01/Primer-NN/#attention-basis)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTYwMzU4MDYyNSwtMjcxNTUzNTQ1LDE5Mj
-ExNDAwOTQsLTY0ODMzNTc2LDEzNTI4MDAzNTUsLTEyMzI3NzQz
-NzksMjQxMTEzMjI0LC0xOTMxMDc2NzA1LC0xOTYyMjcwODU1LD
-E5MzY4Mzc3MTksLTE3MzE0MzcyOTgsMzI3NjQ4NDU5LC02MzQ2
-NjYzMDIsLTE3ODIwOTE5NTQsNjQ1ODQ2NDMyLDYzNjAxNDQwNC
-wxMzI4NTQ4MzI1LC0xNTYzMjg4OTE3LC0xODQyMzkyMjI0LDYw
-OTg2NDUxN119
+eyJoaXN0b3J5IjpbLTE0NjcyMTE2NzYsMTYwMzU4MDYyNSwtMj
+cxNTUzNTQ1LDE5MjExNDAwOTQsLTY0ODMzNTc2LDEzNTI4MDAz
+NTUsLTEyMzI3NzQzNzksMjQxMTEzMjI0LC0xOTMxMDc2NzA1LC
+0xOTYyMjcwODU1LDE5MzY4Mzc3MTksLTE3MzE0MzcyOTgsMzI3
+NjQ4NDU5LC02MzQ2NjYzMDIsLTE3ODIwOTE5NTQsNjQ1ODQ2ND
+MyLDYzNjAxNDQwNCwxMzI4NTQ4MzI1LC0xNTYzMjg4OTE3LC0x
+ODQyMzkyMjI0XX0=
 -->
