@@ -193,12 +193,6 @@ Transformer中使用了sin/cos位置编码
 > In these models, the number of operations required to relate signals from two arbitrary input or output positions grows in the distance between positions, linearly for ConvS2S and logarithmically for ByteNet. This makes it more difficult to learn dependencies between distant positions. In the Transformer this is reduced to a constant number of operations, albeit at the cost of reduced effective resolution due to averaging attention-weighted positions, an effect we counteract with Multi-Head Attention.
 
 different random initial weights matrix may lead to different representation subspace, thus give transformer ability to understand different meaning of a word
-- stack of encoder/decoder layer
-	- - 位置编码PosiStacking of encoder/decoder
-	- self attentional， encoding
-由于transformer不使用RNN 和CNN free - help to speed up training
-	- Stacking of encoder/decoder
-	- sel-decoding attention
 - **multi-head attention** VS convolution on multiple channels
 	- Convolution: Different linear transformations by relative position
 	- MHA: a weighted average 
@@ -268,11 +262,11 @@ Despite not having any explicit recurrency, implicitly the model is built as an 
 [Attn: Illustrated Attention](https://towardsdatascience.com/attn-illustrated-attention-5ec4ad276ee3)
 [https://mchromiak.github.io/articles/2017/Sep/01/Primer-NN/#attention-basis](https://mchromiak.github.io/articles/2017/Sep/01/Primer-NN/#attention-basis)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTYzNDY2NjMwMiwtMTc4MjA5MTk1NCw2ND
-U4NDY0MzIsNjM2MDE0NDA0LDEzMjg1NDgzMjUsLTE1NjMyODg5
-MTcsLTE4NDIzOTIyMjQsNjA5ODY0NTE3LDc1MDcyODA2MywtMj
-A0NTAzNTU3NSwtMTM0MTA4NzcxMCwtMjA4ODM2NDIzNywzNDY3
-NTA1NTksLTEzMDk4MzQxMDUsMTYwODYwNTY3MSwxNTE4ODI2OD
-EsLTEwNjA2MjU2MjUsLTE0NDczMjQ0MjYsLTY4NTQ4OTEzNywt
-MTQ5NTQ4NjA3OV19
+eyJoaXN0b3J5IjpbLTcwNDI1NjMxOCwtNjM0NjY2MzAyLC0xNz
+gyMDkxOTU0LDY0NTg0NjQzMiw2MzYwMTQ0MDQsMTMyODU0ODMy
+NSwtMTU2MzI4ODkxNywtMTg0MjM5MjIyNCw2MDk4NjQ1MTcsNz
+UwNzI4MDYzLC0yMDQ1MDM1NTc1LC0xMzQxMDg3NzEwLC0yMDg4
+MzY0MjM3LDM0Njc1MDU1OSwtMTMwOTgzNDEwNSwxNjA4NjA1Nj
+cxLDE1MTg4MjY4MSwtMTA2MDYyNTYyNSwtMTQ0NzMyNDQyNiwt
+Njg1NDg5MTM3XX0=
 -->
