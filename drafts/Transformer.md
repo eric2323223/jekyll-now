@@ -214,7 +214,7 @@ different random initial weights matrix may lead to different representation sub
 
 
 ### point-wise FFN
-point-wise 对序列中每个元素分别进行2层全连接运算，目的主要是对multi-attention提取出的feature做复杂（非线性）的
+point-wise 对序列中每个元素分别进行2层全连接运算，目的主要是为了提供对multi-attention提取出的feature进行复杂（非线性）合成的能力
 > Like the name indicates, this is a regular feedforward network applied to _each_ time step of the Multi Head attention outputs. The network has three layers with a non-linearity like ReLU for the hidden layer. You might be wondering why do we need a feedforward network after attention; after all isn’t attention all we need 😈 ? I suspect it is needed to improve model expressiveness. As we saw earlier the multi head attention partitioned the inputs and applied attention independently. There was only a linear projection to the outputs, i.e. the partitions were combined only linearly. The _Positionwise Feedforward_ network thus brings in some non-linear ‘mixing’ if we call it that. In fact for the sequence tagging task we use convolutions instead of fully connected layers. A filter of width 3 allows interactions to happen with adjacent time steps to improve performance.
 ### Mask
 > -   In the encoder and decoder: To zero attention outputs wherever there is just padding in the input sentences.
@@ -269,7 +269,7 @@ Despite not having any explicit recurrency, implicitly the model is built as an 
 [Attn: Illustrated Attention](https://towardsdatascience.com/attn-illustrated-attention-5ec4ad276ee3)
 [https://mchromiak.github.io/articles/2017/Sep/01/Primer-NN/#attention-basis](https://mchromiak.github.io/articles/2017/Sep/01/Primer-NN/#attention-basis)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTI5MDYyMDY4NiwtNjQ4MzM1NzYsMTM1Mj
+eyJoaXN0b3J5IjpbMTkyMTE0MDA5NCwtNjQ4MzM1NzYsMTM1Mj
 gwMDM1NSwtMTIzMjc3NDM3OSwyNDExMTMyMjQsLTE5MzEwNzY3
 MDUsLTE5NjIyNzA4NTUsMTkzNjgzNzcxOSwtMTczMTQzNzI5OC
 wzMjc2NDg0NTksLTYzNDY2NjMwMiwtMTc4MjA5MTk1NCw2NDU4
