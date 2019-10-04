@@ -246,6 +246,7 @@ Consider the first row of  _OUTPUT_  in the above diagram. It corresponds to the
 ## Transformer的改进
 Despite not having any explicit recurrency, implicitly the model is built as an autoregressive one. It implies that in order to generate an output (both while training or during inference), the model needs to compute previous outputs, which is extremely costly, for the whole net has to be run for every output. That’s the main idea to overcome in a recent paper by researchers at [_Salesforce Research_](https://einstein.ai/research/non-autoregressive-neural-machine-translation) and the University of Hong Kong, who tried to make the whole process parallelizable[23](https://ricardokleinklein.github.io/2017/11/16/Attention-is-all-you-need.html#fn:23). Their proposal is to compute _fertilities_ for every input word in the sequence, and use it instead of previous outputs in order to compute the current output. This is summarized in the figure below.
 ## 总结
+Transformer不是万金油，需要zhendui任务目标
 
 ## Resources
 [Attention is all you need review]([https://ricardokleinklein.github.io/2017/11/16/Attention-is-all-you-need.html](https://ricardokleinklein.github.io/2017/11/16/Attention-is-all-you-need.html))
@@ -269,11 +270,11 @@ Despite not having any explicit recurrency, implicitly the model is built as an 
 [Attn: Illustrated Attention](https://towardsdatascience.com/attn-illustrated-attention-5ec4ad276ee3)
 [https://mchromiak.github.io/articles/2017/Sep/01/Primer-NN/#attention-basis](https://mchromiak.github.io/articles/2017/Sep/01/Primer-NN/#attention-basis)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTkyMTE0MDA5NCwtNjQ4MzM1NzYsMTM1Mj
-gwMDM1NSwtMTIzMjc3NDM3OSwyNDExMTMyMjQsLTE5MzEwNzY3
-MDUsLTE5NjIyNzA4NTUsMTkzNjgzNzcxOSwtMTczMTQzNzI5OC
-wzMjc2NDg0NTksLTYzNDY2NjMwMiwtMTc4MjA5MTk1NCw2NDU4
-NDY0MzIsNjM2MDE0NDA0LDEzMjg1NDgzMjUsLTE1NjMyODg5MT
-csLTE4NDIzOTIyMjQsNjA5ODY0NTE3LDc1MDcyODA2MywtMjA0
-NTAzNTU3NV19
+eyJoaXN0b3J5IjpbMTY5NjYwMzEyNywxOTIxMTQwMDk0LC02ND
+gzMzU3NiwxMzUyODAwMzU1LC0xMjMyNzc0Mzc5LDI0MTExMzIy
+NCwtMTkzMTA3NjcwNSwtMTk2MjI3MDg1NSwxOTM2ODM3NzE5LC
+0xNzMxNDM3Mjk4LDMyNzY0ODQ1OSwtNjM0NjY2MzAyLC0xNzgy
+MDkxOTU0LDY0NTg0NjQzMiw2MzYwMTQ0MDQsMTMyODU0ODMyNS
+wtMTU2MzI4ODkxNywtMTg0MjM5MjIyNCw2MDk4NjQ1MTcsNzUw
+NzI4MDYzXX0=
 -->
