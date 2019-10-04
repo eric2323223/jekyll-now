@@ -194,9 +194,7 @@ Transformer中使用了sin/cos位置编码
 	3. 可处理变长序列
 ### 多头注意力（ Multiple Headed Attention)
 ![enter image description here](https://miro.medium.com/max/600/1*Vb9UizPn0AHejEYW9CWxNQ.png)
-Transformer仅仅使用attention进行输入encoding，由于attention本质上只是对输入进行加权平均运算，这导致特征提取能力不足，为了解决这个问题作者提出了多头注意力（）的方法。多头注意力的基本思想通过多次不同的初始化过程增加模型提取不同特征的机会，ju
-
-是对同一个元素进行多次attention运算， 每次attention都使用不同的W，这样
+Transformer仅仅使用attention进行输入encoding，由于attention本质上只是对输入进行加权平均运算，这导致特征提取能力不足，为了解决这个问题作者提出了多头注意力（）的方法。多头注意力的基本思想通过多次初始化过程增加模型提取不同特征的机会，具体方法是对同一个元素进行多次attention运算， 由于每次attention都使用不同的初始化参数W，
 ![enter image description here](https://docs.google.com/drawings/d/e/2PACX-1vT4_Vn34rr1zN4OhXIo7oCGkzXDF__Y3CIVnZ_12fjqLHtKoRSJaVIyoR7ndQHtRlfNUmgecF5mucNg/pub?w=538&h=363)
 > In these models, the number of operations required to relate signals from two arbitrary input or output positions grows in the distance between positions, linearly for ConvS2S and logarithmically for ByteNet. This makes it more difficult to learn dependencies between distant positions. In the Transformer this is reduced to a constant number of operations, albeit at the cost of reduced effective resolution due to averaging attention-weighted positions, an effect we counteract with Multi-Head Attention.
 
@@ -270,11 +268,11 @@ Despite not having any explicit recurrency, implicitly the model is built as an 
 [Attn: Illustrated Attention](https://towardsdatascience.com/attn-illustrated-attention-5ec4ad276ee3)
 [https://mchromiak.github.io/articles/2017/Sep/01/Primer-NN/#attention-basis](https://mchromiak.github.io/articles/2017/Sep/01/Primer-NN/#attention-basis)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTExNzk1ODYzMjQsLTE5MzEwNzY3MDUsLT
-E5NjIyNzA4NTUsMTkzNjgzNzcxOSwtMTczMTQzNzI5OCwzMjc2
-NDg0NTksLTYzNDY2NjMwMiwtMTc4MjA5MTk1NCw2NDU4NDY0Mz
-IsNjM2MDE0NDA0LDEzMjg1NDgzMjUsLTE1NjMyODg5MTcsLTE4
-NDIzOTIyMjQsNjA5ODY0NTE3LDc1MDcyODA2MywtMjA0NTAzNT
-U3NSwtMTM0MTA4NzcxMCwtMjA4ODM2NDIzNywzNDY3NTA1NTks
-LTEzMDk4MzQxMDVdfQ==
+eyJoaXN0b3J5IjpbMTE5Njk5NjE4MywtMTkzMTA3NjcwNSwtMT
+k2MjI3MDg1NSwxOTM2ODM3NzE5LC0xNzMxNDM3Mjk4LDMyNzY0
+ODQ1OSwtNjM0NjY2MzAyLC0xNzgyMDkxOTU0LDY0NTg0NjQzMi
+w2MzYwMTQ0MDQsMTMyODU0ODMyNSwtMTU2MzI4ODkxNywtMTg0
+MjM5MjIyNCw2MDk4NjQ1MTcsNzUwNzI4MDYzLC0yMDQ1MDM1NT
+c1LC0xMzQxMDg3NzEwLC0yMDg4MzY0MjM3LDM0Njc1MDU1OSwt
+MTMwOTgzNDEwNV19
 -->
