@@ -155,7 +155,7 @@ In terms of encoder-decoder, the **query** is usually the hidden state of the _d
 
 
 ### 位置编码（positional encoding）
-由于attention机制不考虑位置关系，因此必须要在在attention操作前对序列中的每个元素加入位置信息。一个最直接的想法就是对输入加入序号，但是这种方法的问题在于
+由于attention机制不考虑位置关系，因此必须要在在attention操作前对序列中的每个元素加入位置信息。一个最直接的想法就是对输入加入序号，但是这种方法的问题在于无法预测长度超过训练数据的输入序列
 - why not positional index? 
 - sin/cos embedding has 2 advantage
 	- always between -1 and 1, good for computation
@@ -265,11 +265,11 @@ Despite not having any explicit recurrency, implicitly the model is built as an 
 [Attn: Illustrated Attention](https://towardsdatascience.com/attn-illustrated-attention-5ec4ad276ee3)
 [https://mchromiak.github.io/articles/2017/Sep/01/Primer-NN/#attention-basis](https://mchromiak.github.io/articles/2017/Sep/01/Primer-NN/#attention-basis)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTkzNjgzNzcxOSwtMTczMTQzNzI5OCwzMj
-c2NDg0NTksLTYzNDY2NjMwMiwtMTc4MjA5MTk1NCw2NDU4NDY0
-MzIsNjM2MDE0NDA0LDEzMjg1NDgzMjUsLTE1NjMyODg5MTcsLT
-E4NDIzOTIyMjQsNjA5ODY0NTE3LDc1MDcyODA2MywtMjA0NTAz
-NTU3NSwtMTM0MTA4NzcxMCwtMjA4ODM2NDIzNywzNDY3NTA1NT
-ksLTEzMDk4MzQxMDUsMTYwODYwNTY3MSwxNTE4ODI2ODEsLTEw
-NjA2MjU2MjVdfQ==
+eyJoaXN0b3J5IjpbLTI5MjE5ODMwOCwxOTM2ODM3NzE5LC0xNz
+MxNDM3Mjk4LDMyNzY0ODQ1OSwtNjM0NjY2MzAyLC0xNzgyMDkx
+OTU0LDY0NTg0NjQzMiw2MzYwMTQ0MDQsMTMyODU0ODMyNSwtMT
+U2MzI4ODkxNywtMTg0MjM5MjIyNCw2MDk4NjQ1MTcsNzUwNzI4
+MDYzLC0yMDQ1MDM1NTc1LC0xMzQxMDg3NzEwLC0yMDg4MzY0Mj
+M3LDM0Njc1MDU1OSwtMTMwOTgzNDEwNSwxNjA4NjA1NjcxLDE1
+MTg4MjY4MV19
 -->
