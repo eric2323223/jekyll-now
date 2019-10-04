@@ -155,7 +155,7 @@ In terms of encoder-decoder, the **query** is usually the hidden state of the _d
 
 
 ### 位置编码（positional encoding）
-由于attention机制不考虑位置关系，因此必须要在在attention操作前对序列中的每个元素加入位置信息。一个最直接的想法就是对输入加入序号，但是这种方法的问题在于无法处理长度超过训练数据的输入序列。在Transformer模型中使用的是sin/cos函数进行位置编码，主要目的是利用sin/cos函数的周期性来进行任意长度序列的位置编码。
+由于attention机制不考虑位置关系，因此必须要在在attention操作前对序列中的每个元素加入位置信息。一个最直接的方法就是对输入加入序号，但是这种方法的问题在于无法处理长度超过训练数据的输入序列。在Transformer模型中使用的是sin/cos函数进行位置编码，主要目的是利用sin/cos函数的周期性来进行任意长度序列的位置编码。
 
 sin/cos embedding has 2 advantage
 	- always between -1 and 1, good for computation
@@ -277,11 +277,11 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [Attn: Illustrated Attention](https://towardsdatascience.com/attn-illustrated-attention-5ec4ad276ee3)
 [https://mchromiak.github.io/articles/2017/Sep/01/Primer-NN/#attention-basis](https://mchromiak.github.io/articles/2017/Sep/01/Primer-NN/#attention-basis)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0NjcyMTE2NzYsMTYwMzU4MDYyNSwtMj
-cxNTUzNTQ1LDE5MjExNDAwOTQsLTY0ODMzNTc2LDEzNTI4MDAz
-NTUsLTEyMzI3NzQzNzksMjQxMTEzMjI0LC0xOTMxMDc2NzA1LC
-0xOTYyMjcwODU1LDE5MzY4Mzc3MTksLTE3MzE0MzcyOTgsMzI3
-NjQ4NDU5LC02MzQ2NjYzMDIsLTE3ODIwOTE5NTQsNjQ1ODQ2ND
-MyLDYzNjAxNDQwNCwxMzI4NTQ4MzI1LC0xNTYzMjg4OTE3LC0x
-ODQyMzkyMjI0XX0=
+eyJoaXN0b3J5IjpbLTE4MTg2NzkzODIsLTE0NjcyMTE2NzYsMT
+YwMzU4MDYyNSwtMjcxNTUzNTQ1LDE5MjExNDAwOTQsLTY0ODMz
+NTc2LDEzNTI4MDAzNTUsLTEyMzI3NzQzNzksMjQxMTEzMjI0LC
+0xOTMxMDc2NzA1LC0xOTYyMjcwODU1LDE5MzY4Mzc3MTksLTE3
+MzE0MzcyOTgsMzI3NjQ4NDU5LC02MzQ2NjYzMDIsLTE3ODIwOT
+E5NTQsNjQ1ODQ2NDMyLDYzNjAxNDQwNCwxMzI4NTQ4MzI1LC0x
+NTYzMjg4OTE3XX0=
 -->
