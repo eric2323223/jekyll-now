@@ -160,7 +160,7 @@ In terms of encoder-decoder, the **query** is usually the hidden state of the _d
 sin/cos embedding has 2 advantage
 	- always between -1 and 1, good for computation
 	- most benefit of relative positional encoding is it can work with any size of the input, which is longer than the longest of the training data
-$$PE_{{pos,2i}}$$
+$$PE_{{pos,2i}}=sin(pos/10000^{\frac{2i}{}}$$
 > 之所以使用这种技术，是因为在所提出的体系结构中没有词序的概念（第一个词，第二个词等）。 输入序列的所有单词都以没有特殊顺序或位置的方式馈入网络（与普通的RNN或ConvNet体系结构不同），因此模型不知道单词的顺序。 因此，与位置相关的信号会添加到每个词嵌入中，以帮助模型合并词的顺序。 根据实验，这种增加不仅避免破坏嵌入信息，而且还增加了重要位置信息。 对于RNN，我们将单词顺序地馈送到RNN，即在步骤n馈送第n个单词，这有助于模型合并单词的顺序。
 > 位置编码是单词值及其在句子中位置的重新表示（假定开头和结尾或中间的开头和开头不相同）。但是您必须考虑到句子的长度可以是任意长度，因此，如果句子的长度不同，则说“ X”是句子中的第三个单词是没有意义的：3词句中的第3个完全是 在20个单词的句子中不同于第三。位置编码器的作用是获得sin（x）和cos（x）函数的循环特性的帮助，以返回单词在句子中的位置信息。
 > 通常，将位置编码添加到输入嵌入是一个非常有趣的话题。一种方法是嵌入输入元素的绝对位置（如在ConvS2S中一样）。但是，作者使用“不同频率的正弦和余弦函数”。 “正弦波”版本非常复杂，同时具有与绝对位置版本相似的性能。然而，问题的关键在于，它可以使模型在测试时对更长的句子产生更好的翻译（至少比训练数据中的句子更长）。通过这种正弦方法，模型可以外推到更长的序列长度3。
@@ -266,7 +266,7 @@ Despite not having any explicit recurrency, implicitly the model is built as an 
 [Attn: Illustrated Attention](https://towardsdatascience.com/attn-illustrated-attention-5ec4ad276ee3)
 [https://mchromiak.github.io/articles/2017/Sep/01/Primer-NN/#attention-basis](https://mchromiak.github.io/articles/2017/Sep/01/Primer-NN/#attention-basis)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIyMjI5NDUwNCwxOTM2ODM3NzE5LC0xNz
+eyJoaXN0b3J5IjpbMTIxMjI2NzIzNiwxOTM2ODM3NzE5LC0xNz
 MxNDM3Mjk4LDMyNzY0ODQ1OSwtNjM0NjY2MzAyLC0xNzgyMDkx
 OTU0LDY0NTg0NjQzMiw2MzYwMTQ0MDQsMTMyODU0ODMyNSwtMT
 U2MzI4ODkxNywtMTg0MjM5MjIyNCw2MDk4NjQ1MTcsNzUwNzI4
