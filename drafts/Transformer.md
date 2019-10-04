@@ -82,7 +82,7 @@ Attention is cheap
 | Self-attention | $O(length^2 \cdot dim)$ |
 | RNN | $O(length \cdot dim^2)$ |
 | CNN | $O(length \cdot dim^2 \cdot kernelwidth)$ |
-由于通常dim要大于length，所以
+由于通常dim要大于length，所以self-attention的运算量会少于
 
 
 
@@ -267,11 +267,11 @@ Despite not having any explicit recurrency, implicitly the model is built as an 
 [Attn: Illustrated Attention](https://towardsdatascience.com/attn-illustrated-attention-5ec4ad276ee3)
 [https://mchromiak.github.io/articles/2017/Sep/01/Primer-NN/#attention-basis](https://mchromiak.github.io/articles/2017/Sep/01/Primer-NN/#attention-basis)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEwNzM4MjU2MTcsLTE1NjMyODg5MTcsLT
-E4NDIzOTIyMjQsNjA5ODY0NTE3LDc1MDcyODA2MywtMjA0NTAz
-NTU3NSwtMTM0MTA4NzcxMCwtMjA4ODM2NDIzNywzNDY3NTA1NT
-ksLTEzMDk4MzQxMDUsMTYwODYwNTY3MSwxNTE4ODI2ODEsLTEw
-NjA2MjU2MjUsLTE0NDczMjQ0MjYsLTY4NTQ4OTEzNywtMTQ5NT
-Q4NjA3OSwxMTA3NjI2ODYxLC0xODI2Njk2MDAsMTYxMzcyNDQ5
-MSw5ODU0NTM5MDFdfQ==
+eyJoaXN0b3J5IjpbMTMyODU0ODMyNSwtMTU2MzI4ODkxNywtMT
+g0MjM5MjIyNCw2MDk4NjQ1MTcsNzUwNzI4MDYzLC0yMDQ1MDM1
+NTc1LC0xMzQxMDg3NzEwLC0yMDg4MzY0MjM3LDM0Njc1MDU1OS
+wtMTMwOTgzNDEwNSwxNjA4NjA1NjcxLDE1MTg4MjY4MSwtMTA2
+MDYyNTYyNSwtMTQ0NzMyNDQyNiwtNjg1NDg5MTM3LC0xNDk1ND
+g2MDc5LDExMDc2MjY4NjEsLTE4MjY2OTYwMCwxNjEzNzI0NDkx
+LDk4NTQ1MzkwMV19
 -->
