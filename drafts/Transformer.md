@@ -248,7 +248,7 @@ Despite not having any explicit recurrency, implicitly the model is built as an 
 ## 总结
 Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针对机器翻译领域做了针对性的设计，比如positional enbemdding， self attention， multihead attention，并结合了多种相关的优化技巧，如residual connection，layer normalization等。
 因此，对于任何任务，都需要针对任务目标进行相对应设计，并且要进行优化才能充分发挥模型的优势。
-另外通过对Transformer的学习，也可以掌握对已有模型进行改进的基本思路，1. 找到tongidan
+另外通过对Transformer的学习，也可以掌握对已有模型进行改进的基本思路，1. 找到痛点并针对主要问题进行设计；2. 建立核心模型后要
 
 ## Resources
 [Attention is all you need review]([https://ricardokleinklein.github.io/2017/11/16/Attention-is-all-you-need.html](https://ricardokleinklein.github.io/2017/11/16/Attention-is-all-you-need.html))
@@ -272,7 +272,7 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [Attn: Illustrated Attention](https://towardsdatascience.com/attn-illustrated-attention-5ec4ad276ee3)
 [https://mchromiak.github.io/articles/2017/Sep/01/Primer-NN/#attention-basis](https://mchromiak.github.io/articles/2017/Sep/01/Primer-NN/#attention-basis)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTI0NDM0NzA0MCwxOTIxMTQwMDk0LC02ND
+eyJoaXN0b3J5IjpbLTIyMTYyMDcxNSwxOTIxMTQwMDk0LC02ND
 gzMzU3NiwxMzUyODAwMzU1LC0xMjMyNzc0Mzc5LDI0MTExMzIy
 NCwtMTkzMTA3NjcwNSwtMTk2MjI3MDg1NSwxOTM2ODM3NzE5LC
 0xNzMxNDM3Mjk4LDMyNzY0ODQ1OSwtNjM0NjY2MzAyLC0xNzgy
