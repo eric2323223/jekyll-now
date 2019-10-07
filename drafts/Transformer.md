@@ -180,12 +180,14 @@ different random initial weights matrix may lead to different representation sub
 > Transformer use multi-head (dmodel/hdmodel/h  parallel attention functions) attention instead of single (dmodeldmodel-dimensional) attention function (i.e.  q,k,vq,k,v  all  dmodeldmodel-dimensional). It is at similar computational cost as in the case of single-head attention due to reduced dimensions of each head.
 > Transformer imitates the classical attention mechanism (known e.g. from  [Bahdanau et al., 2014](https://arxiv.org/abs/1409.0473) or Conv2S2) where in encoder-decoder attention layers  _queries_  are form previous decoder layer, and the (memory)  _keys_  and  _values_  are from output of the encoder. Therefore, each position in decoder can attend over all positions in the input sequence.
 
+### point-wise FFN
+point-wise 对序列中每个元素分别进行2层全连接运算，目的主要是为了提供对multi-attention提取出的feature进行 **复杂（非线性）** 合成的能力
+> Like the name indicates, this is a regular feedforward network applied to _each_ time step of the Multi Head attention outputs. The network has three layers with a non-linearity like ReLU for the hidden layer. You might be wondering why do we need a feedforward network after attention; after all isn’t attention all we need 😈 ? I suspect it is needed to improve model expressiveness. As we saw earlier the multi head attention partitioned the inputs and applied attention independently. There was only a linear projection to the outputs, i.e. the partitions were combined only linearly. The _Positionwise Feedforward_ network thus brings in some non-linear ‘mixing’ if we call it that. In fact for the sequence tagging task we use convolutions instead of fully connected layers. A filter of width 3 allows interactions to happen with adjacent time steps to improve performance.
+
 ### Why multiple layer of attention layers?
 
 
-### point-wise FFN
-point-wise 对序列中每个元素分别进行2层全连接运算，目的主要是为了提供对multi-attention提取出的feature进行复杂（非线性）合成的能力
-> Like the name indicates, this is a regular feedforward network applied to _each_ time step of the Multi Head attention outputs. The network has three layers with a non-linearity like ReLU for the hidden layer. You might be wondering why do we need a feedforward network after attention; after all isn’t attention all we need 😈 ? I suspect it is needed to improve model expressiveness. As we saw earlier the multi head attention partitioned the inputs and applied attention independently. There was only a linear projection to the outputs, i.e. the partitions were combined only linearly. The _Positionwise Feedforward_ network thus brings in some non-linear ‘mixing’ if we call it that. In fact for the sequence tagging task we use convolutions instead of fully connected layers. A filter of width 3 allows interactions to happen with adjacent time steps to improve performance.
+
 ### Mask
 > -   In the encoder and decoder: To zero attention outputs wherever there is just padding in the input sentences.
 > -   In the decoder: To prevent the decoder ‘peaking’ ahead at the rest of the translated sentence when predicting the next word.
@@ -247,11 +249,11 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [Attn: Illustrated Attention](https://towardsdatascience.com/attn-illustrated-attention-5ec4ad276ee3)
 [https://mchromiak.github.io/articles/2017/Sep/01/Primer-NN/#attention-basis](https://mchromiak.github.io/articles/2017/Sep/01/Primer-NN/#attention-basis)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTE2MzAwMDk0MCwtNjMxODMwMzk4LDEyMj
-IwNTAwOCwtMzUwNDM3NTQ0LC05ODk0NTM5MDgsLTE0NjcyMTE2
-NzYsMTYwMzU4MDYyNSwtMjcxNTUzNTQ1LDE5MjExNDAwOTQsLT
-Y0ODMzNTc2LDEzNTI4MDAzNTUsLTEyMzI3NzQzNzksMjQxMTEz
-MjI0LC0xOTMxMDc2NzA1LC0xOTYyMjcwODU1LDE5MzY4Mzc3MT
-ksLTE3MzE0MzcyOTgsMzI3NjQ4NDU5LC02MzQ2NjYzMDIsLTE3
-ODIwOTE5NTRdfQ==
+eyJoaXN0b3J5IjpbMTU2MzYxMTE3OCwxMTYzMDAwOTQwLC02Mz
+E4MzAzOTgsMTIyMjA1MDA4LC0zNTA0Mzc1NDQsLTk4OTQ1Mzkw
+OCwtMTQ2NzIxMTY3NiwxNjAzNTgwNjI1LC0yNzE1NTM1NDUsMT
+kyMTE0MDA5NCwtNjQ4MzM1NzYsMTM1MjgwMDM1NSwtMTIzMjc3
+NDM3OSwyNDExMTMyMjQsLTE5MzEwNzY3MDUsLTE5NjIyNzA4NT
+UsMTkzNjgzNzcxOSwtMTczMTQzNzI5OCwzMjc2NDg0NTksLTYz
+NDY2NjMwMl19
 -->
