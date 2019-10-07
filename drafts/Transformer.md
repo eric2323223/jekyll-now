@@ -218,7 +218,7 @@ Consider the first row of  _OUTPUT_  in the above diagram. It corresponds to the
 - layer normalization
 - label smoothing
 ### 超参数（hyperparameter tunning）
-- 
+- warn-up learning rate
 > If your data set is highly differentiated, you can suffer from a sort of "early over-fitting". If your shuffled data happens to include a cluster of related, strongly-featured observations, your model's initial training can skew badly toward those features -- or worse, toward incidental features that aren't truly related to the topic at all. Warm-up is a way to reduce the primacy effect of the early training examples. Without it, you may need to run a few extra epochs to get the convergence desired, as the model un-trains those early superstitions.
 > Many models afford this as a command-line option. The learning rate is increased linearly over the warm-up period. If the target learning rate is  `p`  and the warm-up period is  `n`, then the first batch iteration uses  `1*p/n`  for its learning rate; the second uses  `2*p/n`, and so on: iteration  `i`  uses  `i*p/n`, until we hit the nominal rate at iteration  `n`.
 > This means that the first iteration gets only 1/n of the primacy effect. This does a reasonable job of balancing that influence.
@@ -227,6 +227,7 @@ Despite not having any explicit recurrency, implicitly the model is built as an 
 尽管没有任何显式递归，但是隐式地将模型构建为自回归模型。 这意味着为了生成输出（在训练时或在推理期间），该模型需要计算先前的输出，这非常昂贵，因为必须为每个输出运行整个网络。 这是Salesforce Research和香港大学的研究人员在最近的一篇论文中要克服的主要思想，他们试图使整个过程可并行化23。 他们的建议是为序列中的每个输入单词计算肥力，并使用它代替先前的输出以计算当前输出。 下图对此进行了总结。
 ![enter image description here](https://ricardokleinklein.github.io/images/transformer/fertilities.png)
 ## 总结
+在介绍了le
 Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针对机器翻译领域做了针对性的设计，比如positional enbemdding， self attention， multihead attention，并结合了多种相关的优化技巧，如residual connection，layer normalization等。
 因此，对于任何任务，都需要针对任务目标进行相对应设计，并且要进行优化才能充分发挥模型的优势。
 一个好的模型不会从天而降，而是需要不断地分析觉接问题才能逐渐完善，通过对Transformer的学习，也可以掌握对已有模型进行改进的基本思路，1. 找到痛点并针对主要问题进行设计；2. 建立核心模型后要对随之产生的新问题提出解决方案；3.通过实验进行验证，还有利用已有的优化方法进行优化。
@@ -253,11 +254,11 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [Attn: Illustrated Attention](https://towardsdatascience.com/attn-illustrated-attention-5ec4ad276ee3)
 [https://mchromiak.github.io/articles/2017/Sep/01/Primer-NN/#attention-basis](https://mchromiak.github.io/articles/2017/Sep/01/Primer-NN/#attention-basis)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTYzMjM5MTk2MSwtMTMyNDMwNjI3MCwtMT
-M1NDI2NDg5MSwxNTYzNjExMTc4LDExNjMwMDA5NDAsLTYzMTgz
-MDM5OCwxMjIyMDUwMDgsLTM1MDQzNzU0NCwtOTg5NDUzOTA4LC
-0xNDY3MjExNjc2LDE2MDM1ODA2MjUsLTI3MTU1MzU0NSwxOTIx
-MTQwMDk0LC02NDgzMzU3NiwxMzUyODAwMzU1LC0xMjMyNzc0Mz
-c5LDI0MTExMzIyNCwtMTkzMTA3NjcwNSwtMTk2MjI3MDg1NSwx
-OTM2ODM3NzE5XX0=
+eyJoaXN0b3J5IjpbOTQ2NDUxMDkyLC0xMzI0MzA2MjcwLC0xMz
+U0MjY0ODkxLDE1NjM2MTExNzgsMTE2MzAwMDk0MCwtNjMxODMw
+Mzk4LDEyMjIwNTAwOCwtMzUwNDM3NTQ0LC05ODk0NTM5MDgsLT
+E0NjcyMTE2NzYsMTYwMzU4MDYyNSwtMjcxNTUzNTQ1LDE5MjEx
+NDAwOTQsLTY0ODMzNTc2LDEzNTI4MDAzNTUsLTEyMzI3NzQzNz
+ksMjQxMTEzMjI0LC0xOTMxMDc2NzA1LC0xOTYyMjcwODU1LDE5
+MzY4Mzc3MTldfQ==
 -->
