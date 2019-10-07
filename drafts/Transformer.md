@@ -86,7 +86,7 @@ Attention is cheap, 特别适合机器翻译的场景（dim>length）
 
 
 
-图attention mech^2anism
+图attention mechanism
 
 
 ![公式](https://mmbiz.qpic.cn/mmbiz_png/KmXPKA19gWicMiaqpI5cdFEvj2sOZVykZic5SwVXksjias1lA5ukFcJ4ficRgmwIyBLK8PcibmvT8Tq4iaIqMl0IaQfVw/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1)
@@ -279,11 +279,11 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [Attn: Illustrated Attention](https://towardsdatascience.com/attn-illustrated-attention-5ec4ad276ee3)
 [https://mchromiak.github.io/articles/2017/Sep/01/Primer-NN/#attention-basis](https://mchromiak.github.io/articles/2017/Sep/01/Primer-NN/#attention-basis)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTk4OTQ1MzkwOCwtMTQ2NzIxMTY3NiwxNj
-AzNTgwNjI1LC0yNzE1NTM1NDUsMTkyMTE0MDA5NCwtNjQ4MzM1
-NzYsMTM1MjgwMDM1NSwtMTIzMjc3NDM3OSwyNDExMTMyMjQsLT
-E5MzEwNzY3MDUsLTE5NjIyNzA4NTUsMTkzNjgzNzcxOSwtMTcz
-MTQzNzI5OCwzMjc2NDg0NTksLTYzNDY2NjMwMiwtMTc4MjA5MT
-k1NCw2NDU4NDY0MzIsNjM2MDE0NDA0LDEzMjg1NDgzMjUsLTE1
-NjMyODg5MTddfQ==
+eyJoaXN0b3J5IjpbLTM1MDQzNzU0NCwtOTg5NDUzOTA4LC0xND
+Y3MjExNjc2LDE2MDM1ODA2MjUsLTI3MTU1MzU0NSwxOTIxMTQw
+MDk0LC02NDgzMzU3NiwxMzUyODAwMzU1LC0xMjMyNzc0Mzc5LD
+I0MTExMzIyNCwtMTkzMTA3NjcwNSwtMTk2MjI3MDg1NSwxOTM2
+ODM3NzE5LC0xNzMxNDM3Mjk4LDMyNzY0ODQ1OSwtNjM0NjY2Mz
+AyLC0xNzgyMDkxOTU0LDY0NTg0NjQzMiw2MzYwMTQ0MDQsMTMy
+ODU0ODMyNV19
 -->
