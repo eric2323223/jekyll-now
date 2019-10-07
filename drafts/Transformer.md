@@ -217,7 +217,8 @@ Consider the first row of  _OUTPUT_  in the above diagram. It corresponds to the
 - dropout
 - layer normalization
 - label smoothing
-### warn-up learning rate
+### 超参数（hyperparameter tunning）
+- 
 > If your data set is highly differentiated, you can suffer from a sort of "early over-fitting". If your shuffled data happens to include a cluster of related, strongly-featured observations, your model's initial training can skew badly toward those features -- or worse, toward incidental features that aren't truly related to the topic at all. Warm-up is a way to reduce the primacy effect of the early training examples. Without it, you may need to run a few extra epochs to get the convergence desired, as the model un-trains those early superstitions.
 > Many models afford this as a command-line option. The learning rate is increased linearly over the warm-up period. If the target learning rate is  `p`  and the warm-up period is  `n`, then the first batch iteration uses  `1*p/n`  for its learning rate; the second uses  `2*p/n`, and so on: iteration  `i`  uses  `i*p/n`, until we hit the nominal rate at iteration  `n`.
 > This means that the first iteration gets only 1/n of the primacy effect. This does a reasonable job of balancing that influence.
@@ -252,11 +253,11 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [Attn: Illustrated Attention](https://towardsdatascience.com/attn-illustrated-attention-5ec4ad276ee3)
 [https://mchromiak.github.io/articles/2017/Sep/01/Primer-NN/#attention-basis](https://mchromiak.github.io/articles/2017/Sep/01/Primer-NN/#attention-basis)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzMjQzMDYyNzAsLTEzNTQyNjQ4OTEsMT
-U2MzYxMTE3OCwxMTYzMDAwOTQwLC02MzE4MzAzOTgsMTIyMjA1
-MDA4LC0zNTA0Mzc1NDQsLTk4OTQ1MzkwOCwtMTQ2NzIxMTY3Ni
-wxNjAzNTgwNjI1LC0yNzE1NTM1NDUsMTkyMTE0MDA5NCwtNjQ4
-MzM1NzYsMTM1MjgwMDM1NSwtMTIzMjc3NDM3OSwyNDExMTMyMj
-QsLTE5MzEwNzY3MDUsLTE5NjIyNzA4NTUsMTkzNjgzNzcxOSwt
-MTczMTQzNzI5OF19
+eyJoaXN0b3J5IjpbMTYzMjM5MTk2MSwtMTMyNDMwNjI3MCwtMT
+M1NDI2NDg5MSwxNTYzNjExMTc4LDExNjMwMDA5NDAsLTYzMTgz
+MDM5OCwxMjIyMDUwMDgsLTM1MDQzNzU0NCwtOTg5NDUzOTA4LC
+0xNDY3MjExNjc2LDE2MDM1ODA2MjUsLTI3MTU1MzU0NSwxOTIx
+MTQwMDk0LC02NDgzMzU3NiwxMzUyODAwMzU1LC0xMjMyNzc0Mz
+c5LDI0MTExMzIyNCwtMTkzMTA3NjcwNSwtMTk2MjI3MDg1NSwx
+OTM2ODM3NzE5XX0=
 -->
