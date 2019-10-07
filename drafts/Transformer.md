@@ -206,7 +206,7 @@ Consider the first row of  _OUTPUT_  in the above diagram. It corresponds to the
 
 
 ## Transformer优化技巧
-由于Transformer的encoder和decoder各自都有若干个的复杂性，需要通过使用一些优化技巧才能进行训练。
+由于Transformer的encoder和decoder各自都有若干个encoder/decoder层组成（每个encocer/decoder又由一个多头注意力）的复杂性，需要通过使用一些优化技巧才能进行训练。
 ### residual connection
 - Help gradient propagated back through stacked decoders and encoders
 - Residuals carry positional information to higher layers, among other information.
@@ -250,7 +250,7 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [Attn: Illustrated Attention](https://towardsdatascience.com/attn-illustrated-attention-5ec4ad276ee3)
 [https://mchromiak.github.io/articles/2017/Sep/01/Primer-NN/#attention-basis](https://mchromiak.github.io/articles/2017/Sep/01/Primer-NN/#attention-basis)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTIzMzMxODI4LC0xMzU0MjY0ODkxLDE1Nj
+eyJoaXN0b3J5IjpbNjc2MTgwMjk2LC0xMzU0MjY0ODkxLDE1Nj
 M2MTExNzgsMTE2MzAwMDk0MCwtNjMxODMwMzk4LDEyMjIwNTAw
 OCwtMzUwNDM3NTQ0LC05ODk0NTM5MDgsLTE0NjcyMTE2NzYsMT
 YwMzU4MDYyNSwtMjcxNTUzNTQ1LDE5MjExNDAwOTQsLTY0ODMz
