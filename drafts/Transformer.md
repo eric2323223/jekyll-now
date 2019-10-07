@@ -155,6 +155,7 @@ $$PE_{{pos,2i}}=sin(pos/10000^{2i/d_{model}})$$
 $$PE_{(pos, 2i+1)}=cos(pos/10000^{2i/d_{model}})$$
 
 为何采用叠加的方式？
+直觉是，在高维中随机选择的向量几乎总是近似正交的。没有理由认为单词向量和位置编码向量之间有任何关联。如果单词嵌入形成一个较小维的子空间，而位置编码形成另一个较小维的子空间，则两个子空间本身可能近似正交，因此大概可以对这些子空间进行变换。
 > In attention, we basically take two word embeddings (x and y), pass one through a Query transformation matrix (Q) and the second through a Key transformation matrix (K), and compare how similar the resulting query and key vectors are by their dot product. So, basically, we want the dot product between Qx and Ky, which we write as:
 (Qx)'(Ky) = x' (Q'Ky). So equivalently we just need to learn one joint Query-Key transformation (Q'K) that transform the secondary inputs y into a new space in which we can compare x.
 By adding positional encodings e and f to x and y, respectively, we essentially change the dot product to
@@ -258,11 +259,11 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [Attn: Illustrated Attention](https://towardsdatascience.com/attn-illustrated-attention-5ec4ad276ee3)
 [https://mchromiak.github.io/articles/2017/Sep/01/Primer-NN/#attention-basis](https://mchromiak.github.io/articles/2017/Sep/01/Primer-NN/#attention-basis)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzODkzMTE0NTcsLTYzMTgzMDM5OCwxMj
-IyMDUwMDgsLTM1MDQzNzU0NCwtOTg5NDUzOTA4LC0xNDY3MjEx
-Njc2LDE2MDM1ODA2MjUsLTI3MTU1MzU0NSwxOTIxMTQwMDk0LC
-02NDgzMzU3NiwxMzUyODAwMzU1LC0xMjMyNzc0Mzc5LDI0MTEx
-MzIyNCwtMTkzMTA3NjcwNSwtMTk2MjI3MDg1NSwxOTM2ODM3Nz
-E5LC0xNzMxNDM3Mjk4LDMyNzY0ODQ1OSwtNjM0NjY2MzAyLC0x
-NzgyMDkxOTU0XX0=
+eyJoaXN0b3J5IjpbLTEwMDM5ODU0OSwtNjMxODMwMzk4LDEyMj
+IwNTAwOCwtMzUwNDM3NTQ0LC05ODk0NTM5MDgsLTE0NjcyMTE2
+NzYsMTYwMzU4MDYyNSwtMjcxNTUzNTQ1LDE5MjExNDAwOTQsLT
+Y0ODMzNTc2LDEzNTI4MDAzNTUsLTEyMzI3NzQzNzksMjQxMTEz
+MjI0LC0xOTMxMDc2NzA1LC0xOTYyMjcwODU1LDE5MzY4Mzc3MT
+ksLTE3MzE0MzcyOTgsMzI3NjQ4NDU5LC02MzQ2NjYzMDIsLTE3
+ODIwOTE5NTRdfQ==
 -->
