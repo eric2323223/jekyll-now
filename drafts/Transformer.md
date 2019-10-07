@@ -154,24 +154,16 @@ sin/cos embedding has 2 advantage
 $$PE_{{pos,2i}}=sin(pos/10000^{2i/d_{model}})$$
 $$PE_{(pos, 2i+1)}=cos(pos/10000^{2i/d_{model}})$$
 
+为何采用叠加的方式？
 > In attention, we basically take two word embeddings (x and y), pass one through a Query transformation matrix (Q) and the second through a Key transformation matrix (K), and compare how similar the resulting query and key vectors are by their dot product. So, basically, we want the dot product between Qx and Ky, which we write as:
-
 (Qx)'(Ky) = x' (Q'Ky). So equivalently we just need to learn one joint Query-Key transformation (Q'K) that transform the secondary inputs y into a new space in which we can compare x.
-
 By adding positional encodings e and f to x and y, respectively, we essentially change the dot product to
-
 (Q(x+e))' (K(y+f)) = (Qx+Qe)' (Ky+Kf) = (Qx)' Ky + (Qx)' Kf + (Qe)' Ky + (Qe)' Kf = x' (Q'Ky) + x' (Q'Kf) + e' (Q'Ky) + e' (Q'K f), where in addition to the original x' (Q'Ky) term, which asks the question "how much attention should we pay to word x given word y", we also have x' (Q'Kf) + e' (Q'Ky) + e' (Q'K f), which ask the additional questions, "how much attention should we pay to word x given the position f of word y", "how much attention should we pay to y given the position e of word x", and "how much attention should we pay to the position e of word x given the position f of word y".
-
 Essentially, the learned transformation matrix Q'K with positional encodings has to do all four of these tasks simultaneously. This is the part that may appear inefficient, since intuitively, there should be a trade-off in the ability of Q'K to do four tasks simultaneously and well.
-
 HOWEVER, MY GUESS is that there isn't actually a trade-off when we force Q'K to do all four of these tasks, because of some approximate orthogonality condition that is satisfied of in high dimensions. The intuition for this is that randomly chosen vectors in high dimensions are almost always approximately orthogonal. There's no reason to think that the word vectors and position encoding vectors are related in any way. If the word embeddings form a smaller dimensional subspace and the positional encodings form another smaller dimensional subspace, then perhaps the two subspaces themselves are approximately orthogonal, so presumably these subspaces can be transformed approx. independently through the same learned Q'K transformation (since they basically exist on different axes in high dimensional space). I don't know if this is true, but it seems intuitively possible.
-
 If true, this would explain why adding positional encodings, instead of concatenation, is essentially fine. Concatenation would ensure that the positional dimensions are orthogonal to the word dimensions, but my guess is that, because these embedding spaces are so high dimensional, you can get approximate orthogonality for free even when adding, without the costs of concatenation (many more parameters to learn). Adding layers would only help with this, by allowing for nonlinearities.
-
 We also ultimately want e and f to behave in some nice ways, so that there's some kind of "closeness" in the vector representation with respect to small changes in positions. The sin and cos representation is nice since nearby positions have high similarity in their positional encodings, which may make it easier to learn transformations that "preserve" this desired closeness.
-
 (Maybe I'm wrong, and the approximate orthogonality arises from stacking multiple layers or non-linearities in the fully-connected parts of the transformer).
-
 tl;dr: It is intuitively possible that, in high dimensions, the word vectors form a smaller dimensional subspace within the full embedding space, and the positional vectors form a different smaller dimensional subspace approximately orthogonal to the one spanned by word vectors. Thus despite vector addition, the two subspaces can be manipulated essentially independently of each other by some single learned transformation. Thus, concatenation doesn't add much, but greatly increases cost in terms of parameters to learn.
 
 ![enter image description here](https://www.researchgate.net/publication/327068570/figure/fig3/AS:660457148928000@1534476663109/The-original-positional-encoding-used-in-Attention-Is-All-You-Need-VSP-17-composed.png)
@@ -266,11 +258,11 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [Attn: Illustrated Attention](https://towardsdatascience.com/attn-illustrated-attention-5ec4ad276ee3)
 [https://mchromiak.github.io/articles/2017/Sep/01/Primer-NN/#attention-basis](https://mchromiak.github.io/articles/2017/Sep/01/Primer-NN/#attention-basis)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTYzMTgzMDM5OCwxMjIyMDUwMDgsLTM1MD
-QzNzU0NCwtOTg5NDUzOTA4LC0xNDY3MjExNjc2LDE2MDM1ODA2
-MjUsLTI3MTU1MzU0NSwxOTIxMTQwMDk0LC02NDgzMzU3NiwxMz
-UyODAwMzU1LC0xMjMyNzc0Mzc5LDI0MTExMzIyNCwtMTkzMTA3
-NjcwNSwtMTk2MjI3MDg1NSwxOTM2ODM3NzE5LC0xNzMxNDM3Mj
-k4LDMyNzY0ODQ1OSwtNjM0NjY2MzAyLC0xNzgyMDkxOTU0LDY0
-NTg0NjQzMl19
+eyJoaXN0b3J5IjpbLTEzODkzMTE0NTcsLTYzMTgzMDM5OCwxMj
+IyMDUwMDgsLTM1MDQzNzU0NCwtOTg5NDUzOTA4LC0xNDY3MjEx
+Njc2LDE2MDM1ODA2MjUsLTI3MTU1MzU0NSwxOTIxMTQwMDk0LC
+02NDgzMzU3NiwxMzUyODAwMzU1LC0xMjMyNzc0Mzc5LDI0MTEx
+MzIyNCwtMTkzMTA3NjcwNSwtMTk2MjI3MDg1NSwxOTM2ODM3Nz
+E5LC0xNzMxNDM3Mjk4LDMyNzY0ODQ1OSwtNjM0NjY2MzAyLC0x
+NzgyMDkxOTU0XX0=
 -->
