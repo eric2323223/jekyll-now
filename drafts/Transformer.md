@@ -94,7 +94,7 @@ Attention is cheap, 特别适合机器翻译的场景（dim>length）
 
 ### 模型架构
 整体架构上看，transformer仍属于Encoder-Decoder架构，通过encoder将输入序列转换成内部表示，在通过不同decoder实现不同的预测功能。
-![enter image description here](http://armancohan.com/img/transformer-1.png)
+
 Transformer的最大的创新在于它使用只attention机制来实现seq2seq task，避免使用RNN和CNN从而使得在训练速度和准确率上全面超越了已有的方法。具体来讲
 ![enter image description here](https://3.bp.blogspot.com/-aZ3zvPiCoXM/WaiKQO7KRnI/AAAAAAAAB_8/7a1CYjp40nUg4lKpW7covGZJQAySxlg8QCLcBGAs/s640/transform20fps.gif)
 
@@ -227,7 +227,8 @@ Despite not having any explicit recurrency, implicitly the model is built as an 
 尽管没有任何显式递归，但是隐式地将模型构建为自回归模型。 这意味着为了生成输出（在训练时或在推理期间），该模型需要计算先前的输出，这非常昂贵，因为必须为每个输出运行整个网络。 这是Salesforce Research和香港大学的研究人员在最近的一篇论文中要克服的主要思想，他们试图使整个过程可并行化23。 他们的建议是为序列中的每个输入单词计算肥力，并使用它代替先前的输出以计算当前输出。 下图对此进行了总结。
 ![enter image description here](https://ricardokleinklein.github.io/images/transformer/fertilities.png)
 ## 总结
-在介绍了le
+在介绍了Transformer的主要组成部分之后，我们再来完整看一下Transformer模型
+
 Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针对机器翻译领域做了针对性的设计，比如positional enbemdding， self attention， multihead attention，并结合了多种相关的优化技巧，如residual connection，layer normalization等。
 因此，对于任何任务，都需要针对任务目标进行相对应设计，并且要进行优化才能充分发挥模型的优势。
 一个好的模型不会从天而降，而是需要不断地分析觉接问题才能逐渐完善，通过对Transformer的学习，也可以掌握对已有模型进行改进的基本思路，1. 找到痛点并针对主要问题进行设计；2. 建立核心模型后要对随之产生的新问题提出解决方案；3.通过实验进行验证，还有利用已有的优化方法进行优化。
@@ -254,11 +255,11 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [Attn: Illustrated Attention](https://towardsdatascience.com/attn-illustrated-attention-5ec4ad276ee3)
 [https://mchromiak.github.io/articles/2017/Sep/01/Primer-NN/#attention-basis](https://mchromiak.github.io/articles/2017/Sep/01/Primer-NN/#attention-basis)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbOTQ2NDUxMDkyLC0xMzI0MzA2MjcwLC0xMz
-U0MjY0ODkxLDE1NjM2MTExNzgsMTE2MzAwMDk0MCwtNjMxODMw
-Mzk4LDEyMjIwNTAwOCwtMzUwNDM3NTQ0LC05ODk0NTM5MDgsLT
-E0NjcyMTE2NzYsMTYwMzU4MDYyNSwtMjcxNTUzNTQ1LDE5MjEx
-NDAwOTQsLTY0ODMzNTc2LDEzNTI4MDAzNTUsLTEyMzI3NzQzNz
-ksMjQxMTEzMjI0LC0xOTMxMDc2NzA1LC0xOTYyMjcwODU1LDE5
-MzY4Mzc3MTldfQ==
+eyJoaXN0b3J5IjpbLTEwNTc1MjEyNDQsLTEzMjQzMDYyNzAsLT
+EzNTQyNjQ4OTEsMTU2MzYxMTE3OCwxMTYzMDAwOTQwLC02MzE4
+MzAzOTgsMTIyMjA1MDA4LC0zNTA0Mzc1NDQsLTk4OTQ1MzkwOC
+wtMTQ2NzIxMTY3NiwxNjAzNTgwNjI1LC0yNzE1NTM1NDUsMTky
+MTE0MDA5NCwtNjQ4MzM1NzYsMTM1MjgwMDM1NSwtMTIzMjc3ND
+M3OSwyNDExMTMyMjQsLTE5MzEwNzY3MDUsLTE5NjIyNzA4NTUs
+MTkzNjgzNzcxOV19
 -->
