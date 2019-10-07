@@ -137,16 +137,10 @@ $W^Q_i \in \mathbb{R}^{d_{\text{model}} \times d_k}$, $W^K_i \in \mathbb{R}^{d_{
 $$\mathrm{Attention}(Q, K, V) = \mathrm{softmax}(\frac{QK^T}{\sqrt{d_k}})V$$
 ![enter image description here](https://miro.medium.com/max/410/1*NlQPdpNY4d26l8Vu92a0Wg.png)
 
-comparison with RNN and CNN
-- less complex
-- can be paralleled, faster
-- easy to learn distant dependency
 
 ![enter image description here](http://www.c-jump.com/bcc/common/Talk3/Math/Vectors/const_images/v06_dot.png)
 ![enter image description here](https://miro.medium.com/max/1452/1*oosK1XGaYr0AoSxfs9fx5A.png)
 
-
-平均是指——————
 在transformer中的encoder和decoder中都使用了自注意力机制，他们的实现基本相同，稍有不同的是在decoder中使用mask来*屏蔽当前元素之后的元素*
 #### encoder-decoder attention
 In terms of encoder-decoder, the **query** is usually the hidden state of the _decoder_. Whereas **key**, is the hidden state of the _encoder_, and the corresponding **value** is normalized weight, representing how much attention a _key_ gets. Output is calculated as a wighted sum – here the dot product of _query_ and _key_ is used to get a _value_.
@@ -279,11 +273,11 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [Attn: Illustrated Attention](https://towardsdatascience.com/attn-illustrated-attention-5ec4ad276ee3)
 [https://mchromiak.github.io/articles/2017/Sep/01/Primer-NN/#attention-basis](https://mchromiak.github.io/articles/2017/Sep/01/Primer-NN/#attention-basis)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTM1MDQzNzU0NCwtOTg5NDUzOTA4LC0xND
-Y3MjExNjc2LDE2MDM1ODA2MjUsLTI3MTU1MzU0NSwxOTIxMTQw
-MDk0LC02NDgzMzU3NiwxMzUyODAwMzU1LC0xMjMyNzc0Mzc5LD
-I0MTExMzIyNCwtMTkzMTA3NjcwNSwtMTk2MjI3MDg1NSwxOTM2
-ODM3NzE5LC0xNzMxNDM3Mjk4LDMyNzY0ODQ1OSwtNjM0NjY2Mz
-AyLC0xNzgyMDkxOTU0LDY0NTg0NjQzMiw2MzYwMTQ0MDQsMTMy
-ODU0ODMyNV19
+eyJoaXN0b3J5IjpbMTIyMjA1MDA4LC0zNTA0Mzc1NDQsLTk4OT
+Q1MzkwOCwtMTQ2NzIxMTY3NiwxNjAzNTgwNjI1LC0yNzE1NTM1
+NDUsMTkyMTE0MDA5NCwtNjQ4MzM1NzYsMTM1MjgwMDM1NSwtMT
+IzMjc3NDM3OSwyNDExMTMyMjQsLTE5MzEwNzY3MDUsLTE5NjIy
+NzA4NTUsMTkzNjgzNzcxOSwtMTczMTQzNzI5OCwzMjc2NDg0NT
+ksLTYzNDY2NjMwMiwtMTc4MjA5MTk1NCw2NDU4NDY0MzIsNjM2
+MDE0NDA0XX0=
 -->
