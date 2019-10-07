@@ -222,7 +222,9 @@ Consider the first row of  _OUTPUT_  in the above diagram. It corresponds to the
 > If your data set is highly differentiated, you can suffer from a sort of "early over-fitting". If your shuffled data happens to include a cluster of related, strongly-featured observations, your model's initial training can skew badly toward those features -- or worse, toward incidental features that aren't truly related to the topic at all. Warm-up is a way to reduce the primacy effect of the early training examples. Without it, you may need to run a few extra epochs to get the convergence desired, as the model un-trains those early superstitions.
 > Many models afford this as a command-line option. The learning rate is increased linearly over the warm-up period. If the target learning rate is  `p`  and the warm-up period is  `n`, then the first batch iteration uses  `1*p/n`  for its learning rate; the second uses  `2*p/n`, and so on: iteration  `i`  uses  `i*p/n`, until we hit the nominal rate at iteration  `n`.
 > This means that the first iteration gets only 1/n of the primacy effect. This does a reasonable job of balancing that influence.
-> Note that the ramp-up is commonly on the order of one epoch -- but is occasionally longer for particularly skewed data, or shorter for more homogeneous distributions. You may want to adjust, depending on how functionally extreme your batches can become when the shuffling algorithm is applied to the training set.## Transformer的改进
+> Note that the ramp-up is commonly on the order of one epoch -- but is occasionally longer for particularly skewed data, or shorter for more homogeneous distributions. You may want to adjust, depending on how functionally extreme your batches can become when the shuffling algorithm is applied to the training set.
+
+## Transformer的改进
 Despite not having any explicit recurrency, implicitly the model is built as an autoregressive one. It implies that in order to generate an output (both while training or during inference), the model needs to compute previous outputs, which is extremely costly, for the whole net has to be run for every output. That’s the main idea to overcome in a recent paper by researchers at [_Salesforce Research_](https://einstein.ai/research/non-autoregressive-neural-machine-translation) and the University of Hong Kong, who tried to make the whole process parallelizable[23](https://ricardokleinklein.github.io/2017/11/16/Attention-is-all-you-need.html#fn:23). Their proposal is to compute _fertilities_ for every input word in the sequence, and use it instead of previous outputs in order to compute the current output. This is summarized in the figure below.
 尽管没有任何显式递归，但是隐式地将模型构建为自回归模型。 这意味着为了生成输出（在训练时或在推理期间），该模型需要计算先前的输出，这非常昂贵，因为必须为每个输出运行整个网络。 这是Salesforce Research和香港大学的研究人员在最近的一篇论文中要克服的主要思想，他们试图使整个过程可并行化23。 他们的建议是为序列中的每个输入单词计算肥力，并使用它代替先前的输出以计算当前输出。 下图对此进行了总结。
 ![enter image description here](https://ricardokleinklein.github.io/images/transformer/fertilities.png)
@@ -255,11 +257,11 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [Attn: Illustrated Attention](https://towardsdatascience.com/attn-illustrated-attention-5ec4ad276ee3)
 [https://mchromiak.github.io/articles/2017/Sep/01/Primer-NN/#attention-basis](https://mchromiak.github.io/articles/2017/Sep/01/Primer-NN/#attention-basis)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEwNTc1MjEyNDQsLTEzMjQzMDYyNzAsLT
-EzNTQyNjQ4OTEsMTU2MzYxMTE3OCwxMTYzMDAwOTQwLC02MzE4
-MzAzOTgsMTIyMjA1MDA4LC0zNTA0Mzc1NDQsLTk4OTQ1MzkwOC
-wtMTQ2NzIxMTY3NiwxNjAzNTgwNjI1LC0yNzE1NTM1NDUsMTky
-MTE0MDA5NCwtNjQ4MzM1NzYsMTM1MjgwMDM1NSwtMTIzMjc3ND
-M3OSwyNDExMTMyMjQsLTE5MzEwNzY3MDUsLTE5NjIyNzA4NTUs
-MTkzNjgzNzcxOV19
+eyJoaXN0b3J5IjpbLTU2NjcwNDEyOCwtMTMyNDMwNjI3MCwtMT
+M1NDI2NDg5MSwxNTYzNjExMTc4LDExNjMwMDA5NDAsLTYzMTgz
+MDM5OCwxMjIyMDUwMDgsLTM1MDQzNzU0NCwtOTg5NDUzOTA4LC
+0xNDY3MjExNjc2LDE2MDM1ODA2MjUsLTI3MTU1MzU0NSwxOTIx
+MTQwMDk0LC02NDgzMzU3NiwxMzUyODAwMzU1LC0xMjMyNzc0Mz
+c5LDI0MTExMzIyNCwtMTkzMTA3NjcwNSwtMTk2MjI3MDg1NSwx
+OTM2ODM3NzE5XX0=
 -->
