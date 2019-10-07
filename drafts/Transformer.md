@@ -206,7 +206,7 @@ Consider the first row of  _OUTPUT_  in the above diagram. It corresponds to the
 
 
 ## Transformer优化技巧
-由于Transformer的encoder和decoder各自都有若干个encoder/decoder层组成（每个encocer/decoder又由一个多头注意力）的复杂性，需要通过使用一些优化技巧才能进行训练。
+由于Transformer的encoder和decoder各自都有若干个encoder/decoder层组成（每个encocer/decoder又由一multihead attention和两层Feed foward network构成），属于比较复杂的模型，需要通过使用一些优化技巧才能进行训练。
 ### residual connection
 - Help gradient propagated back through stacked decoders and encoders
 - Residuals carry positional information to higher layers, among other information.
@@ -250,11 +250,11 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [Attn: Illustrated Attention](https://towardsdatascience.com/attn-illustrated-attention-5ec4ad276ee3)
 [https://mchromiak.github.io/articles/2017/Sep/01/Primer-NN/#attention-basis](https://mchromiak.github.io/articles/2017/Sep/01/Primer-NN/#attention-basis)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjc2MTgwMjk2LC0xMzU0MjY0ODkxLDE1Nj
-M2MTExNzgsMTE2MzAwMDk0MCwtNjMxODMwMzk4LDEyMjIwNTAw
-OCwtMzUwNDM3NTQ0LC05ODk0NTM5MDgsLTE0NjcyMTE2NzYsMT
-YwMzU4MDYyNSwtMjcxNTUzNTQ1LDE5MjExNDAwOTQsLTY0ODMz
-NTc2LDEzNTI4MDAzNTUsLTEyMzI3NzQzNzksMjQxMTEzMjI0LC
-0xOTMxMDc2NzA1LC0xOTYyMjcwODU1LDE5MzY4Mzc3MTksLTE3
-MzE0MzcyOThdfQ==
+eyJoaXN0b3J5IjpbMTAxNzQ5NTM2MiwtMTM1NDI2NDg5MSwxNT
+YzNjExMTc4LDExNjMwMDA5NDAsLTYzMTgzMDM5OCwxMjIyMDUw
+MDgsLTM1MDQzNzU0NCwtOTg5NDUzOTA4LC0xNDY3MjExNjc2LD
+E2MDM1ODA2MjUsLTI3MTU1MzU0NSwxOTIxMTQwMDk0LC02NDgz
+MzU3NiwxMzUyODAwMzU1LC0xMjMyNzc0Mzc5LDI0MTExMzIyNC
+wtMTkzMTA3NjcwNSwtMTk2MjI3MDg1NSwxOTM2ODM3NzE5LC0x
+NzMxNDM3Mjk4XX0=
 -->
