@@ -84,14 +84,7 @@ Attention is cheap, 特别适合机器翻译的场景（dim>length）
 | CNN | $O(length \cdot dim^2 \cdot kernelwidth)$ |
 由于通常dim要大于length，所以self-attention的运算量会少于RNN和CNN，
 
-
-
-图attention mechanism
-
-
-![公式](https://mmbiz.qpic.cn/mmbiz_png/KmXPKA19gWicMiaqpI5cdFEvj2sOZVykZic5SwVXksjias1lA5ukFcJ4ficRgmwIyBLK8PcibmvT8Tq4iaIqMl0IaQfVw/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1)
-
-- 
+ 
 ## Transformer模型
 基于attention机制
 - 解决long memory problem
@@ -273,11 +266,11 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [Attn: Illustrated Attention](https://towardsdatascience.com/attn-illustrated-attention-5ec4ad276ee3)
 [https://mchromiak.github.io/articles/2017/Sep/01/Primer-NN/#attention-basis](https://mchromiak.github.io/articles/2017/Sep/01/Primer-NN/#attention-basis)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTIyMjA1MDA4LC0zNTA0Mzc1NDQsLTk4OT
-Q1MzkwOCwtMTQ2NzIxMTY3NiwxNjAzNTgwNjI1LC0yNzE1NTM1
-NDUsMTkyMTE0MDA5NCwtNjQ4MzM1NzYsMTM1MjgwMDM1NSwtMT
-IzMjc3NDM3OSwyNDExMTMyMjQsLTE5MzEwNzY3MDUsLTE5NjIy
-NzA4NTUsMTkzNjgzNzcxOSwtMTczMTQzNzI5OCwzMjc2NDg0NT
-ksLTYzNDY2NjMwMiwtMTc4MjA5MTk1NCw2NDU4NDY0MzIsNjM2
-MDE0NDA0XX0=
+eyJoaXN0b3J5IjpbLTYzMTgzMDM5OCwxMjIyMDUwMDgsLTM1MD
+QzNzU0NCwtOTg5NDUzOTA4LC0xNDY3MjExNjc2LDE2MDM1ODA2
+MjUsLTI3MTU1MzU0NSwxOTIxMTQwMDk0LC02NDgzMzU3NiwxMz
+UyODAwMzU1LC0xMjMyNzc0Mzc5LDI0MTExMzIyNCwtMTkzMTA3
+NjcwNSwtMTk2MjI3MDg1NSwxOTM2ODM3NzE5LC0xNzMxNDM3Mj
+k4LDMyNzY0ODQ1OSwtNjM0NjY2MzAyLC0xNzgyMDkxOTU0LDY0
+NTg0NjQzMl19
 -->
