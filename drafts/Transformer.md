@@ -140,6 +140,21 @@ In terms of encoder-decoder, the **query** is usually the hidden state of the _d
 
 ![enter image description here](https://cntk.ai/jup/cntk204_s2s2.png)
 
+### Mask
+> -   In the encoder and decoder: To zero attention outputs wherever there is just padding in the input sentences.
+> -   In the decoder: To prevent the decoder ‘peaking’ ahead at the rest of the translated sentence when predicting the next word.
+
+由于attention机制可以看到全部输入，所以需要mask来防止attention在训练时看到正确的输出 
+> We also modify the self-attention sub-layer in the decoder stack to prevent positions from attending to subsequent positions. This masking, combined with fact that the output embeddings are offset by one position, ensures that the predictions for position ii can depend only on the known outputs at positions less than ii.
+> I mentioned I would cover attention bias mask later when going through the code of  `MultiHeadAttention`. For tasks like translation the decoder is fed previous outputs as input to predict the next output. During training the quick way to get the previous outputs is to  _shift_  the training labels right (The first time step gets a special symbol) and feed them as decoder inputs — a technique known as  _Teacher Forcing_  in machine learning parlance. However this presents a problem for the Transformer decoder as it can ‘cheat’ by using inputs from future time steps. The places where the short circuiting can happen is the self attention step and both the feedforward steps. (Can you figure out why it cannot happen in the normal attention step?)
+
+> In the self attention step we feed values from all time steps to the  `MultiHeadAttention`  component. Recall that we do a weighted linear combination of the  _Values_  input:
+
+![](https://miro.medium.com/max/504/1*aJiWfOaTCktprHEgNdeJow.png)
+
+Consider the first row of  _OUTPUT_  in the above diagram. It corresponds to the attention output at time  _t=1_. But it is computed from values right up till  _t=10_  which are future time steps. To prevent reading these future values we zero out all weights in the  _WEIGHTS_  tensor above the main diagonal. This will ensure that future values cannot creep in:
+
+![](https://miro.medium.com/max/204/1*6aTQQSmXUfCQxj3drNEweg.png)
 
 ### 位置编码（positional encoding）
 与RNN和CNN不同，在Attention中没有词序的概念（如第一个词，第二个词等）， 输入序列的所有单词都以没有特殊顺序或位置的方式输入网络，因此模型不知道单词的顺序。 因此，需要将与位置相关的信号添加到每个词中，以帮助模型理解词的顺序。
@@ -242,11 +257,11 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [Attn: Illustrated Attention](https://towardsdatascience.com/attn-illustrated-attention-5ec4ad276ee3)
 [https://mchromiak.github.io/articles/2017/Sep/01/Primer-NN/#attention-basis](https://mchromiak.github.io/articles/2017/Sep/01/Primer-NN/#attention-basis)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTc4OTEyMjYzNiwxNTEwODg1NDMxLDIwNT
-IzOTE3OTAsLTEzMjQzMDYyNzAsLTEzNTQyNjQ4OTEsMTU2MzYx
-MTE3OCwxMTYzMDAwOTQwLC02MzE4MzAzOTgsMTIyMjA1MDA4LC
-0zNTA0Mzc1NDQsLTk4OTQ1MzkwOCwtMTQ2NzIxMTY3NiwxNjAz
-NTgwNjI1LC0yNzE1NTM1NDUsMTkyMTE0MDA5NCwtNjQ4MzM1Nz
-YsMTM1MjgwMDM1NSwtMTIzMjc3NDM3OSwyNDExMTMyMjQsLTE5
-MzEwNzY3MDVdfQ==
+eyJoaXN0b3J5IjpbMjA3NTc2MjA5LDE1MTA4ODU0MzEsMjA1Mj
+M5MTc5MCwtMTMyNDMwNjI3MCwtMTM1NDI2NDg5MSwxNTYzNjEx
+MTc4LDExNjMwMDA5NDAsLTYzMTgzMDM5OCwxMjIyMDUwMDgsLT
+M1MDQzNzU0NCwtOTg5NDUzOTA4LC0xNDY3MjExNjc2LDE2MDM1
+ODA2MjUsLTI3MTU1MzU0NSwxOTIxMTQwMDk0LC02NDgzMzU3Ni
+wxMzUyODAwMzU1LC0xMjMyNzc0Mzc5LDI0MTExMzIyNCwtMTkz
+MTA3NjcwNV19
 -->
