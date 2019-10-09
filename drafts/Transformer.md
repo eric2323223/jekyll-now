@@ -64,7 +64,7 @@ Attention机制来自于人类视觉注意力机制。人们视觉在感知东�
 $$c_i=\sum_{j=1}\alpha_{ij}h_j$$
 $$\alpha_{ij}=\frac{exp(e_{ij})}{\sum_{k=1}exp(e_{ik})}$$
 $$e_{ij}=alignment(h_i,x_j)$$
-Instead of encoding the input sequence into a  **single fixed context vector**, we let the model  learn **how to generate a context vector** for each output time step. That is we let the model  **learn**  what to attend based on the input sentence and what it has produced so far.
+
 ![enter image description here](https://oscimg.oschina.net/oscnet/5bdc25e12070e665409112ee13ac9e76603.jpg)
 
 注意力机制主要用于seq2seq任务，它的基本思想就是对序列中的每个元素以一定的规则加入上下文信息。不同于RNN中先通过依次分析输入元素来逐步生成上下文context vector的方式，注意力机制对这些输入元素进行加权平均的方式来一步加入所有元素信息来生成上下文context vector。这样做的好处是能够一步到位捕捉到全局的联系(序列元素直接进行两两比较),不仅大大加速（可以并行计算）了context vector的生成，而且避免了RNN的长序列训练困难的问题。
@@ -257,11 +257,11 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [Attn: Illustrated Attention](https://towardsdatascience.com/attn-illustrated-attention-5ec4ad276ee3)
 [https://mchromiak.github.io/articles/2017/Sep/01/Primer-NN/#attention-basis](https://mchromiak.github.io/articles/2017/Sep/01/Primer-NN/#attention-basis)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2NjUyODQ2NDcsLTIwMDQ0MTg4MzAsLT
-IwMTY2MjEwMjcsLTkxMjU4NTc2NCwyMDc1NzYyMDksMTUxMDg4
-NTQzMSwyMDUyMzkxNzkwLC0xMzI0MzA2MjcwLC0xMzU0MjY0OD
-kxLDE1NjM2MTExNzgsMTE2MzAwMDk0MCwtNjMxODMwMzk4LDEy
-MjIwNTAwOCwtMzUwNDM3NTQ0LC05ODk0NTM5MDgsLTE0NjcyMT
-E2NzYsMTYwMzU4MDYyNSwtMjcxNTUzNTQ1LDE5MjExNDAwOTQs
-LTY0ODMzNTc2XX0=
+eyJoaXN0b3J5IjpbLTg1MTE4MTUwNCwtMjAwNDQxODgzMCwtMj
+AxNjYyMTAyNywtOTEyNTg1NzY0LDIwNzU3NjIwOSwxNTEwODg1
+NDMxLDIwNTIzOTE3OTAsLTEzMjQzMDYyNzAsLTEzNTQyNjQ4OT
+EsMTU2MzYxMTE3OCwxMTYzMDAwOTQwLC02MzE4MzAzOTgsMTIy
+MjA1MDA4LC0zNTA0Mzc1NDQsLTk4OTQ1MzkwOCwtMTQ2NzIxMT
+Y3NiwxNjAzNTgwNjI1LC0yNzE1NTM1NDUsMTkyMTE0MDA5NCwt
+NjQ4MzM1NzZdfQ==
 -->
