@@ -72,9 +72,12 @@ Instead of encoding the input sequence into a  **single fixed context vector**, 
 -   **首先**，从数学公式上和代码实现上Attention可以理解为**加权求和**。
 -  **本质**，***对元素在序列的上下文环境中重定义*** 
 -   **其次**，从形式上Attention可以理解为**键值查询**。
+![enter image description here](https://ldzhangyx.github.io/2018/10/14/self-attention/1.jpg)
 -   **最后**，从物理意义上Attention可以理解为**相似性度量**。
 ~~ *self-attention层的好处，解决了长距离依赖，因为它直接把序列两两比较（代价是计算量变为 O(n2)，当然由于是纯矩阵运算，这个计算量相当也不是很严重），而且最重要的是可以进行并行计算。 相比之下，RNN
 需要一步步递推才能捕捉到，并且对于长距离依赖很难捕捉。而 CNN 则需要通过层叠来扩大感受野，这是 Attention 层的明显优势。*~~
+
+
 
 Attention is cheap, 特别适合机器翻译的场景（dim>length）
 ||FLOPs|
@@ -257,11 +260,11 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [Attn: Illustrated Attention](https://towardsdatascience.com/attn-illustrated-attention-5ec4ad276ee3)
 [https://mchromiak.github.io/articles/2017/Sep/01/Primer-NN/#attention-basis](https://mchromiak.github.io/articles/2017/Sep/01/Primer-NN/#attention-basis)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjA3NTc2MjA5LDE1MTA4ODU0MzEsMjA1Mj
-M5MTc5MCwtMTMyNDMwNjI3MCwtMTM1NDI2NDg5MSwxNTYzNjEx
-MTc4LDExNjMwMDA5NDAsLTYzMTgzMDM5OCwxMjIyMDUwMDgsLT
-M1MDQzNzU0NCwtOTg5NDUzOTA4LC0xNDY3MjExNjc2LDE2MDM1
-ODA2MjUsLTI3MTU1MzU0NSwxOTIxMTQwMDk0LC02NDgzMzU3Ni
-wxMzUyODAwMzU1LC0xMjMyNzc0Mzc5LDI0MTExMzIyNCwtMTkz
-MTA3NjcwNV19
+eyJoaXN0b3J5IjpbLTkxMjU4NTc2NCwyMDc1NzYyMDksMTUxMD
+g4NTQzMSwyMDUyMzkxNzkwLC0xMzI0MzA2MjcwLC0xMzU0MjY0
+ODkxLDE1NjM2MTExNzgsMTE2MzAwMDk0MCwtNjMxODMwMzk4LD
+EyMjIwNTAwOCwtMzUwNDM3NTQ0LC05ODk0NTM5MDgsLTE0Njcy
+MTE2NzYsMTYwMzU4MDYyNSwtMjcxNTUzNTQ1LDE5MjExNDAwOT
+QsLTY0ODMzNTc2LDEzNTI4MDAzNTUsLTEyMzI3NzQzNzksMjQx
+MTEzMjI0XX0=
 -->
