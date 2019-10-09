@@ -11,7 +11,7 @@ seq2seq问题是使用机器学习（特别是深度学习）解决的一类常�
 2. 只能顺序执行，训练速度很慢
 3. 固定的存储不适合长序列
 - CNN
-CNN可以同时处理序列中的所有元素，但是由于卷积运算的视域有限，一次卷积操作只能处理有限的元素，对于较长的序列无法处理。解决办法是通过叠加多层卷积操作来逐渐增加视域，但这样会不可避免的导致信息丢失，并且仍没有完全解决长序列输入的处理问题，————————而且增加了模型的复杂度，使运算变慢，这和初衷不符。
+CNN可以同时处理序列中的所有元素，但是由于卷积运算的视域有限，一次卷积操作只能处理有限的元素，对于较长的序列无法处理。解决办法是通过堆叠多层卷积操作来逐渐增加视域，但这样会不可避免的导致信息丢失，并且仍没有完全解决长序列输入的处理问题，————————而且增加了模型的复杂度，使运算变慢，这和初衷不符。
 
 总结一下，上述两种模型对于长序列的处理都有缺陷。RNN需要一步一步的处理输入序列，CNN做出了一些改进但并不彻底。从根本上的解决这个问题需要能一次性的处理全部输入（无论序列有多长），并且能根据这些输入信息分析序列元素之间的关联关系。人们从自己快速浏览的方式获得了启发，当人们需要快速浏览的时候不会按输入的顺序逐步阅读，而会直接跳到需要关注的的部分，这种根据需要在不同位置跳跃的阅读方式和注意力相关，因此这种新的序列处理方式被命名为注意力机制
 ![enter image description here](https://www.visionears.nl/images/babyproduct.jpg)
@@ -74,9 +74,6 @@ Instead of encoding the input sequence into a  **single fixed context vector**, 
 -   **其次**，从形式上Attention可以理解为**键值查询**。
 ![enter image description here](https://ldzhangyx.github.io/2018/10/14/self-attention/1.jpg)
 -   **最后**，从物理意义上Attention可以理解为**相似性度量**。
-~~ *self-attention层的好处，解决了长距离依赖，因为它直接把序列两两比较（代价是计算量变为 O(n2)，当然由于是纯矩阵运算，这个计算量相当也不是很严重），而且最重要的是可以进行并行计算。 相比之下，RNN
-需要一步步递推才能捕捉到，并且对于长距离依赖很难捕捉。而 CNN 则需要通过层叠来扩大感受野，这是 Attention 层的明显优势。*~~
-
 
 
 Attention is cheap, 特别适合机器翻译的场景（dim>length）
@@ -260,11 +257,11 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [Attn: Illustrated Attention](https://towardsdatascience.com/attn-illustrated-attention-5ec4ad276ee3)
 [https://mchromiak.github.io/articles/2017/Sep/01/Primer-NN/#attention-basis](https://mchromiak.github.io/articles/2017/Sep/01/Primer-NN/#attention-basis)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwMDQ0MTg4MzAsLTIwMTY2MjEwMjcsLT
-kxMjU4NTc2NCwyMDc1NzYyMDksMTUxMDg4NTQzMSwyMDUyMzkx
-NzkwLC0xMzI0MzA2MjcwLC0xMzU0MjY0ODkxLDE1NjM2MTExNz
-gsMTE2MzAwMDk0MCwtNjMxODMwMzk4LDEyMjIwNTAwOCwtMzUw
-NDM3NTQ0LC05ODk0NTM5MDgsLTE0NjcyMTE2NzYsMTYwMzU4MD
-YyNSwtMjcxNTUzNTQ1LDE5MjExNDAwOTQsLTY0ODMzNTc2LDEz
-NTI4MDAzNTVdfQ==
+eyJoaXN0b3J5IjpbLTE2NjUyODQ2NDcsLTIwMDQ0MTg4MzAsLT
+IwMTY2MjEwMjcsLTkxMjU4NTc2NCwyMDc1NzYyMDksMTUxMDg4
+NTQzMSwyMDUyMzkxNzkwLC0xMzI0MzA2MjcwLC0xMzU0MjY0OD
+kxLDE1NjM2MTExNzgsMTE2MzAwMDk0MCwtNjMxODMwMzk4LDEy
+MjIwNTAwOCwtMzUwNDM3NTQ0LC05ODk0NTM5MDgsLTE0NjcyMT
+E2NzYsMTYwMzU4MDYyNSwtMjcxNTUzNTQ1LDE5MjExNDAwOTQs
+LTY0ODMzNTc2XX0=
 -->
