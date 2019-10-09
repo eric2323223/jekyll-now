@@ -74,11 +74,13 @@ $$c_i=\sum_{j=1}\alpha_{ij}h_j$$
 从这个定义可以看出attention的结果$c$就是序列中所有元素按一定的比例关系相加得到的，由于$c$具备了序列的上下文信息，因此我们也可以把attention理解为**元素在某一个序列上下文环境中的重新定义**。这是attention最核心的特点，也是attention能够取代RNN的基础。下图可以发现，RNN需要在依次处理元素x1, x2和x3之后才能得到整个序列的上下文信息，而attention则可以同时处理x1，x2，x3而得到序列的上下文信息。
 ![enter image description here](https://docs.google.com/drawings/d/e/2PACX-1vQZ5I4YZtpZOU8xnxqqJ2WVd7o9eeo0sHQa119cWm4qR85KanMs7-Z1DV1EfKxJLQrZaVglHLUJGPF2/pub?w=856&h=225)
 权值$\alpha$是attention的重要
+$$\alpha_{ij}=\frac{exp(e_{ij})}{\sum_{k=1}exp(e_{ik})}$$
 
-
+-   **最后**，从物理意义上Attention可以理解为**相似性度量**。
+- $$e_{ij}=alignment(h_i,x_j)$$
 -   **其次**，从形式上Attention可以理解为**键值查询**。
 ![enter image description here](https://ldzhangyx.github.io/2018/10/14/self-attention/1.jpg)
--   **最后**，从物理意义上Attention可以理解为**相似性度量**。
+
 
 
 Attention is cheap, 特别适合机器翻译的场景（dim>length）
@@ -262,11 +264,11 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [Attn: Illustrated Attention](https://towardsdatascience.com/attn-illustrated-attention-5ec4ad276ee3)
 [https://mchromiak.github.io/articles/2017/Sep/01/Primer-NN/#attention-basis](https://mchromiak.github.io/articles/2017/Sep/01/Primer-NN/#attention-basis)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjU4ODI0MTU0LDEzODY1Mjg1NTIsLTEzNj
-AyNDAwNTgsLTIwMDQ0MTg4MzAsLTIwMTY2MjEwMjcsLTkxMjU4
-NTc2NCwyMDc1NzYyMDksMTUxMDg4NTQzMSwyMDUyMzkxNzkwLC
-0xMzI0MzA2MjcwLC0xMzU0MjY0ODkxLDE1NjM2MTExNzgsMTE2
-MzAwMDk0MCwtNjMxODMwMzk4LDEyMjIwNTAwOCwtMzUwNDM3NT
-Q0LC05ODk0NTM5MDgsLTE0NjcyMTE2NzYsMTYwMzU4MDYyNSwt
-MjcxNTUzNTQ1XX0=
+eyJoaXN0b3J5IjpbMTYyODU0NDAxMSwxMzg2NTI4NTUyLC0xMz
+YwMjQwMDU4LC0yMDA0NDE4ODMwLC0yMDE2NjIxMDI3LC05MTI1
+ODU3NjQsMjA3NTc2MjA5LDE1MTA4ODU0MzEsMjA1MjM5MTc5MC
+wtMTMyNDMwNjI3MCwtMTM1NDI2NDg5MSwxNTYzNjExMTc4LDEx
+NjMwMDA5NDAsLTYzMTgzMDM5OCwxMjIyMDUwMDgsLTM1MDQzNz
+U0NCwtOTg5NDUzOTA4LC0xNDY3MjExNjc2LDE2MDM1ODA2MjUs
+LTI3MTU1MzU0NV19
 -->
