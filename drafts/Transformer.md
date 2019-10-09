@@ -69,7 +69,7 @@ $$e_{ij}=alignment(h_i,x_j)$$
 
 注意力机制主要用于seq2seq任务，它的基本思想就是对序列中的每个元素以一定的规则加入上下文信息。不同于RNN中先通过依次分析输入元素来逐步生成上下文context vector的方式，注意力机制对这些输入元素进行加权平均的方式来一步加入所有元素信息来生成上下文context vector。这样做的好处是能够一步到位捕捉到全局的联系(序列元素直接进行两两比较),不仅大大加速（可以并行计算）了context vector的生成，而且避免了RNN的长序列训练困难的问题。
 ![enter image description here](https://docs.google.com/drawings/d/e/2PACX-1vQZ5I4YZtpZOU8xnxqqJ2WVd7o9eeo0sHQa119cWm4qR85KanMs7-Z1DV1EfKxJLQrZaVglHLUJGPF2/pub?w=856&h=225)
-从实现上来讲，attention操作可以理解为一个加权求和的运算，
+从实现上来讲，attention操作可以理解为一个加权求和的运算，加数是序列中的所有元素，权值计算方法根据任务目标而不同（在机器翻译的场景中使用相似度）
 -  **本质**，***对元素在序列的上下文环境中重定义*** 
 -   **其次**，从形式上Attention可以理解为**键值查询**。
 ![enter image description here](https://ldzhangyx.github.io/2018/10/14/self-attention/1.jpg)
@@ -257,7 +257,7 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [Attn: Illustrated Attention](https://towardsdatascience.com/attn-illustrated-attention-5ec4ad276ee3)
 [https://mchromiak.github.io/articles/2017/Sep/01/Primer-NN/#attention-basis](https://mchromiak.github.io/articles/2017/Sep/01/Primer-NN/#attention-basis)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1NTU0MDIyNzcsLTIwMDQ0MTg4MzAsLT
+eyJoaXN0b3J5IjpbLTE4NzU3MDE5MDMsLTIwMDQ0MTg4MzAsLT
 IwMTY2MjEwMjcsLTkxMjU4NTc2NCwyMDc1NzYyMDksMTUxMDg4
 NTQzMSwyMDUyMzkxNzkwLC0xMzI0MzA2MjcwLC0xMzU0MjY0OD
 kxLDE1NjM2MTExNzgsMTE2MzAwMDk0MCwtNjMxODMwMzk4LDEy
