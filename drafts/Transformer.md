@@ -73,6 +73,8 @@ $$e_{ij}=alignment(h_i,x_j)$$
 $$c_i=\sum_{j=1}\alpha_{ij}h_j$$
 从这个定义可以看出attention的结果$c$就是序列中所有元素按一定的比例关系相加得到的，由于$c$具备了序列的上下文信息，因此我们也可以把attention理解为**元素在某一个序列上下文环境中的重新定义**。这是attention最核心的特点，也是attention能够取代RNN的基础。下图可以发现，RNN需要在依次处理元素x1, x2和x3之后才能得到整个序列的上下文信息，而attention则可以同时处理x1，x2，x3而得到序列的上下文信息。
 ![enter image description here](https://docs.google.com/drawings/d/e/2PACX-1vQZ5I4YZtpZOU8xnxqqJ2WVd7o9eeo0sHQa119cWm4qR85KanMs7-Z1DV1EfKxJLQrZaVglHLUJGPF2/pub?w=856&h=225)
+
+
 -   **其次**，从形式上Attention可以理解为**键值查询**。
 ![enter image description here](https://ldzhangyx.github.io/2018/10/14/self-attention/1.jpg)
 -   **最后**，从物理意义上Attention可以理解为**相似性度量**。
@@ -259,11 +261,11 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [Attn: Illustrated Attention](https://towardsdatascience.com/attn-illustrated-attention-5ec4ad276ee3)
 [https://mchromiak.github.io/articles/2017/Sep/01/Primer-NN/#attention-basis](https://mchromiak.github.io/articles/2017/Sep/01/Primer-NN/#attention-basis)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTM4NjUyODU1MiwtMTM2MDI0MDA1OCwtMj
-AwNDQxODgzMCwtMjAxNjYyMTAyNywtOTEyNTg1NzY0LDIwNzU3
-NjIwOSwxNTEwODg1NDMxLDIwNTIzOTE3OTAsLTEzMjQzMDYyNz
-AsLTEzNTQyNjQ4OTEsMTU2MzYxMTE3OCwxMTYzMDAwOTQwLC02
-MzE4MzAzOTgsMTIyMjA1MDA4LC0zNTA0Mzc1NDQsLTk4OTQ1Mz
-kwOCwtMTQ2NzIxMTY3NiwxNjAzNTgwNjI1LC0yNzE1NTM1NDUs
-MTkyMTE0MDA5NF19
+eyJoaXN0b3J5IjpbLTE1MDk5NzI0NzYsMTM4NjUyODU1MiwtMT
+M2MDI0MDA1OCwtMjAwNDQxODgzMCwtMjAxNjYyMTAyNywtOTEy
+NTg1NzY0LDIwNzU3NjIwOSwxNTEwODg1NDMxLDIwNTIzOTE3OT
+AsLTEzMjQzMDYyNzAsLTEzNTQyNjQ4OTEsMTU2MzYxMTE3OCwx
+MTYzMDAwOTQwLC02MzE4MzAzOTgsMTIyMjA1MDA4LC0zNTA0Mz
+c1NDQsLTk4OTQ1MzkwOCwtMTQ2NzIxMTY3NiwxNjAzNTgwNjI1
+LC0yNzE1NTM1NDVdfQ==
 -->
