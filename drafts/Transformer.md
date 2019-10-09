@@ -182,7 +182,7 @@ $$PE_{(pos, 2i+1)}=cos(pos/10000^{2i/d_{model}})$$
 
 ### 多头注意力（ Multiple Headed Attention)
 ![enter image description here](https://miro.medium.com/max/600/1*Vb9UizPn0AHejEYW9CWxNQ.png)
-Transformer仅仅使用attention进行输入encoding，由于attention本质上只是对输入进行加权平均运算，这导致特征提取能力不足，为了解决这个问题作者提出了多头注意力（）的方法。多头注意力的基本思想通过多次初始化过程增加模型提取不同特征的机会，假设下图中通过三次初始化分别得到了三种特征：红色表示动作，绿色表做动作施加者，蓝色表示动作承受着，可以看到在对“踢“进行了三次self attention运算，分别对应三种特征。在对于动作信息的self attention中，"我“和”球“的权值（灰色细线表示）比“踢”的权值（红色粗线）要小很多；同样，对动作施加者的self attention中，“我”（绿色粗线）则是主要贡献者。在将三次self attention的结果相加后，得到的新的“踢”的编码中就包含了三种特征的信息。现实中不可能每次随机初始化都能带来有效的特征，理论上随机初始化测次数越多就越有可能发现潜在的特征，不过随之增长的是训练参数的增加，这意味着训练难度的提高，因此需要平衡，再Transformer模型中这个值是8。
+Transformer仅仅使用attention进行输入encoding，由于attention本质上只是对输入进行加权平均运算，这导致特征提取能力不足，为了解决这个问题作者提出了多头注意力（）的方法。多头注意力的基本思想通过多次初始化过程增加模型提取不同特征的机会，假设下图中通过三次初始化分别得到了三种特征：红色表示动作，绿色表做动作施加者，蓝色表示动作承受着，可以看到在对“踢“进行了三次self attention运算，分别对应三种特征。在对于动作信息的self attention中，"我“和”球“的权值（灰色细线表示）比“踢”的权值（红色粗线）要小很多；同样，对动作施加者的self attention中，“我”（绿色粗线）则是主要贡献者。在将三次self attention的结果相加后，得到的新的“踢”的编码中就包含了三种特征的信息。现实中不可能每次随机初始化都能带来有效的特征，理论上随机初始化测次数越多就越有可能发现有效的特征，不过随之增长的是训练参数的增加，这意味着训练难度的提高，因此需要平衡，再Transformer模型中这个值是8。
 具体方法是对同一个元素进行多次attention运算， 每次attention都使用不同的初始化参数W，最后在将多次attention的结果相加。
 ![enter image description here](https://docs.google.com/drawings/d/e/2PACX-1vT4_Vn34rr1zN4OhXIo7oCGkzXDF__Y3CIVnZ_12fjqLHtKoRSJaVIyoR7ndQHtRlfNUmgecF5mucNg/pub?w=538&h=363)
 > In these models, the number of operations required to relate signals from two arbitrary input or output positions grows in the distance between positions, linearly for ConvS2S and logarithmically for ByteNet. This makes it more difficult to learn dependencies between distant positions. In the Transformer this is reduced to a constant number of operations, albeit at the cost of reduced effective resolution due to averaging attention-weighted positions, an effect we counteract with Multi-Head Attention.
@@ -260,11 +260,11 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [Attn: Illustrated Attention](https://towardsdatascience.com/attn-illustrated-attention-5ec4ad276ee3)
 [https://mchromiak.github.io/articles/2017/Sep/01/Primer-NN/#attention-basis](https://mchromiak.github.io/articles/2017/Sep/01/Primer-NN/#attention-basis)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTI0MzAyOTU0MSwtMjAxNjYyMTAyNywtOT
-EyNTg1NzY0LDIwNzU3NjIwOSwxNTEwODg1NDMxLDIwNTIzOTE3
-OTAsLTEzMjQzMDYyNzAsLTEzNTQyNjQ4OTEsMTU2MzYxMTE3OC
-wxMTYzMDAwOTQwLC02MzE4MzAzOTgsMTIyMjA1MDA4LC0zNTA0
-Mzc1NDQsLTk4OTQ1MzkwOCwtMTQ2NzIxMTY3NiwxNjAzNTgwNj
-I1LC0yNzE1NTM1NDUsMTkyMTE0MDA5NCwtNjQ4MzM1NzYsMTM1
-MjgwMDM1NV19
+eyJoaXN0b3J5IjpbLTIwMDQ0MTg4MzAsLTIwMTY2MjEwMjcsLT
+kxMjU4NTc2NCwyMDc1NzYyMDksMTUxMDg4NTQzMSwyMDUyMzkx
+NzkwLC0xMzI0MzA2MjcwLC0xMzU0MjY0ODkxLDE1NjM2MTExNz
+gsMTE2MzAwMDk0MCwtNjMxODMwMzk4LDEyMjIwNTAwOCwtMzUw
+NDM3NTQ0LC05ODk0NTM5MDgsLTE0NjcyMTE2NzYsMTYwMzU4MD
+YyNSwtMjcxNTUzNTQ1LDE5MjExNDAwOTQsLTY0ODMzNTc2LDEz
+NTI4MDAzNTVdfQ==
 -->
