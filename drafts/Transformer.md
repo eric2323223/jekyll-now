@@ -82,7 +82,6 @@ $$\alpha_{ij}=\frac{exp(e_{ij})}{\sum_{k=1}exp(e_{ik})}$$
 ![enter image description here](https://ldzhangyx.github.io/2018/10/14/self-attention/1.jpg)
 
 
-
 Attention is cheap, 特别适合机器翻译的场景（dim>length）
 ||FLOPs|
 |--|--|
@@ -262,11 +261,11 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [Attn: Illustrated Attention](https://towardsdatascience.com/attn-illustrated-attention-5ec4ad276ee3)
 [https://mchromiak.github.io/articles/2017/Sep/01/Primer-NN/#attention-basis](https://mchromiak.github.io/articles/2017/Sep/01/Primer-NN/#attention-basis)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1MzA1OTkyOSwtNTgxOTY4NTEzLC0zNj
-E1ODYyMTYsNjE4NTEyNjkyLC0yNzE1NDU1NywxNjI4NTQ0MDEx
-LDEzODY1Mjg1NTIsLTEzNjAyNDAwNTgsLTIwMDQ0MTg4MzAsLT
-IwMTY2MjEwMjcsLTkxMjU4NTc2NCwyMDc1NzYyMDksMTUxMDg4
-NTQzMSwyMDUyMzkxNzkwLC0xMzI0MzA2MjcwLC0xMzU0MjY0OD
-kxLDE1NjM2MTExNzgsMTE2MzAwMDk0MCwtNjMxODMwMzk4LDEy
-MjIwNTAwOF19
+eyJoaXN0b3J5IjpbMTU3MDUyOTQyOSwtMTUzMDU5OTI5LC01OD
+E5Njg1MTMsLTM2MTU4NjIxNiw2MTg1MTI2OTIsLTI3MTU0NTU3
+LDE2Mjg1NDQwMTEsMTM4NjUyODU1MiwtMTM2MDI0MDA1OCwtMj
+AwNDQxODgzMCwtMjAxNjYyMTAyNywtOTEyNTg1NzY0LDIwNzU3
+NjIwOSwxNTEwODg1NDMxLDIwNTIzOTE3OTAsLTEzMjQzMDYyNz
+AsLTEzNTQyNjQ4OTEsMTU2MzYxMTE3OCwxMTYzMDAwOTQwLC02
+MzE4MzAzOThdfQ==
 -->
