@@ -172,6 +172,23 @@ Consider the first row of  _OUTPUT_  in the above diagram. It corresponds to the
 与RNN和CNN不同，在Attention中没有词序的概念（如第一个词，第二个词等）， 输入序列的所有单词都以没有特殊顺序或位置的方式输入网络，因此模型不知道单词的顺序。 因此，需要将与位置相关的信号添加到每个词中，以帮助模型理解词的顺序。
 位置编码是单词值及其在句子中位置的重新表示（假定开头和结尾或中间的开头和开头不相同）。考虑到句子的长度可以是任意长度，只讨论词的绝对位置是不全面的（同一个词，在由3个词组成的句子中的第三个位置和30个词组成的句子中的第三个位置所表达的意思很可能是不一样的）。位置编码器的作用是获得sin（x）和cos（x）函数的循环特性的帮助，以返回单词在句子中的位置信息。
 > 通常，将位置编码添加到输入嵌入是一个非常有趣的话题。一种方法是嵌入输入元素的绝对位置（如在ConvS2S中一样）。但是，作者使用“不同频率的正弦和余弦函数”。 “正弦波”版本非常复杂，同时具有与绝对位置版本相似的性能。然而，问题的关键在于，它可以使模型在测试时对更长的句子产生更好的翻译（至少比训练数据中的句子更长）。通过这种正弦方法，模型可以外推到更长的序列长度3。
+首先，位置编码可以是多维的
+
+|十进制|二进制||十进制|二进制||
+|-|-|-|-|-|-|
+|0| 0000|OOO🞅|8|1000|XOOO|
+|1| 0001|OO࢟O|9|1001|
+|2|0010||10|1010|࢟
+|3|0011||11|1011|
+|4|0100||12|1100|
+|5|0101||13|1101
+|6|0110||14|1110|
+|7|0111||15|1111
+> Ideally, the following criteria should be satisfied:
+- It should output a unique encoding for each time-step (word’s position in a sentence)
+- Distance between any two time-steps should be consistent across sentences with different lengths.
+- Our model should generalize to longer sentences without any efforts. Its values should be bounded.
+- It must be deterministic.
 
 由于attention机制不考虑位置关系，因此必须要在在attention操作前对序列中的每个元素加入位置信息。一个最直接的方法就是对输入加入序号，但是这种方法的问题在于无法处理长度超过训练数据的输入序列。在Transformer模型中使用的是sin/cos函数进行位置编码，这种位置编码有两个优点：
 - 首先就是由于sin/cos函数的周期性它能够进行任意长度序列的位置编码，解决了之前的问题；
@@ -180,14 +197,16 @@ Consider the first row of  _OUTPUT_  in the above diagram. It corresponds to the
 $$PE_{{pos,2i}}=sin(pos/10000^{2i/d_{model}})$$
 $$PE_{(pos, 2i+1)}=cos(pos/10000^{2i/d_{model}})$$
 ![enter image description here](https://www.researchgate.net/publication/327068570/figure/fig3/AS:660457148928000@1534476663109/The-original-positional-encoding-used-in-Attention-Is-All-You-Need-VSP-17-composed.png)
+![](https://d33wubrfki0l68.cloudfront.net/ef81ee3018af6ab6f23769031f8961afcdd67c68/3358f/img/transformer_architecture_positional_encoding/positional_encoding.png)
+
+> I think it would not be possible to attend e.g. to position 0 of the pure sine function because it is all zero and any dot product with that vector is 0 too. With the juxtaposition the magnitude is sort of “balanced”. This figure shows it a bit:
+![](http://vandergoten.ai/img/attention_is_all_you_need/positional_embedding.png)
+
+>为什么要同时使用sin和cos，而不只使用其中的一个？
+>只使用sin会导致在0位置PE总是0？
 
 >为何采用叠加的方式？
->
 > 直觉是，在高维中随机选择的向量几乎总是近似正交的。没有理由认为单词向量和位置编码向量之间有任何关联。如果单词嵌入形成一个较小维的子空间，而位置编码形成另一个较小维的子空间，则两个子空间本身可能近似正交，因此大概可以对这些子空间进行变换，尽管进行了矢量相加，但两个子空间仍可以通过一些单个学习的变换而彼此独立地进行操作。因此，串联并不会增加太多，但会大大增加学习参数方面的成本。
-
-
-
-
 
 ### 多头注意力（ Multiple Headed Attention)
 ![enter image description here](https://miro.medium.com/max/600/1*Vb9UizPn0AHejEYW9CWxNQ.png)
@@ -271,6 +290,7 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [Seq2seq pay Attention to Self Attention: Part 2](https://medium.com/@bgg/seq2seq-pay-attention-to-self-attention-part-2-cf81bf32c73d)
 [Details Need More Attention: Transformer 没有被提到的细节](https://zhuanlan.zhihu.com/p/79987949)
 [TRANSFORMERS FROM SCRATCH](http://www.peterbloem.nl/blog/transformers)
+[Transformer Architecture: The Positional Encoding](https://kazemnejad.com/blog/transformer_architecture_positional_encoding)
 <!--stackedit_data:
 eyJoaXN0b3J5IjpbMTgyNTM5NTI4OCwzNDUxMTI4NDIsLTEyMj
 UzMTk4NDMsLTIwODI5MzQxNywtMTYxMzA5NDg4Nyw5OTYzNTkx
