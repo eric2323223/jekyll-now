@@ -178,8 +178,9 @@ $$PE_{(pos, 2i+1)}=cos(pos/10000^{2i/d_{model}})$$
 在这个公式中:
 -   pos 指的是这个 word 在这个句子中的位置
 -   i指的是 embedding 维度。比如选择 d_model=512，那么i就从1数到512
-为何采用叠加的方式？
 
+>为何采用叠加的方式？
+>
 > 直觉是，在高维中随机选择的向量几乎总是近似正交的。没有理由认为单词向量和位置编码向量之间有任何关联。如果单词嵌入形成一个较小维的子空间，而位置编码形成另一个较小维的子空间，则两个子空间本身可能近似正交，因此大概可以对这些子空间进行变换，尽管进行了矢量相加，但两个子空间仍可以通过一些单个学习的变换而彼此独立地进行操作。因此，串联并不会增加太多，但会大大增加学习参数方面的成本。
 
 
@@ -266,11 +267,11 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [Attn: Illustrated Attention](https://towardsdatascience.com/attn-illustrated-attention-5ec4ad276ee3)
 [https://mchromiak.github.io/articles/2017/Sep/01/Primer-NN/#attention-basis](https://mchromiak.github.io/articles/2017/Sep/01/Primer-NN/#attention-basis)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjE4NTEyNjkyLC0yNzE1NDU1NywxNjI4NT
-Q0MDExLDEzODY1Mjg1NTIsLTEzNjAyNDAwNTgsLTIwMDQ0MTg4
-MzAsLTIwMTY2MjEwMjcsLTkxMjU4NTc2NCwyMDc1NzYyMDksMT
-UxMDg4NTQzMSwyMDUyMzkxNzkwLC0xMzI0MzA2MjcwLC0xMzU0
-MjY0ODkxLDE1NjM2MTExNzgsMTE2MzAwMDk0MCwtNjMxODMwMz
-k4LDEyMjIwNTAwOCwtMzUwNDM3NTQ0LC05ODk0NTM5MDgsLTE0
-NjcyMTE2NzZdfQ==
+eyJoaXN0b3J5IjpbLTM2MjIyNTExMiw2MTg1MTI2OTIsLTI3MT
+U0NTU3LDE2Mjg1NDQwMTEsMTM4NjUyODU1MiwtMTM2MDI0MDA1
+OCwtMjAwNDQxODgzMCwtMjAxNjYyMTAyNywtOTEyNTg1NzY0LD
+IwNzU3NjIwOSwxNTEwODg1NDMxLDIwNTIzOTE3OTAsLTEzMjQz
+MDYyNzAsLTEzNTQyNjQ4OTEsMTU2MzYxMTE3OCwxMTYzMDAwOT
+QwLC02MzE4MzAzOTgsMTIyMjA1MDA4LC0zNTA0Mzc1NDQsLTk4
+OTQ1MzkwOF19
 -->
