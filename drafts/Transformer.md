@@ -82,6 +82,7 @@ $$\alpha_{ij}=\frac{exp(e_{ij})}{\sum_{k=1}exp(e_{ik})}$$
  Generalised Attention
 Given a query  **q**  and a set of key-value pairs  **(K, V)**, attention can be generalised to compute a weighted sum of the values dependent on the query and the corresponding keys.  
 The query determines which values to focus on; we can say that the query ‘attends’ to the values.
+$$$$
 ![enter image description here](https://ldzhangyx.github.io/2018/10/14/self-attention/1.jpg)
 
 
@@ -266,11 +267,11 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [Attn: Illustrated Attention](https://towardsdatascience.com/attn-illustrated-attention-5ec4ad276ee3)
 [https://mchromiak.github.io/articles/2017/Sep/01/Primer-NN/#attention-basis](https://mchromiak.github.io/articles/2017/Sep/01/Primer-NN/#attention-basis)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTcxODkwNzIyNywtMjExNDg0ODE1OSwxNT
-cwNTI5NDI5LC0xNTMwNTk5MjksLTU4MTk2ODUxMywtMzYxNTg2
-MjE2LDYxODUxMjY5MiwtMjcxNTQ1NTcsMTYyODU0NDAxMSwxMz
-g2NTI4NTUyLC0xMzYwMjQwMDU4LC0yMDA0NDE4ODMwLC0yMDE2
-NjIxMDI3LC05MTI1ODU3NjQsMjA3NTc2MjA5LDE1MTA4ODU0Mz
-EsMjA1MjM5MTc5MCwtMTMyNDMwNjI3MCwtMTM1NDI2NDg5MSwx
-NTYzNjExMTc4XX0=
+eyJoaXN0b3J5IjpbMTk0NDkxOTk1NSwtNzE4OTA3MjI3LC0yMT
+E0ODQ4MTU5LDE1NzA1Mjk0MjksLTE1MzA1OTkyOSwtNTgxOTY4
+NTEzLC0zNjE1ODYyMTYsNjE4NTEyNjkyLC0yNzE1NDU1NywxNj
+I4NTQ0MDExLDEzODY1Mjg1NTIsLTEzNjAyNDAwNTgsLTIwMDQ0
+MTg4MzAsLTIwMTY2MjEwMjcsLTkxMjU4NTc2NCwyMDc1NzYyMD
+ksMTUxMDg4NTQzMSwyMDUyMzkxNzkwLC0xMzI0MzA2MjcwLC0x
+MzU0MjY0ODkxXX0=
 -->
