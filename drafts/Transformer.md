@@ -266,13 +266,13 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [Attention and its Different Forms](https://towardsdatascience.com/attention-and-its-different-forms-7fc3674d14dc)
 [Attn: Illustrated Attention](https://towardsdatascience.com/attn-illustrated-attention-5ec4ad276ee3)
 [https://mchromiak.github.io/articles/2017/Sep/01/Primer-NN/#attention-basis](https://mchromiak.github.io/articles/2017/Sep/01/Primer-NN/#attention-basis)
-[https://medium.com/@bgg/seq2seq-pay-attention-to-self-attention-part-2-cf81bf32c73d](https://medium.com/@bgg/seq2seq-pay-attention-to-self-attention-part-2-cf81bf32c73d)
+[Seq2seq pay Attention to Self Attention: Part 2](https://medium.com/@bgg/seq2seq-pay-attention-to-self-attention-part-2-cf81bf32c73d)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2NDM4NTg3MTUsMjU2MDQyODk2LC03MT
-g5MDcyMjcsLTIxMTQ4NDgxNTksMTU3MDUyOTQyOSwtMTUzMDU5
-OTI5LC01ODE5Njg1MTMsLTM2MTU4NjIxNiw2MTg1MTI2OTIsLT
-I3MTU0NTU3LDE2Mjg1NDQwMTEsMTM4NjUyODU1MiwtMTM2MDI0
-MDA1OCwtMjAwNDQxODgzMCwtMjAxNjYyMTAyNywtOTEyNTg1Nz
-Y0LDIwNzU3NjIwOSwxNTEwODg1NDMxLDIwNTIzOTE3OTAsLTEz
-MjQzMDYyNzBdfQ==
+eyJoaXN0b3J5IjpbOTk2MzU5MTQsMjU2MDQyODk2LC03MTg5MD
+cyMjcsLTIxMTQ4NDgxNTksMTU3MDUyOTQyOSwtMTUzMDU5OTI5
+LC01ODE5Njg1MTMsLTM2MTU4NjIxNiw2MTg1MTI2OTIsLTI3MT
+U0NTU3LDE2Mjg1NDQwMTEsMTM4NjUyODU1MiwtMTM2MDI0MDA1
+OCwtMjAwNDQxODgzMCwtMjAxNjYyMTAyNywtOTEyNTg1NzY0LD
+IwNzU3NjIwOSwxNTEwODg1NDMxLDIwNTIzOTE3OTAsLTEzMjQz
+MDYyNzBdfQ==
 -->
