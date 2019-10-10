@@ -169,7 +169,7 @@ Consider the first row of  _OUTPUT_  in the above diagram. It corresponds to the
 > 通常，将位置编码添加到输入嵌入是一个非常有趣的话题。一种方法是嵌入输入元素的绝对位置（如在ConvS2S中一样）。但是，作者使用“不同频率的正弦和余弦函数”。 “正弦波”版本非常复杂，同时具有与绝对位置版本相似的性能。然而，问题的关键在于，它可以使模型在测试时对更长的句子产生更好的翻译（至少比训练数据中的句子更长）。通过这种正弦方法，模型可以外推到更长的序列长度3。
 
 由于attention机制不考虑位置关系，因此必须要在在attention操作前对序列中的每个元素加入位置信息。一个最直接的方法就是对输入加入序号，但是这种方法的问题在于无法处理长度超过训练数据的输入序列。在Transformer模型中使用的是sin/cos函数进行位置编码，这种位置编码有两个优点，首相就是由于sin/cos函数的周期性它能够进行任意长度序列的位置编码，解决了之前的问题。第二是由于sin/cos函数的值总是在-1到1之间，这种编码本身也有正则化（normalization）的作用，这有利于神经网络的学习
-用$pos$表示位置，$i$表示编码的维度，$d_{model}$表示模型的维度$，位置编码$PE$可以表示为
+用$pos$表示位置，$i$表示编码的维度，$d_{model}$表示模型的维度，位置编码$PE$可以表示为
 $$PE_{{pos,2i}}=sin(pos/10000^{2i/d_{model}})$$
 $$PE_{(pos, 2i+1)}=cos(pos/10000^{2i/d_{model}})$$
 ![enter image description here](https://www.researchgate.net/publication/327068570/figure/fig3/AS:660457148928000@1534476663109/The-original-positional-encoding-used-in-Attention-Is-All-You-Need-VSP-17-composed.png)
@@ -262,11 +262,11 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [Attn: Illustrated Attention](https://towardsdatascience.com/attn-illustrated-attention-5ec4ad276ee3)
 [https://mchromiak.github.io/articles/2017/Sep/01/Primer-NN/#attention-basis](https://mchromiak.github.io/articles/2017/Sep/01/Primer-NN/#attention-basis)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTU4MTk2ODUxMywtMzYxNTg2MjE2LDYxOD
-UxMjY5MiwtMjcxNTQ1NTcsMTYyODU0NDAxMSwxMzg2NTI4NTUy
-LC0xMzYwMjQwMDU4LC0yMDA0NDE4ODMwLC0yMDE2NjIxMDI3LC
-05MTI1ODU3NjQsMjA3NTc2MjA5LDE1MTA4ODU0MzEsMjA1MjM5
-MTc5MCwtMTMyNDMwNjI3MCwtMTM1NDI2NDg5MSwxNTYzNjExMT
-c4LDExNjMwMDA5NDAsLTYzMTgzMDM5OCwxMjIyMDUwMDgsLTM1
-MDQzNzU0NF19
+eyJoaXN0b3J5IjpbMTU2NDcyODU0NywtNTgxOTY4NTEzLC0zNj
+E1ODYyMTYsNjE4NTEyNjkyLC0yNzE1NDU1NywxNjI4NTQ0MDEx
+LDEzODY1Mjg1NTIsLTEzNjAyNDAwNTgsLTIwMDQ0MTg4MzAsLT
+IwMTY2MjEwMjcsLTkxMjU4NTc2NCwyMDc1NzYyMDksMTUxMDg4
+NTQzMSwyMDUyMzkxNzkwLC0xMzI0MzA2MjcwLC0xMzU0MjY0OD
+kxLDE1NjM2MTExNzgsMTE2MzAwMDk0MCwtNjMxODMwMzk4LDEy
+MjIwNTAwOF19
 -->
