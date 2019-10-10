@@ -79,7 +79,7 @@ $$\alpha_{ij}=\frac{exp(e_{ij})}{\sum_{k=1}exp(e_{ik})}$$
 -   **最后**，从物理意义上Attention可以理解为**相似性度量**。
 - $$e_{ij}=Sim(h_i,x_j)$$
 -   **其次**，从形式上Attention可以理解为**键值查询**
-Attention的更一般的表达形式为
+对于进行相似性计算和——不同的情况，Attention可以更一般的表示为
 Given a query  **q**  and a set of key-value pairs  **(K, V)**, attention can be generalised to compute a weighted sum of the values dependent on the query and the corresponding keys.  
 The query determines which values to focus on; we can say that the query ‘attends’ to the values.
 $$\mathrm{Attention}(Q, K, V) = \mathrm{softmax}(Sim(Q,K))V$$
@@ -268,11 +268,11 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [https://mchromiak.github.io/articles/2017/Sep/01/Primer-NN/#attention-basis](https://mchromiak.github.io/articles/2017/Sep/01/Primer-NN/#attention-basis)
 [Seq2seq pay Attention to Self Attention: Part 2](https://medium.com/@bgg/seq2seq-pay-attention-to-self-attention-part-2-cf81bf32c73d)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTM3OTIxOTAxMCw5OTYzNTkxNCwyNTYwND
-I4OTYsLTcxODkwNzIyNywtMjExNDg0ODE1OSwxNTcwNTI5NDI5
-LC0xNTMwNTk5MjksLTU4MTk2ODUxMywtMzYxNTg2MjE2LDYxOD
-UxMjY5MiwtMjcxNTQ1NTcsMTYyODU0NDAxMSwxMzg2NTI4NTUy
-LC0xMzYwMjQwMDU4LC0yMDA0NDE4ODMwLC0yMDE2NjIxMDI3LC
-05MTI1ODU3NjQsMjA3NTc2MjA5LDE1MTA4ODU0MzEsMjA1MjM5
-MTc5MF19
+eyJoaXN0b3J5IjpbLTUyNjgzMDY1LDk5NjM1OTE0LDI1NjA0Mj
+g5NiwtNzE4OTA3MjI3LC0yMTE0ODQ4MTU5LDE1NzA1Mjk0Mjks
+LTE1MzA1OTkyOSwtNTgxOTY4NTEzLC0zNjE1ODYyMTYsNjE4NT
+EyNjkyLC0yNzE1NDU1NywxNjI4NTQ0MDExLDEzODY1Mjg1NTIs
+LTEzNjAyNDAwNTgsLTIwMDQ0MTg4MzAsLTIwMTY2MjEwMjcsLT
+kxMjU4NTc2NCwyMDc1NzYyMDksMTUxMDg4NTQzMSwyMDUyMzkx
+NzkwXX0=
 -->
