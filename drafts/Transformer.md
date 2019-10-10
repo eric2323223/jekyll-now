@@ -70,6 +70,7 @@ $$e_{ij}=alignment(h_i,x_j)$$
 注意力机制主要用于seq2seq任务，它的基本思想就是对序列中的每个元素以一定的规则加入上下文信息。不同于RNN中先通过依次分析输入元素来逐步生成上下文context vector的方式，注意力机制对这些输入元素进行加权平均的方式来一步加入所有元素信息来生成上下文context vector。这样做的好处是能够一步到位捕捉到全局的联系(序列元素直接进行两两比较),不仅大大加速（可以并行计算）了context vector的生成，而且避免了RNN的长序列训练困难的问题。
 从实现上来讲，attention操作可以理解为加权求和的运算，加数是序列中的所有元素，权值计算方法根据任务目标而不同（在机器翻译的场景中使用相似度来作为权值）。用$\alpha$表示权值（通常表现为概率分布，即$\sum \alpha=1$），$h$表示序列元素，可以将attention形式化的表示为
 $$c_i=\sum_{j=1}\alpha_{ij}h_j$$
+![enter image description here](http://www.peterbloem.nl/files/transformers/self-attention.svg)
 从这个定义可以看出attention的结果$c$就是序列中所有元素按一定的比例关系相加得到的，由于$c$具备了序列的上下文信息，因此我们也可以把attention理解为**元素在某一个序列上下文环境中的重新定义**。这是attention最核心的特点，也是attention能够取代RNN的基础。下图可以发现，RNN需要在依次处理元素x1, x2和x3之后才能得到整个序列的上下文信息，而attention则可以同时处理x1，x2，x3而得到序列的上下文信息。
 ![enter image description here](https://docs.google.com/drawings/d/e/2PACX-1vQZ5I4YZtpZOU8xnxqqJ2WVd7o9eeo0sHQa119cWm4qR85KanMs7-Z1DV1EfKxJLQrZaVglHLUJGPF2/pub?w=856&h=225)
 权值$\alpha$是attention的重要————，他的计算
@@ -270,11 +271,11 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [Details Need More Attention: Transformer 没有被提到的细节](https://zhuanlan.zhihu.com/p/79987949)
 [TRANSFORMERS FROM SCRATCH](http://www.peterbloem.nl/blog/transformers)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTgyMDYwOTM1LC0yMDgyOTM0MTcsLTE2MT
-MwOTQ4ODcsOTk2MzU5MTQsMjU2MDQyODk2LC03MTg5MDcyMjcs
-LTIxMTQ4NDgxNTksMTU3MDUyOTQyOSwtMTUzMDU5OTI5LC01OD
-E5Njg1MTMsLTM2MTU4NjIxNiw2MTg1MTI2OTIsLTI3MTU0NTU3
-LDE2Mjg1NDQwMTEsMTM4NjUyODU1MiwtMTM2MDI0MDA1OCwtMj
-AwNDQxODgzMCwtMjAxNjYyMTAyNywtOTEyNTg1NzY0LDIwNzU3
-NjIwOV19
+eyJoaXN0b3J5IjpbLTEyMjUzMTk4NDMsLTIwODI5MzQxNywtMT
+YxMzA5NDg4Nyw5OTYzNTkxNCwyNTYwNDI4OTYsLTcxODkwNzIy
+NywtMjExNDg0ODE1OSwxNTcwNTI5NDI5LC0xNTMwNTk5MjksLT
+U4MTk2ODUxMywtMzYxNTg2MjE2LDYxODUxMjY5MiwtMjcxNTQ1
+NTcsMTYyODU0NDAxMSwxMzg2NTI4NTUyLC0xMzYwMjQwMDU4LC
+0yMDA0NDE4ODMwLC0yMDE2NjIxMDI3LC05MTI1ODU3NjQsMjA3
+NTc2MjA5XX0=
 -->
