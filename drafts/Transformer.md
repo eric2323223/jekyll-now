@@ -74,8 +74,8 @@ $$y_i=\sum_{j=1}w_{ij}x_j$$
 ![enter image description here](http://www.peterbloem.nl/files/transformers/self-attention.svg)
 从这个定义可以看出attention的结果$c$就是序列中所有元素按一定的比例关系相加得到的，由于$c$具备了序列的上下文信息，因此我们也可以把attention理解为**元素在某一个序列上下文环境中的重新定义**。这是attention最核心的特点，也是attention能够取代RNN的基础。下图可以发现，RNN需要在依次处理元素x1, x2和x3之后才能得到整个序列的上下文信息，而attention则可以同时处理x1，x2，x3而得到序列的上下文信息。
 ![enter image description here](https://docs.google.com/drawings/d/e/2PACX-1vQZ5I4YZtpZOU8xnxqqJ2WVd7o9eeo0sHQa119cWm4qR85KanMs7-Z1DV1EfKxJLQrZaVglHLUJGPF2/pub?w=856&h=225)
-权值$\alpha$是attention的重要————，他的计算
-$$\alpha_{ij}=\frac{exp(e_{ij})}{\sum_{k=1}exp(e_{ik})}$$
+权值$w$是attention的重要————，他的计算
+$$w_{ij}=\frac{exp(e_{ij})}{\sum_{k=1}exp(e_{ik})}$$
 
 -   **最后**，从物理意义上Attention可以理解为**相似性度量**。
 - $$e_{ij}=Sim(h_i,x_j)$$
@@ -272,11 +272,11 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [Details Need More Attention: Transformer 没有被提到的细节](https://zhuanlan.zhihu.com/p/79987949)
 [TRANSFORMERS FROM SCRATCH](http://www.peterbloem.nl/blog/transformers)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzQ1MTEyODQyLC0xMjI1MzE5ODQzLC0yMD
-gyOTM0MTcsLTE2MTMwOTQ4ODcsOTk2MzU5MTQsMjU2MDQyODk2
-LC03MTg5MDcyMjcsLTIxMTQ4NDgxNTksMTU3MDUyOTQyOSwtMT
-UzMDU5OTI5LC01ODE5Njg1MTMsLTM2MTU4NjIxNiw2MTg1MTI2
-OTIsLTI3MTU0NTU3LDE2Mjg1NDQwMTEsMTM4NjUyODU1MiwtMT
-M2MDI0MDA1OCwtMjAwNDQxODgzMCwtMjAxNjYyMTAyNywtOTEy
-NTg1NzY0XX0=
+eyJoaXN0b3J5IjpbMTgyNTM5NTI4OCwzNDUxMTI4NDIsLTEyMj
+UzMTk4NDMsLTIwODI5MzQxNywtMTYxMzA5NDg4Nyw5OTYzNTkx
+NCwyNTYwNDI4OTYsLTcxODkwNzIyNywtMjExNDg0ODE1OSwxNT
+cwNTI5NDI5LC0xNTMwNTk5MjksLTU4MTk2ODUxMywtMzYxNTg2
+MjE2LDYxODUxMjY5MiwtMjcxNTQ1NTcsMTYyODU0NDAxMSwxMz
+g2NTI4NTUyLC0xMzYwMjQwMDU4LC0yMDA0NDE4ODMwLC0yMDE2
+NjIxMDI3XX0=
 -->
