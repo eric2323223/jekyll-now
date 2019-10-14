@@ -76,7 +76,7 @@ $$y_i=\sum_{j=1}w_{ij}x_j$$
 ![enter image description here](https://docs.google.com/drawings/d/e/2PACX-1vQZ5I4YZtpZOU8xnxqqJ2WVd7o9eeo0sHQa119cWm4qR85KanMs7-Z1DV1EfKxJLQrZaVglHLUJGPF2/pub?w=856&h=225)
 权值$w_{ij}$表示$x_j$在对于$y_i$的计算中发挥的权重，由于所有$x$都参与$y_i$的计算，所以使用softmax来保证所有权值的和等于1。
 $$w_{ij}=\frac{exp(e_{ij})}{\sum_{k=1}exp(e_{ik})}$$
-这里的$e_{ij}$表示$x_j$和$y_i$的xiang
+这里的$e_{ij}$表示$x_j$和$y_i$的相关关系，如果
 -   **最后**，从物理意义上Attention可以理解为**相似性度量**。
 - $$e_{ij}=Sim(h_i,x_j)$$
 -   **其次**，从形式上Attention可以理解为**键值查询**
@@ -292,7 +292,7 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [TRANSFORMERS FROM SCRATCH](http://www.peterbloem.nl/blog/transformers)
 [Transformer Architecture: The Positional Encoding](https://kazemnejad.com/blog/transformer_architecture_positional_encoding)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwNjgwOTEwNzcsLTEzNjQ1OTQyNzQsMT
+eyJoaXN0b3J5IjpbLTE5NzUxMzU2NDcsLTEzNjQ1OTQyNzQsMT
 gyNTM5NTI4OCwzNDUxMTI4NDIsLTEyMjUzMTk4NDMsLTIwODI5
 MzQxNywtMTYxMzA5NDg4Nyw5OTYzNTkxNCwyNTYwNDI4OTYsLT
 cxODkwNzIyNywtMjExNDg0ODE1OSwxNTcwNTI5NDI5LC0xNTMw
