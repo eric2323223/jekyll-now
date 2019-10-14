@@ -102,6 +102,11 @@ Attention is cheap, 特别适合机器翻译的场景（dim>length）
 
  
 ## Transformer模型
+Transformer来自Google团队17年的文章[Attention is all you need](https://links.jianshu.com/go?to=https%3A%2F%2Farxiv.org%2Fabs%2F1706.03762)。  
+该文章的**目的**：减少计算量并且提高并行效率，同时不减弱最终的实验效果。  
+**创新点**：  
+Transformer只采用了attention机制。不像传统的encoder-decoder的模型需要结合RNN或者CNN来使用。创新之处在于使用了**scaled Dot-product Attention**和**Multi-Head Attention**。  
+
 基于attention机制
 - 解决long memory problem
 - 实现了部分并行运算，极大缩短了训练时间
@@ -296,11 +301,11 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [TRANSFORMERS FROM SCRATCH](http://www.peterbloem.nl/blog/transformers)
 [Transformer Architecture: The Positional Encoding](https://kazemnejad.com/blog/transformer_architecture_positional_encoding)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbOTExNjMyNzcwLC0xOTc1MTM1NjQ3LC0xMz
-Y0NTk0Mjc0LDE4MjUzOTUyODgsMzQ1MTEyODQyLC0xMjI1MzE5
-ODQzLC0yMDgyOTM0MTcsLTE2MTMwOTQ4ODcsOTk2MzU5MTQsMj
-U2MDQyODk2LC03MTg5MDcyMjcsLTIxMTQ4NDgxNTksMTU3MDUy
-OTQyOSwtMTUzMDU5OTI5LC01ODE5Njg1MTMsLTM2MTU4NjIxNi
-w2MTg1MTI2OTIsLTI3MTU0NTU3LDE2Mjg1NDQwMTEsMTM4NjUy
-ODU1Ml19
+eyJoaXN0b3J5IjpbMTI2NzgwMjQ1MCw5MTE2MzI3NzAsLTE5Nz
+UxMzU2NDcsLTEzNjQ1OTQyNzQsMTgyNTM5NTI4OCwzNDUxMTI4
+NDIsLTEyMjUzMTk4NDMsLTIwODI5MzQxNywtMTYxMzA5NDg4Ny
+w5OTYzNTkxNCwyNTYwNDI4OTYsLTcxODkwNzIyNywtMjExNDg0
+ODE1OSwxNTcwNTI5NDI5LC0xNTMwNTk5MjksLTU4MTk2ODUxMy
+wtMzYxNTg2MjE2LDYxODUxMjY5MiwtMjcxNTQ1NTcsMTYyODU0
+NDAxMV19
 -->
