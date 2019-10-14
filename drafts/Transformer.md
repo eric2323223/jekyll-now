@@ -107,6 +107,7 @@ Transformer来自Google团队2017年的文章Attention is all you need。正如�
 该文章的**目的**：减少计算量并且提高并行效率，同时不减弱最终的实验效果。  
 **创新点**：  
 Transformer只采用了attention机制。不像传统的encoder-decoder的模型需要结合RNN或者CNN来使用。创新之处在于使用了**scaled Dot-product Attention**和**Multi-Head Attention**。  
+Transformer的最大的创新在于它使用只attention机制来实现seq2seq task，避免使用RNN和CNN从而使得在训练速度和准确率上全面超越了已有的方法。具体来讲
 
 基于attention机制
 - 解决long memory problem
@@ -117,7 +118,7 @@ Transformer只采用了attention机制。不像传统的encoder-decoder的模型
 ### 模型架构
 整体架构上看，transformer仍属于Encoder-Decoder架构，通过encoder将输入序列转换成内部表示，在通过不同decoder实现不同的预测功能。
 
-Transformer的最大的创新在于它使用只attention机制来实现seq2seq task，避免使用RNN和CNN从而使得在训练速度和准确率上全面超越了已有的方法。具体来讲
+
 ![enter image description here](https://3.bp.blogspot.com/-aZ3zvPiCoXM/WaiKQO7KRnI/AAAAAAAAB_8/7a1CYjp40nUg4lKpW7covGZJQAySxlg8QCLcBGAs/s640/transform20fps.gif)
 
 ### 为什么Attention is all you need?
@@ -302,11 +303,11 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [TRANSFORMERS FROM SCRATCH](http://www.peterbloem.nl/blog/transformers)
 [Transformer Architecture: The Positional Encoding](https://kazemnejad.com/blog/transformer_architecture_positional_encoding)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE5MjczODY2NDYsOTExNjMyNzcwLC0xOT
-c1MTM1NjQ3LC0xMzY0NTk0Mjc0LDE4MjUzOTUyODgsMzQ1MTEy
-ODQyLC0xMjI1MzE5ODQzLC0yMDgyOTM0MTcsLTE2MTMwOTQ4OD
-csOTk2MzU5MTQsMjU2MDQyODk2LC03MTg5MDcyMjcsLTIxMTQ4
-NDgxNTksMTU3MDUyOTQyOSwtMTUzMDU5OTI5LC01ODE5Njg1MT
-MsLTM2MTU4NjIxNiw2MTg1MTI2OTIsLTI3MTU0NTU3LDE2Mjg1
-NDQwMTFdfQ==
+eyJoaXN0b3J5IjpbMTAzNDQ3NDc3NiwtMTkyNzM4NjY0Niw5MT
+E2MzI3NzAsLTE5NzUxMzU2NDcsLTEzNjQ1OTQyNzQsMTgyNTM5
+NTI4OCwzNDUxMTI4NDIsLTEyMjUzMTk4NDMsLTIwODI5MzQxNy
+wtMTYxMzA5NDg4Nyw5OTYzNTkxNCwyNTYwNDI4OTYsLTcxODkw
+NzIyNywtMjExNDg0ODE1OSwxNTcwNTI5NDI5LC0xNTMwNTk5Mj
+ksLTU4MTk2ODUxMywtMzYxNTg2MjE2LDYxODUxMjY5MiwtMjcx
+NTQ1NTddfQ==
 -->
