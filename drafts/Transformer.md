@@ -78,7 +78,7 @@ $$y_i=\sum_{j=1}w_{ij}x_j$$
 $$w_{ij}=\frac{exp(e_{ij})}{\sum_{k=1}exp(e_{ik})}$$
 这里的$e_{ij}$表示$x_j$和$y_i$的相关性，对于机器翻译任务来说，通常用矢量相似性来表述元素的相关性，适量相似性的计算方法有很多
 ![enter image description here](https://miro.medium.com/max/1452/1*oosK1XGaYr0AoSxfs9fx5A.png)
-qi'h
+其中最常用的就是点积运算（dot product）
 -   **最后**，从物理意义上Attention可以理解为**相似性度量**。
 - $$e_{ij}=Sim(h_i,x_j)$$
 -   **其次**，从形式上Attention可以理解为**键值查询**
@@ -294,11 +294,11 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [TRANSFORMERS FROM SCRATCH](http://www.peterbloem.nl/blog/transformers)
 [Transformer Architecture: The Positional Encoding](https://kazemnejad.com/blog/transformer_architecture_positional_encoding)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTE2NTY1ODQ1MywtMTk3NTEzNTY0NywtMT
-M2NDU5NDI3NCwxODI1Mzk1Mjg4LDM0NTExMjg0MiwtMTIyNTMx
-OTg0MywtMjA4MjkzNDE3LC0xNjEzMDk0ODg3LDk5NjM1OTE0LD
-I1NjA0Mjg5NiwtNzE4OTA3MjI3LC0yMTE0ODQ4MTU5LDE1NzA1
-Mjk0MjksLTE1MzA1OTkyOSwtNTgxOTY4NTEzLC0zNjE1ODYyMT
-YsNjE4NTEyNjkyLC0yNzE1NDU1NywxNjI4NTQ0MDExLDEzODY1
-Mjg1NTJdfQ==
+eyJoaXN0b3J5IjpbNDMxMTMzMDM1LC0xOTc1MTM1NjQ3LC0xMz
+Y0NTk0Mjc0LDE4MjUzOTUyODgsMzQ1MTEyODQyLC0xMjI1MzE5
+ODQzLC0yMDgyOTM0MTcsLTE2MTMwOTQ4ODcsOTk2MzU5MTQsMj
+U2MDQyODk2LC03MTg5MDcyMjcsLTIxMTQ4NDgxNTksMTU3MDUy
+OTQyOSwtMTUzMDU5OTI5LC01ODE5Njg1MTMsLTM2MTU4NjIxNi
+w2MTg1MTI2OTIsLTI3MTU0NTU3LDE2Mjg1NDQwMTEsMTM4NjUy
+ODU1Ml19
 -->
