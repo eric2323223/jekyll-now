@@ -103,7 +103,7 @@ Attention is cheap, 特别适合机器翻译的场景（dim>length）
  
 ## Transformer模型
 
-Transformer模型是由google于2017年在其论文attention is all you need中发布的。正如论文的题目所说的，Transformer中抛弃了传统的CNN和RNN，整个网络结构完全是由Attention机制组成。更准确地讲，Transformer由且仅由self-Attenion和Feed Forward Neural Network组成。一个基于Transformer的可训练的神经网络可以通过堆叠Transformer的形式进行搭建，作者的实验是通过搭建编码器和解码器各6层，总共12层的Encoder-Decoder，并在机器翻译中取得了BLEU值得新高。Transformer来自Google团队2017年的文章[Attention is all you need](https://links.jianshu.com/go?to=https%3A%2F%2Farxiv.org%2Fabs%2F1706.03762)。  
+Transformer来自Google团队2017年的文章Attention is all you need。正如论文的题目所说的，Transformer中抛弃了传统的CNN和RNN，整个网络结构完全是由Attention机制组成。更准确地讲，Transformer由且仅由self-Attenion和Feed Forward Neural Network组成。一个基于Transformer的可训练的神经网络可以通过堆叠Transformer的形式进行搭建，作者的实验是通过搭建编码器和解码器各6层，总共12层的Encoder-Decoder，并在机器翻译中取得了BLEU值得新高。
 该文章的**目的**：减少计算量并且提高并行效率，同时不减弱最终的实验效果。  
 **创新点**：  
 Transformer只采用了attention机制。不像传统的encoder-decoder的模型需要结合RNN或者CNN来使用。创新之处在于使用了**scaled Dot-product Attention**和**Multi-Head Attention**。  
@@ -302,11 +302,11 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [TRANSFORMERS FROM SCRATCH](http://www.peterbloem.nl/blog/transformers)
 [Transformer Architecture: The Positional Encoding](https://kazemnejad.com/blog/transformer_architecture_positional_encoding)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTYzMDM3NTY1Niw5MTE2MzI3NzAsLTE5Nz
-UxMzU2NDcsLTEzNjQ1OTQyNzQsMTgyNTM5NTI4OCwzNDUxMTI4
-NDIsLTEyMjUzMTk4NDMsLTIwODI5MzQxNywtMTYxMzA5NDg4Ny
-w5OTYzNTkxNCwyNTYwNDI4OTYsLTcxODkwNzIyNywtMjExNDg0
-ODE1OSwxNTcwNTI5NDI5LC0xNTMwNTk5MjksLTU4MTk2ODUxMy
-wtMzYxNTg2MjE2LDYxODUxMjY5MiwtMjcxNTQ1NTcsMTYyODU0
-NDAxMV19
+eyJoaXN0b3J5IjpbLTE2NDAwNzE4MzAsOTExNjMyNzcwLC0xOT
+c1MTM1NjQ3LC0xMzY0NTk0Mjc0LDE4MjUzOTUyODgsMzQ1MTEy
+ODQyLC0xMjI1MzE5ODQzLC0yMDgyOTM0MTcsLTE2MTMwOTQ4OD
+csOTk2MzU5MTQsMjU2MDQyODk2LC03MTg5MDcyMjcsLTIxMTQ4
+NDgxNTksMTU3MDUyOTQyOSwtMTUzMDU5OTI5LC01ODE5Njg1MT
+MsLTM2MTU4NjIxNiw2MTg1MTI2OTIsLTI3MTU0NTU3LDE2Mjg1
+NDQwMTFdfQ==
 -->
