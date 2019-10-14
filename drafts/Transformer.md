@@ -76,10 +76,9 @@ $$y_i=\sum_{j=1}w_{ij}x_j$$
 ![enter image description here](https://docs.google.com/drawings/d/e/2PACX-1vQZ5I4YZtpZOU8xnxqqJ2WVd7o9eeo0sHQa119cWm4qR85KanMs7-Z1DV1EfKxJLQrZaVglHLUJGPF2/pub?w=856&h=225)
 权值$w_{ij}$表示$x_j$在对于$y_i$的计算中发挥的权重，由于所有$x$都参与$y_i$的计算，所以使用softmax来保证所有权值的和等于1。
 $$w_{ij}=\frac{exp(e_{ij})}{\sum_{k=1}exp(e_{ik})}$$
-这里的$e_{ij}$表示$x_j$和$y_i$的相关性，对于机器翻译任务来说，通常用矢量相似性来表述元素的相关性，适量相似性的计算方法有很多
-![enter image description here](https://miro.medium.com/max/1452/1*oosK1XGaYr0AoSxfs9fx5A.png)
-其中最常用的就是点积运算（dot product）
-$$a\cdot b=|a|\$$ 
+这里的$e_{ij}$表示$x_j$和$y_i$的相关性，对于机器翻译任务来说，通常用矢量相似性来表述元素的相关性，适量相似性的计算方法有很多，其中最常用的就是点积运算（dot product）
+$$a\cdot b=|a||b|cos\theta$$ 
+
 ![enter image description here](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSO0ZVpogoaP-ipyQF0Xhir4wSrgGJBdeU_5wDrea6UD9sF7icIYg)
 -   **最后**，从物理意义上Attention可以理解为**相似性度量**。
 - $$e_{ij}=Sim(h_i,x_j)$$
@@ -296,7 +295,7 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [TRANSFORMERS FROM SCRATCH](http://www.peterbloem.nl/blog/transformers)
 [Transformer Architecture: The Positional Encoding](https://kazemnejad.com/blog/transformer_architecture_positional_encoding)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTkzMjcxNDI0NCwtMTk3NTEzNTY0NywtMT
+eyJoaXN0b3J5IjpbMTAxNTU2OTM2NCwtMTk3NTEzNTY0NywtMT
 M2NDU5NDI3NCwxODI1Mzk1Mjg4LDM0NTExMjg0MiwtMTIyNTMx
 OTg0MywtMjA4MjkzNDE3LC0xNjEzMDk0ODg3LDk5NjM1OTE0LD
 I1NjA0Mjg5NiwtNzE4OTA3MjI3LC0yMTE0ODQ4MTU5LDE1NzA1
