@@ -77,7 +77,8 @@ $$y_i=\sum_{j=1}w_{ij}x_j$$
 权值$w_{ij}$表示$x_j$在对于$y_i$的计算中发挥的权重，由于所有$x$都参与$y_i$的计算，所以使用softmax来保证所有权值的和等于1。
 $$w_{ij}=\frac{exp(e_{ij})}{\sum_{k=1}exp(e_{ik})}$$
 这里的$e_{ij}$表示$x_j$和$y_i$的相关性，对于机器翻译任务来说，通常用矢量相似性来表述元素的相关性，适量相似性的计算方法有很多，其中最常用的就是点积运算（dot product）
-$$a\cdot b=|a||b|cos\theta$$ 
+
+$$e_{ij}=x_j\cdot y_i=|x_j||y_i|cos\theta$$ 
 $\theta$表示两个向量$a,b$之间的夹角，如果$a,b$越相似则夹角$\theta$越小，$cos\theta$则越接近1
 
 ![enter image description here](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSO0ZVpogoaP-ipyQF0Xhir4wSrgGJBdeU_5wDrea6UD9sF7icIYg)
@@ -303,11 +304,11 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [TRANSFORMERS FROM SCRATCH](http://www.peterbloem.nl/blog/transformers)
 [Transformer Architecture: The Positional Encoding](https://kazemnejad.com/blog/transformer_architecture_positional_encoding)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTAzNDQ3NDc3NiwtMTkyNzM4NjY0Niw5MT
-E2MzI3NzAsLTE5NzUxMzU2NDcsLTEzNjQ1OTQyNzQsMTgyNTM5
-NTI4OCwzNDUxMTI4NDIsLTEyMjUzMTk4NDMsLTIwODI5MzQxNy
-wtMTYxMzA5NDg4Nyw5OTYzNTkxNCwyNTYwNDI4OTYsLTcxODkw
-NzIyNywtMjExNDg0ODE1OSwxNTcwNTI5NDI5LC0xNTMwNTk5Mj
-ksLTU4MTk2ODUxMywtMzYxNTg2MjE2LDYxODUxMjY5MiwtMjcx
-NTQ1NTddfQ==
+eyJoaXN0b3J5IjpbMTY0Njg1NjU4MiwxMDM0NDc0Nzc2LC0xOT
+I3Mzg2NjQ2LDkxMTYzMjc3MCwtMTk3NTEzNTY0NywtMTM2NDU5
+NDI3NCwxODI1Mzk1Mjg4LDM0NTExMjg0MiwtMTIyNTMxOTg0My
+wtMjA4MjkzNDE3LC0xNjEzMDk0ODg3LDk5NjM1OTE0LDI1NjA0
+Mjg5NiwtNzE4OTA3MjI3LC0yMTE0ODQ4MTU5LDE1NzA1Mjk0Mj
+ksLTE1MzA1OTkyOSwtNTgxOTY4NTEzLC0zNjE1ODYyMTYsNjE4
+NTEyNjkyXX0=
 -->
