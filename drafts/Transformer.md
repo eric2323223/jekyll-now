@@ -272,12 +272,12 @@ point-wise 对序列中每个元素分别进行2层全连接运算，目的主�
 ![enter image description here](https://camo.githubusercontent.com/4b80977ac0757d1d18eb7be4d0238e92673bfaba/68747470733a2f2f6c696c69616e77656e672e6769746875622e696f2f6c696c2d6c6f672f6173736574732f696d616765732f7472616e73666f726d65722e706e67)
 ## Transformer的改进
 > ### Transformer 的局限性
-Transformer 无疑是对基于递归神经网络的 seq2seq 模型的巨大改进。但它也有自身的局限性：
--   注意力只能处理固定长度的文本字符串。在输入系统之前，文本必须被分割成一定数量的段或块。
-    -   这种文本块会导致**上下文碎片化**。例如，如果一个句子从中间分隔，那么大量的上下文就会丢失。换言之，在不考虑句子或任何其他语义边界的情况下对文本进行分隔。
-    
-
-那么，我们如何处理这些非常重要的问题呢？这就是使用过 Transformer 的人们提出的问题。由此催生了 Transformer-XL。
+> Transformer 无疑是对基于递归神经网络的 seq2seq 模型的巨大改进。但它也有自身的局限性：
+> -   注意力只能处理固定长度的文本字符串。在输入系统之前，文本必须被分割成一定数量的段或块。
+> -   这种文本块会导致**上下文碎片化**。例如，如果一个句子从中间分隔，那么大量的上下文就会丢失。
+> 换言之，在不考虑句子或任何其他语义边界的情况下对文本进行分隔。
+ 那么，我们如何处理这些非常重要的问题呢？这就是使用过 Transformer 的人们提出的问题。由此催生了 Transformer-XL。
+在这种架构中，在先前段中获得的隐状态被重用为当前段的信息员。它支持对长期依赖建模，因为信息可以从一个段流向下一个段。
 
 ## 理解 Transformer-XL
 
@@ -316,11 +316,11 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [TRANSFORMERS FROM SCRATCH](http://www.peterbloem.nl/blog/transformers)
 [Transformer Architecture: The Positional Encoding](https://kazemnejad.com/blog/transformer_architecture_positional_encoding)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2NjQyMTIyNTUsLTExNTg2Nzg1NjMsMT
-Y0Njg1NjU4MiwxMDM0NDc0Nzc2LC0xOTI3Mzg2NjQ2LDkxMTYz
-Mjc3MCwtMTk3NTEzNTY0NywtMTM2NDU5NDI3NCwxODI1Mzk1Mj
-g4LDM0NTExMjg0MiwtMTIyNTMxOTg0MywtMjA4MjkzNDE3LC0x
-NjEzMDk0ODg3LDk5NjM1OTE0LDI1NjA0Mjg5NiwtNzE4OTA3Mj
-I3LC0yMTE0ODQ4MTU5LDE1NzA1Mjk0MjksLTE1MzA1OTkyOSwt
-NTgxOTY4NTEzXX0=
+eyJoaXN0b3J5IjpbMTk0Nzg0MTU3MCwtMTE1ODY3ODU2MywxNj
+Q2ODU2NTgyLDEwMzQ0NzQ3NzYsLTE5MjczODY2NDYsOTExNjMy
+NzcwLC0xOTc1MTM1NjQ3LC0xMzY0NTk0Mjc0LDE4MjUzOTUyOD
+gsMzQ1MTEyODQyLC0xMjI1MzE5ODQzLC0yMDgyOTM0MTcsLTE2
+MTMwOTQ4ODcsOTk2MzU5MTQsMjU2MDQyODk2LC03MTg5MDcyMj
+csLTIxMTQ4NDgxNTksMTU3MDUyOTQyOSwtMTUzMDU5OTI5LC01
+ODE5Njg1MTNdfQ==
 -->
