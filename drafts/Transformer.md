@@ -239,7 +239,7 @@ different random initial weights matrix may lead to different representation sub
 > Transformer use multi-head (dmodel/hdmodel/h  parallel attention functions) attention instead of single (dmodeldmodel-dimensional) attention function (i.e.  q,k,vq,k,v  all  dmodeldmodel-dimensional). It is at similar computational cost as in the case of single-head attention due to reduced dimensions of each head.
 > Transformer imitates the classical attention mechanism (known e.g. from  [Bahdanau et al., 2014](https://arxiv.org/abs/1409.0473) or Conv2S2) where in encoder-decoder attention layers  _queries_  are form previous decoder layer, and the (memory)  _keys_  and  _values_  are from output of the encoder. Therefore, each position in decoder can attend over all positions in the input sequence.
 
-### point-wise FFN
+### point-wise 前馈网络
 point-wise 对序列中每个元素分别进行2层全连接运算，目的主要是为了提供对multi-attention提取出的feature进行 **复杂（非线性）** 合成的能力
 > Like the name indicates, this is a regular feedforward network applied to _each_ time step of the Multi Head attention outputs. The network has three layers with a non-linearity like ReLU for the hidden layer. You might be wondering why do we need a feedforward network after attention; after all isn’t attention all we need 😈 ? I suspect it is needed to improve model expressiveness. As we saw earlier the multi head attention partitioned the inputs and applied attention independently. There was only a linear projection to the outputs, i.e. the partitions were combined only linearly. The _Positionwise Feedforward_ network thus brings in some non-linear ‘mixing’ if we call it that. In fact for the sequence tagging task we use convolutions instead of fully connected layers. A filter of width 3 allows interactions to happen with adjacent time steps to improve performance.
 
@@ -318,11 +318,11 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [TRANSFORMERS FROM SCRATCH](http://www.peterbloem.nl/blog/transformers)
 [Transformer Architecture: The Positional Encoding](https://kazemnejad.com/blog/transformer_architecture_positional_encoding)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTk2Mzg2MTIyNiwtMTE1ODY3ODU2MywxNj
-Q2ODU2NTgyLDEwMzQ0NzQ3NzYsLTE5MjczODY2NDYsOTExNjMy
-NzcwLC0xOTc1MTM1NjQ3LC0xMzY0NTk0Mjc0LDE4MjUzOTUyOD
-gsMzQ1MTEyODQyLC0xMjI1MzE5ODQzLC0yMDgyOTM0MTcsLTE2
-MTMwOTQ4ODcsOTk2MzU5MTQsMjU2MDQyODk2LC03MTg5MDcyMj
-csLTIxMTQ4NDgxNTksMTU3MDUyOTQyOSwtMTUzMDU5OTI5LC01
-ODE5Njg1MTNdfQ==
+eyJoaXN0b3J5IjpbMTA3MzU2OTYxMiwxOTYzODYxMjI2LC0xMT
+U4Njc4NTYzLDE2NDY4NTY1ODIsMTAzNDQ3NDc3NiwtMTkyNzM4
+NjY0Niw5MTE2MzI3NzAsLTE5NzUxMzU2NDcsLTEzNjQ1OTQyNz
+QsMTgyNTM5NTI4OCwzNDUxMTI4NDIsLTEyMjUzMTk4NDMsLTIw
+ODI5MzQxNywtMTYxMzA5NDg4Nyw5OTYzNTkxNCwyNTYwNDI4OT
+YsLTcxODkwNzIyNywtMjExNDg0ODE1OSwxNTcwNTI5NDI5LC0x
+NTMwNTk5MjldfQ==
 -->
