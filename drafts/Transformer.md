@@ -270,7 +270,7 @@ point-wise 对序列中每个元素分别进行2层全连接运算，目的主�
 
 在介绍了Transformer的主要组成部分之后，我们再来完整看一下Transformer模型
 ![enter image description here](https://camo.githubusercontent.com/4b80977ac0757d1d18eb7be4d0238e92673bfaba/68747470733a2f2f6c696c69616e77656e672e6769746875622e696f2f6c696c2d6c6f672f6173736574732f696d616765732f7472616e73666f726d65722e706e67)
-## Transformer的改进
+## Transformer的改进和发展
 > ### Transformer 的局限性
 > Transformer 无疑是对基于递归神经网络的 seq2seq 模型的巨大改进。但它也有自身的局限性：
 > -   注意力只能处理固定长度的文本字符串。在输入系统之前，文本必须被分割成一定数量的段或块。
@@ -282,6 +282,8 @@ point-wise 对序列中每个元素分别进行2层全连接运算，目的主�
 ## 理解 Transformer-XL
 
 Transformer 架构可以学习长期依赖。但是，由于使用固定长度的上下文（输入文本段），它们无法扩展到特定的级别。为了克服这一缺点，这篇论文提出了一种新的架构：[《Transformer-XL：超出固定长度上下文的注意力语言模型》](https://arxiv.org/pdf/1901.02860.pdf)（Transformer-XL: Attentive Language Models Beyond a Fixed-Length Context）
+
+
 Despite not having any explicit recurrency, implicitly the model is built as an autoregressive one. It implies that in order to generate an output (both while training or during inference), the model needs to compute previous outputs, which is extremely costly, for the whole net has to be run for every output. That’s the main idea to overcome in a recent paper by researchers at [_Salesforce Research_](https://einstein.ai/research/non-autoregressive-neural-machine-translation) and the University of Hong Kong, who tried to make the whole process parallelizable[23](https://ricardokleinklein.github.io/2017/11/16/Attention-is-all-you-need.html#fn:23). Their proposal is to compute _fertilities_ for every input word in the sequence, and use it instead of previous outputs in order to compute the current output. This is summarized in the figure below.
 尽管没有任何显式递归，但是隐式地将模型构建为自回归模型。 这意味着为了生成输出（在训练时或在推理期间），该模型需要计算先前的输出，这非常昂贵，因为必须为每个输出运行整个网络。 这是Salesforce Research和香港大学的研究人员在最近的一篇论文中要克服的主要思想，他们试图使整个过程可并行化23。 他们的建议是为序列中的每个输入单词计算肥力，并使用它代替先前的输出以计算当前输出。 下图对此进行了总结。
 ![enter image description here](https://ricardokleinklein.github.io/images/transformer/fertilities.png)
@@ -316,7 +318,7 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [TRANSFORMERS FROM SCRATCH](http://www.peterbloem.nl/blog/transformers)
 [Transformer Architecture: The Positional Encoding](https://kazemnejad.com/blog/transformer_architecture_positional_encoding)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTk0Nzg0MTU3MCwtMTE1ODY3ODU2MywxNj
+eyJoaXN0b3J5IjpbMTk2Mzg2MTIyNiwtMTE1ODY3ODU2MywxNj
 Q2ODU2NTgyLDEwMzQ0NzQ3NzYsLTE5MjczODY2NDYsOTExNjMy
 NzcwLC0xOTc1MTM1NjQ3LC0xMzY0NTk0Mjc0LDE4MjUzOTUyOD
 gsMzQ1MTEyODQyLC0xMjI1MzE5ODQzLC0yMDgyOTM0MTcsLTE2
