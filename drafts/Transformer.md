@@ -104,7 +104,7 @@ Attention is cheap, 特别适合机器翻译的场景（dim>length）
  
 ## Transformer模型
 
-Transformer来自Google团队2017年的文章Attention is all you need。正如论文的题目所说的，Transformer中抛弃了传统的CNN和RNN，整个网络结构完全是由Attention机制组成。更准确地讲，Transformer由且仅由self-Attenion和Feed Forward Neural Network组成。，并在机器翻译中取得了BLEU值得新高。
+Transformer来自Google Brain团队2017年的文章Attention is all you need。正如论文的题目所说的，Transformer中抛弃了传统的CNN和RNN，整个网络结构完全是由Attention机制组成。更准确地讲，Transformer由且仅由self-Attenion和Feed Forward Neural Network组成。，并在机器翻译中取得了BLEU值得新高。
 用更少的计算资源，取得了比过去的结构更好的结果。
 该文章的**目的**：减少计算量并且提高并行效率，同时不减弱最终的实验效果。  
 **创新点**：  
@@ -271,6 +271,17 @@ point-wise 对序列中每个元素分别进行2层全连接运算，目的主�
 在介绍了Transformer的主要组成部分之后，我们再来完整看一下Transformer模型
 ![enter image description here](https://camo.githubusercontent.com/4b80977ac0757d1d18eb7be4d0238e92673bfaba/68747470733a2f2f6c696c69616e77656e672e6769746875622e696f2f6c696c2d6c6f672f6173736574732f696d616765732f7472616e73666f726d65722e706e67)
 ## Transformer的改进
+> ### Transformer 的局限性
+Transformer 无疑是对基于递归神经网络的 seq2seq 模型的巨大改进。但它也有自身的局限性：
+-   注意力只能处理固定长度的文本字符串。在输入系统之前，文本必须被分割成一定数量的段或块。
+    -   这种文本块会导致**上下文碎片化**。例如，如果一个句子从中间分隔，那么大量的上下文就会丢失。换言之，在不考虑句子或任何其他语义边界的情况下对文本进行分隔。
+    
+
+那么，我们如何处理这些非常重要的问题呢？这就是使用过 Transformer 的人们提出的问题。由此催生了 Transformer-XL。
+
+## 理解 Transformer-XL
+
+Transformer 架构可以学习长期依赖。但是，由于使用固定长度的上下文（输入文本段），它们无法扩展到特定的级别。为了克服这一缺点，这篇论文提出了一种新的架构：[《Transformer-XL：超出固定长度上下文的注意力语言模型》](https://arxiv.org/pdf/1901.02860.pdf)（Transformer-XL: Attentive Language Models Beyond a Fixed-Length Context）
 Despite not having any explicit recurrency, implicitly the model is built as an autoregressive one. It implies that in order to generate an output (both while training or during inference), the model needs to compute previous outputs, which is extremely costly, for the whole net has to be run for every output. That’s the main idea to overcome in a recent paper by researchers at [_Salesforce Research_](https://einstein.ai/research/non-autoregressive-neural-machine-translation) and the University of Hong Kong, who tried to make the whole process parallelizable[23](https://ricardokleinklein.github.io/2017/11/16/Attention-is-all-you-need.html#fn:23). Their proposal is to compute _fertilities_ for every input word in the sequence, and use it instead of previous outputs in order to compute the current output. This is summarized in the figure below.
 尽管没有任何显式递归，但是隐式地将模型构建为自回归模型。 这意味着为了生成输出（在训练时或在推理期间），该模型需要计算先前的输出，这非常昂贵，因为必须为每个输出运行整个网络。 这是Salesforce Research和香港大学的研究人员在最近的一篇论文中要克服的主要思想，他们试图使整个过程可并行化23。 他们的建议是为序列中的每个输入单词计算肥力，并使用它代替先前的输出以计算当前输出。 下图对此进行了总结。
 ![enter image description here](https://ricardokleinklein.github.io/images/transformer/fertilities.png)
@@ -305,11 +316,11 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [TRANSFORMERS FROM SCRATCH](http://www.peterbloem.nl/blog/transformers)
 [Transformer Architecture: The Positional Encoding](https://kazemnejad.com/blog/transformer_architecture_positional_encoding)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTExNTg2Nzg1NjMsMTY0Njg1NjU4MiwxMD
-M0NDc0Nzc2LC0xOTI3Mzg2NjQ2LDkxMTYzMjc3MCwtMTk3NTEz
-NTY0NywtMTM2NDU5NDI3NCwxODI1Mzk1Mjg4LDM0NTExMjg0Mi
-wtMTIyNTMxOTg0MywtMjA4MjkzNDE3LC0xNjEzMDk0ODg3LDk5
-NjM1OTE0LDI1NjA0Mjg5NiwtNzE4OTA3MjI3LC0yMTE0ODQ4MT
-U5LDE1NzA1Mjk0MjksLTE1MzA1OTkyOSwtNTgxOTY4NTEzLC0z
-NjE1ODYyMTZdfQ==
+eyJoaXN0b3J5IjpbLTE2NjQyMTIyNTUsLTExNTg2Nzg1NjMsMT
+Y0Njg1NjU4MiwxMDM0NDc0Nzc2LC0xOTI3Mzg2NjQ2LDkxMTYz
+Mjc3MCwtMTk3NTEzNTY0NywtMTM2NDU5NDI3NCwxODI1Mzk1Mj
+g4LDM0NTExMjg0MiwtMTIyNTMxOTg0MywtMjA4MjkzNDE3LC0x
+NjEzMDk0ODg3LDk5NjM1OTE0LDI1NjA0Mjg5NiwtNzE4OTA3Mj
+I3LC0yMTE0ODQ4MTU5LDE1NzA1Mjk0MjksLTE1MzA1OTkyOSwt
+NTgxOTY4NTEzXX0=
 -->
