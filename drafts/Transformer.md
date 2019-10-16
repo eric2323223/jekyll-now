@@ -125,15 +125,11 @@ Attention是transformer的核心，它不仅作用在encoder到decoder的转换�
 
 > 对于使用自注意力机制的原因，论文中提到主要从三个方面考虑（每一层的复杂度，是否可以并行，长距离依赖学习），并给出了和RNN，CNN计算复杂度的比较。可以看到，如果输入序列n小于表示维度d的话，每一层的时间复杂度self-attention是比较有优势的。当n比较大时，作者也给出了一种解决方案self-attention（restricted）即每个词不是和所有词计算attention，而是只与限制的r个词去计算attention。在并行方面，多头attention和CNN一样不依赖于前一时刻的计算，可以很好的并行，优于RNN。在长距离依赖上，由于self-attention是每个词和所有词都要计算attention，所以不管他们中间有多长距离，最大的路径长度也都只是1。可以捕获长距离依赖关系。
 > In these models, the number of operations required to relate signals from two arbitrary input or output positions grows in the distance between positions, linearly for ConvS2S and logarithmically for ByteNet. This makes it more difficult to learn dependencies between distant positions. In the Transformer this is reduced to a constant number of operations, albeit at the cost of reduced effective resolution due to averaging attention-weighted positions, an effect we counteract with Multi-Head Attention.
-
 > Authors motivates the use of self-attention layers instead of recurrent or convolutional layers with three desiderata:
-
 1.  Minimize total computational complexity per layer
-    
-    -   **Pros:**  self-attention layers connects all positions with  O(1)O(1)  number of sequentially executed operations (eg. vs  O(n)O(n)  in RNN)
+        -   **Pros:**  self-attention layers connects all positions with  O(1)O(1)  number of sequentially executed operations (eg. vs  O(n)O(n)  in RNN)
 2.  Maximize amount of parallelizable computations, measured by minimum number of sequential operations required
-    
-    -   **Pros:**  for sequence length  nn  < representation dimensionality  dd  (true for SOTA sequence representation models like  _word-piece, byte-pair_). For very long sequences  n>dn>d  self-attention can consider only neighborhood of some size  rr  in the input sequence centered around the respective output position, thus increasing the max path length to  O(n/r)O(n/r)
+        -   **Pros:**  for sequence length  nn  < representation dimensionality  dd  (true for SOTA sequence representation models like  _word-piece, byte-pair_). For very long sequences  n>dn>d  self-attention can consider only neighborhood of some size  rr  in the input sequence centered around the respective output position, thus increasing the max path length to  O(n/r)O(n/r)
 3.  Minimize maximum path length between any two input and output positions in network composed of the different layer types . The shorter the path between any combination of positions in the input and output sequences, the easier to learn long-range dependencies. (See why  [Hochreiter et al, 2001](http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.24.7321) ) 
 
 **Scaled Dot-Product Attention**
@@ -305,11 +301,11 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [TRANSFORMERS FROM SCRATCH](http://www.peterbloem.nl/blog/transformers)
 [Transformer Architecture: The Positional Encoding](https://kazemnejad.com/blog/transformer_architecture_positional_encoding)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTg4NDIwNDUyMiwtMTAzMzQ2MTE5MCwxOD
-AzMzQ5MDk1LC0xOTU5ODYzMjc1LDQwMDI4NTA5NiwtMTY3NTI2
-MTksMTUwMzYxMjQ3OSwxMDczNTY5NjEyLDE5NjM4NjEyMjYsLT
-ExNTg2Nzg1NjMsMTY0Njg1NjU4MiwxMDM0NDc0Nzc2LC0xOTI3
-Mzg2NjQ2LDkxMTYzMjc3MCwtMTk3NTEzNTY0NywtMTM2NDU5ND
-I3NCwxODI1Mzk1Mjg4LDM0NTExMjg0MiwtMTIyNTMxOTg0Mywt
-MjA4MjkzNDE3XX0=
+eyJoaXN0b3J5IjpbLTYwOTYxOTAxNCwtODg0MjA0NTIyLC0xMD
+MzNDYxMTkwLDE4MDMzNDkwOTUsLTE5NTk4NjMyNzUsNDAwMjg1
+MDk2LC0xNjc1MjYxOSwxNTAzNjEyNDc5LDEwNzM1Njk2MTIsMT
+k2Mzg2MTIyNiwtMTE1ODY3ODU2MywxNjQ2ODU2NTgyLDEwMzQ0
+NzQ3NzYsLTE5MjczODY2NDYsOTExNjMyNzcwLC0xOTc1MTM1Nj
+Q3LC0xMzY0NTk0Mjc0LDE4MjUzOTUyODgsMzQ1MTEyODQyLC0x
+MjI1MzE5ODQzXX0=
 -->
