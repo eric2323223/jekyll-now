@@ -113,7 +113,7 @@ Transformer来自Google Brain团队2017年的文章Attention is all you need。�
 
 
 ### 为什么Attention is all you need?
-Attention是transformer的核心，它不仅作用在encoder到docoder的转换中，还被用在encoder和decoder内部，也被称为self-attention。
+Attention是transformer的核心，它不仅作用在encoder到decoder的转换中，还被用在encoder和decoder内部，也被称为self-attention。
 - encoder-decoder attention
 - encoder attention
 - decoder attention
@@ -307,11 +307,11 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [TRANSFORMERS FROM SCRATCH](http://www.peterbloem.nl/blog/transformers)
 [Transformer Architecture: The Positional Encoding](https://kazemnejad.com/blog/transformer_architecture_positional_encoding)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE5NTk4NjMyNzUsNDAwMjg1MDk2LC0xNj
-c1MjYxOSwxNTAzNjEyNDc5LDEwNzM1Njk2MTIsMTk2Mzg2MTIy
-NiwtMTE1ODY3ODU2MywxNjQ2ODU2NTgyLDEwMzQ0NzQ3NzYsLT
-E5MjczODY2NDYsOTExNjMyNzcwLC0xOTc1MTM1NjQ3LC0xMzY0
-NTk0Mjc0LDE4MjUzOTUyODgsMzQ1MTEyODQyLC0xMjI1MzE5OD
-QzLC0yMDgyOTM0MTcsLTE2MTMwOTQ4ODcsOTk2MzU5MTQsMjU2
-MDQyODk2XX0=
+eyJoaXN0b3J5IjpbLTEzODIxOTcyMzcsLTE5NTk4NjMyNzUsND
+AwMjg1MDk2LC0xNjc1MjYxOSwxNTAzNjEyNDc5LDEwNzM1Njk2
+MTIsMTk2Mzg2MTIyNiwtMTE1ODY3ODU2MywxNjQ2ODU2NTgyLD
+EwMzQ0NzQ3NzYsLTE5MjczODY2NDYsOTExNjMyNzcwLC0xOTc1
+MTM1NjQ3LC0xMzY0NTk0Mjc0LDE4MjUzOTUyODgsMzQ1MTEyOD
+QyLC0xMjI1MzE5ODQzLC0yMDgyOTM0MTcsLTE2MTMwOTQ4ODcs
+OTk2MzU5MTRdfQ==
 -->
