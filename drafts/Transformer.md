@@ -109,17 +109,8 @@ Transformer来自Google Brain团队2017年的文章Attention is all you need。�
 ![enter image description here](https://s3-ap-south-1.amazonaws.com/av-blog-media/wp-content/uploads/2019/06/Screenshot-from-2019-06-17-20-01-32.png)
 
 
-基于attention机制
-- 解决long memory problem
-- 实现了部分并行运算，极大缩短了训练时间
-- 提高了准确率
 ![enter image description here](https://docs.google.com/drawings/d/e/2PACX-1vSBNAHsyf_HP3_CkV1cygicnt0LhGxWcvw2PofecPP9TYJj41bghsAXTM6l6OSonSMvAjjgFInVDxC4/pub?w=961&h=590)
 
-### 模型架构
-
-
-
-![enter image description here](https://3.bp.blogspot.com/-aZ3zvPiCoXM/WaiKQO7KRnI/AAAAAAAAB_8/7a1CYjp40nUg4lKpW7covGZJQAySxlg8QCLcBGAs/s640/transform20fps.gif)
 
 ### 为什么Attention is all you need?
 Attention是transformer的核心，它不仅作用在encoder到docoder的转换中，还被用在encoder和decoder内部，也被称为self-attention。
@@ -316,7 +307,7 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [TRANSFORMERS FROM SCRATCH](http://www.peterbloem.nl/blog/transformers)
 [Transformer Architecture: The Positional Encoding](https://kazemnejad.com/blog/transformer_architecture_positional_encoding)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEwMTU0MTc1NDIsNDAwMjg1MDk2LC0xNj
+eyJoaXN0b3J5IjpbLTE5NTk4NjMyNzUsNDAwMjg1MDk2LC0xNj
 c1MjYxOSwxNTAzNjEyNDc5LDEwNzM1Njk2MTIsMTk2Mzg2MTIy
 NiwtMTE1ODY3ODU2MywxNjQ2ODU2NTgyLDEwMzQ0NzQ3NzYsLT
 E5MjczODY2NDYsOTExNjMyNzcwLC0xOTc1MTM1NjQ3LC0xMzY0
