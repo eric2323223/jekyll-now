@@ -83,7 +83,7 @@ $\theta$表示两个向量$a,b$之间的夹角，如果$a,b$越相似则夹角$\
 
 ![enter image description here](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSO0ZVpogoaP-ipyQF0Xhir4wSrgGJBdeU_5wDrea6UD9sF7icIYg)
 -   **最后**，从物理意义上Attention可以理解为**相似性度量**。
-- $$e_{ij}=Sim(h_i,x_j)$$
+$$e_{ij}=Sim(h_i,x_j)$$
 -   **其次**，从形式上Attention可以理解为**键值查询**
 对于进行相似性计算和——不同的情况，Attention可以更一般的表示为
 $$\mathrm{Attention}(Q, K, V) = \mathrm{softmax}(Sim(Q,K))V$$
@@ -318,11 +318,11 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [TRANSFORMERS FROM SCRATCH](http://www.peterbloem.nl/blog/transformers)
 [Transformer Architecture: The Positional Encoding](https://kazemnejad.com/blog/transformer_architecture_positional_encoding)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTA3MzU2OTYxMiwxOTYzODYxMjI2LC0xMT
-U4Njc4NTYzLDE2NDY4NTY1ODIsMTAzNDQ3NDc3NiwtMTkyNzM4
-NjY0Niw5MTE2MzI3NzAsLTE5NzUxMzU2NDcsLTEzNjQ1OTQyNz
-QsMTgyNTM5NTI4OCwzNDUxMTI4NDIsLTEyMjUzMTk4NDMsLTIw
-ODI5MzQxNywtMTYxMzA5NDg4Nyw5OTYzNTkxNCwyNTYwNDI4OT
-YsLTcxODkwNzIyNywtMjExNDg0ODE1OSwxNTcwNTI5NDI5LC0x
-NTMwNTk5MjldfQ==
+eyJoaXN0b3J5IjpbMTUwMzYxMjQ3OSwxMDczNTY5NjEyLDE5Nj
+M4NjEyMjYsLTExNTg2Nzg1NjMsMTY0Njg1NjU4MiwxMDM0NDc0
+Nzc2LC0xOTI3Mzg2NjQ2LDkxMTYzMjc3MCwtMTk3NTEzNTY0Ny
+wtMTM2NDU5NDI3NCwxODI1Mzk1Mjg4LDM0NTExMjg0MiwtMTIy
+NTMxOTg0MywtMjA4MjkzNDE3LC0xNjEzMDk0ODg3LDk5NjM1OT
+E0LDI1NjA0Mjg5NiwtNzE4OTA3MjI3LC0yMTE0ODQ4MTU5LDE1
+NzA1Mjk0MjldfQ==
 -->
