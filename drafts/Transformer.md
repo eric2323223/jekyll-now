@@ -266,7 +266,7 @@ point-wise 对序列中每个元素分别进行2层全连接运算，目的主�
 
 Transformer 架构可以学习长期依赖。但是，由于使用固定长度的上下文（输入文本段），它们无法扩展到特定的级别。为了克服这一缺点，这篇论文提出了一种新的架构：[《Transformer-XL：超出固定长度上下文的注意力语言模型》](https://arxiv.org/pdf/1901.02860.pdf)（Transformer-XL: Attentive Language Models Beyond a Fixed-Length Context）
 
-- 
+- 并行化
 Despite not having any explicit recurrency, implicitly the model is built as an autoregressive one. It implies that in order to generate an output (both while training or during inference), the model needs to compute previous outputs, which is extremely costly, for the whole net has to be run for every output. That’s the main idea to overcome in a recent paper by researchers at [_Salesforce Research_](https://einstein.ai/research/non-autoregressive-neural-machine-translation) and the University of Hong Kong, who tried to make the whole process parallelizable[23](https://ricardokleinklein.github.io/2017/11/16/Attention-is-all-you-need.html#fn:23). Their proposal is to compute _fertilities_ for every input word in the sequence, and use it instead of previous outputs in order to compute the current output. This is summarized in the figure below.
 尽管没有任何显式递归，但是隐式地将模型构建为自回归模型。 这意味着为了生成输出（在训练时或在推理期间），该模型需要计算先前的输出，这非常昂贵，因为必须为每个输出运行整个网络。 这是Salesforce Research和香港大学的研究人员在最近的一篇论文中要克服的主要思想，他们试图使整个过程可并行化23。 他们的建议是为序列中的每个输入单词计算肥力，并使用它代替先前的输出以计算当前输出。 下图对此进行了总结。
 ![enter image description here](https://ricardokleinklein.github.io/images/transformer/fertilities.png)
@@ -301,11 +301,11 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [TRANSFORMERS FROM SCRATCH](http://www.peterbloem.nl/blog/transformers)
 [Transformer Architecture: The Positional Encoding](https://kazemnejad.com/blog/transformer_architecture_positional_encoding)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE5MTk4NDUyNTcsLTYwOTYxOTAxNCwtOD
-g0MjA0NTIyLC0xMDMzNDYxMTkwLDE4MDMzNDkwOTUsLTE5NTk4
-NjMyNzUsNDAwMjg1MDk2LC0xNjc1MjYxOSwxNTAzNjEyNDc5LD
-EwNzM1Njk2MTIsMTk2Mzg2MTIyNiwtMTE1ODY3ODU2MywxNjQ2
-ODU2NTgyLDEwMzQ0NzQ3NzYsLTE5MjczODY2NDYsOTExNjMyNz
-cwLC0xOTc1MTM1NjQ3LC0xMzY0NTk0Mjc0LDE4MjUzOTUyODgs
-MzQ1MTEyODQyXX0=
+eyJoaXN0b3J5IjpbNjg3MzY0NTMxLC02MDk2MTkwMTQsLTg4ND
+IwNDUyMiwtMTAzMzQ2MTE5MCwxODAzMzQ5MDk1LC0xOTU5ODYz
+Mjc1LDQwMDI4NTA5NiwtMTY3NTI2MTksMTUwMzYxMjQ3OSwxMD
+czNTY5NjEyLDE5NjM4NjEyMjYsLTExNTg2Nzg1NjMsMTY0Njg1
+NjU4MiwxMDM0NDc0Nzc2LC0xOTI3Mzg2NjQ2LDkxMTYzMjc3MC
+wtMTk3NTEzNTY0NywtMTM2NDU5NDI3NCwxODI1Mzk1Mjg4LDM0
+NTExMjg0Ml19
 -->
