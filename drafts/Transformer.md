@@ -115,7 +115,7 @@ Transformer来自Google Brain团队2017年的文章Attention is all you need。�
 ### 为什么Attention is all you need?
 
 
-Attention是transformer的核心，它不仅作用在encoder到decoder的转换中，还被用在编码器（encoder）和decoder内部，也被称为self-attention。自注意力用于替代RNN来做encoding
+Attention是transformer的核心，它不仅作用在encoder到decoder的转换中，还被用在编码器（encoder）和解码器（decoder）内部，这种在编码解码器内部使用的attention也被称为自注意力self-attention。自注意力用于替代RNN来做encoding
 
 #### 自注意力（self attention）
 时序问题（特别是NLP问题）中的序列元素表示的含义通常不止该单个元素的的字面意义，而是与整个序列上下文有关系，因此在encoding过程中需要考虑整个序列来决定其中每个元素的意义。self-attention机制就是基于这种由全局确定局部的思想，简单来说它使用整个序列所有元素的**加权**平均来确定每一个元素在所处序列（上下文）中的含义。
@@ -307,11 +307,11 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [TRANSFORMERS FROM SCRATCH](http://www.peterbloem.nl/blog/transformers)
 [Transformer Architecture: The Positional Encoding](https://kazemnejad.com/blog/transformer_architecture_positional_encoding)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjAxNzQ1MDA5MywxODAzMzQ5MDk1LC0xOT
-U5ODYzMjc1LDQwMDI4NTA5NiwtMTY3NTI2MTksMTUwMzYxMjQ3
-OSwxMDczNTY5NjEyLDE5NjM4NjEyMjYsLTExNTg2Nzg1NjMsMT
-Y0Njg1NjU4MiwxMDM0NDc0Nzc2LC0xOTI3Mzg2NjQ2LDkxMTYz
-Mjc3MCwtMTk3NTEzNTY0NywtMTM2NDU5NDI3NCwxODI1Mzk1Mj
-g4LDM0NTExMjg0MiwtMTIyNTMxOTg0MywtMjA4MjkzNDE3LC0x
-NjEzMDk0ODg3XX0=
+eyJoaXN0b3J5IjpbLTkyNzQwNzY1LDE4MDMzNDkwOTUsLTE5NT
+k4NjMyNzUsNDAwMjg1MDk2LC0xNjc1MjYxOSwxNTAzNjEyNDc5
+LDEwNzM1Njk2MTIsMTk2Mzg2MTIyNiwtMTE1ODY3ODU2MywxNj
+Q2ODU2NTgyLDEwMzQ0NzQ3NzYsLTE5MjczODY2NDYsOTExNjMy
+NzcwLC0xOTc1MTM1NjQ3LC0xMzY0NTk0Mjc0LDE4MjUzOTUyOD
+gsMzQ1MTEyODQyLC0xMjI1MzE5ODQzLC0yMDgyOTM0MTcsLTE2
+MTMwOTQ4ODddfQ==
 -->
