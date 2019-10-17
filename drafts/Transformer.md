@@ -105,7 +105,7 @@ Attention is cheap, 特别适合机器翻译的场景（dim>length）
 ## Transformer模型
 
 Transformer来自Google Brain团队2017年的文章Attention is all you need。正如论文的题目所说的，整个网络结构完全是由Attention机制组成。由于没有使用RNN和CNN避免了无法并行计算和长距离依赖等传统方法无法克服的问题，用更少的计算资源，取得了比过去的结构更好的结果，在机器翻译中取得了BLEU值得新高。
-整体架构上看，transformer仍属于Encoder-Decoder架构，通过encoder将输入序列转换成内部表示，在通过不同decoder实现不同的预测功能。
+整体架构上看，transformer仍属于Encoder-Decoder架构，通过encoder将输入序列转换成内部表示，再通过不同decoder实现不同的预测功能。从图中可以看到，
 ![enter image description here](https://s3-ap-south-1.amazonaws.com/av-blog-media/wp-content/uploads/2019/06/Screenshot-from-2019-06-17-20-01-32.png)
 
 
@@ -301,11 +301,11 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [TRANSFORMERS FROM SCRATCH](http://www.peterbloem.nl/blog/transformers)
 [Transformer Architecture: The Positional Encoding](https://kazemnejad.com/blog/transformer_architecture_positional_encoding)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjg3MzY0NTMxLC02MDk2MTkwMTQsLTg4ND
-IwNDUyMiwtMTAzMzQ2MTE5MCwxODAzMzQ5MDk1LC0xOTU5ODYz
-Mjc1LDQwMDI4NTA5NiwtMTY3NTI2MTksMTUwMzYxMjQ3OSwxMD
-czNTY5NjEyLDE5NjM4NjEyMjYsLTExNTg2Nzg1NjMsMTY0Njg1
-NjU4MiwxMDM0NDc0Nzc2LC0xOTI3Mzg2NjQ2LDkxMTYzMjc3MC
-wtMTk3NTEzNTY0NywtMTM2NDU5NDI3NCwxODI1Mzk1Mjg4LDM0
-NTExMjg0Ml19
+eyJoaXN0b3J5IjpbMTAyOTE5NTk0MCw2ODczNjQ1MzEsLTYwOT
+YxOTAxNCwtODg0MjA0NTIyLC0xMDMzNDYxMTkwLDE4MDMzNDkw
+OTUsLTE5NTk4NjMyNzUsNDAwMjg1MDk2LC0xNjc1MjYxOSwxNT
+AzNjEyNDc5LDEwNzM1Njk2MTIsMTk2Mzg2MTIyNiwtMTE1ODY3
+ODU2MywxNjQ2ODU2NTgyLDEwMzQ0NzQ3NzYsLTE5MjczODY2ND
+YsOTExNjMyNzcwLC0xOTc1MTM1NjQ3LC0xMzY0NTk0Mjc0LDE4
+MjUzOTUyODhdfQ==
 -->
