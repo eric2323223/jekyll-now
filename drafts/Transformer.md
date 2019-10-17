@@ -104,7 +104,7 @@ Attention is cheap, 特别适合机器翻译的场景（dim>length）
  
 ## Transformer模型
 
-Transformer来自Google Brain团队2017年的文章Attention is all you need。正如论文的题目所说的，整个网络结构完全是由Attention机制组成。由于没有使用RNN和CNN避免了无法并行计算和长距离依赖等传统方法无法克服的问题，用更少的计算资源，取得了比过去的结构更好的结果，在机器翻译中取得了BLEU值得新高。
+Transformer来自Google Brain团队2017年的文章Attention is all you need。正如论文的题目所说的，整个网络结构完全是由Attention机制组成。由于没有使用RNN和CNN，避免了无法并行计算和长距离依赖等传统方法无法克服的问题，用更少的计算资源，取得了比过去的结构更好的结果，在机器翻译中取得了BLEU值得新高。
 整体架构上看，transformer仍属于Encoder-Decoder架构，通过encoder将输入序列转换成内部表示，再通过不同decoder实现不同的预测功能。从图中可以看到，编码器主要由两种组件构成：
 ![enter image description here](https://s3-ap-south-1.amazonaws.com/av-blog-media/wp-content/uploads/2019/06/Screenshot-from-2019-06-17-20-01-32.png)
 
@@ -113,8 +113,8 @@ Transformer来自Google Brain团队2017年的文章Attention is all you need。�
 
 
 ### 为什么Attention is all you need?
-Transformer论文的标题说只需要attention意味着attention可以完成以前需要RNN才能做的工作。
-Attention是transformer的核心，它不仅作用在encoder到decoder的转换中，还被用在编码器（encoder）和解码器（decoder）内部，这种在编码解码器内部使用的attention被称为自注意力self-attention。自注意力用于替代RNN来做encoding
+Transformer论文的标题说只需要attention意味着attention可以完成以前需要RNN才能做的工作。由于RNN有存储的能力，因此可以在编码阶段通过不断的处理和积累一个个的输入元素从而最终获得这个输入序列的上下文信息（context vector），同样在解码阶段根据context vector产生输出。在transformer模型中设计了自注意力机制来生成conext vector
+> Attention是transformer的核心，它不仅作用在encoder到decoder的转换中，还被用在编码器（encoder）和解码器（decoder）内部，这种在编码解码器内部使用的attention被称为自注意力self-attention。自注意力用于替代RNN来做encoding
 
 #### 自注意力（self attention）
 时序问题（特别是NLP问题）中的序列元素表示的含义通常不止该单个元素的的字面意义，而是与整个序列上下文有关系，因此在encoding过程中需要考虑整个序列来决定其中每个元素的意义。self-attention机制就是基于这种由全局确定局部的思想，简单来说它使用整个序列所有元素的**加权**平均来确定每一个元素在所处序列（上下文）中的含义。
