@@ -72,8 +72,7 @@ $$e_{ij}=alignment(h_i,x_j)$$
 $$y_2=w_{21}x_1+w_{22}x_2+w_{23}x_3+w_{24}x_4$$
 $$y_i=\sum_{j=1}w_{ij}x_j$$
 ![enter image description here](http://www.peterbloem.nl/files/transformers/self-attention.svg)
-从这个定义可以看出attention的结果$c$就是序列中所有元素按一定的比例关系相加得到的，由于$c$具备了序列的上下文信息，因此我们也可以把attention理解为**元素在某一个序列上下文环境中的重新定义**。这是attention最核心的特点，也是attention能够取代RNN的基础。下图可以发现，RNN需要在依次处理元素x1, x2和x3之后才能得到整个序列的上下文信息，而attention则可以同时处理x1，x2，x3而得到序列的上下文信息。
-![enter image description here](https://docs.google.com/drawings/d/e/2PACX-1vQZ5I4YZtpZOU8xnxqqJ2WVd7o9eeo0sHQa119cWm4qR85KanMs7-Z1DV1EfKxJLQrZaVglHLUJGPF2/pub?w=856&h=225)
+从这个定义可以看出attention的结果$c$就是序列中所有元素按一定的比例关系相加得到的，由于$c$具备了序列的上下文信息，因此我们也可以把attention理解为**元素在某一个序列上下文环境中的重新定义**。这是attention最核心的特点，也是attention能够取代RNN的基础。
 权值$w_{ij}$表示$x_j$在对于$y_i$的计算中发挥的权重，由于所有$x$都参与$y_i$的计算，所以使用softmax来保证所有权值的和等于1。
 $$w_{ij}=\frac{exp(e_{ij})}{\sum_{k=1}exp(e_{ik})}$$
 这里的$e_{ij}$表示$x_j$和$y_i$的相关性，对于机器翻译任务来说，通常用矢量相似性来表述元素的相关性，适量相似性的计算方法有很多，其中最常用的就是点积运算（dot product）
@@ -302,11 +301,11 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [TRANSFORMERS FROM SCRATCH](http://www.peterbloem.nl/blog/transformers)
 [Transformer Architecture: The Positional Encoding](https://kazemnejad.com/blog/transformer_architecture_positional_encoding)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjAxNjU4MTAxMCwyMTE3MTg4MTI5LC0xMD
-E2NDgwMTQzLDIwODE5NjAwMDIsNjg3MzY0NTMxLC02MDk2MTkw
-MTQsLTg4NDIwNDUyMiwtMTAzMzQ2MTE5MCwxODAzMzQ5MDk1LC
-0xOTU5ODYzMjc1LDQwMDI4NTA5NiwtMTY3NTI2MTksMTUwMzYx
-MjQ3OSwxMDczNTY5NjEyLDE5NjM4NjEyMjYsLTExNTg2Nzg1Nj
-MsMTY0Njg1NjU4MiwxMDM0NDc0Nzc2LC0xOTI3Mzg2NjQ2LDkx
-MTYzMjc3MF19
+eyJoaXN0b3J5IjpbNDc2ODcwOTg0LDIwMTY1ODEwMTAsMjExNz
+E4ODEyOSwtMTAxNjQ4MDE0MywyMDgxOTYwMDAyLDY4NzM2NDUz
+MSwtNjA5NjE5MDE0LC04ODQyMDQ1MjIsLTEwMzM0NjExOTAsMT
+gwMzM0OTA5NSwtMTk1OTg2MzI3NSw0MDAyODUwOTYsLTE2NzUy
+NjE5LDE1MDM2MTI0NzksMTA3MzU2OTYxMiwxOTYzODYxMjI2LC
+0xMTU4Njc4NTYzLDE2NDY4NTY1ODIsMTAzNDQ3NDc3NiwtMTky
+NzM4NjY0Nl19
 -->
