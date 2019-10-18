@@ -114,7 +114,7 @@ Transformer论文的标题说只需要attention意味着attention可以完成以
 ![enter image description here](https://docs.google.com/drawings/d/e/2PACX-1vQZ5I4YZtpZOU8xnxqqJ2WVd7o9eeo0sHQa119cWm4qR85KanMs7-Z1DV1EfKxJLQrZaVglHLUJGPF2/pub?w=856&h=225)
 
 对于使用自注意力机制的原因，论文中提到主要从三个方面考虑（每一层的复杂度，是否可以并行，长距离依赖学习）。
-- 对于很多NLP的任务场景，attention效率更高（dim>length）
+- 对于很多NLP的任务场景，attention的计算复杂度更低（dim>length）
 
 ||FLOPs|
 |--|--|
@@ -303,11 +303,11 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [TRANSFORMERS FROM SCRATCH](http://www.peterbloem.nl/blog/transformers)
 [Transformer Architecture: The Positional Encoding](https://kazemnejad.com/blog/transformer_architecture_positional_encoding)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2MTg3NTcyNjgsMTQ3Mzc2NzE4MCwxOD
-U5MjE0NzU2LDIwMTY1ODEwMTAsMjExNzE4ODEyOSwtMTAxNjQ4
-MDE0MywyMDgxOTYwMDAyLDY4NzM2NDUzMSwtNjA5NjE5MDE0LC
-04ODQyMDQ1MjIsLTEwMzM0NjExOTAsMTgwMzM0OTA5NSwtMTk1
-OTg2MzI3NSw0MDAyODUwOTYsLTE2NzUyNjE5LDE1MDM2MTI0Nz
-ksMTA3MzU2OTYxMiwxOTYzODYxMjI2LC0xMTU4Njc4NTYzLDE2
-NDY4NTY1ODJdfQ==
+eyJoaXN0b3J5IjpbOTI3MjQ3ODAyLDE0NzM3NjcxODAsMTg1OT
+IxNDc1NiwyMDE2NTgxMDEwLDIxMTcxODgxMjksLTEwMTY0ODAx
+NDMsMjA4MTk2MDAwMiw2ODczNjQ1MzEsLTYwOTYxOTAxNCwtOD
+g0MjA0NTIyLC0xMDMzNDYxMTkwLDE4MDMzNDkwOTUsLTE5NTk4
+NjMyNzUsNDAwMjg1MDk2LC0xNjc1MjYxOSwxNTAzNjEyNDc5LD
+EwNzM1Njk2MTIsMTk2Mzg2MTIyNiwtMTE1ODY3ODU2MywxNjQ2
+ODU2NTgyXX0=
 -->
