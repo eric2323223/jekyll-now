@@ -124,7 +124,7 @@ Transformer论文的标题说只需要attention意味着attention可以完成以
 由于通常dim要大于length，所以self-attention的运算量会少于RNN和CNN，
 
 - 在并行方面，多头attention和CNN一样不依赖于前一时刻的计算，可以很好的并行，优于RNN。
-- 在长距离依赖上，由于self-attention是每个词和所有词都要计算attention，所以不管他们中间有多长距离，最大的路径长度也都只是1。可以捕获长距离依赖关系。RNN则存在didu
+- 在长距离依赖上，由于self-attention是每个词和所有词都要计算attention，所以不管他们中间有多长距离，最大的路径长度也都只是1。可以捕获长距离依赖关系。RNN则存在梯度弥散或者梯度爆炸的问题。
 
 **Scaled Dot-Product Attention**
 其中的权值来自该元素与其他元素的相似度，这是基于这样的假设-相似度越高的元素对确定该元素在整个序列中的含义的贡献度越大，由于序列元素以向量表示（word4vec），在transformer中使用点积运算来确定相似度，其结果是一个数值。形式化的定义为
@@ -295,7 +295,7 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [TRANSFORMERS FROM SCRATCH](http://www.peterbloem.nl/blog/transformers)
 [Transformer Architecture: The Positional Encoding](https://kazemnejad.com/blog/transformer_architecture_positional_encoding)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2ODQxMTgyMjEsMTQ3Mzc2NzE4MCwxOD
+eyJoaXN0b3J5IjpbLTEwODg5ODk4NDgsMTQ3Mzc2NzE4MCwxOD
 U5MjE0NzU2LDIwMTY1ODEwMTAsMjExNzE4ODEyOSwtMTAxNjQ4
 MDE0MywyMDgxOTYwMDAyLDY4NzM2NDUzMSwtNjA5NjE5MDE0LC
 04ODQyMDQ1MjIsLTEwMzM0NjExOTAsMTgwMzM0OTA5NSwtMTk1
