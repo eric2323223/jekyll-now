@@ -138,7 +138,7 @@ In terms of encoder-decoder, the **query** is usually the hidden state of the _d
 
 ![enter image description here](https://cntk.ai/jup/cntk204_s2s2.png)
 
-### Mask
+#### Mask
 > -   In the encoder and decoder: To zero attention outputs wherever there is just padding in the input sentences.
 > -   In the decoder: To prevent the decoder ‘peaking’ ahead at the rest of the translated sentence when predicting the next word.
 
@@ -291,11 +291,11 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [TRANSFORMERS FROM SCRATCH](http://www.peterbloem.nl/blog/transformers)
 [Transformer Architecture: The Positional Encoding](https://kazemnejad.com/blog/transformer_architecture_positional_encoding)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTk0MTUwMjI0NiwtMTA4ODk4OTg0OCwxND
-czNzY3MTgwLDE4NTkyMTQ3NTYsMjAxNjU4MTAxMCwyMTE3MTg4
-MTI5LC0xMDE2NDgwMTQzLDIwODE5NjAwMDIsNjg3MzY0NTMxLC
-02MDk2MTkwMTQsLTg4NDIwNDUyMiwtMTAzMzQ2MTE5MCwxODAz
-MzQ5MDk1LC0xOTU5ODYzMjc1LDQwMDI4NTA5NiwtMTY3NTI2MT
-ksMTUwMzYxMjQ3OSwxMDczNTY5NjEyLDE5NjM4NjEyMjYsLTEx
-NTg2Nzg1NjNdfQ==
+eyJoaXN0b3J5IjpbMTI2NzI5MzQ3MywtOTQxNTAyMjQ2LC0xMD
+g4OTg5ODQ4LDE0NzM3NjcxODAsMTg1OTIxNDc1NiwyMDE2NTgx
+MDEwLDIxMTcxODgxMjksLTEwMTY0ODAxNDMsMjA4MTk2MDAwMi
+w2ODczNjQ1MzEsLTYwOTYxOTAxNCwtODg0MjA0NTIyLC0xMDMz
+NDYxMTkwLDE4MDMzNDkwOTUsLTE5NTk4NjMyNzUsNDAwMjg1MD
+k2LC0xNjc1MjYxOSwxNTAzNjEyNDc5LDEwNzM1Njk2MTIsMTk2
+Mzg2MTIyNl19
 -->
