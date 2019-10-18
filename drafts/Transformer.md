@@ -92,15 +92,6 @@ The query determines which values to focus on; we can say that the query ‘atte
 ![enter image description here](https://ldzhangyx.github.io/2018/10/14/self-attention/1.jpg)
 
 
-Attention is cheap, 特别适合机器翻译的场景（dim>length）
-||FLOPs|
-|--|--|
-| attention | $O(length^2 \cdot dim)$ |
-| RNN | $O(length \cdot dim^2)$ |
-| CNN | $O(length \cdot dim^2 \cdot kernelwidth)$ |
-由于通常dim要大于length，所以self-attention的运算量会少于RNN和CNN，
-
- 
 ## Transformer模型
 
 Transformer来自Google Brain团队2017年的文章Attention is all you need。正如论文的题目所说的，整个网络结构完全是由Attention机制组成。由于没有使用RNN和CNN，避免了无法并行计算和长距离依赖等传统方法无法克服的问题，用更少的计算资源，取得了比过去的结构更好的结果，在机器翻译中取得了BLEU值得新高。
@@ -122,7 +113,17 @@ Transformer论文的标题说只需要attention意味着attention可以完成以
 在encoder-decoder模型中encoder负责将输入转化为输入序列的内部表示（context vector），传统方法使用RNN通过一步步的叠加分析过的输入来得到整个序列的内部表示（固定长度），Transformer模型中使用自注意力（self attention）机制来实现encoding，之所以称作自注意力是因为这是在输入序列内部进行的attention操作，由于attention操作就是对元素进行重新定义使其包含序列上下文信息，在输入序列元素进行attention的操作结果就是使该元素包含输入序列信息，因此经过self attention运算的整个输入序列的结果就是和一个输入序列大小一致的context vector。显然，self attention不需要想RNN那样一步步的出入输入，而是可以同时对每个元素进行attention运算，从下图可以发现，RNN需要在依次处理元素x1, x2和x3之后才能得到整个序列的上下文信息，而attention则可以同时处理x1，x2，x3而得到序列的上下文信息。
 ![enter image description here](https://docs.google.com/drawings/d/e/2PACX-1vQZ5I4YZtpZOU8xnxqqJ2WVd7o9eeo0sHQa119cWm4qR85KanMs7-Z1DV1EfKxJLQrZaVglHLUJGPF2/pub?w=856&h=225)
 
-对于使用自注意力机制的原因，论文中提到主要从三个方面考虑（每一层的复杂度，是否可以并行，长距离依赖学习）。可以看到，如果输入序列n小于表示维度d的话，每一层的时间复杂度self-attention是比较有优势的。当n比较大时，作者也给出了一种解决方案self-attention（restricted）即每个词不是和所有词计算attention，而是只与限制的r个词去计算attention。在并行方面，多头attention和CNN一样不依赖于前一时刻的计算，可以很好的并行，优于RNN。在长距离依赖上，由于self-attention是每个词和所有词都要计算attention，所以不管他们中间有多长距离，最大的路径长度也都只是1。可以捕获长距离依赖关系。
+对于使用自注意力机制的原因，论文中提到主要从三个方面考虑（每一层的复杂度，是否可以并行，长距离依赖学习）。
+- Attention is cheap, 特别适合机器翻译的场景（dim>length）
+
+||FLOPs|
+|--|--|
+| attention | $O(length^2 \cdot dim)$ |
+| RNN | $O(length \cdot dim^2)$ |
+| CNN | $O(length \cdot dim^2 \cdot kernelwidth)$ |
+由于通常dim要大于length，所以self-attention的运算量会少于RNN和CNN，
+
+可以看到，如果输入序列n小于表示维度d的话，每一层的时间复杂度self-attention是比较有优势的。当n比较大时，作者也给出了一种解决方案self-attention（restricted）即每个词不是和所有词计算attention，而是只与限制的r个词去计算attention。在并行方面，多头attention和CNN一样不依赖于前一时刻的计算，可以很好的并行，优于RNN。在长距离依赖上，由于self-attention是每个词和所有词都要计算attention，所以不管他们中间有多长距离，最大的路径长度也都只是1。可以捕获长距离依赖关系。
 
 > In these models, the number of operations required to relate signals from two arbitrary input or output positions grows in the distance between positions, linearly for ConvS2S and logarithmically for ByteNet. This makes it more difficult to learn dependencies between distant positions. In the Transformer this is reduced to a constant number of operations, albeit at the cost of reduced effective resolution due to averaging attention-weighted positions, an effect we counteract with Multi-Head Attention.
 > Authors motivates the use of self-attention layers instead of recurrent or convolutional layers with three desiderata:
@@ -301,11 +302,11 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [TRANSFORMERS FROM SCRATCH](http://www.peterbloem.nl/blog/transformers)
 [Transformer Architecture: The Positional Encoding](https://kazemnejad.com/blog/transformer_architecture_positional_encoding)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTE0MDQ4OTM3OSwxNDczNzY3MTgwLDE4NT
-kyMTQ3NTYsMjAxNjU4MTAxMCwyMTE3MTg4MTI5LC0xMDE2NDgw
-MTQzLDIwODE5NjAwMDIsNjg3MzY0NTMxLC02MDk2MTkwMTQsLT
-g4NDIwNDUyMiwtMTAzMzQ2MTE5MCwxODAzMzQ5MDk1LC0xOTU5
-ODYzMjc1LDQwMDI4NTA5NiwtMTY3NTI2MTksMTUwMzYxMjQ3OS
-wxMDczNTY5NjEyLDE5NjM4NjEyMjYsLTExNTg2Nzg1NjMsMTY0
-Njg1NjU4Ml19
+eyJoaXN0b3J5IjpbLTM2Mzk0NjY2LDE0NzM3NjcxODAsMTg1OT
+IxNDc1NiwyMDE2NTgxMDEwLDIxMTcxODgxMjksLTEwMTY0ODAx
+NDMsMjA4MTk2MDAwMiw2ODczNjQ1MzEsLTYwOTYxOTAxNCwtOD
+g0MjA0NTIyLC0xMDMzNDYxMTkwLDE4MDMzNDkwOTUsLTE5NTk4
+NjMyNzUsNDAwMjg1MDk2LC0xNjc1MjYxOSwxNTAzNjEyNDc5LD
+EwNzM1Njk2MTIsMTk2Mzg2MTIyNiwtMTE1ODY3ODU2MywxNjQ2
+ODU2NTgyXX0=
 -->
