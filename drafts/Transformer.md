@@ -124,15 +124,7 @@ Transformer论文的标题说只需要attention意味着attention可以完成以
 由于通常dim要大于length，所以self-attention的运算量会少于RNN和CNN，
 
 - 在并行方面，多头attention和CNN一样不依赖于前一时刻的计算，可以很好的并行，优于RNN。
-- 在长距离依赖上，由于self-attention是每个词和所有词都要计算attention，所以不管他们中间有多长距离，最大的路径长度也都只是1。可以捕获长距离依赖关系。
-
-> In these models, the number of operations required to relate signals from two arbitrary input or output positions grows in the distance between positions, linearly for ConvS2S and logarithmically for ByteNet. This makes it more difficult to learn dependencies between distant positions. In the Transformer this is reduced to a constant number of operations, albeit at the cost of reduced effective resolution due to averaging attention-weighted positions, an effect we counteract with Multi-Head Attention.
-> Authors motivates the use of self-attention layers instead of recurrent or convolutional layers with three desiderata:
-1.  Minimize total computational complexity per layer
-        -   **Pros:**  self-attention layers connects all positions with  O(1)O(1)  number of sequentially executed operations (eg. vs  O(n)O(n)  in RNN)
-2.  Maximize amount of parallelizable computations, measured by minimum number of sequential operations required
-        -   **Pros:**  for sequence length  nn  < representation dimensionality  dd  (true for SOTA sequence representation models like  _word-piece, byte-pair_). For very long sequences  n>dn>d  self-attention can consider only neighborhood of some size  rr  in the input sequence centered around the respective output position, thus increasing the max path length to  O(n/r)O(n/r)
-3.  Minimize maximum path length between any two input and output positions in network composed of the different layer types . The shorter the path between any combination of positions in the input and output sequences, the easier to learn long-range dependencies. (See why  [Hochreiter et al, 2001](http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.24.7321) ) 
+- 在长距离依赖上，由于self-attention是每个词和所有词都要计算attention，所以不管他们中间有多长距离，最大的路径长度也都只是1。可以捕获长距离依赖关系。RNN则存在didu
 
 **Scaled Dot-Product Attention**
 其中的权值来自该元素与其他元素的相似度，这是基于这样的假设-相似度越高的元素对确定该元素在整个序列中的含义的贡献度越大，由于序列元素以向量表示（word4vec），在transformer中使用点积运算来确定相似度，其结果是一个数值。形式化的定义为
@@ -303,11 +295,11 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [TRANSFORMERS FROM SCRATCH](http://www.peterbloem.nl/blog/transformers)
 [Transformer Architecture: The Positional Encoding](https://kazemnejad.com/blog/transformer_architecture_positional_encoding)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbOTI3MjQ3ODAyLDE0NzM3NjcxODAsMTg1OT
-IxNDc1NiwyMDE2NTgxMDEwLDIxMTcxODgxMjksLTEwMTY0ODAx
-NDMsMjA4MTk2MDAwMiw2ODczNjQ1MzEsLTYwOTYxOTAxNCwtOD
-g0MjA0NTIyLC0xMDMzNDYxMTkwLDE4MDMzNDkwOTUsLTE5NTk4
-NjMyNzUsNDAwMjg1MDk2LC0xNjc1MjYxOSwxNTAzNjEyNDc5LD
-EwNzM1Njk2MTIsMTk2Mzg2MTIyNiwtMTE1ODY3ODU2MywxNjQ2
-ODU2NTgyXX0=
+eyJoaXN0b3J5IjpbLTE2ODQxMTgyMjEsMTQ3Mzc2NzE4MCwxOD
+U5MjE0NzU2LDIwMTY1ODEwMTAsMjExNzE4ODEyOSwtMTAxNjQ4
+MDE0MywyMDgxOTYwMDAyLDY4NzM2NDUzMSwtNjA5NjE5MDE0LC
+04ODQyMDQ1MjIsLTEwMzM0NjExOTAsMTgwMzM0OTA5NSwtMTk1
+OTg2MzI3NSw0MDAyODUwOTYsLTE2NzUyNjE5LDE1MDM2MTI0Nz
+ksMTA3MzU2OTYxMiwxOTYzODYxMjI2LC0xMTU4Njc4NTYzLDE2
+NDY4NTY1ODJdfQ==
 -->
