@@ -148,7 +148,6 @@ $W^Q_i \in \mathbb{R}^{d_{\text{model}} \times d_k}$, $W^K_i \in \mathbb{R}^{d_{
 ![enter image description here](https://miro.medium.com/max/410/1*NlQPdpNY4d26l8Vu92a0Wg.png)
 
 
-在transformer中的encoder和decoder中都使用了自注意力机制，他们的实现基本相同，稍有不同的是在decoder中使用mask来*屏蔽当前元素之后的元素*
 ####  encoder-decoder attention
 In terms of encoder-decoder, the **query** is usually the hidden state of the _decoder_. Whereas **key**, is the hidden state of the _encoder_, and the corresponding **value** is normalized weight, representing how much attention a _key_ gets. Output is calculated as a wighted sum – here the dot product of _query_ and _key_ is used to get a _value_.
 
@@ -289,11 +288,11 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [TRANSFORMERS FROM SCRATCH](http://www.peterbloem.nl/blog/transformers)
 [Transformer Architecture: The Positional Encoding](https://kazemnejad.com/blog/transformer_architecture_positional_encoding)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjY4Njk2ODc1LC0xNDk4NzcxNzMsLTE0OT
-E1NTcwNjUsLTYwMTc1NDQ3MSwtODc5NjQ0MTUwLDg4MTIwMjgy
-OCwtNDI2NTg4OTUyLC0xNTI1OTA4MjIwLC0zNzc1NjA3NjksMT
-UyOTc0MzI3NSwtMTE0NDg5MTc1NywxMjY3MjkzNDczLC05NDE1
-MDIyNDYsLTEwODg5ODk4NDgsMTQ3Mzc2NzE4MCwxODU5MjE0Nz
-U2LDIwMTY1ODEwMTAsMjExNzE4ODEyOSwtMTAxNjQ4MDE0Mywy
-MDgxOTYwMDAyXX0=
+eyJoaXN0b3J5IjpbLTk2NzUwMTE3NiwtMTQ5ODc3MTczLC0xND
+kxNTU3MDY1LC02MDE3NTQ0NzEsLTg3OTY0NDE1MCw4ODEyMDI4
+MjgsLTQyNjU4ODk1MiwtMTUyNTkwODIyMCwtMzc3NTYwNzY5LD
+E1Mjk3NDMyNzUsLTExNDQ4OTE3NTcsMTI2NzI5MzQ3MywtOTQx
+NTAyMjQ2LC0xMDg4OTg5ODQ4LDE0NzM3NjcxODAsMTg1OTIxND
+c1NiwyMDE2NTgxMDEwLDIxMTcxODgxMjksLTEwMTY0ODAxNDMs
+MjA4MTk2MDAwMl19
 -->
