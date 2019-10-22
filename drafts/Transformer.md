@@ -134,12 +134,12 @@ Attention这种新的结构使得他的训练方式也和RNN不同，这是由�
 - 在长距离依赖上，由于self-attention是每个词和所有词都要计算attention，所以不管他们中间有多长距离，最大的路径长度也都只是1。可以捕获长距离依赖关系。RNN则存在梯度弥散或者梯度爆炸的问题。
 
 **Scaled Dot-Product Attention**
-Transformer对标准的attention做了一个小小调整：加入特征缩放（feature scaling）。这样做主要是为了防止softmax运算将比较大的key过度放大，导致其他key的信息很难加入到attention结果中。
+Transformer对标准的attention做了一个小小调整：加入特征缩放（feature scaling）。这样做主要是为了防止softmax运算将值较大的key过度放大，导致其他key的信息很难加入到attention结果中。
 $$\mathrm{Attention}(Q, K, V) = \mathrm{softmax}(\frac{QK^T}{\sqrt{d_k}})V$$
 特征缩放体现在对$Q$和$K$计算点积$QK^T$以后，增加了一步除以$\sqrt{d_k}$运算。
 下图是上式的图像化表示，其中Scale就是特征缩放的操作。
 
-其中的权值来自该元素与其他元素的相似度，这是基于这样的假设-相似度越高的元素对确定该元素在整个序列中的含义的贡献度越大，由于序列元素以向量表示（word4vec），在transformer中使用点积运算来确定相似度，其结果是一个数值。形式化的定义为
+>其中的权值来自该元素与其他元素的相似度，这是基于这样的假设-相似度越高的元素对确定该元素在整个序列中的含义的贡献度越大，由于序列元素以向量表示（word4vec），在transformer中使用点积运算来确定相似度，其结果是一个数值。形式化的定义为
 $W^Q_i \in \mathbb{R}^{d_{\text{model}} \times d_k}$, $W^K_i \in \mathbb{R}^{d_{\text{model}} \times d_k}$, $W^V_i \in \mathbb{R}^{d_{\text{model}} \times d_v}$ and $W^O \in \mathbb{R}^{hd_v \times d_{\text{model}}}$
 
 ![enter image description here](https://miro.medium.com/max/410/1*NlQPdpNY4d26l8Vu92a0Wg.png)
@@ -303,11 +303,11 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [TRANSFORMERS FROM SCRATCH](http://www.peterbloem.nl/blog/transformers)
 [Transformer Architecture: The Positional Encoding](https://kazemnejad.com/blog/transformer_architecture_positional_encoding)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODgxMjAyODI4LC00MjY1ODg5NTIsLTE1Mj
-U5MDgyMjAsLTM3NzU2MDc2OSwxNTI5NzQzMjc1LC0xMTQ0ODkx
-NzU3LDEyNjcyOTM0NzMsLTk0MTUwMjI0NiwtMTA4ODk4OTg0OC
-wxNDczNzY3MTgwLDE4NTkyMTQ3NTYsMjAxNjU4MTAxMCwyMTE3
-MTg4MTI5LC0xMDE2NDgwMTQzLDIwODE5NjAwMDIsNjg3MzY0NT
-MxLC02MDk2MTkwMTQsLTg4NDIwNDUyMiwtMTAzMzQ2MTE5MCwx
-ODAzMzQ5MDk1XX0=
+eyJoaXN0b3J5IjpbLTg3OTY0NDE1MCw4ODEyMDI4MjgsLTQyNj
+U4ODk1MiwtMTUyNTkwODIyMCwtMzc3NTYwNzY5LDE1Mjk3NDMy
+NzUsLTExNDQ4OTE3NTcsMTI2NzI5MzQ3MywtOTQxNTAyMjQ2LC
+0xMDg4OTg5ODQ4LDE0NzM3NjcxODAsMTg1OTIxNDc1NiwyMDE2
+NTgxMDEwLDIxMTcxODgxMjksLTEwMTY0ODAxNDMsMjA4MTk2MD
+AwMiw2ODczNjQ1MzEsLTYwOTYxOTAxNCwtODg0MjA0NTIyLC0x
+MDMzNDYxMTkwXX0=
 -->
