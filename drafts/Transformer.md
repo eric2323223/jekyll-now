@@ -135,10 +135,11 @@ Attention这种新的结构使得他的训练方式也和RNN不同，这是由�
 
 **Scaled Dot-Product Attention**
 Transformer对标准的attention做了一个小小调整：加入特征缩放（feature scaling）。这样做主要是为了防止softmax运算将比较大的key过度放大，导致其他key的信息很难加入到attention结果中。
-
+$$\mathrm{Attention}(Q, K, V) = \mathrm{softmax}(\frac{QK^T}{\sqrt{d_k}})V$$
+可以看到在对$Q$和$K$计算点积$QK^T$以后
 其中的权值来自该元素与其他元素的相似度，这是基于这样的假设-相似度越高的元素对确定该元素在整个序列中的含义的贡献度越大，由于序列元素以向量表示（word4vec），在transformer中使用点积运算来确定相似度，其结果是一个数值。形式化的定义为
 $W^Q_i \in \mathbb{R}^{d_{\text{model}} \times d_k}$, $W^K_i \in \mathbb{R}^{d_{\text{model}} \times d_k}$, $W^V_i \in \mathbb{R}^{d_{\text{model}} \times d_v}$ and $W^O \in \mathbb{R}^{hd_v \times d_{\text{model}}}$
-$$\mathrm{Attention}(Q, K, V) = \mathrm{softmax}(\frac{QK^T}{\sqrt{d_k}})V$$
+
 ![enter image description here](https://miro.medium.com/max/410/1*NlQPdpNY4d26l8Vu92a0Wg.png)
 
 
@@ -300,11 +301,11 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [TRANSFORMERS FROM SCRATCH](http://www.peterbloem.nl/blog/transformers)
 [Transformer Architecture: The Positional Encoding](https://kazemnejad.com/blog/transformer_architecture_positional_encoding)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbOTY5NDg4NDAsLTQyNjU4ODk1MiwtMTUyNT
-kwODIyMCwtMzc3NTYwNzY5LDE1Mjk3NDMyNzUsLTExNDQ4OTE3
-NTcsMTI2NzI5MzQ3MywtOTQxNTAyMjQ2LC0xMDg4OTg5ODQ4LD
-E0NzM3NjcxODAsMTg1OTIxNDc1NiwyMDE2NTgxMDEwLDIxMTcx
-ODgxMjksLTEwMTY0ODAxNDMsMjA4MTk2MDAwMiw2ODczNjQ1Mz
-EsLTYwOTYxOTAxNCwtODg0MjA0NTIyLC0xMDMzNDYxMTkwLDE4
-MDMzNDkwOTVdfQ==
+eyJoaXN0b3J5IjpbLTQ3NDMyMzY0NywtNDI2NTg4OTUyLC0xNT
+I1OTA4MjIwLC0zNzc1NjA3NjksMTUyOTc0MzI3NSwtMTE0NDg5
+MTc1NywxMjY3MjkzNDczLC05NDE1MDIyNDYsLTEwODg5ODk4ND
+gsMTQ3Mzc2NzE4MCwxODU5MjE0NzU2LDIwMTY1ODEwMTAsMjEx
+NzE4ODEyOSwtMTAxNjQ4MDE0MywyMDgxOTYwMDAyLDY4NzM2ND
+UzMSwtNjA5NjE5MDE0LC04ODQyMDQ1MjIsLTEwMzM0NjExOTAs
+MTgwMzM0OTA5NV19
 -->
