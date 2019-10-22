@@ -133,9 +133,9 @@ Transformer论文的标题说只需要attention意味着attention可以完成以
 #### attention mask
 Attention这种新的结构使得他的训练方式也和RNN不同，这是由于Attention可以直接看到所有的元素，因此需要mask来防止——————， 具体来看
 - 编码器self attention，不需要mask
-- 编码器-解码器attention，
-> -   In the encoder and decoder: To zero attention outputs wherever there is just padding in the input sentences.
-> -   In the decoder: To prevent the decoder ‘peaking’ ahead at the rest of the translated sentence when predicting the next word.
+- 编码器-解码器attention，需要对padding进行mask
+- 解码器self attention，需要对当前位置之后的所有元素masking
+
 > We also modify the self-attention sub-layer in the decoder stack to prevent positions from attending to subsequent positions. This masking, combined with fact that the output embeddings are offset by one position, ensures that the predictions for position ii can depend only on the known outputs at positions less than ii.
 > I mentioned I would cover attention bias mask later when going through the code of  `MultiHeadAttention`. For tasks like translation the decoder is fed previous outputs as input to predict the next output. During training the quick way to get the previous outputs is to  _shift_  the training labels right (The first time step gets a special symbol) and feed them as decoder inputs — a technique known as  _Teacher Forcing_  in machine learning parlance. However this presents a problem for the Transformer decoder as it can ‘cheat’ by using inputs from future time steps. The places where the short circuiting can happen is the self attention step and both the feedforward steps. (Can you figure out why it cannot happen in the normal attention step?)
 
@@ -299,7 +299,7 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [TRANSFORMERS FROM SCRATCH](http://www.peterbloem.nl/blog/transformers)
 [Transformer Architecture: The Positional Encoding](https://kazemnejad.com/blog/transformer_architecture_positional_encoding)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTM5NjQxMTU0LC0xNDk4NzcxNzMsLTE0OT
+eyJoaXN0b3J5IjpbNTI5OTAwNTExLC0xNDk4NzcxNzMsLTE0OT
 E1NTcwNjUsLTYwMTc1NDQ3MSwtODc5NjQ0MTUwLDg4MTIwMjgy
 OCwtNDI2NTg4OTUyLC0xNTI1OTA4MjIwLC0zNzc1NjA3NjksMT
 UyOTc0MzI3NSwtMTE0NDg5MTc1NywxMjY3MjkzNDczLC05NDE1
