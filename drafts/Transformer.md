@@ -116,9 +116,7 @@ Transformer论文的标题说只需要attention意味着attention可以完成以
 
 在encoder-decoder模型中encoder负责将输入转化为输入序列的内部表示（context vector），传统方法使用RNN通过一步步的叠加分析过的输入来得到整个序列的内部表示（固定长度），Transformer模型中使用自注意力（self attention）机制来实现encoding，之所以称作自注意力是因为这是在输入序列内部进行的attention操作，由于attention操作就是对元素进行重新定义使其包含序列上下文信息，在输入序列元素进行attention的操作结果就是使该元素包含输入序列信息，因此经过self attention运算的整个输入序列的结果就是和一个输入序列大小一致的context vector。显然，self attention不需要想RNN那样一步步的出入输入，而是可以同时对每个元素进行attention运算，从下图可以发现，RNN需要在依次处理元素x1, x2和x3之后才能得到整个序列的上下文信息，而attention则可以同时处理x1，x2，x3而得到序列的上下文信息。
 ![enter image description here](https://docs.google.com/drawings/d/e/2PACX-1vQZ5I4YZtpZOU8xnxqqJ2WVd7o9eeo0sHQa119cWm4qR85KanMs7-Z1DV1EfKxJLQrZaVglHLUJGPF2/pub?w=856&h=225)
-Attention这种新的结构使得他的训练方式也和RNN不同，这是由于Attention可以直接看到所有的元素，因此需要mask来防止——————
-> -   In the encoder and decoder: To zero attention outputs wherever there is just padding in the input sentences.
-> -   In the decoder: To prevent the decoder ‘peaking’ ahead at the rest of the translated sentence when predicting the next word.
+
 
 总结来说，Attention比较RNN有一下三点优势
 - 对于NLP的任务场景，attention的计算复杂度更低（dim>length）
@@ -133,7 +131,9 @@ Attention这种新的结构使得他的训练方式也和RNN不同，这是由�
 - 在并行方面，多头attention和CNN一样不依赖于前一时刻的计算，可以很好的并行，优于RNN。
 - 在长距离依赖上，由于self-attention是每个词和所有词都要计算attention，所以不管他们中间有多长距离，最大的路径长度也都只是1。可以捕获长距离依赖关系。RNN则存在梯度弥散或者梯度爆炸的问题。
 #### attention mask
-由于attention机制可以看到全部输入，所以需要mask来防止attention在训练时看到正确的输出 
+Attention这种新的结构使得他的训练方式也和RNN不同，这是由于Attention可以直接看到所有的元素，因此需要mask来防止——————
+> -   In the encoder and decoder: To zero attention outputs wherever there is just padding in the input sentences.
+> -   In the decoder: To prevent the decoder ‘peaking’ ahead at the rest of the translated sentence when predicting the next word.
 > We also modify the self-attention sub-layer in the decoder stack to prevent positions from attending to subsequent positions. This masking, combined with fact that the output embeddings are offset by one position, ensures that the predictions for position ii can depend only on the known outputs at positions less than ii.
 > I mentioned I would cover attention bias mask later when going through the code of  `MultiHeadAttention`. For tasks like translation the decoder is fed previous outputs as input to predict the next output. During training the quick way to get the previous outputs is to  _shift_  the training labels right (The first time step gets a special symbol) and feed them as decoder inputs — a technique known as  _Teacher Forcing_  in machine learning parlance. However this presents a problem for the Transformer decoder as it can ‘cheat’ by using inputs from future time steps. The places where the short circuiting can happen is the self attention step and both the feedforward steps. (Can you figure out why it cannot happen in the normal attention step?)
 
@@ -297,11 +297,11 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [TRANSFORMERS FROM SCRATCH](http://www.peterbloem.nl/blog/transformers)
 [Transformer Architecture: The Positional Encoding](https://kazemnejad.com/blog/transformer_architecture_positional_encoding)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2MzQ3MjkwODUsLTE0OTE1NTcwNjUsLT
-YwMTc1NDQ3MSwtODc5NjQ0MTUwLDg4MTIwMjgyOCwtNDI2NTg4
-OTUyLC0xNTI1OTA4MjIwLC0zNzc1NjA3NjksMTUyOTc0MzI3NS
-wtMTE0NDg5MTc1NywxMjY3MjkzNDczLC05NDE1MDIyNDYsLTEw
-ODg5ODk4NDgsMTQ3Mzc2NzE4MCwxODU5MjE0NzU2LDIwMTY1OD
-EwMTAsMjExNzE4ODEyOSwtMTAxNjQ4MDE0MywyMDgxOTYwMDAy
-LDY4NzM2NDUzMV19
+eyJoaXN0b3J5IjpbLTE0OTg3NzE3MywtMTQ5MTU1NzA2NSwtNj
+AxNzU0NDcxLC04Nzk2NDQxNTAsODgxMjAyODI4LC00MjY1ODg5
+NTIsLTE1MjU5MDgyMjAsLTM3NzU2MDc2OSwxNTI5NzQzMjc1LC
+0xMTQ0ODkxNzU3LDEyNjcyOTM0NzMsLTk0MTUwMjI0NiwtMTA4
+ODk4OTg0OCwxNDczNzY3MTgwLDE4NTkyMTQ3NTYsMjAxNjU4MT
+AxMCwyMTE3MTg4MTI5LC0xMDE2NDgwMTQzLDIwODE5NjAwMDIs
+Njg3MzY0NTMxXX0=
 -->
