@@ -85,6 +85,8 @@ $\theta$表示两个向量$a,b$之间的夹角，如果$a,b$越相似则夹角$\
 $$e_{ij}=Sim(h_i,x_j)$$
 
 > **try to understand why K and V are different in transformer first!!!**
+> Attention ha
+> Goal is to learn $W_k, W_q, W_v$ so that 
 -   **其次**，从形式上Attention可以理解为**键值查询**
 对于进行相似性计算和——不同的情况，Attention可以更一般的表示为
 $$\mathrm{Attention}(Q, K, V) = \mathrm{softmax}(Sim(Q,K))V$$
@@ -295,11 +297,11 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [TRANSFORMERS FROM SCRATCH](http://www.peterbloem.nl/blog/transformers)
 [Transformer Architecture: The Positional Encoding](https://kazemnejad.com/blog/transformer_architecture_positional_encoding)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTUyOTc0MzI3NSwtMTE0NDg5MTc1NywxMj
-Y3MjkzNDczLC05NDE1MDIyNDYsLTEwODg5ODk4NDgsMTQ3Mzc2
-NzE4MCwxODU5MjE0NzU2LDIwMTY1ODEwMTAsMjExNzE4ODEyOS
-wtMTAxNjQ4MDE0MywyMDgxOTYwMDAyLDY4NzM2NDUzMSwtNjA5
-NjE5MDE0LC04ODQyMDQ1MjIsLTEwMzM0NjExOTAsMTgwMzM0OT
-A5NSwtMTk1OTg2MzI3NSw0MDAyODUwOTYsLTE2NzUyNjE5LDE1
-MDM2MTI0NzldfQ==
+eyJoaXN0b3J5IjpbLTEyNTM1OTk3NzEsMTUyOTc0MzI3NSwtMT
+E0NDg5MTc1NywxMjY3MjkzNDczLC05NDE1MDIyNDYsLTEwODg5
+ODk4NDgsMTQ3Mzc2NzE4MCwxODU5MjE0NzU2LDIwMTY1ODEwMT
+AsMjExNzE4ODEyOSwtMTAxNjQ4MDE0MywyMDgxOTYwMDAyLDY4
+NzM2NDUzMSwtNjA5NjE5MDE0LC04ODQyMDQ1MjIsLTEwMzM0Nj
+ExOTAsMTgwMzM0OTA5NSwtMTk1OTg2MzI3NSw0MDAyODUwOTYs
+LTE2NzUyNjE5XX0=
 -->
