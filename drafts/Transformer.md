@@ -133,7 +133,17 @@ Attention这种新的结构使得他的训练方式也和RNN不同，这是由�
 - 在并行方面，多头attention和CNN一样不依赖于前一时刻的计算，可以很好的并行，优于RNN。
 - 在长距离依赖上，由于self-attention是每个词和所有词都要计算attention，所以不管他们中间有多长距离，最大的路径长度也都只是1。可以捕获长距离依赖关系。RNN则存在梯度弥散或者梯度爆炸的问题。
 #### attention mask
+由于attention机制可以看到全部输入，所以需要mask来防止attention在训练时看到正确的输出 
+> We also modify the self-attention sub-layer in the decoder stack to prevent positions from attending to subsequent positions. This masking, combined with fact that the output embeddings are offset by one position, ensures that the predictions for position ii can depend only on the known outputs at positions less than ii.
+> I mentioned I would cover attention bias mask later when going through the code of  `MultiHeadAttention`. For tasks like translation the decoder is fed previous outputs as input to predict the next output. During training the quick way to get the previous outputs is to  _shift_  the training labels right (The first time step gets a special symbol) and feed them as decoder inputs — a technique known as  _Teacher Forcing_  in machine learning parlance. However this presents a problem for the Transformer decoder as it can ‘cheat’ by using inputs from future time steps. The places where the short circuiting can happen is the self attention step and both the feedforward steps. (Can you figure out why it cannot happen in the normal attention step?)
 
+> In the self attention step we feed values from all time steps to the  `MultiHeadAttention`  component. Recall that we do a weighted linear combination of the  _Values_  input:
+
+![](https://miro.medium.com/max/504/1*aJiWfOaTCktprHEgNdeJow.png)
+
+Consider the first row of  _OUTPUT_  in the above diagram. It corresponds to the attention output at time  _t=1_. But it is computed from values right up till  _t=10_  which are future time steps. To prevent reading these future values we zero out all weights in the  _WEIGHTS_  tensor above the main diagonal. This will ensure that future values cannot creep in:
+
+![](https://miro.medium.com/max/204/1*6aTQQSmXUfCQxj3drNEweg.png)
 #### Scaled Dot-Product Attention
 Transformer对标准的attention做了一个小小调整：加入特征缩放（feature scaling）。这样做主要是为了防止softmax运算将值较大的key过度放大，导致其他key的信息很难加入到attention结果中。
 $$\mathrm{Attention}(Q, K, V) = \mathrm{softmax}(\frac{QK^T}{\sqrt{d_k}})V$$
@@ -149,23 +159,6 @@ $W^Q_i \in \mathbb{R}^{d_{\text{model}} \times d_k}$, $W^K_i \in \mathbb{R}^{d_{
 在transformer中的encoder和decoder中都使用了自注意力机制，他们的实现基本相同，稍有不同的是在decoder中使用mask来*屏蔽当前元素之后的元素*
 ####  encoder-decoder attention
 In terms of encoder-decoder, the **query** is usually the hidden state of the _decoder_. Whereas **key**, is the hidden state of the _encoder_, and the corresponding **value** is normalized weight, representing how much attention a _key_ gets. Output is calculated as a wighted sum – here the dot product of _query_ and _key_ is used to get a _value_.
-
-
-
-#### Mask
-
-
-由于attention机制可以看到全部输入，所以需要mask来防止attention在训练时看到正确的输出 
-> We also modify the self-attention sub-layer in the decoder stack to prevent positions from attending to subsequent positions. This masking, combined with fact that the output embeddings are offset by one position, ensures that the predictions for position ii can depend only on the known outputs at positions less than ii.
-> I mentioned I would cover attention bias mask later when going through the code of  `MultiHeadAttention`. For tasks like translation the decoder is fed previous outputs as input to predict the next output. During training the quick way to get the previous outputs is to  _shift_  the training labels right (The first time step gets a special symbol) and feed them as decoder inputs — a technique known as  _Teacher Forcing_  in machine learning parlance. However this presents a problem for the Transformer decoder as it can ‘cheat’ by using inputs from future time steps. The places where the short circuiting can happen is the self attention step and both the feedforward steps. (Can you figure out why it cannot happen in the normal attention step?)
-
-> In the self attention step we feed values from all time steps to the  `MultiHeadAttention`  component. Recall that we do a weighted linear combination of the  _Values_  input:
-
-![](https://miro.medium.com/max/504/1*aJiWfOaTCktprHEgNdeJow.png)
-
-Consider the first row of  _OUTPUT_  in the above diagram. It corresponds to the attention output at time  _t=1_. But it is computed from values right up till  _t=10_  which are future time steps. To prevent reading these future values we zero out all weights in the  _WEIGHTS_  tensor above the main diagonal. This will ensure that future values cannot creep in:
-
-![](https://miro.medium.com/max/204/1*6aTQQSmXUfCQxj3drNEweg.png)
 
 ### 位置编码（positional encoding）
 与RNN和CNN不同，在Attention中没有词序的概念（如第一个词，第二个词等）， 输入序列的所有单词都以没有特殊顺序或位置的方式输入网络，因此模型不知道单词的顺序。 因此，需要将与位置相关的信号添加到每个词中，以帮助模型理解词的顺序。
@@ -304,11 +297,11 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [TRANSFORMERS FROM SCRATCH](http://www.peterbloem.nl/blog/transformers)
 [Transformer Architecture: The Positional Encoding](https://kazemnejad.com/blog/transformer_architecture_positional_encoding)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0OTE1NTcwNjUsLTYwMTc1NDQ3MSwtOD
-c5NjQ0MTUwLDg4MTIwMjgyOCwtNDI2NTg4OTUyLC0xNTI1OTA4
-MjIwLC0zNzc1NjA3NjksMTUyOTc0MzI3NSwtMTE0NDg5MTc1Ny
-wxMjY3MjkzNDczLC05NDE1MDIyNDYsLTEwODg5ODk4NDgsMTQ3
-Mzc2NzE4MCwxODU5MjE0NzU2LDIwMTY1ODEwMTAsMjExNzE4OD
-EyOSwtMTAxNjQ4MDE0MywyMDgxOTYwMDAyLDY4NzM2NDUzMSwt
-NjA5NjE5MDE0XX0=
+eyJoaXN0b3J5IjpbLTE2MzQ3MjkwODUsLTE0OTE1NTcwNjUsLT
+YwMTc1NDQ3MSwtODc5NjQ0MTUwLDg4MTIwMjgyOCwtNDI2NTg4
+OTUyLC0xNTI1OTA4MjIwLC0zNzc1NjA3NjksMTUyOTc0MzI3NS
+wtMTE0NDg5MTc1NywxMjY3MjkzNDczLC05NDE1MDIyNDYsLTEw
+ODg5ODk4NDgsMTQ3Mzc2NzE4MCwxODU5MjE0NzU2LDIwMTY1OD
+EwMTAsMjExNzE4ODEyOSwtMTAxNjQ4MDE0MywyMDgxOTYwMDAy
+LDY4NzM2NDUzMV19
 -->
