@@ -130,19 +130,12 @@ Transformer论文的标题说只需要attention意味着attention可以完成以
 
 - 在并行方面，多头attention和CNN一样不依赖于前一时刻的计算，可以很好的并行，优于RNN。
 - 在长距离依赖上，由于self-attention是每个词和所有词都要计算attention，所以不管他们中间有多长距离，最大的路径长度也都只是1。可以捕获长距离依赖关系。RNN则存在梯度弥散或者梯度爆炸的问题。
-#### attention mask
+#### Attention mask
 Attention这种新的结构使得他的训练方式也和RNN不同，这是由于Attention可以直接看到所有的元素，因此需要mask来防止——————， 具体来看
 - 编码器self attention，不需要mask
 - 编码器-解码器attention，需要对padding进行mask
 - 解码器self attention，需要对当前位置之后的所有元素masking
 
-> In the self attention step we feed values from all time steps to the  `MultiHeadAttention`  component. Recall that we do a weighted linear combination of the  _Values_  input:
-
-![](https://miro.medium.com/max/504/1*aJiWfOaTCktprHEgNdeJow.png)
-
-Consider the first row of  _OUTPUT_  in the above diagram. It corresponds to the attention output at time  _t=1_. But it is computed from values right up till  _t=10_  which are future time steps. To prevent reading these future values we zero out all weights in the  _WEIGHTS_  tensor above the main diagonal. This will ensure that future values cannot creep in:
-
-![](https://miro.medium.com/max/204/1*6aTQQSmXUfCQxj3drNEweg.png)
 #### Scaled Dot-Product Attention
 Transformer对标准的attention做了一个小小调整：加入特征缩放（feature scaling）。这样做主要是为了防止softmax运算将值较大的key过度放大，导致其他key的信息很难加入到attention结果中。
 $$\mathrm{Attention}(Q, K, V) = \mathrm{softmax}(\frac{QK^T}{\sqrt{d_k}})V$$
@@ -296,11 +289,11 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [TRANSFORMERS FROM SCRATCH](http://www.peterbloem.nl/blog/transformers)
 [Transformer Architecture: The Positional Encoding](https://kazemnejad.com/blog/transformer_architecture_positional_encoding)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTM5MTQ0MzY0NiwtMTQ5ODc3MTczLC0xND
-kxNTU3MDY1LC02MDE3NTQ0NzEsLTg3OTY0NDE1MCw4ODEyMDI4
-MjgsLTQyNjU4ODk1MiwtMTUyNTkwODIyMCwtMzc3NTYwNzY5LD
-E1Mjk3NDMyNzUsLTExNDQ4OTE3NTcsMTI2NzI5MzQ3MywtOTQx
-NTAyMjQ2LC0xMDg4OTg5ODQ4LDE0NzM3NjcxODAsMTg1OTIxND
-c1NiwyMDE2NTgxMDEwLDIxMTcxODgxMjksLTEwMTY0ODAxNDMs
-MjA4MTk2MDAwMl19
+eyJoaXN0b3J5IjpbMjY4Njk2ODc1LC0xNDk4NzcxNzMsLTE0OT
+E1NTcwNjUsLTYwMTc1NDQ3MSwtODc5NjQ0MTUwLDg4MTIwMjgy
+OCwtNDI2NTg4OTUyLC0xNTI1OTA4MjIwLC0zNzc1NjA3NjksMT
+UyOTc0MzI3NSwtMTE0NDg5MTc1NywxMjY3MjkzNDczLC05NDE1
+MDIyNDYsLTEwODg5ODk4NDgsMTQ3Mzc2NzE4MCwxODU5MjE0Nz
+U2LDIwMTY1ODEwMTAsMjExNzE4ODEyOSwtMTAxNjQ4MDE0Mywy
+MDgxOTYwMDAyXX0=
 -->
