@@ -136,9 +136,6 @@ Attention这种新的结构使得他的训练方式也和RNN不同，这是由�
 - 编码器-解码器attention，需要对padding进行mask
 - 解码器self attention，需要对当前位置之后的所有元素masking
 
-> We also modify the self-attention sub-layer in the decoder stack to prevent positions from attending to subsequent positions. This masking, combined with fact that the output embeddings are offset by one position, ensures that the predictions for position ii can depend only on the known outputs at positions less than ii.
-> I mentioned I would cover attention bias mask later when going through the code of  `MultiHeadAttention`. For tasks like translation the decoder is fed previous outputs as input to predict the next output. During training the quick way to get the previous outputs is to  _shift_  the training labels right (The first time step gets a special symbol) and feed them as decoder inputs — a technique known as  _Teacher Forcing_  in machine learning parlance. However this presents a problem for the Transformer decoder as it can ‘cheat’ by using inputs from future time steps. The places where the short circuiting can happen is the self attention step and both the feedforward steps. (Can you figure out why it cannot happen in the normal attention step?)
-
 > In the self attention step we feed values from all time steps to the  `MultiHeadAttention`  component. Recall that we do a weighted linear combination of the  _Values_  input:
 
 ![](https://miro.medium.com/max/504/1*aJiWfOaTCktprHEgNdeJow.png)
@@ -299,11 +296,11 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [TRANSFORMERS FROM SCRATCH](http://www.peterbloem.nl/blog/transformers)
 [Transformer Architecture: The Positional Encoding](https://kazemnejad.com/blog/transformer_architecture_positional_encoding)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTI5OTAwNTExLC0xNDk4NzcxNzMsLTE0OT
-E1NTcwNjUsLTYwMTc1NDQ3MSwtODc5NjQ0MTUwLDg4MTIwMjgy
-OCwtNDI2NTg4OTUyLC0xNTI1OTA4MjIwLC0zNzc1NjA3NjksMT
-UyOTc0MzI3NSwtMTE0NDg5MTc1NywxMjY3MjkzNDczLC05NDE1
-MDIyNDYsLTEwODg5ODk4NDgsMTQ3Mzc2NzE4MCwxODU5MjE0Nz
-U2LDIwMTY1ODEwMTAsMjExNzE4ODEyOSwtMTAxNjQ4MDE0Mywy
-MDgxOTYwMDAyXX0=
+eyJoaXN0b3J5IjpbLTM5MTQ0MzY0NiwtMTQ5ODc3MTczLC0xND
+kxNTU3MDY1LC02MDE3NTQ0NzEsLTg3OTY0NDE1MCw4ODEyMDI4
+MjgsLTQyNjU4ODk1MiwtMTUyNTkwODIyMCwtMzc3NTYwNzY5LD
+E1Mjk3NDMyNzUsLTExNDQ4OTE3NTcsMTI2NzI5MzQ3MywtOTQx
+NTAyMjQ2LC0xMDg4OTg5ODQ4LDE0NzM3NjcxODAsMTg1OTIxND
+c1NiwyMDE2NTgxMDEwLDIxMTcxODgxMjksLTEwMTY0ODAxNDMs
+MjA4MTk2MDAwMl19
 -->
