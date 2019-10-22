@@ -132,8 +132,9 @@ Attention这种新的结构使得他的训练方式也和RNN不同，这是由�
 
 - 在并行方面，多头attention和CNN一样不依赖于前一时刻的计算，可以很好的并行，优于RNN。
 - 在长距离依赖上，由于self-attention是每个词和所有词都要计算attention，所以不管他们中间有多长距离，最大的路径长度也都只是1。可以捕获长距离依赖关系。RNN则存在梯度弥散或者梯度爆炸的问题。
+#### attention mask
 
-**Scaled Dot-Product Attention**
+#### Scaled Dot-Product Attention
 Transformer对标准的attention做了一个小小调整：加入特征缩放（feature scaling）。这样做主要是为了防止softmax运算将值较大的key过度放大，导致其他key的信息很难加入到attention结果中。
 $$\mathrm{Attention}(Q, K, V) = \mathrm{softmax}(\frac{QK^T}{\sqrt{d_k}})V$$
 特征缩放体现在对$Q$和$K$计算点积$QK^T$以后，增加了一步除以$\sqrt{d_k}$运算。
@@ -146,7 +147,7 @@ $W^Q_i \in \mathbb{R}^{d_{\text{model}} \times d_k}$, $W^K_i \in \mathbb{R}^{d_{
 
 
 在transformer中的encoder和decoder中都使用了自注意力机制，他们的实现基本相同，稍有不同的是在decoder中使用mask来*屏蔽当前元素之后的元素*
-#### encoder-decoder attention
+####  encoder-decoder attention
 In terms of encoder-decoder, the **query** is usually the hidden state of the _decoder_. Whereas **key**, is the hidden state of the _encoder_, and the corresponding **value** is normalized weight, representing how much attention a _key_ gets. Output is calculated as a wighted sum – here the dot product of _query_ and _key_ is used to get a _value_.
 
 
@@ -303,11 +304,11 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [TRANSFORMERS FROM SCRATCH](http://www.peterbloem.nl/blog/transformers)
 [Transformer Architecture: The Positional Encoding](https://kazemnejad.com/blog/transformer_architecture_positional_encoding)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTYwMTc1NDQ3MSwtODc5NjQ0MTUwLDg4MT
-IwMjgyOCwtNDI2NTg4OTUyLC0xNTI1OTA4MjIwLC0zNzc1NjA3
-NjksMTUyOTc0MzI3NSwtMTE0NDg5MTc1NywxMjY3MjkzNDczLC
-05NDE1MDIyNDYsLTEwODg5ODk4NDgsMTQ3Mzc2NzE4MCwxODU5
-MjE0NzU2LDIwMTY1ODEwMTAsMjExNzE4ODEyOSwtMTAxNjQ4MD
-E0MywyMDgxOTYwMDAyLDY4NzM2NDUzMSwtNjA5NjE5MDE0LC04
-ODQyMDQ1MjJdfQ==
+eyJoaXN0b3J5IjpbLTE0OTE1NTcwNjUsLTYwMTc1NDQ3MSwtOD
+c5NjQ0MTUwLDg4MTIwMjgyOCwtNDI2NTg4OTUyLC0xNTI1OTA4
+MjIwLC0zNzc1NjA3NjksMTUyOTc0MzI3NSwtMTE0NDg5MTc1Ny
+wxMjY3MjkzNDczLC05NDE1MDIyNDYsLTEwODg5ODk4NDgsMTQ3
+Mzc2NzE4MCwxODU5MjE0NzU2LDIwMTY1ODEwMTAsMjExNzE4OD
+EyOSwtMTAxNjQ4MDE0MywyMDgxOTYwMDAyLDY4NzM2NDUzMSwt
+NjA5NjE5MDE0XX0=
 -->
