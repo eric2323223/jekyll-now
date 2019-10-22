@@ -131,7 +131,9 @@ Transformer论文的标题说只需要attention意味着attention可以完成以
 - 在并行方面，多头attention和CNN一样不依赖于前一时刻的计算，可以很好的并行，优于RNN。
 - 在长距离依赖上，由于self-attention是每个词和所有词都要计算attention，所以不管他们中间有多长距离，最大的路径长度也都只是1。可以捕获长距离依赖关系。RNN则存在梯度弥散或者梯度爆炸的问题。
 #### attention mask
-Attention这种新的结构使得他的训练方式也和RNN不同，这是由于Attention可以直接看到所有的元素，因此需要mask来防止——————
+Attention这种新的结构使得他的训练方式也和RNN不同，这是由于Attention可以直接看到所有的元素，因此需要mask来防止——————， 具体来看
+- 编码器self attention，不需要mask
+- 编码器-解码器attention，
 > -   In the encoder and decoder: To zero attention outputs wherever there is just padding in the input sentences.
 > -   In the decoder: To prevent the decoder ‘peaking’ ahead at the rest of the translated sentence when predicting the next word.
 > We also modify the self-attention sub-layer in the decoder stack to prevent positions from attending to subsequent positions. This masking, combined with fact that the output embeddings are offset by one position, ensures that the predictions for position ii can depend only on the known outputs at positions less than ii.
@@ -297,11 +299,11 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [TRANSFORMERS FROM SCRATCH](http://www.peterbloem.nl/blog/transformers)
 [Transformer Architecture: The Positional Encoding](https://kazemnejad.com/blog/transformer_architecture_positional_encoding)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0OTg3NzE3MywtMTQ5MTU1NzA2NSwtNj
-AxNzU0NDcxLC04Nzk2NDQxNTAsODgxMjAyODI4LC00MjY1ODg5
-NTIsLTE1MjU5MDgyMjAsLTM3NzU2MDc2OSwxNTI5NzQzMjc1LC
-0xMTQ0ODkxNzU3LDEyNjcyOTM0NzMsLTk0MTUwMjI0NiwtMTA4
-ODk4OTg0OCwxNDczNzY3MTgwLDE4NTkyMTQ3NTYsMjAxNjU4MT
-AxMCwyMTE3MTg4MTI5LC0xMDE2NDgwMTQzLDIwODE5NjAwMDIs
-Njg3MzY0NTMxXX0=
+eyJoaXN0b3J5IjpbNTM5NjQxMTU0LC0xNDk4NzcxNzMsLTE0OT
+E1NTcwNjUsLTYwMTc1NDQ3MSwtODc5NjQ0MTUwLDg4MTIwMjgy
+OCwtNDI2NTg4OTUyLC0xNTI1OTA4MjIwLC0zNzc1NjA3NjksMT
+UyOTc0MzI3NSwtMTE0NDg5MTc1NywxMjY3MjkzNDczLC05NDE1
+MDIyNDYsLTEwODg5ODk4NDgsMTQ3Mzc2NzE4MCwxODU5MjE0Nz
+U2LDIwMTY1ODEwMTAsMjExNzE4ODEyOSwtMTAxNjQ4MDE0Mywy
+MDgxOTYwMDAyXX0=
 -->
