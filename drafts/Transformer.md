@@ -159,6 +159,10 @@ In terms of encoder-decoder, the **query** is usually the hidden state of the _d
 - 使用多个不同频率来保证不会由于周期性导致不同位置的编码相同
 - 第二是由于sin/cos函数的值总是在-1到1之间，这种编码本身也有正则化（normalization）的作用，这有利于神经网络的学习。
 
+用$pos$表示位置，$i$表示元素编码的维度，$d_{model}$表示模型的维度，位置编码$PE$可以表示为
+$$PE_{{pos,2i}}=sin(pos/10000^{2i/d_{model}})$$
+$$PE_{(pos, 2i+1)}=cos(pos/10000^{2i/d_{model}})$$
+
 具体来说，
 首先，位置编码可以是多维的
 
@@ -178,9 +182,7 @@ In terms of encoder-decoder, the **query** is usually the hidden state of the _d
 - Our model should generalize to longer sentences without any efforts. Its values should be bounded.
 - It must be deterministic.
 
-用$pos$表示位置，$i$表示元素编码的维度，$d_{model}$表示模型的维度，位置编码$PE$可以表示为
-$$PE_{{pos,2i}}=sin(pos/10000^{2i/d_{model}})$$
-$$PE_{(pos, 2i+1)}=cos(pos/10000^{2i/d_{model}})$$
+
 ![enter image description here](https://www.researchgate.net/publication/327068570/figure/fig3/AS:660457148928000@1534476663109/The-original-positional-encoding-used-in-Attention-Is-All-You-Need-VSP-17-composed.png)
 ![](https://d33wubrfki0l68.cloudfront.net/ef81ee3018af6ab6f23769031f8961afcdd67c68/3358f/img/transformer_architecture_positional_encoding/positional_encoding.png)
 
@@ -290,7 +292,7 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [TRANSFORMERS FROM SCRATCH](http://www.peterbloem.nl/blog/transformers)
 [Transformer Architecture: The Positional Encoding](https://kazemnejad.com/blog/transformer_architecture_positional_encoding)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTY4NDk4Nzk2Niw5MzIxNjI5NDUsODMyOD
+eyJoaXN0b3J5IjpbLTEyNzE3MzM3Miw5MzIxNjI5NDUsODMyOD
 k0NDIwLC05Njc1MDExNzYsLTE0OTg3NzE3MywtMTQ5MTU1NzA2
 NSwtNjAxNzU0NDcxLC04Nzk2NDQxNTAsODgxMjAyODI4LC00Mj
 Y1ODg5NTIsLTE1MjU5MDgyMjAsLTM3NzU2MDc2OSwxNTI5NzQz
