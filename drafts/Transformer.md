@@ -153,7 +153,9 @@ In terms of encoder-decoder, the **query** is usually the hidden state of the _d
 
 ### 位置编码（positional encoding）
 与RNN和CNN不同，在Attention中没有词序的概念（如第一个词，第二个词等）， 输入序列的所有单词都以没有特殊顺序或位置的方式输入网络，因此模型不知道单词的顺序。 因此，需要将与位置相关的信号添加到每个词中，以帮助模型理解词的顺序。
-位置编码是单词值及其在句子中位置的重新表示（假定开头和结尾或中间的开头和开头不相同）。考虑到句子的长度可以是任意长度，只讨论词的绝对位置是不全面的（同一个词，在由3个词组成的句子中的第三个位置和30个词组成的句子中的第三个位置所表达的意思很可能是不一样的）。位置编码器的作用是获得sin（x）和cos（x）函数的循环特性的帮助，以返回单词在句子中的位置信息。
+位置编码是单词值及其在句子中位置的重新表示（假定开头和结尾或中间的开头和开头不相同）。考虑到句子的长度可以是任意长度，只讨论词的绝对位置是不全面的（同一个词，在由3个词组成的句子中的第三个位置和30个词组成的句子中的第三个位置所表达的意思很可能是不一样的）。在Transformer模型中使用的是sin/cos函数进行位置编码，这种位置编码有两个优点：
+- 首先就是由于sin/cos函数的周期性它能够进行任意长度序列的位置编码；
+- 第二是由于sin/cos函数的值总是在-1到1之间，这种编码本身也有正则化（normalization）的作用，这有利于神经网络的学习。
 > 通常，将位置编码添加到输入嵌入是一个非常有趣的话题。一种方法是嵌入输入元素的绝对位置（如在ConvS2S中一样）。但是，作者使用“不同频率的正弦和余弦函数”。 “正弦波”版本非常复杂，同时具有与绝对位置版本相似的性能。然而，问题的关键在于，它可以使模型在测试时对更长的句子产生更好的翻译（至少比训练数据中的句子更长）。通过这种正弦方法，模型可以外推到更长的序列长度3。
 > 
 首先，位置编码可以是多维的
@@ -174,9 +176,6 @@ In terms of encoder-decoder, the **query** is usually the hidden state of the _d
 - Our model should generalize to longer sentences without any efforts. Its values should be bounded.
 - It must be deterministic.
 
-由于attention机制不考虑位置关系，因此必须要在在attention操作前对序列中的每个元素加入位置信息。一个最直接的方法就是对输入加入序号，但是这种方法的问题在于无法处理长度超过训练数据的输入序列。在Transformer模型中使用的是sin/cos函数进行位置编码，这种位置编码有两个优点：
-- 首先就是由于sin/cos函数的周期性它能够进行任意长度序列的位置编码，解决了之前的问题；
-- 第二是由于sin/cos函数的值总是在-1到1之间，这种编码本身也有正则化（normalization）的作用，这有利于神经网络的学习。
 用$pos$表示位置，$i$表示元素编码的维度，$d_{model}$表示模型的维度，位置编码$PE$可以表示为
 $$PE_{{pos,2i}}=sin(pos/10000^{2i/d_{model}})$$
 $$PE_{(pos, 2i+1)}=cos(pos/10000^{2i/d_{model}})$$
@@ -289,11 +288,11 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [TRANSFORMERS FROM SCRATCH](http://www.peterbloem.nl/blog/transformers)
 [Transformer Architecture: The Positional Encoding](https://kazemnejad.com/blog/transformer_architecture_positional_encoding)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODMyODk0NDIwLC05Njc1MDExNzYsLTE0OT
-g3NzE3MywtMTQ5MTU1NzA2NSwtNjAxNzU0NDcxLC04Nzk2NDQx
-NTAsODgxMjAyODI4LC00MjY1ODg5NTIsLTE1MjU5MDgyMjAsLT
-M3NzU2MDc2OSwxNTI5NzQzMjc1LC0xMTQ0ODkxNzU3LDEyNjcy
-OTM0NzMsLTk0MTUwMjI0NiwtMTA4ODk4OTg0OCwxNDczNzY3MT
-gwLDE4NTkyMTQ3NTYsMjAxNjU4MTAxMCwyMTE3MTg4MTI5LC0x
-MDE2NDgwMTQzXX0=
+eyJoaXN0b3J5IjpbLTY4MjE3ODMxMSw4MzI4OTQ0MjAsLTk2Nz
+UwMTE3NiwtMTQ5ODc3MTczLC0xNDkxNTU3MDY1LC02MDE3NTQ0
+NzEsLTg3OTY0NDE1MCw4ODEyMDI4MjgsLTQyNjU4ODk1MiwtMT
+UyNTkwODIyMCwtMzc3NTYwNzY5LDE1Mjk3NDMyNzUsLTExNDQ4
+OTE3NTcsMTI2NzI5MzQ3MywtOTQxNTAyMjQ2LC0xMDg4OTg5OD
+Q4LDE0NzM3NjcxODAsMTg1OTIxNDc1NiwyMDE2NTgxMDEwLDIx
+MTcxODgxMjldfQ==
 -->
