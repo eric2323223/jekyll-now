@@ -156,7 +156,7 @@ In terms of encoder-decoder, the **query** is usually the hidden state of the _d
 位置编码是单词值及其在句子中位置的重新表示（假定开头和结尾或中间的开头和开头不相同）。考虑到句子的长度可以是任意长度，只讨论词的绝对位置是不全面的（同一个词，在由3个词组成的句子中的第三个位置和30个词组成的句子中的第三个位置所表达的意思很可能是不一样的）。
 在Transformer模型中利用了不同频率的周期函数来进行位置编码，这种位置编码有两个优点：
 - 首先就是由于sin/cos函数的周期性它能够进行任意长度序列的位置编码；
-- 使用不同频率来保证不会由于
+- 使用多个不同频率来保证不会由于周期性导致不同位置的编码相同
 - 第二是由于sin/cos函数的值总是在-1到1之间，这种编码本身也有正则化（normalization）的作用，这有利于神经网络的学习。
 具体来说，
 > 通常，将位置编码添加到输入嵌入是一个非常有趣的话题。一种方法是嵌入输入元素的绝对位置（如在ConvS2S中一样）。但是，作者使用“不同频率的正弦和余弦函数”。 “正弦波”版本非常复杂，同时具有与绝对位置版本相似的性能。然而，问题的关键在于，它可以使模型在测试时对更长的句子产生更好的翻译（至少比训练数据中的句子更长）。通过这种正弦方法，模型可以外推到更长的序列长度3。
@@ -291,7 +291,7 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [TRANSFORMERS FROM SCRATCH](http://www.peterbloem.nl/blog/transformers)
 [Transformer Architecture: The Positional Encoding](https://kazemnejad.com/blog/transformer_architecture_positional_encoding)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjg5MDYyNzAwLDgzMjg5NDQyMCwtOTY3NT
+eyJoaXN0b3J5IjpbOTMyMTYyOTQ1LDgzMjg5NDQyMCwtOTY3NT
 AxMTc2LC0xNDk4NzcxNzMsLTE0OTE1NTcwNjUsLTYwMTc1NDQ3
 MSwtODc5NjQ0MTUwLDg4MTIwMjgyOCwtNDI2NTg4OTUyLC0xNT
 I1OTA4MjIwLC0zNzc1NjA3NjksMTUyOTc0MzI3NSwtMTE0NDg5
