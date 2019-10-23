@@ -154,8 +154,8 @@ In terms of encoder-decoder, the **query** is usually the hidden state of the _d
 ### 位置编码（positional encoding）
 与RNN和CNN不同，在Attention中没有词序的概念（如第一个词，第二个词等）， 输入序列的所有单词都以没有特殊顺序或位置的方式输入网络，因此模型不知道单词的顺序。 因此，需要将与位置相关的信号添加到每个词中，以帮助模型理解词的顺序。
 位置编码是单词值及其在句子中位置的重新表示（假定开头和结尾或中间的开头和开头不相同）。考虑到句子的长度可以是任意长度，只讨论词的绝对位置是不全面的（同一个词，在由3个词组成的句子中的第三个位置和30个词组成的句子中的第三个位置所表达的意思很可能是不一样的）。
-在Transformer模型中利用了不同频率的周期函数来进行位置编码，这种位置编码有两个优点：
-- 首先就是由于sin/cos函数的周期性它能够进行任意长度序列的位置编码
+在Transformer模型中利用了不同频率的周期函数来进行位置编码，这种位置编码有如下优点：
+- 由于sin/cos函数的周期性它能够进行任意长度序列的位置编码
 - 使用多个不同频率来保证不会由于周期性导致不同位置的编码相同
 - 第二是由于sin/cos函数的值总是在-1到1之间，这种编码本身也有正则化（normalization）的作用，这有利于神经网络的学习。
 
@@ -292,11 +292,11 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [TRANSFORMERS FROM SCRATCH](http://www.peterbloem.nl/blog/transformers)
 [Transformer Architecture: The Positional Encoding](https://kazemnejad.com/blog/transformer_architecture_positional_encoding)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEyNzE3MzM3Miw5MzIxNjI5NDUsODMyOD
-k0NDIwLC05Njc1MDExNzYsLTE0OTg3NzE3MywtMTQ5MTU1NzA2
-NSwtNjAxNzU0NDcxLC04Nzk2NDQxNTAsODgxMjAyODI4LC00Mj
-Y1ODg5NTIsLTE1MjU5MDgyMjAsLTM3NzU2MDc2OSwxNTI5NzQz
-Mjc1LC0xMTQ0ODkxNzU3LDEyNjcyOTM0NzMsLTk0MTUwMjI0Ni
-wtMTA4ODk4OTg0OCwxNDczNzY3MTgwLDE4NTkyMTQ3NTYsMjAx
-NjU4MTAxMF19
+eyJoaXN0b3J5IjpbMTcwODg0MTgzLC0xMjcxNzMzNzIsOTMyMT
+YyOTQ1LDgzMjg5NDQyMCwtOTY3NTAxMTc2LC0xNDk4NzcxNzMs
+LTE0OTE1NTcwNjUsLTYwMTc1NDQ3MSwtODc5NjQ0MTUwLDg4MT
+IwMjgyOCwtNDI2NTg4OTUyLC0xNTI1OTA4MjIwLC0zNzc1NjA3
+NjksMTUyOTc0MzI3NSwtMTE0NDg5MTc1NywxMjY3MjkzNDczLC
+05NDE1MDIyNDYsLTEwODg5ODk4NDgsMTQ3Mzc2NzE4MCwxODU5
+MjE0NzU2XX0=
 -->
