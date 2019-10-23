@@ -181,7 +181,7 @@ Transformer仅仅使用attention进行输入encoding，由于attention本质上�
 具体方法是对同一个元素进行多次attention运算， 每次attention都使用不同的初始化参数W，最后在将多次attention的结果相加。
 ![enter image description here](https://docs.google.com/drawings/d/e/2PACX-1vT4_Vn34rr1zN4OhXIo7oCGkzXDF__Y3CIVnZ_12fjqLHtKoRSJaVIyoR7ndQHtRlfNUmgecF5mucNg/pub?w=538&h=363)
 
-![enter image description here](https://miro.medium.com/max/600/1*Vb9UizPn0AHejEYW9CWxNQ.png)
+![enter image description here](https://lilianweng.github.io/lil-log/assets/images/multi-head-attention.png)
 
 ### point-wise 前馈网络
 point-wise 对序列中每个元素分别进行2层全连接运算，目的主要是为了提供对multi-attention提取出的feature进行 **复杂（非线性）** 合成的能力
@@ -262,7 +262,7 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [TRANSFORMERS FROM SCRATCH](http://www.peterbloem.nl/blog/transformers)
 [Transformer Architecture: The Positional Encoding](https://kazemnejad.com/blog/transformer_architecture_positional_encoding)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTcxMzI0MzU5NSwtNzY0Nzk5MzkwLC0yMT
+eyJoaXN0b3J5IjpbLTM3MTk3ODkxOSwtNzY0Nzk5MzkwLC0yMT
 IwMjQ3OTM0LC0xMTIxNTAwNDMsLTE4MDA5NTUzMjgsNDI0MzY2
 MDQ2LDEzNDc3MzcyODQsLTEwNjM2MDIyNDYsMTcwODg0MTgzLC
 0xMjcxNzMzNzIsOTMyMTYyOTQ1LDgzMjg5NDQyMCwtOTY3NTAx
