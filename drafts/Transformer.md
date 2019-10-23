@@ -170,7 +170,7 @@ $$PE_{(pos, 2i+1)}=cos(pos/10000^{2i/d_{model}})$$
 
 为什么要同时使用sin和cos，而不只使用其中的一个？
 下图可见
-![enter image description here](https://www4f.wolframalpha.com/Calculate/MSP/MSP736513a3f5i194cghea900005gh8ig77676de4b2?MSPStoreType=image/gif&s=44&w=393.&h=205.&cdf=RangeControl)
+![enter image description here](https://i.stack.imgur.com/5QQmq.gif)
 ![enter image description here](https://www4f.wolframalpha.com/Calculate/MSP/MSP976113a3f2d2h808hiia0000282gfai92921012g?MSPStoreType=image/gif&s=44&w=396.&h=205.&cdf=RangeControl)
 >只使用sin会导致在0位置PE总是0？
 
@@ -272,11 +272,11 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [TRANSFORMERS FROM SCRATCH](http://www.peterbloem.nl/blog/transformers)
 [Transformer Architecture: The Positional Encoding](https://kazemnejad.com/blog/transformer_architecture_positional_encoding)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE4MDA5NTUzMjgsNDI0MzY2MDQ2LDEzND
-c3MzcyODQsLTEwNjM2MDIyNDYsMTcwODg0MTgzLC0xMjcxNzMz
-NzIsOTMyMTYyOTQ1LDgzMjg5NDQyMCwtOTY3NTAxMTc2LC0xND
-k4NzcxNzMsLTE0OTE1NTcwNjUsLTYwMTc1NDQ3MSwtODc5NjQ0
-MTUwLDg4MTIwMjgyOCwtNDI2NTg4OTUyLC0xNTI1OTA4MjIwLC
-0zNzc1NjA3NjksMTUyOTc0MzI3NSwtMTE0NDg5MTc1NywxMjY3
-MjkzNDczXX0=
+eyJoaXN0b3J5IjpbLTExMjE1MDA0MywtMTgwMDk1NTMyOCw0Mj
+QzNjYwNDYsMTM0NzczNzI4NCwtMTA2MzYwMjI0NiwxNzA4ODQx
+ODMsLTEyNzE3MzM3Miw5MzIxNjI5NDUsODMyODk0NDIwLC05Nj
+c1MDExNzYsLTE0OTg3NzE3MywtMTQ5MTU1NzA2NSwtNjAxNzU0
+NDcxLC04Nzk2NDQxNTAsODgxMjAyODI4LC00MjY1ODg5NTIsLT
+E1MjU5MDgyMjAsLTM3NzU2MDc2OSwxNTI5NzQzMjc1LC0xMTQ0
+ODkxNzU3XX0=
 -->
