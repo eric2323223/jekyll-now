@@ -162,10 +162,9 @@ In terms of encoder-decoder, the **query** is usually the hidden state of the _d
 如果用$pos$表示位置，$i$表示元素编码的维度，$d_{model}$表示模型的维度，位置编码$PE$可以表示为
 $$PE_{{pos,2i}}=sin(pos/10000^{2i/d_{model}})$$
 $$PE_{(pos, 2i+1)}=cos(pos/10000^{2i/d_{model}})$$
-
+从
  >具体来说，
-首先，位置编码可以是多维的
-
+>首先，位置编码可以是多维的
 |十进制|二进制||十进制|二进制||
 |-|-|-|-|-|-|
 |0| 0000|OOO🞅|8|1000|XOOO|
@@ -293,11 +292,11 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [TRANSFORMERS FROM SCRATCH](http://www.peterbloem.nl/blog/transformers)
 [Transformer Architecture: The Positional Encoding](https://kazemnejad.com/blog/transformer_architecture_positional_encoding)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIxMzQ1NTY0MTYsNDI0MzY2MDQ2LDEzND
-c3MzcyODQsLTEwNjM2MDIyNDYsMTcwODg0MTgzLC0xMjcxNzMz
-NzIsOTMyMTYyOTQ1LDgzMjg5NDQyMCwtOTY3NTAxMTc2LC0xND
-k4NzcxNzMsLTE0OTE1NTcwNjUsLTYwMTc1NDQ3MSwtODc5NjQ0
-MTUwLDg4MTIwMjgyOCwtNDI2NTg4OTUyLC0xNTI1OTA4MjIwLC
-0zNzc1NjA3NjksMTUyOTc0MzI3NSwtMTE0NDg5MTc1NywxMjY3
-MjkzNDczXX0=
+eyJoaXN0b3J5IjpbMzIyNDMyNTA0LDQyNDM2NjA0NiwxMzQ3Nz
+M3Mjg0LC0xMDYzNjAyMjQ2LDE3MDg4NDE4MywtMTI3MTczMzcy
+LDkzMjE2Mjk0NSw4MzI4OTQ0MjAsLTk2NzUwMTE3NiwtMTQ5OD
+c3MTczLC0xNDkxNTU3MDY1LC02MDE3NTQ0NzEsLTg3OTY0NDE1
+MCw4ODEyMDI4MjgsLTQyNjU4ODk1MiwtMTUyNTkwODIyMCwtMz
+c3NTYwNzY5LDE1Mjk3NDMyNzUsLTExNDQ4OTE3NTcsMTI2NzI5
+MzQ3M119
 -->
