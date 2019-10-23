@@ -181,8 +181,6 @@ Transformer仅仅使用attention进行输入encoding，由于attention本质上�
 具体方法是对同一个元素进行多次attention运算， 每次attention都使用不同的初始化参数W，最后在将多次attention的结果相加。
 ![enter image description here](https://docs.google.com/drawings/d/e/2PACX-1vT4_Vn34rr1zN4OhXIo7oCGkzXDF__Y3CIVnZ_12fjqLHtKoRSJaVIyoR7ndQHtRlfNUmgecF5mucNg/pub?w=538&h=363)
 
-
-different random initial weights matrix may lead to different representation subspace, thus give transformer ability to understand different meaning of a word
 - **multi-head attention** VS convolution on multiple channels
 	- Convolution: Different linear transformations by relative position
 	- MHA: a weighted average 
@@ -272,11 +270,11 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [TRANSFORMERS FROM SCRATCH](http://www.peterbloem.nl/blog/transformers)
 [Transformer Architecture: The Positional Encoding](https://kazemnejad.com/blog/transformer_architecture_positional_encoding)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzNDk3NjAwMTUsLTIxMjAyNDc5MzQsLT
-ExMjE1MDA0MywtMTgwMDk1NTMyOCw0MjQzNjYwNDYsMTM0Nzcz
-NzI4NCwtMTA2MzYwMjI0NiwxNzA4ODQxODMsLTEyNzE3MzM3Mi
-w5MzIxNjI5NDUsODMyODk0NDIwLC05Njc1MDExNzYsLTE0OTg3
-NzE3MywtMTQ5MTU1NzA2NSwtNjAxNzU0NDcxLC04Nzk2NDQxNT
-AsODgxMjAyODI4LC00MjY1ODg5NTIsLTE1MjU5MDgyMjAsLTM3
-NzU2MDc2OV19
+eyJoaXN0b3J5IjpbLTc2NDc5OTM5MCwtMjEyMDI0NzkzNCwtMT
+EyMTUwMDQzLC0xODAwOTU1MzI4LDQyNDM2NjA0NiwxMzQ3NzM3
+Mjg0LC0xMDYzNjAyMjQ2LDE3MDg4NDE4MywtMTI3MTczMzcyLD
+kzMjE2Mjk0NSw4MzI4OTQ0MjAsLTk2NzUwMTE3NiwtMTQ5ODc3
+MTczLC0xNDkxNTU3MDY1LC02MDE3NTQ0NzEsLTg3OTY0NDE1MC
+w4ODEyMDI4MjgsLTQyNjU4ODk1MiwtMTUyNTkwODIyMCwtMzc3
+NTYwNzY5XX0=
 -->
