@@ -165,18 +165,15 @@ $$PE_{(pos, 2i+1)}=cos(pos/10000^{2i/d_{model}})$$
 ![enter image description here](!%5B%5D%28http://vandergoten.ai/img/attention_is_all_you_need/positional_embedding.png%29)
 计算产生的位置编码是一个与元素具有相同维度的向量，使用相加的方式将位置信息叠加进元素中，如下图所示
 ![enter image description here](https://wikidocs.net/images/page/31379/transformer6_final.PNG)
+为何采用相加的方式？
+> 直觉是，在高维中随机选择的向量几乎总是近似正交的。没有理由认为单词向量和位置编码向量之间有任何关联。如果单词嵌入形成一个较小维的子空间，而位置编码形成另一个较小维的子空间，则两个子空间本身可能近似正交，因此大概可以对这些子空间进行变换，尽管进行了矢量相加，但两个子空间仍可以通过一些单个学习的变换而彼此独立地进行操作。因此，串联并不会增加太多，但会大大增加学习参数方面的成本。
 
- 
-> I think it would not be possible to attend e.g. to position 0 of the pure sine function because it is all zero and any dot product with that vector is 0 too. With the juxtaposition the magnitude is sort of “balanced”. This figure shows it a bit:
-
-
-为什么要同时使用sin和cos，而不只使用其中的一个？下图可见
+为什么要同时使用sin和cos，而不只使用其中的一个？
+下图可见
 ![enter image description here](https://www4f.wolframalpha.com/Calculate/MSP/MSP736513a3f5i194cghea900005gh8ig77676de4b2?MSPStoreType=image/gif&s=44&w=393.&h=205.&cdf=RangeControl)
 ![enter image description here](https://www4f.wolframalpha.com/Calculate/MSP/MSP976113a3f2d2h808hiia0000282gfai92921012g?MSPStoreType=image/gif&s=44&w=396.&h=205.&cdf=RangeControl)
 >只使用sin会导致在0位置PE总是0？
 
->为何采用叠加的方式？
-> 直觉是，在高维中随机选择的向量几乎总是近似正交的。没有理由认为单词向量和位置编码向量之间有任何关联。如果单词嵌入形成一个较小维的子空间，而位置编码形成另一个较小维的子空间，则两个子空间本身可能近似正交，因此大概可以对这些子空间进行变换，尽管进行了矢量相加，但两个子空间仍可以通过一些单个学习的变换而彼此独立地进行操作。因此，串联并不会增加太多，但会大大增加学习参数方面的成本。
 
 ### 多头注意力（ Multiple Headed Attention)
 ![enter image description here](https://miro.medium.com/max/600/1*Vb9UizPn0AHejEYW9CWxNQ.png)
@@ -275,7 +272,7 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [TRANSFORMERS FROM SCRATCH](http://www.peterbloem.nl/blog/transformers)
 [Transformer Architecture: The Positional Encoding](https://kazemnejad.com/blog/transformer_architecture_positional_encoding)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0NDc2MTU2NjksNDI0MzY2MDQ2LDEzND
+eyJoaXN0b3J5IjpbLTE4MDA5NTUzMjgsNDI0MzY2MDQ2LDEzND
 c3MzcyODQsLTEwNjM2MDIyNDYsMTcwODg0MTgzLC0xMjcxNzMz
 NzIsOTMyMTYyOTQ1LDgzMjg5NDQyMCwtOTY3NTAxMTc2LC0xND
 k4NzcxNzMsLTE0OTE1NTcwNjUsLTYwMTc1NDQ3MSwtODc5NjQ0
