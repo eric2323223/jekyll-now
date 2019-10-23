@@ -181,15 +181,7 @@ Transformer仅仅使用attention进行输入encoding，由于attention本质上�
 具体方法是对同一个元素进行多次attention运算， 每次attention都使用不同的初始化参数W，最后在将多次attention的结果相加。
 ![enter image description here](https://docs.google.com/drawings/d/e/2PACX-1vT4_Vn34rr1zN4OhXIo7oCGkzXDF__Y3CIVnZ_12fjqLHtKoRSJaVIyoR7ndQHtRlfNUmgecF5mucNg/pub?w=538&h=363)
 
-- **multi-head attention** VS convolution on multiple channels
-	- Convolution: Different linear transformations by relative position
-	- MHA: a weighted average 
-	- It is found empirically that multi-head attention works better than the usual “single-head” in the context of machine translation. And the intuition behind such an improvement is that “multi-head attention allows the model to jointly attend to information from **different representation subspaces at different positions**”
 
-> Transformer reduces the number of operations required to relate (especially distant) positions in input and output sequence to a O(1)O(1). However, this comes at cost of reduced effective resolution because of averaging attention-weighted positions.
-> To reduce this cost authors propose the multi-head attention:
-> Transformer use multi-head (dmodel/hdmodel/h  parallel attention functions) attention instead of single (dmodeldmodel-dimensional) attention function (i.e.  q,k,vq,k,v  all  dmodeldmodel-dimensional). It is at similar computational cost as in the case of single-head attention due to reduced dimensions of each head.
-> Transformer imitates the classical attention mechanism (known e.g. from  [Bahdanau et al., 2014](https://arxiv.org/abs/1409.0473) or Conv2S2) where in encoder-decoder attention layers  _queries_  are form previous decoder layer, and the (memory)  _keys_  and  _values_  are from output of the encoder. Therefore, each position in decoder can attend over all positions in the input sequence.
 
 ### point-wise 前馈网络
 point-wise 对序列中每个元素分别进行2层全连接运算，目的主要是为了提供对multi-attention提取出的feature进行 **复杂（非线性）** 合成的能力
@@ -270,11 +262,11 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [TRANSFORMERS FROM SCRATCH](http://www.peterbloem.nl/blog/transformers)
 [Transformer Architecture: The Positional Encoding](https://kazemnejad.com/blog/transformer_architecture_positional_encoding)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTc2NDc5OTM5MCwtMjEyMDI0NzkzNCwtMT
-EyMTUwMDQzLC0xODAwOTU1MzI4LDQyNDM2NjA0NiwxMzQ3NzM3
-Mjg0LC0xMDYzNjAyMjQ2LDE3MDg4NDE4MywtMTI3MTczMzcyLD
-kzMjE2Mjk0NSw4MzI4OTQ0MjAsLTk2NzUwMTE3NiwtMTQ5ODc3
-MTczLC0xNDkxNTU3MDY1LC02MDE3NTQ0NzEsLTg3OTY0NDE1MC
-w4ODEyMDI4MjgsLTQyNjU4ODk1MiwtMTUyNTkwODIyMCwtMzc3
-NTYwNzY5XX0=
+eyJoaXN0b3J5IjpbLTE1MzU4OTMyNzMsLTc2NDc5OTM5MCwtMj
+EyMDI0NzkzNCwtMTEyMTUwMDQzLC0xODAwOTU1MzI4LDQyNDM2
+NjA0NiwxMzQ3NzM3Mjg0LC0xMDYzNjAyMjQ2LDE3MDg4NDE4My
+wtMTI3MTczMzcyLDkzMjE2Mjk0NSw4MzI4OTQ0MjAsLTk2NzUw
+MTE3NiwtMTQ5ODc3MTczLC0xNDkxNTU3MDY1LC02MDE3NTQ0Nz
+EsLTg3OTY0NDE1MCw4ODEyMDI4MjgsLTQyNjU4ODk1MiwtMTUy
+NTkwODIyMF19
 -->
