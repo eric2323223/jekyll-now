@@ -162,7 +162,7 @@ In terms of encoder-decoder, the **query** is usually the hidden state of the _d
 如果用$pos$表示位置，$i$表示元素编码的维度，$d_{model}$表示模型的维度，位置编码$PE$可以表示为
 $$PE_{{pos,2i}}=sin(pos/10000^{2i/d_{model}})$$
 $$PE_{(pos, 2i+1)}=cos(pos/10000^{2i/d_{model}})$$
-位置编码是一个与元素xiang
+位置编码是一个与元素具有相同维度的向量，使用相加的方式将位置信息diji
 
  >具体来说，
 >首先，位置编码可以是多维的
@@ -293,7 +293,7 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [TRANSFORMERS FROM SCRATCH](http://www.peterbloem.nl/blog/transformers)
 [Transformer Architecture: The Positional Encoding](https://kazemnejad.com/blog/transformer_architecture_positional_encoding)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTA4MDg4NzMwMyw0MjQzNjYwNDYsMTM0Nz
+eyJoaXN0b3J5IjpbMTkxNTYwMzIwOCw0MjQzNjYwNDYsMTM0Nz
 czNzI4NCwtMTA2MzYwMjI0NiwxNzA4ODQxODMsLTEyNzE3MzM3
 Miw5MzIxNjI5NDUsODMyODk0NDIwLC05Njc1MDExNzYsLTE0OT
 g3NzE3MywtMTQ5MTU1NzA2NSwtNjAxNzU0NDcxLC04Nzk2NDQx
