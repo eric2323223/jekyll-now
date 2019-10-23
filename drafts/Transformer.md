@@ -189,6 +189,7 @@ $$PE_{(pos, 2i+1)}=cos(pos/10000^{2i/d_{model}})$$
 ![](http://vandergoten.ai/img/attention_is_all_you_need/positional_embedding.png)
 
 >为什么要同时使用sin和cos，而不只使用其中的一个？
+>
 >只使用sin会导致在0位置PE总是0？
 
 >为何采用叠加的方式？
@@ -291,11 +292,11 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [TRANSFORMERS FROM SCRATCH](http://www.peterbloem.nl/blog/transformers)
 [Transformer Architecture: The Positional Encoding](https://kazemnejad.com/blog/transformer_architecture_positional_encoding)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEwNjM2MDIyNDYsMTcwODg0MTgzLC0xMj
-cxNzMzNzIsOTMyMTYyOTQ1LDgzMjg5NDQyMCwtOTY3NTAxMTc2
-LC0xNDk4NzcxNzMsLTE0OTE1NTcwNjUsLTYwMTc1NDQ3MSwtOD
-c5NjQ0MTUwLDg4MTIwMjgyOCwtNDI2NTg4OTUyLC0xNTI1OTA4
-MjIwLC0zNzc1NjA3NjksMTUyOTc0MzI3NSwtMTE0NDg5MTc1Ny
-wxMjY3MjkzNDczLC05NDE1MDIyNDYsLTEwODg5ODk4NDgsMTQ3
-Mzc2NzE4MF19
+eyJoaXN0b3J5IjpbLTE1NTM0ODA3MiwtMTA2MzYwMjI0NiwxNz
+A4ODQxODMsLTEyNzE3MzM3Miw5MzIxNjI5NDUsODMyODk0NDIw
+LC05Njc1MDExNzYsLTE0OTg3NzE3MywtMTQ5MTU1NzA2NSwtNj
+AxNzU0NDcxLC04Nzk2NDQxNTAsODgxMjAyODI4LC00MjY1ODg5
+NTIsLTE1MjU5MDgyMjAsLTM3NzU2MDc2OSwxNTI5NzQzMjc1LC
+0xMTQ0ODkxNzU3LDEyNjcyOTM0NzMsLTk0MTUwMjI0NiwtMTA4
+ODk4OTg0OF19
 -->
