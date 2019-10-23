@@ -162,32 +162,13 @@ In terms of encoder-decoder, the **query** is usually the hidden state of the _d
 如果用$pos$表示位置，$i$表示元素编码的维度，$d_{model}$表示模型的维度，位置编码$PE$可以表示为
 $$PE_{{pos,2i}}=sin(pos/10000^{2i/d_{model}})$$
 $$PE_{(pos, 2i+1)}=cos(pos/10000^{2i/d_{model}})$$
+![enter image description here](!%5B%5D%28http://vandergoten.ai/img/attention_is_all_you_need/positional_embedding.png%29)
 计算产生的位置编码是一个与元素具有相同维度的向量，使用相加的方式将位置信息叠加进元素中，如下图所示
 ![enter image description here](https://wikidocs.net/images/page/31379/transformer6_final.PNG)
 
- >具体来说，
->首先，位置编码可以是多维的
-|十进制|二进制||十进制|二进制||
-|-|-|-|-|-|-|
-|0| 0000|OOO🞅|8|1000|XOOO|
-|1| 0001|OO࢟O|9|1001|
-|2|0010||10|1010|࢟
-|3|0011||11|1011|
-|4|0100||12|1100|
-|5|0101||13|1101
-|6|0110||14|1110|
-|7|0111||15|1111
-> Ideally, the following criteria should be satisfied:
-- It should output a unique encoding for each time-step (word’s position in a sentence)
-- Distance between any two time-steps should be consistent across sentences with different lengths.
-- Our model should generalize to longer sentences without any efforts. Its values should be bounded.
-- It must be deterministic.
-
-
-![enter image description here](https://www.researchgate.net/publication/327068570/figure/fig3/AS:660457148928000@1534476663109/The-original-positional-encoding-used-in-Attention-Is-All-You-Need-VSP-17-composed.png)
-
+ 
 > I think it would not be possible to attend e.g. to position 0 of the pure sine function because it is all zero and any dot product with that vector is 0 too. With the juxtaposition the magnitude is sort of “balanced”. This figure shows it a bit:
-![](http://vandergoten.ai/img/attention_is_all_you_need/positional_embedding.png)
+
 
 为什么要同时使用sin和cos，而不只使用其中的一个？下图可见
 ![enter image description here](https://www4f.wolframalpha.com/Calculate/MSP/MSP736513a3f5i194cghea900005gh8ig77676de4b2?MSPStoreType=image/gif&s=44&w=393.&h=205.&cdf=RangeControl)
@@ -294,7 +275,7 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [TRANSFORMERS FROM SCRATCH](http://www.peterbloem.nl/blog/transformers)
 [Transformer Architecture: The Positional Encoding](https://kazemnejad.com/blog/transformer_architecture_positional_encoding)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0NjYwNDQ2MDcsNDI0MzY2MDQ2LDEzND
+eyJoaXN0b3J5IjpbLTE0NDc2MTU2NjksNDI0MzY2MDQ2LDEzND
 c3MzcyODQsLTEwNjM2MDIyNDYsMTcwODg0MTgzLC0xMjcxNzMz
 NzIsOTMyMTYyOTQ1LDgzMjg5NDQyMCwtOTY3NTAxMTc2LC0xND
 k4NzcxNzMsLTE0OTE1NTcwNjUsLTYwMTc1NDQ3MSwtODc5NjQ0
