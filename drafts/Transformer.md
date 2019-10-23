@@ -184,7 +184,6 @@ $$PE_{(pos, 2i+1)}=cos(pos/10000^{2i/d_{model}})$$
 
 
 ![enter image description here](https://www.researchgate.net/publication/327068570/figure/fig3/AS:660457148928000@1534476663109/The-original-positional-encoding-used-in-Attention-Is-All-You-Need-VSP-17-composed.png)
-![](https://d33wubrfki0l68.cloudfront.net/ef81ee3018af6ab6f23769031f8961afcdd67c68/3358f/img/transformer_architecture_positional_encoding/positional_encoding.png)
 
 > I think it would not be possible to attend e.g. to position 0 of the pure sine function because it is all zero and any dot product with that vector is 0 too. With the juxtaposition the magnitude is sort of “balanced”. This figure shows it a bit:
 ![](http://vandergoten.ai/img/attention_is_all_you_need/positional_embedding.png)
@@ -292,11 +291,11 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [TRANSFORMERS FROM SCRATCH](http://www.peterbloem.nl/blog/transformers)
 [Transformer Architecture: The Positional Encoding](https://kazemnejad.com/blog/transformer_architecture_positional_encoding)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTcwODg0MTgzLC0xMjcxNzMzNzIsOTMyMT
-YyOTQ1LDgzMjg5NDQyMCwtOTY3NTAxMTc2LC0xNDk4NzcxNzMs
-LTE0OTE1NTcwNjUsLTYwMTc1NDQ3MSwtODc5NjQ0MTUwLDg4MT
-IwMjgyOCwtNDI2NTg4OTUyLC0xNTI1OTA4MjIwLC0zNzc1NjA3
-NjksMTUyOTc0MzI3NSwtMTE0NDg5MTc1NywxMjY3MjkzNDczLC
-05NDE1MDIyNDYsLTEwODg5ODk4NDgsMTQ3Mzc2NzE4MCwxODU5
-MjE0NzU2XX0=
+eyJoaXN0b3J5IjpbLTEwNjM2MDIyNDYsMTcwODg0MTgzLC0xMj
+cxNzMzNzIsOTMyMTYyOTQ1LDgzMjg5NDQyMCwtOTY3NTAxMTc2
+LC0xNDk4NzcxNzMsLTE0OTE1NTcwNjUsLTYwMTc1NDQ3MSwtOD
+c5NjQ0MTUwLDg4MTIwMjgyOCwtNDI2NTg4OTUyLC0xNTI1OTA4
+MjIwLC0zNzc1NjA3NjksMTUyOTc0MzI3NSwtMTE0NDg5MTc1Ny
+wxMjY3MjkzNDczLC05NDE1MDIyNDYsLTEwODg5ODk4NDgsMTQ3
+Mzc2NzE4MF19
 -->
