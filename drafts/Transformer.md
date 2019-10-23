@@ -159,7 +159,7 @@ In terms of encoder-decoder, the **query** is usually the hidden state of the _d
 - 使用多个不同频率来保证不会由于周期性导致不同位置的编码相同
 - 第二是由于sin/cos函数的值总是在-1到1之间，这种编码本身也有正则化（normalization）的作用，这有利于神经网络的学习。
 
-用$pos$表示位置，$i$表示元素编码的维度，$d_{model}$表示模型的维度，位置编码$PE$可以表示为
+如果用$pos$表示位置，$i$表示元素编码的维度，$d_{model}$表示模型的维度，位置编码$PE$可以表示为
 $$PE_{{pos,2i}}=sin(pos/10000^{2i/d_{model}})$$
 $$PE_{(pos, 2i+1)}=cos(pos/10000^{2i/d_{model}})$$
 
@@ -293,11 +293,11 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [TRANSFORMERS FROM SCRATCH](http://www.peterbloem.nl/blog/transformers)
 [Transformer Architecture: The Positional Encoding](https://kazemnejad.com/blog/transformer_architecture_positional_encoding)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTM0NzczNzI4NCwtMTA2MzYwMjI0NiwxNz
-A4ODQxODMsLTEyNzE3MzM3Miw5MzIxNjI5NDUsODMyODk0NDIw
-LC05Njc1MDExNzYsLTE0OTg3NzE3MywtMTQ5MTU1NzA2NSwtNj
-AxNzU0NDcxLC04Nzk2NDQxNTAsODgxMjAyODI4LC00MjY1ODg5
-NTIsLTE1MjU5MDgyMjAsLTM3NzU2MDc2OSwxNTI5NzQzMjc1LC
-0xMTQ0ODkxNzU3LDEyNjcyOTM0NzMsLTk0MTUwMjI0NiwtMTA4
-ODk4OTg0OF19
+eyJoaXN0b3J5IjpbNDI0MzY2MDQ2LDEzNDc3MzcyODQsLTEwNj
+M2MDIyNDYsMTcwODg0MTgzLC0xMjcxNzMzNzIsOTMyMTYyOTQ1
+LDgzMjg5NDQyMCwtOTY3NTAxMTc2LC0xNDk4NzcxNzMsLTE0OT
+E1NTcwNjUsLTYwMTc1NDQ3MSwtODc5NjQ0MTUwLDg4MTIwMjgy
+OCwtNDI2NTg4OTUyLC0xNTI1OTA4MjIwLC0zNzc1NjA3NjksMT
+UyOTc0MzI3NSwtMTE0NDg5MTc1NywxMjY3MjkzNDczLC05NDE1
+MDIyNDZdfQ==
 -->
