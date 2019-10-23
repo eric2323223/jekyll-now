@@ -171,9 +171,8 @@ $$PE_{(pos, 2i+1)}=cos(pos/10000^{2i/d_{model}})$$
 为什么要同时使用sin和cos，而不只使用其中的一个？
 下图可见
 ![enter image description here](https://i.stack.imgur.com/5QQmq.gif)
-![enter image description here](https://www4f.wolframalpha.com/Calculate/MSP/MSP976113a3f2d2h808hiia0000282gfai92921012g?MSPStoreType=image/gif&s=44&w=396.&h=205.&cdf=RangeControl)
-![enter image description here](https://www4c.wolframalpha.com/Calculate/MSP/MSP29222ea30a5fgd62ch000003bga387701f05faa?MSPStoreType=image/gif&s=45&w=396.&h=205.&cdf=RangeControl)
->只使用sin会导致在0位置PE总是0？
+
+![enter image description here](https://i.stack.imgur.com/W0b0c.gif)
 
 
 ### 多头注意力（ Multiple Headed Attention)
@@ -273,11 +272,11 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [TRANSFORMERS FROM SCRATCH](http://www.peterbloem.nl/blog/transformers)
 [Transformer Architecture: The Positional Encoding](https://kazemnejad.com/blog/transformer_architecture_positional_encoding)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTI1MTQ2MDM1LC0xMTIxNTAwNDMsLTE4MD
-A5NTUzMjgsNDI0MzY2MDQ2LDEzNDc3MzcyODQsLTEwNjM2MDIy
-NDYsMTcwODg0MTgzLC0xMjcxNzMzNzIsOTMyMTYyOTQ1LDgzMj
-g5NDQyMCwtOTY3NTAxMTc2LC0xNDk4NzcxNzMsLTE0OTE1NTcw
-NjUsLTYwMTc1NDQ3MSwtODc5NjQ0MTUwLDg4MTIwMjgyOCwtND
-I2NTg4OTUyLC0xNTI1OTA4MjIwLC0zNzc1NjA3NjksMTUyOTc0
-MzI3NV19
+eyJoaXN0b3J5IjpbLTIxMjAyNDc5MzQsLTExMjE1MDA0MywtMT
+gwMDk1NTMyOCw0MjQzNjYwNDYsMTM0NzczNzI4NCwtMTA2MzYw
+MjI0NiwxNzA4ODQxODMsLTEyNzE3MzM3Miw5MzIxNjI5NDUsOD
+MyODk0NDIwLC05Njc1MDExNzYsLTE0OTg3NzE3MywtMTQ5MTU1
+NzA2NSwtNjAxNzU0NDcxLC04Nzk2NDQxNTAsODgxMjAyODI4LC
+00MjY1ODg5NTIsLTE1MjU5MDgyMjAsLTM3NzU2MDc2OSwxNTI5
+NzQzMjc1XX0=
 -->
