@@ -177,7 +177,7 @@ $$PE_{(pos, 2i+1)}=cos(pos/10000^{2i/d_{model}})$$
 
 ### 多头注意力（ Multiple Headed Attention)
 ![enter image description here](https://miro.medium.com/max/600/1*Vb9UizPn0AHejEYW9CWxNQ.png)
-Transformer仅仅使用attention进行输入encoding，由于attention本质上只是对输入进行加权平均运算，这导致特征提取能力不足，为了解决这个问题作者提出了多头注意力（）的方法。多头注意力的基本思想通过多次初始化过程增加模型提取不同特征的机会，假设下图中通过三次初始化分别得到了三种特征：红色表示动作，绿色表做动作施加者，蓝色表示动作承受着，可以看到在对“踢“进行了三次self attention运算，分别对应三种特征。在对于动作信息的self attention中，"我“和”球“的权值（灰色细线表示）比“踢”的权值（红色粗线）要小很多；同样，对动作施加者的self attention中，“我”（绿色粗线）则是主要贡献者。在将三次self attention的结果相加后，得到的新的“踢”的编码中就包含了三种特征的信息。现实中不可能每次随机初始化都能带来有效的特征，理论上随机初始化测次数越多就越有可能发现有效的特征，不过随之增长的是训练参数的增加，这意味着训练难度的提高，因此需要平衡，再Transformer模型中这个值是8。
+Transformer仅仅使用attention进行输入encoding，由于attention本质上只是对输入进行加权平均运算，这导致特征提取能力不足(比较convolutionzuo)，为了解决这个问题作者提出了多头注意力（）的方法。多头注意力的基本思想通过多次初始化过程增加模型提取不同特征的机会，假设下图中通过三次初始化分别得到了三种特征：红色表示动作，绿色表做动作施加者，蓝色表示动作承受着，可以看到在对“踢“进行了三次self attention运算，分别对应三种特征。在对于动作信息的self attention中，"我“和”球“的权值（灰色细线表示）比“踢”的权值（红色粗线）要小很多；同样，对动作施加者的self attention中，“我”（绿色粗线）则是主要贡献者。在将三次self attention的结果相加后，得到的新的“踢”的编码中就包含了三种特征的信息。现实中不可能每次随机初始化都能带来有效的特征，理论上随机初始化测次数越多就越有可能发现有效的特征，不过随之增长的是训练参数的增加，这意味着训练难度的提高，因此需要平衡，再Transformer模型中这个值是8。
 具体方法是对同一个元素进行多次attention运算， 每次attention都使用不同的初始化参数W，最后在将多次attention的结果相加。
 ![enter image description here](https://docs.google.com/drawings/d/e/2PACX-1vT4_Vn34rr1zN4OhXIo7oCGkzXDF__Y3CIVnZ_12fjqLHtKoRSJaVIyoR7ndQHtRlfNUmgecF5mucNg/pub?w=538&h=363)
 
@@ -272,11 +272,11 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [TRANSFORMERS FROM SCRATCH](http://www.peterbloem.nl/blog/transformers)
 [Transformer Architecture: The Positional Encoding](https://kazemnejad.com/blog/transformer_architecture_positional_encoding)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTg2MTM1NTI4MSwtMjEyMDI0NzkzNCwtMT
-EyMTUwMDQzLC0xODAwOTU1MzI4LDQyNDM2NjA0NiwxMzQ3NzM3
-Mjg0LC0xMDYzNjAyMjQ2LDE3MDg4NDE4MywtMTI3MTczMzcyLD
-kzMjE2Mjk0NSw4MzI4OTQ0MjAsLTk2NzUwMTE3NiwtMTQ5ODc3
-MTczLC0xNDkxNTU3MDY1LC02MDE3NTQ0NzEsLTg3OTY0NDE1MC
-w4ODEyMDI4MjgsLTQyNjU4ODk1MiwtMTUyNTkwODIyMCwtMzc3
-NTYwNzY5XX0=
+eyJoaXN0b3J5IjpbLTE0MzEyNTk1NzcsLTIxMjAyNDc5MzQsLT
+ExMjE1MDA0MywtMTgwMDk1NTMyOCw0MjQzNjYwNDYsMTM0Nzcz
+NzI4NCwtMTA2MzYwMjI0NiwxNzA4ODQxODMsLTEyNzE3MzM3Mi
+w5MzIxNjI5NDUsODMyODk0NDIwLC05Njc1MDExNzYsLTE0OTg3
+NzE3MywtMTQ5MTU1NzA2NSwtNjAxNzU0NDcxLC04Nzk2NDQxNT
+AsODgxMjAyODI4LC00MjY1ODg5NTIsLTE1MjU5MDgyMjAsLTM3
+NzU2MDc2OV19
 -->
