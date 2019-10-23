@@ -163,7 +163,7 @@ In terms of encoder-decoder, the **query** is usually the hidden state of the _d
 $$PE_{{pos,2i}}=sin(pos/10000^{2i/d_{model}})$$
 $$PE_{(pos, 2i+1)}=cos(pos/10000^{2i/d_{model}})$$
 
-具体来说，
+ >具体来说，
 首先，位置编码可以是多维的
 
 |十进制|二进制||十进制|二进制||
@@ -293,11 +293,11 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [TRANSFORMERS FROM SCRATCH](http://www.peterbloem.nl/blog/transformers)
 [Transformer Architecture: The Positional Encoding](https://kazemnejad.com/blog/transformer_architecture_positional_encoding)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNDI0MzY2MDQ2LDEzNDc3MzcyODQsLTEwNj
-M2MDIyNDYsMTcwODg0MTgzLC0xMjcxNzMzNzIsOTMyMTYyOTQ1
-LDgzMjg5NDQyMCwtOTY3NTAxMTc2LC0xNDk4NzcxNzMsLTE0OT
-E1NTcwNjUsLTYwMTc1NDQ3MSwtODc5NjQ0MTUwLDg4MTIwMjgy
-OCwtNDI2NTg4OTUyLC0xNTI1OTA4MjIwLC0zNzc1NjA3NjksMT
-UyOTc0MzI3NSwtMTE0NDg5MTc1NywxMjY3MjkzNDczLC05NDE1
-MDIyNDZdfQ==
+eyJoaXN0b3J5IjpbLTIxMzQ1NTY0MTYsNDI0MzY2MDQ2LDEzND
+c3MzcyODQsLTEwNjM2MDIyNDYsMTcwODg0MTgzLC0xMjcxNzMz
+NzIsOTMyMTYyOTQ1LDgzMjg5NDQyMCwtOTY3NTAxMTc2LC0xND
+k4NzcxNzMsLTE0OTE1NTcwNjUsLTYwMTc1NDQ3MSwtODc5NjQ0
+MTUwLDg4MTIwMjgyOCwtNDI2NTg4OTUyLC0xNTI1OTA4MjIwLC
+0zNzc1NjA3NjksMTUyOTc0MzI3NSwtMTE0NDg5MTc1NywxMjY3
+MjkzNDczXX0=
 -->
