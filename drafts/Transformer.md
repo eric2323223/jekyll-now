@@ -188,7 +188,7 @@ $$PE_{(pos, 2i+1)}=cos(pos/10000^{2i/d_{model}})$$
 > I think it would not be possible to attend e.g. to position 0 of the pure sine function because it is all zero and any dot product with that vector is 0 too. With the juxtaposition the magnitude is sort of “balanced”. This figure shows it a bit:
 ![](http://vandergoten.ai/img/attention_is_all_you_need/positional_embedding.png)
 
-为什么要同时使用sin和cos，而不只使用其中的一个？
+为什么要同时使用sin和cos，而不只使用其中的一个？下图可见
 ![enter image description here](https://www4f.wolframalpha.com/Calculate/MSP/MSP736513a3f5i194cghea900005gh8ig77676de4b2?MSPStoreType=image/gif&s=44&w=393.&h=205.&cdf=RangeControl)
 ![enter image description here](https://www4f.wolframalpha.com/Calculate/MSP/MSP976113a3f2d2h808hiia0000282gfai92921012g?MSPStoreType=image/gif&s=44&w=396.&h=205.&cdf=RangeControl)
 >只使用sin会导致在0位置PE总是0？
@@ -293,7 +293,7 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [TRANSFORMERS FROM SCRATCH](http://www.peterbloem.nl/blog/transformers)
 [Transformer Architecture: The Positional Encoding](https://kazemnejad.com/blog/transformer_architecture_positional_encoding)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTQ1Nzg3OTkxMywtMTA2MzYwMjI0NiwxNz
+eyJoaXN0b3J5IjpbMTM0NzczNzI4NCwtMTA2MzYwMjI0NiwxNz
 A4ODQxODMsLTEyNzE3MzM3Miw5MzIxNjI5NDUsODMyODk0NDIw
 LC05Njc1MDExNzYsLTE0OTg3NzE3MywtMTQ5MTU1NzA2NSwtNj
 AxNzU0NDcxLC04Nzk2NDQxNTAsODgxMjAyODI4LC00MjY1ODg5
