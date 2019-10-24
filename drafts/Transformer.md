@@ -136,9 +136,9 @@ Attention这种新的结构使得他的训练方式也和RNN不同，这是由�
 - 编码器-解码器attention，需要对padding进行mask
 - 解码器self attention，需要对当前位置之后的所有元素masking
 
-#### Scaled Dot-Product Attention
+#### Scaled Dot-Product Attention (SDPA)
 Transformer对标准的attention做了一个小小调整：加入特征缩放（feature scaling）。这样做主要是为了防止softmax运算将值较大的key过度放大，导致其他key的信息很难加入到attention结果中。
-$$\mathrm{Attention}(Q, K, V) = \mathrm{softmax}(\frac{QK^T}{\sqrt{d_k}})V$$
+$$\mathrm{SDPA}(Q, K, V) = \mathrm{softmax}(\frac{QK^T}{\sqrt{d_k}})V$$
 特征缩放体现在对$Q$和$K$计算点积$QK^T$以后，增加了一步除以$\sqrt{d_k}$运算。
 下图是上式的图像化表示，其中Scale就是特征缩放的操作。
 
@@ -182,7 +182,7 @@ Transformer仅仅使用attention进行输入encoding，由于attention本质上�
 ![enter image description here](https://docs.google.com/drawings/d/e/2PACX-1vT4_Vn34rr1zN4OhXIo7oCGkzXDF__Y3CIVnZ_12fjqLHtKoRSJaVIyoR7ndQHtRlfNUmgecF5mucNg/pub?w=538&h=363)
 具体方法是对同一个元素进行多次attention运算， 每次attention都使用不同的初始化参数$W$，最后在将多次attention的结果相加。
 在transformer中对每一个元素计算出$K,V,Q$之后，进行$h$个
-$$head_i = Scaled Dot-Product Attention(QW^Q_i, KW_i^K, VW_i^V)$$
+$$head_i = SDPA(QW^Q_i, KW_i^K, VW_i^V)$$
 $$MultiHead(Q,K,V)=Concat(head_i, ..., head_h)W^O$$
 
 ![enter image description here](https://lilianweng.github.io/lil-log/assets/images/multi-head-attention.png)
@@ -267,11 +267,11 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [TRANSFORMERS FROM SCRATCH](http://www.peterbloem.nl/blog/transformers)
 [Transformer Architecture: The Positional Encoding](https://kazemnejad.com/blog/transformer_architecture_positional_encoding)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbOTQyOTQ2NTM2LDg0MjE1MjU0NSw0NTk0NT
-k0NzEsLTE5NzkyMjU0OTIsMTg4MzAzNzM5MiwxODIxMTA2Njgs
-LTc2NDc5OTM5MCwtMjEyMDI0NzkzNCwtMTEyMTUwMDQzLC0xOD
-AwOTU1MzI4LDQyNDM2NjA0NiwxMzQ3NzM3Mjg0LC0xMDYzNjAy
-MjQ2LDE3MDg4NDE4MywtMTI3MTczMzcyLDkzMjE2Mjk0NSw4Mz
-I4OTQ0MjAsLTk2NzUwMTE3NiwtMTQ5ODc3MTczLC0xNDkxNTU3
-MDY1XX0=
+eyJoaXN0b3J5IjpbLTE5MjUwMjU4OTQsODQyMTUyNTQ1LDQ1OT
+Q1OTQ3MSwtMTk3OTIyNTQ5MiwxODgzMDM3MzkyLDE4MjExMDY2
+OCwtNzY0Nzk5MzkwLC0yMTIwMjQ3OTM0LC0xMTIxNTAwNDMsLT
+E4MDA5NTUzMjgsNDI0MzY2MDQ2LDEzNDc3MzcyODQsLTEwNjM2
+MDIyNDYsMTcwODg0MTgzLC0xMjcxNzMzNzIsOTMyMTYyOTQ1LD
+gzMjg5NDQyMCwtOTY3NTAxMTc2LC0xNDk4NzcxNzMsLTE0OTE1
+NTcwNjVdfQ==
 -->
