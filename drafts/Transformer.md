@@ -195,6 +195,7 @@ point-wise 对序列中每个元素分别进行2层全连接运算，目的主�
 在介绍了Transformer的主要组成部分之后，我们再来完整看一下Transformer模型
 ![enter image description here](https://camo.githubusercontent.com/4b80977ac0757d1d18eb7be4d0238e92673bfaba/68747470733a2f2f6c696c69616e77656e672e6769746875622e696f2f6c696c2d6c6f672f6173736574732f696d616765732f7472616e73666f726d65722e706e67)
 
+训练流程
 
 
 
@@ -266,11 +267,11 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [TRANSFORMERS FROM SCRATCH](http://www.peterbloem.nl/blog/transformers)
 [Transformer Architecture: The Positional Encoding](https://kazemnejad.com/blog/transformer_architecture_positional_encoding)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODQyMTUyNTQ1LDQ1OTQ1OTQ3MSwtMTk3OT
-IyNTQ5MiwxODgzMDM3MzkyLDE4MjExMDY2OCwtNzY0Nzk5Mzkw
-LC0yMTIwMjQ3OTM0LC0xMTIxNTAwNDMsLTE4MDA5NTUzMjgsND
-I0MzY2MDQ2LDEzNDc3MzcyODQsLTEwNjM2MDIyNDYsMTcwODg0
-MTgzLC0xMjcxNzMzNzIsOTMyMTYyOTQ1LDgzMjg5NDQyMCwtOT
-Y3NTAxMTc2LC0xNDk4NzcxNzMsLTE0OTE1NTcwNjUsLTYwMTc1
-NDQ3MV19
+eyJoaXN0b3J5IjpbOTk2NDg3MzQzLDg0MjE1MjU0NSw0NTk0NT
+k0NzEsLTE5NzkyMjU0OTIsMTg4MzAzNzM5MiwxODIxMTA2Njgs
+LTc2NDc5OTM5MCwtMjEyMDI0NzkzNCwtMTEyMTUwMDQzLC0xOD
+AwOTU1MzI4LDQyNDM2NjA0NiwxMzQ3NzM3Mjg0LC0xMDYzNjAy
+MjQ2LDE3MDg4NDE4MywtMTI3MTczMzcyLDkzMjE2Mjk0NSw4Mz
+I4OTQ0MjAsLTk2NzUwMTE3NiwtMTQ5ODc3MTczLC0xNDkxNTU3
+MDY1XX0=
 -->
