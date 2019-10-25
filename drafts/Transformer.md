@@ -192,7 +192,7 @@ $$\mathrm{MultiHead}(Q,K,V)=\mathrm{Concat}(head_i, ..., head_h)W^O$$
 point-wise 对序列中每个元素分别进行2层全连接运算，目的主要是为了提供对multi-attention提取出的feature进行 **复杂（非线性）** 合成的能力
 > Like the name indicates, this is a regular feedforward network applied to _each_ time step of the Multi Head attention outputs. The network has three layers with a non-linearity like ReLU for the hidden layer. You might be wondering why do we need a feedforward network after attention; after all isn’t attention all we need 😈 ? I suspect it is needed to improve model expressiveness. As we saw earlier the multi head attention partitioned the inputs and applied attention independently. There was only a linear projection to the outputs, i.e. the partitions were combined only linearly. The _Positionwise Feedforward_ network thus brings in some non-linear ‘mixing’ if we call it that. In fact for the sequence tagging task we use convolutions instead of fully connected layers. A filter of width 3 allows interactions to happen with adjacent time steps to improve performance.
 
-### All in one 
+### 全貌
 在介绍了Transformer的主要组成部分之后，我们再来完整看一下Transformer模型
 ![enter image description here](https://camo.githubusercontent.com/4b80977ac0757d1d18eb7be4d0238e92673bfaba/68747470733a2f2f6c696c69616e77656e672e6769746875622e696f2f6c696c2d6c6f672f6173736574732f696d616765732f7472616e73666f726d65722e706e67)
 
@@ -268,11 +268,11 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [TRANSFORMERS FROM SCRATCH](http://www.peterbloem.nl/blog/transformers)
 [Transformer Architecture: The Positional Encoding](https://kazemnejad.com/blog/transformer_architecture_positional_encoding)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNDI3ODE2NjY4LDEzODI0NTYyMDUsLTIwNz
-Q2MTcyMTAsNDc4Mjk5MDg1LDg2NDI0MzA5NSwtOTgyMjk4MDM0
-LC0xNTU5MjkyMjkzLDg0MjE1MjU0NSw0NTk0NTk0NzEsLTE5Nz
-kyMjU0OTIsMTg4MzAzNzM5MiwxODIxMTA2NjgsLTc2NDc5OTM5
-MCwtMjEyMDI0NzkzNCwtMTEyMTUwMDQzLC0xODAwOTU1MzI4LD
-QyNDM2NjA0NiwxMzQ3NzM3Mjg0LC0xMDYzNjAyMjQ2LDE3MDg4
-NDE4M119
+eyJoaXN0b3J5IjpbNTkyNjM0MjIwLDQyNzgxNjY2OCwxMzgyND
+U2MjA1LC0yMDc0NjE3MjEwLDQ3ODI5OTA4NSw4NjQyNDMwOTUs
+LTk4MjI5ODAzNCwtMTU1OTI5MjI5Myw4NDIxNTI1NDUsNDU5ND
+U5NDcxLC0xOTc5MjI1NDkyLDE4ODMwMzczOTIsMTgyMTEwNjY4
+LC03NjQ3OTkzOTAsLTIxMjAyNDc5MzQsLTExMjE1MDA0MywtMT
+gwMDk1NTMyOCw0MjQzNjYwNDYsMTM0NzczNzI4NCwtMTA2MzYw
+MjI0Nl19
 -->
