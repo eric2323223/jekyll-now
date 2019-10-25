@@ -187,7 +187,7 @@ $$\mathrm{MultiHead}(Q,K,V)=\mathrm{Concat}(head_i, ..., head_h)W^O$$
 
 ![enter image description here](https://lilianweng.github.io/lil-log/assets/images/multi-head-attention.png)
 
-### point-wise 前馈网络
+### 编码/解码层
 point-wise 对序列中每个元素分别进行2层全连接运算，目的主要是为了提供对multi-attention提取出的feature进行 **复杂（非线性）** 合成的能力
 > Like the name indicates, this is a regular feedforward network applied to _each_ time step of the Multi Head attention outputs. The network has three layers with a non-linearity like ReLU for the hidden layer. You might be wondering why do we need a feedforward network after attention; after all isn’t attention all we need 😈 ? I suspect it is needed to improve model expressiveness. As we saw earlier the multi head attention partitioned the inputs and applied attention independently. There was only a linear projection to the outputs, i.e. the partitions were combined only linearly. The _Positionwise Feedforward_ network thus brings in some non-linear ‘mixing’ if we call it that. In fact for the sequence tagging task we use convolutions instead of fully connected layers. A filter of width 3 allows interactions to happen with adjacent time steps to improve performance.
 
@@ -267,11 +267,11 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [TRANSFORMERS FROM SCRATCH](http://www.peterbloem.nl/blog/transformers)
 [Transformer Architecture: The Positional Encoding](https://kazemnejad.com/blog/transformer_architecture_positional_encoding)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTM4MjQ1NjIwNSwtMjA3NDYxNzIxMCw0Nz
-gyOTkwODUsODY0MjQzMDk1LC05ODIyOTgwMzQsLTE1NTkyOTIy
-OTMsODQyMTUyNTQ1LDQ1OTQ1OTQ3MSwtMTk3OTIyNTQ5MiwxOD
-gzMDM3MzkyLDE4MjExMDY2OCwtNzY0Nzk5MzkwLC0yMTIwMjQ3
-OTM0LC0xMTIxNTAwNDMsLTE4MDA5NTUzMjgsNDI0MzY2MDQ2LD
-EzNDc3MzcyODQsLTEwNjM2MDIyNDYsMTcwODg0MTgzLC0xMjcx
-NzMzNzJdfQ==
+eyJoaXN0b3J5IjpbLTYyMjg3MTAzMCwxMzgyNDU2MjA1LC0yMD
+c0NjE3MjEwLDQ3ODI5OTA4NSw4NjQyNDMwOTUsLTk4MjI5ODAz
+NCwtMTU1OTI5MjI5Myw4NDIxNTI1NDUsNDU5NDU5NDcxLC0xOT
+c5MjI1NDkyLDE4ODMwMzczOTIsMTgyMTEwNjY4LC03NjQ3OTkz
+OTAsLTIxMjAyNDc5MzQsLTExMjE1MDA0MywtMTgwMDk1NTMyOC
+w0MjQzNjYwNDYsMTM0NzczNzI4NCwtMTA2MzYwMjI0NiwxNzA4
+ODQxODNdfQ==
 -->
