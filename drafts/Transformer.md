@@ -196,14 +196,14 @@ point-wise 对序列中每个元素分别进行2层全连接运算，目的主�
 在介绍了Transformer的主要组成部分之后，我们再来完整看一下Transformer模型
 ![enter image description here](https://camo.githubusercontent.com/4b80977ac0757d1d18eb7be4d0238e92673bfaba/68747470733a2f2f6c696c69616e77656e672e6769746875622e696f2f6c696c2d6c6f672f6173736574732f696d616765732f7472616e73666f726d65722e706e67)
 
-工作流程（以机器翻译为例）
+工作流程：
 1. 输入元素进行位置编码
 2. 位置编码与输入元素按位相加
 3. 在编码层
 	3.1 首先进行输入元素自注意力（多头注意力）计算，
 	3.2 再将结果输入按位前馈网络
 4. 重复多次编码层结算，结束编码阶段，得到context vector
-5. 开始解码阶段，首先对输出元素进行位置编码（第一个输出为开始标记，如SOS）
+5. 开始解码阶段，首先对输出元素进行位置编码（第一个输出为开始标记）
 6. 输入元素与其位置编码按位相加
 7. 在解码层
 	7.1 首先进行输出元素（当前已输出）的多头自注意力计算
@@ -212,7 +212,7 @@ point-wise 对序列中每个元素分别进行2层全连接运算，目的主�
 8. 重复多次解码层计算
 9. 通过全连接网络转化为目标词典宽度向量
 10. 使用softmax确定输出元素（可能性最大）
-11.  将当前输出元素输入6开始下一个输出元素的计算，直到输出为结束标记符，如EOS
+11.  将当前输出元素输入6开始下一个输出元素的计算，直到输出为结束标记符
 
 
 ## Transformer优化技巧
@@ -283,11 +283,11 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [TRANSFORMERS FROM SCRATCH](http://www.peterbloem.nl/blog/transformers)
 [Transformer Architecture: The Positional Encoding](https://kazemnejad.com/blog/transformer_architecture_positional_encoding)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE4NzA0OTA2NDMsMTMxMzM2NTYzNiwxMT
-U5MzA3OTk2LC05NDEyMjUzNjYsNjY2NDUxOTIyLDQyNzgxNjY2
-OCwxMzgyNDU2MjA1LC0yMDc0NjE3MjEwLDQ3ODI5OTA4NSw4Nj
-QyNDMwOTUsLTk4MjI5ODAzNCwtMTU1OTI5MjI5Myw4NDIxNTI1
-NDUsNDU5NDU5NDcxLC0xOTc5MjI1NDkyLDE4ODMwMzczOTIsMT
-gyMTEwNjY4LC03NjQ3OTkzOTAsLTIxMjAyNDc5MzQsLTExMjE1
-MDA0M119
+eyJoaXN0b3J5IjpbNzAzODQwOTU4LC0xODcwNDkwNjQzLDEzMT
+MzNjU2MzYsMTE1OTMwNzk5NiwtOTQxMjI1MzY2LDY2NjQ1MTky
+Miw0Mjc4MTY2NjgsMTM4MjQ1NjIwNSwtMjA3NDYxNzIxMCw0Nz
+gyOTkwODUsODY0MjQzMDk1LC05ODIyOTgwMzQsLTE1NTkyOTIy
+OTMsODQyMTUyNTQ1LDQ1OTQ1OTQ3MSwtMTk3OTIyNTQ5MiwxOD
+gzMDM3MzkyLDE4MjExMDY2OCwtNzY0Nzk5MzkwLC0yMTIwMjQ3
+OTM0XX0=
 -->
