@@ -181,7 +181,7 @@ Transformer仅仅使用attention进行输入encoding，由于attention本质上�
 
 ![enter image description here](https://docs.google.com/drawings/d/e/2PACX-1vT4_Vn34rr1zN4OhXIo7oCGkzXDF__Y3CIVnZ_12fjqLHtKoRSJaVIyoR7ndQHtRlfNUmgecF5mucNg/pub?w=538&h=363)
 具体方法是对同一个元素进行多次attention运算， 每次attention都使用不同的初始化参数$W$，最后在将多次attention的结果相加。
-在transformer中对每一个元素，进行$h$次(对于self attention来说，$Q, K, V$都是编码$x_i$（如word2vec,glove）后的序列元素)初始化
+在transformer中对每一个元素，进行$h$次(对于self attention来说，$Q, K, V$都是编码$x_i$，如word2vec,glove，后的序列元素)初始化
 $$head_i =\mathrm{SDPA}(QW^Q_i, KW_i^K, VW_i^V)$$
 $$\mathrm{MultiHead}(Q,K,V)=\mathrm{Concat}(head_i, ..., head_h)W^O$$
 
@@ -267,11 +267,11 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [TRANSFORMERS FROM SCRATCH](http://www.peterbloem.nl/blog/transformers)
 [Transformer Architecture: The Positional Encoding](https://kazemnejad.com/blog/transformer_architecture_positional_encoding)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwNzQ2MTcyMTAsNDc4Mjk5MDg1LDg2ND
-I0MzA5NSwtOTgyMjk4MDM0LC0xNTU5MjkyMjkzLDg0MjE1MjU0
-NSw0NTk0NTk0NzEsLTE5NzkyMjU0OTIsMTg4MzAzNzM5MiwxOD
-IxMTA2NjgsLTc2NDc5OTM5MCwtMjEyMDI0NzkzNCwtMTEyMTUw
-MDQzLC0xODAwOTU1MzI4LDQyNDM2NjA0NiwxMzQ3NzM3Mjg0LC
-0xMDYzNjAyMjQ2LDE3MDg4NDE4MywtMTI3MTczMzcyLDkzMjE2
-Mjk0NV19
+eyJoaXN0b3J5IjpbLTEwMjc1NTE4NTksLTIwNzQ2MTcyMTAsND
+c4Mjk5MDg1LDg2NDI0MzA5NSwtOTgyMjk4MDM0LC0xNTU5Mjky
+MjkzLDg0MjE1MjU0NSw0NTk0NTk0NzEsLTE5NzkyMjU0OTIsMT
+g4MzAzNzM5MiwxODIxMTA2NjgsLTc2NDc5OTM5MCwtMjEyMDI0
+NzkzNCwtMTEyMTUwMDQzLC0xODAwOTU1MzI4LDQyNDM2NjA0Ni
+wxMzQ3NzM3Mjg0LC0xMDYzNjAyMjQ2LDE3MDg4NDE4MywtMTI3
+MTczMzcyXX0=
 -->
