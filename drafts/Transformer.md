@@ -200,12 +200,13 @@ point-wise 对序列中每个元素分别进行2层全连接运算，目的主�
 1. 输入元素进行位置编码
 2. 位置编码与输入元素按位相加
 3. 在编码层
-	3.1 首先进行多头注意力计算，
+	3.1 首先进行输入元素自身注意力（多头注意力计算，
 	3.2 再将结果输入按位前馈网络
 4. 重复多次编码层结算，结束编码阶段，得到context vector
 5. 开始解码阶段，首先对输出元素进行位置编码（第一个输出为一个预设标记，如SOS）
 6. 输入元素与其位置编码按位相加
-7. z
+7. 在解码层
+	7.1 首先进行输入元素
 
 
 
@@ -277,11 +278,11 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [TRANSFORMERS FROM SCRATCH](http://www.peterbloem.nl/blog/transformers)
 [Transformer Architecture: The Positional Encoding](https://kazemnejad.com/blog/transformer_architecture_positional_encoding)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTI3NzYzNzY5LDEzMTMzNjU2MzYsMTE1OT
-MwNzk5NiwtOTQxMjI1MzY2LDY2NjQ1MTkyMiw0Mjc4MTY2Njgs
-MTM4MjQ1NjIwNSwtMjA3NDYxNzIxMCw0NzgyOTkwODUsODY0Mj
-QzMDk1LC05ODIyOTgwMzQsLTE1NTkyOTIyOTMsODQyMTUyNTQ1
-LDQ1OTQ1OTQ3MSwtMTk3OTIyNTQ5MiwxODgzMDM3MzkyLDE4Mj
-ExMDY2OCwtNzY0Nzk5MzkwLC0yMTIwMjQ3OTM0LC0xMTIxNTAw
-NDNdfQ==
+eyJoaXN0b3J5IjpbLTE3NTU5MTA3MDksMTMxMzM2NTYzNiwxMT
+U5MzA3OTk2LC05NDEyMjUzNjYsNjY2NDUxOTIyLDQyNzgxNjY2
+OCwxMzgyNDU2MjA1LC0yMDc0NjE3MjEwLDQ3ODI5OTA4NSw4Nj
+QyNDMwOTUsLTk4MjI5ODAzNCwtMTU1OTI5MjI5Myw4NDIxNTI1
+NDUsNDU5NDU5NDcxLC0xOTc5MjI1NDkyLDE4ODMwMzczOTIsMT
+gyMTEwNjY4LC03NjQ3OTkzOTAsLTIxMjAyNDc5MzQsLTExMjE1
+MDA0M119
 -->
