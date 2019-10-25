@@ -199,7 +199,8 @@ point-wise 对序列中每个元素分别进行2层全连接运算，目的主�
 工作流程（以机器翻译为例）
 1. 输入元素进行位置编码
 2. 位置编码与输入元素按位相加
-3. 
+3. 在编码层首先进行多头注意力计算，再将结果
+4. 
 
 
 
@@ -271,7 +272,7 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [TRANSFORMERS FROM SCRATCH](http://www.peterbloem.nl/blog/transformers)
 [Transformer Architecture: The Positional Encoding](https://kazemnejad.com/blog/transformer_architecture_positional_encoding)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTI3MjUzODM0LDQyNzgxNjY2OCwxMzgyND
+eyJoaXN0b3J5IjpbNjY2NDUxOTIyLDQyNzgxNjY2OCwxMzgyND
 U2MjA1LC0yMDc0NjE3MjEwLDQ3ODI5OTA4NSw4NjQyNDMwOTUs
 LTk4MjI5ODAzNCwtMTU1OTI5MjI5Myw4NDIxNTI1NDUsNDU5ND
 U5NDcxLC0xOTc5MjI1NDkyLDE4ODMwMzczOTIsMTgyMTEwNjY4
