@@ -197,7 +197,9 @@ point-wise 对序列中每个元素分别进行2层全连接运算，目的主�
 ![enter image description here](https://camo.githubusercontent.com/4b80977ac0757d1d18eb7be4d0238e92673bfaba/68747470733a2f2f6c696c69616e77656e672e6769746875622e696f2f6c696c2d6c6f672f6173736574732f696d616765732f7472616e73666f726d65722e706e67)
 
 工作流程（以机器翻译为例）
-1. 输入序列
+1. 输入元素进行位置编码
+2. 位置编码与输入元素按位相加
+3. 
 
 
 
@@ -269,11 +271,11 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [TRANSFORMERS FROM SCRATCH](http://www.peterbloem.nl/blog/transformers)
 [Transformer Architecture: The Positional Encoding](https://kazemnejad.com/blog/transformer_architecture_positional_encoding)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEyOTI3OTcyNDgsNDI3ODE2NjY4LDEzOD
-I0NTYyMDUsLTIwNzQ2MTcyMTAsNDc4Mjk5MDg1LDg2NDI0MzA5
-NSwtOTgyMjk4MDM0LC0xNTU5MjkyMjkzLDg0MjE1MjU0NSw0NT
-k0NTk0NzEsLTE5NzkyMjU0OTIsMTg4MzAzNzM5MiwxODIxMTA2
-NjgsLTc2NDc5OTM5MCwtMjEyMDI0NzkzNCwtMTEyMTUwMDQzLC
-0xODAwOTU1MzI4LDQyNDM2NjA0NiwxMzQ3NzM3Mjg0LC0xMDYz
-NjAyMjQ2XX0=
+eyJoaXN0b3J5IjpbMTI3MjUzODM0LDQyNzgxNjY2OCwxMzgyND
+U2MjA1LC0yMDc0NjE3MjEwLDQ3ODI5OTA4NSw4NjQyNDMwOTUs
+LTk4MjI5ODAzNCwtMTU1OTI5MjI5Myw4NDIxNTI1NDUsNDU5ND
+U5NDcxLC0xOTc5MjI1NDkyLDE4ODMwMzczOTIsMTgyMTEwNjY4
+LC03NjQ3OTkzOTAsLTIxMjAyNDc5MzQsLTExMjE1MDA0MywtMT
+gwMDk1NTMyOCw0MjQzNjYwNDYsMTM0NzczNzI4NCwtMTA2MzYw
+MjI0Nl19
 -->
