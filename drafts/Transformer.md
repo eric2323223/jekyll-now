@@ -210,7 +210,8 @@ point-wise 对序列中每个元素分别进行2层全连接运算，目的主�
 	7.2 进行编码（context vector）-解码（7.1结果）注意力计算
 	7.3 对7.2结果输入按位前馈网络
 8. 重复多次解码层计算
-9. 通过全连接网络
+9. 通过全连接网络转化为目标词典宽度向量
+10. 使用softmax确定输出元素（） 
 
 
 
@@ -282,11 +283,11 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [TRANSFORMERS FROM SCRATCH](http://www.peterbloem.nl/blog/transformers)
 [Transformer Architecture: The Positional Encoding](https://kazemnejad.com/blog/transformer_architecture_positional_encoding)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTk5NTI5NjQ0MywxMzEzMzY1NjM2LDExNT
-kzMDc5OTYsLTk0MTIyNTM2Niw2NjY0NTE5MjIsNDI3ODE2NjY4
-LDEzODI0NTYyMDUsLTIwNzQ2MTcyMTAsNDc4Mjk5MDg1LDg2ND
-I0MzA5NSwtOTgyMjk4MDM0LC0xNTU5MjkyMjkzLDg0MjE1MjU0
-NSw0NTk0NTk0NzEsLTE5NzkyMjU0OTIsMTg4MzAzNzM5MiwxOD
-IxMTA2NjgsLTc2NDc5OTM5MCwtMjEyMDI0NzkzNCwtMTEyMTUw
-MDQzXX0=
+eyJoaXN0b3J5IjpbLTEyMzYyMzU0MTUsMTMxMzM2NTYzNiwxMT
+U5MzA3OTk2LC05NDEyMjUzNjYsNjY2NDUxOTIyLDQyNzgxNjY2
+OCwxMzgyNDU2MjA1LC0yMDc0NjE3MjEwLDQ3ODI5OTA4NSw4Nj
+QyNDMwOTUsLTk4MjI5ODAzNCwtMTU1OTI5MjI5Myw4NDIxNTI1
+NDUsNDU5NDU5NDcxLC0xOTc5MjI1NDkyLDE4ODMwMzczOTIsMT
+gyMTEwNjY4LC03NjQ3OTkzOTAsLTIxMjAyNDc5MzQsLTExMjE1
+MDA0M119
 -->
