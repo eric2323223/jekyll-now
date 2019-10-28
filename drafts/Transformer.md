@@ -185,9 +185,9 @@ Transformer仅仅使用attention进行输入encoding，由于attention本质上�
 $$head_i =\mathrm{SDPA}(QW^Q_i, KW_i^K, VW_i^V)$$
 $$\mathrm{MultiHead}(Q,K,V)=\mathrm{Concat}(head_i, ..., head_h)W^O$$
 
--对于编码器MHA，$Q, K, V$都是编码$x_i$
-
-- 对于解码器MHA
+- 对于编码器MHA，$Q, K, V$都是编码$x_i$
+- 对于解码器MHA，$Q, K, V$都是输出$y_i$
+- 对于ma
 
 ![enter image description here](https://lilianweng.github.io/lil-log/assets/images/multi-head-attention.png)
 
@@ -287,7 +287,7 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [TRANSFORMERS FROM SCRATCH](http://www.peterbloem.nl/blog/transformers)
 [Transformer Architecture: The Positional Encoding](https://kazemnejad.com/blog/transformer_architecture_positional_encoding)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTcwNDU2NjAyMyw3MDM4NDA5NTgsLTE4Nz
+eyJoaXN0b3J5IjpbMTQ1MzY0NTQyMSw3MDM4NDA5NTgsLTE4Nz
 A0OTA2NDMsMTMxMzM2NTYzNiwxMTU5MzA3OTk2LC05NDEyMjUz
 NjYsNjY2NDUxOTIyLDQyNzgxNjY2OCwxMzgyNDU2MjA1LC0yMD
 c0NjE3MjEwLDQ3ODI5OTA4NSw4NjQyNDMwOTUsLTk4MjI5ODAz
