@@ -187,7 +187,7 @@ $$\mathrm{MultiHead}(Q,K,V)=\mathrm{Concat}(head_i, ..., head_h)W^O$$
 
 - 对于编码器MHA，$Q, K, V$都是编码$x_i$
 - 对于解码器MHA，$Q, K, V$都是输出$y_i$
-- 对于编码器-解码器MHA， $Q$是输出$y_i$, $K,V$是context vector中的
+- 对于编码器-解码器MHA， $Q$是输出$y_i$, $K,V$是context vector中的元素$c_i$
 
 ![enter image description here](https://lilianweng.github.io/lil-log/assets/images/multi-head-attention.png)
 
@@ -287,11 +287,11 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [TRANSFORMERS FROM SCRATCH](http://www.peterbloem.nl/blog/transformers)
 [Transformer Architecture: The Positional Encoding](https://kazemnejad.com/blog/transformer_architecture_positional_encoding)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNDcwMjAxNjY4LDcwMzg0MDk1OCwtMTg3MD
-Q5MDY0MywxMzEzMzY1NjM2LDExNTkzMDc5OTYsLTk0MTIyNTM2
-Niw2NjY0NTE5MjIsNDI3ODE2NjY4LDEzODI0NTYyMDUsLTIwNz
-Q2MTcyMTAsNDc4Mjk5MDg1LDg2NDI0MzA5NSwtOTgyMjk4MDM0
-LC0xNTU5MjkyMjkzLDg0MjE1MjU0NSw0NTk0NTk0NzEsLTE5Nz
-kyMjU0OTIsMTg4MzAzNzM5MiwxODIxMTA2NjgsLTc2NDc5OTM5
-MF19
+eyJoaXN0b3J5IjpbLTc1ODYyNzE3OCw3MDM4NDA5NTgsLTE4Nz
+A0OTA2NDMsMTMxMzM2NTYzNiwxMTU5MzA3OTk2LC05NDEyMjUz
+NjYsNjY2NDUxOTIyLDQyNzgxNjY2OCwxMzgyNDU2MjA1LC0yMD
+c0NjE3MjEwLDQ3ODI5OTA4NSw4NjQyNDMwOTUsLTk4MjI5ODAz
+NCwtMTU1OTI5MjI5Myw4NDIxNTI1NDUsNDU5NDU5NDcxLC0xOT
+c5MjI1NDkyLDE4ODMwMzczOTIsMTgyMTEwNjY4LC03NjQ3OTkz
+OTBdfQ==
 -->
