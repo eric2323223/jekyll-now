@@ -145,7 +145,7 @@ $$\mathrm{SDPA}(Q, K, V) = \mathrm{softmax}(\frac{QK^T}{\sqrt{d_k}})V$$
 >其中的权值来自该元素与其他元素的相似度，这是基于这样的假设-相似度越高的元素对确定该元素在整个序列中的含义的贡献度越大，由于序列元素以向量表示（word4vec），在transformer中使用点积运算来确定相似度，其结果是一个数值。形式化的定义为
 $W^Q_i \in \mathbb{R}^{d_{\text{model}} \times d_k}$, $W^K_i \in \mathbb{R}^{d_{\text{model}} \times d_k}$, $W^V_i \in \mathbb{R}^{d_{\text{model}} \times d_v}$ and $W^O \in \mathbb{R}^{hd_v \times d_{\text{model}}}$
 
-![enter image description here](https://miro.medium.com/max/410/1*NlQPdpNY4d26l8Vu92a0Wg.png)
+![enter image description here](https://miro.medium.com/max/676/1*nCznYOY-QtWIm8Y4jyk2Kw.png)
 
 
 ####  encoder-decoder attention
@@ -287,7 +287,7 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [TRANSFORMERS FROM SCRATCH](http://www.peterbloem.nl/blog/transformers)
 [Transformer Architecture: The Positional Encoding](https://kazemnejad.com/blog/transformer_architecture_positional_encoding)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTYwODc1NzIxMiwtMTM4NTE1Mjg5MiwtNz
+eyJoaXN0b3J5IjpbMTA0MTkzNDA3OSwtMTM4NTE1Mjg5MiwtNz
 U4NjI3MTc4LDcwMzg0MDk1OCwtMTg3MDQ5MDY0MywxMzEzMzY1
 NjM2LDExNTkzMDc5OTYsLTk0MTIyNTM2Niw2NjY0NTE5MjIsND
 I3ODE2NjY4LDEzODI0NTYyMDUsLTIwNzQ2MTcyMTAsNDc4Mjk5
