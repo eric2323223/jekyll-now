@@ -192,7 +192,7 @@ $$\mathrm{MultiHead}(Q,K,V)=\mathrm{Concat}(head_i, ..., head_h)W^O$$
 ![enter image description here](https://mchromiak.github.io/articles/2017/Sep/12/Transformer-Attention-is-all-you-need/img/MultiHead.png)
 
 ### 编码/解码层
-transformer模型中将多头注意力HMA计算后的结果输入按位前馈网络，这里按位主要是指每个位置的元素各自输入前馈网络里进行计算，网络通常为2层，中间层维度稍大，最后一层的维度和元素编码的维度相同。这个设计的目的是借助全连接网络的非线性计算来增加特征合成的能力，
+transformer模型中将多头注意力HMA计算后的结果输入按位前馈网络，这里按位主要是指每个位置的元素各自输入前馈网络里进行计算，网络通常为2层，中间层维度稍大，最后一层的维度和元素编码的维度相同。这个设计的目的其实和HMA的动机类似，由于attention在特征合成能力的不足，需要借助全连接网络的非线性计算来增加特征合成的能力。
 ![enter image description here](https://docs.google.com/drawings/d/e/2PACX-1vTFCzc5frUSM_IkIZ9W7XE92dfKzjh9M05OqTd8FDz3mZpPBTfO0cIVQ-Uk5ZItYZGzi119CYHUaGJk/pub?w=312&h=379)
 > Like the name indicates, this is a regular feedforward network applied to _each_ time step of the Multi Head attention outputs. The network has three layers with a non-linearity like ReLU for the hidden layer. You might be wondering why do we need a feedforward network after attention; after all isn’t attention all we need 😈 ? I suspect it is needed to improve model expressiveness. As we saw earlier the multi head attention partitioned the inputs and applied attention independently. There was only a linear projection to the outputs, i.e. the partitions were combined only linearly. The _Positionwise Feedforward_ network thus brings in some non-linear ‘mixing’ if we call it that. In fact for the sequence tagging task we use convolutions instead of fully connected layers. A filter of width 3 allows interactions to happen with adjacent time steps to improve performance.
 
@@ -287,7 +287,7 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [TRANSFORMERS FROM SCRATCH](http://www.peterbloem.nl/blog/transformers)
 [Transformer Architecture: The Positional Encoding](https://kazemnejad.com/blog/transformer_architecture_positional_encoding)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTk4MTA5OTA5NCwtMTMyMDI0MTQyMCwxMT
+eyJoaXN0b3J5IjpbLTc0NzE4MjgzMCwtMTMyMDI0MTQyMCwxMT
 k0OTg5NzIxLDI3MDM4NDUwMSwtMTc5NTQ2ODU2LDEwNDE5MzQw
 NzksLTEzODUxNTI4OTIsLTc1ODYyNzE3OCw3MDM4NDA5NTgsLT
 E4NzA0OTA2NDMsMTMxMzM2NTYzNiwxMTU5MzA3OTk2LC05NDEy
