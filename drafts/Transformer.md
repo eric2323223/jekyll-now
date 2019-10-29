@@ -197,7 +197,7 @@ transformer模型中将多头注意力HMA计算后的结果输入按位前馈网
 > Like the name indicates, this is a regular feedforward network applied to _each_ time step of the Multi Head attention outputs. The network has three layers with a non-linearity like ReLU for the hidden layer. You might be wondering why do we need a feedforward network after attention; after all isn’t attention all we need 😈 ? I suspect it is needed to improve model expressiveness. As we saw earlier the multi head attention partitioned the inputs and applied attention independently. There was only a linear projection to the outputs, i.e. the partitions were combined only linearly. The _Positionwise Feedforward_ network thus brings in some non-linear ‘mixing’ if we call it that. In fact for the sequence tagging task we use convolutions instead of fully connected layers. A filter of width 3 allows interactions to happen with adjacent time steps to improve performance.
 
 ### Transformer全貌
-在介绍了Transformer的主要组成部分之后，我们再来完整看一下Transformer模型。整体上来看，Transformer模型属于
+在介绍了Transformer的主要组成部分之后，我们再来完整看一下Transformer模型。整体上来看，Transformer模型属于编码器-解码器架构，编码器由若干个相同的编码层堆叠形成
 ![enter image description here](https://camo.githubusercontent.com/4b80977ac0757d1d18eb7be4d0238e92673bfaba/68747470733a2f2f6c696c69616e77656e672e6769746875622e696f2f6c696c2d6c6f672f6173736574732f696d616765732f7472616e73666f726d65722e706e67)
 
 工作流程：
@@ -287,11 +287,11 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [TRANSFORMERS FROM SCRATCH](http://www.peterbloem.nl/blog/transformers)
 [Transformer Architecture: The Positional Encoding](https://kazemnejad.com/blog/transformer_architecture_positional_encoding)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTg3OTUwMTQ3LC0xMzIwMjQxNDIwLDExOT
-Q5ODk3MjEsMjcwMzg0NTAxLC0xNzk1NDY4NTYsMTA0MTkzNDA3
-OSwtMTM4NTE1Mjg5MiwtNzU4NjI3MTc4LDcwMzg0MDk1OCwtMT
-g3MDQ5MDY0MywxMzEzMzY1NjM2LDExNTkzMDc5OTYsLTk0MTIy
-NTM2Niw2NjY0NTE5MjIsNDI3ODE2NjY4LDEzODI0NTYyMDUsLT
-IwNzQ2MTcyMTAsNDc4Mjk5MDg1LDg2NDI0MzA5NSwtOTgyMjk4
-MDM0XX0=
+eyJoaXN0b3J5IjpbLTY0NDcyNDk3MSwtMTMyMDI0MTQyMCwxMT
+k0OTg5NzIxLDI3MDM4NDUwMSwtMTc5NTQ2ODU2LDEwNDE5MzQw
+NzksLTEzODUxNTI4OTIsLTc1ODYyNzE3OCw3MDM4NDA5NTgsLT
+E4NzA0OTA2NDMsMTMxMzM2NTYzNiwxMTU5MzA3OTk2LC05NDEy
+MjUzNjYsNjY2NDUxOTIyLDQyNzgxNjY2OCwxMzgyNDU2MjA1LC
+0yMDc0NjE3MjEwLDQ3ODI5OTA4NSw4NjQyNDMwOTUsLTk4MjI5
+ODAzNF19
 -->
