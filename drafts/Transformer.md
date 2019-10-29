@@ -175,7 +175,7 @@ $$PE_{(pos, 2i+1)}=cos(pos/10000^{2i/d_{model}})$$
 ![enter image description here](https://i.stack.imgur.com/W0b0c.gif)
 
 
-### 多头注意力（ Multiple Headed Attention)
+### 多头注意力（ Multiple Headed Attention, MHA)
 
 Transformer仅仅使用attention进行输入encoding，由于attention本质上只是对输入进行加权平均运算，这导致特征提取能力不足(比较convolution做线性变换，而attention只是做了加权平均)，为了解决这个问题作者提出了多头注意力（）的方法。多头注意力的基本思想通过多次初始化过程增加模型提取不同特征的机会，假设下图中通过三次初始化分别得到了三种特征：红色表示动作，绿色表做动作施加者，蓝色表示动作承受着，可以看到在对“踢“进行了三次self attention运算，分别对应三种特征。在对于动作信息的self attention中，"我“和”球“的权值（灰色细线表示）比“踢”的权值（红色粗线）要小很多；同样，对动作施加者的self attention中，“我”（绿色粗线）则是主要贡献者。在将三次self attention的结果相加后，得到的新的“踢”的编码中就包含了三种特征的信息。现实中不可能每次随机初始化都能带来有效的特征，理论上随机初始化测次数越多就越有可能发现有效的特征，不过随之增长的是训练参数的增加，这意味着训练难度的提高，因此需要平衡，再Transformer模型中这个值是8。
 
@@ -288,11 +288,11 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [TRANSFORMERS FROM SCRATCH](http://www.peterbloem.nl/blog/transformers)
 [Transformer Architecture: The Positional Encoding](https://kazemnejad.com/blog/transformer_architecture_positional_encoding)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjcwMzg0NTAxLC0xNzk1NDY4NTYsMTA0MT
-kzNDA3OSwtMTM4NTE1Mjg5MiwtNzU4NjI3MTc4LDcwMzg0MDk1
-OCwtMTg3MDQ5MDY0MywxMzEzMzY1NjM2LDExNTkzMDc5OTYsLT
-k0MTIyNTM2Niw2NjY0NTE5MjIsNDI3ODE2NjY4LDEzODI0NTYy
-MDUsLTIwNzQ2MTcyMTAsNDc4Mjk5MDg1LDg2NDI0MzA5NSwtOT
-gyMjk4MDM0LC0xNTU5MjkyMjkzLDg0MjE1MjU0NSw0NTk0NTk0
-NzFdfQ==
+eyJoaXN0b3J5IjpbMTE5NDk4OTcyMSwyNzAzODQ1MDEsLTE3OT
+U0Njg1NiwxMDQxOTM0MDc5LC0xMzg1MTUyODkyLC03NTg2Mjcx
+NzgsNzAzODQwOTU4LC0xODcwNDkwNjQzLDEzMTMzNjU2MzYsMT
+E1OTMwNzk5NiwtOTQxMjI1MzY2LDY2NjQ1MTkyMiw0Mjc4MTY2
+NjgsMTM4MjQ1NjIwNSwtMjA3NDYxNzIxMCw0NzgyOTkwODUsOD
+Y0MjQzMDk1LC05ODIyOTgwMzQsLTE1NTkyOTIyOTMsODQyMTUy
+NTQ1XX0=
 -->
