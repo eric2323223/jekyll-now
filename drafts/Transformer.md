@@ -199,7 +199,7 @@ transformer模型中将多头注意力HMA计算后的结果输入按位前馈网
 ### Transformer全貌
 在介绍了Transformer的主要组成部分之后，我们再来完整看一下Transformer模型。整体上来看，Transformer模型属于编码器-解码器架构，解码器需要根据序列编码sequence embedding（由编码器生成）和上一步的解码器输出来产生下一个输出，因此属于自回归(auto regressor)模型。
 编码器由若干个相同的编码层堆叠形成，每个编码层主要由一个多头注意力HMA和一个按位前馈网络构成，主要作用是将序列的上下文信息融入每个元素并进行特征合成。原始的输入编码首先经过位置编码器加入位置信息，在通过多个编码层生成包含位置信息，复杂特征信息的序列编码（context vector/sequence embedding）。
-而在解码器端，
+在解码器端，
 
 ![enter image description here](https://camo.githubusercontent.com/4b80977ac0757d1d18eb7be4d0238e92673bfaba/68747470733a2f2f6c696c69616e77656e672e6769746875622e696f2f6c696c2d6c6f672f6173736574732f696d616765732f7472616e73666f726d65722e706e67)
 
@@ -290,11 +290,11 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [TRANSFORMERS FROM SCRATCH](http://www.peterbloem.nl/blog/transformers)
 [Transformer Architecture: The Positional Encoding](https://kazemnejad.com/blog/transformer_architecture_positional_encoding)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTYwNjUyMTMwMCwxNDkyNDQ0NDQ2LC0xMz
-IwMjQxNDIwLDExOTQ5ODk3MjEsMjcwMzg0NTAxLC0xNzk1NDY4
-NTYsMTA0MTkzNDA3OSwtMTM4NTE1Mjg5MiwtNzU4NjI3MTc4LD
-cwMzg0MDk1OCwtMTg3MDQ5MDY0MywxMzEzMzY1NjM2LDExNTkz
-MDc5OTYsLTk0MTIyNTM2Niw2NjY0NTE5MjIsNDI3ODE2NjY4LD
-EzODI0NTYyMDUsLTIwNzQ2MTcyMTAsNDc4Mjk5MDg1LDg2NDI0
-MzA5NV19
+eyJoaXN0b3J5IjpbNDc1MjEzMTgsLTYwNjUyMTMwMCwxNDkyND
+Q0NDQ2LC0xMzIwMjQxNDIwLDExOTQ5ODk3MjEsMjcwMzg0NTAx
+LC0xNzk1NDY4NTYsMTA0MTkzNDA3OSwtMTM4NTE1Mjg5MiwtNz
+U4NjI3MTc4LDcwMzg0MDk1OCwtMTg3MDQ5MDY0MywxMzEzMzY1
+NjM2LDExNTkzMDc5OTYsLTk0MTIyNTM2Niw2NjY0NTE5MjIsND
+I3ODE2NjY4LDEzODI0NTYyMDUsLTIwNzQ2MTcyMTAsNDc4Mjk5
+MDg1XX0=
 -->
