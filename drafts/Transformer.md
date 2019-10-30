@@ -160,7 +160,9 @@ In terms of encoder-decoder, the **query** is usually the hidden state of the _d
 - 第二是由于sin/cos函数的值总是在-1到1之间，这种编码本身也有正则化（normalization）的作用，这有利于神经网络的学习。
 
 如果用$pos$表示位置，$i$表示元素编码的维度，$d_{model}$表示模型的维度，位置编码$PE$可以表示为
-$$PE_{{pos,2i}}=sin(pos/10000^{2i/d_{model}})$$
+$$PE_{{pos,2i}}=sin(pos/10000^{2i/d_{model}}) $$
+
+
 $$PE_{(pos, 2i+1)}=cos(pos/10000^{2i/d_{model}})$$
 ![enter image description here](!%5B%5D%28http://vandergoten.ai/img/attention_is_all_you_need/positional_embedding.png%29)
 计算产生的位置编码是一个与元素具有相同维度的向量，使用相加的方式将位置信息叠加进元素中，如下图所示
@@ -292,7 +294,7 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [TRANSFORMERS FROM SCRATCH](http://www.peterbloem.nl/blog/transformers)
 [Transformer Architecture: The Positional Encoding](https://kazemnejad.com/blog/transformer_architecture_positional_encoding)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTU5NjIyMjg5OSwtMTI5ODc0MTUwOCwtMT
+eyJoaXN0b3J5IjpbMjA3ODc2NjY0MywtMTI5ODc0MTUwOCwtMT
 E1MzIzODMwOSwxNDMyOTgyNzg1LDE5MTg2NDA4MzcsLTIxMDIw
 OTM5NjEsNzQzNDAwODE3LDIwMDU0NzkzMzIsMTg4Nzc0MDU4Mi
 w5NzU2ODE0NDgsMTA5NDc4NTkxNiw0NzUyMTMxOCwtNjA2NTIx
