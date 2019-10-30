@@ -234,6 +234,7 @@ transformer模型中将多头注意力HMA计算后的结果输入按位前馈网
 - dropout
 - layer normalization
 	LN vs. BN
+	
 - label smoothing
 ### 超参数（hyperparameter tunning）
 - warn-up learning rate
@@ -291,11 +292,11 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [TRANSFORMERS FROM SCRATCH](http://www.peterbloem.nl/blog/transformers)
 [Transformer Architecture: The Positional Encoding](https://kazemnejad.com/blog/transformer_architecture_positional_encoding)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEyOTg3NDE1MDgsLTExNTMyMzgzMDksMT
-QzMjk4Mjc4NSwxOTE4NjQwODM3LC0yMTAyMDkzOTYxLDc0MzQw
-MDgxNywyMDA1NDc5MzMyLDE4ODc3NDA1ODIsOTc1NjgxNDQ4LD
-EwOTQ3ODU5MTYsNDc1MjEzMTgsLTYwNjUyMTMwMCwxNDkyNDQ0
-NDQ2LC0xMzIwMjQxNDIwLDExOTQ5ODk3MjEsMjcwMzg0NTAxLC
-0xNzk1NDY4NTYsMTA0MTkzNDA3OSwtMTM4NTE1Mjg5MiwtNzU4
-NjI3MTc4XX0=
+eyJoaXN0b3J5IjpbLTg1MDc3MTkzMCwtMTI5ODc0MTUwOCwtMT
+E1MzIzODMwOSwxNDMyOTgyNzg1LDE5MTg2NDA4MzcsLTIxMDIw
+OTM5NjEsNzQzNDAwODE3LDIwMDU0NzkzMzIsMTg4Nzc0MDU4Mi
+w5NzU2ODE0NDgsMTA5NDc4NTkxNiw0NzUyMTMxOCwtNjA2NTIx
+MzAwLDE0OTI0NDQ0NDYsLTEzMjAyNDE0MjAsMTE5NDk4OTcyMS
+wyNzAzODQ1MDEsLTE3OTU0Njg1NiwxMDQxOTM0MDc5LC0xMzg1
+MTUyODkyXX0=
 -->
