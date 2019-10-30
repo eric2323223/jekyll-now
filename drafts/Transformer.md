@@ -240,7 +240,7 @@ transformer模型中将多头注意力HMA计算后的结果输入按位前馈网
   
 4. 标签平滑归一化label smoothing regularization
 通常我们使用交叉熵来计算预测误差时使用独热（one-hot）编码表示真实值，梯度下降算法为了减小误差会尽量是预测结果接近one-hot编码，也就是说，网络会驱使自身往正确标签和错误标签差值大的方向学习，在训练数据不足以表征所以的样本特征的情况下，这就会导致网络过拟合。
-标签平滑归一化通过"软化"传统的独热one-hot类型编码，使得在计算误差值时能够有效抑制过拟合现象。它的实现非常简单，通过一个超参数$\epsilon$将原来的0，1分布变成$\epsilon, 1-\epsilon$分布（对于二值分类问题），这样就可以缩短真假值之间的距离，最终起到抑制过拟合的效果。
+标签平滑归一化通过"软化"传统的独热one-hot编码，使得在计算误差值时能够有效抑制过拟合现象。它的实现非常简单，通过一个超参数$\epsilon$将原来的0，1分布变成$\epsilon, 1-\epsilon$分布（对于二值分类问题），这样就可以缩短真假值之间的距离，最终起到抑制过拟合的效果。
 5. warn-up learning rate
 > If your data set is highly differentiated, you can suffer from a sort of "early over-fitting". If your shuffled data happens to include a cluster of related, strongly-featured observations, your model's initial training can skew badly toward those features -- or worse, toward incidental features that aren't truly related to the topic at all. Warm-up is a way to reduce the primacy effect of the early training examples. Without it, you may need to run a few extra epochs to get the convergence desired, as the model un-trains those early superstitions.
 > Many models afford this as a command-line option. The learning rate is increased linearly over the warm-up period. If the target learning rate is  `p`  and the warm-up period is  `n`, then the first batch iteration uses  `1*p/n`  for its learning rate; the second uses  `2*p/n`, and so on: iteration  `i`  uses  `i*p/n`, until we hit the nominal rate at iteration  `n`.
@@ -296,11 +296,11 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [TRANSFORMERS FROM SCRATCH](http://www.peterbloem.nl/blog/transformers)
 [Transformer Architecture: The Positional Encoding](https://kazemnejad.com/blog/transformer_architecture_positional_encoding)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTU2NDY1MzI1NSwtNTM1NTI0NDE0LDE2OT
-AxMTA5MzIsMTA0NTkxODkyMSwxNzI4MzQ3MzUxLDExODYwMzkz
-NzAsLTcwNzMwNDQzNiwxMTIxMzI2NDM3LDE2MDM1MTU5MjksMz
-Y5ODc2ODgwLC0xMjk4NzQxNTA4LC0xMTUzMjM4MzA5LDE0MzI5
-ODI3ODUsMTkxODY0MDgzNywtMjEwMjA5Mzk2MSw3NDM0MDA4MT
-csMjAwNTQ3OTMzMiwxODg3NzQwNTgyLDk3NTY4MTQ0OCwxMDk0
-Nzg1OTE2XX0=
+eyJoaXN0b3J5IjpbLTEwNDQ3NTU3OTksLTU2NDY1MzI1NSwtNT
+M1NTI0NDE0LDE2OTAxMTA5MzIsMTA0NTkxODkyMSwxNzI4MzQ3
+MzUxLDExODYwMzkzNzAsLTcwNzMwNDQzNiwxMTIxMzI2NDM3LD
+E2MDM1MTU5MjksMzY5ODc2ODgwLC0xMjk4NzQxNTA4LC0xMTUz
+MjM4MzA5LDE0MzI5ODI3ODUsMTkxODY0MDgzNywtMjEwMjA5Mz
+k2MSw3NDM0MDA4MTcsMjAwNTQ3OTMzMiwxODg3NzQwNTgyLDk3
+NTY4MTQ0OF19
 -->
