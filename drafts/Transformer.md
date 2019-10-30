@@ -239,7 +239,7 @@ transformer模型中将多头注意力HMA计算后的结果输入按位前馈网
    目前在深度学习中最常用的是BN，它是对不同训练数据的同一维度进行normalization，这种方法可以有效缓解深度模型训练中的梯度爆炸、弥散的问题。而在transformer采用了相对冷门的LN，主要原因是BN很难应用在训练数据长度不同的seq2seq任务上，而这正是LN的优势所在，由于LN是作用在单个训练数据的不同维度上，因此它能够在一条数据上进行normalization
   
 4. label smoothing
-
+防止过拟合
 5. warn-up learning rate
 > If your data set is highly differentiated, you can suffer from a sort of "early over-fitting". If your shuffled data happens to include a cluster of related, strongly-featured observations, your model's initial training can skew badly toward those features -- or worse, toward incidental features that aren't truly related to the topic at all. Warm-up is a way to reduce the primacy effect of the early training examples. Without it, you may need to run a few extra epochs to get the convergence desired, as the model un-trains those early superstitions.
 > Many models afford this as a command-line option. The learning rate is increased linearly over the warm-up period. If the target learning rate is  `p`  and the warm-up period is  `n`, then the first batch iteration uses  `1*p/n`  for its learning rate; the second uses  `2*p/n`, and so on: iteration  `i`  uses  `i*p/n`, until we hit the nominal rate at iteration  `n`.
@@ -295,11 +295,11 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [TRANSFORMERS FROM SCRATCH](http://www.peterbloem.nl/blog/transformers)
 [Transformer Architecture: The Positional Encoding](https://kazemnejad.com/blog/transformer_architecture_positional_encoding)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTcyODM0NzM1MSwxMTg2MDM5MzcwLC03MD
-czMDQ0MzYsMTEyMTMyNjQzNywxNjAzNTE1OTI5LDM2OTg3Njg4
-MCwtMTI5ODc0MTUwOCwtMTE1MzIzODMwOSwxNDMyOTgyNzg1LD
-E5MTg2NDA4MzcsLTIxMDIwOTM5NjEsNzQzNDAwODE3LDIwMDU0
-NzkzMzIsMTg4Nzc0MDU4Miw5NzU2ODE0NDgsMTA5NDc4NTkxNi
-w0NzUyMTMxOCwtNjA2NTIxMzAwLDE0OTI0NDQ0NDYsLTEzMjAy
-NDE0MjBdfQ==
+eyJoaXN0b3J5IjpbMTA0NTkxODkyMSwxNzI4MzQ3MzUxLDExOD
+YwMzkzNzAsLTcwNzMwNDQzNiwxMTIxMzI2NDM3LDE2MDM1MTU5
+MjksMzY5ODc2ODgwLC0xMjk4NzQxNTA4LC0xMTUzMjM4MzA5LD
+E0MzI5ODI3ODUsMTkxODY0MDgzNywtMjEwMjA5Mzk2MSw3NDM0
+MDA4MTcsMjAwNTQ3OTMzMiwxODg3NzQwNTgyLDk3NTY4MTQ0OC
+wxMDk0Nzg1OTE2LDQ3NTIxMzE4LC02MDY1MjEzMDAsMTQ5MjQ0
+NDQ0Nl19
 -->
