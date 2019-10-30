@@ -231,8 +231,8 @@ transformer模型中将多头注意力HMA计算后的结果输入按位前馈网
    - Help gradient propagated back through stacked decoders and encoders
    - Residuals carry positional information to higher layers, among other information.
 
-2. Layer normalizationlarization
-  Normalization是在机器学习中常用的一种数据预处理方法，主要目的是将数据“白化”Whitening，也就是在统计学中常常提到的“独立，同分布”：
+2. Layer normalization
+  Normalization是在机器学习中常用的一种数据预处理方法，为了更有效的运行机器学习算法，需要是将数据“白化”Whitening，也就是在统计学中常常提到的“独立，同分布”：
 	  - 独立	特征之间相关系要低
 	  - 同分布	所有特征应该具有相同的均值和方差
   
@@ -295,11 +295,11 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [TRANSFORMERS FROM SCRATCH](http://www.peterbloem.nl/blog/transformers)
 [Transformer Architecture: The Positional Encoding](https://kazemnejad.com/blog/transformer_architecture_positional_encoding)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE3NjUwMjkyMDEsMTE4NjAzOTM3MCwtNz
-A3MzA0NDM2LDExMjEzMjY0MzcsMTYwMzUxNTkyOSwzNjk4NzY4
-ODAsLTEyOTg3NDE1MDgsLTExNTMyMzgzMDksMTQzMjk4Mjc4NS
-wxOTE4NjQwODM3LC0yMTAyMDkzOTYxLDc0MzQwMDgxNywyMDA1
-NDc5MzMyLDE4ODc3NDA1ODIsOTc1NjgxNDQ4LDEwOTQ3ODU5MT
-YsNDc1MjEzMTgsLTYwNjUyMTMwMCwxNDkyNDQ0NDQ2LC0xMzIw
-MjQxNDIwXX0=
+eyJoaXN0b3J5IjpbNDUzMzIxMzE0LDExODYwMzkzNzAsLTcwNz
+MwNDQzNiwxMTIxMzI2NDM3LDE2MDM1MTU5MjksMzY5ODc2ODgw
+LC0xMjk4NzQxNTA4LC0xMTUzMjM4MzA5LDE0MzI5ODI3ODUsMT
+kxODY0MDgzNywtMjEwMjA5Mzk2MSw3NDM0MDA4MTcsMjAwNTQ3
+OTMzMiwxODg3NzQwNTgyLDk3NTY4MTQ0OCwxMDk0Nzg1OTE2LD
+Q3NTIxMzE4LC02MDY1MjEzMDAsMTQ5MjQ0NDQ0NiwtMTMyMDI0
+MTQyMF19
 -->
