@@ -228,20 +228,19 @@ transformer模型中将多头注意力HMA计算后的结果输入按位前馈网
 1. 残差链接(residual connection)
 残差链接可以算得上深度学习中的神器，特别适合用于深度神经网络模型的训练。它的基本思想是
 在Transformer中
-  - Help gradient propagated back through stacked decoders and encoders
-  - Residuals carry positional information to higher layers, among other information.
+   - Help gradient propagated back through stacked decoders and encoders
+   - Residuals carry positional information to higher layers, among other information.
 
 2. Layer normalizationlarization
-  Normalization是在机器学习中常用的一种数据预处理方法，主要目的是将数据“白化”Whitening，也就是在统计学中常常提到的“独立，同分布”，它代表影响机器学习算法执行的两个前提条件：
-	  1. 独立	特征之间相关系要低
-	  2. 同分布	所有特征应该具有相同的均值和方差
+  Normalization是在机器学习中常用的一种数据预处理方法，主要目的是将数据“白化”Whitening，也就是在统计学中常常提到的“独立，同分布”：
+	  - 独立	特征之间相关系要低
+	  - 同分布	所有特征应该具有相同的均值和方差
   
    目前在深度学习中最常用的是BN，它是对不同训练数据的同一维度进行normalization，这种方法可以有效缓解深度模型训练中的梯度爆炸、弥散的问题。而在transformer而采用相对冷门的LN，主要原因是BN很难应用在训练数据长度不同的seq2seq任务上，而这正是LN的优势所在，这是因为LN是作用在单个训练数据的不同维度上，因此它能够在一条数据上进行normalization
   
 4. label smoothing
 
-### 超参数（hyperparameter tunning）
-- warn-up learning rate
+5. warn-up learning rate
 > If your data set is highly differentiated, you can suffer from a sort of "early over-fitting". If your shuffled data happens to include a cluster of related, strongly-featured observations, your model's initial training can skew badly toward those features -- or worse, toward incidental features that aren't truly related to the topic at all. Warm-up is a way to reduce the primacy effect of the early training examples. Without it, you may need to run a few extra epochs to get the convergence desired, as the model un-trains those early superstitions.
 > Many models afford this as a command-line option. The learning rate is increased linearly over the warm-up period. If the target learning rate is  `p`  and the warm-up period is  `n`, then the first batch iteration uses  `1*p/n`  for its learning rate; the second uses  `2*p/n`, and so on: iteration  `i`  uses  `i*p/n`, until we hit the nominal rate at iteration  `n`.
 > This means that the first iteration gets only 1/n of the primacy effect. This does a reasonable job of balancing that influence.
@@ -296,7 +295,7 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [TRANSFORMERS FROM SCRATCH](http://www.peterbloem.nl/blog/transformers)
 [Transformer Architecture: The Positional Encoding](https://kazemnejad.com/blog/transformer_architecture_positional_encoding)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE5ODcwNzI1NTgsMTE4NjAzOTM3MCwtNz
+eyJoaXN0b3J5IjpbLTE3NjUwMjkyMDEsMTE4NjAzOTM3MCwtNz
 A3MzA0NDM2LDExMjEzMjY0MzcsMTYwMzUxNTkyOSwzNjk4NzY4
 ODAsLTEyOTg3NDE1MDgsLTExNTMyMzgzMDksMTQzMjk4Mjc4NS
 wxOTE4NjQwODM3LC0yMTAyMDkzOTYxLDc0MzQwMDgxNywyMDA1
