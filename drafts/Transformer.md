@@ -236,7 +236,7 @@ transformer模型中将多头注意力HMA计算后的结果输入按位前馈网
 	  - 独立	特征之间相关系要低
 	  - 同分布	所有特征应该具有相同的均值和方差
   
-   目前在深度学习中最常用的是BN，它是对不同训练数据的同一维度进行normalization，这种方法可以有效缓解深度模型训练中的梯度爆炸、弥散的问题。而在transformer采用了相对冷门的LN，主要原因是BN很难应用在训练数据长度不同的seq2seq任务上，而这正是LN的优势所在，这是因为LN是作用在单个训练数据的不同维度上，因此它能够在一条数据上进行normalization
+   目前在深度学习中最常用的是BN，它是对不同训练数据的同一维度进行normalization，这种方法可以有效缓解深度模型训练中的梯度爆炸、弥散的问题。而在transformer采用了相对冷门的LN，主要原因是BN很难应用在训练数据长度不同的seq2seq任务上，而这正是LN的优势所在，由于LN是作用在单个训练数据的不同维度上，因此它能够在一条数据上进行normalization
   
 4. label smoothing
 
@@ -295,7 +295,7 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [TRANSFORMERS FROM SCRATCH](http://www.peterbloem.nl/blog/transformers)
 [Transformer Architecture: The Positional Encoding](https://kazemnejad.com/blog/transformer_architecture_positional_encoding)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTU2NDQ3MjIzNCwxMTg2MDM5MzcwLC03MD
+eyJoaXN0b3J5IjpbMTcyODM0NzM1MSwxMTg2MDM5MzcwLC03MD
 czMDQ0MzYsMTEyMTMyNjQzNywxNjAzNTE1OTI5LDM2OTg3Njg4
 MCwtMTI5ODc0MTUwOCwtMTE1MzIzODMwOSwxNDMyOTgyNzg1LD
 E5MTg2NDA4MzcsLTIxMDIwOTM5NjEsNzQzNDAwODE3LDIwMDU0
