@@ -241,7 +241,7 @@ transformer模型中将多头注意力HMA计算后的结果输入按位前馈网
 4. 标签平滑归一化label smoothing regularization
 通常我们使用交叉熵来计算预测误差时使用独热（one-hot）编码表示真实值，梯度下降算法为了减小误差会尽量是预测结果接近one-hot编码，也就是说，网络会驱使自身往正确标签和错误标签差值大的方向学习，在训练数据不足以表征所以的样本特征的情况下，这就会导致网络过拟合。
 标签平滑归一化通过"软化"传统的独热one-hot编码，使得在计算误差值时能够有效抑制过拟合现象。它的实现非常简单，通过一个超参数$\epsilon$将原来的0，1分布变成$\epsilon, 1-\epsilon$分布（对于二值分类问题），这样就可以缩短真假值之间的距离，最终起到抑制过拟合的效果。
-5. warn-up learning rate
+5. 学习率热身Learning rate warm up
 > If your data set is highly differentiated, you can suffer from a sort of "early over-fitting". If your shuffled data happens to include a cluster of related, strongly-featured observations, your model's initial training can skew badly toward those features -- or worse, toward incidental features that aren't truly related to the topic at all. Warm-up is a way to reduce the primacy effect of the early training examples. Without it, you may need to run a few extra epochs to get the convergence desired, as the model un-trains those early superstitions.
 > Many models afford this as a command-line option. The learning rate is increased linearly over the warm-up period. If the target learning rate is  `p`  and the warm-up period is  `n`, then the first batch iteration uses  `1*p/n`  for its learning rate; the second uses  `2*p/n`, and so on: iteration  `i`  uses  `i*p/n`, until we hit the nominal rate at iteration  `n`.
 > This means that the first iteration gets only 1/n of the primacy effect. This does a reasonable job of balancing that influence.
@@ -297,11 +297,11 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [Transformer Architecture: The Positional Encoding](https://kazemnejad.com/blog/transformer_architecture_positional_encoding)
 [When Does Label Smoothing Help?](https://medium.com/@nainaakash012/when-does-label-smoothing-help-89654ec75326)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0MzA5NjM2NTEsMjE0MTM1NDYxNywtNz
-g0NTY5NTIwLC0xMDQ0NzU1Nzk5LC01NjQ2NTMyNTUsLTUzNTUy
-NDQxNCwxNjkwMTEwOTMyLDEwNDU5MTg5MjEsMTcyODM0NzM1MS
-wxMTg2MDM5MzcwLC03MDczMDQ0MzYsMTEyMTMyNjQzNywxNjAz
-NTE1OTI5LDM2OTg3Njg4MCwtMTI5ODc0MTUwOCwtMTE1MzIzOD
-MwOSwxNDMyOTgyNzg1LDE5MTg2NDA4MzcsLTIxMDIwOTM5NjEs
-NzQzNDAwODE3XX0=
+eyJoaXN0b3J5IjpbMTMwNzI0MjI0MiwtMTQzMDk2MzY1MSwyMT
+QxMzU0NjE3LC03ODQ1Njk1MjAsLTEwNDQ3NTU3OTksLTU2NDY1
+MzI1NSwtNTM1NTI0NDE0LDE2OTAxMTA5MzIsMTA0NTkxODkyMS
+wxNzI4MzQ3MzUxLDExODYwMzkzNzAsLTcwNzMwNDQzNiwxMTIx
+MzI2NDM3LDE2MDM1MTU5MjksMzY5ODc2ODgwLC0xMjk4NzQxNT
+A4LC0xMTUzMjM4MzA5LDE0MzI5ODI3ODUsMTkxODY0MDgzNywt
+MjEwMjA5Mzk2MV19
 -->
