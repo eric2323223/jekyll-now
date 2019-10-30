@@ -225,15 +225,14 @@ transformer模型中将多头注意力HMA计算后的结果输入按位前馈网
 
 ## Transformer优化技巧
 由于Transformer属于比较复杂的模型，因此要通过使用一些优化技巧才能进行训练。由于Transformer中运用到的优化技术比较多，我们选择其中比较重要或者是有趣的来进行简单介绍
-### 残差链接(residual connection)
+- 残差链接(residual connection)
 残差链接可以算得上深度学习中的神器，特别适合用于深度神经网络模型的训练。它的基本思想是
 在Transformer中
 - Help gradient propagated back through stacked decoders and encoders
 - Residuals carry positional information to higher layers, among other information.
 
-### 正则化（）Regularization
-- Layer normalization
-  Normalization是在机器学习中常用的一种数据预处理方法，主要目的是将数据“白化”Whitening，也就是在统计学中常常提到的“独立，同分布”，它代表影响机器学习算法执行的两个前提条件：
+
+- Layer normalizationlarization）  Normalization是在机器学习中常用的一种数据预处理方法，主要目的是将数据“白化”Whitening，也就是在统计学中常常提到的“独立，同分布”，它代表影响机器学习算法执行的两个前提条件：
   1. 独立	特征之间相关系要低
   2. 同分布	所有特征应该具有相同的均值和方差
   
@@ -296,11 +295,11 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [TRANSFORMERS FROM SCRATCH](http://www.peterbloem.nl/blog/transformers)
 [Transformer Architecture: The Positional Encoding](https://kazemnejad.com/blog/transformer_architecture_positional_encoding)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1NTg5ODQyNSwxMTg2MDM5MzcwLC03MD
-czMDQ0MzYsMTEyMTMyNjQzNywxNjAzNTE1OTI5LDM2OTg3Njg4
-MCwtMTI5ODc0MTUwOCwtMTE1MzIzODMwOSwxNDMyOTgyNzg1LD
-E5MTg2NDA4MzcsLTIxMDIwOTM5NjEsNzQzNDAwODE3LDIwMDU0
-NzkzMzIsMTg4Nzc0MDU4Miw5NzU2ODE0NDgsMTA5NDc4NTkxNi
-w0NzUyMTMxOCwtNjA2NTIxMzAwLDE0OTI0NDQ0NDYsLTEzMjAy
-NDE0MjBdfQ==
+eyJoaXN0b3J5IjpbLTE1MDY2MTc4NjEsMTE4NjAzOTM3MCwtNz
+A3MzA0NDM2LDExMjEzMjY0MzcsMTYwMzUxNTkyOSwzNjk4NzY4
+ODAsLTEyOTg3NDE1MDgsLTExNTMyMzgzMDksMTQzMjk4Mjc4NS
+wxOTE4NjQwODM3LC0yMTAyMDkzOTYxLDc0MzQwMDgxNywyMDA1
+NDc5MzMyLDE4ODc3NDA1ODIsOTc1NjgxNDQ4LDEwOTQ3ODU5MT
+YsNDc1MjEzMTgsLTYwNjUyMTMwMCwxNDkyNDQ0NDQ2LC0xMzIw
+MjQxNDIwXX0=
 -->
