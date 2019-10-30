@@ -234,7 +234,7 @@ transformer模型中将多头注意力HMA计算后的结果输入按位前馈网
 - dropout
 - layer normalization
 	LN vs. BN
-	
+	> BN 的一个缺点是需要较大的 batchsize 才能合理估训练数据的均值和方差，这导致内存很可能不够用，同时它也很难应用在训练数据长度不同的 RNN 模型上。Layer Normalization (LN) 的一个优势是不需要批训练，在单条数据内部就能归一化。
 - label smoothing
 ### 超参数（hyperparameter tunning）
 - warn-up learning rate
@@ -292,7 +292,7 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [TRANSFORMERS FROM SCRATCH](http://www.peterbloem.nl/blog/transformers)
 [Transformer Architecture: The Positional Encoding](https://kazemnejad.com/blog/transformer_architecture_positional_encoding)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTg1MDc3MTkzMCwtMTI5ODc0MTUwOCwtMT
+eyJoaXN0b3J5IjpbLTU5NjIyMjg5OSwtMTI5ODc0MTUwOCwtMT
 E1MzIzODMwOSwxNDMyOTgyNzg1LDE5MTg2NDA4MzcsLTIxMDIw
 OTM5NjEsNzQzNDAwODE3LDIwMDU0NzkzMzIsMTg4Nzc0MDU4Mi
 w5NzU2ODE0NDgsMTA5NDc4NTkxNiw0NzUyMTMxOCwtNjA2NTIx
