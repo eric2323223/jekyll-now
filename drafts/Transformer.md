@@ -246,6 +246,14 @@ transformer模型中将多头注意力HMA计算后的结果输入按位前馈网
 > Many models afford this as a command-line option. The learning rate is increased linearly over the warm-up period. If the target learning rate is  `p`  and the warm-up period is  `n`, then the first batch iteration uses  `1*p/n`  for its learning rate; the second uses  `2*p/n`, and so on: iteration  `i`  uses  `i*p/n`, until we hit the nominal rate at iteration  `n`.
 > This means that the first iteration gets only 1/n of the primacy effect. This does a reasonable job of balancing that influence.
 > Note that the ramp-up is commonly on the order of one epoch -- but is occasionally longer for particularly skewed data, or shorter for more homogeneous distributions. You may want to adjust, depending on how functionally extreme your batches can become when the shuffling algorithm is applied to the training set.
+> 训练初期由于离目标较远，一般需要选择大的学习率，但是使用过大的学习率容易导致不稳定性。所以可以做一个学习率热身阶段，在开始的时候先使用一个较小的学习率，然后当训练过程稳定的时候再把学习率调回去。比如说在热身阶段，将学习率从0调到初始学习率。举个例子，如果我们准备用m个batches来热身，准备的初始学习率是 ![[公式]](https://www.zhihu.com/equation?tex=%5Ceta) ,然后在每个batch ![[公式]](https://www.zhihu.com/equation?tex=i%2C+1%5Cleq+i%5Cleq+m) ,将每次的学习率设为 ![[公式]](https://www.zhihu.com/equation?tex=i%5Ceta%2Fm)
+
+  
+  
+作者：Slumbers  
+链接：https://zhuanlan.zhihu.com/p/56792817  
+来源：知乎  
+著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
 
 
 ## Transformer的改进和发展
@@ -297,11 +305,11 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [Transformer Architecture: The Positional Encoding](https://kazemnejad.com/blog/transformer_architecture_positional_encoding)
 [When Does Label Smoothing Help?](https://medium.com/@nainaakash012/when-does-label-smoothing-help-89654ec75326)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTc4NDU2OTUyMCwtMTA0NDc1NTc5OSwtNT
-Y0NjUzMjU1LC01MzU1MjQ0MTQsMTY5MDExMDkzMiwxMDQ1OTE4
-OTIxLDE3MjgzNDczNTEsMTE4NjAzOTM3MCwtNzA3MzA0NDM2LD
-ExMjEzMjY0MzcsMTYwMzUxNTkyOSwzNjk4NzY4ODAsLTEyOTg3
-NDE1MDgsLTExNTMyMzgzMDksMTQzMjk4Mjc4NSwxOTE4NjQwOD
-M3LC0yMTAyMDkzOTYxLDc0MzQwMDgxNywyMDA1NDc5MzMyLDE4
-ODc3NDA1ODJdfQ==
+eyJoaXN0b3J5IjpbMjE0MTM1NDYxNywtNzg0NTY5NTIwLC0xMD
+Q0NzU1Nzk5LC01NjQ2NTMyNTUsLTUzNTUyNDQxNCwxNjkwMTEw
+OTMyLDEwNDU5MTg5MjEsMTcyODM0NzM1MSwxMTg2MDM5MzcwLC
+03MDczMDQ0MzYsMTEyMTMyNjQzNywxNjAzNTE1OTI5LDM2OTg3
+Njg4MCwtMTI5ODc0MTUwOCwtMTE1MzIzODMwOSwxNDMyOTgyNz
+g1LDE5MTg2NDA4MzcsLTIxMDIwOTM5NjEsNzQzNDAwODE3LDIw
+MDU0NzkzMzJdfQ==
 -->
