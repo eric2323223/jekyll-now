@@ -236,8 +236,7 @@ transformer模型中将多头注意力HMA计算后的结果输入按位前馈网
   Normalization是在机器学习中常用的一种数据预处理方法，主要目的是将数据“白化”Whitening，也就是在统计学中常常提到的“独立，同分布”，它代表影响机器学习算法执行的两个前提条件：
   1. 独立	特征之间相关系要低
   2. 同分布	所有特征应该具有相同的均值和方差
- 目前在深度学习中最常用的是BN，它是对不同训练数据的同一维度进行normalization，这种方法可以有效缓解深度模型训练中的梯度爆炸、
- 在transformer中没有使用最常见的BN而采用相对冷门的LN的主要原因是BN很难应用在训练数据长度不同的seq2seq任务上，而这正是LN的优势所在，这是因为LN是纵向的进行normalization。。。因此LN能够在一条数据上进行normalization
+ 目前在深度学习中最常用的是BN，它是对不同训练数据的同一维度进行normalization，这种方法可以有效缓解深度模型训练中的梯度爆炸、弥散的问题。而在transformer而采用相对冷门的LN，主要原因是BN很难应用在训练数据长度不同的seq2seq任务上，而这正是LN的优势所在，这是因为LN是作用在单个训练数据的不同维度上，因此它能够在一条数据上进行normalization
 	
 
 - label smoothing
@@ -297,11 +296,11 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [TRANSFORMERS FROM SCRATCH](http://www.peterbloem.nl/blog/transformers)
 [Transformer Architecture: The Positional Encoding](https://kazemnejad.com/blog/transformer_architecture_positional_encoding)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTUwNDE4NzYyLDExMjEzMjY0MzcsMTYwMz
-UxNTkyOSwzNjk4NzY4ODAsLTEyOTg3NDE1MDgsLTExNTMyMzgz
-MDksMTQzMjk4Mjc4NSwxOTE4NjQwODM3LC0yMTAyMDkzOTYxLD
-c0MzQwMDgxNywyMDA1NDc5MzMyLDE4ODc3NDA1ODIsOTc1Njgx
-NDQ4LDEwOTQ3ODU5MTYsNDc1MjEzMTgsLTYwNjUyMTMwMCwxND
-kyNDQ0NDQ2LC0xMzIwMjQxNDIwLDExOTQ5ODk3MjEsMjcwMzg0
-NTAxXX0=
+eyJoaXN0b3J5IjpbLTcwNzMwNDQzNiwxMTIxMzI2NDM3LDE2MD
+M1MTU5MjksMzY5ODc2ODgwLC0xMjk4NzQxNTA4LC0xMTUzMjM4
+MzA5LDE0MzI5ODI3ODUsMTkxODY0MDgzNywtMjEwMjA5Mzk2MS
+w3NDM0MDA4MTcsMjAwNTQ3OTMzMiwxODg3NzQwNTgyLDk3NTY4
+MTQ0OCwxMDk0Nzg1OTE2LDQ3NTIxMzE4LC02MDY1MjEzMDAsMT
+Q5MjQ0NDQ0NiwtMTMyMDI0MTQyMCwxMTk0OTg5NzIxLDI3MDM4
+NDUwMV19
 -->
