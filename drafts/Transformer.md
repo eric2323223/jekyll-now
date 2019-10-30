@@ -230,7 +230,6 @@ transformer模型中将多头注意力HMA计算后的结果输入按位前馈网
 在Transformer中
    - Help gradient propagated back through stacked decoders and encoders
    - Residuals carry positional information to higher layers, among other information.
-
 2. Layer normalization
   Normalization是在机器学习中常用的一种数据预处理方法，为了更有效的运行机器学习算法，需要将原始数据“白化”Whitening，也就是在统计学中常常提到的使数据“独立，同分布”：
 	  - 独立	特征之间相关系要低
@@ -240,7 +239,7 @@ transformer模型中将多头注意力HMA计算后的结果输入按位前馈网
   
 4. 标签平滑归一化label smoothing regularization
 通常我们使用交叉熵来计算预测误差时使用独热（one-hot）编码表示真实值，梯度下降算法为了减小误差会尽量是预测结果接近one-hot编码，也就是说，网络会驱使自身往正确标签和错误标签差值大的方向学习，在训练数据不足以表征所以的样本特征的情况下，这就会导致网络过拟合。
-标签平滑归一化通过"软化"传统的独热one-hot编码，使得在计算误差值时能够有效抑制过拟合现象。它的实现非常简单，通过一个超参数$\epsilon$将原来的0，1分布变成$\epsilon, 1-\epsilon$分布（对于二值分类问题），这样就可以缩短真假值之间的距离，最终起到抑制过拟合的效果。
+标签平滑归一化通过"软化"传统的独热编码，使得在计算误差值时能够有效抑制过拟合现象。它的实现非常简单，通过一个超参数$\epsilon$将原来的0，1分布变成$\epsilon, 1-\epsilon$分布（对于二值分类问题），这样就可以缩短真假值之间的距离，最终起到抑制过拟合的效果。
 5. 学习率热身Learning rate warm up
 > If your data set is highly differentiated, you can suffer from a sort of "early over-fitting". If your shuffled data happens to include a cluster of related, strongly-featured observations, your model's initial training can skew badly toward those features -- or worse, toward incidental features that aren't truly related to the topic at all. Warm-up is a way to reduce the primacy effect of the early training examples. Without it, you may need to run a few extra epochs to get the convergence desired, as the model un-trains those early superstitions.
 > Many models afford this as a command-line option. The learning rate is increased linearly over the warm-up period. If the target learning rate is  `p`  and the warm-up period is  `n`, then the first batch iteration uses  `1*p/n`  for its learning rate; the second uses  `2*p/n`, and so on: iteration  `i`  uses  `i*p/n`, until we hit the nominal rate at iteration  `n`.
@@ -302,11 +301,11 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [Transformer Architecture: The Positional Encoding](https://kazemnejad.com/blog/transformer_architecture_positional_encoding)
 [When Does Label Smoothing Help?](https://medium.com/@nainaakash012/when-does-label-smoothing-help-89654ec75326)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE4OTA1MDA0MywxMzA3MjQyMjQyLC0xND
-MwOTYzNjUxLDIxNDEzNTQ2MTcsLTc4NDU2OTUyMCwtMTA0NDc1
-NTc5OSwtNTY0NjUzMjU1LC01MzU1MjQ0MTQsMTY5MDExMDkzMi
-wxMDQ1OTE4OTIxLDE3MjgzNDczNTEsMTE4NjAzOTM3MCwtNzA3
-MzA0NDM2LDExMjEzMjY0MzcsMTYwMzUxNTkyOSwzNjk4NzY4OD
-AsLTEyOTg3NDE1MDgsLTExNTMyMzgzMDksMTQzMjk4Mjc4NSwx
-OTE4NjQwODM3XX0=
+eyJoaXN0b3J5IjpbLTEzODAwMDgxMzksLTE4OTA1MDA0MywxMz
+A3MjQyMjQyLC0xNDMwOTYzNjUxLDIxNDEzNTQ2MTcsLTc4NDU2
+OTUyMCwtMTA0NDc1NTc5OSwtNTY0NjUzMjU1LC01MzU1MjQ0MT
+QsMTY5MDExMDkzMiwxMDQ1OTE4OTIxLDE3MjgzNDczNTEsMTE4
+NjAzOTM3MCwtNzA3MzA0NDM2LDExMjEzMjY0MzcsMTYwMzUxNT
+kyOSwzNjk4NzY4ODAsLTEyOTg3NDE1MDgsLTExNTMyMzgzMDks
+MTQzMjk4Mjc4NV19
 -->
