@@ -236,6 +236,14 @@ transformer模型中将多头注意力HMA计算后的结果输入按位前馈网
 - layer normalization
 	LN vs. BN
 	> BN 的一个缺点是需要较大的 batchsize 才能合理估训练数据的均值和方差，这导致内存很可能不够用，同时它也很难应用在训练数据长度不同的 RNN 模型上。Layer Normalization (LN) 的一个优势是不需要批训练，在单条数据内部就能归一化。
+	对于  ![[公式]](https://www.zhihu.com/equation?tex=x%5Cin%5Cmathbb%7BR%7D%5E%7BN%5Ctimes+C+%5Ctimes+H+%5Ctimes+W%7D)  > ，LN 对每个样本的 C、H、W 维度上的数据求均值和标准差，保留 N 维度。其均值和标准差公式为：
+
+![[公式]](https://www.zhihu.com/equation?tex=%5Cmu_n%28x%29%3D%5Cfrac%7B1%7D%7BCHW%7D%5Csum_%7Bc%3D1%7D%5EC%5Csum_%7Bh%3D1%7D%5EH%5Csum_%7Bw%3D1%7D%5EWx_%7Bnchw%7D%5Ctag%7B4%7D)
+
+![[公式]](https://www.zhihu.com/equation?tex=%5Csigma_n%28x%29%3D%5Csqrt%7B%5Cfrac%7B1%7D%7BCHW%7D%5Csum_%7Bc%3D1%7D%5EC%5Csum_%7Bh%3D1%7D%5EH%5Csum_%7Bw%3D1%7D%5EW%28x_%7Bnchw%7D-%5Cmu_n%28x%29%29%5E2%2B%5Cepsilon%7D%5Ctag%7B5%7D)
+
+> 继续采用上一节的类比，把一个 batch 的 feature 类比为一摞书。**LN 求均值时，相当于把每一本书的所有字加起来，再除以这本书的字符总数：C**×**H**×**W，即求整本书的“平均字”，求标准差时也是同理。**
+
 - label smoothing
 ### 超参数（hyperparameter tunning）
 - warn-up learning rate
@@ -293,7 +301,7 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [TRANSFORMERS FROM SCRATCH](http://www.peterbloem.nl/blog/transformers)
 [Transformer Architecture: The Positional Encoding](https://kazemnejad.com/blog/transformer_architecture_positional_encoding)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNDQ4ODIzOTMzLC0xMjk4NzQxNTA4LC0xMT
+eyJoaXN0b3J5IjpbMzY5ODc2ODgwLC0xMjk4NzQxNTA4LC0xMT
 UzMjM4MzA5LDE0MzI5ODI3ODUsMTkxODY0MDgzNywtMjEwMjA5
 Mzk2MSw3NDM0MDA4MTcsMjAwNTQ3OTMzMiwxODg3NzQwNTgyLD
 k3NTY4MTQ0OCwxMDk0Nzg1OTE2LDQ3NTIxMzE4LC02MDY1MjEz
