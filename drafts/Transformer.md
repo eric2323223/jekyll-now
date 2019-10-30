@@ -219,13 +219,8 @@ transformer模型中将多头注意力HMA计算后的结果输入按位前馈网
 9. 通过全连接网络转化为目标词典宽度向量
 10. 使用softmax确定输出元素（可能性最大）
 11.  将当前输出元素输入6开始下一个输出元素的计算，直到输出为结束标记符
+
 总结一下，attention是transformer的核心，它具有计算效率高（尤其对于长序列），可并行，容易训练等优势，但是同时也带了一些新问题：比如无序和特征合成能力下降。Transformer针对这些新问题分别提出了解决方案，如使用位置编码生成位置信息，使用多头注意力和按位前馈网络增强特征合成能力。
-
-
-
-
-
-
 
 ## Transformer优化技巧
 由于Transformer的encoder和decoder各自都由若干个encoder/decoder层组成（每个encocer/decoder又由一multihead attention和两层Feed foward network构成），属于比较复杂的模型，因此要通过使用一些优化技巧才能进行训练。
@@ -295,11 +290,11 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [TRANSFORMERS FROM SCRATCH](http://www.peterbloem.nl/blog/transformers)
 [Transformer Architecture: The Positional Encoding](https://kazemnejad.com/blog/transformer_architecture_positional_encoding)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTQzMjk4Mjc4NSwxOTE4NjQwODM3LC0yMT
-AyMDkzOTYxLDc0MzQwMDgxNywyMDA1NDc5MzMyLDE4ODc3NDA1
-ODIsOTc1NjgxNDQ4LDEwOTQ3ODU5MTYsNDc1MjEzMTgsLTYwNj
-UyMTMwMCwxNDkyNDQ0NDQ2LC0xMzIwMjQxNDIwLDExOTQ5ODk3
-MjEsMjcwMzg0NTAxLC0xNzk1NDY4NTYsMTA0MTkzNDA3OSwtMT
-M4NTE1Mjg5MiwtNzU4NjI3MTc4LDcwMzg0MDk1OCwtMTg3MDQ5
-MDY0M119
+eyJoaXN0b3J5IjpbLTExNTMyMzgzMDksMTQzMjk4Mjc4NSwxOT
+E4NjQwODM3LC0yMTAyMDkzOTYxLDc0MzQwMDgxNywyMDA1NDc5
+MzMyLDE4ODc3NDA1ODIsOTc1NjgxNDQ4LDEwOTQ3ODU5MTYsND
+c1MjEzMTgsLTYwNjUyMTMwMCwxNDkyNDQ0NDQ2LC0xMzIwMjQx
+NDIwLDExOTQ5ODk3MjEsMjcwMzg0NTAxLC0xNzk1NDY4NTYsMT
+A0MTkzNDA3OSwtMTM4NTE1Mjg5MiwtNzU4NjI3MTc4LDcwMzg0
+MDk1OF19
 -->
