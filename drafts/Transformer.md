@@ -164,6 +164,11 @@ $$PE_{{pos,2i}}=sin(pos/10000^{2i/d_{model}}) $$
 
 
 $$PE_{(pos, 2i+1)}=cos(pos/10000^{2i/d_{model}})$$
+
+\begin{equation} 
+ f(x)=(x+a)(x+b)
+\end{equation}
+
 ![enter image description here](!%5B%5D%28http://vandergoten.ai/img/attention_is_all_you_need/positional_embedding.png%29)
 计算产生的位置编码是一个与元素具有相同维度的向量，使用相加的方式将位置信息叠加进元素中，如下图所示
 ![enter image description here](https://wikidocs.net/images/page/31379/transformer6_final.PNG)
@@ -294,11 +299,11 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [TRANSFORMERS FROM SCRATCH](http://www.peterbloem.nl/blog/transformers)
 [Transformer Architecture: The Positional Encoding](https://kazemnejad.com/blog/transformer_architecture_positional_encoding)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjA3ODc2NjY0MywtMTI5ODc0MTUwOCwtMT
-E1MzIzODMwOSwxNDMyOTgyNzg1LDE5MTg2NDA4MzcsLTIxMDIw
-OTM5NjEsNzQzNDAwODE3LDIwMDU0NzkzMzIsMTg4Nzc0MDU4Mi
-w5NzU2ODE0NDgsMTA5NDc4NTkxNiw0NzUyMTMxOCwtNjA2NTIx
-MzAwLDE0OTI0NDQ0NDYsLTEzMjAyNDE0MjAsMTE5NDk4OTcyMS
-wyNzAzODQ1MDEsLTE3OTU0Njg1NiwxMDQxOTM0MDc5LC0xMzg1
-MTUyODkyXX0=
+eyJoaXN0b3J5IjpbNjA5NTA2NjkwLC0xMjk4NzQxNTA4LC0xMT
+UzMjM4MzA5LDE0MzI5ODI3ODUsMTkxODY0MDgzNywtMjEwMjA5
+Mzk2MSw3NDM0MDA4MTcsMjAwNTQ3OTMzMiwxODg3NzQwNTgyLD
+k3NTY4MTQ0OCwxMDk0Nzg1OTE2LDQ3NTIxMzE4LC02MDY1MjEz
+MDAsMTQ5MjQ0NDQ0NiwtMTMyMDI0MTQyMCwxMTk0OTg5NzIxLD
+I3MDM4NDUwMSwtMTc5NTQ2ODU2LDEwNDE5MzQwNzksLTEzODUx
+NTI4OTJdfQ==
 -->
