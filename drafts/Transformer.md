@@ -166,7 +166,7 @@ $$PE_{{pos,2i}}=sin(pos/10000^{2i/d_{model}}) $$
 $$PE_{(pos, 2i+1)}=cos(pos/10000^{2i/d_{model}})$$
 
 
-\begin{equation}
+\(\begin{equation}
 \ddot{\underline{\mathbf{r}}} = \frac{\dd{}{^2}\underline{\mathbf{r}}}{\dd{t}^2} = 0
 \end{equation}
 
@@ -300,11 +300,11 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [TRANSFORMERS FROM SCRATCH](http://www.peterbloem.nl/blog/transformers)
 [Transformer Architecture: The Positional Encoding](https://kazemnejad.com/blog/transformer_architecture_positional_encoding)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTYyODc5ODIyMCwtMTI5ODc0MTUwOCwtMT
-E1MzIzODMwOSwxNDMyOTgyNzg1LDE5MTg2NDA4MzcsLTIxMDIw
-OTM5NjEsNzQzNDAwODE3LDIwMDU0NzkzMzIsMTg4Nzc0MDU4Mi
-w5NzU2ODE0NDgsMTA5NDc4NTkxNiw0NzUyMTMxOCwtNjA2NTIx
-MzAwLDE0OTI0NDQ0NDYsLTEzMjAyNDE0MjAsMTE5NDk4OTcyMS
-wyNzAzODQ1MDEsLTE3OTU0Njg1NiwxMDQxOTM0MDc5LC0xMzg1
-MTUyODkyXX0=
+eyJoaXN0b3J5IjpbLTExMzk3ODExMDQsLTEyOTg3NDE1MDgsLT
+ExNTMyMzgzMDksMTQzMjk4Mjc4NSwxOTE4NjQwODM3LC0yMTAy
+MDkzOTYxLDc0MzQwMDgxNywyMDA1NDc5MzMyLDE4ODc3NDA1OD
+IsOTc1NjgxNDQ4LDEwOTQ3ODU5MTYsNDc1MjEzMTgsLTYwNjUy
+MTMwMCwxNDkyNDQ0NDQ2LC0xMzIwMjQxNDIwLDExOTQ5ODk3Mj
+EsMjcwMzg0NTAxLC0xNzk1NDY4NTYsMTA0MTkzNDA3OSwtMTM4
+NTE1Mjg5Ml19
 -->
