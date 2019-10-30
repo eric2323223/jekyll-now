@@ -248,14 +248,6 @@ transformer模型中将多头注意力HMA计算后的结果输入按位前馈网
 > Note that the ramp-up is commonly on the order of one epoch -- but is occasionally longer for particularly skewed data, or shorter for more homogeneous distributions. You may want to adjust, depending on how functionally extreme your batches can become when the shuffling algorithm is applied to the training set.
 > 训练初期由于离目标较远，一般需要选择大的学习率，但是使用过大的学习率容易导致不稳定性。所以可以做一个学习率热身阶段，在开始的时候先使用一个较小的学习率，然后当训练过程稳定的时候再把学习率调回去。比如说在热身阶段，将学习率从0调到初始学习率。举个例子，如果我们准备用m个batches来热身，准备的初始学习率是 ![[公式]](https://www.zhihu.com/equation?tex=%5Ceta) ,然后在每个batch ![[公式]](https://www.zhihu.com/equation?tex=i%2C+1%5Cleq+i%5Cleq+m) ,将每次的学习率设为 ![[公式]](https://www.zhihu.com/equation?tex=i%5Ceta%2Fm)
 
-  
-  
-作者：Slumbers  
-链接：https://zhuanlan.zhihu.com/p/56792817  
-来源：知乎  
-著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
-
-
 ## Transformer的改进和发展
 > ### Transformer 的局限性
 > Transformer 无疑是对基于递归神经网络的 seq2seq 模型的巨大改进。但它也有自身的局限性：
@@ -305,11 +297,11 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [Transformer Architecture: The Positional Encoding](https://kazemnejad.com/blog/transformer_architecture_positional_encoding)
 [When Does Label Smoothing Help?](https://medium.com/@nainaakash012/when-does-label-smoothing-help-89654ec75326)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjE0MTM1NDYxNywtNzg0NTY5NTIwLC0xMD
-Q0NzU1Nzk5LC01NjQ2NTMyNTUsLTUzNTUyNDQxNCwxNjkwMTEw
-OTMyLDEwNDU5MTg5MjEsMTcyODM0NzM1MSwxMTg2MDM5MzcwLC
-03MDczMDQ0MzYsMTEyMTMyNjQzNywxNjAzNTE1OTI5LDM2OTg3
-Njg4MCwtMTI5ODc0MTUwOCwtMTE1MzIzODMwOSwxNDMyOTgyNz
-g1LDE5MTg2NDA4MzcsLTIxMDIwOTM5NjEsNzQzNDAwODE3LDIw
-MDU0NzkzMzJdfQ==
+eyJoaXN0b3J5IjpbLTE0MzA5NjM2NTEsMjE0MTM1NDYxNywtNz
+g0NTY5NTIwLC0xMDQ0NzU1Nzk5LC01NjQ2NTMyNTUsLTUzNTUy
+NDQxNCwxNjkwMTEwOTMyLDEwNDU5MTg5MjEsMTcyODM0NzM1MS
+wxMTg2MDM5MzcwLC03MDczMDQ0MzYsMTEyMTMyNjQzNywxNjAz
+NTE1OTI5LDM2OTg3Njg4MCwtMTI5ODc0MTUwOCwtMTE1MzIzOD
+MwOSwxNDMyOTgyNzg1LDE5MTg2NDA4MzcsLTIxMDIwOTM5NjEs
+NzQzNDAwODE3XX0=
 -->
