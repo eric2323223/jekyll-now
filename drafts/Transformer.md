@@ -224,7 +224,7 @@ transformer模型中将多头注意力HMA计算后的结果输入按位前馈网
 总结一下，attention是transformer的核心，它具有计算效率高（尤其对于长序列），可并行，容易训练等优势，但是同时也带了一些新问题：比如无序和特征合成能力下降。Transformer针对这些新问题分别提出了解决方案，如使用位置编码生成位置信息，使用多头注意力和按位前馈网络增强特征合成能力。
 
 ## Transformer优化技巧
-由于Transformer的encoder和decoder各自都由若干个encoder/decoder层组成（每个encocer/decoder又由一multihead attention和两层Feed foward network构成），属于比较复杂的模型，因此要通过使用一些优化技巧才能进行训练。
+由于Transformer属于比较复杂的模型，因此要通过使用一些优化技巧才能进行训练。下面我们介绍其中biji
 ### 残差链接(residual connection)
 残差链接可以算得上深度学习中的神器，特别适合用于深度神经网络模型的训练。它的基本思想是
 在Transformer中
@@ -238,8 +238,7 @@ transformer模型中将多头注意力HMA计算后的结果输入按位前馈网
   2. 同分布	所有特征应该具有相同的均值和方差
   
   目前在深度学习中最常用的是BN，它是对不同训练数据的同一维度进行normalization，这种方法可以有效缓解深度模型训练中的梯度爆炸、弥散的问题。而在transformer而采用相对冷门的LN，主要原因是BN很难应用在训练数据长度不同的seq2seq任务上，而这正是LN的优势所在，这是因为LN是作用在单个训练数据的不同维度上，因此它能够在一条数据上进行normalization
-	
-
+  
 - label smoothing
 ### 超参数（hyperparameter tunning）
 - warn-up learning rate
@@ -297,11 +296,11 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [TRANSFORMERS FROM SCRATCH](http://www.peterbloem.nl/blog/transformers)
 [Transformer Architecture: The Positional Encoding](https://kazemnejad.com/blog/transformer_architecture_positional_encoding)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTE4NjAzOTM3MCwtNzA3MzA0NDM2LDExMj
-EzMjY0MzcsMTYwMzUxNTkyOSwzNjk4NzY4ODAsLTEyOTg3NDE1
-MDgsLTExNTMyMzgzMDksMTQzMjk4Mjc4NSwxOTE4NjQwODM3LC
-0yMTAyMDkzOTYxLDc0MzQwMDgxNywyMDA1NDc5MzMyLDE4ODc3
-NDA1ODIsOTc1NjgxNDQ4LDEwOTQ3ODU5MTYsNDc1MjEzMTgsLT
-YwNjUyMTMwMCwxNDkyNDQ0NDQ2LC0xMzIwMjQxNDIwLDExOTQ5
-ODk3MjFdfQ==
+eyJoaXN0b3J5IjpbLTM0MjM0OTQ0OCwxMTg2MDM5MzcwLC03MD
+czMDQ0MzYsMTEyMTMyNjQzNywxNjAzNTE1OTI5LDM2OTg3Njg4
+MCwtMTI5ODc0MTUwOCwtMTE1MzIzODMwOSwxNDMyOTgyNzg1LD
+E5MTg2NDA4MzcsLTIxMDIwOTM5NjEsNzQzNDAwODE3LDIwMDU0
+NzkzMzIsMTg4Nzc0MDU4Miw5NzU2ODE0NDgsMTA5NDc4NTkxNi
+w0NzUyMTMxOCwtNjA2NTIxMzAwLDE0OTI0NDQ0NDYsLTEzMjAy
+NDE0MjBdfQ==
 -->
