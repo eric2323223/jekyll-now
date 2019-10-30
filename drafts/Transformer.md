@@ -295,12 +295,13 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [Details Need More Attention: Transformer 没有被提到的细节](https://zhuanlan.zhihu.com/p/79987949)
 [TRANSFORMERS FROM SCRATCH](http://www.peterbloem.nl/blog/transformers)
 [Transformer Architecture: The Positional Encoding](https://kazemnejad.com/blog/transformer_architecture_positional_encoding)
+[When Does Label Smoothing Help?](https://medium.com/@nainaakash012/when-does-label-smoothing-help-89654ec75326)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEwNDQ3NTU3OTksLTU2NDY1MzI1NSwtNT
-M1NTI0NDE0LDE2OTAxMTA5MzIsMTA0NTkxODkyMSwxNzI4MzQ3
-MzUxLDExODYwMzkzNzAsLTcwNzMwNDQzNiwxMTIxMzI2NDM3LD
-E2MDM1MTU5MjksMzY5ODc2ODgwLC0xMjk4NzQxNTA4LC0xMTUz
-MjM4MzA5LDE0MzI5ODI3ODUsMTkxODY0MDgzNywtMjEwMjA5Mz
-k2MSw3NDM0MDA4MTcsMjAwNTQ3OTMzMiwxODg3NzQwNTgyLDk3
-NTY4MTQ0OF19
+eyJoaXN0b3J5IjpbLTc4NDU2OTUyMCwtMTA0NDc1NTc5OSwtNT
+Y0NjUzMjU1LC01MzU1MjQ0MTQsMTY5MDExMDkzMiwxMDQ1OTE4
+OTIxLDE3MjgzNDczNTEsMTE4NjAzOTM3MCwtNzA3MzA0NDM2LD
+ExMjEzMjY0MzcsMTYwMzUxNTkyOSwzNjk4NzY4ODAsLTEyOTg3
+NDE1MDgsLTExNTMyMzgzMDksMTQzMjk4Mjc4NSwxOTE4NjQwOD
+M3LC0yMTAyMDkzOTYxLDc0MzQwMDgxNywyMDA1NDc5MzMyLDE4
+ODc3NDA1ODJdfQ==
 -->
