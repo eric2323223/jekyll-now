@@ -232,7 +232,6 @@ transformer模型中将多头注意力HMA计算后的结果输入按位前馈网
 - Residuals carry positional information to higher layers, among other information.
 
 ### regularization
-- dropout
 - layer normalization
 	LN vs. BN
 	> 独立同分布的数据可以简化常规机器学习模型的训练、提升机器学习模型的预测能力，已经是一个共识。
@@ -306,7 +305,7 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [TRANSFORMERS FROM SCRATCH](http://www.peterbloem.nl/blog/transformers)
 [Transformer Architecture: The Positional Encoding](https://kazemnejad.com/blog/transformer_architecture_positional_encoding)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzA0MDU0NDQ1LDM2OTg3Njg4MCwtMTI5OD
+eyJoaXN0b3J5IjpbLTQzMzIwNjA1LDM2OTg3Njg4MCwtMTI5OD
 c0MTUwOCwtMTE1MzIzODMwOSwxNDMyOTgyNzg1LDE5MTg2NDA4
 MzcsLTIxMDIwOTM5NjEsNzQzNDAwODE3LDIwMDU0NzkzMzIsMT
 g4Nzc0MDU4Miw5NzU2ODE0NDgsMTA5NDc4NTkxNiw0NzUyMTMx
