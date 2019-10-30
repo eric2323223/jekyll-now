@@ -233,7 +233,7 @@ transformer模型中将多头注意力HMA计算后的结果输入按位前馈网
 
 ### regularization
 - Layer normalization
-  LN和BN都是在深度学习zho
+  LN和BN都是在深度学习中常用的一种数据预处理方法，主要目的是将数据
 	LN vs. BN
 	> 独立同分布的数据可以简化常规机器学习模型的训练、提升机器学习模型的预测能力，已经是一个共识。
 因此，在把数据喂给机器学习模型之前，“**白化（whitening）**”是一个重要的数据预处理步骤。白化一般包含两个目的：（1）_去除特征之间的相关性_  —> 独立；
@@ -304,11 +304,11 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [TRANSFORMERS FROM SCRATCH](http://www.peterbloem.nl/blog/transformers)
 [Transformer Architecture: The Positional Encoding](https://kazemnejad.com/blog/transformer_architecture_positional_encoding)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTA1OTYwNTk0NywxNjAzNTE1OTI5LDM2OT
-g3Njg4MCwtMTI5ODc0MTUwOCwtMTE1MzIzODMwOSwxNDMyOTgy
-Nzg1LDE5MTg2NDA4MzcsLTIxMDIwOTM5NjEsNzQzNDAwODE3LD
-IwMDU0NzkzMzIsMTg4Nzc0MDU4Miw5NzU2ODE0NDgsMTA5NDc4
-NTkxNiw0NzUyMTMxOCwtNjA2NTIxMzAwLDE0OTI0NDQ0NDYsLT
-EzMjAyNDE0MjAsMTE5NDk4OTcyMSwyNzAzODQ1MDEsLTE3OTU0
-Njg1Nl19
+eyJoaXN0b3J5IjpbNDY3MzE3MTMxLDE2MDM1MTU5MjksMzY5OD
+c2ODgwLC0xMjk4NzQxNTA4LC0xMTUzMjM4MzA5LDE0MzI5ODI3
+ODUsMTkxODY0MDgzNywtMjEwMjA5Mzk2MSw3NDM0MDA4MTcsMj
+AwNTQ3OTMzMiwxODg3NzQwNTgyLDk3NTY4MTQ0OCwxMDk0Nzg1
+OTE2LDQ3NTIxMzE4LC02MDY1MjEzMDAsMTQ5MjQ0NDQ0NiwtMT
+MyMDI0MTQyMCwxMTk0OTg5NzIxLDI3MDM4NDUwMSwtMTc5NTQ2
+ODU2XX0=
 -->
