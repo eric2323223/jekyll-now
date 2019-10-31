@@ -226,7 +226,7 @@ transformer模型中将多头注意力HMA计算后的结果输入按位前馈网
 ## Transformer优化技巧
 由于Transformer属于比较复杂的模型，因此要通过使用一些优化技巧才能进行训练。由于Transformer中运用到的优化技术比较多，我们选择其中比较重要或者是有趣的来进行简单介绍
 1. 残差链接(residual connection)
-网络越深，表达能力越强，所以zai
+网络越深，表达能力越强，所以在需要表达复杂特征（如NLP，图像）的场景中网络正在变得越来越深
 残差链接可以算得上深度学习中的神器，适合用于深度神经网络模型的训练。它的基本思想是
 >总而言之，ResNet的核心思想是提供层之间的快捷连接，这使得训练非常深的网络来获得最大的表示能力变得安全，而无需担心降级问题（即深层引入的学习困难）。
 在Transformer中
@@ -303,11 +303,11 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [Transformer Architecture: The Positional Encoding](https://kazemnejad.com/blog/transformer_architecture_positional_encoding)
 [When Does Label Smoothing Help?](https://medium.com/@nainaakash012/when-does-label-smoothing-help-89654ec75326)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODM0MjcxMjMxLDg2NzY5NzUwOSwyMDU5Nz
-g0OTAxLDE0MTIzNDUzNTQsLTE4OTA1MDA0MywxMzA3MjQyMjQy
-LC0xNDMwOTYzNjUxLDIxNDEzNTQ2MTcsLTc4NDU2OTUyMCwtMT
-A0NDc1NTc5OSwtNTY0NjUzMjU1LC01MzU1MjQ0MTQsMTY5MDEx
-MDkzMiwxMDQ1OTE4OTIxLDE3MjgzNDczNTEsMTE4NjAzOTM3MC
-wtNzA3MzA0NDM2LDExMjEzMjY0MzcsMTYwMzUxNTkyOSwzNjk4
-NzY4ODBdfQ==
+eyJoaXN0b3J5IjpbLTgxNTk4MjQwNCw4Njc2OTc1MDksMjA1OT
+c4NDkwMSwxNDEyMzQ1MzU0LC0xODkwNTAwNDMsMTMwNzI0MjI0
+MiwtMTQzMDk2MzY1MSwyMTQxMzU0NjE3LC03ODQ1Njk1MjAsLT
+EwNDQ3NTU3OTksLTU2NDY1MzI1NSwtNTM1NTI0NDE0LDE2OTAx
+MTA5MzIsMTA0NTkxODkyMSwxNzI4MzQ3MzUxLDExODYwMzkzNz
+AsLTcwNzMwNDQzNiwxMTIxMzI2NDM3LDE2MDM1MTU5MjksMzY5
+ODc2ODgwXX0=
 -->
