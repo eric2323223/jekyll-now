@@ -228,7 +228,7 @@ transformer模型中将多头注意力HMA计算后的结果输入按位前馈网
 1. 残差链接(residual connection)
 网络越深，表达能力越强，所以在需要表达复杂特征（如NLP，图像）的场景中使用的神经网络正在变得越来越深，但是深层网络带来了两个问题：1. 梯度弥散、爆炸，使得模型难以训练 2. 网络退化，使得深度网络的性能下降。
 ![enter image description here](https://www.google.com/url?sa=i&source=images&cd=&ved=2ahUKEwjAjajGrMblAhXB26QKHZfDBS0QjRx6BAgBEAQ&url=https://www.researchgate.net/figure/A-cell-from-the-Residual-Network-architecture-The-identity-connection-helps-to-reduce_fig4_326786331&psig=AOvVaw1UDvQHXM-esMFq1rcNP7FV&ust=1572606118049027)
-残差链接用一个简单的办法巧妙的解决了这两个问题，就是将两个不相邻网络层直接连接（短接）让输出能直接输入到。这样梯度gradient可以跨越中间层直接传递，避免经过中间层时梯度被收缩（或放大）从而解决梯度弥散的问题；另一方面，实验证明使用残差连接也可以有效防止网络退化（当激活函数为RELU时）。
+残差链接用一个简单的办法巧妙的解决了这两个问题，就是将两个不相邻网络层直接连接（短接）。这样梯度gradient可以跨越中间层直接传递，避免经过中间层时梯度被多次缩放从而解决梯度弥散的问题；另一方面，实验证明使用残差连接也可以有效防止网络退化（当激活函数为RELU时）。
 在transformer中的每一个编码层（解码层）都使用残差连接
 >总而言之，ResNet的核心思想是提供层之间的快捷连接，这使得训练非常深的网络来获得最大的表示能力变得安全，而无需担心降级问题（即深层引入的学习困难）。
 在Transformer中
@@ -305,11 +305,11 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [Transformer Architecture: The Positional Encoding](https://kazemnejad.com/blog/transformer_architecture_positional_encoding)
 [When Does Label Smoothing Help?](https://medium.com/@nainaakash012/when-does-label-smoothing-help-89654ec75326)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTM5NjcxNjQ0LDEzNzc4NDc4NTIsLTEyNT
-c1MDU3MTcsOTE2MDMyODU1LC04MTU5ODI0MDQsODY3Njk3NTA5
-LDIwNTk3ODQ5MDEsMTQxMjM0NTM1NCwtMTg5MDUwMDQzLDEzMD
-cyNDIyNDIsLTE0MzA5NjM2NTEsMjE0MTM1NDYxNywtNzg0NTY5
-NTIwLC0xMDQ0NzU1Nzk5LC01NjQ2NTMyNTUsLTUzNTUyNDQxNC
-wxNjkwMTEwOTMyLDEwNDU5MTg5MjEsMTcyODM0NzM1MSwxMTg2
-MDM5MzcwXX0=
+eyJoaXN0b3J5IjpbLTMxNTA2ODUzMSwxMzc3ODQ3ODUyLC0xMj
+U3NTA1NzE3LDkxNjAzMjg1NSwtODE1OTgyNDA0LDg2NzY5NzUw
+OSwyMDU5Nzg0OTAxLDE0MTIzNDUzNTQsLTE4OTA1MDA0MywxMz
+A3MjQyMjQyLC0xNDMwOTYzNjUxLDIxNDEzNTQ2MTcsLTc4NDU2
+OTUyMCwtMTA0NDc1NTc5OSwtNTY0NjUzMjU1LC01MzU1MjQ0MT
+QsMTY5MDExMDkzMiwxMDQ1OTE4OTIxLDE3MjgzNDczNTEsMTE4
+NjAzOTM3MF19
 -->
