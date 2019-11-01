@@ -231,11 +231,8 @@ transformer模型中将多头注意力HMA计算后的结果输入按位前馈网
 残差链接用一个简单的办法巧妙的解决了这两个问题，就是将两个不相邻网络层直接连接（短接）。这样梯度gradient可以跨越中间层直接传递，避免经过中间层时梯度被多次缩放导致梯度弥散（爆炸）的问题；另一方面，实验证明当使用RELU作为激活函数时，残差连接也以有效防止网络退化。原因。。。
 在transformer中的每一个编码层（解码层）都使用了残差连接来分别短接多头注意力和按位前馈网络，这样做一来解决了梯度问题，同时还能帮助位置信息顺利传递到高层去
 3. Layer normalization
-  Normalization是在机器学习中常用的一种数据预处理方法，为了更有效的运行机器学习算法，需要将原始数据“白化”Whitening，也就是在统计学中常常提到的使数据“独立，同分布”：
-	  - 独立	特征之间相关系要低
-	  - 同分布	所有特征应该具有相同的均值和方差
-  
-   目前在深度学习中最常用的是BN，它是对不同训练数据的同一维度进行normalization，这种方法可以有效缓解深度模型训练中的梯度爆炸、弥散的问题。而在transformer采用了相对冷门的LN，主要原因是BN很难应用在训练数据长度不同的seq2seq任务上，而这正是LN的优势所在，由于LN是作用在单个训练数据的不同维度上，因此它能够在一条数据上进行normalization
+  Normalization是在机器学习中常用的一种数据预处理方法，为了更有效的运行机器学习算法，需要将原始数据“白化”Whitening，也就是在统计学中常常提到的使数据“独立，同分布”。
+   目前在深度学习中最常用的是BN，它是对不同训练数据的同一维度进行normalization，这种方法可以有效缓解深度模型训练中的*梯度爆炸、弥散的问题*。而在transformer采用了相对冷门的LN，主要原因是BN很难应用在训练数据长度不同的seq2seq任务上，而这正是LN的优势所在，由于LN是作用在单个训练数据的不同维度上，因此它能够在一条数据上进行normalization
   
 4. 标签平滑归一化label smoothing regularization
 通常我们使用交叉熵来计算预测误差时使用独热（one-hot）编码表示真实值，梯度下降算法为了减小误差会尽量使预测结果接近one-hot编码，也就是说，网络会驱使自身往正确标签和错误标签差值大的方向学习，在训练数据不足以表征所以的样本特征的情况下，预测结果的置信度过高会导致网络过拟合。
@@ -301,7 +298,7 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [Transformer Architecture: The Positional Encoding](https://kazemnejad.com/blog/transformer_architecture_positional_encoding)
 [When Does Label Smoothing Help?](https://medium.com/@nainaakash012/when-does-label-smoothing-help-89654ec75326)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEwMzE5NzE4NDYsLTY3ODYwOTY2LC0xOT
+eyJoaXN0b3J5IjpbLTEzNjgxMDI4MjgsLTY3ODYwOTY2LC0xOT
 AzNjI4NDE3LDEzNzc4NDc4NTIsLTEyNTc1MDU3MTcsOTE2MDMy
 ODU1LC04MTU5ODI0MDQsODY3Njk3NTA5LDIwNTk3ODQ5MDEsMT
 QxMjM0NTM1NCwtMTg5MDUwMDQzLDEzMDcyNDIyNDIsLTE0MzA5
