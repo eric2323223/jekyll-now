@@ -229,11 +229,7 @@ transformer模型中将多头注意力HMA计算后的结果输入按位前馈网
 网络越深，表达能力越强，所以在需要表达复杂特征（如NLP，图像）的场景中使用的神经网络正在变得越来越深，但是深层网络带来了两个问题：1. 梯度弥散、爆炸，使得模型难以训练 2. 网络退化degradation，当网络深度到达一定后，性能不但不会随着深度的增加，反而会由性能下降。
 ![enter image description here](https://www.google.com/url?sa=i&source=images&cd=&ved=2ahUKEwjAjajGrMblAhXB26QKHZfDBS0QjRx6BAgBEAQ&url=https://www.researchgate.net/figure/A-cell-from-the-Residual-Network-architecture-The-identity-connection-helps-to-reduce_fig4_326786331&psig=AOvVaw1UDvQHXM-esMFq1rcNP7FV&ust=1572606118049027)
 残差链接用一个简单的办法巧妙的解决了这两个问题，就是将两个不相邻网络层直接连接（短接）。这样梯度gradient可以跨越中间层直接传递，避免经过中间层时梯度被多次缩放导致梯度弥散（爆炸）的问题；另一方面，实验证明当使用RELU作为激活函数时，残差连接也以有效防止网络退化。原因。。。
-在transformer中的每一个编码层（解码层）都使用了残差连接来分别短接多头注意力和按位前馈网络，这样做一来解决了梯度问题，而且还能帮助位置信息顺利传递到高层
->总而言之，ResNet的核心思想是提供层之间的快捷连接，这使得训练非常深的网络来获得最大的表示能力变得安全，而无需担心降级问题（即深层引入的学习困难）。
-在Transformer中
-   - Help gradient propagated back through stacked decoders and encoders
-   - Residuals carry positional information to higher layers, among other information.
+在transformer中的每一个编码层（解码层）都使用了残差连接来分别短接多头注意力和按位前馈网络，这样做一来解决了梯度问题，同时还能帮助位置信息顺利传递到高层去
 3. Layer normalization
   Normalization是在机器学习中常用的一种数据预处理方法，为了更有效的运行机器学习算法，需要将原始数据“白化”Whitening，也就是在统计学中常常提到的使数据“独立，同分布”：
 	  - 独立	特征之间相关系要低
@@ -305,11 +301,11 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [Transformer Architecture: The Positional Encoding](https://kazemnejad.com/blog/transformer_architecture_positional_encoding)
 [When Does Label Smoothing Help?](https://medium.com/@nainaakash012/when-does-label-smoothing-help-89654ec75326)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjEyNjM5Nzc4LC02Nzg2MDk2NiwtMTkwMz
-YyODQxNywxMzc3ODQ3ODUyLC0xMjU3NTA1NzE3LDkxNjAzMjg1
-NSwtODE1OTgyNDA0LDg2NzY5NzUwOSwyMDU5Nzg0OTAxLDE0MT
-IzNDUzNTQsLTE4OTA1MDA0MywxMzA3MjQyMjQyLC0xNDMwOTYz
-NjUxLDIxNDEzNTQ2MTcsLTc4NDU2OTUyMCwtMTA0NDc1NTc5OS
-wtNTY0NjUzMjU1LC01MzU1MjQ0MTQsMTY5MDExMDkzMiwxMDQ1
-OTE4OTIxXX0=
+eyJoaXN0b3J5IjpbLTEwMzE5NzE4NDYsLTY3ODYwOTY2LC0xOT
+AzNjI4NDE3LDEzNzc4NDc4NTIsLTEyNTc1MDU3MTcsOTE2MDMy
+ODU1LC04MTU5ODI0MDQsODY3Njk3NTA5LDIwNTk3ODQ5MDEsMT
+QxMjM0NTM1NCwtMTg5MDUwMDQzLDEzMDcyNDIyNDIsLTE0MzA5
+NjM2NTEsMjE0MTM1NDYxNywtNzg0NTY5NTIwLC0xMDQ0NzU1Nz
+k5LC01NjQ2NTMyNTUsLTUzNTUyNDQxNCwxNjkwMTEwOTMyLDEw
+NDU5MTg5MjFdfQ==
 -->
