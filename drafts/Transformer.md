@@ -2,7 +2,7 @@
 在自然语言处理(NLP)领域，RNN一直是被最广泛使用的深度机器学习模型，近年来CNN也逐渐被用于进行。。。然而这两类模型都有一些难以克服的问题，Transformer就是为了解决这些问题的新型模型，并取得了非常好的效果，大有取代RNN在NLP领域的统治地位的趋势，本文我们就来一步步的分析和理解这个优秀的seq2seq模型。
 
 ## 序列到序列问题（seq2seq）
-seq2seq问题是使用机器学习（特别是深度学习）解决的一类常见问题，例如机器翻译，语态分析，摘要生成等自然语言处理问题（NLP），还包括_______。 这类问题的最大特点是输入（或输出）以序列的形式出现，序列的长度可变，任务一般要求分析整个序列才能产生输出————————。使用机器学习（深度学习）处理seq2seq任务，通常使用编码器-解码器（encoder-decoder）架构，编码器负责将输入序列转换为包含整个序列所有特征的yuyi编码（context vector），解码器则对这个内部表示进行解释。
+seq2seq问题是使用机器学习（特别是深度学习）解决的一类常见问题，例如机器翻译，语态分析，摘要生成等自然语言处理问题（NLP），还包括_______。 这类问题的最大特点是输入（或输出）以序列的形式出现，序列的长度可变，任务一般要求分析整个序列才能产生输出————————。使用机器学习（深度学习）处理seq2seq任务，通常使用编码器-解码器（encoder-decoder）架构，编码器负责将输入序列转换为包含整个序列所有特征的序列编码（context vector），解码器则对这个内部表示进行解释。
 ![enter image description here](http://img4.imgtn.bdimg.com/it/u=2205974229,984434429&fm=214&gp=0.jpg)
 传统上有两类模型：
 - RNN
@@ -299,11 +299,11 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [Transformer Architecture: The Positional Encoding](https://kazemnejad.com/blog/transformer_architecture_positional_encoding)
 [When Does Label Smoothing Help?](https://medium.com/@nainaakash012/when-does-label-smoothing-help-89654ec75326)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbOTcwMjgzMzcyLC0xMzY4MTAyODI4LC02Nz
-g2MDk2NiwtMTkwMzYyODQxNywxMzc3ODQ3ODUyLC0xMjU3NTA1
-NzE3LDkxNjAzMjg1NSwtODE1OTgyNDA0LDg2NzY5NzUwOSwyMD
-U5Nzg0OTAxLDE0MTIzNDUzNTQsLTE4OTA1MDA0MywxMzA3MjQy
-MjQyLC0xNDMwOTYzNjUxLDIxNDEzNTQ2MTcsLTc4NDU2OTUyMC
-wtMTA0NDc1NTc5OSwtNTY0NjUzMjU1LC01MzU1MjQ0MTQsMTY5
-MDExMDkzMl19
+eyJoaXN0b3J5IjpbLTExNzQ4OTY4MCw5NzAyODMzNzIsLTEzNj
+gxMDI4MjgsLTY3ODYwOTY2LC0xOTAzNjI4NDE3LDEzNzc4NDc4
+NTIsLTEyNTc1MDU3MTcsOTE2MDMyODU1LC04MTU5ODI0MDQsOD
+Y3Njk3NTA5LDIwNTk3ODQ5MDEsMTQxMjM0NTM1NCwtMTg5MDUw
+MDQzLDEzMDcyNDIyNDIsLTE0MzA5NjM2NTEsMjE0MTM1NDYxNy
+wtNzg0NTY5NTIwLC0xMDQ0NzU1Nzk5LC01NjQ2NTMyNTUsLTUz
+NTUyNDQxNF19
 -->
