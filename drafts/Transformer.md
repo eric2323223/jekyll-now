@@ -16,34 +16,7 @@ CNN可以同时处理序列中的所有元素，但是由于卷积运算的视�
 
 总结一下，上述两种模型对于长序列的处理都有缺陷。RNN需要一步一步的处理输入序列，CNN做出了一些改进但并不彻底。从根本上的解决这个问题需要能一次性的处理全部输入（无论序列有多长），并且能根据这些输入信息分析序列元素之间的关联关系。人们从自己快速浏览的方式获得了启发，当人们需要快速浏览的时候不会按输入的顺序依次阅读，而会直接跳到需要关注的的部分，这种根据需要在不同位置跳跃的阅读方式和注意力相关，因此这种新的序列处理方式被命名为注意力机制
 ![enter image description here](https://www.visionears.nl/images/babyproduct.jpg)
-Attention机制来自于人类视觉注意力机制。人们视觉在感知东西的时候一般不会是一个场景从到头看到尾每次全部都看，而往往是根据需求观察注意特定的一部分。而且当人们发现一个场景经常在某部分出现自己想观察的东西时，人们会进行学习在将来再出现类似场景时把注意力放到该部分上。
-> Attention is a method for aggregating a set of vectors  vivi  into just one vector, often via a lookup vector  uu. Usually,  vivi  is either the inputs to the model or the hidden states of previous time-steps, or the hidden states one level down (in the case of stacked LSTMs).
-> 
-> The result is often called the context vector  cc, since it contains
-> the  _context_  relevant to the current time-step.
-> 
-> This additional context vector  cc  is then fed into the RNN/LSTM as
-> well (it can be simply concatenated with the original input).
-> Therefore, the context can be used to help with prediction.
-> 
-> The simplest way to do this is to compute probability vector 
-> p=softmax(VTu)p=softmax(VTu)  and  c=∑ipivic=∑ipiviwhere  VV  is the
-> concatenation of all previous  vivi. A common lookup vector  uu  is
-> the current hidden state  htht.
-> 
-> There are many variations on this, and you can make things as
-> complicated as you want. For example, instead using  vTiuviTu  as the
-> logits, one may choose  f(vi,u)f(vi,u)  instead, where  ff  is an
-> arbitrary neural network.
-> 
-> A common attention mechanism for sequence-to-sequence models uses 
-> p=softmax(qTtanh(W1vi+W2ht))p=softmax(qTtanh⁡(W1vi+W2ht)), where  vv 
-> are the hidden states of the encoder, and  htht  is the current hidden
-> state of the decoder.  qq  and both  WWs are parameters.
-> 
-> Some papers which show off different variations on the attention idea:
-> 
-> [Pointer Networks](https://arxiv.org/abs/1506.03134)  use attention to
+s/1506.03134)  use attention to
 > reference inputs in order to solve combinatorial optimization
 > problems.
 > 
@@ -299,7 +272,7 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [Transformer Architecture: The Positional Encoding](https://kazemnejad.com/blog/transformer_architecture_positional_encoding)
 [When Does Label Smoothing Help?](https://medium.com/@nainaakash012/when-does-label-smoothing-help-89654ec75326)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjAzNzU1MDQxMyw5ODQ0MjA0MTQsMTczNz
+eyJoaXN0b3J5IjpbMTQyNjkyNDYzMyw5ODQ0MjA0MTQsMTczNz
 Y4NjMwNSwxMjYzMTkwODI4LC0xMTc0ODk2ODAsOTcwMjgzMzcy
 LC0xMzY4MTAyODI4LC02Nzg2MDk2NiwtMTkwMzYyODQxNywxMz
 c3ODQ3ODUyLC0xMjU3NTA1NzE3LDkxNjAzMjg1NSwtODE1OTgy
