@@ -16,20 +16,6 @@ CNN可以同时处理序列中的所有元素，但是由于卷积运算的视�
 
 总结一下，上述两种模型对于长序列的处理都有缺陷。RNN需要一步一步的处理输入序列，CNN做出了一些改进但并不彻底。从根本上的解决这个问题需要能一次性的处理全部输入（无论序列有多长），并且能根据这些输入信息分析序列元素之间的关联关系。人们从自己快速浏览的方式获得了启发，当人们需要快速浏览的时候不会按输入的顺序依次阅读，而会直接跳到需要关注的的部分，这种根据需要在不同位置跳跃的阅读方式和注意力相关，因此这种新的序列处理方式被命名为注意力机制
 ![enter image description here](https://www.visionears.nl/images/babyproduct.jpg)
-s/1506.03134)  use attention to
-> reference inputs in order to solve combinatorial optimization
-> problems.
-> 
-> [Recurrent Entity Networks](https://arxiv.org/abs/1612.03969) 
-> maintain separate memory states for different entities
-> (people/objects) while reading text, and update the correct memory
-> state usingf ttention attention.
-> 
-> [Transformer](https://arxiv.org/pdf/1706.03762.pdf)  models also make
-> extensive use of attention. Their formulation of attention is slightly
-> more general and also involves key vectors  kiki: the attention
-> weights  pp  are actually computed between the keys and the lookup,
-> and the context is then constructed with the  vivi.
 
 ## 注意力机制（attention mechanism）
 基于组成整体的各个元素在整体中发挥的作用不相同这样一个事实，注意力机制的基本思想是通对使用不同的权重组合各个序列元素来描述整体，~~这就好像我们在快速观察人物的照片时会把注意力更多的放在人物的面部而几乎不会留意背景中的某一棵小草~~。从数学运算来讲，注意力机制是对组成整体的元素加权求和的过程。权值的计算方法由任务目标来确定，这就好像。。。对。。。的关注程度不一致是一个道理。在机器翻译（一种常见的seq2seq任务）中一种常见的权值衡量方法是计算序列元素（单词）之间的相似度。
@@ -272,7 +258,7 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [Transformer Architecture: The Positional Encoding](https://kazemnejad.com/blog/transformer_architecture_positional_encoding)
 [When Does Label Smoothing Help?](https://medium.com/@nainaakash012/when-does-label-smoothing-help-89654ec75326)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTQyNjkyNDYzMyw5ODQ0MjA0MTQsMTczNz
+eyJoaXN0b3J5IjpbMTA3NDcxODYzNyw5ODQ0MjA0MTQsMTczNz
 Y4NjMwNSwxMjYzMTkwODI4LC0xMTc0ODk2ODAsOTcwMjgzMzcy
 LC0xMzY4MTAyODI4LC02Nzg2MDk2NiwtMTkwMzYyODQxNywxMz
 c3ODQ3ODUyLC0xMjU3NTA1NzE3LDkxNjAzMjg1NSwtODE1OTgy
