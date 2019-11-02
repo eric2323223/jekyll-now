@@ -4,14 +4,14 @@
 ## 序列到序列问题（seq2seq）
 seq2seq问题是使用机器学习（特别是深度学习）解决的一类常见问题，例如机器翻译，语态分析，摘要生成等自然语言处理问题（NLP），还包括_______。 这类问题的最大特点是输入（或输出）以序列的形式出现，序列的长度可变，任务一般要求分析整个序列才能产生输出————————。使用机器学习（深度学习）处理seq2seq任务，通常使用编码器-解码器（encoder-decoder）架构，编码器负责将输入序列转换为包含整个序列所有特征的**序列编码**（context vector），解码器则对这个内部表示进行解释。
 ![enter image description here](https://docs.google.com/drawings/d/e/2PACX-1vQpyCEO_5eiGEU2qG6G7ktzfhyjPRtMxtvGluMcFmeuEFoQYEMHIzAtvWAIH67v5uL1k5AKHS6Xn4cA/pub?w=680&h=255)
-传统上有两类模型适合进行：
-- RNN
+传统上有两类模型适合处理seq2seq任务：
+1. RNN
 处理seq2seq问题的传统方法是使用RNN模型，RNN能够保存状态，它将输入分为多步，依靠每步输入和上一步的状态更新当前的状态（和输出），通过重复这种步骤在读入所有序列元素后得到序列编码。
 从模型结构上来说特别适合序列到序列问题。问题有三点
-1. 长序列的训练很困难，梯度下降算法在长序列的训练中容易发生梯度爆炸或梯度消失，虽然LSTM可以改善这个问题，但是在较长序列的训练中仍然无法完全避免。
-2. 只能顺序执行，训练速度很慢
-3. 固定的存储不适合长序列
-- CNN
+  - 长序列的训练很困难，梯度下降算法在长序列的训练中容易发生梯度爆炸或梯度消失，虽然LSTM可以改善这个问题，但是在较长序列的训练中仍然无法完全避免。
+  - 只能顺序执行，训练速度很慢
+  - 固定的存储不适合长序列
+2. CNN
 CNN可以同时处理序列中的所有元素，但是由于卷积运算的视域有限，一次卷积操作只能处理有限的元素，对于较长的序列无法处理。解决办法是通过堆叠多层卷积操作来逐渐增加视域，但这样会不可避免的导致信息丢失，并且仍没有完全解决长序列输入的处理问题，————————而且增加了模型的复杂度，使运算变慢，这和初衷不符。
 
 总结一下，上述两种模型对于长序列的处理都有缺陷。RNN需要一步一步的处理输入序列，CNN做出了一些改进但并不彻底。从根本上的解决这个问题需要能一次性的处理全部输入（无论序列有多长），并且能根据这些输入信息分析序列元素之间的关联关系。人们从自己快速浏览的方式获得了启发，当人们需要快速浏览的时候不会按输入的顺序逐步阅读，而会直接跳到需要关注的的部分，这种根据需要在不同位置跳跃的阅读方式和注意力相关，因此这种新的序列处理方式被命名为注意力机制
@@ -299,11 +299,11 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [Transformer Architecture: The Positional Encoding](https://kazemnejad.com/blog/transformer_architecture_positional_encoding)
 [When Does Label Smoothing Help?](https://medium.com/@nainaakash012/when-does-label-smoothing-help-89654ec75326)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwNzUxMTE0NTMsMTI2MzE5MDgyOCwtMT
-E3NDg5NjgwLDk3MDI4MzM3MiwtMTM2ODEwMjgyOCwtNjc4NjA5
-NjYsLTE5MDM2Mjg0MTcsMTM3Nzg0Nzg1MiwtMTI1NzUwNTcxNy
-w5MTYwMzI4NTUsLTgxNTk4MjQwNCw4Njc2OTc1MDksMjA1OTc4
-NDkwMSwxNDEyMzQ1MzU0LC0xODkwNTAwNDMsMTMwNzI0MjI0Mi
-wtMTQzMDk2MzY1MSwyMTQxMzU0NjE3LC03ODQ1Njk1MjAsLTEw
-NDQ3NTU3OTldfQ==
+eyJoaXN0b3J5IjpbMTczMTM1MjcxMiwxMjYzMTkwODI4LC0xMT
+c0ODk2ODAsOTcwMjgzMzcyLC0xMzY4MTAyODI4LC02Nzg2MDk2
+NiwtMTkwMzYyODQxNywxMzc3ODQ3ODUyLC0xMjU3NTA1NzE3LD
+kxNjAzMjg1NSwtODE1OTgyNDA0LDg2NzY5NzUwOSwyMDU5Nzg0
+OTAxLDE0MTIzNDUzNTQsLTE4OTA1MDA0MywxMzA3MjQyMjQyLC
+0xNDMwOTYzNjUxLDIxNDEzNTQ2MTcsLTc4NDU2OTUyMCwtMTA0
+NDc1NTc5OV19
 -->
