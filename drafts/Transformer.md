@@ -7,7 +7,7 @@
 传统上有两类深度模型适合处理时序任务：
 1. 循环神经网络RNN
 处理时序问题的传统方法是使用RNN模型，RNN能够保存状态，它将输入分为多步，依靠每步输入和上一步的状态更新当前的状态（和输出），通过重复这种步骤在读入所有序列元素后得到序列编码。
-从模型结构上来说特别适合序列到序列问题。问题有三点
+从模型结构上来说比较适合序列到序列问题。问题有三点
 	  - 长序列的训练很困难，梯度下降算法在长序列的训练中容易发生梯度爆炸或梯度消失，虽然LSTM可以改善这个问题，但是在较长序列的训练中仍然无法完全避免。
 	  - 只能顺序执行，训练速度很慢
 	  - 固定的存储不适合长序列
@@ -299,11 +299,11 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [Transformer Architecture: The Positional Encoding](https://kazemnejad.com/blog/transformer_architecture_positional_encoding)
 [When Does Label Smoothing Help?](https://medium.com/@nainaakash012/when-does-label-smoothing-help-89654ec75326)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTczNzY4NjMwNSwxMjYzMTkwODI4LC0xMT
-c0ODk2ODAsOTcwMjgzMzcyLC0xMzY4MTAyODI4LC02Nzg2MDk2
-NiwtMTkwMzYyODQxNywxMzc3ODQ3ODUyLC0xMjU3NTA1NzE3LD
-kxNjAzMjg1NSwtODE1OTgyNDA0LDg2NzY5NzUwOSwyMDU5Nzg0
-OTAxLDE0MTIzNDUzNTQsLTE4OTA1MDA0MywxMzA3MjQyMjQyLC
-0xNDMwOTYzNjUxLDIxNDEzNTQ2MTcsLTc4NDU2OTUyMCwtMTA0
-NDc1NTc5OV19
+eyJoaXN0b3J5IjpbOTg0NDIwNDE0LDE3Mzc2ODYzMDUsMTI2Mz
+E5MDgyOCwtMTE3NDg5NjgwLDk3MDI4MzM3MiwtMTM2ODEwMjgy
+OCwtNjc4NjA5NjYsLTE5MDM2Mjg0MTcsMTM3Nzg0Nzg1MiwtMT
+I1NzUwNTcxNyw5MTYwMzI4NTUsLTgxNTk4MjQwNCw4Njc2OTc1
+MDksMjA1OTc4NDkwMSwxNDEyMzQ1MzU0LC0xODkwNTAwNDMsMT
+MwNzI0MjI0MiwtMTQzMDk2MzY1MSwyMTQxMzU0NjE3LC03ODQ1
+Njk1MjBdfQ==
 -->
