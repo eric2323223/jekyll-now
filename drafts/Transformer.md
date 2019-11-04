@@ -203,7 +203,7 @@ transformer模型中将多头注意力HMA计算后的结果输入按位前馈网
  所以可以做一个学习率热身阶段，在开始的时候先使用一个较小的学习率，然后当训练过程稳定的时候再把学习率调回去。在预热期间，学习率呈线性增加。如果目标学习率是$p$，预热期是$n$，则第一批迭代将$p/n$用作学习率；第二个使用$2*p/n$，依此类推：迭代$i$使用$i*p/n$，直到我们在迭代$n$达到学习率$p$。
 
 ## Transformer的改进和发展
-Transformer取得巨大成功引起关注，学术和产业界都在尝试对他进行改进，
+Transformer取得巨大成功引起关注，学术和产业界都在尝试在实现和理论层面对他进行改进
 - Transformer-XL
 虽然理论上Transformer可以处理任意长度的输入，但在实际的运用中资源是有限的，因此Transformers目前使用固定长度的上下文来实现，即将一个长的文本序列截断为几百个字符的固定长度片段，然后分别处理每个片段。这种操作会使相邻块之间的上下文丢失  ，导致上下文碎片化。Transformer-XL基于以下两种关键技术解决了这个问题：
 	- 片段级递归机制(segment-level recurrence mechanism) 
@@ -248,7 +248,7 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [Transformer Architecture: The Positional Encoding](https://kazemnejad.com/blog/transformer_architecture_positional_encoding)
 [When Does Label Smoothing Help?](https://medium.com/@nainaakash012/when-does-label-smoothing-help-89654ec75326)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTUwODU3NDY2OCwxNTcwMzIxMTI4LC0yMT
+eyJoaXN0b3J5IjpbMjEyMjQ4ODM4MiwxNTcwMzIxMTI4LC0yMT
 Q2NTg0NDQ0LDIzODgxODI3MywtMTA2NjEwNTk0NCwtMTEzOTQ4
 Mzk3OCwtMTI0ODA5NzMwOSwtMTc3OTE4NzU1MiwtNTk2NjA1OD
 Q4LDExNzQ4NDczNTgsMzM2Nzg3OTE3LDE4MTIyNTAzOTksLTY5
