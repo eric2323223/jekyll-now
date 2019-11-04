@@ -217,8 +217,7 @@ transformer模型中将多头注意力HMA计算后的结果输入按位前馈网
 	主要解决上下文碎片化问题，使上下文信息现在可以跨片段边界流动。做法是将上一块segment的memory传到下一块的同样位置
 	![enter image description here](https://miro.medium.com/max/2152/1*Y3rxi7H06Ir-q_W2Q2zSIg.png)
 	- 相对位置编码方案(relative positional encoding scheme)。
-	The paper presents a new positional encoding that is part of each attention module, as opposed to encoding position only before the first layer, and is based on the relative distance between tokens and not their absolute position.
-
+	由于transformer上的位置编码方案会导致不同块的，提出了一种新的位置编码，它是每个关注模块的一部分，与仅在第一层之前的位置编码不同，它基于标记之间的相对距离而不是它们的绝对位置。
 
 - 并行化
 Despite not having any explicit recurrency, implicitly the model is built as an autoregressive one. It implies that in order to generate an output (both while training or during inference), the model needs to compute previous outputs, which is extremely costly, for the whole net has to be run for every output. That’s the main idea to overcome in a recent paper by researchers at [_Salesforce Research_](https://einstein.ai/research/non-autoregressive-neural-machine-translation) and the University of Hong Kong, who tried to make the whole process parallelizable[23](https://ricardokleinklein.github.io/2017/11/16/Attention-is-all-you-need.html#fn:23). Their proposal is to compute _fertilities_ for every input word in the sequence, and use it instead of previous outputs in order to compute the current output. This is summarized in the figure below.
@@ -256,11 +255,11 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [Transformer Architecture: The Positional Encoding](https://kazemnejad.com/blog/transformer_architecture_positional_encoding)
 [When Does Label Smoothing Help?](https://medium.com/@nainaakash012/when-does-label-smoothing-help-89654ec75326)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTQ3MTAzMDUxOSwyMzg4MTgyNzMsLTEwNj
-YxMDU5NDQsLTExMzk0ODM5NzgsLTEyNDgwOTczMDksLTE3Nzkx
-ODc1NTIsLTU5NjYwNTg0OCwxMTc0ODQ3MzU4LDMzNjc4NzkxNy
-wxODEyMjUwMzk5LC02OTgyODg0MTcsMzYwOTYwOTgxLDkyMzU4
-NjI0MiwxMDc0NzE4NjM3LDk4NDQyMDQxNCwxNzM3Njg2MzA1LD
-EyNjMxOTA4MjgsLTExNzQ4OTY4MCw5NzAyODMzNzIsLTEzNjgx
-MDI4MjhdfQ==
+eyJoaXN0b3J5IjpbLTE2NjUxNjE4NjEsMjM4ODE4MjczLC0xMD
+Y2MTA1OTQ0LC0xMTM5NDgzOTc4LC0xMjQ4MDk3MzA5LC0xNzc5
+MTg3NTUyLC01OTY2MDU4NDgsMTE3NDg0NzM1OCwzMzY3ODc5MT
+csMTgxMjI1MDM5OSwtNjk4Mjg4NDE3LDM2MDk2MDk4MSw5MjM1
+ODYyNDIsMTA3NDcxODYzNyw5ODQ0MjA0MTQsMTczNzY4NjMwNS
+wxMjYzMTkwODI4LC0xMTc0ODk2ODAsOTcwMjgzMzcyLC0xMzY4
+MTAyODI4XX0=
 -->
