@@ -202,7 +202,7 @@ transformer模型中将多头注意力HMA计算后的结果输入按位前馈网
 >
 >这意味着第一次迭代仅获得素数效应的1 / n。这样可以合理地平衡这种影响。
 >
-> 训练初期由于离目标较远，一般需要选择大的学习率，但如果训练数据集具有高度的差异性则使用过大的学习率可能导致不稳定性。这是由于如果初始化后的数据恰好包含某一部分特征，则模型的初始训练可能会严重偏向于这些特征，或者更糟的是，偏向于与主题完全不相关的附带功能。
+> 训练初期由于离目标较远，一般需要选择大的学习率，但如果训练数据集具有高度的差异性则使用过大的学习率可能导致不稳定性。这是由于如果初始化后的数据恰好只包含一部分特征，则模型的初始训练可能会严重偏向于这些特征，这会是其他特征的学习更加困难。
 > 所以可以做一个学习率热身阶段，在开始的时候先使用一个较小的学习率，然后当训练过程稳定的时候再把学习率调回去。在预热期间，学习率呈线性增加。如果目标学习率是“ p”，预热期是“ n”，则第一批迭代将“ 1 * p / n”用作学习率；第二个使用“ 2 * p / n”，依此类推：迭代“ i”使用“ i * p / n”，直到我们在迭代“ n”达到标称利率。
 
 ## Transformer的改进和发展
@@ -254,7 +254,7 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [Transformer Architecture: The Positional Encoding](https://kazemnejad.com/blog/transformer_architecture_positional_encoding)
 [When Does Label Smoothing Help?](https://medium.com/@nainaakash012/when-does-label-smoothing-help-89654ec75326)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTU1ODI4MjkwNSwtNjk4Mjg4NDE3LDM2MD
+eyJoaXN0b3J5IjpbMTk2NzU0MDYxNSwtNjk4Mjg4NDE3LDM2MD
 k2MDk4MSw5MjM1ODYyNDIsMTA3NDcxODYzNyw5ODQ0MjA0MTQs
 MTczNzY4NjMwNSwxMjYzMTkwODI4LC0xMTc0ODk2ODAsOTcwMj
 gzMzcyLC0xMzY4MTAyODI4LC02Nzg2MDk2NiwtMTkwMzYyODQx
