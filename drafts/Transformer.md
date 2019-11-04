@@ -217,7 +217,7 @@ transformer模型中将多头注意力HMA计算后的结果输入按位前馈网
 	主要解决上下文碎片化问题，使上下文信息现在可以跨片段边界流动。做法是将上一块segment的memory传到下一块的同样位置
 	![enter image description here](https://miro.medium.com/max/2152/1*Y3rxi7H06Ir-q_W2Q2zSIg.png)
 	- 相对位置编码方案(relative positional encoding scheme)。
-	
+	The paper presents a new positional encoding that is part of each attention module, as opposed to encoding position only before the first layer, and is based on the relative distance between tokens and not their absolute position.
 
 
 - 并行化
@@ -256,11 +256,11 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [Transformer Architecture: The Positional Encoding](https://kazemnejad.com/blog/transformer_architecture_positional_encoding)
 [When Does Label Smoothing Help?](https://medium.com/@nainaakash012/when-does-label-smoothing-help-89654ec75326)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjM4ODE4MjczLC0xMDY2MTA1OTQ0LC0xMT
-M5NDgzOTc4LC0xMjQ4MDk3MzA5LC0xNzc5MTg3NTUyLC01OTY2
-MDU4NDgsMTE3NDg0NzM1OCwzMzY3ODc5MTcsMTgxMjI1MDM5OS
-wtNjk4Mjg4NDE3LDM2MDk2MDk4MSw5MjM1ODYyNDIsMTA3NDcx
-ODYzNyw5ODQ0MjA0MTQsMTczNzY4NjMwNSwxMjYzMTkwODI4LC
-0xMTc0ODk2ODAsOTcwMjgzMzcyLC0xMzY4MTAyODI4LC02Nzg2
-MDk2Nl19
+eyJoaXN0b3J5IjpbMTQ3MTAzMDUxOSwyMzg4MTgyNzMsLTEwNj
+YxMDU5NDQsLTExMzk0ODM5NzgsLTEyNDgwOTczMDksLTE3Nzkx
+ODc1NTIsLTU5NjYwNTg0OCwxMTc0ODQ3MzU4LDMzNjc4NzkxNy
+wxODEyMjUwMzk5LC02OTgyODg0MTcsMzYwOTYwOTgxLDkyMzU4
+NjI0MiwxMDc0NzE4NjM3LDk4NDQyMDQxNCwxNzM3Njg2MzA1LD
+EyNjMxOTA4MjgsLTExNzQ4OTY4MCw5NzAyODMzNzIsLTEzNjgx
+MDI4MjhdfQ==
 -->
