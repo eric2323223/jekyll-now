@@ -213,7 +213,7 @@ transformer模型中将多头注意力HMA计算后的结果输入按位前馈网
 - Transformer-XL
 如果有无限的存储和计算资源，一个无条件的Transformer就能解决这个问题。但在实际的运用中资源是有限的，因此Transformers目前使用固定长度的上下文来实现，即将一个长的文本序列截断为几百个字符的固定长度片段，然后分别处理每个片段。这种操作。。。。。  ，导致上下文碎片化。Transformer-XL使用两种关键技术解决了这个问题：
 	- 片段级递归机制(segment-level recurrence mechanism) 
-	主要解决上下文碎片化问题，使上下文信息现在可以跨片段边界流动。做法是将上一块segment的memory传到下一块的tongyang
+	主要解决上下文碎片化问题，使上下文信息现在可以跨片段边界流动。做法是将上一块segment的memory传到下一块的同样位置
 	![enter image description here](https://miro.medium.com/max/2152/1*Y3rxi7H06Ir-q_W2Q2zSIg.png)
 	- 相对位置编码方案(relative positional encoding scheme)。
 	
@@ -255,11 +255,11 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [Transformer Architecture: The Positional Encoding](https://kazemnejad.com/blog/transformer_architecture_positional_encoding)
 [When Does Label Smoothing Help?](https://medium.com/@nainaakash012/when-does-label-smoothing-help-89654ec75326)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTgwNzkxODI4NywtMTEzOTQ4Mzk3OCwtMT
-I0ODA5NzMwOSwtMTc3OTE4NzU1MiwtNTk2NjA1ODQ4LDExNzQ4
-NDczNTgsMzM2Nzg3OTE3LDE4MTIyNTAzOTksLTY5ODI4ODQxNy
-wzNjA5NjA5ODEsOTIzNTg2MjQyLDEwNzQ3MTg2MzcsOTg0NDIw
-NDE0LDE3Mzc2ODYzMDUsMTI2MzE5MDgyOCwtMTE3NDg5NjgwLD
-k3MDI4MzM3MiwtMTM2ODEwMjgyOCwtNjc4NjA5NjYsLTE5MDM2
-Mjg0MTddfQ==
+eyJoaXN0b3J5IjpbLTEwNjYxMDU5NDQsLTExMzk0ODM5NzgsLT
+EyNDgwOTczMDksLTE3NzkxODc1NTIsLTU5NjYwNTg0OCwxMTc0
+ODQ3MzU4LDMzNjc4NzkxNywxODEyMjUwMzk5LC02OTgyODg0MT
+csMzYwOTYwOTgxLDkyMzU4NjI0MiwxMDc0NzE4NjM3LDk4NDQy
+MDQxNCwxNzM3Njg2MzA1LDEyNjMxOTA4MjgsLTExNzQ4OTY4MC
+w5NzAyODMzNzIsLTEzNjgxMDI4MjgsLTY3ODYwOTY2LC0xOTAz
+NjI4NDE3XX0=
 -->
