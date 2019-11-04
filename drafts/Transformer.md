@@ -205,9 +205,9 @@ transformer模型中将多头注意力HMA计算后的结果输入按位前馈网
 ## Transformer的改进和发展
 Transformer取得巨大成功引起关注，学术和产业界都在尝试在实现和理论层面对他进行改进
 - Transformer-XL
-虽然理论上Transformer可以处理任意长度的输入，但在实际的运用中资源是有限的，因此Transformers目前使用固定长度的上下文来实现，即将一个长的文本序列截断为几百个字符的固定长度片段，然后分别处理每个片段。这种操作会使相邻块之间的上下文丢失  ，导致上下文碎片化。Transformer-XL基于以下两种关键技术解决了这个问题：
+虽然理论上Transformer可以处理任意长度的输入，但在实际的运用中资源是有限的，因此Transformers目前使用固定长度的上下文来实现，即将一个长的文本序列截断为几百个字符的固定长度片段，然后分别处理每个片段。这种操作会使相邻块片段之间的上下文丢失  ，导致上下文碎片化。Transformer-XL基于以下两种关键技术解决了这个问题：
 	- 片段级递归机制(segment-level recurrence mechanism) 
-	主要解决上下文碎片化问题，使上下文信息现在可以跨片段边界流动。思路是将上一块segment的memory传到下一块的同样位置
+	主要解决上下文碎片化问题，使上下文信息现在可以跨片段边界流动。思路是将上一片段segment的memory传到下一片段的同样位置
 	![enter image description here](https://miro.medium.com/max/2152/1*Y3rxi7H06Ir-q_W2Q2zSIg.png)
 	- 相对位置编码方案(relative positional encoding scheme)。
 	由于transformer上的位置编码方案会导致不同块的元素具有相同的位置编码，因此提出了一种新的位置编码，它是每个attention模块的一部分，基于元素之间的相对距离而不是它们的绝对位置。
@@ -248,11 +248,11 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [Transformer Architecture: The Positional Encoding](https://kazemnejad.com/blog/transformer_architecture_positional_encoding)
 [When Does Label Smoothing Help?](https://medium.com/@nainaakash012/when-does-label-smoothing-help-89654ec75326)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODQ1MzI3MDcxLDIxMjI0ODgzODIsMTU3MD
-MyMTEyOCwtMjE0NjU4NDQ0NCwyMzg4MTgyNzMsLTEwNjYxMDU5
-NDQsLTExMzk0ODM5NzgsLTEyNDgwOTczMDksLTE3NzkxODc1NT
-IsLTU5NjYwNTg0OCwxMTc0ODQ3MzU4LDMzNjc4NzkxNywxODEy
-MjUwMzk5LC02OTgyODg0MTcsMzYwOTYwOTgxLDkyMzU4NjI0Mi
-wxMDc0NzE4NjM3LDk4NDQyMDQxNCwxNzM3Njg2MzA1LDEyNjMx
-OTA4MjhdfQ==
+eyJoaXN0b3J5IjpbMjExNjcwNzY4Myw4NDUzMjcwNzEsMjEyMj
+Q4ODM4MiwxNTcwMzIxMTI4LC0yMTQ2NTg0NDQ0LDIzODgxODI3
+MywtMTA2NjEwNTk0NCwtMTEzOTQ4Mzk3OCwtMTI0ODA5NzMwOS
+wtMTc3OTE4NzU1MiwtNTk2NjA1ODQ4LDExNzQ4NDczNTgsMzM2
+Nzg3OTE3LDE4MTIyNTAzOTksLTY5ODI4ODQxNywzNjA5NjA5OD
+EsOTIzNTg2MjQyLDEwNzQ3MTg2MzcsOTg0NDIwNDE0LDE3Mzc2
+ODYzMDVdfQ==
 -->
