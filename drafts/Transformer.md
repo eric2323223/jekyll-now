@@ -203,11 +203,6 @@ transformer模型中将多头注意力HMA计算后的结果输入按位前馈网
 > This means that the first iteration gets only 1/n of the primacy effect. This does a reasonable job of balancing that influence.
 > Note that the ramp-up is commonly on the order of one epoch -- but is occasionally longer for particularly skewed data, or shorter for more homogeneous distributions. You may want to adjust, depending on how functionally extreme your batches can become when the shuffling algorithm is applied to the training set.
 > 训练初期由于离目标较远，一般需要选择大的学习率，但是使用过大的学习率容易导致不稳定性。所以可以做一个学习率热身阶段，在开始的时候先使用一个较小的学习率，然后当训练过程稳定的时候再把学习率调回去。比如说在热身阶段，将学习率从0调到初始学习率。举个例子，如果我们准备用m个batches来热身，准备的初始学习率是 ![[公式]](https://www.zhihu.com/equation?tex=%5Ceta) ,然后在每个batch ![[公式]](https://www.zhihu.com/equation?tex=i%2C+1%5Cleq+i%5Cleq+m) ,将每次的学习率设为 ![[公式]](https://www.zhihu.com/equation?tex=i%5Ceta%2Fm)
-> If your data set is highly differentiated, you can suffer from a sort of "early over-fitting". If your shuffled data happens to include a cluster of related, strongly-featured observations, your model's initial training can skew badly toward those features -- or worse, toward incidental features that aren't truly related to the topic at all.
-Warm-up is a way to reduce the primacy effect of the early training examples. Without it, you may need to run a few extra epochs to get the convergence desired, as the model un-trains those early superstitions.
-Many models afford this as a command-line option. The learning rate is increased linearly over the warm-up period. If the target learning rate is  `p`  and the warm-up period is  `n`, then the first batch iteration uses  `1*p/n`  for its learning rate; the second uses  `2*p/n`, and so on: iteration  `i`  uses  `i*p/n`, until we hit the nominal rate at iteration  `n`.
-This means that the first iteration gets only 1/n of the primacy effect. This does a reasonable job of balancing that influence.
-Note that the ramp-up is commonly on the order of one epoch -- but is occasionally longer for particularly skewed data, or shorter for more homogeneous distributions. You may want to adjust, depending on how functionally extreme your batches can become when the shuffling algorithm is applied to the training set.
 
 ## Transformer的改进和发展
 > ### Transformer 的局限性
@@ -258,11 +253,11 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [Transformer Architecture: The Positional Encoding](https://kazemnejad.com/blog/transformer_architecture_positional_encoding)
 [When Does Label Smoothing Help?](https://medium.com/@nainaakash012/when-does-label-smoothing-help-89654ec75326)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE4NTExMTUzOTksOTIzNTg2MjQyLDEwNz
-Q3MTg2MzcsOTg0NDIwNDE0LDE3Mzc2ODYzMDUsMTI2MzE5MDgy
-OCwtMTE3NDg5NjgwLDk3MDI4MzM3MiwtMTM2ODEwMjgyOCwtNj
-c4NjA5NjYsLTE5MDM2Mjg0MTcsMTM3Nzg0Nzg1MiwtMTI1NzUw
-NTcxNyw5MTYwMzI4NTUsLTgxNTk4MjQwNCw4Njc2OTc1MDksMj
-A1OTc4NDkwMSwxNDEyMzQ1MzU0LC0xODkwNTAwNDMsMTMwNzI0
-MjI0Ml19
+eyJoaXN0b3J5IjpbMTA0Njc4Mjc5OCw5MjM1ODYyNDIsMTA3ND
+cxODYzNyw5ODQ0MjA0MTQsMTczNzY4NjMwNSwxMjYzMTkwODI4
+LC0xMTc0ODk2ODAsOTcwMjgzMzcyLC0xMzY4MTAyODI4LC02Nz
+g2MDk2NiwtMTkwMzYyODQxNywxMzc3ODQ3ODUyLC0xMjU3NTA1
+NzE3LDkxNjAzMjg1NSwtODE1OTgyNDA0LDg2NzY5NzUwOSwyMD
+U5Nzg0OTAxLDE0MTIzNDUzNTQsLTE4OTA1MDA0MywxMzA3MjQy
+MjQyXX0=
 -->
