@@ -199,11 +199,11 @@ transformer模型中将多头注意力HMA计算后的结果输入按位前馈网
 标签平滑归一化通过"软化"传统的独热编码，使得训练时能够有效抑制过拟合现象。它的实现非常简单，通过一个超参数$\epsilon \in(0,1)$将原来的0，1分布变成$\epsilon, 1-\epsilon$分布（对于二值分类问题），这样就缩短了真假值之间的距离，最终起到抑制过拟合的效果。
 5. 学习率热身Learning rate warm up
 >如果您的数据集具有高度差异性，则可能会遭受“早期过度拟合”的困扰。热身是减少早期训练示例的首要效应的一种方法。如果没有它，您可能需要运行一些额外的时间来获得所需的收敛性，因为该模型将不训练那些早期的迷信。
->在预热期间，学习率呈线性增加。如果目标学习率是“ p”，预热期是“ n”，则第一批迭代将“ 1 * p / n”用作学习率；第二个使用“ 2 * p / n”，依此类推：迭代“ i”使用“ i * p / n”，直到我们在迭代“ n”达到标称利率。
+>
 >这意味着第一次迭代仅获得素数效应的1 / n。这样可以合理地平衡这种影响。
 >
 > 训练初期由于离目标较远，一般需要选择大的学习率，但是使用过大的学习率可能导致不稳定性。这是由于如果初始化后的数据恰好包含一组相关的，功能强大的观察结果，则模型的初始训练可能会严重偏向于这些功能，或者更糟的是，偏向于与主题完全不相关的附带功能。
-> 所以可以做一个学习率热身阶段，在开始的时候先使用一个较小的学习率，然后当训练过程稳定的时候再把学习率调回去。比如说在热身阶段，将学习率从0调到初始学习率。举个例子，如果我们准备用m个batches来热身，准备的初始学习率是 ![[公式]](https://www.zhihu.com/equation?tex=%5Ceta) ,然后在每个batch ![[公式]](https://www.zhihu.com/equation?tex=i%2C+1%5Cleq+i%5Cleq+m) ,将每次的学习率设为 ![[公式]](https://www.zhihu.com/equation?tex=i%5Ceta%2Fm)
+> 所以可以做一个学习率热身阶段，在开始的时候先使用一个较小的学习率，然后当训练过程稳定的时候再把学习率调回去。在预热期间，学习率呈线性增加。如果目标学习率是“ p”，预热期是“ n”，则第一批迭代将“ 1 * p / n”用作学习率；第二个使用“ 2 * p / n”，依此类推：迭代“ i”使用“ i * p / n”，直到我们在迭代“ n”达到标称利率。
 
 ## Transformer的改进和发展
 > ### Transformer 的局限性
@@ -254,11 +254,11 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [Transformer Architecture: The Positional Encoding](https://kazemnejad.com/blog/transformer_architecture_positional_encoding)
 [When Does Label Smoothing Help?](https://medium.com/@nainaakash012/when-does-label-smoothing-help-89654ec75326)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjc4NzU4ODQ2LDM2MDk2MDk4MSw5MjM1OD
-YyNDIsMTA3NDcxODYzNyw5ODQ0MjA0MTQsMTczNzY4NjMwNSwx
-MjYzMTkwODI4LC0xMTc0ODk2ODAsOTcwMjgzMzcyLC0xMzY4MT
-AyODI4LC02Nzg2MDk2NiwtMTkwMzYyODQxNywxMzc3ODQ3ODUy
-LC0xMjU3NTA1NzE3LDkxNjAzMjg1NSwtODE1OTgyNDA0LDg2Nz
-Y5NzUwOSwyMDU5Nzg0OTAxLDE0MTIzNDUzNTQsLTE4OTA1MDA0
-M119
+eyJoaXN0b3J5IjpbLTE2NzM3Mjk1NjQsMzYwOTYwOTgxLDkyMz
+U4NjI0MiwxMDc0NzE4NjM3LDk4NDQyMDQxNCwxNzM3Njg2MzA1
+LDEyNjMxOTA4MjgsLTExNzQ4OTY4MCw5NzAyODMzNzIsLTEzNj
+gxMDI4MjgsLTY3ODYwOTY2LC0xOTAzNjI4NDE3LDEzNzc4NDc4
+NTIsLTEyNTc1MDU3MTcsOTE2MDMyODU1LC04MTU5ODI0MDQsOD
+Y3Njk3NTA5LDIwNTk3ODQ5MDEsMTQxMjM0NTM1NCwtMTg5MDUw
+MDQzXX0=
 -->
