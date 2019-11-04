@@ -216,9 +216,8 @@ transformer模型中将多头注意力HMA计算后的结果输入按位前馈网
 
 -   算法**无法建模超过固定长度的依赖关**系。
 -   被分割的片段通常不考虑句子边界，导致**上下文碎片化**，从而导致优化低效。即使是对于长期依赖性不显著的较短序列，这也是特别麻烦的。
+Transformer-XL由两种技术组成：**片段级递归机制**(segment-level recurrence mechanism)和**相对位置编码方案**(relative positional encoding scheme)。
 
-为了解决这些限制，谷歌提出一个新的架构：**Transformer-XL**，它使自然语言的理解超出了固定长度的上下文。
-ransformer 架构可以学习长期依赖。但是，由于使用固定长度的上下文（输入文本段），它们无法扩展到特定的级别。为了克服这一缺点，这篇论文提出了一种新的架构：[《Transformer-XL：超出固定长度上下文的注意力语言模型》](https://arxiv.org/pdf/1901.02860.pdf)（Transformer-XL: Attentive Language Models Beyond a Fixed-Length Context）
 
 - 并行化
 Despite not having any explicit recurrency, implicitly the model is built as an autoregressive one. It implies that in order to generate an output (both while training or during inference), the model needs to compute previous outputs, which is extremely costly, for the whole net has to be run for every output. That’s the main idea to overcome in a recent paper by researchers at [_Salesforce Research_](https://einstein.ai/research/non-autoregressive-neural-machine-translation) and the University of Hong Kong, who tried to make the whole process parallelizable[23](https://ricardokleinklein.github.io/2017/11/16/Attention-is-all-you-need.html#fn:23). Their proposal is to compute _fertilities_ for every input word in the sequence, and use it instead of previous outputs in order to compute the current output. This is summarized in the figure below.
@@ -256,11 +255,11 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [Transformer Architecture: The Positional Encoding](https://kazemnejad.com/blog/transformer_architecture_positional_encoding)
 [When Does Label Smoothing Help?](https://medium.com/@nainaakash012/when-does-label-smoothing-help-89654ec75326)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTE3NDg0NzM1OCwzMzY3ODc5MTcsMTgxMj
-I1MDM5OSwtNjk4Mjg4NDE3LDM2MDk2MDk4MSw5MjM1ODYyNDIs
-MTA3NDcxODYzNyw5ODQ0MjA0MTQsMTczNzY4NjMwNSwxMjYzMT
-kwODI4LC0xMTc0ODk2ODAsOTcwMjgzMzcyLC0xMzY4MTAyODI4
-LC02Nzg2MDk2NiwtMTkwMzYyODQxNywxMzc3ODQ3ODUyLC0xMj
-U3NTA1NzE3LDkxNjAzMjg1NSwtODE1OTgyNDA0LDg2NzY5NzUw
-OV19
+eyJoaXN0b3J5IjpbMTQwMjUxODUwMiwxMTc0ODQ3MzU4LDMzNj
+c4NzkxNywxODEyMjUwMzk5LC02OTgyODg0MTcsMzYwOTYwOTgx
+LDkyMzU4NjI0MiwxMDc0NzE4NjM3LDk4NDQyMDQxNCwxNzM3Nj
+g2MzA1LDEyNjMxOTA4MjgsLTExNzQ4OTY4MCw5NzAyODMzNzIs
+LTEzNjgxMDI4MjgsLTY3ODYwOTY2LC0xOTAzNjI4NDE3LDEzNz
+c4NDc4NTIsLTEyNTc1MDU3MTcsOTE2MDMyODU1LC04MTU5ODI0
+MDRdfQ==
 -->
