@@ -203,9 +203,9 @@ transformer模型中将多头注意力HMA计算后的结果输入按位前馈网
  所以可以做一个学习率热身阶段，在开始的时候先使用一个较小的学习率，然后当训练过程稳定的时候再把学习率调回去。在预热期间，学习率呈线性增加。如果目标学习率是$p$，预热期是$n$，则第一批迭代将$p/n$用作学习率；第二个使用$2*p/n$，依此类推：迭代$i$使用$i*p/n$，直到我们在迭代$n$达到学习率$p$。
 
 ## Transformer的改进和发展
-> ### Transformer 的局限性
+Transformer取得巨大成功的同时，
 - Transformer-XL
-虽然理论上Transformerkeyichulirenyichangdu但在实际的运用中资源是有限的，因此Transformers目前使用固定长度的上下文来实现，即将一个长的文本序列截断为几百个字符的固定长度片段，然后分别处理每个片段。这种操作会使相邻块之间的上下文丢失  ，导致上下文碎片化。Transformer-XL基于以下两种关键技术解决了这个问题：
+虽然理论上Transformer可以处理任意长度的输入，但在实际的运用中资源是有限的，因此Transformers目前使用固定长度的上下文来实现，即将一个长的文本序列截断为几百个字符的固定长度片段，然后分别处理每个片段。这种操作会使相邻块之间的上下文丢失  ，导致上下文碎片化。Transformer-XL基于以下两种关键技术解决了这个问题：
 	- 片段级递归机制(segment-level recurrence mechanism) 
 	主要解决上下文碎片化问题，使上下文信息现在可以跨片段边界流动。思路是将上一块segment的memory传到下一块的同样位置
 	![enter image description here](https://miro.medium.com/max/2152/1*Y3rxi7H06Ir-q_W2Q2zSIg.png)
@@ -248,11 +248,11 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [Transformer Architecture: The Positional Encoding](https://kazemnejad.com/blog/transformer_architecture_positional_encoding)
 [When Does Label Smoothing Help?](https://medium.com/@nainaakash012/when-does-label-smoothing-help-89654ec75326)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTExNjg1MzAxMTYsMTU3MDMyMTEyOCwtMj
-E0NjU4NDQ0NCwyMzg4MTgyNzMsLTEwNjYxMDU5NDQsLTExMzk0
-ODM5NzgsLTEyNDgwOTczMDksLTE3NzkxODc1NTIsLTU5NjYwNT
-g0OCwxMTc0ODQ3MzU4LDMzNjc4NzkxNywxODEyMjUwMzk5LC02
-OTgyODg0MTcsMzYwOTYwOTgxLDkyMzU4NjI0MiwxMDc0NzE4Nj
-M3LDk4NDQyMDQxNCwxNzM3Njg2MzA1LDEyNjMxOTA4MjgsLTEx
-NzQ4OTY4MF19
+eyJoaXN0b3J5IjpbNzgyMTgzMjYwLDE1NzAzMjExMjgsLTIxND
+Y1ODQ0NDQsMjM4ODE4MjczLC0xMDY2MTA1OTQ0LC0xMTM5NDgz
+OTc4LC0xMjQ4MDk3MzA5LC0xNzc5MTg3NTUyLC01OTY2MDU4ND
+gsMTE3NDg0NzM1OCwzMzY3ODc5MTcsMTgxMjI1MDM5OSwtNjk4
+Mjg4NDE3LDM2MDk2MDk4MSw5MjM1ODYyNDIsMTA3NDcxODYzNy
+w5ODQ0MjA0MTQsMTczNzY4NjMwNSwxMjYzMTkwODI4LC0xMTc0
+ODk2ODBdfQ==
 -->
