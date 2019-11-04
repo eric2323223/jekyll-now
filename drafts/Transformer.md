@@ -217,8 +217,10 @@ transformer模型中将多头注意力HMA计算后的结果输入按位前馈网
 -   算法**无法建模超过固定长度的依赖关**系。
 -   被分割的片段通常不考虑句子边界，导致**上下文碎片化**，从而导致优化低效。即使是对于长期依赖性不显著的较短序列，这也是特别麻烦的。
 Transformer-XL由两种技术组成：
-	- 片段级递归机制**(segment-level recurrence mechanism)
-	- 相对位置编码方案**(relative positional encoding scheme)。
+	- 片段级递归机制(segment-level recurrence mechanism) 
+	主要解决上下文碎片化问题，使上下文信息现在可以跨片段边界流动。
+	- 相对位置编码方案(relative positional encoding scheme)。
+	
 
 
 - 并行化
@@ -257,7 +259,7 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [Transformer Architecture: The Positional Encoding](https://kazemnejad.com/blog/transformer_architecture_positional_encoding)
 [When Does Label Smoothing Help?](https://medium.com/@nainaakash012/when-does-label-smoothing-help-89654ec75326)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTI3MDI0NDEzMCwxMTc0ODQ3MzU4LDMzNj
+eyJoaXN0b3J5IjpbLTU5NjYwNTg0OCwxMTc0ODQ3MzU4LDMzNj
 c4NzkxNywxODEyMjUwMzk5LC02OTgyODg0MTcsMzYwOTYwOTgx
 LDkyMzU4NjI0MiwxMDc0NzE4NjM3LDk4NDQyMDQxNCwxNzM3Nj
 g2MzA1LDEyNjMxOTA4MjgsLTExNzQ4OTY4MCw5NzAyODMzNzIs
