@@ -184,7 +184,7 @@ transformer模型中将多头注意力HMA计算后的结果输入按位前馈网
 总结一下，attention是transformer的核心，它具有计算效率高（尤其对于长序列），可并行，容易训练等优势，但是同时也带了一些新问题：比如无序和特征合成能力下降。Transformer针对这些新问题分别提出了解决方案，如使用位置编码生成位置信息，使用多头注意力和按位前馈网络增强特征合成能力。
 
 ## Transformer优化技巧
-由于Transformer属于比较复杂的模型，因此要通过使用一些优化技巧才能进行训练。由于Transformer中运用到的优化技术比较多，我们选择其中比较重要或者是有趣的来进行简单介绍
+由于Transformer属于比较复杂的深度模型，因此要通过使用一些优化技巧才能进行训练。Transformer中运用到的优化技术比较多，我们选择其中比较重要或者是有趣的来进行简单介绍
 1. 残差链接(residual connection)
 网络越深，表达能力越强，所以在需要表达复杂特征（如NLP，图像）的场景中使用的神经网络正在变得越来越深，但是深层网络带来了两个问题：1. 梯度弥散、爆炸，使得模型难以训练 2. 网络退化degradation，当网络深度到达一定后，性能不但不会随着深度的增加，反而会由性能下降。
 ![enter image description here](https://www.google.com/url?sa=i&source=images&cd=&ved=2ahUKEwjAjajGrMblAhXB26QKHZfDBS0QjRx6BAgBEAQ&url=https://www.researchgate.net/figure/A-cell-from-the-Residual-Network-architecture-The-identity-connection-helps-to-reduce_fig4_326786331&psig=AOvVaw1UDvQHXM-esMFq1rcNP7FV&ust=1572606118049027)
@@ -199,7 +199,7 @@ transformer模型中将多头注意力HMA计算后的结果输入按位前馈网
 标签平滑归一化通过"软化"传统的独热编码，使得训练时能够有效抑制过拟合现象。它的实现非常简单，通过一个超参数$\epsilon \in(0,1)$将原来的0，1分布变成$\epsilon, 1-\epsilon$分布（对于二值分类问题），这样就缩短了真假值之间的距离，最终起到抑制过拟合的效果。
 5. 学习率热身Learning rate warm up
  训练初期由于离目标较远，一般需要选择大的学习率，但如果训练数据集具有高度的差异性则使用过大的学习率可能导致不稳定性。这是由于如果初始化后的数据恰好只包含一部分特征，则模型的初始训练可能会严重偏向于这些特征，这会增加模型学习其他特征的难度。
- 所以可以做一个学习率热身阶段，在开始的时候先使用一个较小的学习率，然后当训练过程稳定的时候再把学习率调回去。在预热期间，学习率呈线性增加。如果目标学习率是$p$，预热期是$n$，则第一批迭代将$p/n$用作学习率；第二个使用$2p/n$，依此类推：迭代$i$使用$i*p/n$，直到我们在迭代$n$达到学习率$p$。
+ 所以可以做一个学习率热身阶段，在开始的时候先使用一个较小的学习率，然后当训练过程稳定的时候再把学习率调回去。在预热期间，学习率呈线性增加。如果目标学习率是$p$，预热期是$n$，则第一批迭代将$p/n$用作学习率；第二个使用$2*p/n$，依此类推：迭代$i$使用$i*p/n$，直到我们在迭代$n$达到学习率$p$。
 
 ## Transformer的改进和发展
 > ### Transformer 的局限性
@@ -250,11 +250,11 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [Transformer Architecture: The Positional Encoding](https://kazemnejad.com/blog/transformer_architecture_positional_encoding)
 [When Does Label Smoothing Help?](https://medium.com/@nainaakash012/when-does-label-smoothing-help-89654ec75326)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTgxMjI1MDM5OSwtNjk4Mjg4NDE3LDM2MD
-k2MDk4MSw5MjM1ODYyNDIsMTA3NDcxODYzNyw5ODQ0MjA0MTQs
-MTczNzY4NjMwNSwxMjYzMTkwODI4LC0xMTc0ODk2ODAsOTcwMj
-gzMzcyLC0xMzY4MTAyODI4LC02Nzg2MDk2NiwtMTkwMzYyODQx
-NywxMzc3ODQ3ODUyLC0xMjU3NTA1NzE3LDkxNjAzMjg1NSwtOD
-E1OTgyNDA0LDg2NzY5NzUwOSwyMDU5Nzg0OTAxLDE0MTIzNDUz
-NTRdfQ==
+eyJoaXN0b3J5IjpbMzM2Nzg3OTE3LDE4MTIyNTAzOTksLTY5OD
+I4ODQxNywzNjA5NjA5ODEsOTIzNTg2MjQyLDEwNzQ3MTg2Mzcs
+OTg0NDIwNDE0LDE3Mzc2ODYzMDUsMTI2MzE5MDgyOCwtMTE3ND
+g5NjgwLDk3MDI4MzM3MiwtMTM2ODEwMjgyOCwtNjc4NjA5NjYs
+LTE5MDM2Mjg0MTcsMTM3Nzg0Nzg1MiwtMTI1NzUwNTcxNyw5MT
+YwMzI4NTUsLTgxNTk4MjQwNCw4Njc2OTc1MDksMjA1OTc4NDkw
+MV19
 -->
