@@ -213,7 +213,6 @@ transformer模型中将多头注意力HMA计算后的结果输入按位前馈网
 - Transformer-XL
 如果有无限的存储和计算资源，一个无条件的Transformer就能解决这个问题。但在实际的运用中，资源是有限的，这个思路就行不通了。Transformers目前使用固定长度的上下文来实现，即将一个长的文本序列截断为几百个字符的固定长度片段，然后分别处理每个片段。
 这造成了**两个关键的限制**：
-
 	-   算法**无法建模超过固定长度的依赖关**系。
 	-   被分割的片段通常不考虑句子边界，导致**上下文碎片化**，从而导致优化低效。即使是对于长期依赖性不显著的较短序列，这也是特别麻烦的。
 	
@@ -260,7 +259,7 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [Transformer Architecture: The Positional Encoding](https://kazemnejad.com/blog/transformer_architecture_positional_encoding)
 [When Does Label Smoothing Help?](https://medium.com/@nainaakash012/when-does-label-smoothing-help-89654ec75326)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2NDU5ODQ4ODIsLTU5NjYwNTg0OCwxMT
+eyJoaXN0b3J5IjpbLTE3NzkxODc1NTIsLTU5NjYwNTg0OCwxMT
 c0ODQ3MzU4LDMzNjc4NzkxNywxODEyMjUwMzk5LC02OTgyODg0
 MTcsMzYwOTYwOTgxLDkyMzU4NjI0MiwxMDc0NzE4NjM3LDk4ND
 QyMDQxNCwxNzM3Njg2MzA1LDEyNjMxOTA4MjgsLTExNzQ4OTY4
