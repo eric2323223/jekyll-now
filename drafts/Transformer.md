@@ -110,6 +110,7 @@ $W^Q_i \in \mathbb{R}^{d_{\text{model}} \times d_k}$, $W^K_i \in \mathbb{R}^{d_{
 
 ####  encoder-decoder attention
 In terms of encoder-decoder, the **query** is usually the hidden state of the _decoder_. Whereas **key**, is the hidden state of the _encoder_, and the corresponding **value** is normalized weight, representing how much attention a _key_ gets. Output is calculated as a wighted sum – here the dot product of _query_ and _key_ is used to get a _value_.
+![enter image description here](http://jalammar.github.io/images/gpt2/self-attention-and-masked-self-attention.png)
 
 ### 位置编码（positional encoding）
 与RNN和CNN不同，在Attention中没有词序的概念（如第一个词，第二个词等）， 输入序列的所有单词都以没有特殊顺序或位置的方式输入网络，因此模型不知道单词的顺序。 因此，需要将与位置相关的信号添加到每个词中，以帮助模型理解词的顺序。
@@ -255,11 +256,11 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [Transformer Architecture: The Positional Encoding](https://kazemnejad.com/blog/transformer_architecture_positional_encoding)
 [When Does Label Smoothing Help?](https://medium.com/@nainaakash012/when-does-label-smoothing-help-89654ec75326)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEwNjYxMDU5NDQsLTExMzk0ODM5NzgsLT
-EyNDgwOTczMDksLTE3NzkxODc1NTIsLTU5NjYwNTg0OCwxMTc0
-ODQ3MzU4LDMzNjc4NzkxNywxODEyMjUwMzk5LC02OTgyODg0MT
-csMzYwOTYwOTgxLDkyMzU4NjI0MiwxMDc0NzE4NjM3LDk4NDQy
-MDQxNCwxNzM3Njg2MzA1LDEyNjMxOTA4MjgsLTExNzQ4OTY4MC
-w5NzAyODMzNzIsLTEzNjgxMDI4MjgsLTY3ODYwOTY2LC0xOTAz
-NjI4NDE3XX0=
+eyJoaXN0b3J5IjpbMjM4ODE4MjczLC0xMDY2MTA1OTQ0LC0xMT
+M5NDgzOTc4LC0xMjQ4MDk3MzA5LC0xNzc5MTg3NTUyLC01OTY2
+MDU4NDgsMTE3NDg0NzM1OCwzMzY3ODc5MTcsMTgxMjI1MDM5OS
+wtNjk4Mjg4NDE3LDM2MDk2MDk4MSw5MjM1ODYyNDIsMTA3NDcx
+ODYzNyw5ODQ0MjA0MTQsMTczNzY4NjMwNSwxMjYzMTkwODI4LC
+0xMTc0ODk2ODAsOTcwMjgzMzcyLC0xMzY4MTAyODI4LC02Nzg2
+MDk2Nl19
 -->
