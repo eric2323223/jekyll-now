@@ -212,7 +212,7 @@ Transformer取得巨大成功引起关注，学术和产业界都在尝试在实
 	- 相对位置编码方案(relative positional encoding scheme)。
 	由于transformer上的位置编码方案会导致不同块的元素具有相同的位置编码，因此提出了一种新的位置编码，它是每个attention模块的一部分，基于元素之间的相对距离而不是它们的绝对位置。
 
-- 并行化
+### 并行化
 Despite not having any explicit recurrency, implicitly the model is built as an autoregressive one. It implies that in order to generate an output (both while training or during inference), the model needs to compute previous outputs, which is extremely costly, for the whole net has to be run for every output. That’s the main idea to overcome in a recent paper by researchers at [_Salesforce Research_](https://einstein.ai/research/non-autoregressive-neural-machine-translation) and the University of Hong Kong, who tried to make the whole process parallelizable[23](https://ricardokleinklein.github.io/2017/11/16/Attention-is-all-you-need.html#fn:23). Their proposal is to compute _fertilities_ for every input word in the sequence, and use it instead of previous outputs in order to compute the current output. This is summarized in the figure below.
 尽管没有任何显式递归，但是隐式地将模型构建为自回归模型。 这意味着为了生成输出（在训练时或在推理期间），该模型需要计算先前的输出，这非常昂贵，因为必须为每个输出运行整个网络。 这是Salesforce Research和香港大学的研究人员在最近的一篇论文中要克服的主要思想，他们试图使整个过程可并行化。 他们的建议是为序列中的每个输入单词计算肥力，并使用它代替先前的输出以计算当前输出。 下图对此进行了总结。
 ![enter image description here](https://ricardokleinklein.github.io/images/transformer/fertilities.png)
@@ -248,11 +248,11 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [Transformer Architecture: The Positional Encoding](https://kazemnejad.com/blog/transformer_architecture_positional_encoding)
 [When Does Label Smoothing Help?](https://medium.com/@nainaakash012/when-does-label-smoothing-help-89654ec75326)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzc1NDgxMDgyLDIxMTY3MDc2ODMsODQ1Mz
-I3MDcxLDIxMjI0ODgzODIsMTU3MDMyMTEyOCwtMjE0NjU4NDQ0
-NCwyMzg4MTgyNzMsLTEwNjYxMDU5NDQsLTExMzk0ODM5NzgsLT
-EyNDgwOTczMDksLTE3NzkxODc1NTIsLTU5NjYwNTg0OCwxMTc0
-ODQ3MzU4LDMzNjc4NzkxNywxODEyMjUwMzk5LC02OTgyODg0MT
-csMzYwOTYwOTgxLDkyMzU4NjI0MiwxMDc0NzE4NjM3LDk4NDQy
-MDQxNF19
+eyJoaXN0b3J5IjpbLTE1MzEzMjIyMDQsMjExNjcwNzY4Myw4ND
+UzMjcwNzEsMjEyMjQ4ODM4MiwxNTcwMzIxMTI4LC0yMTQ2NTg0
+NDQ0LDIzODgxODI3MywtMTA2NjEwNTk0NCwtMTEzOTQ4Mzk3OC
+wtMTI0ODA5NzMwOSwtMTc3OTE4NzU1MiwtNTk2NjA1ODQ4LDEx
+NzQ4NDczNTgsMzM2Nzg3OTE3LDE4MTIyNTAzOTksLTY5ODI4OD
+QxNywzNjA5NjA5ODEsOTIzNTg2MjQyLDEwNzQ3MTg2MzcsOTg0
+NDIwNDE0XX0=
 -->
