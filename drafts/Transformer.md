@@ -186,25 +186,25 @@ transformer模型中将多头注意力HMA计算后的结果输入按位前馈网
 
 ## Transformer优化技巧
 由于Transformer属于比较复杂的深度模型，因此要通过使用一些优化技巧才能进行训练。Transformer中运用到的优化技术比较多，我们选择其中比较重要或者是有趣的来进行简单介绍
-1. 残差链接(residual connection)
+### 1. 残差链接(residual connection)
 网络越深，表达能力越强，所以在需要表达复杂特征（如NLP，图像）的场景中使用的神经网络正在变得越来越深，但是深层网络带来了两个问题：1. 梯度弥散、爆炸，使得模型难以训练 2. 网络退化degradation，当网络深度到达一定后，性能不但不会随着深度的增加，反而会由性能下降。
 ![enter image description here](https://www.google.com/url?sa=i&source=images&cd=&ved=2ahUKEwjAjajGrMblAhXB26QKHZfDBS0QjRx6BAgBEAQ&url=https://www.researchgate.net/figure/A-cell-from-the-Residual-Network-architecture-The-identity-connection-helps-to-reduce_fig4_326786331&psig=AOvVaw1UDvQHXM-esMFq1rcNP7FV&ust=1572606118049027)
 残差链接用一个简单的办法巧妙的解决了这两个问题，就是将两个不相邻网络层直接连接（短接）。这样梯度gradient可以跨越中间层直接传递，避免经过中间层时梯度被多次缩放导致梯度弥散（爆炸）的问题；另一方面，实验证明当使用RELU作为激活函数时，残差连接也以有效防止网络退化。原因。。。
 在transformer中的每一个编码层（解码层）都使用了残差连接来分别短接多头注意力和按位前馈网络，这样做一来解决了梯度问题，同时还能帮助位置信息顺利传递到高层去
-3. Layer normalization
+### 2. Layer normalization
   Normalization是在机器学习中常用的一种数据预处理方法，为了更有效的运行机器学习算法，需要将原始数据“白化”Whitening，也就是在统计学中常常提到的使数据“独立，同分布”。
    目前在深度学习中最常用的是BN，它是对不同训练数据的同一维度进行normalization，这种方法可以有效缓解深度模型训练中的*梯度爆炸、弥散的问题*。而在transformer采用了相对冷门的LN，主要原因是BN很难应用在训练数据长度不同的seq2seq任务上，而这正是LN的优势所在，由于LN是作用在单个训练数据的不同维度上，因此它能够在一条数据上进行normalization
   
-4. 标签平滑归一化label smoothing regularization
+### 3. 标签平滑归一化label smoothing regularization
 通常我们使用交叉熵来计算预测误差时使用独热（one-hot）编码表示真实值，梯度下降算法为了减小误差会尽量使预测结果接近one-hot编码，也就是说，网络会驱使自身往正确标签和错误标签差值大的方向学习，在训练数据不足以表征所以的样本特征的情况下，预测结果的置信度过高会导致网络过拟合。
 标签平滑归一化通过"软化"传统的独热编码，使得训练时能够有效抑制过拟合现象。它的实现非常简单，通过一个超参数$\epsilon \in(0,1)$将原来的0，1分布变成$\epsilon, 1-\epsilon$分布（对于二值分类问题），这样就缩短了真假值之间的距离，最终起到抑制过拟合的效果。
-5. 学习率热身Learning rate warm up
+### 4. 学习率热身Learning rate warm up
  训练初期由于离目标较远，一般需要选择大的学习率，但如果训练数据集具有高度的差异性则使用过大的学习率可能导致不稳定性。这是由于如果初始化后的数据恰好只包含一部分特征，则模型的初始训练可能会严重偏向于这些特征，这会增加模型学习其他特征的难度。
  所以可以做一个学习率热身阶段，在开始的时候先使用一个较小的学习率，然后当训练过程稳定的时候再把学习率调回去。在预热期间，学习率呈线性增加。如果目标学习率是$p$，预热期是$n$，则第一批迭代将$p/n$用作学习率；第二个使用$2*p/n$，依此类推：迭代$i$使用$i*p/n$，直到我们在迭代$n$达到学习率$p$。
 
 ## Transformer的改进和发展
 Transformer取得巨大成功引起关注，学术和产业界都在尝试在实现和理论层面对他进行改进
-- Transformer-XL
+### Transformer-XL
 虽然理论上Transformer可以处理任意长度的输入，但在实际的运用中资源是有限的，因此Transformers目前使用固定长度的上下文来实现，即将一个长的文本序列截断为几百个字符的固定长度片段，然后分别处理每个片段。这种操作会使相邻块片段之间的上下文丢失  ，导致上下文碎片化。Transformer-XL基于以下两种关键技术解决了这个问题：
 	- 片段级递归机制(segment-level recurrence mechanism) 
 	主要解决上下文碎片化问题，使上下文信息现在可以跨片段边界流动。思路是将上一片段segment的memory传到下一片段的同样位置
@@ -248,11 +248,11 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [Transformer Architecture: The Positional Encoding](https://kazemnejad.com/blog/transformer_architecture_positional_encoding)
 [When Does Label Smoothing Help?](https://medium.com/@nainaakash012/when-does-label-smoothing-help-89654ec75326)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjExNjcwNzY4Myw4NDUzMjcwNzEsMjEyMj
-Q4ODM4MiwxNTcwMzIxMTI4LC0yMTQ2NTg0NDQ0LDIzODgxODI3
-MywtMTA2NjEwNTk0NCwtMTEzOTQ4Mzk3OCwtMTI0ODA5NzMwOS
-wtMTc3OTE4NzU1MiwtNTk2NjA1ODQ4LDExNzQ4NDczNTgsMzM2
-Nzg3OTE3LDE4MTIyNTAzOTksLTY5ODI4ODQxNywzNjA5NjA5OD
-EsOTIzNTg2MjQyLDEwNzQ3MTg2MzcsOTg0NDIwNDE0LDE3Mzc2
-ODYzMDVdfQ==
+eyJoaXN0b3J5IjpbMzc1NDgxMDgyLDIxMTY3MDc2ODMsODQ1Mz
+I3MDcxLDIxMjI0ODgzODIsMTU3MDMyMTEyOCwtMjE0NjU4NDQ0
+NCwyMzg4MTgyNzMsLTEwNjYxMDU5NDQsLTExMzk0ODM5NzgsLT
+EyNDgwOTczMDksLTE3NzkxODc1NTIsLTU5NjYwNTg0OCwxMTc0
+ODQ3MzU4LDMzNjc4NzkxNywxODEyMjUwMzk5LC02OTgyODg0MT
+csMzYwOTYwOTgxLDkyMzU4NjI0MiwxMDc0NzE4NjM3LDk4NDQy
+MDQxNF19
 -->
