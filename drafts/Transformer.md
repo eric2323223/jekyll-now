@@ -25,9 +25,12 @@ $$e_{ij}=alignment(h_i,x_j)$$
 ![enter image description here](https://oscimg.oschina.net/oscnet/5bdc25e12070e665409112ee13ac9e76603.jpg)
 
 ~~注意力机制主要用于seq2seq任务，它的基本思想就是对序列中的每个元素以一定的规则加入上下文信息。不同于RNN中先通过依次分析输入元素来逐步生成上下文context vector的方式，注意力机制对这些输入元素进行加权平均的方式来一步加入所有元素信息来生成上下文context vector。这样做的好处是能够一步到位捕捉到全局的联系(序列元素直接进行两两比较),不仅大大加速（可以并行计算）了context vector的生成，而且避免了RNN的长序列训练困难的问题。~~
-从实现上来讲，attention操作可以理解为加权求和的运算，加数是序列中的所有元素，权值计算方法根据任务目标而不同（在机器翻译的场景中使用相似度来作为权值）。用$\alpha$表示权值（通常表现为概率分布，即$\sum \alpha=1$），$h$表示序列元素，可以将attention形式化的表示为
+从实现上来讲，注意力操作可以理解为加权求和的运算，加数是序列中的所有元素，权值计算方法根据任务目标而不同（在机器翻译的场景中使用相似度来作为权值）。如果用$w$表示权值（通常表现为概率分布，即$\sum \alpha=1$），$x$表示序列元素，可以将注意力运算形式化的表示为
+$$attention(x)=\sum_{j=1}w_{ij}x_j$$
+如下图所示，对
+
 $$y_2=w_{21}x_1+w_{22}x_2+w_{23}x_3+w_{24}x_4$$
-$$y_i=\sum_{j=1}w_{ij}x_j$$
+
 ![enter image description here](http://www.peterbloem.nl/files/transformers/self-attention.svg)
 从这个定义可以看出attention的结果$c$就是序列中所有元素按一定的比例关系相加得到的，由于$c$具备了序列的上下文信息，因此我们也可以把attention理解为**元素在某一个序列上下文环境中的重新定义**。这是attention最核心的特点，也是attention能够取代RNN的基础。
 权值$w_{ij}$表示$x_j$在对于$y_i$的计算中发挥的权重，由于所有$x$都参与$y_i$的计算，所以使用softmax来保证所有权值的和等于1。
@@ -245,11 +248,11 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [Transformer Architecture: The Positional Encoding](https://kazemnejad.com/blog/transformer_architecture_positional_encoding)
 [When Does Label Smoothing Help?](https://medium.com/@nainaakash012/when-does-label-smoothing-help-89654ec75326)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTc3Nzc0ODEwMywtMTI5MDQzOTM2MSw2ND
-I5NDIyMiwtMTUzMTMyMjIwNCwyMTE2NzA3NjgzLDg0NTMyNzA3
-MSwyMTIyNDg4MzgyLDE1NzAzMjExMjgsLTIxNDY1ODQ0NDQsMj
-M4ODE4MjczLC0xMDY2MTA1OTQ0LC0xMTM5NDgzOTc4LC0xMjQ4
-MDk3MzA5LC0xNzc5MTg3NTUyLC01OTY2MDU4NDgsMTE3NDg0Nz
-M1OCwzMzY3ODc5MTcsMTgxMjI1MDM5OSwtNjk4Mjg4NDE3LDM2
-MDk2MDk4MV19
+eyJoaXN0b3J5IjpbNjQ0OTA3MDk1LC0xMjkwNDM5MzYxLDY0Mj
+k0MjIyLC0xNTMxMzIyMjA0LDIxMTY3MDc2ODMsODQ1MzI3MDcx
+LDIxMjI0ODgzODIsMTU3MDMyMTEyOCwtMjE0NjU4NDQ0NCwyMz
+g4MTgyNzMsLTEwNjYxMDU5NDQsLTExMzk0ODM5NzgsLTEyNDgw
+OTczMDksLTE3NzkxODc1NTIsLTU5NjYwNTg0OCwxMTc0ODQ3Mz
+U4LDMzNjc4NzkxNywxODEyMjUwMzk5LC02OTgyODg0MTcsMzYw
+OTYwOTgxXX0=
 -->
