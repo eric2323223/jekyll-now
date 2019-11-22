@@ -8,7 +8,7 @@
 1. 循环神经网络（RNN）
 处理时序问题的传统方法是使用RNN模型，RNN能够保存状态，它将输入分为多步，依靠每步输入和上一步的状态更新当前的状态（和输出），通过重复这种步骤在读入所有序列元素后得到序列编码。由于RNN有存储机制并且不限制序列的长度，从模型结构上来说比较适合序列到序列问题。但是问题有三点
 	  - 长序列的训练很困难，梯度下降算法在长序列的训练中容易发生梯度爆炸或梯度消失，虽然LSTM可以改善这个问题，但是在较长序列的训练中仍然无法完全避免。
-	  - 只能顺序执行，训练速度很慢
+	  - 只能顺序执行，无法通过并行加速训练
 	  - 固定的存储空间在处理超长序列导致信息丢失？
 2. 卷积神经网络（CNN）
 CNN可以同时处理序列中的所有元素，但是由于卷积运算的视域有限，一次卷积操作只能处理有限的元素，对于较长的序列无法处理。解决办法是通过堆叠多层卷积操作来逐渐增加视域，但这样会不可避免的导致信息丢失，并且仍没有完全解决长序列输入的处理问题，————————而且增加了模型的复杂度，使运算变慢，这和初衷不符。
@@ -247,11 +247,11 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [Transformer Architecture: The Positional Encoding](https://kazemnejad.com/blog/transformer_architecture_positional_encoding)
 [When Does Label Smoothing Help?](https://medium.com/@nainaakash012/when-does-label-smoothing-help-89654ec75326)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEyOTA0MzkzNjEsNjQyOTQyMjIsLTE1Mz
-EzMjIyMDQsMjExNjcwNzY4Myw4NDUzMjcwNzEsMjEyMjQ4ODM4
-MiwxNTcwMzIxMTI4LC0yMTQ2NTg0NDQ0LDIzODgxODI3MywtMT
-A2NjEwNTk0NCwtMTEzOTQ4Mzk3OCwtMTI0ODA5NzMwOSwtMTc3
-OTE4NzU1MiwtNTk2NjA1ODQ4LDExNzQ4NDczNTgsMzM2Nzg3OT
-E3LDE4MTIyNTAzOTksLTY5ODI4ODQxNywzNjA5NjA5ODEsOTIz
-NTg2MjQyXX0=
+eyJoaXN0b3J5IjpbMTkwODM0MzA0OSwtMTI5MDQzOTM2MSw2ND
+I5NDIyMiwtMTUzMTMyMjIwNCwyMTE2NzA3NjgzLDg0NTMyNzA3
+MSwyMTIyNDg4MzgyLDE1NzAzMjExMjgsLTIxNDY1ODQ0NDQsMj
+M4ODE4MjczLC0xMDY2MTA1OTQ0LC0xMTM5NDgzOTc4LC0xMjQ4
+MDk3MzA5LC0xNzc5MTg3NTUyLC01OTY2MDU4NDgsMTE3NDg0Nz
+M1OCwzMzY3ODc5MTcsMTgxMjI1MDM5OSwtNjk4Mjg4NDE3LDM2
+MDk2MDk4MV19
 -->
