@@ -10,12 +10,12 @@
 	  - 只能顺序执行，无法通过并行加速训练
 	  - 固定的存储空间在处理超长序列导致信息丢失？
 
-为了解决RNN长序列训练问题，除了不断改进原生RNN之外，人们还尝试借助于CNN。这是由于CNN有能力处理一段（卷积核）输入序列而不是一个输入元素，虽然卷积核尺寸有限，但是可以通过叠加卷及操作的方式在逐步放大视域 但是由于卷积运算的视域有限，一次卷积操作只能处理有限的元素，对于较长的序列无法处理。解决办法是通过堆叠多层卷积操作来逐渐增加视域，但这样会不可避免的导致信息丢失，并且仍没有完全解决长序列输入的处理问题，————————而且增加了模型的复杂度，使运算变慢，这和初衷不符。
+为了解决RNN长序列训练问题，除了不断改进原生RNN之外，人们还尝试借助于CNN。这是由于CNN有能力处理一段输入序列而不是一个输入元素，虽然单个卷积核尺寸有限，可以通过堆叠多层卷积操作的方式逐步放大视域 。但这样做会不可避免的导致信息丢失（卷积操作中的上采样upsampling过程），同时增加了模型的复杂度。
 
 ## 注意力机制（attention mechanism）
 
 ![enter image description here](https://www.visionears.nl/images/babyproduct.jpg)
-上述两种模型对于长序列的处理都有缺陷。RNN需要一步一步的处理输入序列，CNN做出了一些改进但并不彻底。从根本上的解决这个问题需要能一次性的处理全部输入（无论序列有多长），并且能根据这些输入信息分析序列元素之间的关联关系。人们从自己快速浏览的方式获得了启发，当人们需要快速浏览的时候不会按输入的顺序依次阅读，而会直接跳到需要关注的的部分，这种根据需要在不同位置跳跃的阅读方式和注意力相关，因此这种新的序列处理方式被命名为注意力机制
+上述两种模型对于长序列的处理都有缺陷，RNN需要一步一步的处理输入序列，CNN做出了一些改进但并不彻底。从根本上的解决长序列处理问题需要能一次性的处理全部输入（无论序列有多长），并且能根据这些输入信息分析序列元素之间的关联关系。人们从自己快速浏览的方式获得了启发，当人们需要快速浏览的时候不会按输入的顺序依次阅读，而会直接跳到需要关注的的部分，这种根据需要在不同位置跳跃的阅读方式和注意力相关，因此这种新的序列处理方式被命名为注意力机制
 基于组成整体的各个元素在整体中发挥的作用不相同这样一个事实，注意力机制的基本思想是通对使用不同的权重组合各个序列元素来描述整体，~~这就好像我们在快速观察人物的照片时会把注意力更多的放在人物的面部而几乎不会留意背景中的某一棵小草~~。从数学运算来讲，注意力机制是对组成整体的元素加权求和的过程。权值的计算方法由任务目标来确定，这就好像。。。对。。。的关注程度不一致是一个道理。在机器翻译（一种常见的seq2seq任务）中一种常见的权值衡量方法是计算序列元素（单词）之间的相似度。
 注意力机制最早使用在基于[RNN的机器翻译模型](https://arxiv.org/pdf/1409.0473.pdf)中，不同于以往使用固定的context vector， attention能够让解码器每次解码的时候关注更相关的输入元素（生成动态的context vector）从而提高翻译的准确度。
 
@@ -246,11 +246,11 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [Transformer Architecture: The Positional Encoding](https://kazemnejad.com/blog/transformer_architecture_positional_encoding)
 [When Does Label Smoothing Help?](https://medium.com/@nainaakash012/when-does-label-smoothing-help-89654ec75326)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTExNzQwNjU3MzcsLTEyOTA0MzkzNjEsNj
-QyOTQyMjIsLTE1MzEzMjIyMDQsMjExNjcwNzY4Myw4NDUzMjcw
-NzEsMjEyMjQ4ODM4MiwxNTcwMzIxMTI4LC0yMTQ2NTg0NDQ0LD
-IzODgxODI3MywtMTA2NjEwNTk0NCwtMTEzOTQ4Mzk3OCwtMTI0
-ODA5NzMwOSwtMTc3OTE4NzU1MiwtNTk2NjA1ODQ4LDExNzQ4ND
-czNTgsMzM2Nzg3OTE3LDE4MTIyNTAzOTksLTY5ODI4ODQxNywz
-NjA5NjA5ODFdfQ==
+eyJoaXN0b3J5IjpbMTg5MjQ1NTc0MiwtMTI5MDQzOTM2MSw2ND
+I5NDIyMiwtMTUzMTMyMjIwNCwyMTE2NzA3NjgzLDg0NTMyNzA3
+MSwyMTIyNDg4MzgyLDE1NzAzMjExMjgsLTIxNDY1ODQ0NDQsMj
+M4ODE4MjczLC0xMDY2MTA1OTQ0LC0xMTM5NDgzOTc4LC0xMjQ4
+MDk3MzA5LC0xNzc5MTg3NTUyLC01OTY2MDU4NDgsMTE3NDg0Nz
+M1OCwzMzY3ODc5MTcsMTgxMjI1MDM5OSwtNjk4Mjg4NDE3LDM2
+MDk2MDk4MV19
 -->
