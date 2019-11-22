@@ -1,5 +1,5 @@
 # Transformer-设计和构建高效的时序模型
-在自然语言处理领域，循环神经网络RNN一直是被最广泛使用的深度机器学习模型，近年来卷积神经网络CNN也逐渐被引入用来提升训练效果。然而这两类模型都有一些难以克服的问题，Transformer充分利用注意力机制，并取得了非常好的效果，逐渐取代了RNN在NLP领域的统治地位的趋势，本文我们就来一步步的分析和理解这个优秀的时序模型。
+在自然语言处理领域，循环神经网络RNN一直是被最广泛使用的深度机器学习模型，近年来卷积神经网络CNN也逐渐被引入用来提升训练效果。然而这两类模型都有一些难以克服的问题，Transformer模型以注意力机制为核心，并针对注意力机制的不足做了相关的设计和优化，取得了非常好的效果。本文我们就来一步步的分析和理解这个优秀的时序模型。
 
 ## 时序（seq2seq）问题
 时序问题是应用机器学习（特别是深度学习）解决的一类常见问题，例如机器翻译，语态分析，摘要生成等自然语言处理问题（NLP），还包括_______。 这类问题的最大特点是输入（或输出）以序列的形式出现，序列的长度可变，任务一般要求分析整个序列才能产生输出————————。使用机器学习（深度学习）处理时序任务，通常使用编码器-解码器（encoder-decoder）架构，编码器负责将输入序列转换为包含整个序列所有特征的**序列编码**（context vector），解码器则对这个内部表示进行解释。
@@ -248,11 +248,11 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [Transformer Architecture: The Positional Encoding](https://kazemnejad.com/blog/transformer_architecture_positional_encoding)
 [When Does Label Smoothing Help?](https://medium.com/@nainaakash012/when-does-label-smoothing-help-89654ec75326)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjQyOTQyMjIsLTE1MzEzMjIyMDQsMjExNj
-cwNzY4Myw4NDUzMjcwNzEsMjEyMjQ4ODM4MiwxNTcwMzIxMTI4
-LC0yMTQ2NTg0NDQ0LDIzODgxODI3MywtMTA2NjEwNTk0NCwtMT
-EzOTQ4Mzk3OCwtMTI0ODA5NzMwOSwtMTc3OTE4NzU1MiwtNTk2
-NjA1ODQ4LDExNzQ4NDczNTgsMzM2Nzg3OTE3LDE4MTIyNTAzOT
-ksLTY5ODI4ODQxNywzNjA5NjA5ODEsOTIzNTg2MjQyLDEwNzQ3
-MTg2MzddfQ==
+eyJoaXN0b3J5IjpbLTU0Mzc2MTQsNjQyOTQyMjIsLTE1MzEzMj
+IyMDQsMjExNjcwNzY4Myw4NDUzMjcwNzEsMjEyMjQ4ODM4Miwx
+NTcwMzIxMTI4LC0yMTQ2NTg0NDQ0LDIzODgxODI3MywtMTA2Nj
+EwNTk0NCwtMTEzOTQ4Mzk3OCwtMTI0ODA5NzMwOSwtMTc3OTE4
+NzU1MiwtNTk2NjA1ODQ4LDExNzQ4NDczNTgsMzM2Nzg3OTE3LD
+E4MTIyNTAzOTksLTY5ODI4ODQxNywzNjA5NjA5ODEsOTIzNTg2
+MjQyXX0=
 -->
