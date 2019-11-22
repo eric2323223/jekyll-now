@@ -15,7 +15,7 @@
 ## 注意力机制（attention mechanism）
 
 上述两种模型对于长序列的处理都有缺陷，RNN需要一步一步的处理输入序列，CNN做出了一些改进但并不彻底。从根本上的解决长序列处理问题需要能一次性的处理全部输入（无论序列有多长），并且能根据这些输入信息分析序列元素之间的关联关系。人们从自己快速浏览的方式获得了启发，当人们需要快速浏览的时候不会按输入的顺序依次阅读，而会直接跳到需要关注的的部分，这种根据需要在不同位置跳跃的阅读方式和注意力相关，因此这种新的序列处理方式被命名为注意力机制。
-基于组成整体的各个元素在整体中发挥的作用不相同这样一个事实，注意力机制的基本思想是根据任务目标使用不同的权重组合各个序列元素来描述整体。从数学运算来讲，注意力机制是对组成整体的所有元素加权求和的过程。每个元素的权值由任务目标来确定，在机器翻译（一种常见的seq2seq任务）中一种常见的权值衡量方法是计算序列元素（单词）之间的相似度。
+基于组成整体的各个元素在整体中发挥的作用不相同这样一个事实，注意力机制的基本思想是根据任务目标使用不同的权重组合各个序列元素来描述整体。~~从数学运算来讲，注意力机制是对组成整体的所有元素加权求和的过程。每个元素的权值由任务目标来确定，在机器翻译（一种常见的seq2seq任务）中一种常见的权值衡量方法是计算序列元素（单词）之间的相似度。~~
 注意力机制最早使用在基于[RNN的机器翻译模型](https://arxiv.org/pdf/1409.0473.pdf)中，不同于以往使用固定的context vector， 注意力机制能够让解码器每次解码的时候关注更相关的输入元素（生成动态的context vector）从而提高翻译的准确度。
 
 $$c_i=\sum_{j=1}\alpha_{ij}h_j$$
@@ -24,7 +24,7 @@ $$e_{ij}=alignment(h_i,x_j)$$
 
 ![enter image description here](https://oscimg.oschina.net/oscnet/5bdc25e12070e665409112ee13ac9e76603.jpg)
 
-注意力机制主要用于seq2seq任务，它的基本思想就是对序列中的每个元素以一定的规则加入上下文信息。不同于RNN中先通过依次分析输入元素来逐步生成上下文context vector的方式，注意力机制对这些输入元素进行加权平均的方式来一步加入所有元素信息来生成上下文context vector。这样做的好处是能够一步到位捕捉到全局的联系(序列元素直接进行两两比较),不仅大大加速（可以并行计算）了context vector的生成，而且避免了RNN的长序列训练困难的问题。
+~~注意力机制主要用于seq2seq任务，它的基本思想就是对序列中的每个元素以一定的规则加入上下文信息。不同于RNN中先通过依次分析输入元素来逐步生成上下文context vector的方式，注意力机制对这些输入元素进行加权平均的方式来一步加入所有元素信息来生成上下文context vector。这样做的好处是能够一步到位捕捉到全局的联系(序列元素直接进行两两比较),不仅大大加速（可以并行计算）了context vector的生成，而且避免了RNN的长序列训练困难的问题。~~
 从实现上来讲，attention操作可以理解为加权求和的运算，加数是序列中的所有元素，权值计算方法根据任务目标而不同（在机器翻译的场景中使用相似度来作为权值）。用$\alpha$表示权值（通常表现为概率分布，即$\sum \alpha=1$），$h$表示序列元素，可以将attention形式化的表示为
 $$y_2=w_{21}x_1+w_{22}x_2+w_{23}x_3+w_{24}x_4$$
 $$y_i=\sum_{j=1}w_{ij}x_j$$
@@ -56,7 +56,7 @@ The query determines which values to focus on; we can say that the query ‘atte
 
 ## Transformer模型
 
-Transformer来自Google Brain团队2017年的文章Attention is all you need。正如论文的题目所说的，整个网络结构完全是由Attention机制组成。由于没有使用RNN和CNN，避免了无法并行计算和长距离依赖等传统方法无法克服的问题，用更少的计算资源，取得了比过去的结构更好的结果，在机器翻译中取得了BLEU值得新高。
+Transformer来自Google Brain团队2017年的文章Attention is all you need。正如论文的题目所述，整个网络结构完全是由注意力机制组成，由于没有使用RNN和CNN，避免了无法并行计算和长距离依赖等传统方法无法克服的问题，用更少的计算资源，取得了更好的结果，刷新了多项机器翻译任务的记录。
 整体架构上看，transformer仍属于Encoder-Decoder架构，通过encoder将输入序列转换成内部表示，再通过不同decoder实现不同的预测功能。从图中可以看到，编码器主要由两种组件构成：
 ![enter image description here](https://s3-ap-south-1.amazonaws.com/av-blog-media/wp-content/uploads/2019/06/Screenshot-from-2019-06-17-20-01-32.png)
 
@@ -245,11 +245,11 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [Transformer Architecture: The Positional Encoding](https://kazemnejad.com/blog/transformer_architecture_positional_encoding)
 [When Does Label Smoothing Help?](https://medium.com/@nainaakash012/when-does-label-smoothing-help-89654ec75326)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE4MjcxOTU3OTAsLTEyOTA0MzkzNjEsNj
-QyOTQyMjIsLTE1MzEzMjIyMDQsMjExNjcwNzY4Myw4NDUzMjcw
-NzEsMjEyMjQ4ODM4MiwxNTcwMzIxMTI4LC0yMTQ2NTg0NDQ0LD
-IzODgxODI3MywtMTA2NjEwNTk0NCwtMTEzOTQ4Mzk3OCwtMTI0
-ODA5NzMwOSwtMTc3OTE4NzU1MiwtNTk2NjA1ODQ4LDExNzQ4ND
-czNTgsMzM2Nzg3OTE3LDE4MTIyNTAzOTksLTY5ODI4ODQxNywz
-NjA5NjA5ODFdfQ==
+eyJoaXN0b3J5IjpbMTc3Nzc0ODEwMywtMTI5MDQzOTM2MSw2ND
+I5NDIyMiwtMTUzMTMyMjIwNCwyMTE2NzA3NjgzLDg0NTMyNzA3
+MSwyMTIyNDg4MzgyLDE1NzAzMjExMjgsLTIxNDY1ODQ0NDQsMj
+M4ODE4MjczLC0xMDY2MTA1OTQ0LC0xMTM5NDgzOTc4LC0xMjQ4
+MDk3MzA5LC0xNzc5MTg3NTUyLC01OTY2MDU4NDgsMTE3NDg0Nz
+M1OCwzMzY3ODc5MTcsMTgxMjI1MDM5OSwtNjk4Mjg4NDE3LDM2
+MDk2MDk4MV19
 -->
