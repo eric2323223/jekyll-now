@@ -4,14 +4,13 @@
 ## 时序（seq2seq）问题
 时序问题是应用机器学习（特别是深度学习）解决的一类常见问题，例如机器翻译，语态分析，摘要生成等自然语言处理问题（NLP）， 这类问题的最大特点是输入（或输出）以序列的形式出现，序列的长度可变，常见的NLP任务通常要求在分析整个输入序列的基础上才能产生输出。使用机器学习（深度学习）处理时序任务，通常使用编码器-解码器（encoder-decoder）架构，编码器负责将输入序列转换为包含整个序列所有特征的**序列编码**（context vector），解码器负责对这个内部表示进行解释。
 ![enter image description here](https://docs.google.com/drawings/d/e/2PACX-1vQpyCEO_5eiGEU2qG6G7ktzfhyjPRtMxtvGluMcFmeuEFoQYEMHIzAtvWAIH67v5uL1k5AKHS6Xn4cA/pub?w=680&h=255)
-传统上有两类深度模型适合处理时序任务：
-1. 循环神经网络（RNN）
+
 处理时序问题的传统方法是使用RNN模型，RNN能够保存状态，它将输入分为多步，依靠每步输入和上一步的状态更新当前的状态（和输出），通过重复这种步骤在读入所有序列元素后得到序列编码。由于RNN有存储机制并且不限制序列的长度，从模型结构上来说比较适合序列到序列问题。但是问题有三点
 	  - 长序列的训练很困难，梯度下降算法在长序列的训练中容易发生梯度爆炸或梯度消失，虽然LSTM可以改善这个问题，但是在较长序列的训练中仍然无法完全避免。
 	  - 只能顺序执行，无法通过并行加速训练
 	  - 固定的存储空间在处理超长序列导致信息丢失？
-2. 卷积神经网络（CNN）
-CNN可以同时处理序列中的所有元素，但是由于卷积运算的视域有限，一次卷积操作只能处理有限的元素，对于较长的序列无法处理。解决办法是通过堆叠多层卷积操作来逐渐增加视域，但这样会不可避免的导致信息丢失，并且仍没有完全解决长序列输入的处理问题，————————而且增加了模型的复杂度，使运算变慢，这和初衷不符。
+
+为了解决RNN长序列训练问题，除了不断改进原生RNN之外，人们还尝试借助于CNN。这是由于CNN有能力处理一段（卷积核）而不是一个输入序列，序列中的所有元素，但是由于卷积运算的视域有限，一次卷积操作只能处理有限的元素，对于较长的序列无法处理。解决办法是通过堆叠多层卷积操作来逐渐增加视域，但这样会不可避免的导致信息丢失，并且仍没有完全解决长序列输入的处理问题，————————而且增加了模型的复杂度，使运算变慢，这和初衷不符。
 
 ## 注意力机制（attention mechanism）
 
@@ -247,7 +246,7 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [Transformer Architecture: The Positional Encoding](https://kazemnejad.com/blog/transformer_architecture_positional_encoding)
 [When Does Label Smoothing Help?](https://medium.com/@nainaakash012/when-does-label-smoothing-help-89654ec75326)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTkwODM0MzA0OSwtMTI5MDQzOTM2MSw2ND
+eyJoaXN0b3J5IjpbLTgzODM2ODE3MCwtMTI5MDQzOTM2MSw2ND
 I5NDIyMiwtMTUzMTMyMjIwNCwyMTE2NzA3NjgzLDg0NTMyNzA3
 MSwyMTIyNDg4MzgyLDE1NzAzMjExMjgsLTIxNDY1ODQ0NDQsMj
 M4ODE4MjczLC0xMDY2MTA1OTQ0LC0xMTM5NDgzOTc4LC0xMjQ4
