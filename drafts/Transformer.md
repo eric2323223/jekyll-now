@@ -25,8 +25,11 @@ $$e_{ij}=alignment(h_i,x_j)$$
 ![enter image description here](https://oscimg.oschina.net/oscnet/5bdc25e12070e665409112ee13ac9e76603.jpg)
 
 ~~注意力机制主要用于seq2seq任务，它的基本思想就是对序列中的每个元素以一定的规则加入上下文信息。不同于RNN中先通过依次分析输入元素来逐步生成上下文context vector的方式，注意力机制对这些输入元素进行加权平均的方式来一步加入所有元素信息来生成上下文context vector。这样做的好处是能够一步到位捕捉到全局的联系(序列元素直接进行两两比较),不仅大大加速（可以并行计算）了context vector的生成，而且避免了RNN的长序列训练困难的问题。~~
-从实现上来讲，注意力操作可以理解为加权求和的运算，加数是序列中的所有元素，权值计算方法根据任务目标而不同（在机器翻译的场景中使用相似度来作为权值）。如果用$w$表示权值（通常表现为概率分布，即$\sum \alpha=1$），$x$表示序列元素，可以将注意力运算形式化的表示为
-$$attention(\vec{x}, y)=\sum_{j=1}w_{ij}x_j$$
+从实现上来讲，注意力操作可以理解为加权求和的运算，加数是序列中的所有元素，权值计算方法根据任务目标而不同（在机器翻译的场景中使用相似度来作为权值）。如果用$w_i$表示权值（通常表现为概率分布，即$\sum \alpha=1$），$\vec x$表示序列（向量），可以将注意力运算形式化的表示为
+$$attention(\vec{x}, y)=\sum_{i=1}w_ix_i$$
+其中$w_i$一般。。。。。。
+$$w_i=f(x_i, y)$$
+
 如下图所示，对
 
 $$y_2=w_{21}x_1+w_{22}x_2+w_{23}x_3+w_{24}x_4$$
@@ -248,7 +251,7 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [Transformer Architecture: The Positional Encoding](https://kazemnejad.com/blog/transformer_architecture_positional_encoding)
 [When Does Label Smoothing Help?](https://medium.com/@nainaakash012/when-does-label-smoothing-help-89654ec75326)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTE3Njk1ODg3MCwtMTI5MDQzOTM2MSw2ND
+eyJoaXN0b3J5IjpbMTkxNTM1MDM2OCwtMTI5MDQzOTM2MSw2ND
 I5NDIyMiwtMTUzMTMyMjIwNCwyMTE2NzA3NjgzLDg0NTMyNzA3
 MSwyMTIyNDg4MzgyLDE1NzAzMjExMjgsLTIxNDY1ODQ0NDQsMj
 M4ODE4MjczLC0xMDY2MTA1OTQ0LC0xMTM5NDgzOTc4LC0xMjQ4
