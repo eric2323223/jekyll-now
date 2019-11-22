@@ -10,7 +10,7 @@
 	  - 只能顺序执行，无法通过并行加速训练
 	  - 固定的存储空间在处理超长序列导致信息丢失？
 
-为了解决RNN长序列训练问题，除了不断改进原生RNN之外，人们还尝试借助于CNN。这是由于CNN有能力处理一段（卷积核）而不是一个输入序列，序列中的所有元素，但是由于卷积运算的视域有限，一次卷积操作只能处理有限的元素，对于较长的序列无法处理。解决办法是通过堆叠多层卷积操作来逐渐增加视域，但这样会不可避免的导致信息丢失，并且仍没有完全解决长序列输入的处理问题，————————而且增加了模型的复杂度，使运算变慢，这和初衷不符。
+为了解决RNN长序列训练问题，除了不断改进原生RNN之外，人们还尝试借助于CNN。这是由于CNN有能力处理一段（卷积核）输入序列而不是一个输入元素，虽然卷积核尺寸有限，但是可以通过叠加卷及操作的方式在逐步放大视域 但是由于卷积运算的视域有限，一次卷积操作只能处理有限的元素，对于较长的序列无法处理。解决办法是通过堆叠多层卷积操作来逐渐增加视域，但这样会不可避免的导致信息丢失，并且仍没有完全解决长序列输入的处理问题，————————而且增加了模型的复杂度，使运算变慢，这和初衷不符。
 
 ## 注意力机制（attention mechanism）
 
@@ -246,11 +246,11 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [Transformer Architecture: The Positional Encoding](https://kazemnejad.com/blog/transformer_architecture_positional_encoding)
 [When Does Label Smoothing Help?](https://medium.com/@nainaakash012/when-does-label-smoothing-help-89654ec75326)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTgzODM2ODE3MCwtMTI5MDQzOTM2MSw2ND
-I5NDIyMiwtMTUzMTMyMjIwNCwyMTE2NzA3NjgzLDg0NTMyNzA3
-MSwyMTIyNDg4MzgyLDE1NzAzMjExMjgsLTIxNDY1ODQ0NDQsMj
-M4ODE4MjczLC0xMDY2MTA1OTQ0LC0xMTM5NDgzOTc4LC0xMjQ4
-MDk3MzA5LC0xNzc5MTg3NTUyLC01OTY2MDU4NDgsMTE3NDg0Nz
-M1OCwzMzY3ODc5MTcsMTgxMjI1MDM5OSwtNjk4Mjg4NDE3LDM2
-MDk2MDk4MV19
+eyJoaXN0b3J5IjpbLTExNzQwNjU3MzcsLTEyOTA0MzkzNjEsNj
+QyOTQyMjIsLTE1MzEzMjIyMDQsMjExNjcwNzY4Myw4NDUzMjcw
+NzEsMjEyMjQ4ODM4MiwxNTcwMzIxMTI4LC0yMTQ2NTg0NDQ0LD
+IzODgxODI3MywtMTA2NjEwNTk0NCwtMTEzOTQ4Mzk3OCwtMTI0
+ODA5NzMwOSwtMTc3OTE4NzU1MiwtNTk2NjA1ODQ4LDExNzQ4ND
+czNTgsMzM2Nzg3OTE3LDE4MTIyNTAzOTksLTY5ODI4ODQxNywz
+NjA5NjA5ODFdfQ==
 -->
