@@ -12,9 +12,9 @@
 
 为了解决RNN长序列训练问题，除了不断改进原生RNN之外，人们还尝试借助于CNN。这是由于CNN有能力处理一段输入序列而不是一个输入元素，虽然单个卷积核尺寸有限，可以通过堆叠多层卷积操作的方式逐步放大视域 。但这样做会不可避免的导致信息丢失（卷积操作中的上采样upsampling过程），同时增加了模型的复杂度。
 
-## 注意力机制（attention mechanism）
-
 上述两种模型对于长序列的处理都有缺陷，RNN需要一步一步的处理输入序列，CNN做出了一些改进但并不彻底。从根本上的解决长序列处理问题需要能一次性的处理全部输入（无论序列有多长），并且能根据这些输入信息分析序列元素之间的关联关系。人们从自己快速浏览的方式获得了启发，当人们需要快速浏览的时候不会按输入的顺序依次阅读，而会直接跳到需要关注的的部分，这种根据需要在不同位置跳跃的阅读方式和注意力相关，因此这种新的序列处理方式被命名为注意力机制。
+
+## 注意力机制（attention mechanism）
 基于组成整体的各个元素在整体中发挥的作用不相同这样一个事实，注意力机制的基本思想是根据任务目标使用不同的权重组合各个序列元素来描述整体。~~从数学运算来讲，注意力机制是对组成整体的所有元素加权求和的过程。每个元素的权值由任务目标来确定，在机器翻译（一种常见的seq2seq任务）中一种常见的权值衡量方法是计算序列元素（单词）之间的相似度。~~
 注意力机制最早使用在基于[RNN的机器翻译模型](https://arxiv.org/pdf/1409.0473.pdf)中，不同于以往使用固定的context vector， 注意力机制能够让解码器每次解码的时候关注更相关的输入元素（生成动态的context vector）从而提高翻译的准确度。
 
@@ -251,11 +251,11 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [Transformer Architecture: The Positional Encoding](https://kazemnejad.com/blog/transformer_architecture_positional_encoding)
 [When Does Label Smoothing Help?](https://medium.com/@nainaakash012/when-does-label-smoothing-help-89654ec75326)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTkxNTM1MDM2OCwtMTI5MDQzOTM2MSw2ND
-I5NDIyMiwtMTUzMTMyMjIwNCwyMTE2NzA3NjgzLDg0NTMyNzA3
-MSwyMTIyNDg4MzgyLDE1NzAzMjExMjgsLTIxNDY1ODQ0NDQsMj
-M4ODE4MjczLC0xMDY2MTA1OTQ0LC0xMTM5NDgzOTc4LC0xMjQ4
-MDk3MzA5LC0xNzc5MTg3NTUyLC01OTY2MDU4NDgsMTE3NDg0Nz
-M1OCwzMzY3ODc5MTcsMTgxMjI1MDM5OSwtNjk4Mjg4NDE3LDM2
-MDk2MDk4MV19
+eyJoaXN0b3J5IjpbLTQ3ODUzNTI2MiwxOTE1MzUwMzY4LC0xMj
+kwNDM5MzYxLDY0Mjk0MjIyLC0xNTMxMzIyMjA0LDIxMTY3MDc2
+ODMsODQ1MzI3MDcxLDIxMjI0ODgzODIsMTU3MDMyMTEyOCwtMj
+E0NjU4NDQ0NCwyMzg4MTgyNzMsLTEwNjYxMDU5NDQsLTExMzk0
+ODM5NzgsLTEyNDgwOTczMDksLTE3NzkxODc1NTIsLTU5NjYwNT
+g0OCwxMTc0ODQ3MzU4LDMzNjc4NzkxNywxODEyMjUwMzk5LC02
+OTgyODg0MTddfQ==
 -->
