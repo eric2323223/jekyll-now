@@ -15,8 +15,7 @@
 上述两种模型对于长序列的处理都有缺陷，RNN需要一步一步的处理输入序列，CNN做出了一些改进但并不彻底。从根本上的解决长序列处理问题需要能一次性的处理全部输入（无论序列有多长），并且能根据这些输入信息分析序列元素之间的关联关系。人们从自己快速浏览的方式获得了启发，当人们需要快速浏览的时候不会按输入的顺序依次阅读，而会直接跳到需要关注的的部分，这种根据需要在不同位置跳跃的阅读方式和注意力相关，因此这种新的序列处理方式被命名为注意力机制。
 
 ## 注意力机制（attention mechanism）
-基于组成整体的各个元素在整体中发挥的作用不相同这样一个事实，注意力机制的基本思想是根据任务目标使用不同的权重组合各个序列元素来描述整体。~~从数学运算来讲，注意力机制是对组成整体的所有元素加权求和的过程。每个元素的权值由任务目标来确定，在机器翻译（一种常见的seq2seq任务）中一种常见的权值衡量方法是计算序列元素（单词）之间的相似度。~~
-
+基于组成整体的各个元素在整体中发挥的作用不相同这样一个事实，注意力机制的基本思想是根据任务目标使用不同的权重组合各个序列元素来描述整体。
 ~~注意力机制主要用于seq2seq任务，它的基本思想就是对序列中的每个元素以一定的规则加入上下文信息。不同于RNN中先通过依次分析输入元素来逐步生成上下文context vector的方式，注意力机制对这些输入元素进行加权平均的方式来一步加入所有元素信息来生成上下文context vector。这样做的好处是能够一步到位捕捉到全局的联系(序列元素直接进行两两比较),不仅大大加速（可以并行计算）了context vector的生成，而且避免了RNN的长序列训练困难的问题。~~
 从实现上来讲，注意力运算表现为加权求和运算，加数是序列中的所有元素，权值计算方法根据任务目标而不同（在机器翻译的场景中使用相似度来作为权值）。如下图所示，对
 $$y_2=w_{21}x_1+w_{22}x_2+w_{23}x_3+w_{24}x_4$$
@@ -34,10 +33,7 @@ $\theta$表示两个向量$a,b$之间的夹角，如果$a,b$越相似则夹角$\
 
 ![enter image description here](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSO0ZVpogoaP-ipyQF0Xhir4wSrgGJBdeU_5wDrea6UD9sF7icIYg)
 
-从运算的结果上看，由于$y$包含了序列$X$所有元素的信息，因此我们也可以把注意力运算理解为**元素在某一个序列上下文环境中的重新定义**。这是一种对于时序任务非常有用的属性，RNN由于能够保存输入序列的信息而被广泛应用于时序任务，而注意力机制不但也有能力获取整个序列的信息，更重要的是它能一步直接得到结果，从根本上避免了RNN面临的梯度弥散（爆炸）的问题，在效率上有巨大的进步，~~attention最核心的特点，也是attention能够取代RNN的基础。~~
-
--   **最后**，从物理意义上Attention可以理解为**相似性度量**。
-$$e_{ij}=Sim(h_i,x_j)$$
+从运算的结果上看，由于$y$包含了序列$X$所有元素的信息，因此我们也可以把注意力运算理解为**元素在某一个序列上下文环境中的重新定义**。这是一种对于时序任务非常有用的属性，RNN由于能够保存输入序列的信息而被广泛应用于时序任务，而注意力机制不但也有能力获取整个序列的信息，更重要的是它能一步直接得到结果，从根本上避免了RNN面临的梯度弥散（爆炸）的问题，并且效率上有巨大的进步，~~attention最核心的特点，也是attention能够取代RNN的基础。~~
 
 > **try to understand why K and V are different in transformer first!!!**
 > Attention has a more generalized the form: XXXXXX
@@ -249,11 +245,11 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [Transformer Architecture: The Positional Encoding](https://kazemnejad.com/blog/transformer_architecture_positional_encoding)
 [When Does Label Smoothing Help?](https://medium.com/@nainaakash012/when-does-label-smoothing-help-89654ec75326)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE3MDgxMzMzNjQsLTE0MjA2MDIwMzgsMT
-kxNTM1MDM2OCwtMTI5MDQzOTM2MSw2NDI5NDIyMiwtMTUzMTMy
-MjIwNCwyMTE2NzA3NjgzLDg0NTMyNzA3MSwyMTIyNDg4MzgyLD
-E1NzAzMjExMjgsLTIxNDY1ODQ0NDQsMjM4ODE4MjczLC0xMDY2
-MTA1OTQ0LC0xMTM5NDgzOTc4LC0xMjQ4MDk3MzA5LC0xNzc5MT
-g3NTUyLC01OTY2MDU4NDgsMTE3NDg0NzM1OCwzMzY3ODc5MTcs
-MTgxMjI1MDM5OV19
+eyJoaXN0b3J5IjpbMTQ4OTc3NzM3NywtMTQyMDYwMjAzOCwxOT
+E1MzUwMzY4LC0xMjkwNDM5MzYxLDY0Mjk0MjIyLC0xNTMxMzIy
+MjA0LDIxMTY3MDc2ODMsODQ1MzI3MDcxLDIxMjI0ODgzODIsMT
+U3MDMyMTEyOCwtMjE0NjU4NDQ0NCwyMzg4MTgyNzMsLTEwNjYx
+MDU5NDQsLTExMzk0ODM5NzgsLTEyNDgwOTczMDksLTE3NzkxOD
+c1NTIsLTU5NjYwNTg0OCwxMTc0ODQ3MzU4LDMzNjc4NzkxNywx
+ODEyMjUwMzk5XX0=
 -->
