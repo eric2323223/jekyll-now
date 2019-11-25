@@ -17,7 +17,7 @@
 ## 注意力机制（attention mechanism）
 基于组成整体的各个元素在整体中发挥的作用不相同这样一个事实，注意力机制的基本思想是根据任务目标使用不同的权重组合各个序列元素来描述整体。
 ~~注意力机制主要用于seq2seq任务，它的基本思想就是对序列中的每个元素以一定的规则加入上下文信息。不同于RNN中先通过依次分析输入元素来逐步生成上下文context vector的方式，注意力机制对这些输入元素进行加权平均的方式来一步加入所有元素信息来生成上下文context vector。这样做的好处是能够一步到位捕捉到全局的联系(序列元素直接进行两两比较),不仅大大加速（可以并行计算）了context vector的生成，而且避免了RNN的长序列训练困难的问题。~~
-从实现上来讲，注意力运算表现为加权求和运算，加数是序列中的所有元素，权值计算方法根据任务目标而不同（在机器翻译的场景中使用相似度来作为权值）。如下图所示，对
+从实现上来讲，注意力运算表现为加权求和运算。其过程是首先根据目标元素与输入元素的相关性确定其对应的权值，再权值比例将输入元素重新组合（相加）为新的XX。如下图所示，对
 $$y_2=w_{21}x_1+w_{22}x_2+w_{23}x_3+w_{24}x_4$$
 
 ![enter image description here](http://www.peterbloem.nl/files/transformers/self-attention.svg)
@@ -245,11 +245,11 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [Transformer Architecture: The Positional Encoding](https://kazemnejad.com/blog/transformer_architecture_positional_encoding)
 [When Does Label Smoothing Help?](https://medium.com/@nainaakash012/when-does-label-smoothing-help-89654ec75326)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTQ4OTc3NzM3NywtMTQyMDYwMjAzOCwxOT
-E1MzUwMzY4LC0xMjkwNDM5MzYxLDY0Mjk0MjIyLC0xNTMxMzIy
-MjA0LDIxMTY3MDc2ODMsODQ1MzI3MDcxLDIxMjI0ODgzODIsMT
-U3MDMyMTEyOCwtMjE0NjU4NDQ0NCwyMzg4MTgyNzMsLTEwNjYx
-MDU5NDQsLTExMzk0ODM5NzgsLTEyNDgwOTczMDksLTE3NzkxOD
-c1NTIsLTU5NjYwNTg0OCwxMTc0ODQ3MzU4LDMzNjc4NzkxNywx
-ODEyMjUwMzk5XX0=
+eyJoaXN0b3J5IjpbMTkxMzA3NzA5MCwxNDg5Nzc3Mzc3LC0xND
+IwNjAyMDM4LDE5MTUzNTAzNjgsLTEyOTA0MzkzNjEsNjQyOTQy
+MjIsLTE1MzEzMjIyMDQsMjExNjcwNzY4Myw4NDUzMjcwNzEsMj
+EyMjQ4ODM4MiwxNTcwMzIxMTI4LC0yMTQ2NTg0NDQ0LDIzODgx
+ODI3MywtMTA2NjEwNTk0NCwtMTEzOTQ4Mzk3OCwtMTI0ODA5Nz
+MwOSwtMTc3OTE4NzU1MiwtNTk2NjA1ODQ4LDExNzQ4NDczNTgs
+MzM2Nzg3OTE3XX0=
 -->
