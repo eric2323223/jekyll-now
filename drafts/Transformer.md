@@ -15,10 +15,11 @@
 上述两种模型对于长序列的处理都有缺陷，RNN需要一步一步的处理输入序列，CNN做出了一些改进但并不彻底。从根本上的解决长序列处理问题需要能一次性的处理全部输入（无论序列有多长），并且能根据这些输入信息分析序列元素之间的关联关系。人们从自己快速浏览的方式获得了启发，当人们需要快速浏览的时候不会按输入的顺序依次阅读，而会直接跳到需要关注的的部分，这种根据需要在不同位置跳跃的阅读方式和注意力相关，因此这种新的序列处理方式被命名为注意力机制。
 
 ## 注意力机制（attention mechanism）
-基于组成整体的各个元素在整体中发挥的作用不相同这样一个事实，注意力机制的基本思想是在特定的目标下使用不同的权重组合各个序列元素来重新描述适合该目标的序列。这就好像在日常生活中，带着不同的目的看同一个事物会产生不同的理解。观察下图，生物学家看到的是鱼和珊瑚，而石油钻井专家看到的是钻井平台的支柱，这是由于生物学家和钻井专家带着不同的目的，会对图片的的物体分配不同的权重，因此产生了不同的理解。
+基于组成整体的各个元素在整体中发挥的作用不相同这样一个事实，注意力机制的基本思想是在特定的目标下使用不同的权重组合各个序列元素来重新描述适合该目标的序列。举一个通俗的例子，这就好像在日常生活中，带着不同的目的看同一个事物会产生不同的理解。观察下图，生物学家看到的是鱼和珊瑚，而石油钻井专家看到的是钻井平台的支柱，这是由于生物学家和钻井专家带着不同的目标，会对图片的的物体分配不同的权重，因此产生了不同的理解。
 
 ![enter image description here](https://www.capeandislands.org/sites/wcai/files/styles/medium/public/201609/oilrigs-5.jpg)
 ~~注意力机制主要用于seq2seq任务，它的基本思想就是对序列中的每个元素以一定的规则加入上下文信息。不同于RNN中先通过依次分析输入元素来逐步生成上下文context vector的方式，注意力机制对这些输入元素进行加权平均的方式来一步加入所有元素信息来生成上下文context vector。这样做的好处是能够一步到位捕捉到全局的联系(序列元素直接进行两两比较),不仅大大加速（可以并行计算）了context vector的生成，而且避免了RNN的长序列训练困难的问题。~~
+
 从实现上来讲，注意力运算表现为加权求和运算。其过程是首先根据目标元素与输入元素的相关性确定其对应的权值，再权值比例将输入元素重新组合（相加）为新的XX。如下图所示，对
 $$y_2=w_{21}x_1+w_{22}x_2+w_{23}x_3+w_{24}x_4$$
 
@@ -247,11 +248,11 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [Transformer Architecture: The Positional Encoding](https://kazemnejad.com/blog/transformer_architecture_positional_encoding)
 [When Does Label Smoothing Help?](https://medium.com/@nainaakash012/when-does-label-smoothing-help-89654ec75326)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNzYzOTU5MjIsMTQ4OTc3NzM3NywtMTQyMD
-YwMjAzOCwxOTE1MzUwMzY4LC0xMjkwNDM5MzYxLDY0Mjk0MjIy
-LC0xNTMxMzIyMjA0LDIxMTY3MDc2ODMsODQ1MzI3MDcxLDIxMj
-I0ODgzODIsMTU3MDMyMTEyOCwtMjE0NjU4NDQ0NCwyMzg4MTgy
-NzMsLTEwNjYxMDU5NDQsLTExMzk0ODM5NzgsLTEyNDgwOTczMD
-ksLTE3NzkxODc1NTIsLTU5NjYwNTg0OCwxMTc0ODQ3MzU4LDMz
-Njc4NzkxN119
+eyJoaXN0b3J5IjpbLTIzNzE3MjY4NSwxNDg5Nzc3Mzc3LC0xND
+IwNjAyMDM4LDE5MTUzNTAzNjgsLTEyOTA0MzkzNjEsNjQyOTQy
+MjIsLTE1MzEzMjIyMDQsMjExNjcwNzY4Myw4NDUzMjcwNzEsMj
+EyMjQ4ODM4MiwxNTcwMzIxMTI4LC0yMTQ2NTg0NDQ0LDIzODgx
+ODI3MywtMTA2NjEwNTk0NCwtMTEzOTQ4Mzk3OCwtMTI0ODA5Nz
+MwOSwtMTc3OTE4NzU1MiwtNTk2NjA1ODQ4LDExNzQ4NDczNTgs
+MzM2Nzg3OTE3XX0=
 -->
