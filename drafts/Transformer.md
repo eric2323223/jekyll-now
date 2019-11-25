@@ -19,14 +19,18 @@
 
 ~~注意力机制主要用于seq2seq任务，它的基本思想就是对序列中的每个元素以一定的规则加入上下文信息。不同于RNN中先通过依次分析输入元素来逐步生成上下文context vector的方式，注意力机制对这些输入元素进行加权平均的方式来一步加入所有元素信息来生成上下文context vector。这样做的好处是能够一步到位捕捉到全局的联系(序列元素直接进行两两比较),不仅大大加速（可以并行计算）了context vector的生成，而且避免了RNN的长序列训练困难的问题。~~
 从实现上来讲，注意力运算表现为加权求和运算，加数是序列中的所有元素，权值计算方法根据任务目标而不同（在机器翻译的场景中使用相似度来作为权值）。如果$X$表示输入序列集合$X=\{x_1, x_2, ... x_n\}$，可以将注意力运算形式化的表示为
-$$attention(X, y)=\sum_{i=1}w_ix_i$$
+$$Attention(X, y)=\sum_{i=1}w_ix_i$$
 其中$w_i$表示$x_i$的权值（通常表现为概率分布，即$\sum_1^n w_i=1$），由$x_i, y$通过一定的运算$f$得到。$f$根据任务的不同而不同，在机器翻译的场景中使用相似度函数表示。
 $$w_i=f(x_i, y)$$
 如下图所示，对
 $$y_2=w_{21}x_1+w_{22}x_2+w_{23}x_3+w_{24}x_4$$
 
 ![enter image description here](http://www.peterbloem.nl/files/transformers/self-attention.svg)
-从这个定义可以看出attention的结果$c$就是序列中所有元素按一定的比例关系相加得到的，由于$c$具备了序列的上下文信息，因此我们也可以把attention理解为**元素在某一个序列上下文环境中的重新定义**。这是attention最核心的特点，也是attention能够取代RNN的基础。
+$$Att(X, Y) =$$
+
+从运算的结果上看，由于$y$包含了序列$X$所有元素的信息，因此我们也可以把注意力运算理解为**元素在某一个序列上下文环境中的重新定义**。这是一种对于时序任务非常好的属性，RNN由于能够保存输入序列的状态而被广泛应用于时序任务，而注意力机制不但也
+attention最核心的特点，也是attention能够取代RNN的基础。
+
 权值$w_{ij}$表示$x_j$在对于$y_i$的计算中发挥的权重，由于所有$x$都参与$y_i$的计算，所以使用softmax来保证所有权值的和等于1。
 $$w_{ij}=\frac{exp(e_{ij})}{\sum_{k=1}exp(e_{ik})}$$
 这里的$e_{ij}$表示$x_j$和$y_i$的相关性，对于机器翻译任务来说，通常用矢量相似性来表述元素的相关性，适量相似性的计算方法有很多，其中最常用的就是点积运算（dot product）
@@ -248,11 +252,11 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [Transformer Architecture: The Positional Encoding](https://kazemnejad.com/blog/transformer_architecture_positional_encoding)
 [When Does Label Smoothing Help?](https://medium.com/@nainaakash012/when-does-label-smoothing-help-89654ec75326)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEwNDA2MTYxOTcsMTkxNTM1MDM2OCwtMT
-I5MDQzOTM2MSw2NDI5NDIyMiwtMTUzMTMyMjIwNCwyMTE2NzA3
-NjgzLDg0NTMyNzA3MSwyMTIyNDg4MzgyLDE1NzAzMjExMjgsLT
-IxNDY1ODQ0NDQsMjM4ODE4MjczLC0xMDY2MTA1OTQ0LC0xMTM5
-NDgzOTc4LC0xMjQ4MDk3MzA5LC0xNzc5MTg3NTUyLC01OTY2MD
-U4NDgsMTE3NDg0NzM1OCwzMzY3ODc5MTcsMTgxMjI1MDM5OSwt
-Njk4Mjg4NDE3XX0=
+eyJoaXN0b3J5IjpbOTUzNDg1MDEwLDE5MTUzNTAzNjgsLTEyOT
+A0MzkzNjEsNjQyOTQyMjIsLTE1MzEzMjIyMDQsMjExNjcwNzY4
+Myw4NDUzMjcwNzEsMjEyMjQ4ODM4MiwxNTcwMzIxMTI4LC0yMT
+Q2NTg0NDQ0LDIzODgxODI3MywtMTA2NjEwNTk0NCwtMTEzOTQ4
+Mzk3OCwtMTI0ODA5NzMwOSwtMTc3OTE4NzU1MiwtNTk2NjA1OD
+Q4LDExNzQ4NDczNTgsMzM2Nzg3OTE3LDE4MTIyNTAzOTksLTY5
+ODI4ODQxN119
 -->
