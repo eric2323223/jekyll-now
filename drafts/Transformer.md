@@ -16,17 +16,10 @@
 
 ## 注意力机制（attention mechanism）
 基于组成整体的各个元素在整体中发挥的作用不相同这样一个事实，注意力机制的基本思想是根据任务目标使用不同的权重组合各个序列元素来描述整体。~~从数学运算来讲，注意力机制是对组成整体的所有元素加权求和的过程。每个元素的权值由任务目标来确定，在机器翻译（一种常见的seq2seq任务）中一种常见的权值衡量方法是计算序列元素（单词）之间的相似度。~~
-注意力机制最早使用在基于[RNN的机器翻译模型](https://arxiv.org/pdf/1409.0473.pdf)中，不同于以往使用固定的context vector， 注意力机制能够让解码器每次解码的时候关注更相关的输入元素（生成动态的context vector）从而提高翻译的准确度。
-
-$$c_i=\sum_{j=1}\alpha_{ij}h_j$$
-$$\alpha_{ij}=\frac{exp(e_{ij})}{\sum_{k=1}exp(e_{ik})}$$
-$$e_{ij}=alignment(h_i,x_j)$$
-
-![enter image description here](https://oscimg.oschina.net/oscnet/5bdc25e12070e665409112ee13ac9e76603.jpg)
 
 ~~注意力机制主要用于seq2seq任务，它的基本思想就是对序列中的每个元素以一定的规则加入上下文信息。不同于RNN中先通过依次分析输入元素来逐步生成上下文context vector的方式，注意力机制对这些输入元素进行加权平均的方式来一步加入所有元素信息来生成上下文context vector。这样做的好处是能够一步到位捕捉到全局的联系(序列元素直接进行两两比较),不仅大大加速（可以并行计算）了context vector的生成，而且避免了RNN的长序列训练困难的问题。~~
-从实现上来讲，注意力操作可以理解为加权求和的运算，加数是序列中的所有元素，权值计算方法根据任务目标而不同（在机器翻译的场景中使用相似度来作为权值）。如果用$w_i$表示权值（通常表现为概率分布，即$\sum \alpha=1$），$\vec x$表示序列（向量），可以将注意力运算形式化的表示为
-$$attention(\vec{x}, y)=\sum_{i=1}w_ix_i$$
+从实现上来讲，注意力操作可以理解为加权求和的运算，加数是序列中的所有元素，权值计算方法根据任务目标而不同（在机器翻译的场景中使用相似度来作为权值）。如果用$w_i$表示权值（通常表现为概率分布，即$\sum \alpha=1$），$X$表示输入序列集合$X={x_1, x_}$，可以将注意力运算形式化的表示为
+$$attention(X, y)=\sum_{i=1}w_ix_i$$
 其中$w_i$一般。。。。。。
 $$w_i=f(x_i, y)$$
 
@@ -58,7 +51,13 @@ $$\mathrm{Attention}(Q, K, V) = \mathrm{softmax}(Sim(Q,K))V$$
 The query determines which values to focus on; we can say that the query ‘attends’ to the values.
 
 ![enter image description here](https://ldzhangyx.github.io/2018/10/14/self-attention/1.jpg)
+注意力机制最早使用在基于[RNN的机器翻译模型](https://arxiv.org/pdf/1409.0473.pdf)中，不同于以往使用固定的context vector， 注意力机制能够让解码器每次解码的时候关注更相关的输入元素（生成动态的context vector）从而提高翻译的准确度。
 
+$$c_i=\sum_{j=1}\alpha_{ij}h_j$$
+$$\alpha_{ij}=\frac{exp(e_{ij})}{\sum_{k=1}exp(e_{ik})}$$
+$$e_{ij}=alignment(h_i,x_j)$$
+
+![enter image description here](https://oscimg.oschina.net/oscnet/5bdc25e12070e665409112ee13ac9e76603.jpg)
 
 ## Transformer模型
 
@@ -251,11 +250,11 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [Transformer Architecture: The Positional Encoding](https://kazemnejad.com/blog/transformer_architecture_positional_encoding)
 [When Does Label Smoothing Help?](https://medium.com/@nainaakash012/when-does-label-smoothing-help-89654ec75326)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQ3ODUzNTI2MiwxOTE1MzUwMzY4LC0xMj
-kwNDM5MzYxLDY0Mjk0MjIyLC0xNTMxMzIyMjA0LDIxMTY3MDc2
-ODMsODQ1MzI3MDcxLDIxMjI0ODgzODIsMTU3MDMyMTEyOCwtMj
-E0NjU4NDQ0NCwyMzg4MTgyNzMsLTEwNjYxMDU5NDQsLTExMzk0
-ODM5NzgsLTEyNDgwOTczMDksLTE3NzkxODc1NTIsLTU5NjYwNT
-g0OCwxMTc0ODQ3MzU4LDMzNjc4NzkxNywxODEyMjUwMzk5LC02
-OTgyODg0MTddfQ==
+eyJoaXN0b3J5IjpbLTE5MTc4Njg4MzEsMTkxNTM1MDM2OCwtMT
+I5MDQzOTM2MSw2NDI5NDIyMiwtMTUzMTMyMjIwNCwyMTE2NzA3
+NjgzLDg0NTMyNzA3MSwyMTIyNDg4MzgyLDE1NzAzMjExMjgsLT
+IxNDY1ODQ0NDQsMjM4ODE4MjczLC0xMDY2MTA1OTQ0LC0xMTM5
+NDgzOTc4LC0xMjQ4MDk3MzA5LC0xNzc5MTg3NTUyLC01OTY2MD
+U4NDgsMTE3NDg0NzM1OCwzMzY3ODc5MTcsMTgxMjI1MDM5OSwt
+Njk4Mjg4NDE3XX0=
 -->
