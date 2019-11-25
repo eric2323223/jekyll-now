@@ -21,7 +21,7 @@
 从实现上来讲，注意力运算表现为加权求和运算，加数是序列中的所有元素，权值计算方法根据任务目标而不同（在机器翻译的场景中使用相似度来作为权值）。如果$X$表示输入序列集合$X=\{x_1, x_2, ... x_n\}$，可以将注意力运算形式化的表示为
 $$Attention(X, y)=\sum_{i=1}w_ix_i$$
 其中$w_i$表示$x_i$的权值（通常表现为概率分布，即$\sum_1^n w_i=1$），由$x_i, y$通过一定的运算$f$得到。$f$根据任务的不同而不同，在机器翻译的场景中使用相似度函数表示。
-$$w_{i}=\frac{exp(e_{i})}{\sum_{k=1}^nexp(e_{k})}$$
+$$w_{i}=\frac{exp(f(x_i, y))}{\sum_{k=1}^nexp(f(x_k, y))}$$
 权值$w_{i}$表示$x_j$在对于$y_i$的计算中发挥的权重，由于所有$x$都参与$y_i$的计算，所以使用softmax来保证所有权值的和等于1。
 
 这里的$e_{ij}$表示$x_j$和$y_i$的相关性，对于机器翻译任务来说，通常用矢量相似性来表述元素的相关性，适量相似性的计算方法有很多，其中最常用的就是点积运算（dot product）
@@ -252,11 +252,11 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [Transformer Architecture: The Positional Encoding](https://kazemnejad.com/blog/transformer_architecture_positional_encoding)
 [When Does Label Smoothing Help?](https://medium.com/@nainaakash012/when-does-label-smoothing-help-89654ec75326)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTg1MjQ5Mzc5MywtMTQyMDYwMjAzOCwxOT
-E1MzUwMzY4LC0xMjkwNDM5MzYxLDY0Mjk0MjIyLC0xNTMxMzIy
-MjA0LDIxMTY3MDc2ODMsODQ1MzI3MDcxLDIxMjI0ODgzODIsMT
-U3MDMyMTEyOCwtMjE0NjU4NDQ0NCwyMzg4MTgyNzMsLTEwNjYx
-MDU5NDQsLTExMzk0ODM5NzgsLTEyNDgwOTczMDksLTE3NzkxOD
-c1NTIsLTU5NjYwNTg0OCwxMTc0ODQ3MzU4LDMzNjc4NzkxNywx
-ODEyMjUwMzk5XX0=
+eyJoaXN0b3J5IjpbLTE3MDYwODEyMTksLTE0MjA2MDIwMzgsMT
+kxNTM1MDM2OCwtMTI5MDQzOTM2MSw2NDI5NDIyMiwtMTUzMTMy
+MjIwNCwyMTE2NzA3NjgzLDg0NTMyNzA3MSwyMTIyNDg4MzgyLD
+E1NzAzMjExMjgsLTIxNDY1ODQ0NDQsMjM4ODE4MjczLC0xMDY2
+MTA1OTQ0LC0xMTM5NDgzOTc4LC0xMjQ4MDk3MzA5LC0xNzc5MT
+g3NTUyLC01OTY2MDU4NDgsMTE3NDg0NzM1OCwzMzY3ODc5MTcs
+MTgxMjI1MDM5OV19
 -->
