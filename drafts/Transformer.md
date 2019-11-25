@@ -28,8 +28,7 @@ $$y_2=w_{21}x_1+w_{22}x_2+w_{23}x_3+w_{24}x_4$$
 ![enter image description here](http://www.peterbloem.nl/files/transformers/self-attention.svg)
 $$Att(X, Y) =$$
 
-从运算的结果上看，由于$y$包含了序列$X$所有元素的信息，因此我们也可以把注意力运算理解为**元素在某一个序列上下文环境中的重新定义**。这是一种对于时序任务非常好的属性，RNN由于能够保存输入序列的状态而被广泛应用于时序任务，而注意力机制不但也
-attention最核心的特点，也是attention能够取代RNN的基础。
+从运算的结果上看，由于$y$包含了序列$X$所有元素的信息，因此我们也可以把注意力运算理解为**元素在某一个序列上下文环境中的重新定义**。这是一种对于时序任务非常好的属性，RNN由于能够保存输入序列的信息而被广泛应用于时序任务，而注意力机制不但也有能力获取这个序列的信息，而且还能一步直接得到结果，从效率上比RNN有巨大的进步。~~attention最核心的特点，也是attention能够取代RNN的基础。~~
 
 权值$w_{ij}$表示$x_j$在对于$y_i$的计算中发挥的权重，由于所有$x$都参与$y_i$的计算，所以使用softmax来保证所有权值的和等于1。
 $$w_{ij}=\frac{exp(e_{ij})}{\sum_{k=1}exp(e_{ik})}$$
@@ -252,7 +251,7 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [Transformer Architecture: The Positional Encoding](https://kazemnejad.com/blog/transformer_architecture_positional_encoding)
 [When Does Label Smoothing Help?](https://medium.com/@nainaakash012/when-does-label-smoothing-help-89654ec75326)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbOTUzNDg1MDEwLDE5MTUzNTAzNjgsLTEyOT
+eyJoaXN0b3J5IjpbODgzNTcxMjcyLDE5MTUzNTAzNjgsLTEyOT
 A0MzkzNjEsNjQyOTQyMjIsLTE1MzEzMjIyMDQsMjExNjcwNzY4
 Myw4NDUzMjcwNzEsMjEyMjQ4ODM4MiwxNTcwMzIxMTI4LC0yMT
 Q2NTg0NDQ0LDIzODgxODI3MywtMTA2NjEwNTk0NCwtMTEzOTQ4
