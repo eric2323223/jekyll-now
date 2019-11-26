@@ -18,18 +18,17 @@
 基于组成整体的各个元素在整体中发挥的作用不相同这样一个事实，注意力机制的基本思想是在一定的目标下使用相对应的的权重组合各个序列元素来重新描述适合该目标的序列。举一个通俗的例子，这就好像在日常生活中，带着不同的目的看同一个事物会产生不同的理解。观察下图，生物学家看到的是鱼和珊瑚，而石油钻井专家看到的是钻井平台的支柱，这是由于生物学家和钻井专家带着不同的目标，会对图片的的物体分配不同的权重，因此产生了不同的理解。
 
 ![enter image description here](https://www.capeandislands.org/sites/wcai/files/styles/medium/public/201609/oilrigs-5.jpg)
-~~注意力机制主要用于seq2seq任务，它的基本思想就是对序列中的每个元素以一定的规则加入上下文信息。不同于RNN中先通过依次分析输入元素来逐步生成上下文context vector的方式，注意力机制对这些输入元素进行加权平均的方式来一步加入所有元素信息来生成上下文context vector。这样做的好处是能够一步到位捕捉到全局的联系(序列元素直接进行两两比较),不仅大大加速（可以并行计算）了context vector的生成，而且避免了RNN的长序列训练困难的问题。~~
+~~注意力机制主要用于seq2seq任务，它的基本思想就是对序列中的每个元素以一定的规则加入上下文信息。不同于RNN中先通过依次分析输入元素来逐步生成上下文CV的方式，注意力机制对这些输入元素进行加权平均的方式来一步加入所有元素信息来生成上下文context vector。这样做的好处是能够一步到位捕捉到全局的联系(序列元素直接进行两两比较),不仅大大加速（可以并行计算）了context vector的生成，而且避免了RNN的长序列训练困难的问题[^1]。~~
 
-从实现上来讲，注意力运算表现为加权求和运算，即对输入序列中的元素赋予相应的权重并相加。权重来自任务目标，具体来说是根据目标对输出序列的要求，确定输出序列元素和输入序列元素之间的关系，通过这种关系确定输入元素的权重。举个例子，对于机器翻译任务来说，由于我们需要让输入元素与输出元素表达相同的意义，因此需要比较它们的相似性，给相似性高的元素较高的权重，而对相似性低的元素赋予较低权重。
+*[CV]: Context Vector
 
-如下图所示，对
-$$y_2=w_{21}x_1+w_{22}x_2+w_{23}x_3+w_{24}x_4$$
+[^1]: the footnote
 
-![enter image description here](http://www.peterbloem.nl/files/transformers/self-attention.svg)
+从实现上来讲，注意力运算表现为加权求和运算，即对输入序列中的元素赋予相应的权重并相加。这里的权重来自任务目标，具体来说是根据目标对输出序列的要求，确定输出序列元素和输入序列元素之间的关系，再通过这种关系确定输入元素的权重。举个例子，对于机器翻译任务来说，由于我们需要让输入元素与输出元素表达相同的意义，因此需要比较它们的相似性，给相似性高的元素较高的权重，而对相似性低的元素赋予较低权重。
 
-如果$X$表示输入序列集合$X=\{x_1, x_2, ... x_n\}$，可以将注意力运算形式化的表示为
-$$Attention(X, y)=\sum_{i=1}w_ix_i$$
-其中$w_i$表示在计算$y$过程中$x_i$的权重，$f(x_i,y)$表示$x_i$和$y$的相关性，可以根据不同任务选择不同的计算方法。由于所有$x$都参与$y$的计算，所以使用softmax来保证所有权值的和等于1。
+如果$X$表示输入序列集合$\{x_1, x_2, ... x_n\}$，可以将$X$对应$y$的注意力运算形式化的表示为
+$$AttentionX_=\sum_{i=1}w_ix_i$$
+其中$w_i$表示在对应$y$的计算过程中$x_i$的权重，$f(x_i,y)$表示$x_i$和$y$的相关性，可以根据不同任务选择不同的计算方法。由于所有$x$都参与$y$的计算，所以使用softmax来保证所有权值之和等于1。
 $$w_{i}=Softmax(f(x_i,y))=\frac{exp(f(x_i, y))}{\sum_{k=1}^nexp(f(x_k, y))}$$
 
 对于机器翻译任务来说，通常用矢量相似性来衡量元素的相关性，最常用的就是点积运算（dot product）
@@ -79,7 +78,7 @@ Transformer论文的标题说只需要attention意味着attention可以完成以
 在encoder-decoder模型中encoder负责将输入转化为输入序列的内部表示（context vector），传统方法使用RNN通过一步步的叠加分析过的输入来得到整个序列的内部表示（固定长度），Transformer模型中使用自注意力（self attention）机制来实现encoding，之所以称作自注意力是因为这是在输入序列内部进行的attention操作，由于attention操作就是对元素进行重新定义使其包含序列上下文信息，在输入序列元素进行attention的操作结果就是使该元素包含输入序列信息，因此经过self attention运算的整个输入序列的结果就是和一个输入序列大小一致的context vector。显然，self attention不需要想RNN那样一步步的出入输入，而是可以同时对每个元素进行attention运算，从下图可以发现，RNN需要在依次处理元素x1, x2和x3之后才能得到整个序列的上下文信息，而attention则可以同时处理x1，x2，x3而得到序列的上下文信息。
 ![enter image description here](https://docs.google.com/drawings/d/e/2PACX-1vQZ5I4YZtpZOU8xnxqqJ2WVd7o9eeo0sHQa119cWm4qR85KanMs7-Z1DV1EfKxJLQrZaVglHLUJGPF2/pub?w=856&h=225)
 
-
+![enter image description here](http://www.peterbloem.nl/files/transformers/self-attention.svg)
 总结来说，Attention比较RNN有一下三点优势
 - 对于NLP的任务场景，attention的计算复杂度更低（dim>length）
 
@@ -250,7 +249,7 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [Transformer Architecture: The Positional Encoding](https://kazemnejad.com/blog/transformer_architecture_positional_encoding)
 [When Does Label Smoothing Help?](https://medium.com/@nainaakash012/when-does-label-smoothing-help-89654ec75326)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwMTkwMDM0MTAsMTY5MzQzNTIxNSwxMT
+eyJoaXN0b3J5IjpbLTE1NTIwOTk3OTMsMTY5MzQzNTIxNSwxMT
 IwMDk3OTYyLC0yMzcxNzI2ODUsMTQ4OTc3NzM3NywtMTQyMDYw
 MjAzOCwxOTE1MzUwMzY4LC0xMjkwNDM5MzYxLDY0Mjk0MjIyLC
 0xNTMxMzIyMjA0LDIxMTY3MDc2ODMsODQ1MzI3MDcxLDIxMjI0
