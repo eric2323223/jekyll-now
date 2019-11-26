@@ -20,8 +20,9 @@
 ![enter image description here](https://www.capeandislands.org/sites/wcai/files/styles/medium/public/201609/oilrigs-5.jpg)
 ~~注意力机制主要用于seq2seq任务，它的基本思想就是对序列中的每个元素以一定的规则加入上下文信息。不同于RNN中先通过依次分析输入元素来逐步生成上下文context vector的方式，注意力机制对这些输入元素进行加权平均的方式来一步加入所有元素信息来生成上下文context vector。这样做的好处是能够一步到位捕捉到全局的联系(序列元素直接进行两两比较),不仅大大加速（可以并行计算）了context vector的生成，而且避免了RNN的长序列训练困难的问题。~~
 
-从实现上来讲，注意力运算表现为加权求和运算，即对输入序列中的元素赋予相应的权重并相加。权重来自任务目标，具体来说是根据目标对输出序列的要求，确定输出序列元素和输入序列元素之间的关系，通过这种关系确定输入元素的权重。举个例子，对于机器翻译任务来说，由于我们需要让输入序列与输出序列表达相同的意义，因此需要比较
- 其过程是首先将任务目标转换为 来说目标元素与输入元素的相关性确定其对应的权值，再权值比例将输入元素重新组合（相加）为新的XX。如下图所示，对
+从实现上来讲，注意力运算表现为加权求和运算，即对输入序列中的元素赋予相应的权重并相加。权重来自任务目标，具体来说是根据目标对输出序列的要求，确定输出序列元素和输入序列元素之间的关系，通过这种关系确定输入元素的权重。举个例子，对于机器翻译任务来说，由于我们需要让输入元素与输出元素表达相同的意义，因此需要比较它们的相似性，给相似性高的元素较高的权重，而对相似性低的元素赋予较低权重。
+
+如下图所示，对
 $$y_2=w_{21}x_1+w_{22}x_2+w_{23}x_3+w_{24}x_4$$
 
 ![enter image description here](http://www.peterbloem.nl/files/transformers/self-attention.svg)
@@ -249,11 +250,11 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [Transformer Architecture: The Positional Encoding](https://kazemnejad.com/blog/transformer_architecture_positional_encoding)
 [When Does Label Smoothing Help?](https://medium.com/@nainaakash012/when-does-label-smoothing-help-89654ec75326)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE5ODk1MjMwNSwxNjkzNDM1MjE1LDExMj
-AwOTc5NjIsLTIzNzE3MjY4NSwxNDg5Nzc3Mzc3LC0xNDIwNjAy
-MDM4LDE5MTUzNTAzNjgsLTEyOTA0MzkzNjEsNjQyOTQyMjIsLT
-E1MzEzMjIyMDQsMjExNjcwNzY4Myw4NDUzMjcwNzEsMjEyMjQ4
-ODM4MiwxNTcwMzIxMTI4LC0yMTQ2NTg0NDQ0LDIzODgxODI3My
-wtMTA2NjEwNTk0NCwtMTEzOTQ4Mzk3OCwtMTI0ODA5NzMwOSwt
-MTc3OTE4NzU1Ml19
+eyJoaXN0b3J5IjpbLTIwMTkwMDM0MTAsMTY5MzQzNTIxNSwxMT
+IwMDk3OTYyLC0yMzcxNzI2ODUsMTQ4OTc3NzM3NywtMTQyMDYw
+MjAzOCwxOTE1MzUwMzY4LC0xMjkwNDM5MzYxLDY0Mjk0MjIyLC
+0xNTMxMzIyMjA0LDIxMTY3MDc2ODMsODQ1MzI3MDcxLDIxMjI0
+ODgzODIsMTU3MDMyMTEyOCwtMjE0NjU4NDQ0NCwyMzg4MTgyNz
+MsLTEwNjYxMDU5NDQsLTExMzk0ODM5NzgsLTEyNDgwOTczMDks
+LTE3NzkxODc1NTJdfQ==
 -->
