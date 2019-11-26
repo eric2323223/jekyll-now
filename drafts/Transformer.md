@@ -15,7 +15,7 @@
 上述两种模型对于长序列的处理都有缺陷，RNN需要一步一步的处理输入序列，CNN做出了一些改进但并不彻底。从根本上的解决长序列处理问题需要能一次性的处理全部输入（无论序列有多长），并且能根据这些输入信息分析序列元素之间的关联关系。人们从自己快速浏览的方式获得了启发，当人们需要快速浏览的时候不会按输入的顺序依次阅读，而会直接跳到需要关注的的部分，这种根据需要在不同位置跳跃的阅读方式和注意力相关，因此这种新的序列处理方式被命名为注意力机制。
 
 ## 注意力机制（attention mechanism）
-基于组成整体的各个元素在整体中发挥的作用不相同这样一个事实，注意力机制的基本思想是在一定的目标下使用相对应的的权重组合各个序列元素来重新描述适合该目标的序列。举一个通俗的例子，这就好像在日常生活中，带着不同的目的看同一个事物会产生不同的理解。观察下图，生物学家看到的是鱼和珊瑚，而石油钻井专家看到的是钻井平台的支柱，这是由于生物学家和钻井专家带着不同的目标，会对图片的的物体分配不同的权重，因此产生了不同的理解。
+基于组成整体的各个元素在整体中发挥的作用不相同这样一个事实，注意力机制的基本思想是在一定的目标下使用相对应的的权重组合各个序列元素来重新描述适合该目标的序列。这就好像在日常生活中，带着不同的目的看同一个事物会产生不同的理解。在下图中寻找生物会发现鱼和珊瑚，而寻找人工建筑则会发现钻井平台的支柱，正是由于不同的目标导致对图片的的物体分配了不同的权重，因此产生了不同的理解。
 
 ![enter image description here](https://www.capeandislands.org/sites/wcai/files/styles/medium/public/201609/oilrigs-5.jpg)
 ~~注意力机制主要用于seq2seq任务，它的基本思想就是对序列中的每个元素以一定的规则加入上下文信息。不同于RNN中先通过依次分析输入元素来逐步生成上下文CV的方式，注意力机制对这些输入元素进行加权平均的方式来一步加入所有元素信息来生成上下文context vector。这样做的好处是能够一步到位捕捉到全局的联系(序列元素直接进行两两比较),不仅大大加速（可以并行计算）了context vector的生成，而且避免了RNN的长序列训练困难的问题[^1]。~~
@@ -39,26 +39,26 @@ $$f(x_i, y)=x_i\cdot y=|x_i||y|cos\theta$$
 > ![enter image description
 > here](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSO0ZVpogoaP-ipyQF0Xhir4wSrgGJBdeU_5wDrea6UD9sF7icIYg)
 
-从运算的结果上看，由于$AttentionX_y$包含了序列$X$所有元素的信息，因此我们也可以把注意力运算理解为**元素在某一个序列上下文环境中的重新定义**。这是一种对于时序任务非常有用的属性，RNN由于能够保存输入序列的信息而被广泛应用于时序任务，而注意力机制不但也有能力获取整个序列的信息，更重要的是它能一步直接得到结果，从根本上避免了RNN面临的梯度弥散（爆炸）的问题，并且效率上有巨大的进步：
-总结来说，Attention比较RNN有一下三点优势
-- 对于NLP的任务场景，attention的计算复杂度更低（dim>length）
+从运算的结果上看，由于$AttentionX_y$包含了序列$X$所有元素的信息，因此我们也可以把注意力运算理解为**元素在某一个序列上下文环境中的重新定义**。这是一种对于时序任务非常有用的属性，RNN由于能够保存输入序列的信息而被广泛应用于时序任务，相比RNN通过逐步更新状态最终得到整个序列的信息的机制，注意力机制不但也有能力获取整个序列的信息，更重要的是它能一步直接得到结果，这使得注意力机制具备以下优势：
+- 在并行方面，注意力机制不依赖于前一时刻的计算，可以很好的并行，优于RNN。
+- 在长距离依赖上，不管元素中间距离多远，路径长度总是1，可以轻松处理长距离依赖关系。RNN则存在梯度弥散或者梯度爆炸的问题。
+- 对于NLP的任务场景，注意力机制的计算复杂度更低（dim>length）
 
-||FLOPs|
-|--|--|
-| attention | $O(length^2 \cdot dim)$ |
-| RNN | $O(length \cdot dim^2)$ |
-| CNN | $O(length \cdot dim^2 \cdot kernelwidth)$ |
-由于通常dim要大于length，所以self-attention的运算量会少于RNN和CNN，
+  ||FLOPs|
+  |--|--|
+  | attention | $O(length^2 \cdot dim)$ |
+  | RNN | $O(length \cdot dim^2)$ |
+  | CNN | $O(length \cdot dim^2 \cdot kernelwidth)$ |
+  由于通常dim要大于length，所以self-attention的运算量会少于RNN和CNN，
 
-- 在并行方面，多头attention和CNN一样不依赖于前一时刻的计算，可以很好的并行，优于RNN。
-- 在长距离依赖上，由于self-attention是每个词和所有词都要计算attention，所以不管他们中间有多长距离，最大的路径长度也都只是1。可以捕获长距离依赖关系。RNN则存在梯度弥散或者梯度爆炸的问题。
 
-Actually, that’s quite counterintuitive. Human attention is something that’s supposed to **save** computational resources. By focusing on one thing, we can neglect many other things. But that’s not really what we’re doing in the above model. We’re essentially looking at everything in detail before deciding what to focus on. Intuitively that’s equivalent outputting a translated word, and then going back through _all_ of your internal memory of the text in order to decide which word to produce next. That seems like a waste, and not at all what humans are doing. In fact, it’s more akin to memory access, not attention, which in my opinion is somewhat of a misnomer (more on that below). Still, that hasn’t stopped attention mechanisms from becoming quite popular and performing well on many tasks.
+
+>Actually, that’s quite counterintuitive. Human attention is something that’s supposed to **save** computational resources. By focusing on one thing, we can neglect many other things. But that’s not really what we’re doing in the above model. We’re essentially looking at everything in detail before deciding what to focus on. Intuitively that’s equivalent outputting a translated word, and then going back through _all_ of your internal memory of the text in order to decide which word to produce next. That seems like a waste, and not at all what humans are doing. In fact, it’s more akin to memory access, not attention, which in my opinion is somewhat of a misnomer (more on that below). Still, that hasn’t stopped attention mechanisms from becoming quite popular and performing well on many tasks.
 
 
 #### Attention = (Fuzzy) Memory?
 
-The basic problem that the attention mechanism solves is that it allows the network to refer back to the input sequence, instead of forcing it to encode all information into one fixed-length vector. As I mentioned above, I think that attention is somewhat of a misnomer. Interpreted another way, the attention mechanism is simply giving the network access to its internal memory, which is the hidden state of the encoder. In this interpretation, instead of choosing what to “attend” to, the network chooses what to retrieve from memory. Unlike typical memory, the memory access mechanism here is soft, which means that the network retrieves a weighted combination of all memory locations, not a value from a single discrete location. Making the memory access soft has the benefit that we can easily train the network end-to-end using backpropagation (though there have been non-fuzzy approaches where the gradients are calculated using sampling methods instead of backpropagation).
+>The basic problem that the attention mechanism solves is that it allows the network to refer back to the input sequence, instead of forcing it to encode all information into one fixed-length vector. As I mentioned above, I think that attention is somewhat of a misnomer. Interpreted another way, the attention mechanism is simply giving the network access to its internal memory, which is the hidden state of the encoder. In this interpretation, instead of choosing what to “attend” to, the network chooses what to retrieve from memory. Unlike typical memory, the memory access mechanism here is soft, which means that the network retrieves a weighted combination of all memory locations, not a value from a single discrete location. Making the memory access soft has the benefit that we can easily train the network end-to-end using backpropagation (though there have been non-fuzzy approaches where the gradients are calculated using sampling methods instead of backpropagation).
 
 > **try to understand why K and V are different in transformer first!!!**
 > Attention has a more generalized the form: XXXXXX
