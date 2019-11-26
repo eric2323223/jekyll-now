@@ -39,7 +39,26 @@ $$f(x_i, y)=x_i\cdot y=|x_i||y|cos\theta$$
 > ![enter image description
 > here](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSO0ZVpogoaP-ipyQF0Xhir4wSrgGJBdeU_5wDrea6UD9sF7icIYg)
 
-从运算的结果上看，由于$AttentionX_y$包含了序列$X$所有元素的信息，因此我们也可以把注意力运算理解为**元素在某一个序列上下文环境中的重新定义**。这是一种对于时序任务非常有用的属性，RNN由于能够保存输入序列的信息而被广泛应用于时序任务，而注意力机制不但也有能力获取整个序列的信息，更重要的是它能一步直接得到结果，从根本上避免了RNN面临的梯度弥散（爆炸）的问题，并且效率上有巨大的进步，~~attention最核心的特点，也是attention能够取代RNN的基础。~~
+从运算的结果上看，由于$AttentionX_y$包含了序列$X$所有元素的信息，因此我们也可以把注意力运算理解为**元素在某一个序列上下文环境中的重新定义**。这是一种对于时序任务非常有用的属性，RNN由于能够保存输入序列的信息而被广泛应用于时序任务，而注意力机制不但也有能力获取整个序列的信息，更重要的是它能一步直接得到结果，从根本上避免了RNN面临的梯度弥散（爆炸）的问题，并且效率上有巨大的进步：
+总结来说，Attention比较RNN有一下三点优势
+- 对于NLP的任务场景，attention的计算复杂度更低（dim>length）
+
+||FLOPs|
+|--|--|
+| attention | $O(length^2 \cdot dim)$ |
+| RNN | $O(length \cdot dim^2)$ |
+| CNN | $O(length \cdot dim^2 \cdot kernelwidth)$ |
+由于通常dim要大于length，所以self-attention的运算量会少于RNN和CNN，
+
+- 在并行方面，多头attention和CNN一样不依赖于前一时刻的计算，可以很好的并行，优于RNN。
+- 在长距离依赖上，由于self-attention是每个词和所有词都要计算attention，所以不管他们中间有多长距离，最大的路径长度也都只是1。可以捕获长距离依赖关系。RNN则存在梯度弥散或者梯度爆炸的问题。
+
+Actually, that’s quite counterintuitive. Human attention is something that’s supposed to **save** computational resources. By focusing on one thing, we can neglect many other things. But that’s not really what we’re doing in the above model. We’re essentially looking at everything in detail before deciding what to focus on. Intuitively that’s equivalent outputting a translated word, and then going back through _all_ of your internal memory of the text in order to decide which word to produce next. That seems like a waste, and not at all what humans are doing. In fact, it’s more akin to memory access, not attention, which in my opinion is somewhat of a misnomer (more on that below). Still, that hasn’t stopped attention mechanisms from becoming quite popular and performing well on many tasks.
+
+
+#### Attention = (Fuzzy) Memory?
+
+The basic problem that the attention mechanism solves is that it allows the network to refer back to the input sequence, instead of forcing it to encode all information into one fixed-length vector. As I mentioned above, I think that attention is somewhat of a misnomer. Interpreted another way, the attention mechanism is simply giving the network access to its internal memory, which is the hidden state of the encoder. In this interpretation, instead of choosing what to “attend” to, the network chooses what to retrieve from memory. Unlike typical memory, the memory access mechanism here is soft, which means that the network retrieves a weighted combination of all memory locations, not a value from a single discrete location. Making the memory access soft has the benefit that we can easily train the network end-to-end using backpropagation (though there have been non-fuzzy approaches where the gradients are calculated using sampling methods instead of backpropagation).
 
 > **try to understand why K and V are different in transformer first!!!**
 > Attention has a more generalized the form: XXXXXX
@@ -81,18 +100,7 @@ Transformer论文的标题说只需要attention意味着attention可以完成以
 ![enter image description here](https://docs.google.com/drawings/d/e/2PACX-1vQZ5I4YZtpZOU8xnxqqJ2WVd7o9eeo0sHQa119cWm4qR85KanMs7-Z1DV1EfKxJLQrZaVglHLUJGPF2/pub?w=856&h=225)
 
 ![enter image description here](http://www.peterbloem.nl/files/transformers/self-attention.svg)
-总结来说，Attention比较RNN有一下三点优势
-- 对于NLP的任务场景，attention的计算复杂度更低（dim>length）
 
-||FLOPs|
-|--|--|
-| attention | $O(length^2 \cdot dim)$ |
-| RNN | $O(length \cdot dim^2)$ |
-| CNN | $O(length \cdot dim^2 \cdot kernelwidth)$ |
-由于通常dim要大于length，所以self-attention的运算量会少于RNN和CNN，
-
-- 在并行方面，多头attention和CNN一样不依赖于前一时刻的计算，可以很好的并行，优于RNN。
-- 在长距离依赖上，由于self-attention是每个词和所有词都要计算attention，所以不管他们中间有多长距离，最大的路径长度也都只是1。可以捕获长距离依赖关系。RNN则存在梯度弥散或者梯度爆炸的问题。
 #### Attention mask
 Attention这种新的结构使得他的训练方式也和RNN不同，这是由于Attention可以直接看到所有的元素，因此需要mask来防止——————， 具体来看
 - 编码器self attention，不需要mask
@@ -251,11 +259,11 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [Transformer Architecture: The Positional Encoding](https://kazemnejad.com/blog/transformer_architecture_positional_encoding)
 [When Does Label Smoothing Help?](https://medium.com/@nainaakash012/when-does-label-smoothing-help-89654ec75326)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEyMjk0NTcwMzAsLTQyODM3NTA0MCwxNj
-kzNDM1MjE1LDExMjAwOTc5NjIsLTIzNzE3MjY4NSwxNDg5Nzc3
-Mzc3LC0xNDIwNjAyMDM4LDE5MTUzNTAzNjgsLTEyOTA0MzkzNj
-EsNjQyOTQyMjIsLTE1MzEzMjIyMDQsMjExNjcwNzY4Myw4NDUz
-MjcwNzEsMjEyMjQ4ODM4MiwxNTcwMzIxMTI4LC0yMTQ2NTg0ND
-Q0LDIzODgxODI3MywtMTA2NjEwNTk0NCwtMTEzOTQ4Mzk3OCwt
-MTI0ODA5NzMwOV19
+eyJoaXN0b3J5IjpbLTc1NTc0ODMzOCwtNDI4Mzc1MDQwLDE2OT
+M0MzUyMTUsMTEyMDA5Nzk2MiwtMjM3MTcyNjg1LDE0ODk3Nzcz
+NzcsLTE0MjA2MDIwMzgsMTkxNTM1MDM2OCwtMTI5MDQzOTM2MS
+w2NDI5NDIyMiwtMTUzMTMyMjIwNCwyMTE2NzA3NjgzLDg0NTMy
+NzA3MSwyMTIyNDg4MzgyLDE1NzAzMjExMjgsLTIxNDY1ODQ0ND
+QsMjM4ODE4MjczLC0xMDY2MTA1OTQ0LC0xMTM5NDgzOTc4LC0x
+MjQ4MDk3MzA5XX0=
 -->
