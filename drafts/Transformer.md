@@ -62,7 +62,7 @@ $$e_{ij}=alignment(h_i,x_j)$$
 
 ## Transformer模型
 
-Transformer来自Google Brain团队2017年的文章Attention is all you need。正如论文的题目所述，整个网络结构完全是由注意力机制组成，由于没有使用RNN和CNN，避免了无法并行计算和长距离依赖等传统方法无法克服的问题，用更少的计算资源，取得了更好的结果，刷新了多项机器翻译任务的记录。
+Transformer来自于Google Brain团队2017年的文章Attention is all you need。正如论文的题目所述，整个网络结构完全是由注意力机制组成，由于没有使用RNN和CNN，避免了无法并行计算和长距离依赖等传统方法无法克服的问题，用更少的计算资源，取得了更好的结果，刷新了多项机器翻译任务的记录。
 整体架构上看，transformer仍属于Encoder-Decoder架构，通过encoder将输入序列转换成内部表示，再通过不同decoder实现不同的预测功能。从图中可以看到，编码器主要由两种组件构成：
 ![enter image description here](https://s3-ap-south-1.amazonaws.com/av-blog-media/wp-content/uploads/2019/06/Screenshot-from-2019-06-17-20-01-32.png)
 
@@ -251,11 +251,11 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [Transformer Architecture: The Positional Encoding](https://kazemnejad.com/blog/transformer_architecture_positional_encoding)
 [When Does Label Smoothing Help?](https://medium.com/@nainaakash012/when-does-label-smoothing-help-89654ec75326)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQyODM3NTA0MCwxNjkzNDM1MjE1LDExMj
-AwOTc5NjIsLTIzNzE3MjY4NSwxNDg5Nzc3Mzc3LC0xNDIwNjAy
-MDM4LDE5MTUzNTAzNjgsLTEyOTA0MzkzNjEsNjQyOTQyMjIsLT
-E1MzEzMjIyMDQsMjExNjcwNzY4Myw4NDUzMjcwNzEsMjEyMjQ4
-ODM4MiwxNTcwMzIxMTI4LC0yMTQ2NTg0NDQ0LDIzODgxODI3My
-wtMTA2NjEwNTk0NCwtMTEzOTQ4Mzk3OCwtMTI0ODA5NzMwOSwt
-MTc3OTE4NzU1Ml19
+eyJoaXN0b3J5IjpbLTEyMjk0NTcwMzAsLTQyODM3NTA0MCwxNj
+kzNDM1MjE1LDExMjAwOTc5NjIsLTIzNzE3MjY4NSwxNDg5Nzc3
+Mzc3LC0xNDIwNjAyMDM4LDE5MTUzNTAzNjgsLTEyOTA0MzkzNj
+EsNjQyOTQyMjIsLTE1MzEzMjIyMDQsMjExNjcwNzY4Myw4NDUz
+MjcwNzEsMjEyMjQ4ODM4MiwxNTcwMzIxMTI4LC0yMTQ2NTg0ND
+Q0LDIzODgxODI3MywtMTA2NjEwNTk0NCwtMTEzOTQ4Mzk3OCwt
+MTI0ODA5NzMwOV19
 -->
