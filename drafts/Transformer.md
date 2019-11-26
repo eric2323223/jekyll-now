@@ -26,16 +26,18 @@
 
 从实现上来讲，注意力运算表现为加权求和运算，即对输入序列中的元素赋予相应的权重并相加。这里的权重来自任务目标，具体来说是根据目标对输出序列的要求，确定输出序列元素和输入序列元素之间的关系，再通过这种关系确定输入元素的权重。举个例子，对于机器翻译任务来说，由于我们需要让输入元素与输出元素表达相同的意义，因此需要比较它们的相似性，给相似性高的元素较高的权重，而对相似性低的元素赋予较低权重。
 
-如果$X$表示输入序列集合$\{x_1, x_2, ... x_n\}$，可以将$X$对应$y$的注意力运算形式化的表示为
-$$AttentionX_=\sum_{i=1}w_ix_i$$
-其中$w_i$表示在对应$y$的计算过程中$x_i$的权重，$f(x_i,y)$表示$x_i$和$y$的相关性，可以根据不同任务选择不同的计算方法。由于所有$x$都参与$y$的计算，所以使用softmax来保证所有权值之和等于1。
+如果$X$表示输入序列集合$\{x_1, x_2, ... x_n\}$，$y$表示某个输出元素，$w_i$表示在对应$y$的计算过程中$x_i$的权重，可以将$X$对应$y$的注意力运算形式化的表示为
+$$AttentionX_y=\sum_{i=1}w_ix_i$$
+如上所述，$w_i$决定于$x_i$和$y$的相关性$f(x_i,y)$，由于所有$x$都参与对应$y$的计算，所以使用softmax来保证所有权值之和等于1。
 $$w_{i}=Softmax(f(x_i,y))=\frac{exp(f(x_i, y))}{\sum_{k=1}^nexp(f(x_k, y))}$$
 
-对于机器翻译任务来说，通常用矢量相似性来衡量元素的相关性，最常用的就是点积运算（dot product）
-$$e_{ij}=x_j\cdot y_i=|x_j||y_i|cos\theta$$ 
-$\theta$表示两个向量$a,b$之间的夹角，如果$a,b$越相似则夹角$\theta$越小，$cos\theta$则越接近1
+$f(x_i,y)$可以根据不同任务选择不同的计算方法，对于机器翻译任务来说，通常用矢量相似性来衡量元素的相关性，可以使用点积运算（dot product）
+$$f(x_i, y)=x_i\cdot y=|x_i||y|cos\theta$$ 
 
-![enter image description here](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSO0ZVpogoaP-ipyQF0Xhir4wSrgGJBdeU_5wDrea6UD9sF7icIYg)
+> $\theta$表示两个向量$a,b$之间的夹角，如果$a,b$越相似则夹角$\theta$越小，$cos\theta$则越接近1
+> 
+> ![enter image description
+> here](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSO0ZVpogoaP-ipyQF0Xhir4wSrgGJBdeU_5wDrea6UD9sF7icIYg)
 
 从运算的结果上看，由于$y$包含了序列$X$所有元素的信息，因此我们也可以把注意力运算理解为**元素在某一个序列上下文环境中的重新定义**。这是一种对于时序任务非常有用的属性，RNN由于能够保存输入序列的信息而被广泛应用于时序任务，而注意力机制不但也有能力获取整个序列的信息，更重要的是它能一步直接得到结果，从根本上避免了RNN面临的梯度弥散（爆炸）的问题，并且效率上有巨大的进步，~~attention最核心的特点，也是attention能够取代RNN的基础。~~
 
@@ -249,11 +251,11 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [Transformer Architecture: The Positional Encoding](https://kazemnejad.com/blog/transformer_architecture_positional_encoding)
 [When Does Label Smoothing Help?](https://medium.com/@nainaakash012/when-does-label-smoothing-help-89654ec75326)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1NTIwOTk3OTMsMTY5MzQzNTIxNSwxMT
-IwMDk3OTYyLC0yMzcxNzI2ODUsMTQ4OTc3NzM3NywtMTQyMDYw
-MjAzOCwxOTE1MzUwMzY4LC0xMjkwNDM5MzYxLDY0Mjk0MjIyLC
-0xNTMxMzIyMjA0LDIxMTY3MDc2ODMsODQ1MzI3MDcxLDIxMjI0
-ODgzODIsMTU3MDMyMTEyOCwtMjE0NjU4NDQ0NCwyMzg4MTgyNz
-MsLTEwNjYxMDU5NDQsLTExMzk0ODM5NzgsLTEyNDgwOTczMDks
-LTE3NzkxODc1NTJdfQ==
+eyJoaXN0b3J5IjpbLTYxMjU3MzYxNywxNjkzNDM1MjE1LDExMj
+AwOTc5NjIsLTIzNzE3MjY4NSwxNDg5Nzc3Mzc3LC0xNDIwNjAy
+MDM4LDE5MTUzNTAzNjgsLTEyOTA0MzkzNjEsNjQyOTQyMjIsLT
+E1MzEzMjIyMDQsMjExNjcwNzY4Myw4NDUzMjcwNzEsMjEyMjQ4
+ODM4MiwxNTcwMzIxMTI4LC0yMTQ2NTg0NDQ0LDIzODgxODI3My
+wtMTA2NjEwNTk0NCwtMTEzOTQ4Mzk3OCwtMTI0ODA5NzMwOSwt
+MTc3OTE4NzU1Ml19
 -->
