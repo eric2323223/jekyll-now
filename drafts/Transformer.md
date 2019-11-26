@@ -22,7 +22,7 @@
 由于目标决定了权值，具体来说
 
 
-从实现上来讲，注意力运算表现为加权求和运算。其过程是首先根据目标元素与输入元素的相关性确定其对应的权值，再权值比例将输入元素重新组合（相加）为新的XX。如下图所示，对
+从实现上来讲，注意力运算表现为加权求和运算。其过程是首先任务目标，目标目标元素与输入元素的相关性确定其对应的权值，再权值比例将输入元素重新组合（相加）为新的XX。如下图所示，对
 $$y_2=w_{21}x_1+w_{22}x_2+w_{23}x_3+w_{24}x_4$$
 
 ![enter image description here](http://www.peterbloem.nl/files/transformers/self-attention.svg)
@@ -250,11 +250,11 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [Transformer Architecture: The Positional Encoding](https://kazemnejad.com/blog/transformer_architecture_positional_encoding)
 [When Does Label Smoothing Help?](https://medium.com/@nainaakash012/when-does-label-smoothing-help-89654ec75326)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTY5MzQzNTIxNSwxMTIwMDk3OTYyLC0yMz
-cxNzI2ODUsMTQ4OTc3NzM3NywtMTQyMDYwMjAzOCwxOTE1MzUw
-MzY4LC0xMjkwNDM5MzYxLDY0Mjk0MjIyLC0xNTMxMzIyMjA0LD
-IxMTY3MDc2ODMsODQ1MzI3MDcxLDIxMjI0ODgzODIsMTU3MDMy
-MTEyOCwtMjE0NjU4NDQ0NCwyMzg4MTgyNzMsLTEwNjYxMDU5ND
-QsLTExMzk0ODM5NzgsLTEyNDgwOTczMDksLTE3NzkxODc1NTIs
-LTU5NjYwNTg0OF19
+eyJoaXN0b3J5IjpbLTE5NDIxMzgwNiwxNjkzNDM1MjE1LDExMj
+AwOTc5NjIsLTIzNzE3MjY4NSwxNDg5Nzc3Mzc3LC0xNDIwNjAy
+MDM4LDE5MTUzNTAzNjgsLTEyOTA0MzkzNjEsNjQyOTQyMjIsLT
+E1MzEzMjIyMDQsMjExNjcwNzY4Myw4NDUzMjcwNzEsMjEyMjQ4
+ODM4MiwxNTcwMzIxMTI4LC0yMTQ2NTg0NDQ0LDIzODgxODI3My
+wtMTA2NjEwNTk0NCwtMTEzOTQ4Mzk3OCwtMTI0ODA5NzMwOSwt
+MTc3OTE4NzU1Ml19
 -->
