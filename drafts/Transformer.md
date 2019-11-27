@@ -42,15 +42,14 @@ $$f(x_i, y)=x_i\cdot y=|x_i||y|cos\theta$$
 从运算的结果上看，由于$AttentionX_y$包含了序列$X$所有元素的信息，因此我们也可以把注意力运算理解为**元素在某一个序列上下文环境中的重新定义**。这是一种对于时序任务非常有用的属性，RNN由于能够保存输入序列的信息而被广泛应用于时序任务，相比RNN通过逐步更新状态最终得到整个序列的信息的机制，注意力机制不但也有能力获取整个序列的信息，更重要的是它能一步直接得到结果，这使得注意力机制具备以下优势：
 - 在并行方面，注意力机制不依赖于前一时刻的计算，可以很好的并行，优于RNN。
 - 在长距离依赖上，不管元素中间距离多远，路径长度总是1，可以轻松处理长距离依赖关系。RNN则存在梯度弥散或者梯度爆炸的问题。
-- 对于NLP的任务场景，注意力机制的计算复杂度更低（dim>length）
+- 注意力机制的计算复杂度更低，下表对注意力，RNN，CNN在计算复杂度上进行了对比，其中$length$表示序列长度，$dim$表示序列元素的维度，$kernel$表示卷积核的大小。由于在大部分自然语言处理任务重的元素维度都大于序列长度，因此注意力运算的计算复杂度要显著低于RNN和CNN。
 
-  ||FLOPs|
+  ||计算复杂度|
   |--|--|
-  | attention | $O(length^2 \cdot dim)$ |
+  | 注意力 | $O(length^2 \cdot dim)$ |
   | RNN | $O(length \cdot dim^2)$ |
-  | CNN | $O(length \cdot dim^2 \cdot kernelwidth)$ |
-  由于通常dim要大于length，所以self-attention的运算量会少于RNN和CNN，
-
+  | CNN | $O(length \cdot dim^2 \cdot kernel)$ |
+ 
 
 
 >Actually, that’s quite counterintuitive. Human attention is something that’s supposed to **save** computational resources. By focusing on one thing, we can neglect many other things. But that’s not really what we’re doing in the above model. We’re essentially looking at everything in detail before deciding what to focus on. Intuitively that’s equivalent outputting a translated word, and then going back through _all_ of your internal memory of the text in order to decide which word to produce next. That seems like a waste, and not at all what humans are doing. In fact, it’s more akin to memory access, not attention, which in my opinion is somewhat of a misnomer (more on that below). Still, that hasn’t stopped attention mechanisms from becoming quite popular and performing well on many tasks.
@@ -259,11 +258,11 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [Transformer Architecture: The Positional Encoding](https://kazemnejad.com/blog/transformer_architecture_positional_encoding)
 [When Does Label Smoothing Help?](https://medium.com/@nainaakash012/when-does-label-smoothing-help-89654ec75326)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbOTYwNzEwMzM2LC03NTU3NDgzMzgsLTQyOD
-M3NTA0MCwxNjkzNDM1MjE1LDExMjAwOTc5NjIsLTIzNzE3MjY4
-NSwxNDg5Nzc3Mzc3LC0xNDIwNjAyMDM4LDE5MTUzNTAzNjgsLT
-EyOTA0MzkzNjEsNjQyOTQyMjIsLTE1MzEzMjIyMDQsMjExNjcw
-NzY4Myw4NDUzMjcwNzEsMjEyMjQ4ODM4MiwxNTcwMzIxMTI4LC
-0yMTQ2NTg0NDQ0LDIzODgxODI3MywtMTA2NjEwNTk0NCwtMTEz
-OTQ4Mzk3OF19
+eyJoaXN0b3J5IjpbLTE2ODk2ODU5OTIsOTYwNzEwMzM2LC03NT
+U3NDgzMzgsLTQyODM3NTA0MCwxNjkzNDM1MjE1LDExMjAwOTc5
+NjIsLTIzNzE3MjY4NSwxNDg5Nzc3Mzc3LC0xNDIwNjAyMDM4LD
+E5MTUzNTAzNjgsLTEyOTA0MzkzNjEsNjQyOTQyMjIsLTE1MzEz
+MjIyMDQsMjExNjcwNzY4Myw4NDUzMjcwNzEsMjEyMjQ4ODM4Mi
+wxNTcwMzIxMTI4LC0yMTQ2NTg0NDQ0LDIzODgxODI3MywtMTA2
+NjEwNTk0NF19
 -->
