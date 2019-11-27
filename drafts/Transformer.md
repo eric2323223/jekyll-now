@@ -89,7 +89,9 @@ Transformer来自于Google Brain团队2017年的文章Attention is all you need�
 
 
 ### 为什么Attention is all you need?
-Transformer论文的标题说只需要attention意味着attention可以完成以前需要RNN才能做的工作。由于RNN有存储的能力，因此可以在编码阶段通过不断的处理和积累一个个的输入元素从而最终获得这个输入序列的上下文信息（context vector），同样在解码阶段根据context vector产生输出。在transformer模型中设计了自注意力机制来生成conext vector
+作为Transformer论文的最大创新，Transformer模型仅仅使用注意力机制不仅完成了以前需要RNN才能做到的工作，而且还做的更快更好，下面我们就来看看Transformer是如何做到的。
+时序任务的基本思路的
+由于RNN有存储的能力，因此可以在编码阶段通过不断的处理和积累一个个的输入元素从而最终获得这个输入序列的上下文信息（context vector），同样在解码阶段根据context vector产生输出。在transformer模型中设计了自注意力机制来生成conext vector
 > Attention是transformer的核心，它不仅作用在encoder到decoder的转换中，还被用在编码器（encoder）和解码器（decoder）内部，这种在编码解码器内部使用的attention被称为自注意力self-attention。自注意力用于替代RNN来做encoding
 
 #### 自注意力（self attention）
@@ -258,11 +260,11 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [Transformer Architecture: The Positional Encoding](https://kazemnejad.com/blog/transformer_architecture_positional_encoding)
 [When Does Label Smoothing Help?](https://medium.com/@nainaakash012/when-does-label-smoothing-help-89654ec75326)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTU5NjQ0MDU0MCw5NjA3MTAzMzYsLTc1NT
-c0ODMzOCwtNDI4Mzc1MDQwLDE2OTM0MzUyMTUsMTEyMDA5Nzk2
-MiwtMjM3MTcyNjg1LDE0ODk3NzczNzcsLTE0MjA2MDIwMzgsMT
-kxNTM1MDM2OCwtMTI5MDQzOTM2MSw2NDI5NDIyMiwtMTUzMTMy
-MjIwNCwyMTE2NzA3NjgzLDg0NTMyNzA3MSwyMTIyNDg4MzgyLD
-E1NzAzMjExMjgsLTIxNDY1ODQ0NDQsMjM4ODE4MjczLC0xMDY2
-MTA1OTQ0XX0=
+eyJoaXN0b3J5IjpbLTg0MTczOTQ5OCwxNTk2NDQwNTQwLDk2MD
+cxMDMzNiwtNzU1NzQ4MzM4LC00MjgzNzUwNDAsMTY5MzQzNTIx
+NSwxMTIwMDk3OTYyLC0yMzcxNzI2ODUsMTQ4OTc3NzM3NywtMT
+QyMDYwMjAzOCwxOTE1MzUwMzY4LC0xMjkwNDM5MzYxLDY0Mjk0
+MjIyLC0xNTMxMzIyMjA0LDIxMTY3MDc2ODMsODQ1MzI3MDcxLD
+IxMjI0ODgzODIsMTU3MDMyMTEyOCwtMjE0NjU4NDQ0NCwyMzg4
+MTgyNzNdfQ==
 -->
