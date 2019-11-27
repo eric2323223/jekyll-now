@@ -42,7 +42,7 @@ $$f(x_i, y)=x_i\cdot y=|x_i||y|cos\theta$$
 从运算的结果上看，由于$AttentionX_y$包含了序列$X$所有元素的信息，因此我们也可以把注意力运算理解为**元素在某一个序列上下文环境中的重新定义**。这是一种对于时序任务非常有用的属性，RNN由于能够保存输入序列的信息而被广泛应用于时序任务，相比RNN通过逐步更新状态最终得到整个序列的信息的机制，注意力机制不但也有能力获取整个序列的信息，更重要的是它能一步直接得到结果，这使得注意力机制具备以下优势：
 - 在并行方面，注意力机制不依赖于前一时刻的计算，可以很好的并行，优于RNN。
 - 在长距离依赖上，不管元素中间距离多远，路径长度总是1，可以轻松处理长距离依赖关系。RNN则存在梯度弥散或者梯度爆炸的问题。
-- 注意力机制的计算复杂度更低，下表对注意力，RNN，CNN在计算复杂度上进行了对比，其中$length$表示序列长度，$dim$表示序列元素的维度，$kernel$表示卷积核的大小。由于在大部分自然语言处理任务重的元素维度都大于序列长度，因此注意力运算的计算复杂度要显著低于RNN和CNN。
+- 注意力机制的计算复杂度更低，下表对注意力，RNN，CNN在计算复杂度上进行了对比，其中$length$表示序列长度，$dim$表示序列元素的维度，$kernel$表示卷积核的大小。由于在大部分自然语言处理任务中的元素维度都大于序列长度，因此注意力运算的计算复杂度要显著低于RNN和CNN。
 
   ||计算复杂度|
   |--|--|
@@ -80,8 +80,8 @@ $$e_{ij}=alignment(h_i,x_j)$$
 
 ## Transformer模型
 
-Transformer来自于Google Brain团队2017年的文章Attention is all you need。正如论文的题目所述，整个网络结构完全是由注意力机制组成，由于没有使用RNN和CNN，避免了无法并行计算和长距离依赖等传统方法无法克服的问题，用更少的计算资源，取得了更好的结果，刷新了多项机器翻译任务的记录。
-整体架构上看，transformer仍属于Encoder-Decoder架构，通过encoder将输入序列转换成内部表示，再通过不同decoder实现不同的预测功能。从图中可以看到，编码器主要由两种组件构成：
+Transformer来自于Google Brain团队2017年的文章Attention is all you need。正如论文的题目所述，整个网络结构完全是由注意力机制组成，由于没有使用RNN和CNN，避免了无法并行计算和长距离依赖等问题，用更少的计算资源，取得了更好的结果，刷新了多项机器翻译任务的记录。
+整体架构上看，transformer仍属于编码器-解码器架构，通过编码器（encoder）将输入序列转换成内部表示，再通过不同解码器（decoder）实现不同的预测功能。~~从图中可以看到，编码器主要由两种组件构成：~~
 ![enter image description here](https://s3-ap-south-1.amazonaws.com/av-blog-media/wp-content/uploads/2019/06/Screenshot-from-2019-06-17-20-01-32.png)
 
 
@@ -258,11 +258,11 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [Transformer Architecture: The Positional Encoding](https://kazemnejad.com/blog/transformer_architecture_positional_encoding)
 [When Does Label Smoothing Help?](https://medium.com/@nainaakash012/when-does-label-smoothing-help-89654ec75326)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2ODk2ODU5OTIsOTYwNzEwMzM2LC03NT
-U3NDgzMzgsLTQyODM3NTA0MCwxNjkzNDM1MjE1LDExMjAwOTc5
-NjIsLTIzNzE3MjY4NSwxNDg5Nzc3Mzc3LC0xNDIwNjAyMDM4LD
-E5MTUzNTAzNjgsLTEyOTA0MzkzNjEsNjQyOTQyMjIsLTE1MzEz
-MjIyMDQsMjExNjcwNzY4Myw4NDUzMjcwNzEsMjEyMjQ4ODM4Mi
-wxNTcwMzIxMTI4LC0yMTQ2NTg0NDQ0LDIzODgxODI3MywtMTA2
-NjEwNTk0NF19
+eyJoaXN0b3J5IjpbMTU5NjQ0MDU0MCw5NjA3MTAzMzYsLTc1NT
+c0ODMzOCwtNDI4Mzc1MDQwLDE2OTM0MzUyMTUsMTEyMDA5Nzk2
+MiwtMjM3MTcyNjg1LDE0ODk3NzczNzcsLTE0MjA2MDIwMzgsMT
+kxNTM1MDM2OCwtMTI5MDQzOTM2MSw2NDI5NDIyMiwtMTUzMTMy
+MjIwNCwyMTE2NzA3NjgzLDg0NTMyNzA3MSwyMTIyNDg4MzgyLD
+E1NzAzMjExMjgsLTIxNDY1ODQ0NDQsMjM4ODE4MjczLC0xMDY2
+MTA1OTQ0XX0=
 -->
