@@ -27,7 +27,7 @@
 从实现上来讲，注意力运算表现为加权求和运算，即对输入序列中的元素赋予相应的权重并相加。这里的权重来自任务目标，具体来说是根据目标对输出序列的要求，确定输出序列元素和输入序列元素之间的关系，再通过这种关系确定输入元素的权重。举个例子，对于机器翻译任务来说，由于我们需要让输入元素与输出元素表达相同的意义，因此需要比较它们的相似性，给相似性高的元素较高的权重，而对相似性低的元素赋予较低权重。
 
 如果$X$表示输入序列集合$\{x_1, x_2, ... x_n\}$，$y$表示某个输出元素，$w_i$表示在对应$y$的计算过程中$x_i$的权重，可以将$X$对应$y$的注意力运算形式化的表示为
-$$AttentionX_y=\sum_{i=1}w_ix_i$$
+$$AttentionX_y=\sum_{i=1}^nw_ix_i$$
 如上所述，$w_i$决定于$x_i$和$y$的相关性$f(x_i,y)$，由于所有$x$都参与对应$y$的计算，所以使用softmax来保证所有权值之和等于1。
 $$w_{i}=Softmax(f(x_i,y))=\frac{exp(f(x_i, y))}{\sum_{k=1}^nexp(f(x_k, y))}$$
 
@@ -262,11 +262,11 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [Transformer Architecture: The Positional Encoding](https://kazemnejad.com/blog/transformer_architecture_positional_encoding)
 [When Does Label Smoothing Help?](https://medium.com/@nainaakash012/when-does-label-smoothing-help-89654ec75326)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTExNjM4Mjc2MTEsLTE0MDcyNTE3NTQsMT
-k2OTQ1OTYxNiwxNTk2NDQwNTQwLDk2MDcxMDMzNiwtNzU1NzQ4
-MzM4LC00MjgzNzUwNDAsMTY5MzQzNTIxNSwxMTIwMDk3OTYyLC
-0yMzcxNzI2ODUsMTQ4OTc3NzM3NywtMTQyMDYwMjAzOCwxOTE1
-MzUwMzY4LC0xMjkwNDM5MzYxLDY0Mjk0MjIyLC0xNTMxMzIyMj
-A0LDIxMTY3MDc2ODMsODQ1MzI3MDcxLDIxMjI0ODgzODIsMTU3
-MDMyMTEyOF19
+eyJoaXN0b3J5IjpbLTM2ODU1MDg1OSwtMTE2MzgyNzYxMSwtMT
+QwNzI1MTc1NCwxOTY5NDU5NjE2LDE1OTY0NDA1NDAsOTYwNzEw
+MzM2LC03NTU3NDgzMzgsLTQyODM3NTA0MCwxNjkzNDM1MjE1LD
+ExMjAwOTc5NjIsLTIzNzE3MjY4NSwxNDg5Nzc3Mzc3LC0xNDIw
+NjAyMDM4LDE5MTUzNTAzNjgsLTEyOTA0MzkzNjEsNjQyOTQyMj
+IsLTE1MzEzMjIyMDQsMjExNjcwNzY4Myw4NDUzMjcwNzEsMjEy
+MjQ4ODM4Ml19
 -->
