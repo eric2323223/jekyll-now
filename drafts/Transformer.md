@@ -23,7 +23,9 @@
 *[CV]: Context Vector
 
 [^1]: the footnote
-
+- 注意对象
+- 注意规则
+- 
 从实现上来讲，注意力运算表现为加权求和运算，即对输入序列中的元素赋予相应的权重并相加。这里的权重来自任务目标，具体来说是根据目标对输出序列的要求，确定输出序列元素和输入序列元素之间的关系，再通过这种关系确定输入元素的权重。举个例子，对于机器翻译任务来说，由于我们需要让输入元素与输出元素表达相同的意义，因此需要比较它们的相似性，给相似性高的元素较高的权重，而对相似性低的元素赋予较低权重。
 
 如果$X$表示输入序列集合$\{x_1, x_2, ... x_n\}$，$y$表示某个输出元素，$w_i$表示在对应$y$的计算过程中$x_i$的权重，可以将$X$对应$y$的注意力运算形式化的表示为
@@ -89,20 +91,22 @@ Transformer来自于Google Brain团队2017年的文章Attention is all you need�
 
 
 ### 为什么Attention is all you need?
-作为Transformer论文的最大创新，Transformer模型仅仅使用注意力机制不仅完成了以前需要RNN才能做到的工作，而且还做的更快更好，下面我们就来看看Transformer是如何做到的。
-前面我们介绍了注意力机制
-前面介绍过使用编码器-解码器架构处理时序任务的基本思路，其中编码器的基本任务是分析处理输入序列并生成序列编码（context vector），基于RNN模型的方法是利用RNN的存储能力，在编码阶段通过不断的处理输入元素并更新内部状态，逐渐积累输入元素所包含的信息从而最终获得这个输入序列的上下文信息（context vector）。Transformer利用自注意力机制
-生成
-同样在解码阶段根据context vector产生输出。在transformer模型中设计了自注意力机制来生成conext vector
-> Attention是transformer的核心，它不仅作用在encoder到decoder的转换中，还被用在编码器（encoder）和解码器（decoder）内部，这种在编码解码器内部使用的attention被称为自注意力self-attention。自注意力用于替代RNN来做encoding
+作为Transformer论文的最大创新，Transformer模型仅仅使用注意力机制不仅完成了以前需要RNN才能做到的工作，而且做的更快更好，下面我们就来看看Transformer是如何做到的。
+Transformer模型的首要工作就是使用编码器生成序列编码，前面我们介绍了注意力机制具备。。。的能力，在transformer的编码器中就是用了注意力机制来生成context vector，由于这种注意力机制的注意对象是输入序列自身，因此被称为自注意力。
 
 #### 自注意力（self attention）
 > 时序问题（特别是NLP问题）中的序列元素表示的含义通常不止该单个元素的的字面意义，而是与整个序列上下文有关系，因此在encoding过程中需要考虑整个序列来决定其中每个元素的意义。self-attention机制就是基于这种由全局确定局部的思想，简单来说它使用整个序列所有元素的**加权**平均来确定每一个元素在所处序列（上下文）中的含义。
 
+在使用相似性作为注意规则时，直观的来说，自注意力机制做了以下几件事
+- 解释代词
+- 
+
 在encoder-decoder模型中encoder负责将输入转化为输入序列的内部表示（context vector），传统方法使用RNN通过一步步的叠加分析过的输入来得到整个序列的内部表示（固定长度），Transformer模型中使用自注意力（self attention）机制来实现encoding，之所以称作自注意力是因为这是在输入序列内部进行的attention操作，由于attention操作就是对元素进行重新定义使其包含序列上下文信息，在输入序列元素进行attention的操作结果就是使该元素包含输入序列信息，因此经过self attention运算的整个输入序列的结果就是和一个输入序列大小一致的context vector。显然，self attention不需要想RNN那样一步步的出入输入，而是可以同时对每个元素进行attention运算，从下图可以发现，RNN需要在依次处理元素x1, x2和x3之后才能得到整个序列的上下文信息，而attention则可以同时处理x1，x2，x3而得到序列的上下文信息。
 ![enter image description here](https://docs.google.com/drawings/d/e/2PACX-1vQZ5I4YZtpZOU8xnxqqJ2WVd7o9eeo0sHQa119cWm4qR85KanMs7-Z1DV1EfKxJLQrZaVglHLUJGPF2/pub?w=856&h=225)
-
+下图是序列X={x_1, x_2, x_3, x_4}进行自注意力计算中，y_2的计算过程
 ![enter image description here](http://www.peterbloem.nl/files/transformers/self-attention.svg)
+例子，可视化self attention
+![](https://img-blog.csdnimg.cn/20181212165538837.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQxNjY0ODQ1,size_16,color_FFFFFF,t_70)
 
 #### Attention mask
 Attention这种新的结构使得他的训练方式也和RNN不同，这是由于Attention可以直接看到所有的元素，因此需要mask来防止——————， 具体来看
