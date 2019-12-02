@@ -74,6 +74,8 @@ $$\mathrm{Attention}(Q, K, V) = \mathrm{softmax}(Sim(Q,K))V$$
 上式表示对于查询$q$和键值对$K,V$Given a query  **q**  and a set of key-value pairs  **(K, V)**, attention can be generalised to compute a weighted sum of the values dependent on the query and the corresponding keys.  
 The query determines which values to focus on; we can say that the query ‘attends’ to the values.
 
+![enter image description here](https://machinereads.files.wordpress.com/2018/09/scaled-dot-product-attention3.png?w=720)
+
 ![enter image description here](https://ldzhangyx.github.io/2018/10/14/self-attention/1.jpg)
 注意力机制最早使用在基于[RNN的机器翻译模型](https://arxiv.org/pdf/1409.0473.pdf)中，不同于以往使用固定的context vector， 注意力机制能够让解码器每次解码的时候关注更相关的输入元素（生成动态的context vector）从而提高翻译的准确度。
 
@@ -268,12 +270,13 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [TRANSFORMERS FROM SCRATCH](http://www.peterbloem.nl/blog/transformers)
 [Transformer Architecture: The Positional Encoding](https://kazemnejad.com/blog/transformer_architecture_positional_encoding)
 [When Does Label Smoothing Help?](https://medium.com/@nainaakash012/when-does-label-smoothing-help-89654ec75326)
+[Attention Is All You Need](https://machinereads.com/2018/09/26/attention-is-all-you-need/)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTYxNDQ2NTE0NSwtMzY4NTUwODU5LC0xMT
-YzODI3NjExLC0xNDA3MjUxNzU0LDE5Njk0NTk2MTYsMTU5NjQ0
-MDU0MCw5NjA3MTAzMzYsLTc1NTc0ODMzOCwtNDI4Mzc1MDQwLD
-E2OTM0MzUyMTUsMTEyMDA5Nzk2MiwtMjM3MTcyNjg1LDE0ODk3
-NzczNzcsLTE0MjA2MDIwMzgsMTkxNTM1MDM2OCwtMTI5MDQzOT
-M2MSw2NDI5NDIyMiwtMTUzMTMyMjIwNCwyMTE2NzA3NjgzLDg0
-NTMyNzA3MV19
+eyJoaXN0b3J5IjpbMzgwNDI1MjQwLDE2MTQ0NjUxNDUsLTM2OD
+U1MDg1OSwtMTE2MzgyNzYxMSwtMTQwNzI1MTc1NCwxOTY5NDU5
+NjE2LDE1OTY0NDA1NDAsOTYwNzEwMzM2LC03NTU3NDgzMzgsLT
+QyODM3NTA0MCwxNjkzNDM1MjE1LDExMjAwOTc5NjIsLTIzNzE3
+MjY4NSwxNDg5Nzc3Mzc3LC0xNDIwNjAyMDM4LDE5MTUzNTAzNj
+gsLTEyOTA0MzkzNjEsNjQyOTQyMjIsLTE1MzEzMjIyMDQsMjEx
+NjcwNzY4M119
 -->
