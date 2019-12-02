@@ -32,9 +32,9 @@
 $$AttentionX_y=\sum_{i=1}^nw_ix_i$$
 ![enter image description here](http://www.peterbloem.nl/files/transformers/self-attention.svg)
 如上所述，$w_i$决定于$x_i$和$y$的相关性$f(x_i,y)$，由于所有$x$都参与对应$y$的计算，所以使用softmax来保证所有权值之和等于1。
-$$w_{i}=Softmax(f(x_i,y))=\frac{exp(f(x_i, y))}{\sum_{k=1}^nexp(f(x_k, y))}$$
+$$w_{i}=Softmax(Score(x_i,y))=\frac{exp(Score(x_i, y))}{\sum_{k=1}^nexp(Score(x_k, y))}$$
 $f(x_i,y)$可以根据不同任务选择不同的计算方法，对于机器翻译任务来说，通常用矢量相似性来衡量元素的相关性，可以使用点积运算（dot product）
-$$f(x_i, y)=x_i\cdot y=|x_i||y|cos\theta$$ 
+$$Score(x_i, y)=x_i\cdot y=|x_i||y|cos\theta=x_iy^T$$ 
 
 > $\theta$表示两个向量$A,B$之间的夹角，如果$A,B$越相似则夹角$\theta$越小，$cos\theta$则越接近1
 > 
@@ -66,8 +66,8 @@ $$AttentionX_Y=\{AttentionX_{y_1}, AttentionX_{y_2}, ... AttentionX_{y_n}\}$$
 
 注意力机制可以更一般的表示为
 $$\mathrm{Attention}(Q, K, V) = \mathrm{softmax}(Score(Q,K))V$$
-这里的$K,V$分别表示一个键值对中的键key和值value，$Q$则表示注意目标query，这样我们之前的定义就变成一般表示在当$K=V$条件下的特殊形式。
-如下图所示，
+这里的$K,V$分别表示一个键值对中的键key和值value，$Q$则表示注意目标query，这样我们之前的定义就变成一般表示$\mathrm{Attention}(Q, K, V)$在当$K=V$条件下的特殊形式。
+如下图所示，对于4维向量$K={Name, Age, Sex, Weight}$, 在4个维度上的取值分别为James, 25, male, 68kg，当以Age为注意目标$Q$，以相似度为注意规则时，注意力计算的结果是4维向量，在Name，Sex，weight纬度上接近于0，而在Age维度上接近25。这是由于K的Age维度和Q的Age维度相似性很高，因此score(Age_{K}Age_{Q})接近于1（图中粉色和蓝色向量的方向接近），而K的Name，Sex和Weight维度和Q的Age维度相似度接近于0（可以理解为粉色向量垂直于K1， k2和k3）。
 
 ![enter image description here](https://machinereads.files.wordpress.com/2018/09/scaled-dot-product-attention3.png?w=720)
 
