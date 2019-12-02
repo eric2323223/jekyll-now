@@ -111,6 +111,7 @@ Attention这种新的结构使得他的训练方式也和RNN不同，这是由�
 - 编码器self attention，不需要mask
 - 编码器-解码器attention，需要对padding进行mask
 - 解码器self attention，需要对当前位置之后的所有元素masking
+  ![enter image description here](http://jalammar.github.io/images/gpt2/self-attention-and-masked-self-attention.png)
 
 #### Scaled Dot-Product Attention (SDPA)
 Transformer对标准的attention做了一个小小调整：加入特征缩放（feature scaling）。这样做主要是为了防止softmax运算将值较大的key过度放大，导致其他key的信息很难加入到attention结果中。
@@ -265,11 +266,11 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [When Does Label Smoothing Help?](https://medium.com/@nainaakash012/when-does-label-smoothing-help-89654ec75326)
 [Attention Is All You Need](https://machinereads.com/2018/09/26/attention-is-all-you-need/)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjU2NjgwNTc1LDE2MTQ0NjUxNDUsLTM2OD
-U1MDg1OSwtMTE2MzgyNzYxMSwtMTQwNzI1MTc1NCwxOTY5NDU5
-NjE2LDE1OTY0NDA1NDAsOTYwNzEwMzM2LC03NTU3NDgzMzgsLT
-QyODM3NTA0MCwxNjkzNDM1MjE1LDExMjAwOTc5NjIsLTIzNzE3
-MjY4NSwxNDg5Nzc3Mzc3LC0xNDIwNjAyMDM4LDE5MTUzNTAzNj
-gsLTEyOTA0MzkzNjEsNjQyOTQyMjIsLTE1MzEzMjIyMDQsMjEx
-NjcwNzY4M119
+eyJoaXN0b3J5IjpbLTE0NzE1ODE5MzYsMTYxNDQ2NTE0NSwtMz
+Y4NTUwODU5LC0xMTYzODI3NjExLC0xNDA3MjUxNzU0LDE5Njk0
+NTk2MTYsMTU5NjQ0MDU0MCw5NjA3MTAzMzYsLTc1NTc0ODMzOC
+wtNDI4Mzc1MDQwLDE2OTM0MzUyMTUsMTEyMDA5Nzk2MiwtMjM3
+MTcyNjg1LDE0ODk3NzczNzcsLTE0MjA2MDIwMzgsMTkxNTM1MD
+M2OCwtMTI5MDQzOTM2MSw2NDI5NDIyMiwtMTUzMTMyMjIwNCwy
+MTE2NzA3NjgzXX0=
 -->
