@@ -99,8 +99,9 @@ Transformer来自于Google Brain团队2017年的文章Attention is all you need�
 Transformer模型的首要工作就是使用编码器生成序列编码，前面我们介绍了注意力机制具备。。。的能力，在transformer的编码器中就是用了注意力机制来生成context vector，由于这种注意力机制的注意对象是输入序列自身，因此被称为自注意力。
 
 #### 自注意力（self attention）
-> 时序问题（特别是NLP问题）中的序列元素表示的含义通常不止该单个元素的的字面意义，而是与整个序列上下文有关系，因此在encoding过程中需要考虑整个序列来决定其中每个元素的意义。self-attention机制就是基于这种由全局确定局部的思想，简单来说它使用整个序列所有元素的**加权**平均来确定每一个元素在所处序列（上下文）中的含义。
-我们可以看到，在对it
+首先从理论上，注意力计算过程就是汇聚各个元素信息的过程，因为注意力机制有能力收集生成context vector所需要的信息。需要注意的是
+时序问题（特别是NLP问题）中的序列元素表示的含义通常不止该单个元素的的字面意义，而是与整个序列上下文有关系，因此在encoding过程中需要考虑整个序列来决定其中每个元素的意义。self-attention机制就是基于这种由全局确定局部的思想，简单来说它使用整个序列所有元素的**加权**平均来确定每一个元素在所处序列（上下文）中的含义。
+下图在对it的解释过程中，“the”和“animal”都发挥了比较大的权重。可以看到注意力
 
 ![](https://img-blog.csdnimg.cn/20181212165538837.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQxNjY0ODQ1,size_16,color_FFFFFF,t_70)
 在使用相似性作为注意规则时，直观的来说，自注意力机制做了以下几件事
@@ -272,7 +273,7 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [When Does Label Smoothing Help?](https://medium.com/@nainaakash012/when-does-label-smoothing-help-89654ec75326)
 [Attention Is All You Need](https://machinereads.com/2018/09/26/attention-is-all-you-need/)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTU2NjM1MjA5OCwxNjE0NDY1MTQ1LC0zNj
+eyJoaXN0b3J5IjpbMTU4Nzg3MzYxOCwxNjE0NDY1MTQ1LC0zNj
 g1NTA4NTksLTExNjM4Mjc2MTEsLTE0MDcyNTE3NTQsMTk2OTQ1
 OTYxNiwxNTk2NDQwNTQwLDk2MDcxMDMzNiwtNzU1NzQ4MzM4LC
 00MjgzNzUwNDAsMTY5MzQzNTIxNSwxMTIwMDk3OTYyLC0yMzcx
