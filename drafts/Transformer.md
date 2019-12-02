@@ -56,21 +56,15 @@ $$AttentionX_Y=\{AttentionX_{y_1}, AttentionX_{y_2}, ... AttentionX_{y_n}\}$$
   | RNN | $O(length \cdot dim^2)$ |
   | CNN | $O(length \cdot dim^2 \cdot kernel)$ |
  
-
-
 >Actually, that’s quite counterintuitive. Human attention is something that’s supposed to **save** computational resources. By focusing on one thing, we can neglect many other things. But that’s not really what we’re doing in the above model. We’re essentially looking at everything in detail before deciding what to focus on. Intuitively that’s equivalent outputting a translated word, and then going back through _all_ of your internal memory of the text in order to decide which word to produce next. That seems like a waste, and not at all what humans are doing. In fact, it’s more akin to memory access, not attention, which in my opinion is somewhat of a misnomer (more on that below). Still, that hasn’t stopped attention mechanisms from becoming quite popular and performing well on many tasks.
 
-
-#### Attention = (Fuzzy) Memory?
-
->The basic problem that the attention mechanism solves is that it allows the network to refer back to the input sequence, instead of forcing it to encode all information into one fixed-length vector. As I mentioned above, I think that attention is somewhat of a misnomer. Interpreted another way, the attention mechanism is simply giving the network access to its internal memory, which is the hidden state of the encoder. In this interpretation, instead of choosing what to “attend” to, the network chooses what to retrieve from memory. Unlike typical memory, the memory access mechanism here is soft, which means that the network retrieves a weighted combination of all memory locations, not a value from a single discrete location. Making the memory access soft has the benefit that we can easily train the network end-to-end using backpropagation (though there have been non-fuzzy approaches where the gradients are calculated using sampling methods instead of backpropagation).
 
 > **try to understand why K and V are different in transformer first!!!**
 > Attention has a more generalized the form: XXXXXX
 > 
 > Goal is to learn $W_k, W_q, W_v$ so that 
 -   **其次**，从形式上Attention可以理解为**键值查询**
-对于进行相似性计算和——不同的情况，Attention可以更一般的表示为
+考虑到对于进行相似性计算和——不同的情况，Attention可以更一般的表示为
 $$\mathrm{Attention}(Q, K, V) = \mathrm{softmax}(Sim(Q,K))V$$
 上式表示对于查询$q$和键值对$K,V$Given a query  **q**  and a set of key-value pairs  **(K, V)**, attention can be generalised to compute a weighted sum of the values dependent on the query and the corresponding keys.  
 The query determines which values to focus on; we can say that the query ‘attends’ to the values.
@@ -266,11 +260,11 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [When Does Label Smoothing Help?](https://medium.com/@nainaakash012/when-does-label-smoothing-help-89654ec75326)
 [Attention Is All You Need](https://machinereads.com/2018/09/26/attention-is-all-you-need/)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTM3MzgxOTEyNiwxNjE0NDY1MTQ1LC0zNj
-g1NTA4NTksLTExNjM4Mjc2MTEsLTE0MDcyNTE3NTQsMTk2OTQ1
-OTYxNiwxNTk2NDQwNTQwLDk2MDcxMDMzNiwtNzU1NzQ4MzM4LC
-00MjgzNzUwNDAsMTY5MzQzNTIxNSwxMTIwMDk3OTYyLC0yMzcx
-NzI2ODUsMTQ4OTc3NzM3NywtMTQyMDYwMjAzOCwxOTE1MzUwMz
-Y4LC0xMjkwNDM5MzYxLDY0Mjk0MjIyLC0xNTMxMzIyMjA0LDIx
-MTY3MDc2ODNdfQ==
+eyJoaXN0b3J5IjpbLTY1OTE4NDAzNywxMzczODE5MTI2LDE2MT
+Q0NjUxNDUsLTM2ODU1MDg1OSwtMTE2MzgyNzYxMSwtMTQwNzI1
+MTc1NCwxOTY5NDU5NjE2LDE1OTY0NDA1NDAsOTYwNzEwMzM2LC
+03NTU3NDgzMzgsLTQyODM3NTA0MCwxNjkzNDM1MjE1LDExMjAw
+OTc5NjIsLTIzNzE3MjY4NSwxNDg5Nzc3Mzc3LC0xNDIwNjAyMD
+M4LDE5MTUzNTAzNjgsLTEyOTA0MzkzNjEsNjQyOTQyMjIsLTE1
+MzEzMjIyMDRdfQ==
 -->
