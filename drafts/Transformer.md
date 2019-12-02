@@ -41,6 +41,8 @@ $$f(x_i, y)=x_i\cdot y=|x_i||y|cos\theta$$
 > ![enter image description
 > here](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSO0ZVpogoaP-ipyQF0Xhir4wSrgGJBdeU_5wDrea6UD9sF7icIYg)
 
+上述表示对于目标为一个元素$y$时注意力计算的方法，duiyu
+
 从运算的结果上看，由于$AttentionX_y$包含了序列$X$所有元素的信息，因此我们也可以把注意力运算理解为**元素在某一个序列上下文环境中的重新定义**。这是一种对于时序任务非常有用的属性，RNN由于能够保存输入序列的信息而被广泛应用于时序任务，相比RNN通过逐步更新状态最终得到整个序列的信息的机制，注意力机制不但也有能力获取整个序列的信息，更重要的是它能一步直接得到结果，这使得注意力机制具备以下优势：
 - 在并行方面，注意力机制不依赖于前一时刻的计算，可以很好的并行，优于RNN。
 - 在长距离依赖上，不管元素中间距离多远，路径长度总是1，可以轻松处理长距离依赖关系。RNN则存在梯度弥散或者梯度爆炸的问题。
@@ -266,11 +268,11 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [Transformer Architecture: The Positional Encoding](https://kazemnejad.com/blog/transformer_architecture_positional_encoding)
 [When Does Label Smoothing Help?](https://medium.com/@nainaakash012/when-does-label-smoothing-help-89654ec75326)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjgxMzcxOTUyLC0zNjg1NTA4NTksLTExNj
-M4Mjc2MTEsLTE0MDcyNTE3NTQsMTk2OTQ1OTYxNiwxNTk2NDQw
-NTQwLDk2MDcxMDMzNiwtNzU1NzQ4MzM4LC00MjgzNzUwNDAsMT
-Y5MzQzNTIxNSwxMTIwMDk3OTYyLC0yMzcxNzI2ODUsMTQ4OTc3
-NzM3NywtMTQyMDYwMjAzOCwxOTE1MzUwMzY4LC0xMjkwNDM5Mz
-YxLDY0Mjk0MjIyLC0xNTMxMzIyMjA0LDIxMTY3MDc2ODMsODQ1
-MzI3MDcxXX0=
+eyJoaXN0b3J5IjpbLTMzMDczMjE0NiwtMzY4NTUwODU5LC0xMT
+YzODI3NjExLC0xNDA3MjUxNzU0LDE5Njk0NTk2MTYsMTU5NjQ0
+MDU0MCw5NjA3MTAzMzYsLTc1NTc0ODMzOCwtNDI4Mzc1MDQwLD
+E2OTM0MzUyMTUsMTEyMDA5Nzk2MiwtMjM3MTcyNjg1LDE0ODk3
+NzczNzcsLTE0MjA2MDIwMzgsMTkxNTM1MDM2OCwtMTI5MDQzOT
+M2MSw2NDI5NDIyMiwtMTUzMTMyMjIwNCwyMTE2NzA3NjgzLDg0
+NTMyNzA3MV19
 -->
