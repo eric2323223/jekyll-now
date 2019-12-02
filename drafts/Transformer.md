@@ -41,9 +41,10 @@ $$f(x_i, y)=x_i\cdot y=|x_i||y|cos\theta$$
 > ![enter image description
 > here](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSO0ZVpogoaP-ipyQF0Xhir4wSrgGJBdeU_5wDrea6UD9sF7icIYg)
 
-上述表示对于目标为一个元素$y$时注意力计算的方法，duiyu
+上述表示对于目标为一个元素$y$时注意力计算的方法，大部分时序任务要求输出为序列，对于目标为序列的注意力计算方法是分别对每个元素$y_1, y_2, ... y_n$进行注意力计算，再将计算结果组成序列。
+$$AttentionX_Y=\{AttentionX_{y_1}, AttentionX_{y_2}, ... AttentionX_{y_n}\}$$
 
-从运算的结果上看，由于$AttentionX_y$包含了序列$X$所有元素的信息，因此我们也可以把注意力运算理解为**元素在某一个序列上下文环境中的重新定义**。这是一种对于时序任务非常有用的属性，RNN由于能够保存输入序列的信息而被广泛应用于时序任务，相比RNN通过逐步更新状态最终得到整个序列的信息的机制，注意力机制不但也有能力获取整个序列的信息，更重要的是它能一步直接得到结果，这使得注意力机制具备以下优势：
+从运算的结果上看，由于$AttentionX_{y_i}$包含了序列$X$所有元素的信息，因此我们也可以把注意力运算理解为**元素（$y_i$）在某一个序列上下文（$X$）环境中的重新定义**。这是一种对于时序任务非常有用的属性，RNN由于能够保存输入序列的信息而被广泛应用于时序任务，相比RNN通过逐步更新状态最终得到整个序列的信息的机制，注意力机制不但也有能力获取整个序列的信息，更重要的是它能一步直接得到结果，这使得注意力机制具备以下优势：
 - 在并行方面，注意力机制不依赖于前一时刻的计算，可以很好的并行，优于RNN。
 - 在长距离依赖上，不管元素中间距离多远，路径长度总是1，可以轻松处理长距离依赖关系。RNN则存在梯度弥散或者梯度爆炸的问题。
 - 注意力机制的计算复杂度更低，下表对注意力，RNN，CNN在计算复杂度上进行了对比，其中$length$表示序列长度，$dim$表示序列元素的维度，$kernel$表示卷积核的大小。由于在大部分自然语言处理任务中的元素维度都大于序列长度，因此注意力运算的计算复杂度要显著低于RNN和CNN。
@@ -268,7 +269,7 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [Transformer Architecture: The Positional Encoding](https://kazemnejad.com/blog/transformer_architecture_positional_encoding)
 [When Does Label Smoothing Help?](https://medium.com/@nainaakash012/when-does-label-smoothing-help-89654ec75326)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTMzMDczMjE0NiwtMzY4NTUwODU5LC0xMT
+eyJoaXN0b3J5IjpbMTYxNDQ2NTE0NSwtMzY4NTUwODU5LC0xMT
 YzODI3NjExLC0xNDA3MjUxNzU0LDE5Njk0NTk2MTYsMTU5NjQ0
 MDU0MCw5NjA3MTAzMzYsLTc1NTc0ODMzOCwtNDI4Mzc1MDQwLD
 E2OTM0MzUyMTUsMTEyMDA5Nzk2MiwtMjM3MTcyNjg1LDE0ODk3
