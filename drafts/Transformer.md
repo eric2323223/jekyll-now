@@ -107,10 +107,10 @@ Transformer模型的首要工作就是使用编码器生成序列编码，前面
 [^2]: 来自Jay Alammar的著名博文The Illustrated Transformer
 
 #### 注意力遮罩（Attention mask）
-Attention这种新的结构使得他的训练方式也和RNN不同，这是由于Attention可以直接看到所有的元素，因此需要mask来防止——————， 具体来看
-- 编码器self attention，不需要mask
-- 编码器-解码器attention，需要对padding进行mask
-- 解码器self attention，需要对当前位置之后的所有元素masking
+由于Attention可以直接看到所有的元素，因此需要一种手段来防止attention处理“不应该被看到的元素”，这主要是指在解码器端    。。。。， 具体来看
+- 编码器端自注意力，不需要mask
+- 编码器-解码器注意力，需要对padding进行mask
+- 解码器自注意力，需要对当前位置之后的所有元素masking
   ![enter image description here](http://jalammar.github.io/images/gpt2/self-attention-and-masked-self-attention.png)
 
 #### Scaled Dot-Product Attention (SDPA)
@@ -266,11 +266,11 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [When Does Label Smoothing Help?](https://medium.com/@nainaakash012/when-does-label-smoothing-help-89654ec75326)
 [Attention Is All You Need](https://machinereads.com/2018/09/26/attention-is-all-you-need/)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0NzE1ODE5MzYsMTYxNDQ2NTE0NSwtMz
-Y4NTUwODU5LC0xMTYzODI3NjExLC0xNDA3MjUxNzU0LDE5Njk0
-NTk2MTYsMTU5NjQ0MDU0MCw5NjA3MTAzMzYsLTc1NTc0ODMzOC
-wtNDI4Mzc1MDQwLDE2OTM0MzUyMTUsMTEyMDA5Nzk2MiwtMjM3
-MTcyNjg1LDE0ODk3NzczNzcsLTE0MjA2MDIwMzgsMTkxNTM1MD
-M2OCwtMTI5MDQzOTM2MSw2NDI5NDIyMiwtMTUzMTMyMjIwNCwy
-MTE2NzA3NjgzXX0=
+eyJoaXN0b3J5IjpbLTI5NDYzNTQ3NywxNjE0NDY1MTQ1LC0zNj
+g1NTA4NTksLTExNjM4Mjc2MTEsLTE0MDcyNTE3NTQsMTk2OTQ1
+OTYxNiwxNTk2NDQwNTQwLDk2MDcxMDMzNiwtNzU1NzQ4MzM4LC
+00MjgzNzUwNDAsMTY5MzQzNTIxNSwxMTIwMDk3OTYyLC0yMzcx
+NzI2ODUsMTQ4OTc3NzM3NywtMTQyMDYwMjAzOCwxOTE1MzUwMz
+Y4LC0xMjkwNDM5MzYxLDY0Mjk0MjIyLC0xNTMxMzIyMjA0LDIx
+MTY3MDc2ODNdfQ==
 -->
