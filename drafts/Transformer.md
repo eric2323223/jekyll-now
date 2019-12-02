@@ -67,8 +67,7 @@ $$AttentionX_Y=\{AttentionX_{y_1}, AttentionX_{y_2}, ... AttentionX_{y_n}\}$$
 注意力机制可以更一般的表示为
 $$\mathrm{Attention}(Q, K, V) = \mathrm{softmax}(Score(Q,K))V$$
 这里的$K,V$分别表示一个键值对中的键key和值value，$Q$则表示注意目标query，这样我们之前的定义就变成一般表示在当$K=V$条件下的特殊形式。
-上式表示对于查询$q$和键值对$K,V$Given a query  **q**  and a set of key-value pairs  **(K, V)**, attention can be generalised to compute a weighted sum of the values dependent on the query and the corresponding keys.  
-The query determines which values to focus on; we can say that the query ‘attends’ to the values.
+如下图所示，
 
 ![enter image description here](https://machinereads.files.wordpress.com/2018/09/scaled-dot-product-attention3.png?w=720)
 
@@ -261,11 +260,11 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [When Does Label Smoothing Help?](https://medium.com/@nainaakash012/when-does-label-smoothing-help-89654ec75326)
 [Attention Is All You Need](https://machinereads.com/2018/09/26/attention-is-all-you-need/)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTM3OTk2NDE0OCwxMzczODE5MTI2LDE2MT
-Q0NjUxNDUsLTM2ODU1MDg1OSwtMTE2MzgyNzYxMSwtMTQwNzI1
-MTc1NCwxOTY5NDU5NjE2LDE1OTY0NDA1NDAsOTYwNzEwMzM2LC
-03NTU3NDgzMzgsLTQyODM3NTA0MCwxNjkzNDM1MjE1LDExMjAw
-OTc5NjIsLTIzNzE3MjY4NSwxNDg5Nzc3Mzc3LC0xNDIwNjAyMD
-M4LDE5MTUzNTAzNjgsLTEyOTA0MzkzNjEsNjQyOTQyMjIsLTE1
-MzEzMjIyMDRdfQ==
+eyJoaXN0b3J5IjpbMjk1NTE3MDMwLDEzNzM4MTkxMjYsMTYxND
+Q2NTE0NSwtMzY4NTUwODU5LC0xMTYzODI3NjExLC0xNDA3MjUx
+NzU0LDE5Njk0NTk2MTYsMTU5NjQ0MDU0MCw5NjA3MTAzMzYsLT
+c1NTc0ODMzOCwtNDI4Mzc1MDQwLDE2OTM0MzUyMTUsMTEyMDA5
+Nzk2MiwtMjM3MTcyNjg1LDE0ODk3NzczNzcsLTE0MjA2MDIwMz
+gsMTkxNTM1MDM2OCwtMTI5MDQzOTM2MSw2NDI5NDIyMiwtMTUz
+MTMyMjIwNF19
 -->
