@@ -63,9 +63,10 @@ $$AttentionX_Y=\{AttentionX_{y_1}, AttentionX_{y_2}, ... AttentionX_{y_n}\}$$
 > Attention has a more generalized the form: XXXXXX
 > 
 > Goal is to learn $W_k, W_q, W_v$ so that 
--   **其次**，从形式上Attention可以理解为**键值查询**
-考虑到对于进行相似性计算和——不同的情况，Attention可以更一般的表示为
+
+注意力机制可以更一般的表示为
 $$\mathrm{Attention}(Q, K, V) = \mathrm{softmax}(Sim(Q,K))V$$
+这里的$Q$ $V$分别表示
 上式表示对于查询$q$和键值对$K,V$Given a query  **q**  and a set of key-value pairs  **(K, V)**, attention can be generalised to compute a weighted sum of the values dependent on the query and the corresponding keys.  
 The query determines which values to focus on; we can say that the query ‘attends’ to the values.
 
@@ -260,11 +261,11 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [When Does Label Smoothing Help?](https://medium.com/@nainaakash012/when-does-label-smoothing-help-89654ec75326)
 [Attention Is All You Need](https://machinereads.com/2018/09/26/attention-is-all-you-need/)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTY1OTE4NDAzNywxMzczODE5MTI2LDE2MT
-Q0NjUxNDUsLTM2ODU1MDg1OSwtMTE2MzgyNzYxMSwtMTQwNzI1
-MTc1NCwxOTY5NDU5NjE2LDE1OTY0NDA1NDAsOTYwNzEwMzM2LC
-03NTU3NDgzMzgsLTQyODM3NTA0MCwxNjkzNDM1MjE1LDExMjAw
-OTc5NjIsLTIzNzE3MjY4NSwxNDg5Nzc3Mzc3LC0xNDIwNjAyMD
-M4LDE5MTUzNTAzNjgsLTEyOTA0MzkzNjEsNjQyOTQyMjIsLTE1
-MzEzMjIyMDRdfQ==
+eyJoaXN0b3J5IjpbLTE2MjI5NzI3NTcsMTM3MzgxOTEyNiwxNj
+E0NDY1MTQ1LC0zNjg1NTA4NTksLTExNjM4Mjc2MTEsLTE0MDcy
+NTE3NTQsMTk2OTQ1OTYxNiwxNTk2NDQwNTQwLDk2MDcxMDMzNi
+wtNzU1NzQ4MzM4LC00MjgzNzUwNDAsMTY5MzQzNTIxNSwxMTIw
+MDk3OTYyLC0yMzcxNzI2ODUsMTQ4OTc3NzM3NywtMTQyMDYwMj
+AzOCwxOTE1MzUwMzY4LC0xMjkwNDM5MzYxLDY0Mjk0MjIyLC0x
+NTMxMzIyMjA0XX0=
 -->
