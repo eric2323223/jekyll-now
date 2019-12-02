@@ -92,7 +92,7 @@ Transformer来自于Google Brain团队2017年的文章Attention is all you need�
 ![enter image description here](https://s3-ap-south-1.amazonaws.com/av-blog-media/wp-content/uploads/2019/06/Screenshot-from-2019-06-17-20-01-32.png)
 
 
-![enter image description here](https://docs.google.com/drawings/d/e/2PACX-1vSBNAHsyf_HP3_CkV1cygicnt0LhGxWcvw2PofecPP9TYJj41bghsAXTM6l6OSonSMvAjjgFInVDxC4/pub?w=961&h=590)
+
 
 
 ### 为什么Attention is all you need?
@@ -107,7 +107,7 @@ Transformer模型的首要工作就是使用编码器生成序列编码，前面
 [^2]: 来自Jay Alammar的著名博文The Illustrated Transformer
 
 #### 注意力遮罩（Attention mask）
-由于Attention可以直接看到所有的元素，因此需要一种手段来防止attention处理“不应该被看到的元素”，这主要是指在解码器端    。。。。， 具体来看
+由于Attention可以直接看到所有的元素，因此需要一种手段来防止attention处理“不应该被看到的元素”，这是指在模型训练阶段不能让解码器的自注意力机制看到训练数据中当前    。。。。， 具体来看
 - 编码器端自注意力，不需要mask
 - 编码器-解码器注意力，需要对padding进行mask
 - 解码器自注意力，需要对当前位置之后的所有元素masking
@@ -198,7 +198,7 @@ transformer模型中将多头注意力HMA计算后的结果输入按位前馈网
 9. 通过全连接网络转化为目标词典宽度向量
 10. 使用softmax确定输出元素（可能性最大）
 11.  将当前输出元素输入6开始下一个输出元素的计算，直到输出为结束标记符
-
+![enter image description here](https://docs.google.com/drawings/d/e/2PACX-1vSBNAHsyf_HP3_CkV1cygicnt0LhGxWcvw2PofecPP9TYJj41bghsAXTM6l6OSonSMvAjjgFInVDxC4/pub?w=961&h=590)
 总结一下，attention是transformer的核心，它具有计算效率高（尤其对于长序列），可并行，容易训练等优势，但是同时也带了一些新问题：比如无序和特征合成能力下降。Transformer针对这些新问题分别提出了解决方案，如使用位置编码生成位置信息，使用多头注意力和按位前馈网络增强特征合成能力。
 
 ## Transformer优化技巧
@@ -266,7 +266,7 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [When Does Label Smoothing Help?](https://medium.com/@nainaakash012/when-does-label-smoothing-help-89654ec75326)
 [Attention Is All You Need](https://machinereads.com/2018/09/26/attention-is-all-you-need/)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTI5NDYzNTQ3NywxNjE0NDY1MTQ1LC0zNj
+eyJoaXN0b3J5IjpbLTI4MTAzNTAxOCwxNjE0NDY1MTQ1LC0zNj
 g1NTA4NTksLTExNjM4Mjc2MTEsLTE0MDcyNTE3NTQsMTk2OTQ1
 OTYxNiwxNTk2NDQwNTQwLDk2MDcxMDMzNiwtNzU1NzQ4MzM4LC
 00MjgzNzUwNDAsMTY5MzQzNTIxNSwxMTIwMDk3OTYyLC0yMzcx
