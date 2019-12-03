@@ -67,7 +67,7 @@ $$AttentionX_Y=\{AttentionX_{y_1}, AttentionX_{y_2}, ... AttentionX_{y_n}\}$$
 注意力机制可以更一般的表示为
 $$\mathrm{Attention}(Q, K, V) = \mathrm{softmax}(Score(Q,K))V$$
 这里的$K,V$分别表示一个键值对中的键key和值value，$Q$则表示注意目标query，这样我们之前的定义就变成一般表示$\mathrm{Attention}(Q, K, V)$在当$K=V$条件下的特殊形式。
-如下图所示，对于4维向量$K={Name, Age, Sex, Weight}$, 在4个维度上的取值分别为James, 25, male, 68kg，当以Age为注意目标$Q$，以相似度为注意规则时，注意力计算的结果是4维向量，在Name，Sex，weight纬度上接近于0，而在Age维度上接近25。这是由于K的Age维度和Q的Age维度相似性很高，因此score(Age_{K}Age_{Q})接近于1（图中粉色和蓝色向量的方向接近），而K的Name，Sex和Weight维度和Q的Age维度相似度接近于0（可以理解为粉色向量垂直于K1， k2和k3）。
+如下图所示，对于4维向量$K=【】Name, Age, Sex, Weight}$, 在4个维度上的取值分别为James, 25, male, 68kg，当以Age为注意目标$Q$，以相似度为注意规则时，注意力计算的结果是4维向量，在Name，Sex，weight纬度上接近于0，而在Age维度上接近25。这是由于K的Age维度和Q的Age维度相似性很高，因此score(Age_{K}Age_{Q})接近于1（图中粉色和蓝色向量的方向接近），而K的Name，Sex和Weight维度和Q的Age维度相似度接近于0（可以理解为粉色向量垂直于K1， k2和k3）。
 
 ![enter image description here](https://machinereads.files.wordpress.com/2018/09/scaled-dot-product-attention3.png?w=720)
 
@@ -126,19 +126,16 @@ In terms of encoder-decoder, the **query** is usually the hidden state of the _d
 ### 位置编码（positional encoding）
 与RNN和CNN不同，在Attention中没有词序的概念（如第一个词，第二个词等）， 输入序列的所有单词都以没有特殊顺序或位置的方式输入网络，因此模型不知道单词的顺序。 因此，需要将与位置相关的信号添加到每个词中，以帮助模型理解词的顺序。
 位置编码是单词值及其在句子中位置的重新表示（假定开头和结尾或中间的开头和开头不相同）。考虑到句子的长度可以是任意长度，只讨论词的绝对位置是不全面的（同一个词，在由3个词组成的句子中的第三个位置和30个词组成的句子中的第三个位置所表达的意思很可能是不一样的）。
+位置编码$PE$可以表示为
+$$PE_{{pos,2i}}=sin(pos/10000^{2i/d_{model}}) $$
+$$PE_{(pos, 2i+1)}=cos(pos/10000^{2i/d_{model}})$$
+其中$pos$表示位置，$i$表示元素编码的维度，$d_{model}$表示模型的维度，
 在Transformer模型中利用了不同频率的周期函数来进行位置编码，这种位置编码有如下优点：
 - 由于sin/cos函数的周期性它能够进行任意长度序列的位置编码
-- 由于sin/cos函数的性质使得相对位置的计算可以展开为线性表达式，计算效率比较高
-  当$\cos(k)=u, \sin(k)=v$时，
-   $$\sin(x + k) = u\sin(x) + v\cos(x)$$
-   $$\cos(x + k) = u\cos(x) - v\sin(x)$$
-   
+- 由于sin/cos函数的性质使得相对位置$PE_{i+x}$的计算可以展开为$PE_i$的线性表达式，计算效率比较高
 - 使用多个不同频率来保证不会由于周期性导致不同位置的编码相同
 - 第二是由于sin/cos函数的值总是在-1到1之间，这种编码本身也有正则化（normalization）的作用，这有利于神经网络的学习。
 
-如果用$pos$表示位置，$i$表示元素编码的维度，$d_{model}$表示模型的维度，位置编码$PE$可以表示为
-$$PE_{{pos,2i}}=sin(pos/10000^{2i/d_{model}}) $$
-$$PE_{(pos, 2i+1)}=cos(pos/10000^{2i/d_{model}})$$
 
 ![enter image description here](http://vandergoten.ai/img/attention_is_all_you_need/positional_embedding.png)
 计算产生的位置编码是一个与元素具有相同维度的向量，使用相加的方式将位置信息叠加进元素中，如下图所示
@@ -265,7 +262,7 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [When Does Label Smoothing Help?](https://medium.com/@nainaakash012/when-does-label-smoothing-help-89654ec75326)
 [Attention Is All You Need](https://machinereads.com/2018/09/26/attention-is-all-you-need/)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTU0NDI2MTM0LDEzNzM4MTkxMjYsMTYxND
+eyJoaXN0b3J5IjpbMTE1OTcwMTQwLDEzNzM4MTkxMjYsMTYxND
 Q2NTE0NSwtMzY4NTUwODU5LC0xMTYzODI3NjExLC0xNDA3MjUx
 NzU0LDE5Njk0NTk2MTYsMTU5NjQ0MDU0MCw5NjA3MTAzMzYsLT
 c1NTc0ODMzOCwtNDI4Mzc1MDQwLDE2OTM0MzUyMTUsMTEyMDA5
