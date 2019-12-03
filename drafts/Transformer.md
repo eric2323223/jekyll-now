@@ -67,7 +67,12 @@ $$AttentionX_Y=\{AttentionX_{y_1}, AttentionX_{y_2}, ... AttentionX_{y_n}\}$$
 注意力机制可以更一般的表示为
 $$\mathrm{Attention}(Q, K, V) = \mathrm{softmax}(Score(Q,K))V$$
 这里的$K,V$分别表示一个键值对中的键key和值value，$Q$则表示注意目标query，这样我们之前的定义就变成$\mathrm{Attention}(Q, K, V)$在当$K=V$条件下的特殊形式。
-下图表示了$\mathrm{Attention}(Q, K, V)$的计算过程，按照由下向上的顺序，首先通过矩阵相乘MatMul运算得到相似度，再通过Softmax操作转化为权重概率分布，最后使用MatMul，对于4维向量$K$=[Name, Age, Sex, Weight], 在4个维度上的取值分别为James, 25, male, 68kg，当以Age作为注意目标$Q$，以相似度作为注意规则时，注意力计算的结果是4维向量，在Name，Sex，weight纬度上接近于0，而在Age维度上接近25。这是由于K的Age维度和Q的Age维度相似性很高，因此$score(K_{Age},Q_{Age})$接近于1（图中粉色和蓝色向量的方向接近），而K的Name，Sex和Weight维度和Q的Age维度相似度接近于0（可以理解为粉色向量Q垂直于K1， K2和K3）。
+下图左侧表示了$\mathrm{Attention}(Q, K, V)$的计算过程，按照由下向上的顺序:
+1. 首先通过矩阵相乘MatMul运算得到$Q$和$K$的相似度，
+2. 再通过Softmax操作转化为权重概率分布，
+3. 最后使用MatMul加入$V$信息。
+
+对于4维向量$K$=[Name, Age, Sex, Weight], 在4个维度上的取值分别为James, 25, male, 68kg，当以Age作为注意目标$Q$，以相似度作为注意力规则时。由于K的Age维度和Q的Age维度相似性很高，因此$score(K_{Age},Q_{Age})$接近于1（图中粉色和蓝色向量的方向接近），而K的Name，Sex和Weight维度和Q的Age维度相似度接近于0（可以理解为粉色向量Q垂直于K1， K2和K3）。注意力计算的结果是4维向量，在Name，Sex，weight纬度上接近于0，因此该向量所包含的绝大部分信息都来自于Age维度，在该维度上的值为25。
 
 ![enter image description here](https://machinereads.files.wordpress.com/2018/09/scaled-dot-product-attention3.png?w=720)
 
@@ -262,7 +267,7 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [When Does Label Smoothing Help?](https://medium.com/@nainaakash012/when-does-label-smoothing-help-89654ec75326)
 [Attention Is All You Need](https://machinereads.com/2018/09/26/attention-is-all-you-need/)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzk0Mzk4NDEwLDEzNzM4MTkxMjYsMTYxND
+eyJoaXN0b3J5IjpbODM2ODEyMjQxLDEzNzM4MTkxMjYsMTYxND
 Q2NTE0NSwtMzY4NTUwODU5LC0xMTYzODI3NjExLC0xNDA3MjUx
 NzU0LDE5Njk0NTk2MTYsMTU5NjQ0MDU0MCw5NjA3MTAzMzYsLT
 c1NTc0ODMzOCwtNDI4Mzc1MDQwLDE2OTM0MzUyMTUsMTEyMDA5
