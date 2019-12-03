@@ -66,8 +66,8 @@ $$AttentionX_Y=\{AttentionX_{y_1}, AttentionX_{y_2}, ... AttentionX_{y_n}\}$$
 
 注意力机制可以更一般的表示为
 $$\mathrm{Attention}(Q, K, V) = \mathrm{softmax}(Score(Q,K))V$$
-这里的$K,V$分别表示一个键值对中的键key和值value，$Q$则表示注意目标query，这样我们之前的定义就变成一般表示$\mathrm{Attention}(Q, K, V)$在当$K=V$条件下的特殊形式。
-如下图所示，对于4维向量$K=【】Name, Age, Sex, Weight}$, 在4个维度上的取值分别为James, 25, male, 68kg，当以Age为注意目标$Q$，以相似度为注意规则时，注意力计算的结果是4维向量，在Name，Sex，weight纬度上接近于0，而在Age维度上接近25。这是由于K的Age维度和Q的Age维度相似性很高，因此score(Age_{K}Age_{Q})接近于1（图中粉色和蓝色向量的方向接近），而K的Name，Sex和Weight维度和Q的Age维度相似度接近于0（可以理解为粉色向量垂直于K1， k2和k3）。
+这里的$K,V$分别表示一个键值对中的键key和值value，$Q$则表示注意目标query，这样我们之前的定义就变成$\mathrm{Attention}(Q, K, V)$在当$K=V$条件下的特殊形式。
+如下图所示，对于4维向量$K$=[Name, Age, Sex, Weight], 在4个维度上的取值分别为James, 25, male, 68kg，当以Age为注意目标$Q$，以相似度为注意规则时，注意力计算的结果是4维向量，在Name，Sex，weight纬度上接近于0，而在Age维度上接近25。这是由于K的Age维度和Q的Age维度相似性很高，因此score(Age_{K}Age_{Q})接近于1（图中粉色和蓝色向量的方向接近），而K的Name，Sex和Weight维度和Q的Age维度相似度接近于0（可以理解为粉色向量垂直于K1， K2和K3）。
 
 ![enter image description here](https://machinereads.files.wordpress.com/2018/09/scaled-dot-product-attention3.png?w=720)
 
@@ -262,11 +262,11 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [When Does Label Smoothing Help?](https://medium.com/@nainaakash012/when-does-label-smoothing-help-89654ec75326)
 [Attention Is All You Need](https://machinereads.com/2018/09/26/attention-is-all-you-need/)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTE1OTcwMTQwLDEzNzM4MTkxMjYsMTYxND
-Q2NTE0NSwtMzY4NTUwODU5LC0xMTYzODI3NjExLC0xNDA3MjUx
-NzU0LDE5Njk0NTk2MTYsMTU5NjQ0MDU0MCw5NjA3MTAzMzYsLT
-c1NTc0ODMzOCwtNDI4Mzc1MDQwLDE2OTM0MzUyMTUsMTEyMDA5
-Nzk2MiwtMjM3MTcyNjg1LDE0ODk3NzczNzcsLTE0MjA2MDIwMz
-gsMTkxNTM1MDM2OCwtMTI5MDQzOTM2MSw2NDI5NDIyMiwtMTUz
-MTMyMjIwNF19
+eyJoaXN0b3J5IjpbMTA0ODIyMDE2NiwxMzczODE5MTI2LDE2MT
+Q0NjUxNDUsLTM2ODU1MDg1OSwtMTE2MzgyNzYxMSwtMTQwNzI1
+MTc1NCwxOTY5NDU5NjE2LDE1OTY0NDA1NDAsOTYwNzEwMzM2LC
+03NTU3NDgzMzgsLTQyODM3NTA0MCwxNjkzNDM1MjE1LDExMjAw
+OTc5NjIsLTIzNzE3MjY4NSwxNDg5Nzc3Mzc3LC0xNDIwNjAyMD
+M4LDE5MTUzNTAzNjgsLTEyOTA0MzkzNjEsNjQyOTQyMjIsLTE1
+MzEzMjIyMDRdfQ==
 -->
