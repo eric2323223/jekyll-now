@@ -128,7 +128,11 @@ In terms of encoder-decoder, the **query** is usually the hidden state of the _d
 位置编码是单词值及其在句子中位置的重新表示（假定开头和结尾或中间的开头和开头不相同）。考虑到句子的长度可以是任意长度，只讨论词的绝对位置是不全面的（同一个词，在由3个词组成的句子中的第三个位置和30个词组成的句子中的第三个位置所表达的意思很可能是不一样的）。
 在Transformer模型中利用了不同频率的周期函数来进行位置编码，这种位置编码有如下优点：
 - 由于sin/cos函数的周期性它能够进行任意长度序列的位置编码
-- 由于sin/cos函数的性质使得相对位置的计算可以zhank线性的表达式
+- 由于sin/cos函数的性质使得相对位置的计算可以展开为线性表达式，计算效率比较高
+  当$\cos(k)=u, \sin(k)=v$时，
+   $$\sin(x + k) = u\sin(x) + v\cos(x)$$
+   $$\cos(x + k) = u\cos(x) - v\sin(x)$$
+   
 - 使用多个不同频率来保证不会由于周期性导致不同位置的编码相同
 - 第二是由于sin/cos函数的值总是在-1到1之间，这种编码本身也有正则化（normalization）的作用，这有利于神经网络的学习。
 
@@ -142,7 +146,6 @@ $$PE_{(pos, 2i+1)}=cos(pos/10000^{2i/d_{model}})$$
 为何采用相加的方式？
 > 直觉是，在高维中随机选择的向量几乎总是近似正交的。没有理由认为单词向量和位置编码向量之间有任何关联。如果单词嵌入形成一个较小维的子空间，而位置编码形成另一个较小维的子空间，则两个子空间本身可能近似正交，因此大概可以对这些子空间进行变换，尽管进行了矢量相加，但两个子空间仍可以通过一些单个学习的变换而彼此独立地进行操作。因此，串联并不会增加太多，但会大大增加学习参数方面的成本。
 
-选择$sin, cos$的另一个原因
 为什么要同时使用sin和cos，而不只使用其中的一个？
 下图可见
 ![enter image description here](https://i.stack.imgur.com/5QQmq.gif)
@@ -262,7 +265,7 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [When Does Label Smoothing Help?](https://medium.com/@nainaakash012/when-does-label-smoothing-help-89654ec75326)
 [Attention Is All You Need](https://machinereads.com/2018/09/26/attention-is-all-you-need/)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTAxNzg3MzI5LDEzNzM4MTkxMjYsMTYxND
+eyJoaXN0b3J5IjpbNTU0NDI2MTM0LDEzNzM4MTkxMjYsMTYxND
 Q2NTE0NSwtMzY4NTUwODU5LC0xMTYzODI3NjExLC0xNDA3MjUx
 NzU0LDE5Njk0NTk2MTYsMTU5NjQ0MDU0MCw5NjA3MTAzMzYsLT
 c1NTc0ODMzOCwtNDI4Mzc1MDQwLDE2OTM0MzUyMTUsMTEyMDA5
