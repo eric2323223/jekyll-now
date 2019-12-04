@@ -90,10 +90,6 @@ Transformer来自于Google Brain团队2017年的文章Attention is all you need�
 整体架构上看，transformer仍属于编码器-解码器架构，通过编码器（encoder）将输入序列转换成内部表示，再通过不同解码器（decoder）实现不同的预测功能。~~从图中可以看到，编码器主要由两种组件构成：~~
 ![enter image description here](https://s3-ap-south-1.amazonaws.com/av-blog-media/wp-content/uploads/2019/06/Screenshot-from-2019-06-17-20-01-32.png)
 
-
-
-
-
 ### 为什么Attention is all you need?
 作为Transformer论文的最大创新，Transformer模型仅仅使用注意力机制不仅完成了以前需要RNN才能做到的工作，而且做的更快更好，下面我们就来看看Transformer是如何做到的。
 
@@ -267,11 +263,11 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [When Does Label Smoothing Help?](https://medium.com/@nainaakash012/when-does-label-smoothing-help-89654ec75326)
 [Attention Is All You Need](https://machinereads.com/2018/09/26/attention-is-all-you-need/)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODM2ODEyMjQxLDEzNzM4MTkxMjYsMTYxND
-Q2NTE0NSwtMzY4NTUwODU5LC0xMTYzODI3NjExLC0xNDA3MjUx
-NzU0LDE5Njk0NTk2MTYsMTU5NjQ0MDU0MCw5NjA3MTAzMzYsLT
-c1NTc0ODMzOCwtNDI4Mzc1MDQwLDE2OTM0MzUyMTUsMTEyMDA5
-Nzk2MiwtMjM3MTcyNjg1LDE0ODk3NzczNzcsLTE0MjA2MDIwMz
-gsMTkxNTM1MDM2OCwtMTI5MDQzOTM2MSw2NDI5NDIyMiwtMTUz
-MTMyMjIwNF19
+eyJoaXN0b3J5IjpbMjc5MDM3MzIxLDgzNjgxMjI0MSwxMzczOD
+E5MTI2LDE2MTQ0NjUxNDUsLTM2ODU1MDg1OSwtMTE2MzgyNzYx
+MSwtMTQwNzI1MTc1NCwxOTY5NDU5NjE2LDE1OTY0NDA1NDAsOT
+YwNzEwMzM2LC03NTU3NDgzMzgsLTQyODM3NTA0MCwxNjkzNDM1
+MjE1LDExMjAwOTc5NjIsLTIzNzE3MjY4NSwxNDg5Nzc3Mzc3LC
+0xNDIwNjAyMDM4LDE5MTUzNTAzNjgsLTEyOTA0MzkzNjEsNjQy
+OTQyMjJdfQ==
 -->
