@@ -133,7 +133,9 @@ $$PE_{(pos, 2i+1)}=\cos(pos/10000^{2i/d_{model}})$$
 ### 多头注意力（ Multiple Headed Attention, MHA)
 
 Transformer仅仅使用注意力机制处理输入生成context vector，由于注意力机制本质上只是对输入进行加权平均运算，没有引入新参数也没有使用非线性运算，这导致特征提取能力不足，为了解决这个问题作者提出了多头注意力的方法。
-多头注意力的基本思路是通过多次随机初始化过程来增加模型提取不同特征的机会，具体来说是对同一个元素进行多次注意力运算， 每次都使用随机生成的初始化参数$W$，最后再将多次运算的结果相加。下图中通过三次随机初始化分别得到了三种特征：红色表示动作，绿色表做动作施加者，蓝色表示动作承受着，可以看到在对“踢“进行了三次自注意力运算，分别对应三种特征。在对于动作信息的自注意力运算中，"我“和”球“的权值（灰色细线表示）比“踢”的权值（红色粗线）要小很多；同样，对动作施加者的自注意力运算中，“我”（绿色粗线）则是主要贡献者。在将三次自注意力运算的结果相加后，得到的新的“踢”的编码中就包含了三种特征的信息。现实中不可能每次随机初始化都能带来有效的特征，理论上随机初始化测次数越多就越有可能发现有效的特征，不过随之增长的是训练参数的增加，这意味着训练难度的提高，因此需要平衡，再Transformer模型中这个值是8。
+和卷积神经网络通过使用多个卷积核来发掘不同特征的思路类似，多头注意力的基本思路是通过多次随机初始化过程来增加模型提取不同特征的机会，具体来说是对同一个元素进行多次注意力运算， 每次都使用随机生成的初始化参数$W$，最后再将多次运算的结果相加。
+
+下图中通过三次随机初始化分别得到了三种特征：红色表示动作，绿色表做动作施加者，蓝色表示动作承受着，可以看到在对“踢“进行了三次自注意力运算，分别对应三种特征。在对于动作信息的自注意力运算中，"我“和”球“的权值（灰色细线表示）比“踢”的权值（红色粗线）要小很多；同样，对动作施加者的自注意力运算中，“我”（绿色粗线）则是主要贡献者。在将三次自注意力运算的结果相加后，得到的新的“踢”的编码中就包含了三种特征的信息。现实中不可能每次随机初始化都能带来有效的特征，理论上随机初始化测次数越多就越有可能发现有效的特征，不过随之增长的是训练参数的增加，这意味着训练难度的提高，因此需要平衡，再Transformer模型中这个值是8。
 
 ![enter image description here](https://docs.google.com/drawings/d/e/2PACX-1vT4_Vn34rr1zN4OhXIo7oCGkzXDF__Y3CIVnZ_12fjqLHtKoRSJaVIyoR7ndQHtRlfNUmgecF5mucNg/pub?w=538&h=363)
 
@@ -243,11 +245,11 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [When Does Label Smoothing Help?](https://medium.com/@nainaakash012/when-does-label-smoothing-help-89654ec75326)
 [Attention Is All You Need](https://machinereads.com/2018/09/26/attention-is-all-you-need/)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2MTQwNzk1OSw1MDE3MzMwMjgsODM2OD
-EyMjQxLDEzNzM4MTkxMjYsMTYxNDQ2NTE0NSwtMzY4NTUwODU5
-LC0xMTYzODI3NjExLC0xNDA3MjUxNzU0LDE5Njk0NTk2MTYsMT
-U5NjQ0MDU0MCw5NjA3MTAzMzYsLTc1NTc0ODMzOCwtNDI4Mzc1
-MDQwLDE2OTM0MzUyMTUsMTEyMDA5Nzk2MiwtMjM3MTcyNjg1LD
-E0ODk3NzczNzcsLTE0MjA2MDIwMzgsMTkxNTM1MDM2OCwtMTI5
-MDQzOTM2MV19
+eyJoaXN0b3J5IjpbLTE4MDIzNzU4NzEsNTAxNzMzMDI4LDgzNj
+gxMjI0MSwxMzczODE5MTI2LDE2MTQ0NjUxNDUsLTM2ODU1MDg1
+OSwtMTE2MzgyNzYxMSwtMTQwNzI1MTc1NCwxOTY5NDU5NjE2LD
+E1OTY0NDA1NDAsOTYwNzEwMzM2LC03NTU3NDgzMzgsLTQyODM3
+NTA0MCwxNjkzNDM1MjE1LDExMjAwOTc5NjIsLTIzNzE3MjY4NS
+wxNDg5Nzc3Mzc3LC0xNDIwNjAyMDM4LDE5MTUzNTAzNjgsLTEy
+OTA0MzkzNjFdfQ==
 -->
