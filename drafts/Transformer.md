@@ -118,8 +118,8 @@ $$PE_{(pos, 2i+1)}=\cos(pos/10000^{2i/d_{model}})$$
 - 使用多个不同频率来保证不会由于周期性导致不同位置的编码相同
 - sin/cos函数的值总是在-1到1之间，这有利于神经网络的学习。
 
+>![enter image description here](http://vandergoten.ai/img/attention_is_all_you_need/positional_embedding.png)
 
-![enter image description here](http://vandergoten.ai/img/attention_is_all_you_need/positional_embedding.png)
 计算产生的位置编码是一个与元素具有相同维度的向量，使用相加的方式将位置信息叠加进元素中，如下图所示。作者没有在论文中解释为什么使用相加方式，直觉上来说相加会造成对元素向量的污染，而串联（concatenate）就不会有这种问题。一种解释是在高维中随机选择的向量几乎总是近似正交的，也就是说元素向量和位置编码向量是没有关联、相互独立的。因此尽管进行了矢量相加，但两个向量仍可以通过一些单个学习的变换而彼此独立地进行操作。也是正因为这种向量正交关系，串联并不会比相加表现得更好，但会大大增加学习参数方面的成本。
 ![enter image description here](https://wikidocs.net/images/page/31379/transformer6_final.PNG)
 
@@ -132,7 +132,7 @@ $$PE_{(pos, 2i+1)}=\cos(pos/10000^{2i/d_{model}})$$
 
 ### 多头注意力（ Multiple Headed Attention, MHA)
 
-Transformer仅仅使用attention进行输入encoding，由于attention本质上只是对输入进行加权平均运算，这导致特征提取能力不足(比较convolution做线性变换，而attention只是做了加权平均)，为了解决这个问题作者提出了多头注意力（）的方法。多头注意力的基本思想通过多次初始化过程增加模型提取不同特征的机会，假设下图中通过三次初始化分别得到了三种特征：红色表示动作，绿色表做动作施加者，蓝色表示动作承受着，可以看到在对“踢“进行了三次self attention运算，分别对应三种特征。在对于动作信息的self attention中，"我“和”球“的权值（灰色细线表示）比“踢”的权值（红色粗线）要小很多；同样，对动作施加者的self attention中，“我”（绿色粗线）则是主要贡献者。在将三次self attention的结果相加后，得到的新的“踢”的编码中就包含了三种特征的信息。现实中不可能每次随机初始化都能带来有效的特征，理论上随机初始化测次数越多就越有可能发现有效的特征，不过随之增长的是训练参数的增加，这意味着训练难度的提高，因此需要平衡，再Transformer模型中这个值是8。
+Transformer仅仅使用注意力机制处理输入生成context vector，由于注意力机制本质上只是对输入进行加权平均运算，这导致特征提取能力不足(比较convolution做线性变换，而attention只是做了加权平均)，为了解决这个问题作者提出了多头注意力（）的方法。多头注意力的基本思想通过多次初始化过程增加模型提取不同特征的机会，假设下图中通过三次初始化分别得到了三种特征：红色表示动作，绿色表做动作施加者，蓝色表示动作承受着，可以看到在对“踢“进行了三次self attention运算，分别对应三种特征。在对于动作信息的self attention中，"我“和”球“的权值（灰色细线表示）比“踢”的权值（红色粗线）要小很多；同样，对动作施加者的self attention中，“我”（绿色粗线）则是主要贡献者。在将三次self attention的结果相加后，得到的新的“踢”的编码中就包含了三种特征的信息。现实中不可能每次随机初始化都能带来有效的特征，理论上随机初始化测次数越多就越有可能发现有效的特征，不过随之增长的是训练参数的增加，这意味着训练难度的提高，因此需要平衡，再Transformer模型中这个值是8。
 
 ![enter image description here](https://docs.google.com/drawings/d/e/2PACX-1vT4_Vn34rr1zN4OhXIo7oCGkzXDF__Y3CIVnZ_12fjqLHtKoRSJaVIyoR7ndQHtRlfNUmgecF5mucNg/pub?w=538&h=363)
 具体方法是对同一个元素进行多次attention运算， 每次attention都使用不同的初始化参数$W$，最后在将多次attention的结果相加。
@@ -242,11 +242,11 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [When Does Label Smoothing Help?](https://medium.com/@nainaakash012/when-does-label-smoothing-help-89654ec75326)
 [Attention Is All You Need](https://machinereads.com/2018/09/26/attention-is-all-you-need/)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE4MTQxMDc0NTYsODM2ODEyMjQxLDEzNz
-M4MTkxMjYsMTYxNDQ2NTE0NSwtMzY4NTUwODU5LC0xMTYzODI3
-NjExLC0xNDA3MjUxNzU0LDE5Njk0NTk2MTYsMTU5NjQ0MDU0MC
-w5NjA3MTAzMzYsLTc1NTc0ODMzOCwtNDI4Mzc1MDQwLDE2OTM0
-MzUyMTUsMTEyMDA5Nzk2MiwtMjM3MTcyNjg1LDE0ODk3NzczNz
-csLTE0MjA2MDIwMzgsMTkxNTM1MDM2OCwtMTI5MDQzOTM2MSw2
-NDI5NDIyMl19
+eyJoaXN0b3J5IjpbNjQwMTIzMjM3LDgzNjgxMjI0MSwxMzczOD
+E5MTI2LDE2MTQ0NjUxNDUsLTM2ODU1MDg1OSwtMTE2MzgyNzYx
+MSwtMTQwNzI1MTc1NCwxOTY5NDU5NjE2LDE1OTY0NDA1NDAsOT
+YwNzEwMzM2LC03NTU3NDgzMzgsLTQyODM3NTA0MCwxNjkzNDM1
+MjE1LDExMjAwOTc5NjIsLTIzNzE3MjY4NSwxNDg5Nzc3Mzc3LC
+0xNDIwNjAyMDM4LDE5MTUzNTAzNjgsLTEyOTA0MzkzNjEsNjQy
+OTQyMjJdfQ==
 -->
