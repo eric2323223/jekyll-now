@@ -64,17 +64,10 @@ $$\mathrm{Attention}(Q, K, V) = \mathrm{softmax}(Score(Q,K))V$$
 2. 再通过Softmax操作转化为权重概率分布，
 3. 最后使用MatMul加入$V$信息。
 
-对于4维向量$K$=[Name, Age, Sex, Weight], 在4个维度上的取值分别为James, 25, male, 68kg，当以Age作为注意目标$Q$，以相似度作为注意力规则时。由于K的Age维度和Q的Age维度相似度很高，因此$score(K_{Age},Q_{Age})$接近于1（图中粉色和蓝色向量的方向接近），同理K的Name，Sex和Weight维度和Q的Age维度相似度接近于0（可以理解为粉色向量Q垂直于K1， K2和K3）。注意力计算的结果是4维向量，在Name，Sex，weight纬度上接近于0，因此该向量所包含的绝大部分信息都来自于Age维度，在该维度上的值为25。
+对于4维向量$K$=[Name, Age, Sex, Weight], 在4个维度上的取值分别为James, 25, male, 68kg，当以Age作为注意目标$Q$，以相似度作为注意力规则时。由于K的Age维度和Q的Age维度相似度很高，因此$score(K_{Age},Q_{Age})$接近于1（图中粉色和蓝色向量的方向接近），同理K的Name，Sex和Weight维度和Q的Age维度相似度接近于0（可以理解为粉色向量Q垂直于K1， K2和K3）。注意力计算的结果是4维向量，在Name，Sex，weight纬度上接近于0，该向量所包含的绝大部分信息都来自于Age维度，在该维度上的值为25。
 
 ![enter image description here](https://machinereads.files.wordpress.com/2018/09/scaled-dot-product-attention3.png?w=720)
 
-注意力机制最早使用在基于[RNN的机器翻译模型](https://arxiv.org/pdf/1409.0473.pdf)中，不同于以往使用固定的context vector， 注意力机制能够让解码器每次解码的时候关注更相关的输入元素（生成动态的context vector）从而提高翻译的准确度。
-
-$$c_i=\sum_{j=1}\alpha_{ij}h_j$$
-$$\alpha_{ij}=\frac{exp(e_{ij})}{\sum_{k=1}exp(e_{ik})}$$
-$$e_{ij}=alignment(h_i,x_j)$$
-
-![enter image description here](https://oscimg.oschina.net/oscnet/5bdc25e12070e665409112ee13ac9e76603.jpg)
 
 ## Transformer模型
 
@@ -102,8 +95,9 @@ Transformer模型的首要工作就是使用编码器生成序列编码，前面
 
 #### Scaled Dot-Product Attention (SDPA)
 Transformer对标准的attention做了一个小小调整：加入特征缩放（feature scaling）。这样做主要是为了防止softmax运算将值较大的key过度放大，导致其他key的信息很难加入到attention结果中。
-$$\mathrm{SDPA}(Q, K, V) = \mathrm{softmax}(\frac{QK^T}{\sqrt{d_k}})V$$
 特征缩放体现在对$Q$和$K$计算点积$QK^T$以后，增加了一步除以$\sqrt{d_k}$运算。
+$$\mathrm{SDPA}(Q, K, V) = \mathrm{softmax}(\frac{QK^T}{\sqrt{d_k}})V$$
+
 下图是上式的图像化表示，其中Scale就是特征缩放的操作。
 
 >其中的权值来自该元素与其他元素的相似度，这是基于这样的假设-相似度越高的元素对确定该元素在整个序列中的含义的贡献度越大，由于序列元素以向量表示（word4vec），在transformer中使用点积运算来确定相似度，其结果是一个数值。形式化的定义为
@@ -112,12 +106,8 @@ $W^Q_i \in \mathbb{R}^{d_{\text{model}} \times d_k}$, $W^K_i \in \mathbb{R}^{d_{
 ![enter image description here](https://miro.medium.com/max/676/1*nCznYOY-QtWIm8Y4jyk2Kw.png)
 
 
-####  encoder-decoder attention
-In terms of encoder-decoder, the **query** is usually the hidden state of the _decoder_. Whereas **key**, is the hidden state of the _encoder_, and the corresponding **value** is normalized weight, representing how much attention a _key_ gets. Output is calculated as a wighted sum – here the dot product of _query_ and _key_ is used to get a _value_.
-
-
 ### 位置编码（positional encoding）
-与RNN和CNN不同，在Attention中没有词序的概念（如第一个词，第二个词等）， 输入序列的所有单词都以没有特殊顺序或位置的方式输入网络，因此模型不知道单词的顺序。 因此，需要将与位置相关的信号添加到每个词中，以帮助模型理解词的顺序。
+与RNN和CNN不同，在注意力机制中没有先后顺序的概念（如第一个元素，第二个元素等）， 输入序列的所有元素都以没有特殊顺序或位置的方式输入网络，因此模型不知道元素的顺序。 因此，需要将与位置相关的信号添加到每个元素中，以帮助模型理解序列中元素的排列顺序。
 位置编码是单词值及其在句子中位置的重新表示（假定开头和结尾或中间的开头和开头不相同）。考虑到句子的长度可以是任意长度，只讨论词的绝对位置是不全面的（同一个词，在由3个词组成的句子中的第三个位置和30个词组成的句子中的第三个位置所表达的意思很可能是不一样的）。
 位置编码$PE$可以表示为
 $$PE_{{pos,2i}}=sin(pos/10000^{2i/d_{model}}) $$
@@ -125,7 +115,7 @@ $$PE_{(pos, 2i+1)}=cos(pos/10000^{2i/d_{model}})$$
 其中$pos$表示位置，$i$表示元素编码的维度，$d_{model}$表示模型的维度，
 在Transformer模型中利用了不同频率的周期函数来进行位置编码，这种位置编码有如下优点：
 - 由于sin/cos函数的周期性它能够进行任意长度序列的位置编码
-- 由于sin/cos函数的性质使得相对位置$PE_{i+x}$的计算可以展开为$PE_i$的线性表达式，计算效率比较高
+- 由于sin()函数可以 使得相对位置$PE_{i+x}$的计算可以展开为$PE_i$的线性表达式，计算效率比较高
 - 使用多个不同频率来保证不会由于周期性导致不同位置的编码相同
 - 第二是由于sin/cos函数的值总是在-1到1之间，这种编码本身也有正则化（normalization）的作用，这有利于神经网络的学习。
 
@@ -255,11 +245,11 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [When Does Label Smoothing Help?](https://medium.com/@nainaakash012/when-does-label-smoothing-help-89654ec75326)
 [Attention Is All You Need](https://machinereads.com/2018/09/26/attention-is-all-you-need/)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbOTY2NDk4NjE1LDgzNjgxMjI0MSwxMzczOD
-E5MTI2LDE2MTQ0NjUxNDUsLTM2ODU1MDg1OSwtMTE2MzgyNzYx
-MSwtMTQwNzI1MTc1NCwxOTY5NDU5NjE2LDE1OTY0NDA1NDAsOT
-YwNzEwMzM2LC03NTU3NDgzMzgsLTQyODM3NTA0MCwxNjkzNDM1
-MjE1LDExMjAwOTc5NjIsLTIzNzE3MjY4NSwxNDg5Nzc3Mzc3LC
-0xNDIwNjAyMDM4LDE5MTUzNTAzNjgsLTEyOTA0MzkzNjEsNjQy
-OTQyMjJdfQ==
+eyJoaXN0b3J5IjpbMTI4MjM5MzU4Myw4MzY4MTIyNDEsMTM3Mz
+gxOTEyNiwxNjE0NDY1MTQ1LC0zNjg1NTA4NTksLTExNjM4Mjc2
+MTEsLTE0MDcyNTE3NTQsMTk2OTQ1OTYxNiwxNTk2NDQwNTQwLD
+k2MDcxMDMzNiwtNzU1NzQ4MzM4LC00MjgzNzUwNDAsMTY5MzQz
+NTIxNSwxMTIwMDk3OTYyLC0yMzcxNzI2ODUsMTQ4OTc3NzM3Ny
+wtMTQyMDYwMjAzOCwxOTE1MzUwMzY4LC0xMjkwNDM5MzYxLDY0
+Mjk0MjIyXX0=
 -->
