@@ -108,23 +108,21 @@ $W^Q_i \in \mathbb{R}^{d_{\text{model}} \times d_k}$, $W^K_i \in \mathbb{R}^{d_{
 
 ### 位置编码（positional encoding）
 与RNN和CNN不同，在注意力机制中没有先后顺序的概念（如第一个元素，第二个元素等）， 输入序列的所有元素都以没有特殊顺序或位置的方式输入网络，因此模型不知道元素的顺序。 因此，需要将与位置相关的信号添加到每个元素中，以帮助模型理解序列中元素的排列顺序。
-一种最简单直接的位置编码方式是将每个元素的序号加入yuansubianm 考虑到句子的长度可以是任意长度，只讨论词的绝对位置是不全面的（同一个词，在由3个词组成的句子中的第三个位置和30个词组成的句子中的第三个位置所表达的意思很可能是不一样的）。
+一种最简单直接的位置编码方式是将每个元素的序号加入元素编码后再输入模型，这样做是否可行呢？ 考虑到序列的长度可以是任意长度，只讨论元素的绝对位置是不全面的（同一个词，在由3个词组成的句子中的第三个位置和30个词组成的句子中的第三个位置所表达的意思很可能是不一样的）。因此Transformer使用了基于周期函数（sin/cos函数）的位置编码方法。
 位置编码$PE$可以表示为
-$$PE_{{pos,2i}}=sin(pos/10000^{2i/d_{model}}) $$
-$$PE_{(pos, 2i+1)}=cos(pos/10000^{2i/d_{model}})$$
-其中$pos$表示位置，$i$表示元素编码的维度，$d_{model}$表示模型的维度，
-在Transformer模型中利用了不同频率的周期函数来进行位置编码，这种位置编码有如下优点：
-- 由于sin/cos函数的周期性它能够进行任意长度序列的位置编码
+$$PE_{{pos,2i}}=\sin(pos/10000^{2i/d_{model}}) $$
+$$PE_{(pos, 2i+1)}=\cos(pos/10000^{2i/d_{model}})$$
+其中$pos$表示位置，$i$表示元素编码的维度，$d_{model}$表示模型的维度，这种位置编码有如下优点：
+- 利用sin/cos函数的周期性它能够进行任意长度序列的位置编码
 - 由于sin(i+x)函数可以展开为sin(i)和cos(i)的线性表达式，使得$PE_{i+x}$的计算可以展开为$PE_i$的线性表达式，因此计算相对位置的效率比较高
 - 使用多个不同频率来保证不会由于周期性导致不同位置的编码相同
-- 第二是由于sin/cos函数的值总是在-1到1之间，这有利于神经网络的学习。
+- sin/cos函数的值总是在-1到1之间，这有利于神经网络的学习。
 
 
 ![enter image description here](http://vandergoten.ai/img/attention_is_all_you_need/positional_embedding.png)
-计算产生的位置编码是一个与元素具有相同维度的向量，使用相加的方式将位置信息叠加进元素中，如下图所示
+计算产生的位置编码是一个与元素具有相同维度的向量，使用相加的方式将位置信息叠加进元素中，如下图所示。作者没有在论文中解释为什么使用相加的方式，从直觉上理解在高维中随机选择的向量几乎总是近似正交的，因此元素向量和位置编码向量是没有关联、相互独立的。如果单词嵌入形成一个较小维的子空间，而位置编码形成另一个较小维的子空间，则两个子空间本身可能近似正交，因此大概可以对这些子空间进行变换，尽管进行了矢量相加，但两个子空间仍可以通过一些单个学习的变换而彼此独立地进行操作。因此，串联并不会增加太多，但会大大增加学习参数方面的成本。
 ![enter image description here](https://wikidocs.net/images/page/31379/transformer6_final.PNG)
-为何采用相加的方式？
-> 直觉是，在高维中随机选择的向量几乎总是近似正交的。没有理由认为单词向量和位置编码向量之间有任何关联。如果单词嵌入形成一个较小维的子空间，而位置编码形成另一个较小维的子空间，则两个子空间本身可能近似正交，因此大概可以对这些子空间进行变换，尽管进行了矢量相加，但两个子空间仍可以通过一些单个学习的变换而彼此独立地进行操作。因此，串联并不会增加太多，但会大大增加学习参数方面的成本。
+
 
 为什么要同时使用sin和cos，而不只使用其中的一个？
 下图可见
@@ -245,11 +243,11 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [When Does Label Smoothing Help?](https://medium.com/@nainaakash012/when-does-label-smoothing-help-89654ec75326)
 [Attention Is All You Need](https://machinereads.com/2018/09/26/attention-is-all-you-need/)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE5OTM1MDY3OTUsODM2ODEyMjQxLDEzNz
-M4MTkxMjYsMTYxNDQ2NTE0NSwtMzY4NTUwODU5LC0xMTYzODI3
-NjExLC0xNDA3MjUxNzU0LDE5Njk0NTk2MTYsMTU5NjQ0MDU0MC
-w5NjA3MTAzMzYsLTc1NTc0ODMzOCwtNDI4Mzc1MDQwLDE2OTM0
-MzUyMTUsMTEyMDA5Nzk2MiwtMjM3MTcyNjg1LDE0ODk3NzczNz
-csLTE0MjA2MDIwMzgsMTkxNTM1MDM2OCwtMTI5MDQzOTM2MSw2
-NDI5NDIyMl19
+eyJoaXN0b3J5IjpbMTY2MzQyMzA1MSw4MzY4MTIyNDEsMTM3Mz
+gxOTEyNiwxNjE0NDY1MTQ1LC0zNjg1NTA4NTksLTExNjM4Mjc2
+MTEsLTE0MDcyNTE3NTQsMTk2OTQ1OTYxNiwxNTk2NDQwNTQwLD
+k2MDcxMDMzNiwtNzU1NzQ4MzM4LC00MjgzNzUwNDAsMTY5MzQz
+NTIxNSwxMTIwMDk3OTYyLC0yMzcxNzI2ODUsMTQ4OTc3NzM3Ny
+wtMTQyMDYwMjAzOCwxOTE1MzUwMzY4LC0xMjkwNDM5MzYxLDY0
+Mjk0MjIyXX0=
 -->
