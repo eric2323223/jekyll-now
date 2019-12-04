@@ -120,14 +120,13 @@ $$PE_{(pos, 2i+1)}=\cos(pos/10000^{2i/d_{model}})$$
 
 
 ![enter image description here](http://vandergoten.ai/img/attention_is_all_you_need/positional_embedding.png)
-计算产生的位置编码是一个与元素具有相同维度的向量，使用相加的方式将位置信息叠加进元素中，如下图所示。作者没有在论文中解释为什么使用相加的方式，从直觉上理解在高维中随机选择的向量几乎总是近似正交的，因此元素向量和位置编码向量是没有关联、相互独立的。如果单词嵌入形成一个较小维的子空间，而位置编码形成另一个较小维的子空间，则两个子空间本身可能近似正交，因此大概可以对这些子空间进行变换，尽管进行了矢量相加，但两个子空间仍可以通过一些单个学习的变换而彼此独立地进行操作。因此，串联并不会增加太多，但会大大增加学习参数方面的成本。
+计算产生的位置编码是一个与元素具有相同维度的向量，使用相加的方式将位置信息叠加进元素中，如下图所示。作者没有在论文中解释为什么使用相加方式，直觉上来说相加会造成对元素向量的污染，而串联（concatenate）就不会有这种问题。一种解释是在高维中随机选择的向量几乎总是近似正交的，也就是说元素向量和位置编码向量是没有关联、相互独立的。因此尽管进行了矢量相加，但两个向量仍可以通过一些单个学习的变换而彼此独立地进行操作。也是正因为这种向量正交关系，串联并不会比相加表现得更好，但会大大增加学习参数方面的成本。
 ![enter image description here](https://wikidocs.net/images/page/31379/transformer6_final.PNG)
 
 
-为什么要同时使用sin和cos，而不只使用其中的一个？
+>为什么要同时使用sin和cos，而不只使用其中的一个？
 下图可见
 ![enter image description here](https://i.stack.imgur.com/5QQmq.gif)
-
 ![enter image description here](https://i.stack.imgur.com/W0b0c.gif)
 
 
@@ -243,11 +242,11 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [When Does Label Smoothing Help?](https://medium.com/@nainaakash012/when-does-label-smoothing-help-89654ec75326)
 [Attention Is All You Need](https://machinereads.com/2018/09/26/attention-is-all-you-need/)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTY2MzQyMzA1MSw4MzY4MTIyNDEsMTM3Mz
-gxOTEyNiwxNjE0NDY1MTQ1LC0zNjg1NTA4NTksLTExNjM4Mjc2
-MTEsLTE0MDcyNTE3NTQsMTk2OTQ1OTYxNiwxNTk2NDQwNTQwLD
-k2MDcxMDMzNiwtNzU1NzQ4MzM4LC00MjgzNzUwNDAsMTY5MzQz
-NTIxNSwxMTIwMDk3OTYyLC0yMzcxNzI2ODUsMTQ4OTc3NzM3Ny
-wtMTQyMDYwMjAzOCwxOTE1MzUwMzY4LC0xMjkwNDM5MzYxLDY0
-Mjk0MjIyXX0=
+eyJoaXN0b3J5IjpbLTE4MTQxMDc0NTYsODM2ODEyMjQxLDEzNz
+M4MTkxMjYsMTYxNDQ2NTE0NSwtMzY4NTUwODU5LC0xMTYzODI3
+NjExLC0xNDA3MjUxNzU0LDE5Njk0NTk2MTYsMTU5NjQ0MDU0MC
+w5NjA3MTAzMzYsLTc1NTc0ODMzOCwtNDI4Mzc1MDQwLDE2OTM0
+MzUyMTUsMTEyMDA5Nzk2MiwtMjM3MTcyNjg1LDE0ODk3NzczNz
+csLTE0MjA2MDIwMzgsMTkxNTM1MDM2OCwtMTI5MDQzOTM2MSw2
+NDI5NDIyMl19
 -->
