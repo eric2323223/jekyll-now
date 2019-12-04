@@ -48,7 +48,7 @@ $$AttentionX_Y=\{AttentionX_{y_1}, AttentionX_{y_2}, ... AttentionX_{y_n}\}$$
 - 在并行方面，注意力机制不依赖于前一时刻的计算，可以很好的并行，优于RNN。
   传统方法使用RNN通过一步步的叠加分析过的输入来得到整个序列的内部表示（固定长度），Transformer模型中使用自注意力（self attention）机制来实现encoding，之所以称作自注意力是因为这是在输入序列内部进行的attention操作，由于attention操作就是对元素进行重新定义使其包含序列上下文信息，在输入序列元素进行attention的操作结果就是使该元素包含输入序列信息，因此经过self attention运算的整个输入序列的结果就是和一个输入序列大小一致的context vector。显然，self attention不需要想RNN那样一步步的出入输入，而是可以同时对每个元素进行attention运算，从下图可以发现，RNN需要在依次处理元素x1, x2和x3之后才能得到整个序列的上下文信息，而attention则可以同时处理x1，x2，x3而得到序列的上下文信息。![enter image description here](https://docs.google.com/drawings/d/e/2PACX-1vQZ5I4YZtpZOU8xnxqqJ2WVd7o9eeo0sHQa119cWm4qR85KanMs7-Z1DV1EfKxJLQrZaVglHLUJGPF2/pub?w=856&h=225)
 - 在长距离依赖上，不管元素中间距离多远，路径长度总是1，可以轻松处理长距离依赖关系。RNN则存在梯度弥散或者梯度爆炸的问题。
-- 注意力机制的计算复杂度更低，下表对注意力，RNN，CNN在计算复杂度上进行了对比，其中$length$表示序列长度，$dim$表示序列元素的维度，$kernel$表示卷积核的大小。由于在大部分自然语言处理任务中的元素维度都大于序列长度，因此注意力运算的计算复杂度要显著低于RNN和CNN。
+- 注意力机制的计算复杂度更低，下表对注意力，RNN，CNN在计算复杂度上进行了对比，其中$length$表示序列长度，$dim$表示序列元素的维度，$kernel$表示卷积核的大小。由于在大部分自然语言处理任务中的元素维度都大于序列长度，因此对于这类任务来说注意力运算的计算复杂度要显著低于RNN和CNN。
 
   ||计算复杂度|
   |--|--|
@@ -56,14 +56,6 @@ $$AttentionX_Y=\{AttentionX_{y_1}, AttentionX_{y_2}, ... AttentionX_{y_n}\}$$
   | RNN | $O(length \cdot dim^2)$ |
   | CNN | $O(length \cdot dim^2 \cdot kernel)$ |
  
->Actually, that’s quite counterintuitive. Human attention is something that’s supposed to **save** computational resources. By focusing on one thing, we can neglect many other things. But that’s not really what we’re doing in the above model. We’re essentially looking at everything in detail before deciding what to focus on. Intuitively that’s equivalent outputting a translated word, and then going back through _all_ of your internal memory of the text in order to decide which word to produce next. That seems like a waste, and not at all what humans are doing. In fact, it’s more akin to memory access, not attention, which in my opinion is somewhat of a misnomer (more on that below). Still, that hasn’t stopped attention mechanisms from becoming quite popular and performing well on many tasks.
-
-
-> **try to understand why K and V are different in transformer first!!!**
-> Attention has a more generalized the form: XXXXXX
-> 
-> Goal is to learn $W_k, W_q, W_v$ so that 
-
 注意力机制可以更一般的表示为
 $$\mathrm{Attention}(Q, K, V) = \mathrm{softmax}(Score(Q,K))V$$
 这里的$K,V$分别表示一个键值对中的键key和值value，$Q$则表示注意目标query，这样我们之前的定义就变成$\mathrm{Attention}(Q, K, V)$在当$K=V$条件下的特殊形式。
@@ -72,7 +64,7 @@ $$\mathrm{Attention}(Q, K, V) = \mathrm{softmax}(Score(Q,K))V$$
 2. 再通过Softmax操作转化为权重概率分布，
 3. 最后使用MatMul加入$V$信息。
 
-对于4维向量$K$=[Name, Age, Sex, Weight], 在4个维度上的取值分别为James, 25, male, 68kg，当以Age作为注意目标$Q$，以相似度作为注意力规则时。由于K的Age维度和Q的Age维度相似性很高，因此$score(K_{Age},Q_{Age})$接近于1（图中粉色和蓝色向量的方向接近），而K的Name，Sex和Weight维度和Q的Age维度相似度接近于0（可以理解为粉色向量Q垂直于K1， K2和K3）。注意力计算的结果是4维向量，在Name，Sex，weight纬度上接近于0，因此该向量所包含的绝大部分信息都来自于Age维度，在该维度上的值为25。
+对于4维向量$K$=[Name, Age, Sex, Weight], 在4个维度上的取值分别为James, 25, male, 68kg，当以Age作为注意目标$Q$，以相似度作为注意力规则时。由于K的Age维度和Q的Age维度相似度很高，因此$score(K_{Age},Q_{Age})$接近于1（图中粉色和蓝色向量的方向接近），同理K的Name，Sex和Weight维度和Q的Age维度相似度接近于0（可以理解为粉色向量Q垂直于K1， K2和K3）。注意力计算的结果是4维向量，在Name，Sex，weight纬度上接近于0，因此该向量所包含的绝大部分信息都来自于Age维度，在该维度上的值为25。
 
 ![enter image description here](https://machinereads.files.wordpress.com/2018/09/scaled-dot-product-attention3.png?w=720)
 
@@ -263,7 +255,7 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [When Does Label Smoothing Help?](https://medium.com/@nainaakash012/when-does-label-smoothing-help-89654ec75326)
 [Attention Is All You Need](https://machinereads.com/2018/09/26/attention-is-all-you-need/)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjc5MDM3MzIxLDgzNjgxMjI0MSwxMzczOD
+eyJoaXN0b3J5IjpbOTY2NDk4NjE1LDgzNjgxMjI0MSwxMzczOD
 E5MTI2LDE2MTQ0NjUxNDUsLTM2ODU1MDg1OSwtMTE2MzgyNzYx
 MSwtMTQwNzI1MTc1NCwxOTY5NDU5NjE2LDE1OTY0NDA1NDAsOT
 YwNzEwMzM2LC03NTU3NDgzMzgsLTQyODM3NTA0MCwxNjkzNDM1
