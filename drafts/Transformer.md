@@ -141,7 +141,7 @@ Transformer仅仅使用注意力机制处理输入生成context vector，由于�
 在transformer中对每一个元素$x_i$，进行$h$次(，如word2vec,glove，后的序列元素)初始化
 $$head_i =\mathrm{SDPA}(QW^Q_i, KW_i^K, VW_i^V)$$
 $$\mathrm{MultiHead}(Q,K,V)=\mathrm{Concat}(head_i, ..., head_h)W^O$$
-***合并的过程是串联（concatenate）并通过和$W^O$进行矩阵相乘得到和输入同样尺寸的结果。***
+***合并的过程是串联（concatenate）并通过和$W^O$进行矩阵相乘得到和输入同样维度的结果。***
 - 对于编码器MHA，$Q, K, V$都是输入元素编码$x_i$
 - 对于解码器MHA，$Q, K, V$都是已生成的输出元素编码$y_i$
 - 对于编码器-解码器MHA， $Q$是输出元素编码$y_i$, $K,V$是context vector中的元素$c_i$
@@ -149,7 +149,7 @@ $$\mathrm{MultiHead}(Q,K,V)=\mathrm{Concat}(head_i, ..., head_h)W^O$$
 ![enter image description here](https://mchromiak.github.io/articles/2017/Sep/12/Transformer-Attention-is-all-you-need/img/MultiHead.png)
 
 ### 编码/解码层
-transformer模型中将多头注意力HMA计算后的结果输入按位前馈网络，这里按位主要是指每个位置的元素各自输入前馈网络里进行计算，网络通常为2层，中间层维度稍大，最后一层的维度和元素编码的维度相同。这个设计的目的其实和HMA的设计类似，由于attention在特征合成能力不足，需要借助全连接网络的非线性计算来增加特征合成的能力。
+Transformer模型中将多头注意力计算后的结果输入按位前馈网络，这里按位主要是指每个位置的元素各自输入前馈网络里进行计算，网络结构为2个串联的全连接层，中间层维度稍大，最后一层的维度和元素编码的维度相同。这个设计的目的其实和多头注意力的设计类似，还是由于注意力机制在特征合成能力的不足，需要借助全连接网络的非线性计算来增加特征合成的能力。
 需要指出的是解码层..._____________________________________
 ![enter image description here](https://docs.google.com/drawings/d/e/2PACX-1vTFCzc5frUSM_IkIZ9W7XE92dfKzjh9M05OqTd8FDz3mZpPBTfO0cIVQ-Uk5ZItYZGzi119CYHUaGJk/pub?w=312&h=379)![enter image description here](https://docs.google.com/drawings/d/e/2PACX-1vQPYuIriXvfFSANLnztpXorpe-MH71EMWvf0sO5EBwx1JZci48LUp6hM52ICNQ6-cga70MZe7UH6QAJ/pub?w=349&h=698)
 > Like the name indicates, this is a regular feedforward network applied to _each_ time step of the Multi Head attention outputs. The network has three layers with a non-linearity like ReLU for the hidden layer. You might be wondering why do we need a feedforward network after attention; after all isn’t attention all we need 😈 ? I suspect it is needed to improve model expressiveness. As we saw earlier the multi head attention partitioned the inputs and applied attention independently. There was only a linear projection to the outputs, i.e. the partitions were combined only linearly. The _Positionwise Feedforward_ network thus brings in some non-linear ‘mixing’ if we call it that. In fact for the sequence tagging task we use convolutions instead of fully connected layers. A filter of width 3 allows interactions to happen with adjacent time steps to improve performance.
@@ -195,7 +195,7 @@ transformer模型中将多头注意力HMA计算后的结果输入按位前馈网
 标签平滑归一化通过"软化"传统的独热编码，使得训练时能够有效抑制过拟合现象。它的实现非常简单，通过一个超参数$\epsilon \in(0,1)$将原来的0，1分布变成$\epsilon, 1-\epsilon$分布（对于二值分类问题），这样就缩短了真假值之间的距离，最终起到抑制过拟合的效果。
 ### 4. 学习率热身Learning rate warm up
  训练初期由于离目标较远，一般需要选择大的学习率，但如果训练数据集具有高度的差异性则使用过大的学习率可能导致不稳定性。这是由于如果初始化后的数据恰好只包含一部分特征，则模型的初始训练可能会严重偏向于这些特征，这会增加模型学习其他特征的难度。
- 所以可以做一个学习率热身阶段，在开始的时候先使用一个较小的学习率，然后当训练过程稳定的时候再把学习率调回去。在预热期间，学习率呈线性增加。如果目标学习率是$p$，预热期是$n$，则第一批迭代将$p/n$用作学习率；第二个使用$2*p/n$，依此类推：迭代$i$使用$i*p/n$，直到我们在迭代$n$达到学习率$p$。
+ 所以可以做一个学习率热身阶段，在开始的时候先使用一个较小的学习率，然后当训练过程稳定的时候再把学习率调回去。在预热期间，学习率呈线性增加。如果目标学习率是$p$，预热期是$n$，则第一批迭代将$p/n$用作学习率；第二个使用$2*p/n$，依此类推：迭代$i$使用$i*p/n$，直到我们在迭代$n$次后达到学习率$p$。
 
 ## Transformer的改进和发展
 Transformer取得巨大成功引起关注，学术和产业界都在尝试在实现和理论层面对他进行改进
@@ -244,11 +244,11 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [When Does Label Smoothing Help?](https://medium.com/@nainaakash012/when-does-label-smoothing-help-89654ec75326)
 [Attention Is All You Need](https://machinereads.com/2018/09/26/attention-is-all-you-need/)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTIwMTc2MDQ4Niw1MDE3MzMwMjgsODM2OD
-EyMjQxLDEzNzM4MTkxMjYsMTYxNDQ2NTE0NSwtMzY4NTUwODU5
-LC0xMTYzODI3NjExLC0xNDA3MjUxNzU0LDE5Njk0NTk2MTYsMT
-U5NjQ0MDU0MCw5NjA3MTAzMzYsLTc1NTc0ODMzOCwtNDI4Mzc1
-MDQwLDE2OTM0MzUyMTUsMTEyMDA5Nzk2MiwtMjM3MTcyNjg1LD
-E0ODk3NzczNzcsLTE0MjA2MDIwMzgsMTkxNTM1MDM2OCwtMTI5
-MDQzOTM2MV19
+eyJoaXN0b3J5IjpbLTEwOTQ5ODQwOTgsMTIwMTc2MDQ4Niw1MD
+E3MzMwMjgsODM2ODEyMjQxLDEzNzM4MTkxMjYsMTYxNDQ2NTE0
+NSwtMzY4NTUwODU5LC0xMTYzODI3NjExLC0xNDA3MjUxNzU0LD
+E5Njk0NTk2MTYsMTU5NjQ0MDU0MCw5NjA3MTAzMzYsLTc1NTc0
+ODMzOCwtNDI4Mzc1MDQwLDE2OTM0MzUyMTUsMTEyMDA5Nzk2Mi
+wtMjM3MTcyNjg1LDE0ODk3NzczNzcsLTE0MjA2MDIwMzgsMTkx
+NTM1MDM2OF19
 -->
