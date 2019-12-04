@@ -108,16 +108,16 @@ $W^Q_i \in \mathbb{R}^{d_{\text{model}} \times d_k}$, $W^K_i \in \mathbb{R}^{d_{
 
 ### 位置编码（positional encoding）
 与RNN和CNN不同，在注意力机制中没有先后顺序的概念（如第一个元素，第二个元素等）， 输入序列的所有元素都以没有特殊顺序或位置的方式输入网络，因此模型不知道元素的顺序。 因此，需要将与位置相关的信号添加到每个元素中，以帮助模型理解序列中元素的排列顺序。
-位置编码是单词值及其在句子中位置的重新表示（假定开头和结尾或中间的开头和开头不相同）。考虑到句子的长度可以是任意长度，只讨论词的绝对位置是不全面的（同一个词，在由3个词组成的句子中的第三个位置和30个词组成的句子中的第三个位置所表达的意思很可能是不一样的）。
+一种最简单直接的位置编码方式是将每个元素的序号加入yuansubianm 考虑到句子的长度可以是任意长度，只讨论词的绝对位置是不全面的（同一个词，在由3个词组成的句子中的第三个位置和30个词组成的句子中的第三个位置所表达的意思很可能是不一样的）。
 位置编码$PE$可以表示为
 $$PE_{{pos,2i}}=sin(pos/10000^{2i/d_{model}}) $$
 $$PE_{(pos, 2i+1)}=cos(pos/10000^{2i/d_{model}})$$
 其中$pos$表示位置，$i$表示元素编码的维度，$d_{model}$表示模型的维度，
 在Transformer模型中利用了不同频率的周期函数来进行位置编码，这种位置编码有如下优点：
 - 由于sin/cos函数的周期性它能够进行任意长度序列的位置编码
-- 由于sin()函数可以 使得相对位置$PE_{i+x}$的计算可以展开为$PE_i$的线性表达式，计算效率比较高
+- 由于sin(i+x)函数可以展开为sin(i)和cos(i)的线性表达式，使得$PE_{i+x}$的计算可以展开为$PE_i$的线性表达式，因此计算相对位置的效率比较高
 - 使用多个不同频率来保证不会由于周期性导致不同位置的编码相同
-- 第二是由于sin/cos函数的值总是在-1到1之间，这种编码本身也有正则化（normalization）的作用，这有利于神经网络的学习。
+- 第二是由于sin/cos函数的值总是在-1到1之间，这有利于神经网络的学习。
 
 
 ![enter image description here](http://vandergoten.ai/img/attention_is_all_you_need/positional_embedding.png)
@@ -245,11 +245,11 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [When Does Label Smoothing Help?](https://medium.com/@nainaakash012/when-does-label-smoothing-help-89654ec75326)
 [Attention Is All You Need](https://machinereads.com/2018/09/26/attention-is-all-you-need/)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTI4MjM5MzU4Myw4MzY4MTIyNDEsMTM3Mz
-gxOTEyNiwxNjE0NDY1MTQ1LC0zNjg1NTA4NTksLTExNjM4Mjc2
-MTEsLTE0MDcyNTE3NTQsMTk2OTQ1OTYxNiwxNTk2NDQwNTQwLD
-k2MDcxMDMzNiwtNzU1NzQ4MzM4LC00MjgzNzUwNDAsMTY5MzQz
-NTIxNSwxMTIwMDk3OTYyLC0yMzcxNzI2ODUsMTQ4OTc3NzM3Ny
-wtMTQyMDYwMjAzOCwxOTE1MzUwMzY4LC0xMjkwNDM5MzYxLDY0
-Mjk0MjIyXX0=
+eyJoaXN0b3J5IjpbLTE5OTM1MDY3OTUsODM2ODEyMjQxLDEzNz
+M4MTkxMjYsMTYxNDQ2NTE0NSwtMzY4NTUwODU5LC0xMTYzODI3
+NjExLC0xNDA3MjUxNzU0LDE5Njk0NTk2MTYsMTU5NjQ0MDU0MC
+w5NjA3MTAzMzYsLTc1NTc0ODMzOCwtNDI4Mzc1MDQwLDE2OTM0
+MzUyMTUsMTEyMDA5Nzk2MiwtMjM3MTcyNjg1LDE0ODk3NzczNz
+csLTE0MjA2MDIwMzgsMTkxNTM1MDM2OCwtMTI5MDQzOTM2MSw2
+NDI5NDIyMl19
 -->
