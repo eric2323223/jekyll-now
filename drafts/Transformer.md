@@ -136,11 +136,7 @@ Transformer仅仅使用注意力机制处理输入生成context vector，由于�
 下图中通过三次随机初始化分别得到了三种特征：红色表示动作，绿色表做动作施加者，蓝色表示动作承受着，可以看到在对“踢“进行了三次自注意力运算，分别对应三种特征。在对于动作信息的自注意力运算中，"我“和”球“的权值（灰色细线表示）比“踢”的权值（红色粗线）要小很多；同样，对动作施加者的自注意力运算中，“我”（绿色粗线）则是主要贡献者。在将三次自注意力运算的结果相加后，得到的新的“踢”的编码中就包含了三种特征的信息。现实中不可能每次随机初始化都能带来有效的特征，理论上随机初始化测次数越多就越有可能发现有效的特征，不过随之增长的是训练参数的增加，这意味着训练难度的提高，因此需要平衡，再Transformer模型中这个值是8。
 
 ![enter image description here](https://docs.google.com/drawings/d/e/2PACX-1vT4_Vn34rr1zN4OhXIo7oCGkzXDF__Y3CIVnZ_12fjqLHtKoRSJaVIyoR7ndQHtRlfNUmgecF5mucNg/pub?w=538&h=363)
-具体实现来说是对同一个元素进行多次注意力运算， 每次注意力计算之前都使用随机生成的参数$W$来得到$Q,K,V$（具体如下1,2,3），再将多次运算的结果合并。
-$$XW^Q=Q$$
-$$XW^K=K$$
-$$XW^V=V$$
-
+具体实现来说是对同一个元素进行多次注意力运算， 每次注意力计算之前分别使用随机生成的参数$W^Q,W^K,W^V$通过矩阵相乘来初始化$Q,K,V$，再将多次运算的结果合并。
 
 在transformer中对每一个元素$x_i$，进行$h$次(，如word2vec,glove，后的序列元素)初始化
 $$head_i =\mathrm{SDPA}(QW^Q_i, KW_i^K, VW_i^V)$$
@@ -248,11 +244,11 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [When Does Label Smoothing Help?](https://medium.com/@nainaakash012/when-does-label-smoothing-help-89654ec75326)
 [Attention Is All You Need](https://machinereads.com/2018/09/26/attention-is-all-you-need/)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2NjQzNDEyNjYsNTAxNzMzMDI4LDgzNj
-gxMjI0MSwxMzczODE5MTI2LDE2MTQ0NjUxNDUsLTM2ODU1MDg1
-OSwtMTE2MzgyNzYxMSwtMTQwNzI1MTc1NCwxOTY5NDU5NjE2LD
-E1OTY0NDA1NDAsOTYwNzEwMzM2LC03NTU3NDgzMzgsLTQyODM3
-NTA0MCwxNjkzNDM1MjE1LDExMjAwOTc5NjIsLTIzNzE3MjY4NS
-wxNDg5Nzc3Mzc3LC0xNDIwNjAyMDM4LDE5MTUzNTAzNjgsLTEy
-OTA0MzkzNjFdfQ==
+eyJoaXN0b3J5IjpbMTIwMTc2MDQ4Niw1MDE3MzMwMjgsODM2OD
+EyMjQxLDEzNzM4MTkxMjYsMTYxNDQ2NTE0NSwtMzY4NTUwODU5
+LC0xMTYzODI3NjExLC0xNDA3MjUxNzU0LDE5Njk0NTk2MTYsMT
+U5NjQ0MDU0MCw5NjA3MTAzMzYsLTc1NTc0ODMzOCwtNDI4Mzc1
+MDQwLDE2OTM0MzUyMTUsMTEyMDA5Nzk2MiwtMjM3MTcyNjg1LD
+E0ODk3NzczNzcsLTE0MjA2MDIwMzgsMTkxNTM1MDM2OCwtMTI5
+MDQzOTM2MV19
 -->
