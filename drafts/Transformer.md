@@ -148,9 +148,9 @@ $$\mathrm{MultiHead}(Q,K,V)=\mathrm{Concat}(head_i, ..., head_h)W^O$$
 ![enter image description here](https://mchromiak.github.io/articles/2017/Sep/12/Transformer-Attention-is-all-you-need/img/MultiHead.png)
 
 ### 编码/解码层
-Transformer的编码器和解码器分别有若干个编码层（解码层构成），每个编码层（解码层）的结果
-Transformer模型中将多头注意力计算后的结果输入按位前馈网络，这里按位主要是指每个位置的元素各自输入前馈网络里进行计算，前馈网络的结构为2个串联的全连接层，中间层维度稍大（Transformer中为元素编码维度的4倍），最后一层的维度和元素编码的维度相同。这个设计的目的其实和多头注意力的设计类似，还是由于注意力机制在特征合成能力的不足，需要借助全连接网络的非线性计算来增加特征合成的能力。
-需要指出的是解码层和编码的c
+Transformer的编码器和解码器分别有若干个编码层（解码层构成），每个编码层（解码层）的结构wuquan
+Transformer模型中将多头注意力计算后的结果输入按位前馈网络，这里按位主要是指每个位置的元素各自输入前馈网络里进行计算，前馈网络的结构为2个串联的全连接层，中间层维度较大（Transformer中为元素编码维度的4倍），最后一层的维度和元素编码的维度相同。这个设计的目的其实和多头注意力的设计类似，还是由于注意力机制在特征合成能力的不足，需要借助全连接网络的非线性计算来增加特征合成的能力。
+需要指出的是解码层和编码的
 ![enter image description here](https://docs.google.com/drawings/d/e/2PACX-1vTFCzc5frUSM_IkIZ9W7XE92dfKzjh9M05OqTd8FDz3mZpPBTfO0cIVQ-Uk5ZItYZGzi119CYHUaGJk/pub?w=312&h=379)![enter image description here](https://docs.google.com/drawings/d/e/2PACX-1vQPYuIriXvfFSANLnztpXorpe-MH71EMWvf0sO5EBwx1JZci48LUp6hM52ICNQ6-cga70MZe7UH6QAJ/pub?w=349&h=698)
 > Like the name indicates, this is a regular feedforward network applied to _each_ time step of the Multi Head attention outputs. The network has three layers with a non-linearity like ReLU for the hidden layer. You might be wondering why do we need a feedforward network after attention; after all isn’t attention all we need 😈 ? I suspect it is needed to improve model expressiveness. As we saw earlier the multi head attention partitioned the inputs and applied attention independently. There was only a linear projection to the outputs, i.e. the partitions were combined only linearly. The _Positionwise Feedforward_ network thus brings in some non-linear ‘mixing’ if we call it that. In fact for the sequence tagging task we use convolutions instead of fully connected layers. A filter of width 3 allows interactions to happen with adjacent time steps to improve performance.
 
@@ -244,7 +244,7 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [When Does Label Smoothing Help?](https://medium.com/@nainaakash012/when-does-label-smoothing-help-89654ec75326)
 [Attention Is All You Need](https://machinereads.com/2018/09/26/attention-is-all-you-need/)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTc4NTY5OTc0OSwtMTA5NDk4NDA5OCwxMj
+eyJoaXN0b3J5IjpbLTY1MzU4OTczOSwtMTA5NDk4NDA5OCwxMj
 AxNzYwNDg2LDUwMTczMzAyOCw4MzY4MTIyNDEsMTM3MzgxOTEy
 NiwxNjE0NDY1MTQ1LC0zNjg1NTA4NTksLTExNjM4Mjc2MTEsLT
 E0MDcyNTE3NTQsMTk2OTQ1OTYxNiwxNTk2NDQwNTQwLDk2MDcx
