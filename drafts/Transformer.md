@@ -136,15 +136,14 @@ Transformer仅仅使用注意力机制处理输入生成context vector，由于�
 下图中通过三次随机初始化分别得到了三种特征：红色表示动作，绿色表做动作施加者，蓝色表示动作承受着，可以看到在对“踢“进行了三次自注意力运算，分别对应三种特征。在对于动作信息的自注意力运算中，"我“和”球“的权值（灰色细线表示）比“踢”的权值（红色粗线）要小很多；同样，对动作施加者的自注意力运算中，“我”（绿色粗线）则是主要贡献者。在将三次自注意力运算的结果相加后，得到的新的“踢”的编码中就包含了三种特征的信息。现实中不可能每次随机初始化都能带来有效的特征，理论上随机初始化测次数越多就越有可能发现有效的特征，不过随之增长的是训练参数的增加，这意味着训练难度的提高，因此需要平衡，再Transformer模型中这个值是8。
 
 ![enter image description here](https://docs.google.com/drawings/d/e/2PACX-1vT4_Vn34rr1zN4OhXIo7oCGkzXDF__Y3CIVnZ_12fjqLHtKoRSJaVIyoR7ndQHtRlfNUmgecF5mucNg/pub?w=538&h=363)
-具体实现来说是对同一个元素进行多次注意力运算， 每次注意力计算之前分别使用随机生成的参数$W^Q,W^K,W^V$通过矩阵相乘来初始化$Q,K,V$，再将多次运算的结果合并。
-
-在transformer中对每一个元素$x_i$，进行$h$次(，如word2vec,glove，后的序列元素)初始化
+具体实现来说是对同一个元素进行多次注意力运算， 每次注意力计算之前分别使用随机生成的参数$W^Q,W^K,W^V$通过矩阵相乘来初始化$Q,K,V$，
 $$head_i =\mathrm{SDPA}(QW^Q_i, KW_i^K, VW_i^V)$$
-$$\mathrm{MultiHead}(Q,K,V)=\mathrm{Concat}(head_i, ..., head_h)W^O$$
-***合并的过程是串联（concatenate）并通过和$W^O$进行矩阵相乘得到和输入同样维度的结果。***
 - 对于编码器MHA，$Q, K, V$都是输入元素编码$x_i$
 - 对于解码器MHA，$Q, K, V$都是已生成的输出元素编码$y_i$
 - 对于编码器-解码器MHA， $Q$是输出元素编码$y_i$, $K,V$是context vector中的元素$c_i$
+
+再将多次注意力运算的结果合并。合并的过程是首先对i次结果进行串联（concatenate），再通过和$W^O$进行矩阵相乘得到和输入同样维度的结果。
+$$\mathrm{MultiHead}(Q,K,V)=\mathrm{Concat}(head_i, ..., head_h)W^O$$
 
 ![enter image description here](https://mchromiak.github.io/articles/2017/Sep/12/Transformer-Attention-is-all-you-need/img/MultiHead.png)
 
@@ -244,11 +243,11 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [When Does Label Smoothing Help?](https://medium.com/@nainaakash012/when-does-label-smoothing-help-89654ec75326)
 [Attention Is All You Need](https://machinereads.com/2018/09/26/attention-is-all-you-need/)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEwOTQ5ODQwOTgsMTIwMTc2MDQ4Niw1MD
-E3MzMwMjgsODM2ODEyMjQxLDEzNzM4MTkxMjYsMTYxNDQ2NTE0
-NSwtMzY4NTUwODU5LC0xMTYzODI3NjExLC0xNDA3MjUxNzU0LD
-E5Njk0NTk2MTYsMTU5NjQ0MDU0MCw5NjA3MTAzMzYsLTc1NTc0
-ODMzOCwtNDI4Mzc1MDQwLDE2OTM0MzUyMTUsMTEyMDA5Nzk2Mi
-wtMjM3MTcyNjg1LDE0ODk3NzczNzcsLTE0MjA2MDIwMzgsMTkx
-NTM1MDM2OF19
+eyJoaXN0b3J5IjpbMTEzNTMzNTQ1MCwtMTA5NDk4NDA5OCwxMj
+AxNzYwNDg2LDUwMTczMzAyOCw4MzY4MTIyNDEsMTM3MzgxOTEy
+NiwxNjE0NDY1MTQ1LC0zNjg1NTA4NTksLTExNjM4Mjc2MTEsLT
+E0MDcyNTE3NTQsMTk2OTQ1OTYxNiwxNTk2NDQwNTQwLDk2MDcx
+MDMzNiwtNzU1NzQ4MzM4LC00MjgzNzUwNDAsMTY5MzQzNTIxNS
+wxMTIwMDk3OTYyLC0yMzcxNzI2ODUsMTQ4OTc3NzM3NywtMTQy
+MDYwMjAzOF19
 -->
