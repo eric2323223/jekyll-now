@@ -148,18 +148,15 @@ $$\mathrm{MultiHead}(Q,K,V)=\mathrm{Concat}(head_i, ..., head_h)W^O$$
 ![enter image description here](https://mchromiak.github.io/articles/2017/Sep/12/Transformer-Attention-is-all-you-need/img/MultiHead.png)
 
 ### 编码/解码层
-编码层由多头自注意力单元和按位前馈网络两部分组成。输入首先进入自注意力计算单元，再将计算结果输入按位前馈网络，这里的按位的含义是指每个位置的元素各自输入前馈网络里进行计算，前馈网络的结构为2个串联的全连接层，中间层维度较大（Transformer中为元素编码维度的4倍），最后一层的维度和元素编码的维度相同。这个设计的目的其实和多头注意力的设计类似，还是由于注意力机制在特征合成能力的不足，需要借助全连接网络的非线性计算来增加特征合成的能力。
-解码层由三部分组成，比编码层多了一个多头注意力计算单元，负责context vector到输出元素的注意力计算。
-![enter image description here](https://docs.google.com/drawings/d/e/2PACX-1vTFCzc5frUSM_IkIZ9W7XE92dfKzjh9M05OqTd8FDz3mZpPBTfO0cIVQ-Uk5ZItYZGzi119CYHUaGJk/pub?w=312&h=379)![enter image description here](https://docs.google.com/drawings/d/e/2PACX-1vQPYuIriXvfFSANLnztpXorpe-MH71EMWvf0sO5EBwx1JZci48LUp6hM52ICNQ6-cga70MZe7UH6QAJ/pub?w=349&h=698)
-
+编码层是编码器的基本组成单元，它由多头自注意力单元和按位前馈网络两部分组成。输入首先进入自注意力计算单元，再将计算结果输入按位前馈网络，这里的按位的含义是指每个位置的元素各自输入前馈网络里进行计算，前馈网络的结构为2个串联的全连接层，中间层维度较大（Transformer中为元素编码维度的4倍），最后一层的维度和元素编码的维度相同。这个设计的目的其实和多头注意力的设计类似，还是由于注意力机制在特征合成能力的不足，需要借助全连接网络的非线性计算来增加复杂特征合成的能力。
+与编码层类似，解码层由三部分组成，比编码层多了一个多头注意力计算单元，负责context vector到输出元素的注意力计算。
 
 ### Transformer全貌
 在介绍了Transformer的主要组成部分之后，我们再来完整看一下Transformer模型。整体上来看，Transformer模型属于编码器-解码器架构，解码器需要根据序列编码sequence embedding（由编码器生成）和上一步的解码器输出来产生下一个输出，因此属于自回归(auto regressor)模型。
 ![enter image description here](https://camo.githubusercontent.com/4b80977ac0757d1d18eb7be4d0238e92673bfaba/68747470733a2f2f6c696c69616e77656e672e6769746875622e696f2f6c696c2d6c6f672f6173736574732f696d616765732f7472616e73666f726d65722e706e67)
 Transformer的编码器和解码器分别有若干个编码层（解码层构成），每个编码层的结构完全一样，这些编码层相互串联，编码器的输入首先进入第一个编码层，结算结果作为输入进入第二层，依次经过所有编码层后作为编码器的输出（context vector）进入解码器，再同样依次经过所有解码层产生最后的模型输出。
-编码层由多头自注意力单元和按位前馈网络两部分组成。输入首先进入自注意力计算单元，再将计算结果输入按位前馈网络，这里的按位的含义是指每个位置的元素各自输入前馈网络里进行计算，前馈网络的结构为2个串联的全连接层，中间层维度较大（Transformer中为元素编码维度的4倍），最后一层的维度和元素编码的维度相同。这个设计的目的其实和多头注意力的设计类似，还是由于注意力机制在特征合成能力的不足，需要借助全连接网络的非线性计算来增加特征合成的能力。
-解码层由三部分组成，比编码层多了一个多头注意力计算单元，负责context vector到输出元素的注意力计算。
-
+~~编码层由多头自注意力单元和按位前馈网络两部分组成。输入首先进入自注意力计算单元，再将计算结果输入按位前馈网络，这里的按位的含义是指每个位置的元素各自输入前馈网络里进行计算，前馈网络的结构为2个串联的全连接层，中间层维度较大（Transformer中为元素编码维度的4倍），最后一层的维度和元素编码的维度相同。这个设计的目的其实和多头注意力的设计类似，还是由于注意力机制在特征合成能力的不足，需要借助全连接网络的非线性计算来增加特征合成的能力。
+解码层由三部分组成，比编码层多了一个多头注意力计算单元，负责context vector到输出元素的注意力计算。~~
 编码器由若干个（N）相同的编码层堆叠形成，每个编码层主要由一个多头注意力HMA和一个按位前馈网络构成，主要作用是将序列的上下文信息融入每个元素并进行特征合成。原始的输入编码首先经过位置编码器加入位置信息，在通过多个编码层生成包含位置信息，复杂特征信息的序列编码（context vector/sequence embedding）。
 解码器同样有多个（N）解码层堆叠而成。每个解码层需要两个输入，第一个输入是上一步的解码器输出（第一个解码器输出由一个固定的标识编码充当），这个输入首先要通过位置编码器加入位置信息，然后通过解码器的带遮罩的自注意力MHA（图中Masked Multi-Head Attention）加入上下文信息到已输出元素，之后加入第二个输入即序列编码，通过进行编码器-解码器MHA加入序列编码sequence embedding中的来自编码器的特征信息，最后在经过按位前馈网络合成复杂特征。经过多个解码层处理后在通过全连接运算映射到目标词典空间，最后通过softmax选择可能性最大的元素作为输出。
 工作流程：
@@ -247,11 +244,11 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [When Does Label Smoothing Help?](https://medium.com/@nainaakash012/when-does-label-smoothing-help-89654ec75326)
 [Attention Is All You Need](https://machinereads.com/2018/09/26/attention-is-all-you-need/)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbOTc2ODI1NzkwLC0xMDk0OTg0MDk4LDEyMD
-E3NjA0ODYsNTAxNzMzMDI4LDgzNjgxMjI0MSwxMzczODE5MTI2
-LDE2MTQ0NjUxNDUsLTM2ODU1MDg1OSwtMTE2MzgyNzYxMSwtMT
-QwNzI1MTc1NCwxOTY5NDU5NjE2LDE1OTY0NDA1NDAsOTYwNzEw
-MzM2LC03NTU3NDgzMzgsLTQyODM3NTA0MCwxNjkzNDM1MjE1LD
-ExMjAwOTc5NjIsLTIzNzE3MjY4NSwxNDg5Nzc3Mzc3LC0xNDIw
-NjAyMDM4XX0=
+eyJoaXN0b3J5IjpbMzIwMjIyNjMsOTc2ODI1NzkwLC0xMDk0OT
+g0MDk4LDEyMDE3NjA0ODYsNTAxNzMzMDI4LDgzNjgxMjI0MSwx
+MzczODE5MTI2LDE2MTQ0NjUxNDUsLTM2ODU1MDg1OSwtMTE2Mz
+gyNzYxMSwtMTQwNzI1MTc1NCwxOTY5NDU5NjE2LDE1OTY0NDA1
+NDAsOTYwNzEwMzM2LC03NTU3NDgzMzgsLTQyODM3NTA0MCwxNj
+kzNDM1MjE1LDExMjAwOTc5NjIsLTIzNzE3MjY4NSwxNDg5Nzc3
+Mzc3XX0=
 -->
