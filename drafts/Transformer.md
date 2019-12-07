@@ -154,7 +154,7 @@ $$\mathrm{MultiHead}(Q,K,V)=\mathrm{Concat}(head_i, ..., head_h)W^O$$
 Transformer的编码器和解码器分别有若干个编码层（解码层构成），每个编码层的结构完全一样，这些编码层相互串联在一起，编码器的输入首先进入第一个编码层，结算结果作为输入进入第二层，依次经过所有编码层后作为编码器的输出。
 编码层由多头自注意力单元和按位前馈网络两部分组成。输入首先进入自注意力计算单元，再将计算结果输入按位前馈网络，这里的按位的含义是指每个位置的元素各自输入前馈网络里进行计算，前馈网络的结构为2个串联的全连接层，中间层维度较大（Transformer中为元素编码维度的4倍），最后一层的维度和元素编码的维度相同。这个设计的目的其实和多头注意力的设计类似，还是由于注意力机制在特征合成能力的不足，需要借助全连接网络的非线性计算来增加复杂特征合成的能力。
 ~~编码器由若干个（N）相同的编码层堆叠形成，每个编码层主要由一个多头注意力HMA和一个按位前馈网络构成，主要作用是将序列的上下文信息融入每个元素并进行特征合成。原始的输入编码首先经过位置编码器加入位置信息，在通过多个编码层生成包含位置信息，复杂特征信息的序列编码（context vector/sequence embedding）。~~
-解码器同样有多个解码层串联而成。每个解码层由三部分组成。首先由解码器自多头注意力单元接收两个输入，第一个输入是上一步的解码器输出（第一个解码器输出由一个固定的标识编码充当），这个输入进入~~位置编码加入位置信息，然后通过~~解码器的带遮罩的自注意力MHA（图中Masked Multi-Head Attention）加入上下文信息到已输出元素，处理完成后之后加入第二个输入context vector，通过进行编码器-解码器MHA加入来自编码器的特征信息，最后在经过按位前馈网络合成复杂特征。经过多个解码层处理后在通过全连接运算映射到目标词典空间，最后通过softmax选择可能性最大的元素作为输出。
+解码器的主要工作是根据context vector和上一步的输出计算下一步的输出。 它同样有多个结构相同的解码层串联而成，每个解码层由三部分组成。首先由解码器自多头注意力单元处理上一步的输出，接收两个输入，第一个输入是上一步的解码器输出（第一个解码器输出由一个固定的标识编码充当），这个输入进入~~位置编码加入位置信息，然后通过~~解码器的带遮罩的自注意力MHA（图中Masked Multi-Head Attention）加入上下文信息到已输出元素，处理完成后之后加入第二个输入context vector，通过进行编码器-解码器MHA加入来自编码器的特征信息，最后在经过按位前馈网络合成复杂特征。经过多个解码层处理后在通过全连接运算映射到目标词典空间，最后通过softmax选择可能性最大的元素作为输出。
 工作流程：
 1. 输入元素进行位置编码
 2. 位置编码与输入元素按位相加
@@ -240,11 +240,11 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [When Does Label Smoothing Help?](https://medium.com/@nainaakash012/when-does-label-smoothing-help-89654ec75326)
 [Attention Is All You Need](https://machinereads.com/2018/09/26/attention-is-all-you-need/)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzE2NDE4MjY5LDE2OTg0OTQ2NjAsOTc2OD
-I1NzkwLC0xMDk0OTg0MDk4LDEyMDE3NjA0ODYsNTAxNzMzMDI4
-LDgzNjgxMjI0MSwxMzczODE5MTI2LDE2MTQ0NjUxNDUsLTM2OD
-U1MDg1OSwtMTE2MzgyNzYxMSwtMTQwNzI1MTc1NCwxOTY5NDU5
-NjE2LDE1OTY0NDA1NDAsOTYwNzEwMzM2LC03NTU3NDgzMzgsLT
-QyODM3NTA0MCwxNjkzNDM1MjE1LDExMjAwOTc5NjIsLTIzNzE3
-MjY4NV19
+eyJoaXN0b3J5IjpbLTExMDA2NTE5ODUsMTY5ODQ5NDY2MCw5Nz
+Y4MjU3OTAsLTEwOTQ5ODQwOTgsMTIwMTc2MDQ4Niw1MDE3MzMw
+MjgsODM2ODEyMjQxLDEzNzM4MTkxMjYsMTYxNDQ2NTE0NSwtMz
+Y4NTUwODU5LC0xMTYzODI3NjExLC0xNDA3MjUxNzU0LDE5Njk0
+NTk2MTYsMTU5NjQ0MDU0MCw5NjA3MTAzMzYsLTc1NTc0ODMzOC
+wtNDI4Mzc1MDQwLDE2OTM0MzUyMTUsMTEyMDA5Nzk2MiwtMjM3
+MTcyNjg1XX0=
 -->
