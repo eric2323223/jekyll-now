@@ -176,7 +176,7 @@ Transformer的编码器和解码器分别有若干个编码层（解码层构成
 
 ## Transformer的改进和发展
 Transformer取得巨大成功引起关注，学术和产业界都在尝试在实现和理论层面对他进行改进
-### 应用：Transformer-XL
+### 应用（ransformer-XL）
 虽然理论上Transformer可以处理任意长度的输入，但在实际的运用中资源是有限的，因此Transformers目前使用固定长度的上下文来实现，即将一个长的文本序列截断为几百个字符的固定长度片段，然后分别处理每个片段。这种操作会使相邻块片段之间的上下文丢失  ，导致上下文碎片化。Transformer-XL基于以下两种关键技术解决了这个问题：
 	- 片段级递归机制(segment-level recurrence mechanism) 
 	主要解决上下文碎片化问题，使上下文信息现在可以跨片段边界流动。思路是将上一片段segment的memory传到下一片段的同样位置
@@ -184,7 +184,7 @@ Transformer取得巨大成功引起关注，学术和产业界都在尝试在实
 	- 相对位置编码方案(relative positional encoding scheme)。
 	由于transformer上的位置编码方案会导致不同块的元素具有相同的位置编码，因此提出了一种新的位置编码，它是每个attention模块的一部分，基于元素之间的相对距离而不是它们的绝对位置。
 
-### 理论：并行化
+### 理论（并行化）
 Despite not having any explicit recurrency, implicitly the model is built as an autoregressive one. It implies that in order to generate an output (both while training or during inference), the model needs to compute previous outputs, which is extremely costly, for the whole net has to be run for every output. That’s the main idea to overcome in a recent paper by researchers at [_Salesforce Research_](https://einstein.ai/research/non-autoregressive-neural-machine-translation) and the University of Hong Kong, who tried to make the whole process parallelizable[23](https://ricardokleinklein.github.io/2017/11/16/Attention-is-all-you-need.html#fn:23). Their proposal is to compute _fertilities_ for every input word in the sequence, and use it instead of previous outputs in order to compute the current output. This is summarized in the figure below.
 尽管没有任何显式递归，但是隐式地将模型构建为自回归模型。 这意味着为了生成输出（在训练时或在推理期间），该模型需要计算先前的输出，这非常昂贵，因为必须为每个输出运行整个网络。 这是Salesforce Research和香港大学的研究人员在最近的一篇论文中要克服的主要思想，他们试图使整个过程可并行化。 他们的建议是为序列中的每个输入单词计算肥力，并使用它代替先前的输出以计算当前输出。 下图对此进行了总结。
 ![enter image description here](https://ricardokleinklein.github.io/images/transformer/fertilities.png)
@@ -220,11 +220,11 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [When Does Label Smoothing Help?](https://medium.com/@nainaakash012/when-does-label-smoothing-help-89654ec75326)
 [Attention Is All You Need](https://machinereads.com/2018/09/26/attention-is-all-you-need/)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTg5NjE2Mzg4OSwtMTg5MjIwMzAxOCwtOT
-YwMTg5Mjg2LDExMjc1MTY4NzgsLTE2NTAyMzY2NywxNjk4NDk0
-NjYwLDk3NjgyNTc5MCwtMTA5NDk4NDA5OCwxMjAxNzYwNDg2LD
-UwMTczMzAyOCw4MzY4MTIyNDEsMTM3MzgxOTEyNiwxNjE0NDY1
-MTQ1LC0zNjg1NTA4NTksLTExNjM4Mjc2MTEsLTE0MDcyNTE3NT
-QsMTk2OTQ1OTYxNiwxNTk2NDQwNTQwLDk2MDcxMDMzNiwtNzU1
-NzQ4MzM4XX0=
+eyJoaXN0b3J5IjpbNDY3MDk2ODg5LDE4OTYxNjM4ODksLTE4OT
+IyMDMwMTgsLTk2MDE4OTI4NiwxMTI3NTE2ODc4LC0xNjUwMjM2
+NjcsMTY5ODQ5NDY2MCw5NzY4MjU3OTAsLTEwOTQ5ODQwOTgsMT
+IwMTc2MDQ4Niw1MDE3MzMwMjgsODM2ODEyMjQxLDEzNzM4MTkx
+MjYsMTYxNDQ2NTE0NSwtMzY4NTUwODU5LC0xMTYzODI3NjExLC
+0xNDA3MjUxNzU0LDE5Njk0NTk2MTYsMTU5NjQ0MDU0MCw5NjA3
+MTAzMzZdfQ==
 -->
