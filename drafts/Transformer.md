@@ -161,9 +161,8 @@ Transformer的编码器和解码器分别有若干个编码层（解码层构成
 	2.1 首先进行输入元素自注意力（多头注意力）计算，
 	2.2 再将结果输入按位前馈网络
 3. 重复多次编码层结算，结束编码阶段，得到context vector
-5. 开始解码阶段，首先对输出元素进行位置编码（第一个输出为开始标记）
-6. 输入元素与其位置编码按位相加
-7. 在解码层
+4. 开始解码阶段，首先对输出元素进行位置编码（第一个输出为开始标记）, 输入元素与其位置编码按位相加
+5. 在解码层
 	7.1 首先进行输出元素（当前已输出）的多头自注意力计算
 	7.2 进行编码（context vector）-解码（7.1结果）注意力计算
 	7.3 对7.2结果输入按位前馈网络
@@ -239,11 +238,11 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [When Does Label Smoothing Help?](https://medium.com/@nainaakash012/when-does-label-smoothing-help-89654ec75326)
 [Attention Is All You Need](https://machinereads.com/2018/09/26/attention-is-all-you-need/)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTYwNzAxNDMwOCwtMTY1MDIzNjY3LDE2OT
-g0OTQ2NjAsOTc2ODI1NzkwLC0xMDk0OTg0MDk4LDEyMDE3NjA0
-ODYsNTAxNzMzMDI4LDgzNjgxMjI0MSwxMzczODE5MTI2LDE2MT
-Q0NjUxNDUsLTM2ODU1MDg1OSwtMTE2MzgyNzYxMSwtMTQwNzI1
-MTc1NCwxOTY5NDU5NjE2LDE1OTY0NDA1NDAsOTYwNzEwMzM2LC
-03NTU3NDgzMzgsLTQyODM3NTA0MCwxNjkzNDM1MjE1LDExMjAw
-OTc5NjJdfQ==
+eyJoaXN0b3J5IjpbNjYwNTE1OTc3LC0xNjUwMjM2NjcsMTY5OD
+Q5NDY2MCw5NzY4MjU3OTAsLTEwOTQ5ODQwOTgsMTIwMTc2MDQ4
+Niw1MDE3MzMwMjgsODM2ODEyMjQxLDEzNzM4MTkxMjYsMTYxND
+Q2NTE0NSwtMzY4NTUwODU5LC0xMTYzODI3NjExLC0xNDA3MjUx
+NzU0LDE5Njk0NTk2MTYsMTU5NjQ0MDU0MCw5NjA3MTAzMzYsLT
+c1NTc0ODMzOCwtNDI4Mzc1MDQwLDE2OTM0MzUyMTUsMTEyMDA5
+Nzk2Ml19
 -->
