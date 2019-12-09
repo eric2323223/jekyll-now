@@ -156,12 +156,11 @@ Transformer的编码器和解码器分别有若干个编码层（解码层构成
 ~~编码器由若干个（N）相同的编码层堆叠形成，每个编码层主要由一个多头注意力HMA和一个按位前馈网络构成，主要作用是将序列的上下文信息融入每个元素并进行特征合成。原始的输入编码首先经过位置编码器加入位置信息，在通过多个编码层生成包含位置信息，复杂特征信息的序列编码（context vector/sequence embedding）。~~
 解码器的主要工作是根据context vector和上一步的输出计算下一步的输出。 它同样有多个结构相同的解码层串联而成，每个解码层由三部分组成。首先由解码器自多头注意力单元处理上一步的输出，计算后输入编码器-解码器多头注意力单元，编码器-加码器多头注意力单元还同时接收context vector，   接收两个输入，第一个输入是上一步的解码器输出（第一个解码器输出由一个固定的标识编码充当），这个输入进入~~位置编码加入位置信息，然后通过~~解码器的带遮罩的自注意力MHA（图中Masked Multi-Head Attention）加入上下文信息到已输出元素，处理完成后之后加入第二个输入context vector，通过进行编码器-解码器MHA加入来自编码器的特征信息，最后在经过按位前馈网络合成复杂特征。经过多个解码层处理后在通过全连接运算映射到目标词典空间，最后通过softmax选择可能性最大的元素作为输出。
 工作流程：
-1. 输入元素进行位置编码
-2. 位置编码与输入元素按位相加
-3. 在编码层
-	3.1 首先进行输入元素自注意力（多头注意力）计算，
-	3.2 再将结果输入按位前馈网络
-4. 重复多次编码层结算，结束编码阶段，得到context vector
+1. 输入元素进行位置编码，位置编码与输入元素编码按位相加
+2. 在编码层
+	2.1 首先进行输入元素自注意力（多头注意力）计算，
+	2.2 再将结果输入按位前馈网络
+3. 重复多次编码层结算，结束编码阶段，得到context vector
 5. 开始解码阶段，首先对输出元素进行位置编码（第一个输出为开始标记）
 6. 输入元素与其位置编码按位相加
 7. 在解码层
@@ -240,11 +239,11 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [When Does Label Smoothing Help?](https://medium.com/@nainaakash012/when-does-label-smoothing-help-89654ec75326)
 [Attention Is All You Need](https://machinereads.com/2018/09/26/attention-is-all-you-need/)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2NTAyMzY2NywxNjk4NDk0NjYwLDk3Nj
-gyNTc5MCwtMTA5NDk4NDA5OCwxMjAxNzYwNDg2LDUwMTczMzAy
-OCw4MzY4MTIyNDEsMTM3MzgxOTEyNiwxNjE0NDY1MTQ1LC0zNj
-g1NTA4NTksLTExNjM4Mjc2MTEsLTE0MDcyNTE3NTQsMTk2OTQ1
-OTYxNiwxNTk2NDQwNTQwLDk2MDcxMDMzNiwtNzU1NzQ4MzM4LC
-00MjgzNzUwNDAsMTY5MzQzNTIxNSwxMTIwMDk3OTYyLC0yMzcx
-NzI2ODVdfQ==
+eyJoaXN0b3J5IjpbLTYwNzAxNDMwOCwtMTY1MDIzNjY3LDE2OT
+g0OTQ2NjAsOTc2ODI1NzkwLC0xMDk0OTg0MDk4LDEyMDE3NjA0
+ODYsNTAxNzMzMDI4LDgzNjgxMjI0MSwxMzczODE5MTI2LDE2MT
+Q0NjUxNDUsLTM2ODU1MDg1OSwtMTE2MzgyNzYxMSwtMTQwNzI1
+MTc1NCwxOTY5NDU5NjE2LDE1OTY0NDA1NDAsOTYwNzEwMzM2LC
+03NTU3NDgzMzgsLTQyODM3NTA0MCwxNjkzNDM1MjE1LDExMjAw
+OTc5NjJdfQ==
 -->
