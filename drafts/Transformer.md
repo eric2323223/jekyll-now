@@ -113,12 +113,6 @@ $$PE_{(pos, 2i+1)}=\cos(pos/10000^{2i/d_{model}})$$
 ![enter image description here](https://wikidocs.net/images/page/31379/transformer6_final.PNG)
 
 
->为什么要同时使用sin和cos，而不只使用其中的一个？
-下图可见
-![enter image description here](https://i.stack.imgur.com/5QQmq.gif)
-![enter image description here](https://i.stack.imgur.com/W0b0c.gif)
-
-
 ### 多头注意力（ Multiple Headed Attention, MHA)
 
 Transformer仅仅使用注意力机制处理输入生成context vector，由于注意力机制本质上只是对输入进行加权平均运算，没有引入新参数也没有使用非线性运算，这导致特征提取能力不足，为了解决这个问题作者提出了多头注意力的方法。和卷积神经网络通过使用多个卷积核来发掘不同特征的思路类似，多头注意力也是通过多次随机初始化过程来提取不同特征。
@@ -127,8 +121,8 @@ Transformer仅仅使用注意力机制处理输入生成context vector，由于�
 ![enter image description here](https://docs.google.com/drawings/d/e/2PACX-1vT4_Vn34rr1zN4OhXIo7oCGkzXDF__Y3CIVnZ_12fjqLHtKoRSJaVIyoR7ndQHtRlfNUmgecF5mucNg/pub?w=538&h=363)
 具体实现来说是对同一个元素进行多次注意力运算， 每次注意力计算之前分别使用随机生成的参数$W^Q,W^K,W^V$通过矩阵相乘来初始化$Q,K,V$，
 $$head_i =\mathrm{SDPA}(QW^Q_i, KW_i^K, VW_i^V)$$
-- 对于编码器MHA，$Q, K, V$都是输入元素编码$x_i$
-- 对于解码器MHA，$Q, K, V$都是已生成的输出元素编码$y_i$
+- 对于编码器自注意MHA，$Q, K, V$都是输入元素编码$x_i$
+- 对于解码器自注意MHA，$Q, K, V$都是已生成的输出元素编码$y_i$
 - 对于编码器-解码器MHA， $Q$是输出元素编码$y_i$, $K,V$是context vector中的元素$c_i$
 
 再将多次注意力运算的结果合并。合并的过程是首先对i次结果进行串联（concatenate），再通过和$W^O$进行矩阵相乘得到和输入同样维度的结果。
@@ -138,7 +132,7 @@ $$\mathrm{MultiHead}(Q,K,V)=\mathrm{Concat}(head_i, ..., head_h)W^O$$
 
 
 ### Transformer全貌
-在介绍了Transformer的主要组成部分之后，我们再来完整看一下Transformer模型。整体上来看，Transformer模型属于编码器-解码器架构，解码器需要根据序列编码sequence embedding（由编码器生成）和上一步的解码器输出来产生下一个输出，因此属于自回归(auto regressor)模型。
+在介绍了Transformer的主要组成部分之后，我们再来完整看一下Transformer模型。整体上来看，Transformer模型属于编码器-解码器架构，由于解码器需要根据序列编码context vector和上一步的解码器输出来产生下一个输出，因此Transformer属于自回归模型（autoregressive model）。
 ![enter image description here](https://camo.githubusercontent.com/4b80977ac0757d1d18eb7be4d0238e92673bfaba/68747470733a2f2f6c696c69616e77656e672e6769746875622e696f2f6c696c2d6c6f672f6173736574732f696d616765732f7472616e73666f726d65722e706e67)
 Transformer的编码器和解码器分别有若干个编码层（解码层构成），每个编码层的结构完全一样，这些编码层相互串联在一起，编码器的输入首先进入第一个编码层，结算结果作为输入进入第二层，依次经过所有编码层后作为编码器的输出。
 编码层由多头自注意力单元和按位前馈网络两部分组成。输入首先进入自注意力计算单元，再将计算结果输入按位前馈网络，这里的按位的含义是指每个位置的元素各自输入前馈网络里进行计算，前馈网络的结构为2个串联的全连接层，中间层维度较大（Transformer中为元素编码维度的4倍），最后一层的维度和元素编码的维度相同。这个设计的目的其实和多头注意力的设计类似，还是由于注意力机制在特征合成能力的不足，需要借助全连接网络的非线性计算来增加复杂特征合成的能力。
@@ -226,7 +220,7 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [When Does Label Smoothing Help?](https://medium.com/@nainaakash012/when-does-label-smoothing-help-89654ec75326)
 [Attention Is All You Need](https://machinereads.com/2018/09/26/attention-is-all-you-need/)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjExMDI4MjY1MiwtMTg5MjIwMzAxOCwtOT
+eyJoaXN0b3J5IjpbMTg5NjE2Mzg4OSwtMTg5MjIwMzAxOCwtOT
 YwMTg5Mjg2LDExMjc1MTY4NzgsLTE2NTAyMzY2NywxNjk4NDk0
 NjYwLDk3NjgyNTc5MCwtMTA5NDk4NDA5OCwxMjAxNzYwNDg2LD
 UwMTczMzAyOCw4MzY4MTIyNDEsMTM3MzgxOTEyNiwxNjE0NDY1
