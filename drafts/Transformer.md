@@ -2,7 +2,7 @@
 在自然语言处理领域，循环神经网络RNN一直是被最广泛使用的深度机器学习模型，近年来卷积神经网络CNN也逐渐被引入用来提升训练效果。然而这两类模型都有一些难以克服的问题，Transformer模型以注意力机制为核心，并针对注意力机制的不足做了相关的设计和优化，取得了非常好的效果。本文我们就来一步步的分析和理解这个优秀的时序模型。
 
 ## 时序（seq2seq）问题
-时序问题是应用机器学习（特别是深度学习）解决的一类常见问题，例如机器翻译，语态分析，摘要生成等自然语言处理问题（NLP）， 这类问题的最大特点是输入（或输出）以序列的形式出现，序列的长度可变，常见的NLP任务通常要求在分析整个输入序列的基础上才能产生输出。使用机器学习（深度学习）处理时序任务，通常使用编码器-解码器（encoder-decoder）架构，编码器负责将输入序列转换为包含整个序列所有特征的**序列编码**（context vector），解码器负责对这个内部表示进行解释。
+时序问题是应用机器学习（特别是深度学习）解决的一类常见问题，例如机器翻译，语态分析，摘要生成等自然语言处理问题（NLP）， 这类问题的最大特点是输入（或输出）以序列的形式出现，序列的长度可变，常见的自然语言处理任务通常要求在分析整个输入序列的基础上才能产生输出。使用机器学习（深度学习）处理时序任务，通常使用编码器-解码器（encoder-decoder）架构，编码器负责将输入序列转换为包含整个序列所有特征的**序列编码**（context vector），解码器负责对这个内部表示进行解释。
 ![enter image description here](https://docs.google.com/drawings/d/e/2PACX-1vQpyCEO_5eiGEU2qG6G7ktzfhyjPRtMxtvGluMcFmeuEFoQYEMHIzAtvWAIH67v5uL1k5AKHS6Xn4cA/pub?w=680&h=255)
 
 处理时序问题的传统方法是使用RNN模型，RNN能够保存状态，它将输入分为多步，依靠每步输入和上一步的状态更新当前的状态（和输出），通过重复这种步骤在读入所有序列元素后得到序列编码。由于RNN有存储机制并且不限制序列的长度，从模型结构上来说比较适合序列到序列问题。但是问题有三点
@@ -18,14 +18,7 @@
 基于组成整体的各个元素在整体中发挥的作用不相同这样一个事实，注意力机制的基本思想是在一定的目标下使用相对应的的权重组合各个序列元素来重新描述适合该目标的序列。这就好像在日常生活中，带着不同的目的看同一个事物会产生不同的理解。在下图中寻找生物会发现鱼和珊瑚，而寻找人工建筑则会发现钻井平台的支柱，正是由于不同的目标导致对图片的的物体分配了不同的权重，因此产生了不同的理解。
 
 ![enter image description here](https://www.capeandislands.org/sites/wcai/files/styles/medium/public/201609/oilrigs-5.jpg)
-~~注意力机制主要用于seq2seq任务，它的基本思想就是对序列中的每个元素以一定的规则加入上下文信息。不同于RNN中先通过依次分析输入元素来逐步生成上下文CV的方式，注意力机制对这些输入元素进行加权平均的方式来一步加入所有元素信息来生成上下文context vector。这样做的好处是能够一步到位捕捉到全局的联系(序列元素直接进行两两比较),不仅大大加速（可以并行计算）了context vector的生成，而且避免了RNN的长序列训练困难的问题[^1]。~~
 
-*[CV]: Context Vector
-
-[^1]: the footnote
-- 注意对象
-- 注意规则
-- 
 从实现上来讲，注意力运算表现为加权求和运算，即对输入序列中的元素赋予相应的权重并相加。这里的权重来自任务目标，具体来说是根据目标对输出序列的要求，确定输出序列元素和输入序列元素之间的关系，再通过这种关系确定输入元素的权重。举个例子，对于机器翻译任务来说，由于我们需要让输入元素与输出元素表达相同的意义，因此需要比较它们的相似性，给相似性高的元素较高的权重，而对相似性低的元素赋予较低权重。
 
 如果$X$表示输入序列集合$\{x_1, x_2, ... x_n\}$，$y$表示某个输出元素，$w_i$表示在对应$y$的计算过程中$x_i$的权重，可以将$X$对应$y$的注意力运算形式化的表示为
@@ -237,11 +230,11 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [When Does Label Smoothing Help?](https://medium.com/@nainaakash012/when-does-label-smoothing-help-89654ec75326)
 [Attention Is All You Need](https://machinereads.com/2018/09/26/attention-is-all-you-need/)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE4OTIyMDMwMTgsLTk2MDE4OTI4NiwxMT
-I3NTE2ODc4LC0xNjUwMjM2NjcsMTY5ODQ5NDY2MCw5NzY4MjU3
-OTAsLTEwOTQ5ODQwOTgsMTIwMTc2MDQ4Niw1MDE3MzMwMjgsOD
-M2ODEyMjQxLDEzNzM4MTkxMjYsMTYxNDQ2NTE0NSwtMzY4NTUw
-ODU5LC0xMTYzODI3NjExLC0xNDA3MjUxNzU0LDE5Njk0NTk2MT
-YsMTU5NjQ0MDU0MCw5NjA3MTAzMzYsLTc1NTc0ODMzOCwtNDI4
-Mzc1MDQwXX0=
+eyJoaXN0b3J5IjpbMTU5MjUzNzAwMiwtMTg5MjIwMzAxOCwtOT
+YwMTg5Mjg2LDExMjc1MTY4NzgsLTE2NTAyMzY2NywxNjk4NDk0
+NjYwLDk3NjgyNTc5MCwtMTA5NDk4NDA5OCwxMjAxNzYwNDg2LD
+UwMTczMzAyOCw4MzY4MTIyNDEsMTM3MzgxOTEyNiwxNjE0NDY1
+MTQ1LC0zNjg1NTA4NTksLTExNjM4Mjc2MTEsLTE0MDcyNTE3NT
+QsMTk2OTQ1OTYxNiwxNTk2NDQwNTQwLDk2MDcxMDMzNiwtNzU1
+NzQ4MzM4XX0=
 -->
