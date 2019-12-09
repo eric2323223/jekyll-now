@@ -80,28 +80,26 @@ Transformer模型的首要工作就是使用编码器生成序列编码，前面
 [^2]: 来自Jay Alammar的著名博文The Illustrated Transformer
 
 #### 注意力遮罩（Attention mask）
-由于Attention可以直接看到所有的元素，因此需要一种手段来防止attention处理“不应该被看到的元素”，这是指在模型训练阶段不能让解码器的自注意力机制看到训练数据中当前时间点之后的正确预测值，否则模型就会利用标准答案“作弊”，如图所示。遮罩的实现很简单，即将被遮罩的元素设置为0。在Transformer的实现中除了解码器端的遮罩之外，还会在编码器-解码器注意力计算中，对。。。。。
+由于Attention可以直接看到所有的元素，因此需要一种手段来防止注意力机制处理“不应该被看到的元素”，这是指在模型训练阶段不能让解码器的自注意力机制看到训练数据中当前时间点之后的正确预测值，否则模型就会利用标准答案“作弊”，如图所示。~~遮罩的实现很简单，即将被遮罩的元素设置为0。在Transformer的实现中除了解码器端的遮罩之外，还会在编码器-解码器注意力计算中，对。。。。。~~
 - 编码器端自注意力用来生成context vector， 因此不需要遮罩
 - 编码器-解码器注意力，需要对padding进行mask
 - 解码器端自注意力，需要对当前位置之后的所有元素masking
   ![enter image description here](http://jalammar.github.io/images/gpt2/self-attention-and-masked-self-attention.png)
 
 #### Scaled Dot-Product Attention (SDPA)
-Transformer对标准的attention做了一个小小调整：加入特征缩放（feature scaling）。这样做主要是为了防止softmax运算将值较大的key过度放大，导致其他key的信息很难加入到attention结果中。
+Transformer对标准的注意力计算做了一个小小调整：加入特征缩放（feature scaling）。这样做主要是为了防止softmax运算将值较大的key过度放大，导致其他key的信息很难加入到计算结果中。
 特征缩放体现在对$Q$和$K$计算点积$QK^T$以后，增加了一步除以$\sqrt{d_k}$运算。
 $$\mathrm{SDPA}(Q, K, V) = \mathrm{softmax}(\frac{QK^T}{\sqrt{d_k}})V$$
 
 下图是上式的图像化表示，其中Scale就是特征缩放的操作。
 
->其中的权值来自该元素与其他元素的相似度，这是基于这样的假设-相似度越高的元素对确定该元素在整个序列中的含义的贡献度越大，由于序列元素以向量表示（word4vec），在transformer中使用点积运算来确定相似度，其结果是一个数值。形式化的定义为
-$W^Q_i \in \mathbb{R}^{d_{\text{model}} \times d_k}$, $W^K_i \in \mathbb{R}^{d_{\text{model}} \times d_k}$, $W^V_i \in \mathbb{R}^{d_{\text{model}} \times d_v}$ and $W^O \in \mathbb{R}^{hd_v \times d_{\text{model}}}$
 
 ![enter image description here](https://miro.medium.com/max/676/1*nCznYOY-QtWIm8Y4jyk2Kw.png)
 
 
 ### 位置编码（positional encoding）
-与RNN和CNN不同，在注意力机制中没有先后顺序的概念（如第一个元素，第二个元素等）， 输入序列的所有元素都以没有特殊顺序或位置的方式输入网络，因此模型不知道元素的顺序。 因此，需要将与位置相关的信号添加到每个元素中，以帮助模型理解序列中元素的排列顺序。
-一种最简单直接的位置编码方式是将每个元素的序号加入元素编码后再输入模型，这样做是否可行呢？ 考虑到序列的长度可以是任意长度，只讨论元素的绝对位置是不全面的（同一个词，在由3个词组成的句子中的第三个位置和30个词组成的句子中的第三个位置所表达的意思很可能是不一样的）。因此Transformer使用了基于周期函数（sin/cos函数）的位置编码方法。
+与RNN和CNN不同，在注意力机制中没有先后顺序的概念（如第一个元素，第二个元素等）， 输入序列的所有元素都以没有特殊顺序或位置的方式输入网络，模型不知道元素的先后顺序。 因此，需要将与位置相关的信号添加到每个元素中，以帮助模型理解序列中元素的排列顺序。
+最简单直接的位置编码方式是将每个元素的序号加入元素编码后再输入模型，这样做是否可行呢？ 考虑到序列的长度可以是任意长度，只讨论元素的绝对位置是不全面的（同一个词，在由3个词组成的句子中的第三个位置和30个词组成的句子中的第三个位置所表达的意思很可能是不一样的）。因此Transformer使用了基于周期函数（sin/cos函数）的位置编码方法。
 位置编码$PE$可以表示为
 $$PE_{{pos,2i}}=\sin(pos/10000^{2i/d_{model}}) $$
 $$PE_{(pos, 2i+1)}=\cos(pos/10000^{2i/d_{model}})$$
@@ -230,7 +228,7 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [When Does Label Smoothing Help?](https://medium.com/@nainaakash012/when-does-label-smoothing-help-89654ec75326)
 [Attention Is All You Need](https://machinereads.com/2018/09/26/attention-is-all-you-need/)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTU5MjUzNzAwMiwtMTg5MjIwMzAxOCwtOT
+eyJoaXN0b3J5IjpbMTI4NzIwNDM2OSwtMTg5MjIwMzAxOCwtOT
 YwMTg5Mjg2LDExMjc1MTY4NzgsLTE2NTAyMzY2NywxNjk4NDk0
 NjYwLDk3NjgyNTc5MCwtMTA5NDk4NDA5OCwxMjAxNzYwNDg2LD
 UwMTczMzAyOCw4MzY4MTIyNDEsMTM3MzgxOTEyNiwxNjE0NDY1
