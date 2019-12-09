@@ -164,13 +164,12 @@ Transformer的编码器和解码器分别有若干个编码层（解码层构成
 4. 开始解码阶段，首先对输出元素进行位置编码（第一个输出为开始标记）, 输入元素与其位置编码按位相加
 5. 在解码层
 	5.1 首先进行输出元素（当前已输出）的多头自注意力计算
-	5.2 进行编码（context vector）-解码（7.1结果）注意力计算
+	5.2 进行解码器-编码器多头注意力计算
 	5.3 对5.2结果输入按位前馈网络
 6. 重复多次解码层计算
-7. 通过全连接网络转化为目标词典维度向量
-8. 使用softmax确定输出元素（可能性最大）
-9.  将当前输出元素输入4开始下一个输出元素的计算，直到输出为结束标记符
-![enter image description here](https://docs.google.com/drawings/d/e/2PACX-1vSBNAHsyf_HP3_CkV1cygicnt0LhGxWcvw2PofecPP9TYJj41bghsAXTM6l6OSonSMvAjjgFInVDxC4/pub?w=961&h=590)
+7. 通过全连接网络转化为目标词典维度向量，使用softmax确定输出元素（可能性最大）
+8.  将当前输出元素输入4开始下一个输出元素的计算，直到输出为结束标记符
+![enter image description here](https://docs.google.com/drawings/d/e/2PACX-1vSBNAHsyf_HP3_CkV1cygicnt0LhGxWcvw2PofecPP9TYJj41bghsAXTM6l6OSonSMvAjjgFInVDxC4/pub?w=1028&h=584)
 总结一下，attention是transformer的核心，它具有计算效率高（尤其对于长序列），可并行，容易训练等优势，但是同时也带了一些新问题：比如无序和特征合成能力下降。Transformer针对这些新问题分别提出了解决方案，如使用位置编码生成位置信息，使用多头注意力和按位前馈网络增强特征合成能力。
 
 ## Transformer优化技巧
@@ -238,11 +237,11 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [When Does Label Smoothing Help?](https://medium.com/@nainaakash012/when-does-label-smoothing-help-89654ec75326)
 [Attention Is All You Need](https://machinereads.com/2018/09/26/attention-is-all-you-need/)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTEyNzUxNjg3OCwtMTY1MDIzNjY3LDE2OT
-g0OTQ2NjAsOTc2ODI1NzkwLC0xMDk0OTg0MDk4LDEyMDE3NjA0
-ODYsNTAxNzMzMDI4LDgzNjgxMjI0MSwxMzczODE5MTI2LDE2MT
-Q0NjUxNDUsLTM2ODU1MDg1OSwtMTE2MzgyNzYxMSwtMTQwNzI1
-MTc1NCwxOTY5NDU5NjE2LDE1OTY0NDA1NDAsOTYwNzEwMzM2LC
-03NTU3NDgzMzgsLTQyODM3NTA0MCwxNjkzNDM1MjE1LDExMjAw
-OTc5NjJdfQ==
+eyJoaXN0b3J5IjpbLTk2MDE4OTI4NiwxMTI3NTE2ODc4LC0xNj
+UwMjM2NjcsMTY5ODQ5NDY2MCw5NzY4MjU3OTAsLTEwOTQ5ODQw
+OTgsMTIwMTc2MDQ4Niw1MDE3MzMwMjgsODM2ODEyMjQxLDEzNz
+M4MTkxMjYsMTYxNDQ2NTE0NSwtMzY4NTUwODU5LC0xMTYzODI3
+NjExLC0xNDA3MjUxNzU0LDE5Njk0NTk2MTYsMTU5NjQ0MDU0MC
+w5NjA3MTAzMzYsLTc1NTc0ODMzOCwtNDI4Mzc1MDQwLDE2OTM0
+MzUyMTVdfQ==
 -->
