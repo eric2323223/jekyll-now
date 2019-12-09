@@ -109,7 +109,7 @@ $$PE_{(pos, 2i+1)}=\cos(pos/10000^{2i/d_{model}})$$
 - 使用多个不同频率来保证不会由于周期性导致不同位置的编码相同
 - sin/cos函数的值总是在-1到1之间，这有利于神经网络的学习。
 
-计算产生的位置编码是一个与元素具有相同维度的向量，使用相加的方式将位置信息叠加进元素中，如下图所示。作者没有在论文中解释为什么使用相加方式，直觉上来说相加会造成对元素向量的污染，而串联（concatenate）就不会有这种问题。一种解释是在高维中随机选择的向量几乎总是近似正交的，也就是说元素向量和位置编码向量是没有关联、相互独立的。因此尽管进行了矢量相加，但两个向量仍可以通过一些单个学习的变换而彼此独立地进行操作。也是正因为这种向量正交关系，串联并不会比相加表现得更好，但会大大增加学习参数方面的成本。
+计算产生的位置编码是一个与元素具有相同维度的向量，使用相加的方式将位置信息叠加进元素中，如下图所示。作者没有在论文中解释为什么使用相加方式，直观感觉相加操作会造成对元素向量的污染，而串联（concatenate）就不会有这种问题。实验显示在高维中随机选择的向量几乎总是近似正交的，也就是说元素向量和位置编码向量是相互独立的。因此尽管进行了矢量相加，但两个向量仍可以通过一些变换而彼此独立地进行操作。也是正因为这种向量正交关系，串联并不会比相加表现得更好，但会大大增加学习参数方面的成本。
 ![enter image description here](https://wikidocs.net/images/page/31379/transformer6_final.PNG)
 
 
@@ -134,10 +134,12 @@ $$\mathrm{MultiHead}(Q,K,V)=\mathrm{Concat}(head_i, ..., head_h)W^O$$
 ### Transformer全貌
 在介绍了Transformer的主要组成部分之后，我们再来完整看一下Transformer模型。整体上来看，Transformer模型属于编码器-解码器架构，由于解码器需要根据序列编码context vector和上一步的解码器输出来产生下一个输出，因此Transformer属于自回归模型（autoregressive model）。
 ![enter image description here](https://camo.githubusercontent.com/4b80977ac0757d1d18eb7be4d0238e92673bfaba/68747470733a2f2f6c696c69616e77656e672e6769746875622e696f2f6c696c2d6c6f672f6173736574732f696d616765732f7472616e73666f726d65722e706e67)
-Transformer的编码器和解码器分别有若干个编码层（解码层构成），每个编码层的结构完全一样，这些编码层相互串联在一起，编码器的输入首先进入第一个编码层，结算结果作为输入进入第二层，依次经过所有编码层后作为编码器的输出。
-编码层由多头自注意力单元和按位前馈网络两部分组成。输入首先进入自注意力计算单元，再将计算结果输入按位前馈网络，这里的按位的含义是指每个位置的元素各自输入前馈网络里进行计算，前馈网络的结构为2个串联的全连接层，中间层维度较大（Transformer中为元素编码维度的4倍），最后一层的维度和元素编码的维度相同。这个设计的目的其实和多头注意力的设计类似，还是由于注意力机制在特征合成能力的不足，需要借助全连接网络的非线性计算来增加复杂特征合成的能力。
+#### 编码器
+Transformer的编码器负责处理分析提取输入序列的特征并生成序列编码。它由若干个编码层构成，所有编码层的结构完全一样，这些编码层相互串联在一起，编码器的输入首先进入第一个编码层，结算结果输入第二层，依次经过所有编码层后作为编码器的输出。
+每个编码层由多头自注意力单元和按位前馈网络两部分组成。输入首先进入自注意力计算单元，再将计算结果输入按位前馈网络，这里的按位的含义是指每个位置的元素各自输入前馈网络里进行计算，前馈网络的结构为2个串联的全连接层，中间层维度较大（是元素编码维度的4倍），最后一层的维度和元素编码的维度相同。这个设计的目的其实和多头注意力的设计类似，还是由于注意力机制在特征合成能力的不足，需要借助全连接网络的非线性计算来增加复杂特征合成的能力。
 ~~编码器由若干个（N）相同的编码层堆叠形成，每个编码层主要由一个多头注意力HMA和一个按位前馈网络构成，主要作用是将序列的上下文信息融入每个元素并进行特征合成。原始的输入编码首先经过位置编码器加入位置信息，在通过多个编码层生成包含位置信息，复杂特征信息的序列编码（context vector/sequence embedding）。~~
-解码器的主要工作是根据context vector和上一步的输出预测下一步的输出。 它同样有多个结构相同的解码层串联而成，每个解码层由三部分组成。首先由解码器自多头注意力单元处理上一步的输出，计算后输入编码器-解码器多头注意力单元，编码器-加码器多头注意力单元还同时接收context vector，   接收两个输入，第一个输入是上一步的解码器输出（第一个解码器输出由一个固定的标识编码充当），这个输入进入~~位置编码加入位置信息，然后通过~~解码器的带遮罩的自注意力MHA（图中Masked Multi-Head Attention）加入上下文信息到已输出元素，处理完成后之后加入第二个输入context vector，通过进行编码器-解码器MHA加入来自编码器的特征信息，最后在经过按位前馈网络合成复杂特征。经过多个解码层处理后在通过全连接运算映射到目标词典空间，最后通过softmax选择可能性最大的元素作为输出。
+#### 解码器
+解码器负责根据序列编码context vector和上一步的解码器输出预测下一步的输出。 它同样由多个结构相同的解码层串联而成，每个解码层由三部分组成，其核心是编码器-解码器HMA，首先由解码器自注意力HMA单元处理上一步的输出，计算后输入编码器-解码器HMA单元，编码器-加码器HMA单元还同时接收context vector，   接收两个输入，第一个输入是上一步的解码器输出（第一个解码器输出由一个固定的标识编码充当），这个输入进入~~位置编码加入位置信息，然后通过~~解码器的带遮罩的自注意力MHA（图中Masked Multi-Head Attention）加入上下文信息到已输出元素，处理完成后之后加入第二个输入context vector，通过进行编码器-解码器MHA加入来自编码器的特征信息，最后在经过按位前馈网络合成复杂特征。经过多个解码层处理后在通过全连接运算映射到目标词典空间，最后通过softmax选择可能性最大的元素作为输出。
 工作流程：
 1. 输入元素进行位置编码，位置编码与输入元素编码按位相加
 2. 在编码层
@@ -220,11 +222,11 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [When Does Label Smoothing Help?](https://medium.com/@nainaakash012/when-does-label-smoothing-help-89654ec75326)
 [Attention Is All You Need](https://machinereads.com/2018/09/26/attention-is-all-you-need/)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNDY3MDk2ODg5LDE4OTYxNjM4ODksLTE4OT
-IyMDMwMTgsLTk2MDE4OTI4NiwxMTI3NTE2ODc4LC0xNjUwMjM2
-NjcsMTY5ODQ5NDY2MCw5NzY4MjU3OTAsLTEwOTQ5ODQwOTgsMT
-IwMTc2MDQ4Niw1MDE3MzMwMjgsODM2ODEyMjQxLDEzNzM4MTkx
-MjYsMTYxNDQ2NTE0NSwtMzY4NTUwODU5LC0xMTYzODI3NjExLC
-0xNDA3MjUxNzU0LDE5Njk0NTk2MTYsMTU5NjQ0MDU0MCw5NjA3
-MTAzMzZdfQ==
+eyJoaXN0b3J5IjpbLTEzNzAxMjg2MDMsNDY3MDk2ODg5LDE4OT
+YxNjM4ODksLTE4OTIyMDMwMTgsLTk2MDE4OTI4NiwxMTI3NTE2
+ODc4LC0xNjUwMjM2NjcsMTY5ODQ5NDY2MCw5NzY4MjU3OTAsLT
+EwOTQ5ODQwOTgsMTIwMTc2MDQ4Niw1MDE3MzMwMjgsODM2ODEy
+MjQxLDEzNzM4MTkxMjYsMTYxNDQ2NTE0NSwtMzY4NTUwODU5LC
+0xMTYzODI3NjExLC0xNDA3MjUxNzU0LDE5Njk0NTk2MTYsMTU5
+NjQ0MDU0MF19
 -->
