@@ -139,21 +139,21 @@ Transformer的编码器负责处理分析提取输入序列的特征并生成序
 每个编码层由多头自注意力单元和按位前馈网络两部分组成。输入首先进入自注意力计算单元，再将计算结果输入按位前馈网络，这里的按位的含义是指每个位置的元素各自输入前馈网络里进行计算，前馈网络的结构为2个串联的全连接层，中间层维度较大（是元素编码维度的4倍），最后一层的维度和元素编码的维度相同。这个设计的目的其实和多头注意力的设计类似，还是由于注意力机制在特征合成能力的不足，需要借助全连接网络的非线性计算来增加复杂特征合成的能力。
 ~~编码器由若干个（N）相同的编码层堆叠形成，每个编码层主要由一个多头注意力HMA和一个按位前馈网络构成，主要作用是将序列的上下文信息融入每个元素并进行特征合成。原始的输入编码首先经过位置编码器加入位置信息，在通过多个编码层生成包含位置信息，复杂特征信息的序列编码（context vector/sequence embedding）。~~
 #### 解码器
-解码器负责根据序列编码context vector和上一步的解码器输出预测下一步的输出。 它同样由多个结构相同的解码层串联而成，每个解码层由三部分组成，其核心是编码器-解码器HMA，首先由解码器自注意力HMA单元处理上一步的输出，计算后输入编码器-解码器HMA单元，编码器-加码器HMA单元还同时接收context vector，   接收两个输入，第一个输入是上一步的解码器输出（第一个解码器输出由一个固定的标识编码充当），这个输入进入~~位置编码加入位置信息，然后通过~~解码器的带遮罩的自注意力MHA（图中Masked Multi-Head Attention）加入上下文信息到已输出元素，处理完成后之后加入第二个输入context vector，通过进行编码器-解码器MHA加入来自编码器的特征信息，最后在经过按位前馈网络合成复杂特征。经过多个解码层处理后在通过全连接运算映射到目标词典空间，最后通过softmax选择可能性最大的元素作为输出。
-工作流程：
+解码器负责根据序列编码context vector和上一步的解码器输出预测下一步的输出。 它同样由多个结构相同的解码层串联而成，每个解码层由三部分组成，按照处理的先后顺序分别是解码器自注意MHA，编码器-解码器HMA和按位前馈网络。作为解码器的核心，编码器-加码器HMA单元接收两个输入$Q,K$，第一个输入$Q$由解码器上一步输出经过带遮罩的解码器自注意HMA处理后得到 ，第二个输入K是编码器的输出context vector。编码器-解码器HMA的输出在经过按位前馈网络合成复杂特征。经过多个解码层处理后在通过全连接运算映射到目标词典空间，最后通过softmax选择可能性最大的元素作为输出。
+下图展示了Transformer在进行英-中翻译任务中的主要工作流程：
 1. 输入元素进行位置编码，位置编码与输入元素编码按位相加
 2. 在编码层
 	2.1 首先进行输入元素自注意力（多头注意力）计算，
 	2.2 再将结果输入按位前馈网络
 3. 重复多次编码层结算，结束编码阶段，得到context vector
-4. 开始解码阶段，首先对输出元素进行位置编码（第一个输出为开始标记）, 输入元素与其位置编码按位相加
+4. 开始解码阶段，首先对输出元素进行位置编码（第一个输出为开始标记SOS）, 输入元素与其位置编码按位相加
 5. 在解码层
 	5.1 首先进行输出元素（当前已输出）的多头自注意力计算
 	5.2 进行解码器-编码器多头注意力计算
 	5.3 对5.2结果输入按位前馈网络
 6. 重复多次解码层计算
 7. 通过全连接网络转化为目标词典维度向量，使用softmax确定输出元素（可能性最大）
-8.  将当前输出元素输入4开始下一个输出元素的计算，直到输出为结束标记符
+8.  将当前输出元素输入4开始下一个输出元素的计算，直到输出为结束标记符EOS
 ![enter image description here](https://docs.google.com/drawings/d/e/2PACX-1vSBNAHsyf_HP3_CkV1cygicnt0LhGxWcvw2PofecPP9TYJj41bghsAXTM6l6OSonSMvAjjgFInVDxC4/pub?w=1028&h=584)
 
 总结一下，注意力机制是transformer的核心，它具有计算效率高（尤其对于长序列），可并行，容易训练等优势，但是同时也带了一些新问题：比如无序和特征合成能力下降。Transformer针对这些新问题分别提出了解决方案，如使用位置编码生成位置信息，使用多头注意力和按位前馈网络增强特征合成能力。
@@ -222,11 +222,11 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [When Does Label Smoothing Help?](https://medium.com/@nainaakash012/when-does-label-smoothing-help-89654ec75326)
 [Attention Is All You Need](https://machinereads.com/2018/09/26/attention-is-all-you-need/)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzNzAxMjg2MDMsNDY3MDk2ODg5LDE4OT
-YxNjM4ODksLTE4OTIyMDMwMTgsLTk2MDE4OTI4NiwxMTI3NTE2
-ODc4LC0xNjUwMjM2NjcsMTY5ODQ5NDY2MCw5NzY4MjU3OTAsLT
-EwOTQ5ODQwOTgsMTIwMTc2MDQ4Niw1MDE3MzMwMjgsODM2ODEy
-MjQxLDEzNzM4MTkxMjYsMTYxNDQ2NTE0NSwtMzY4NTUwODU5LC
-0xMTYzODI3NjExLC0xNDA3MjUxNzU0LDE5Njk0NTk2MTYsMTU5
-NjQ0MDU0MF19
+eyJoaXN0b3J5IjpbLTI2OTMzMTUxOCw0NjcwOTY4ODksMTg5Nj
+E2Mzg4OSwtMTg5MjIwMzAxOCwtOTYwMTg5Mjg2LDExMjc1MTY4
+NzgsLTE2NTAyMzY2NywxNjk4NDk0NjYwLDk3NjgyNTc5MCwtMT
+A5NDk4NDA5OCwxMjAxNzYwNDg2LDUwMTczMzAyOCw4MzY4MTIy
+NDEsMTM3MzgxOTEyNiwxNjE0NDY1MTQ1LC0zNjg1NTA4NTksLT
+ExNjM4Mjc2MTEsLTE0MDcyNTE3NTQsMTk2OTQ1OTYxNiwxNTk2
+NDQwNTQwXX0=
 -->
