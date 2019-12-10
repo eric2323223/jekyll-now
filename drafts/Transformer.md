@@ -27,7 +27,7 @@ $$Attention(X, x_2)=\sum_{i=1}^nw_{2i}x_i$$
 如上所述，$w_i$决定于$x_i$和$y$的相关性$f(x_i,y)$，由于所有$x$都参与对应$y$的计算，所以使用softmax来保证所有权值之和等于1。
 $$w_{i}=Softmax(Score(x_i,x_2))=\frac{exp(Score(x_i, x_2))}{\sum_{k=1}^nexp(Score(x_k, x_2))}$$
 $Score(x_i,x_2)$可以根据不同任务选择不同的计算方法，对于机器翻译任务来说，通常用矢量相似性来衡量元素的相关性，可以使用点积运算（dot product）
-$$Score(x_i, x_2)=x_i\cdot x_2=|x_i||x_2|cos\theta=x_ix_2^T$$ 
+$$Score(x_i, x_2)=x_i\cdot x_2=|x_i||x_2|cos\theta$$ 
 
 > $\theta$表示两个向量$A,B$之间的夹角，如果$A,B$越相似则夹角$\theta$越小，$cos\theta$则越接近1
 > 
@@ -122,9 +122,9 @@ Transformer仅仅使用注意力机制处理输入生成context vector，由于�
 ![enter image description here](https://docs.google.com/drawings/d/e/2PACX-1vT4_Vn34rr1zN4OhXIo7oCGkzXDF__Y3CIVnZ_12fjqLHtKoRSJaVIyoR7ndQHtRlfNUmgecF5mucNg/pub?w=538&h=363)
 具体实现来说是对同一个元素进行多次注意力运算， 每次注意力计算之前分别使用随机生成的参数$W^Q,W^K,W^V$通过矩阵相乘来初始化$Q,K,V$，
 $$head_i =\mathrm{SDPA}(QW^Q_i, KW_i^K, VW_i^V)$$
-- 对于编码器自注意MHA，$Q, K, V$都是输入元素编码$x_i$
-- 对于解码器自注意MHA，$Q, K, V$都是已生成的输出元素编码$y_i$
-- 对于编码器-解码器MHA， $Q$是输出元素编码$y_i$, $K,V$是context vector中的元素$c_i$
+- 对于编码器多头自注意力MHSA，$Q, K, V$都是输入元素编码$x_i$
+- 对于解码器多头自注意力MHSA，$Q, K, V$都是已生成的输出元素编码$y_i$
+- 对于编码器-解码器多头注意力MHA， $Q$是输出元素编码$y_i$, $K,V$是context vector中的元素$c_i$
 
 再将多次注意力运算的结果合并。合并的过程是首先对i次结果进行串联（concatenate），再通过和$W^O$进行矩阵相乘得到和输入同样维度的结果。
 $$\mathrm{MultiHead}(Q,K,V)=\mathrm{Concat}(head_i, ..., head_h)W^O$$
@@ -140,7 +140,7 @@ Transformer的编码器负责处理分析提取输入序列的特征并生成序
 每个编码层由多头自注意力单元和按位前馈网络两部分组成。输入首先进入自注意力计算单元，再将计算结果输入按位前馈网络，这里的按位的含义是指每个位置的元素各自输入前馈网络里进行计算，前馈网络的结构为2个串联的全连接层，中间层维度较大（是元素编码维度的4倍），最后一层的维度和元素编码的维度相同。这个设计的目的其实和多头注意力的设计类似，还是由于注意力机制在特征合成能力的不足，需要借助全连接网络的非线性计算来增加复杂特征合成的能力。
 ~~编码器由若干个（N）相同的编码层堆叠形成，每个编码层主要由一个多头注意力HMA和一个按位前馈网络构成，主要作用是将序列的上下文信息融入每个元素并进行特征合成。原始的输入编码首先经过位置编码器加入位置信息，在通过多个编码层生成包含位置信息，复杂特征信息的序列编码（context vector/sequence embedding）。~~
 #### 解码器
-解码器负责根据序列编码context vector和上一步的解码器输出预测下一步的输出。 它同样由多个结构相同的解码层串联而成，每个解码层由三部分组成，按照处理的先后顺序分别是解码器自注意MHA，编码器-解码器HMA和按位前馈网络。作为解码器的核心，编码器-加码器HMA单元接收两个输入$Q,K$，第一个输入$Q$由解码器上一步输出经过带遮罩的解码器自注意HMA处理后得到 ，第二个输入K是编码器的输出context vector。编码器-解码器HMA的输出在经过按位前馈网络合成复杂特征。经过多个解码层处理后在通过全连接运算映射到目标词典空间，最后通过softmax选择可能性最大的元素作为输出。
+解码器负责根据序列编码context vector和上一步的解码器输出预测下一步的输出。 它同样由多个结构相同的解码层串联而成，每个解码层由三部分组成，按照处理的先后顺序分别是解码器MHSA，编码器-解码器HMA和按位前馈网络。作为解码器的核心，编码器-解码器HMA单元接收两个输入$Q,K$，第一个输入$Q$由解码器上一步输出经过带遮罩的解码器HMSA处理后得到 ，第二个输入K是编码器的输出context vector。编码器-解码器HMA的输出在经过按位前馈网络合成复杂特征。经过多个解码层处理后在通过全连接运算映射到目标词典空间，最后通过softmax选择可能性最大的元素作为输出。
 下图展示了Transformer在进行英-中翻译任务中的主要工作流程：
 1. 输入元素进行位置编码，位置编码与输入元素编码按位相加
 2. 在编码层
@@ -223,7 +223,7 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [When Does Label Smoothing Help?](https://medium.com/@nainaakash012/when-does-label-smoothing-help-89654ec75326)
 [Attention Is All You Need](https://machinereads.com/2018/09/26/attention-is-all-you-need/)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzUxNTQzMjg3LC0yNjkzMzE1MTgsNDY3MD
+eyJoaXN0b3J5IjpbNjQ2NzEwNTUyLC0yNjkzMzE1MTgsNDY3MD
 k2ODg5LDE4OTYxNjM4ODksLTE4OTIyMDMwMTgsLTk2MDE4OTI4
 NiwxMTI3NTE2ODc4LC0xNjUwMjM2NjcsMTY5ODQ5NDY2MCw5Nz
 Y4MjU3OTAsLTEwOTQ5ODQwOTgsMTIwMTc2MDQ4Niw1MDE3MzMw
