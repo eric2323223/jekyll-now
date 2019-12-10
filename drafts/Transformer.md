@@ -14,15 +14,15 @@
 
 上述两种模型对于长序列的处理都有缺陷，RNN需要一步一步的处理输入序列，CNN做出了一些改进但并不彻底。从根本上的解决长序列处理问题需要能一次性的处理全部输入（无论序列有多长），并且能根据这些输入信息分析序列元素之间的关联关系。人们从自己快速浏览的方式获得了启发，当人们需要快速浏览的时候不会按输入的顺序依次阅读，而会直接跳到需要关注的的部分，这种根据需要在不同位置跳跃的阅读方式和注意力相关，因此这种新的序列处理方式被命名为注意力机制。
 
-## 注意力机制（attention mechanism）
+## 注意力机制（Attention mechanism）
 基于组成整体的各个元素在整体中发挥的作用不相同这样一个事实，注意力机制的基本思想是在一定的目标下使用相对应的的权重组合各个序列元素来重新描述适合该目标的序列。这就好像在日常生活中，带着不同的目的看同一个事物会产生不同的理解。在下图中寻找生物会发现鱼和珊瑚，而寻找人工建筑则会发现钻井平台的支柱，正是由于不同的目标导致对图片的的物体分配了不同的权重，因此产生了不同的理解。
 
 ![enter image description here](https://www.capeandislands.org/sites/wcai/files/styles/medium/public/201609/oilrigs-5.jpg)
 
 从实现上来讲，注意力运算表现为加权求和运算，即对输入序列中的元素赋予相应的权重并相加。这里的权重来自任务目标，具体来说是根据目标对输出序列的要求，确定输出序列元素和输入序列元素之间的关系，再通过这种关系确定输入元素的权重。举个例子，对于机器翻译任务来说，由于我们需要让输入元素与输出元素表达相同的意义，因此需要比较它们的相似性，给相似性高的元素较高的权重，而对相似性低的元素赋予较低权重。
 
-如果$X$表示输入序列集合$\{x_1, x_2, ... x_n\}$，$y$表示某个输出元素，$w_i$表示在对应$y$的计算过程中$x_i$的权重，可以将$X$对应$y$的注意力运算形式化的表示为
-$$AttentionX_y=\sum_{i=1}^nw_ix_i$$
+如下图所示，$X$表示输入序列集合$\{x_1, x_2, ... x_n\}$，$w_{2i}$表示在以$x_2$为目标的计算过程中$x_i$的权重，可以将$X$对$x_2$的注意力运算形式化的表示为
+$$Attention(X, x_2)=\sum_{i=1}^nw_{2i}x_i$$
 ![enter image description here](http://www.peterbloem.nl/files/transformers/self-attention.svg)
 如上所述，$w_i$决定于$x_i$和$y$的相关性$f(x_i,y)$，由于所有$x$都参与对应$y$的计算，所以使用softmax来保证所有权值之和等于1。
 $$w_{i}=Softmax(Score(x_i,y))=\frac{exp(Score(x_i, y))}{\sum_{k=1}^nexp(Score(x_k, y))}$$
@@ -222,11 +222,11 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [When Does Label Smoothing Help?](https://medium.com/@nainaakash012/when-does-label-smoothing-help-89654ec75326)
 [Attention Is All You Need](https://machinereads.com/2018/09/26/attention-is-all-you-need/)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTI2OTMzMTUxOCw0NjcwOTY4ODksMTg5Nj
-E2Mzg4OSwtMTg5MjIwMzAxOCwtOTYwMTg5Mjg2LDExMjc1MTY4
-NzgsLTE2NTAyMzY2NywxNjk4NDk0NjYwLDk3NjgyNTc5MCwtMT
-A5NDk4NDA5OCwxMjAxNzYwNDg2LDUwMTczMzAyOCw4MzY4MTIy
-NDEsMTM3MzgxOTEyNiwxNjE0NDY1MTQ1LC0zNjg1NTA4NTksLT
-ExNjM4Mjc2MTEsLTE0MDcyNTE3NTQsMTk2OTQ1OTYxNiwxNTk2
-NDQwNTQwXX0=
+eyJoaXN0b3J5IjpbNjU5NDg2MzUxLC0yNjkzMzE1MTgsNDY3MD
+k2ODg5LDE4OTYxNjM4ODksLTE4OTIyMDMwMTgsLTk2MDE4OTI4
+NiwxMTI3NTE2ODc4LC0xNjUwMjM2NjcsMTY5ODQ5NDY2MCw5Nz
+Y4MjU3OTAsLTEwOTQ5ODQwOTgsMTIwMTc2MDQ4Niw1MDE3MzMw
+MjgsODM2ODEyMjQxLDEzNzM4MTkxMjYsMTYxNDQ2NTE0NSwtMz
+Y4NTUwODU5LC0xMTYzODI3NjExLC0xNDA3MjUxNzU0LDE5Njk0
+NTk2MTZdfQ==
 -->
