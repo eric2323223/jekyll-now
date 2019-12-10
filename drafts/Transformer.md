@@ -25,18 +25,18 @@
 $$Attention(X, x_2)=\sum_{i=1}^nw_{2i}x_i$$
 ![enter image description here](http://www.peterbloem.nl/files/transformers/self-attention.svg)
 如上所述，$w_i$决定于$x_i$和$y$的相关性$f(x_i,y)$，由于所有$x$都参与对应$y$的计算，所以使用softmax来保证所有权值之和等于1。
-$$w_{i}=Softmax(Score(x_i,y))=\frac{exp(Score(x_i, y))}{\sum_{k=1}^nexp(Score(x_k, y))}$$
+$$w_{i}=Softmax(Score(x_i,x_2))=\frac{exp(Score(x_i, x_2))}{\sum_{k=1}^nexp(Score(x_k, x_2))}$$
 $f(x_i,y)$可以根据不同任务选择不同的计算方法，对于机器翻译任务来说，通常用矢量相似性来衡量元素的相关性，可以使用点积运算（dot product）
-$$Score(x_i, y)=x_i\cdot y=|x_i||y|cos\theta=x_iy^T$$ 
+$$Score(x_i, x_2)=x_i\cdot x_2=|x_i||x_2|cos\theta=x_ix_2^T$$ 
 
 > $\theta$表示两个向量$A,B$之间的夹角，如果$A,B$越相似则夹角$\theta$越小，$cos\theta$则越接近1
 > 
 > ![enter image description
 > here](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSO0ZVpogoaP-ipyQF0Xhir4wSrgGJBdeU_5wDrea6UD9sF7icIYg)
 
-上述表示对于目标为一个元素$y$时注意力计算的方法，大部分时序任务要求输出为序列，对于目标为序列的注意力计算方法是分别对每个元素$y_1, y_2, ... y_n$进行注意力计算，再将计算结果组成序列。
-$$AttentionX_Y=\{AttentionX_{y_1}, AttentionX_{y_2}, ... AttentionX_{y_n}\}$$
-
+上述表示对于目标为一个元素$x_2$时注意力计算的方法，大部分时序任务要求输出为序列，对于目标为序列的注意力计算方法是分别对序列$Y=\{y_1, y_2, ... y_n\}$进行注意力计算，再将计算结果组成序列。
+$$\mathrm{Attention}(X,Y)=\mathrm{softmax}(Score(X, Y))$$
+$$Score(X,Y)=XY^T$$
 从运算的结果上看，由于$AttentionX_{y_i}$包含了序列$X$所有元素的信息，因此我们也可以把注意力运算理解为**元素（$y_i$）在某一个序列上下文（$X$）环境中的重新定义**。这是一种对于时序任务非常有用的属性，RNN由于能够保存输入序列的信息而被广泛应用于时序任务，相比RNN通过逐步更新状态最终得到整个序列的信息的机制，注意力机制不但也有能力获取整个序列的信息，更重要的是它能一步直接得到结果，这使得注意力机制具备以下优势：
 - 在并行方面，注意力机制不依赖于前一时刻的计算，可以很好的并行，优于RNN。
   传统方法使用RNN通过一步步的叠加分析过的输入来得到整个序列的内部表示（固定长度），Transformer模型中使用自注意力（self attention）机制来实现encoding，之所以称作自注意力是因为这是在输入序列内部进行的attention操作，由于attention操作就是对元素进行重新定义使其包含序列上下文信息，在输入序列元素进行attention的操作结果就是使该元素包含输入序列信息，因此经过self attention运算的整个输入序列的结果就是和一个输入序列大小一致的context vector。显然，self attention不需要想RNN那样一步步的出入输入，而是可以同时对每个元素进行attention运算，从下图可以发现，RNN需要在依次处理元素x1, x2和x3之后才能得到整个序列的上下文信息，而attention则可以同时处理x1，x2，x3而得到序列的上下文信息。![enter image description here](https://docs.google.com/drawings/d/e/2PACX-1vQZ5I4YZtpZOU8xnxqqJ2WVd7o9eeo0sHQa119cWm4qR85KanMs7-Z1DV1EfKxJLQrZaVglHLUJGPF2/pub?w=856&h=225)
@@ -222,7 +222,7 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [When Does Label Smoothing Help?](https://medium.com/@nainaakash012/when-does-label-smoothing-help-89654ec75326)
 [Attention Is All You Need](https://machinereads.com/2018/09/26/attention-is-all-you-need/)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjU5NDg2MzUxLC0yNjkzMzE1MTgsNDY3MD
+eyJoaXN0b3J5IjpbLTQ4MDc0Mzk0LC0yNjkzMzE1MTgsNDY3MD
 k2ODg5LDE4OTYxNjM4ODksLTE4OTIyMDMwMTgsLTk2MDE4OTI4
 NiwxMTI3NTE2ODc4LC0xNjUwMjM2NjcsMTY5ODQ5NDY2MCw5Nz
 Y4MjU3OTAsLTEwOTQ5ODQwOTgsMTIwMTc2MDQ4Niw1MDE3MzMw
