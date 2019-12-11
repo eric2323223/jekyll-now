@@ -40,7 +40,7 @@ $$\mathrm{Attention}(Q,K)=\mathrm{softmax}(Score(Q,K))K$$
 $$Score(Q,K)=QK^T$$
 从运算的结果上看，由于$\mathrm{Attention}(Q,K)$包含了序列$Q$所有元素的信息，因此我们也可以把注意力运算理解为**序列（$Q$）在某一个序列上下文（$K$）环境中的重新定义**。这是一种对于时序任务非常有用的属性，RNN由于能够保存输入序列的信息而被广泛应用于时序任务，相比RNN通过逐步更新状态最终得到整个序列的信息的机制，注意力机制不但也有能力获取整个序列的信息，更重要的是它能一步直接得到结果，这使得注意力机制具备以下优势：
 - 在并行方面，注意力机制不依赖于前一时刻的计算，可以很好的并行，优于RNN。
-  传统方法使用RNN通过一步步的叠加分析过的输入来得到整个序列的内部表示（固定长度），Transformer模型中使用自注意力（self attention）机制来实现encoding，之所以称作自注意力是因为这是在输入序列内部进行的attention操作，由于attention操作就是对元素进行重新定义使其包含序列上下文信息，在输入序列元素进行attention的操作结果就是使该元素包含输入序列信息，因此经过self attention运算的整个输入序列的结果就是和一个输入序列大小一致的context vector。显然，self attention不需要想RNN那样一步步的出入输入，而是可以同时对每个元素进行attention运算，从下图可以发现，RNN需要在依次处理元素x1, x2和x3之后才能得到整个序列的上下文信息，而attention则可以同时处理x1，x2，x3而得到序列的上下文信息。![enter image description here](https://docs.google.com/drawings/d/e/2PACX-1vQZ5I4YZtpZOU8xnxqqJ2WVd7o9eeo0sHQa119cWm4qR85KanMs7-Z1DV1EfKxJLQrZaVglHLUJGPF2/pub?w=856&h=225)
+  传统方法使用RNN通过一步步的叠加分析过的输入来得到整个序列的内部表示（固定长度），Transformer模型中使用自注意力（self attention）机制来实现编码，之所以称作自注意力是因为这是在输入序列内部进行的注意力操作，由于attention操作就是对元素进行重新定义使其包含序列上下文信息，在输入序列元素进行注意力操作的结果就是使该元素包含输入序列信息，因此经过自注意力运算的整个输入序列的结果就是和一个输入序列大小一致的context vector。显然，注意力操作不需要想RNN那样一步步的出入输入，而是可以同时对每个元素进行注意力运算，从下图可以发现，RNN需要在依次处理元素x1, x2和x3之后才能得到整个序列的上下文信息，而注意力则可以同时处理x1，x2，x3而得到序列的上下文信息。![enter image description here](https://docs.google.com/drawings/d/e/2PACX-1vQZ5I4YZtpZOU8xnxqqJ2WVd7o9eeo0sHQa119cWm4qR85KanMs7-Z1DV1EfKxJLQrZaVglHLUJGPF2/pub?w=856&h=225)
 - 在长距离依赖上，不管元素中间距离多远，路径长度总是1，可以轻松处理长距离依赖关系。RNN则存在梯度弥散或者梯度爆炸的问题。
 - 注意力机制的计算复杂度更低，下表对注意力，RNN，CNN在计算复杂度上进行了对比，其中$length$表示序列长度，$dim$表示序列元素的维度，$kernel$表示卷积核的大小。由于在大部分自然语言处理任务中的元素维度都大于序列长度，因此对于这类任务来说注意力运算的计算复杂度要显著低于RNN和CNN。
 
@@ -223,7 +223,7 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [When Does Label Smoothing Help?](https://medium.com/@nainaakash012/when-does-label-smoothing-help-89654ec75326)
 [Attention Is All You Need](https://machinereads.com/2018/09/26/attention-is-all-you-need/)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1MTg1NTU5NzgsNjQ2NzEwNTUyLC0yNj
+eyJoaXN0b3J5IjpbLTIwNzk0ODA3MDEsNjQ2NzEwNTUyLC0yNj
 kzMzE1MTgsNDY3MDk2ODg5LDE4OTYxNjM4ODksLTE4OTIyMDMw
 MTgsLTk2MDE4OTI4NiwxMTI3NTE2ODc4LC0xNjUwMjM2NjcsMT
 Y5ODQ5NDY2MCw5NzY4MjU3OTAsLTEwOTQ5ODQwOTgsMTIwMTc2
