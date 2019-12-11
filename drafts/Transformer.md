@@ -24,8 +24,8 @@
 如下图所示，$X$表示输入序列集合$\{x_1, x_2, ... x_n\}$，$w_{2i}$表示在以$x_2$为目标的计算过程中$x_i$的权重，可以将$X$对$x_2$的注意力运算形式化的表示为
 $$Attention(X, x_2)=\sum_{i=1}^nw_{2i}x_i$$
 ![enter image description here](http://www.peterbloem.nl/files/transformers/self-attention.svg)
-如上所述，$w_i$决定于$x_i$和$y$的相关性$f(x_i,y)$，由于所有$x$都参与对应$y$的计算，所以使用softmax来保证所有权值之和等于1。
-$$w_{i}=Softmax(Score(x_i,x_2))=\frac{exp(Score(x_i, x_2))}{\sum_{k=1}^nexp(Score(x_k, x_2))}$$
+如上所述，$w_{2i}$决定于$x_i$和$x_2$的相关性$Score(x_i,x_2)$，由于所有$X$元素都参与和$x_2$相关性的计算，所以使用softmax来保证所有权值之和等于1。
+$$w_{2i}=Softmax(Score(x_i,x_2))=\frac{exp(Score(x_i, x_2))}{\sum_{k=1}^nexp(Score(x_k, x_2))}$$
 $Score(x_i,x_2)$可以根据不同任务选择不同的计算方法，对于机器翻译任务来说，通常用矢量相似性来衡量元素的相关性，可以使用点积运算（dot product）
 $$Score(x_i, x_2)=x_i\cdot x_2=|x_i||x_2|cos\theta$$ 
 
@@ -34,7 +34,7 @@ $$Score(x_i, x_2)=x_i\cdot x_2=|x_i||x_2|cos\theta$$
 > ![enter image description
 > here](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSO0ZVpogoaP-ipyQF0Xhir4wSrgGJBdeU_5wDrea6UD9sF7icIYg)
 
-上述表示对于目标为一个元素$x_2$时注意力计算的方法，大部分时序任务要求输出为序列，序列$Q=\{x_1, x_2, ... x_m\}$对于目标为序列$K=\{y_1, y_2, ... y_n\}$的注意力计算方法是分别计算$\mathrm{Attention}(Q,y_i)$，再将计算结果组成序列。
+上述表示对于目标为一个元素$x_2$时注意力计算的方法，大部分时序任务要求输出为序列，序列$Q=\{x_1, x_2, ... x_m\}$对于目标序列$K=\{y_1, y_2, ... y_n\}$的注意力计算方法是分别计算$\mathrm{Attention}(Q,y_i)$，再将计算结果组成序列。
 $$\mathrm{Attention}(Q,K)=\mathrm{softmax}(Score(Q,K))K$$
 由于$Q,K$都是矩阵，点积运算可以表示为矩阵$Q$和$K^T$相乘
 $$Score(Q,K)=QK^T$$
@@ -52,7 +52,7 @@ $$Score(Q,K)=QK^T$$
  
 注意力机制可以更一般的表示为
 $$\mathrm{Attention}(Q, K, V) = \mathrm{softmax}(Score(Q,K))V$$
-这里的$K,V$分别表示一个键值对中的键key和值value，$Q$则表示注意目标query，这样我们之前的定义就变成$\mathrm{Attention}(Q, K, V)$在当$K=V$条件下的特殊形式。
+这里的$K,V$分别表示一个键值对中的键key和值value，这样我们之前的定义就变成$\mathrm{Attention}(Q, K, V)$在当$K=V$条件下的特殊形式。
 下图左侧表示了$\mathrm{Attention}(Q, K, V)$的计算过程，按照由下向上的顺序:
 1. 首先通过矩阵相乘MatMul运算得到$Q$和$K$的相似度，
 2. 再通过Softmax操作转化为权重概率分布，
@@ -223,11 +223,11 @@ Transformer不是万能的，它在NLP领域取得突破性成绩是由于它针
 [When Does Label Smoothing Help?](https://medium.com/@nainaakash012/when-does-label-smoothing-help-89654ec75326)
 [Attention Is All You Need](https://machinereads.com/2018/09/26/attention-is-all-you-need/)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjQ2NzEwNTUyLC0yNjkzMzE1MTgsNDY3MD
-k2ODg5LDE4OTYxNjM4ODksLTE4OTIyMDMwMTgsLTk2MDE4OTI4
-NiwxMTI3NTE2ODc4LC0xNjUwMjM2NjcsMTY5ODQ5NDY2MCw5Nz
-Y4MjU3OTAsLTEwOTQ5ODQwOTgsMTIwMTc2MDQ4Niw1MDE3MzMw
-MjgsODM2ODEyMjQxLDEzNzM4MTkxMjYsMTYxNDQ2NTE0NSwtMz
-Y4NTUwODU5LC0xMTYzODI3NjExLC0xNDA3MjUxNzU0LDE5Njk0
-NTk2MTZdfQ==
+eyJoaXN0b3J5IjpbLTE1MTg1NTU5NzgsNjQ2NzEwNTUyLC0yNj
+kzMzE1MTgsNDY3MDk2ODg5LDE4OTYxNjM4ODksLTE4OTIyMDMw
+MTgsLTk2MDE4OTI4NiwxMTI3NTE2ODc4LC0xNjUwMjM2NjcsMT
+Y5ODQ5NDY2MCw5NzY4MjU3OTAsLTEwOTQ5ODQwOTgsMTIwMTc2
+MDQ4Niw1MDE3MzMwMjgsODM2ODEyMjQxLDEzNzM4MTkxMjYsMT
+YxNDQ2NTE0NSwtMzY4NTUwODU5LC0xMTYzODI3NjExLC0xNDA3
+MjUxNzU0XX0=
 -->
