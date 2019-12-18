@@ -1,4 +1,4 @@
-# Welcome to StackEdit!
+# NLP transfer learning
 
 Hi! I'm your first Markdown file in **StackEdit**. If you want to learn about StackEdit, you can read me. If you want to play with Markdown, you can edit me. Once you have finished with me, you can create new files by opening the **file explorer** on the left corner of the navigation bar.
 
@@ -144,6 +144,10 @@ C --> D
 
 
 [BERT Explained: State of the art language model for NLP](https://towardsdatascience.com/bert-explained-state-of-the-art-language-model-for-nlp-f8b21a9b6270)
+[NLP预训练演进 - from Word2Vec to XLNet](https://zhuanlan.zhihu.com/p/93343298)
+[nlp中的词向量对比：](https://zhuanlan.zhihu.com/p/56382372)
+[史上最全词向量讲解](https://zhuanlan.zhihu.com/p/75391062)
+[ELECTRA: 超越BERT, 19年最佳NLP预训练模](https://zhuanlan.zhihu.com/p/89763176)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzNjY1ODM2MzVdfQ==
+eyJoaXN0b3J5IjpbMTcxNTM4MDY0MF19
 -->
