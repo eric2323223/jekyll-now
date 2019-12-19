@@ -20,6 +20,7 @@ Hi! I'm your first Markdown file in **StackEdit**. If you want to learn about St
 [ELECTRA: 超越BERT, 19年最佳NLP预训练模](https://zhuanlan.zhihu.com/p/89763176)
 [如何评价BERT-回答](https://www.zhihu.com/question/298203515/answer/516170825)
 [NLP规则改写](https://zhuanlan.zhihu.com/p/47488095)
+[enter link description here](https://towardsml.com/2019/09/17/bert-explained-a-complete-guide-with-theory-and-tutorial/)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2Njg0MzI0OTddfQ==
+eyJoaXN0b3J5IjpbMTI2Mzc3MTYzNiwtMTY2ODQzMjQ5N119
 -->
