@@ -7,10 +7,18 @@ Hi! I'm your first Markdown file in **StackEdit**. If you want to learn about St
 ### Unsupervised learning
 - labeled training data is expensive
 
-- from static embedding to dynamic dynamic embedding
+- from static embedding to dynamic embedding
+	- static encoding - word2vec, glove
+	- dynamic encoding - elmo, bert
+	task design: 
+		- Masked LM, NSP
+		- ELECTRA
+		- 
 - transformer 
-### Supervised fine-tuning
 
+
+### Supervised fine-tuning
+- close domain chat bot
 
 
 [BERT Explained: State of the art language model for NLP](https://towardsdatascience.com/bert-explained-state-of-the-art-language-model-for-nlp-f8b21a9b6270)
@@ -23,5 +31,6 @@ Hi! I'm your first Markdown file in **StackEdit**. If you want to learn about St
 [BERT Explained: A Complete Guide with Theory and Tutorial](https://towardsml.com/2019/09/17/bert-explained-a-complete-guide-with-theory-and-tutorial/)
 [BERT Fine-Tuning Tutorial with PyTorch](https://mccormickml.com/2019/07/22/BERT-fine-tuning/)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTg1OTM5MjkyOSwtMTY2ODQzMjQ5N119
+eyJoaXN0b3J5IjpbLTExMjAwNzMxOTMsLTE2Njg0MzI0OTddfQ
+==
 -->
