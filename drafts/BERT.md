@@ -11,7 +11,7 @@ Hi! I'm your first Markdown file in **StackEdit**. If you want to learn about St
 	- static encoding - word2vec, glove
 	- dynamic encoding - elmo, bert
 	task design: 
-		- Masked LM, NSP
+		- Masked LM(bidirectional + prevent from see itself indirectly), NSP
 		- ELECTRA
 		- 
 - transformer 
@@ -31,6 +31,5 @@ Hi! I'm your first Markdown file in **StackEdit**. If you want to learn about St
 [BERT Explained: A Complete Guide with Theory and Tutorial](https://towardsml.com/2019/09/17/bert-explained-a-complete-guide-with-theory-and-tutorial/)
 [BERT Fine-Tuning Tutorial with PyTorch](https://mccormickml.com/2019/07/22/BERT-fine-tuning/)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTExMjAwNzMxOTMsLTE2Njg0MzI0OTddfQ
-==
+eyJoaXN0b3J5IjpbLTY2NzM4ODgzLC0xNjY4NDMyNDk3XX0=
 -->
