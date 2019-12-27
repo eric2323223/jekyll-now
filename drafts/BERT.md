@@ -30,6 +30,8 @@ Hi! I'm your first Markdown file in **StackEdit**. If you want to learn about St
 [NLP规则改写](https://zhuanlan.zhihu.com/p/47488095)
 [BERT Explained: A Complete Guide with Theory and Tutorial](https://towardsml.com/2019/09/17/bert-explained-a-complete-guide-with-theory-and-tutorial/)
 [BERT Fine-Tuning Tutorial with PyTorch](https://mccormickml.com/2019/07/22/BERT-fine-tuning/)
+[Generalized Language Models](https://lilianweng.github.io/lil-log/2019/01/31/generalized-language-models.html)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTY2NzM4ODgzLC0xNjY4NDMyNDk3XX0=
+eyJoaXN0b3J5IjpbLTIxNDcwNDIwODMsLTY2NzM4ODgzLC0xNj
+Y4NDMyNDk3XX0=
 -->
