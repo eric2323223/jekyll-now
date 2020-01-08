@@ -31,7 +31,9 @@ Hi! I'm your first Markdown file in **StackEdit**. If you want to learn about St
 [BERT Explained: A Complete Guide with Theory and Tutorial](https://towardsml.com/2019/09/17/bert-explained-a-complete-guide-with-theory-and-tutorial/)
 [BERT Fine-Tuning Tutorial with PyTorch](https://mccormickml.com/2019/07/22/BERT-fine-tuning/)
 [Generalized Language Models](https://lilianweng.github.io/lil-log/2019/01/31/generalized-language-models.html)
+[ELMO](https://petrlorenc.github.io/ELMO/)
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIxNDcwNDIwODMsLTY2NzM4ODgzLC0xNj
-Y4NDMyNDk3XX0=
+eyJoaXN0b3J5IjpbMTczMDU3MzM4MiwtMjE0NzA0MjA4MywtNj
+Y3Mzg4ODMsLTE2Njg0MzI0OTddfQ==
 -->
