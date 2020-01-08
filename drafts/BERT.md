@@ -33,7 +33,8 @@ Hi! I'm your first Markdown file in **StackEdit**. If you want to learn about St
 [Generalized Language Models](https://lilianweng.github.io/lil-log/2019/01/31/generalized-language-models.html)
 [ELMO](https://petrlorenc.github.io/ELMO/)
 [Character embedding CNN](https://towardsdatascience.com/the-definitive-guide-to-bidaf-part-2-word-embedding-character-embedding-and-contextual-c151fc4f05bb)
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEyODI0ODU3NDMsLTIxNDcwNDIwODMsLT
-Y2NzM4ODgzLC0xNjY4NDMyNDk3XX0=
+eyJoaXN0b3J5IjpbLTIwNzQ1NjY2NTcsLTEyODI0ODU3NDMsLT
+IxNDcwNDIwODMsLTY2NzM4ODgzLC0xNjY4NDMyNDk3XX0=
 -->
