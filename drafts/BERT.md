@@ -32,8 +32,8 @@ Hi! I'm your first Markdown file in **StackEdit**. If you want to learn about St
 [BERT Fine-Tuning Tutorial with PyTorch](https://mccormickml.com/2019/07/22/BERT-fine-tuning/)
 [Generalized Language Models](https://lilianweng.github.io/lil-log/2019/01/31/generalized-language-models.html)
 [ELMO](https://petrlorenc.github.io/ELMO/)
-
+[Character embedding CNN](https://towardsdatascience.com/the-definitive-guide-to-bidaf-part-2-word-embedding-character-embedding-and-contextual-c151fc4f05bb)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTczMDU3MzM4MiwtMjE0NzA0MjA4MywtNj
-Y3Mzg4ODMsLTE2Njg0MzI0OTddfQ==
+eyJoaXN0b3J5IjpbLTEyODI0ODU3NDMsLTIxNDcwNDIwODMsLT
+Y2NzM4ODgzLC0xNjY4NDMyNDk3XX0=
 -->
