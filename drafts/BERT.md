@@ -35,8 +35,10 @@ Hi! I'm your first Markdown file in **StackEdit**. If you want to learn about St
 [Character embedding CNN](https://towardsdatascience.com/the-definitive-guide-to-bidaf-part-2-word-embedding-character-embedding-and-contextual-c151fc4f05bb)
 [The Illustrated BERT EMLO and co.](http://jalammar.github.io/illustrated-bert/)
 [Transfer learning in NLP](https://docs.google.com/presentation/d/1fIhGikFPnb7G5kr58OvYC3GN4io7MznnM0aAgadvJfc/edit#slide=id.g5888218f39_177_4)
+[VisualGuideToUsingBERT](http://jalammar.github.io/a-visual-guide-to-using-bert-for-the-first-time/)
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbOTU3MzIxNDI4LC0xMjgyNDg1NzQzLC0yMT
-Q3MDQyMDgzLC02NjczODg4MywtMTY2ODQzMjQ5N119
+eyJoaXN0b3J5IjpbLTExNjYzNTA0NzYsOTU3MzIxNDI4LC0xMj
+gyNDg1NzQzLC0yMTQ3MDQyMDgzLC02NjczODg4MywtMTY2ODQz
+MjQ5N119
 -->
