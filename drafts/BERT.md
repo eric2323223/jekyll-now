@@ -36,9 +36,10 @@ Hi! I'm your first Markdown file in **StackEdit**. If you want to learn about St
 [The Illustrated BERT EMLO and co.](http://jalammar.github.io/illustrated-bert/)
 [Transfer learning in NLP](https://docs.google.com/presentation/d/1fIhGikFPnb7G5kr58OvYC3GN4io7MznnM0aAgadvJfc/edit#slide=id.g5888218f39_177_4)
 [VisualGuideToUsingBERT](http://jalammar.github.io/a-visual-guide-to-using-bert-for-the-first-time/)
+[An In-Depth Tutorial to AllenNLP](https://mlexplained.com/2019/01/30/an-in-depth-tutorial-to-allennlp-from-basics-to-elmo-and-bert/)
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTExNjYzNTA0NzYsOTU3MzIxNDI4LC0xMj
-gyNDg1NzQzLC0yMTQ3MDQyMDgzLC02NjczODg4MywtMTY2ODQz
-MjQ5N119
+eyJoaXN0b3J5IjpbNjc2MTM4NjMyLC0xMTY2MzUwNDc2LDk1Nz
+MyMTQyOCwtMTI4MjQ4NTc0MywtMjE0NzA0MjA4MywtNjY3Mzg4
+ODMsLTE2Njg0MzI0OTddfQ==
 -->
