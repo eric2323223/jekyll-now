@@ -38,8 +38,9 @@ Hi! I'm your first Markdown file in **StackEdit**. If you want to learn about St
 [VisualGuideToUsingBERT](http://jalammar.github.io/a-visual-guide-to-using-bert-for-the-first-time/)
 [An In-Depth Tutorial to AllenNLP](https://mlexplained.com/2019/01/30/an-in-depth-tutorial-to-allennlp-from-basics-to-elmo-and-bert/)
 
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjc2MTM4NjMyLC0xMTY2MzUwNDc2LDk1Nz
-MyMTQyOCwtMTI4MjQ4NTc0MywtMjE0NzA0MjA4MywtNjY3Mzg4
-ODMsLTE2Njg0MzI0OTddfQ==
+eyJoaXN0b3J5IjpbLTEwMzIyMTc5MzAsLTExNjYzNTA0NzYsOT
+U3MzIxNDI4LC0xMjgyNDg1NzQzLC0yMTQ3MDQyMDgzLC02Njcz
+ODg4MywtMTY2ODQzMjQ5N119
 -->
