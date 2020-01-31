@@ -37,10 +37,10 @@ Hi! I'm your first Markdown file in **StackEdit**. If you want to learn about St
 [Transfer learning in NLP](https://docs.google.com/presentation/d/1fIhGikFPnb7G5kr58OvYC3GN4io7MznnM0aAgadvJfc/edit#slide=id.g5888218f39_177_4)
 [VisualGuideToUsingBERT](http://jalammar.github.io/a-visual-guide-to-using-bert-for-the-first-time/)
 [An In-Depth Tutorial to AllenNLP](https://mlexplained.com/2019/01/30/an-in-depth-tutorial-to-allennlp-from-basics-to-elmo-and-bert/)
-
+[Transfer learning using elmo embedding](https://towardsdatascience.com/transfer-learning-using-elmo-embedding-c4a7e415103c)
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEwMzIyMTc5MzAsLTExNjYzNTA0NzYsOT
-U3MzIxNDI4LC0xMjgyNDg1NzQzLC0yMTQ3MDQyMDgzLC02Njcz
-ODg4MywtMTY2ODQzMjQ5N119
+eyJoaXN0b3J5IjpbMTU1OTkzMzk0NiwtMTE2NjM1MDQ3Niw5NT
+czMjE0MjgsLTEyODI0ODU3NDMsLTIxNDcwNDIwODMsLTY2NzM4
+ODgzLC0xNjY4NDMyNDk3XX0=
 -->
