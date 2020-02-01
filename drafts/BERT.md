@@ -5,12 +5,13 @@ self-supervised learning is important area because it can greatly reduce the eff
 
 
 ## Transfer learning
-
-
-### self-supervised learning
-- Why?
-	- labeled training data is expensive
-
+- what?
+- why?
+- 	- labeled training data is very expensive
+	- To save training efforts (save money and time)
+- how?
+## 
+### self-supervised learning自监督学习
 - from static embedding to dynamic embedding
 	- static encoding - word2vec, glove
 	- dynamic encoding - elmo, bert
@@ -23,7 +24,7 @@ self-supervised learning is important area because it can greatly reduce the eff
 
 
 ### Supervised fine-tuning
-- close domain chat bot
+- finetuning tips - ULMFit
 
 
 [BERT Explained: State of the art language model for NLP](https://towardsdatascience.com/bert-explained-state-of-the-art-language-model-for-nlp-f8b21a9b6270)
@@ -45,7 +46,7 @@ self-supervised learning is important area because it can greatly reduce the eff
 [Transfer learning using elmo embedding](https://towardsdatascience.com/transfer-learning-using-elmo-embedding-c4a7e415103c)
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTAzNzM1MDM1MCwxNTU5OTMzOTQ2LC0xMT
+eyJoaXN0b3J5IjpbLTE2MDQ1MDI1MywxNTU5OTMzOTQ2LC0xMT
 Y2MzUwNDc2LDk1NzMyMTQyOCwtMTI4MjQ4NTc0MywtMjE0NzA0
 MjA4MywtNjY3Mzg4ODMsLTE2Njg0MzI0OTddfQ==
 -->
