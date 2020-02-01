@@ -1,20 +1,25 @@
 # NLP transfer learning
 
-Hi! I'm your first Markdown file in **StackEdit**. If you want to learn about StackEdit, you can read me. If you want to play with Markdown, you can edit me. Once you have finished with me, you can create new files by opening the **file explorer** on the left corner of the navigation bar.
+
+self-supervised learning is important area because it can greatly reduce the effort of training deep model, 
 
 
 ## Transfer learning
-### Unsupervised learning
-- labeled training data is expensive
+
+
+### self-supervised learning
+- Why?
+	- labeled training data is expensive
 
 - from static embedding to dynamic embedding
 	- static encoding - word2vec, glove
 	- dynamic encoding - elmo, bert
-	task design: 
-		- Masked LM(bidirectional + prevent from see itself indirectly), NSP
-		- ELECTRA
-		- 
-- transformer 
+
+- task design (object functions) for self-supervised learning
+	- Language model
+	- bidirectional LM
+	- MLM, NSP
+	- GAN (ELATRA)
 
 
 ### Supervised fine-tuning
@@ -40,7 +45,7 @@ Hi! I'm your first Markdown file in **StackEdit**. If you want to learn about St
 [Transfer learning using elmo embedding](https://towardsdatascience.com/transfer-learning-using-elmo-embedding-c4a7e415103c)
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTU1OTkzMzk0NiwtMTE2NjM1MDQ3Niw5NT
-czMjE0MjgsLTEyODI0ODU3NDMsLTIxNDcwNDIwODMsLTY2NzM4
-ODgzLC0xNjY4NDMyNDk3XX0=
+eyJoaXN0b3J5IjpbMTAzNzM1MDM1MCwxNTU5OTMzOTQ2LC0xMT
+Y2MzUwNDc2LDk1NzMyMTQyOCwtMTI4MjQ4NTc0MywtMjE0NzA0
+MjA4MywtNjY3Mzg4ODMsLTE2Njg0MzI0OTddfQ==
 -->
