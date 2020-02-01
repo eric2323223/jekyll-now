@@ -7,11 +7,15 @@ self-supervised learning is important area because it can greatly reduce the eff
 ## Transfer learning
 - what?
 - why?
-- 	- labeled training data is very expensive
+	- labeled training data is very expensive
 	- To save training efforts (save money and time)
+	- Transfer learning has been successful in CV tasks
 - how?
-## 
-### self-supervised learning自监督学习
+	- pretraining - generate embeddings
+	- supervised finetuning - train for downstream tasks
+
+### pretraining
+self-supervised learning自监督学习
 - from static embedding to dynamic embedding
 	- static encoding - word2vec, glove
 	- dynamic encoding - elmo, bert
@@ -46,7 +50,7 @@ self-supervised learning is important area because it can greatly reduce the eff
 [Transfer learning using elmo embedding](https://towardsdatascience.com/transfer-learning-using-elmo-embedding-c4a7e415103c)
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2MDQ1MDI1MywxNTU5OTMzOTQ2LC0xMT
-Y2MzUwNDc2LDk1NzMyMTQyOCwtMTI4MjQ4NTc0MywtMjE0NzA0
-MjA4MywtNjY3Mzg4ODMsLTE2Njg0MzI0OTddfQ==
+eyJoaXN0b3J5IjpbNzQxNjIxNzM5LDE1NTk5MzM5NDYsLTExNj
+YzNTA0NzYsOTU3MzIxNDI4LC0xMjgyNDg1NzQzLC0yMTQ3MDQy
+MDgzLC02NjczODg4MywtMTY2ODQzMjQ5N119
 -->
