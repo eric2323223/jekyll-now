@@ -34,7 +34,7 @@ self-supervised learning自监督学习
 - tools: TF-hub
 
 ### Example
-
+- 
 
 [BERT Explained: State of the art language model for NLP](https://towardsdatascience.com/bert-explained-state-of-the-art-language-model-for-nlp-f8b21a9b6270)
 [NLP预训练演进 - from Word2Vec to XLNet](https://zhuanlan.zhihu.com/p/93343298)
@@ -55,7 +55,7 @@ self-supervised learning自监督学习
 [Transfer learning using elmo embedding](https://towardsdatascience.com/transfer-learning-using-elmo-embedding-c4a7e415103c)
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTc4NTU2MzYzMiwxNTU5OTMzOTQ2LC0xMT
-Y2MzUwNDc2LDk1NzMyMTQyOCwtMTI4MjQ4NTc0MywtMjE0NzA0
-MjA4MywtNjY3Mzg4ODMsLTE2Njg0MzI0OTddfQ==
+eyJoaXN0b3J5IjpbLTE3MzE1NzcwOTEsMTU1OTkzMzk0NiwtMT
+E2NjM1MDQ3Niw5NTczMjE0MjgsLTEyODI0ODU3NDMsLTIxNDcw
+NDIwODMsLTY2NzM4ODgzLC0xNjY4NDMyNDk3XX0=
 -->
