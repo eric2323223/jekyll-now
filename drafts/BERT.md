@@ -54,8 +54,9 @@ self-supervised learning自监督学习
 [An In-Depth Tutorial to AllenNLP](https://mlexplained.com/2019/01/30/an-in-depth-tutorial-to-allennlp-from-basics-to-elmo-and-bert/)
 [Transfer learning using elmo embedding](https://towardsdatascience.com/transfer-learning-using-elmo-embedding-c4a7e415103c)
 
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE3MzE1NzcwOTEsMTU1OTkzMzk0NiwtMT
-E2NjM1MDQ3Niw5NTczMjE0MjgsLTEyODI0ODU3NDMsLTIxNDcw
-NDIwODMsLTY2NzM4ODgzLC0xNjY4NDMyNDk3XX0=
+eyJoaXN0b3J5IjpbMTQwMzQ0ODExLDE1NTk5MzM5NDYsLTExNj
+YzNTA0NzYsOTU3MzIxNDI4LC0xMjgyNDg1NzQzLC0yMTQ3MDQy
+MDgzLC02NjczODg4MywtMTY2ODQzMjQ5N119
 -->
