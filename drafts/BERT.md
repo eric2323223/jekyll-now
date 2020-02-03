@@ -13,9 +13,20 @@ self-supervised learning is important area because it can greatly reduce the eff
 - how?
 	- pretraining - generate embeddings
 	- supervised finetuning - train for downstream tasks
+	
+### sequential transfer learning
+- pretraining
+- Adaptation
+- downstream finetuning
 
-### pretraining
-self-supervised learning自监督学习
+## pretraining
+- self-supervised learning自监督学习 based on  Language Model
+	- Many successful pretraining approaches are based on language modeling
+	- Informally, a LM learns Pϴ(text) or Pϴ(text | some other text)
+	- Doesn’t require human annotation
+	- Many languages have enough text to learn high capacity model
+	- Versatile—can learn both sentence and word representations with a variety of
+objective functions
 - from static embedding to dynamic embedding
 	- static encoding - word2vec, glove
 	- dynamic encoding - elmo, bert
@@ -28,8 +39,9 @@ self-supervised learning自监督学习
 - The pretrained model is too complex to use
 	- distillation
 	- 
+## Adaptation
 
-### Supervised fine-tuning
+## Downstream fine-tuning
 - finetuning tips - ULMFit
 - tools: TF-hub
 
@@ -56,7 +68,7 @@ self-supervised learning自监督学习
 [State of transfer learing in NLP](https://ruder.io/state-of-transfer-learning-in-nlp/)
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjg5OTExNzMyLDE1NTk5MzM5NDYsLTExNj
-YzNTA0NzYsOTU3MzIxNDI4LC0xMjgyNDg1NzQzLC0yMTQ3MDQy
-MDgzLC02NjczODg4MywtMTY2ODQzMjQ5N119
+eyJoaXN0b3J5IjpbLTI3NjA5MzI3OCwxNTU5OTMzOTQ2LC0xMT
+Y2MzUwNDc2LDk1NzMyMTQyOCwtMTI4MjQ4NTc0MywtMjE0NzA0
+MjA4MywtNjY3Mzg4ODMsLTE2Njg0MzI0OTddfQ==
 -->
