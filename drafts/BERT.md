@@ -28,8 +28,8 @@ self-supervised learning is important area because it can greatly reduce the eff
 	- Versatile—can learn both sentence and word representations with a variety of
 objective functions
 - from static embedding to dynamic embedding
-	- static encoding - word2vec, glove
-	- dynamic encoding - elmo, bert
+	- static encoding (contextless embedding)- word2vec, glove
+	- dynamic encoding (contextual embedding) - elmo, bert
 
 - task design (training objective) for self-supervised learning
 	- Language model
@@ -68,7 +68,7 @@ objective functions
 [State of transfer learing in NLP](https://ruder.io/state-of-transfer-learning-in-nlp/)
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTI3NjA5MzI3OCwxNTU5OTMzOTQ2LC0xMT
+eyJoaXN0b3J5IjpbLTI0NTA1NjQxNywxNTU5OTMzOTQ2LC0xMT
 Y2MzUwNDc2LDk1NzMyMTQyOCwtMTI4MjQ4NTc0MywtMjE0NzA0
 MjA4MywtNjY3Mzg4ODMsLTE2Njg0MzI0OTddfQ==
 -->
