@@ -53,10 +53,10 @@ self-supervised learning自监督学习
 [VisualGuideToUsingBERT](http://jalammar.github.io/a-visual-guide-to-using-bert-for-the-first-time/)
 [An In-Depth Tutorial to AllenNLP](https://mlexplained.com/2019/01/30/an-in-depth-tutorial-to-allennlp-from-basics-to-elmo-and-bert/)
 [Transfer learning using elmo embedding](https://towardsdatascience.com/transfer-learning-using-elmo-embedding-c4a7e415103c)
-
+[State of transfer learing in NLP](https://ruder.io/state-of-transfer-learning-in-nlp/)
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTQwMzQ0ODExLDE1NTk5MzM5NDYsLTExNj
+eyJoaXN0b3J5IjpbNjg5OTExNzMyLDE1NTk5MzM5NDYsLTExNj
 YzNTA0NzYsOTU3MzIxNDI4LC0xMjgyNDg1NzQzLC0yMTQ3MDQy
 MDgzLC02NjczODg4MywtMTY2ODQzMjQ5N119
 -->
