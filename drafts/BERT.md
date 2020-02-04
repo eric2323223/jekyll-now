@@ -1,4 +1,6 @@
-# NLP transfer learning
+# NLP transfer learning 
+
+
 
 
 self-supervised learning is important area because it can greatly reduce the effort of training deep model, 
@@ -68,7 +70,8 @@ objective functions
 [State of transfer learing in NLP](https://ruder.io/state-of-transfer-learning-in-nlp/)
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTI0NTA1NjQxNywxNTU5OTMzOTQ2LC0xMT
-Y2MzUwNDc2LDk1NzMyMTQyOCwtMTI4MjQ4NTc0MywtMjE0NzA0
-MjA4MywtNjY3Mzg4ODMsLTE2Njg0MzI0OTddfQ==
+eyJoaXN0b3J5IjpbMTIzODgyMTQyMywtMjQ1MDU2NDE3LDE1NT
+k5MzM5NDYsLTExNjYzNTA0NzYsOTU3MzIxNDI4LC0xMjgyNDg1
+NzQzLC0yMTQ3MDQyMDgzLC02NjczODg4MywtMTY2ODQzMjQ5N1
+19
 -->
