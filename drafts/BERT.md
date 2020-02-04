@@ -1,6 +1,7 @@
 # NLP transfer learning 
 
-# From Word2Vec to Elmo to Bert to XLNet
+# From Word2Vec to Elmo to Bert to XLNet?
+# Task design of self-supervised learning?
 
 
 self-supervised learning is important area because it can greatly reduce the effort of training deep model, 
@@ -70,8 +71,8 @@ objective functions
 [State of transfer learing in NLP](https://ruder.io/state-of-transfer-learning-in-nlp/)
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTEwNTk4ODQ4OCwtMjQ1MDU2NDE3LDE1NT
-k5MzM5NDYsLTExNjYzNTA0NzYsOTU3MzIxNDI4LC0xMjgyNDg1
-NzQzLC0yMTQ3MDQyMDgzLC02NjczODg4MywtMTY2ODQzMjQ5N1
-19
+eyJoaXN0b3J5IjpbNzQ3NDQ3ODMyLDExMDU5ODg0ODgsLTI0NT
+A1NjQxNywxNTU5OTMzOTQ2LC0xMTY2MzUwNDc2LDk1NzMyMTQy
+OCwtMTI4MjQ4NTc0MywtMjE0NzA0MjA4MywtNjY3Mzg4ODMsLT
+E2Njg0MzI0OTddfQ==
 -->
