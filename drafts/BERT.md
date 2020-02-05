@@ -9,6 +9,7 @@ self-supervised learning is important area because it can greatly reduce the eff
 ## Transfer learning
 - what?
 - why?
+	- Deep model which has lots of parameters need lots of training data
 	- labeled training data is very expensive
 	- To save training efforts (save money and time)
 	- Transfer learning has been successful in CV tasks
@@ -55,6 +56,7 @@ objective functions
 [nlp中的词向量对比：](https://zhuanlan.zhihu.com/p/56382372)
 [史上最全词向量讲解](https://zhuanlan.zhihu.com/p/75391062)
 [ELECTRA: 超越BERT, 19年最佳NLP预训练模](https://zhuanlan.zhihu.com/p/89763176)
+[从Word Embedding到Bert模型—自然语言处理中的预训练技术发展史](https://zhuanlan.zhihu.com/p/49271699)
 [如何评价BERT-回答](https://www.zhihu.com/question/298203515/answer/516170825)
 [NLP规则改写](https://zhuanlan.zhihu.com/p/47488095)
 [BERT Explained: A Complete Guide with Theory and Tutorial](https://towardsml.com/2019/09/17/bert-explained-a-complete-guide-with-theory-and-tutorial/)
@@ -70,8 +72,8 @@ objective functions
 [State of transfer learing in NLP](https://ruder.io/state-of-transfer-learning-in-nlp/)
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTEzMzYxMTIyOSw3NDc0NDc4MzIsMTEwNT
-k4ODQ4OCwtMjQ1MDU2NDE3LDE1NTk5MzM5NDYsLTExNjYzNTA0
-NzYsOTU3MzIxNDI4LC0xMjgyNDg1NzQzLC0yMTQ3MDQyMDgzLC
-02NjczODg4MywtMTY2ODQzMjQ5N119
+eyJoaXN0b3J5IjpbMTQ1ODIwMTIxMiwxMTMzNjExMjI5LDc0Nz
+Q0NzgzMiwxMTA1OTg4NDg4LC0yNDUwNTY0MTcsMTU1OTkzMzk0
+NiwtMTE2NjM1MDQ3Niw5NTczMjE0MjgsLTEyODI0ODU3NDMsLT
+IxNDcwNDIwODMsLTY2NzM4ODgzLC0xNjY4NDMyNDk3XX0=
 -->
