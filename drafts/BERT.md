@@ -1,8 +1,7 @@
 # NLP transfer learning 
 
-# From Word2Vec to Elmo to Bert to XLNet?
-# Task design of self-supervised learning?
 
+# Training objective of self-supervised learning - From Word2Vec to Elmo to Bert to XLNet
 
 self-supervised learning is important area because it can greatly reduce the effort of training deep model, 
 
@@ -14,7 +13,7 @@ self-supervised learning is important area because it can greatly reduce the eff
 	- To save training efforts (save money and time)
 	- Transfer learning has been successful in CV tasks
 - how?
-	- pretraining - generate embeddings
+	- pretraining - generate embeddings (word embeddings)
 	- supervised finetuning - train for downstream tasks
 	
 ### sequential transfer learning
@@ -71,8 +70,8 @@ objective functions
 [State of transfer learing in NLP](https://ruder.io/state-of-transfer-learning-in-nlp/)
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNzQ3NDQ3ODMyLDExMDU5ODg0ODgsLTI0NT
-A1NjQxNywxNTU5OTMzOTQ2LC0xMTY2MzUwNDc2LDk1NzMyMTQy
-OCwtMTI4MjQ4NTc0MywtMjE0NzA0MjA4MywtNjY3Mzg4ODMsLT
-E2Njg0MzI0OTddfQ==
+eyJoaXN0b3J5IjpbMTEzMzYxMTIyOSw3NDc0NDc4MzIsMTEwNT
+k4ODQ4OCwtMjQ1MDU2NDE3LDE1NTk5MzM5NDYsLTExNjYzNTA0
+NzYsOTU3MzIxNDI4LC0xMjgyNDg1NzQzLC0yMTQ3MDQyMDgzLC
+02NjczODg4MywtMTY2ODQzMjQ5N119
 -->
