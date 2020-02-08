@@ -49,8 +49,9 @@ objective functions
 - tools: TF-hub
 
 ### Example
-- 
 
+[Generalized language model](https://lilianweng.github.io/lil-log/2019/01/31/generalized-language-models.html)
+[How to build openai's GPT2](https://blog.floydhub.com/gpt2/)
 [BERT Explained: State of the art language model for NLP](https://towardsdatascience.com/bert-explained-state-of-the-art-language-model-for-nlp-f8b21a9b6270)
 [NLP预训练演进 - from Word2Vec to XLNet](https://zhuanlan.zhihu.com/p/93343298)
 [nlp中的词向量对比：](https://zhuanlan.zhihu.com/p/56382372)
@@ -72,8 +73,9 @@ objective functions
 [State of transfer learing in NLP](https://ruder.io/state-of-transfer-learning-in-nlp/)
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTQ1ODIwMTIxMiwxMTMzNjExMjI5LDc0Nz
-Q0NzgzMiwxMTA1OTg4NDg4LC0yNDUwNTY0MTcsMTU1OTkzMzk0
-NiwtMTE2NjM1MDQ3Niw5NTczMjE0MjgsLTEyODI0ODU3NDMsLT
-IxNDcwNDIwODMsLTY2NzM4ODgzLC0xNjY4NDMyNDk3XX0=
+eyJoaXN0b3J5IjpbLTgzOTczMjU2MywxNDU4MjAxMjEyLDExMz
+M2MTEyMjksNzQ3NDQ3ODMyLDExMDU5ODg0ODgsLTI0NTA1NjQx
+NywxNTU5OTMzOTQ2LC0xMTY2MzUwNDc2LDk1NzMyMTQyOCwtMT
+I4MjQ4NTc0MywtMjE0NzA0MjA4MywtNjY3Mzg4ODMsLTE2Njg0
+MzI0OTddfQ==
 -->
