@@ -72,10 +72,11 @@ objective functions
 [Transfer learning using elmo embedding](https://towardsdatascience.com/transfer-learning-using-elmo-embedding-c4a7e415103c)
 [State of transfer learing in NLP](https://ruder.io/state-of-transfer-learning-in-nlp/)
 
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTgzOTczMjU2MywxNDU4MjAxMjEyLDExMz
-M2MTEyMjksNzQ3NDQ3ODMyLDExMDU5ODg0ODgsLTI0NTA1NjQx
-NywxNTU5OTMzOTQ2LC0xMTY2MzUwNDc2LDk1NzMyMTQyOCwtMT
-I4MjQ4NTc0MywtMjE0NzA0MjA4MywtNjY3Mzg4ODMsLTE2Njg0
-MzI0OTddfQ==
+eyJoaXN0b3J5IjpbLTE3OTA1MjI5ODEsLTgzOTczMjU2MywxND
+U4MjAxMjEyLDExMzM2MTEyMjksNzQ3NDQ3ODMyLDExMDU5ODg0
+ODgsLTI0NTA1NjQxNywxNTU5OTMzOTQ2LC0xMTY2MzUwNDc2LD
+k1NzMyMTQyOCwtMTI4MjQ4NTc0MywtMjE0NzA0MjA4MywtNjY3
+Mzg4ODMsLTE2Njg0MzI0OTddfQ==
 -->
