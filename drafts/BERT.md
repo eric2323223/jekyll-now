@@ -34,6 +34,10 @@ objective functions
 	- static encoding (contextless embedding)- word2vec, glove
 	- dynamic encoding (contextual embedding) - elmo, bert
 
+- Encoding
+	- character level
+	- BPE
+	- word level
 - task design (training objective) for self-supervised learning
 	- Language model
 	- bidirectional LM
@@ -74,9 +78,9 @@ objective functions
 [Generalized language model: ULMfit&openai GPT](https://www.topbots.com/generalized-language-models-ulmfit-openai-gpt/)
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE3NzI5NDk0OTgsLTgzOTczMjU2MywxND
-U4MjAxMjEyLDExMzM2MTEyMjksNzQ3NDQ3ODMyLDExMDU5ODg0
-ODgsLTI0NTA1NjQxNywxNTU5OTMzOTQ2LC0xMTY2MzUwNDc2LD
-k1NzMyMTQyOCwtMTI4MjQ4NTc0MywtMjE0NzA0MjA4MywtNjY3
-Mzg4ODMsLTE2Njg0MzI0OTddfQ==
+eyJoaXN0b3J5IjpbNjI2NjY3OTYxLC04Mzk3MzI1NjMsMTQ1OD
+IwMTIxMiwxMTMzNjExMjI5LDc0NzQ0NzgzMiwxMTA1OTg4NDg4
+LC0yNDUwNTY0MTcsMTU1OTkzMzk0NiwtMTE2NjM1MDQ3Niw5NT
+czMjE0MjgsLTEyODI0ODU3NDMsLTIxNDcwNDIwODMsLTY2NzM4
+ODgzLC0xNjY4NDMyNDk3XX0=
 -->
