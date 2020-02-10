@@ -71,10 +71,10 @@ objective functions
 [An In-Depth Tutorial to AllenNLP](https://mlexplained.com/2019/01/30/an-in-depth-tutorial-to-allennlp-from-basics-to-elmo-and-bert/)
 [Transfer learning using elmo embedding](https://towardsdatascience.com/transfer-learning-using-elmo-embedding-c4a7e415103c)
 [State of transfer learing in NLP](https://ruder.io/state-of-transfer-learning-in-nlp/)
-
+[Generalized language model: ULMfit&openai GPT](https://www.topbots.com/generalized-language-models-ulmfit-openai-gpt/)
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE3OTA1MjI5ODEsLTgzOTczMjU2MywxND
+eyJoaXN0b3J5IjpbLTE3NzI5NDk0OTgsLTgzOTczMjU2MywxND
 U4MjAxMjEyLDExMzM2MTEyMjksNzQ3NDQ3ODMyLDExMDU5ODg0
 ODgsLTI0NTA1NjQxNywxNTU5OTMzOTQ2LC0xMTY2MzUwNDc2LD
 k1NzMyMTQyOCwtMTI4MjQ4NTc0MywtMjE0NzA0MjA4MywtNjY3
