@@ -33,7 +33,24 @@ objective functions
 - from static embedding to dynamic embedding
 	- static encoding (contextless embedding)- word2vec, glove
 	- dynamic encoding (contextual embedding) - elmo, bert
+- How LM help NLP transfer learning
+	- feature based
+	**Feature-based**指利用语言模型的中间结果也就是LM embedding, 将其作为额外的特征，引入到原任务的模型中。通常feature-based方法包括两步：
 
+		1.  首先在大的语料A上无监督地训练语言模型，训练完毕得到语言模型
+		2.  然后构造task-specific model例如序列标注模型，采用有标记的语料B来有监督地训练task-sepcific model，将语言模型的参数固定，语料B的训练数据经过语言模型得到LM embedding，作为task-specific model的额外特征。ELMo是这方面的典型工作，请参考[2]
+	- fine-tuning
+	Fine-tuning方式是指在已经训练好的语言模型的基础上，加入少量的task-specific parameters, 例如对于分类问题在语言模型基础上加一层softmax网络，然后在新的语料上重新训练来进行fine-tune。例如OpenAI GPT [3] 中采用了这样的方法，模型如下所示
+
+![](https://pic1.zhimg.com/80/v2-8f857288cf73acba9ddb6b3742265144_hd.jpg)
+
+图2 Transformer LM + fine-tuning模型示意图
+
+  
+首先语言模型采用了Transformer Decoder的方法来进行训练，采用文本预测作为语言模型训练任务，训练完毕之后，加一层Linear Project来完成分类/相似度计算等NLP任务。因此总结来说，LM + Fine-Tuning的方法工作包括两步：
+
+1.  构造语言模型，采用大的语料A来训练语言模型
+2.  在语言模型基础上增加少量神经网络层来完成specific task例如序列标注、分类等，然后采用有标记的语料B来有监督地训练模型，这个过程中语言模型的参数并不固定，依然是trainable variables.
 - Encoding
 	- character level
 	- BPE
@@ -76,11 +93,12 @@ objective functions
 [Transfer learning using elmo embedding](https://towardsdatascience.com/transfer-learning-using-elmo-embedding-c4a7e415103c)
 [State of transfer learing in NLP](https://ruder.io/state-of-transfer-learning-in-nlp/)
 [Generalized language model: ULMfit&openai GPT](https://www.topbots.com/generalized-language-models-ulmfit-openai-gpt/)
+[Bert模型及fine-tuning](https://zhuanlan.zhihu.com/p/46833276)
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjI2NjY3OTYxLC04Mzk3MzI1NjMsMTQ1OD
-IwMTIxMiwxMTMzNjExMjI5LDc0NzQ0NzgzMiwxMTA1OTg4NDg4
-LC0yNDUwNTY0MTcsMTU1OTkzMzk0NiwtMTE2NjM1MDQ3Niw5NT
-czMjE0MjgsLTEyODI0ODU3NDMsLTIxNDcwNDIwODMsLTY2NzM4
-ODgzLC0xNjY4NDMyNDk3XX0=
+eyJoaXN0b3J5IjpbMjA3NjQzMzE3MSwtODM5NzMyNTYzLDE0NT
+gyMDEyMTIsMTEzMzYxMTIyOSw3NDc0NDc4MzIsMTEwNTk4ODQ4
+OCwtMjQ1MDU2NDE3LDE1NTk5MzM5NDYsLTExNjYzNTA0NzYsOT
+U3MzIxNDI4LC0xMjgyNDg1NzQzLC0yMTQ3MDQyMDgzLC02Njcz
+ODg4MywtMTY2ODQzMjQ5N119
 -->
