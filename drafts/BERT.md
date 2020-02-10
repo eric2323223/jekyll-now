@@ -20,7 +20,9 @@ self-supervised learning is important area because it can greatly reduce the eff
 ### sequential transfer learning
 - pretraining
 - Adaptation
-- downstream finetuning
+- finetuning
+	- supervised
+	- unsupervised
 
 ## pretraining
 - self-supervised learning自监督学习 based on  Language Model
@@ -96,9 +98,9 @@ objective functions
 [Bert模型及fine-tuning](https://zhuanlan.zhihu.com/p/46833276)
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjA3NjQzMzE3MSwtODM5NzMyNTYzLDE0NT
-gyMDEyMTIsMTEzMzYxMTIyOSw3NDc0NDc4MzIsMTEwNTk4ODQ4
-OCwtMjQ1MDU2NDE3LDE1NTk5MzM5NDYsLTExNjYzNTA0NzYsOT
-U3MzIxNDI4LC0xMjgyNDg1NzQzLC0yMTQ3MDQyMDgzLC02Njcz
-ODg4MywtMTY2ODQzMjQ5N119
+eyJoaXN0b3J5IjpbNjAzMjM2NjQyLC04Mzk3MzI1NjMsMTQ1OD
+IwMTIxMiwxMTMzNjExMjI5LDc0NzQ0NzgzMiwxMTA1OTg4NDg4
+LC0yNDUwNTY0MTcsMTU1OTkzMzk0NiwtMTE2NjM1MDQ3Niw5NT
+czMjE0MjgsLTEyODI0ODU3NDMsLTIxNDcwNDIwODMsLTY2NzM4
+ODgzLC0xNjY4NDMyNDk3XX0=
 -->
