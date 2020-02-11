@@ -66,6 +66,16 @@ objective functions
 	- distillation
 	- 
 ## Adaptation
+GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本相当于一个独立的task，而如果把这些task组合起来学习，那么就是multi-task学习。所特殊的是这些task都是同质的，即它们的目标函数都是一样的，所以可以统一学习。那么当增大数据集后，相当于模型在更多领域上进行了学习，即模型的泛化能力有了进一步的增强。
+### GPT-2 直接做下游任务
+
+除了语言模型上的进展之外，GPT-2还首次尝试了直接用语言模型做下游任务，也就是不用在具体任务上的损失函数。这是如何做到的呢？
+
+比如，如果是summarization任务，那么对于语言模型来说，我加一个新词TL;DR:, 改词前面是context，后面是摘要。那么语言模型遇到这个词后，就能推断出来，接下来要做抽摘要的工作了。
+
+同理，对于translate任务，我们把数据做成 french sentence = english sentence，那么语言模型遇到=的时候，应该能推断出接下来是翻译任务。
+
+虽然在这些任务上，GPT-2都没有达到SOTA的效果，但是效果也是相当可观的。表明了高容量模型在这个方向上的可能性。
 
 ## Downstream fine-tuning
 - finetuning tips - ULMFit
@@ -97,10 +107,11 @@ objective functions
 [Generalized language model: ULMfit&openai GPT](https://www.topbots.com/generalized-language-models-ulmfit-openai-gpt/)
 [Bert模型及fine-tuning](https://zhuanlan.zhihu.com/p/46833276)
 
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjAzMjM2NjQyLC04Mzk3MzI1NjMsMTQ1OD
-IwMTIxMiwxMTMzNjExMjI5LDc0NzQ0NzgzMiwxMTA1OTg4NDg4
-LC0yNDUwNTY0MTcsMTU1OTkzMzk0NiwtMTE2NjM1MDQ3Niw5NT
-czMjE0MjgsLTEyODI0ODU3NDMsLTIxNDcwNDIwODMsLTY2NzM4
-ODgzLC0xNjY4NDMyNDk3XX0=
+eyJoaXN0b3J5IjpbNjA3MTcwMzY0LDYwMzIzNjY0MiwtODM5Nz
+MyNTYzLDE0NTgyMDEyMTIsMTEzMzYxMTIyOSw3NDc0NDc4MzIs
+MTEwNTk4ODQ4OCwtMjQ1MDU2NDE3LDE1NTk5MzM5NDYsLTExNj
+YzNTA0NzYsOTU3MzIxNDI4LC0xMjgyNDg1NzQzLC0yMTQ3MDQy
+MDgzLC02NjczODg4MywtMTY2ODQzMjQ5N119
 -->
