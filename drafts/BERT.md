@@ -106,12 +106,12 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [State of transfer learing in NLP](https://ruder.io/state-of-transfer-learning-in-nlp/)
 [Generalized language model: ULMfit&openai GPT](https://www.topbots.com/generalized-language-models-ulmfit-openai-gpt/)
 [Bert模型及fine-tuning](https://zhuanlan.zhihu.com/p/46833276)
-
+[Openai GPT2 详解](https://zhuanlan.zhihu.com/p/57251615)
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjA3MTcwMzY0LDYwMzIzNjY0MiwtODM5Nz
-MyNTYzLDE0NTgyMDEyMTIsMTEzMzYxMTIyOSw3NDc0NDc4MzIs
-MTEwNTk4ODQ4OCwtMjQ1MDU2NDE3LDE1NTk5MzM5NDYsLTExNj
-YzNTA0NzYsOTU3MzIxNDI4LC0xMjgyNDg1NzQzLC0yMTQ3MDQy
-MDgzLC02NjczODg4MywtMTY2ODQzMjQ5N119
+eyJoaXN0b3J5IjpbLTc1MzU1OTI3Miw2MDMyMzY2NDIsLTgzOT
+czMjU2MywxNDU4MjAxMjEyLDExMzM2MTEyMjksNzQ3NDQ3ODMy
+LDExMDU5ODg0ODgsLTI0NTA1NjQxNywxNTU5OTMzOTQ2LC0xMT
+Y2MzUwNDc2LDk1NzMyMTQyOCwtMTI4MjQ4NTc0MywtMjE0NzA0
+MjA4MywtNjY3Mzg4ODMsLTE2Njg0MzI0OTddfQ==
 -->
