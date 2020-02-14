@@ -107,11 +107,14 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [Generalized language model: ULMfit&openai GPT](https://www.topbots.com/generalized-language-models-ulmfit-openai-gpt/)
 [Bert模型及fine-tuning](https://zhuanlan.zhihu.com/p/46833276)
 [Openai GPT2 详解](https://zhuanlan.zhihu.com/p/57251615)
+[How to make custom AI-generated text with GPT2](https://minimaxir.com/2019/09/howto-gpt2/)
+
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTc1MzU1OTI3Miw2MDMyMzY2NDIsLTgzOT
-czMjU2MywxNDU4MjAxMjEyLDExMzM2MTEyMjksNzQ3NDQ3ODMy
-LDExMDU5ODg0ODgsLTI0NTA1NjQxNywxNTU5OTMzOTQ2LC0xMT
-Y2MzUwNDc2LDk1NzMyMTQyOCwtMTI4MjQ4NTc0MywtMjE0NzA0
-MjA4MywtNjY3Mzg4ODMsLTE2Njg0MzI0OTddfQ==
+eyJoaXN0b3J5IjpbMTEyODI1NTUzMSwtNzUzNTU5MjcyLDYwMz
+IzNjY0MiwtODM5NzMyNTYzLDE0NTgyMDEyMTIsMTEzMzYxMTIy
+OSw3NDc0NDc4MzIsMTEwNTk4ODQ4OCwtMjQ1MDU2NDE3LDE1NT
+k5MzM5NDYsLTExNjYzNTA0NzYsOTU3MzIxNDI4LC0xMjgyNDg1
+NzQzLC0yMTQ3MDQyMDgzLC02NjczODg4MywtMTY2ODQzMjQ5N1
+19
 -->
