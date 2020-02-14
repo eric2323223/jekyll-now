@@ -108,10 +108,10 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [Bert模型及fine-tuning](https://zhuanlan.zhihu.com/p/46833276)
 [Openai GPT2 详解](https://zhuanlan.zhihu.com/p/57251615)
 [How to make custom AI-generated text with GPT2](https://minimaxir.com/2019/09/howto-gpt2/)
-
+[GPT2: Understand language generation through visualization](https://towardsdatascience.com/openai-gpt-2-understanding-language-generation-through-visualization-8252f683b2f8)
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTEyODI1NTUzMSwtNzUzNTU5MjcyLDYwMz
+eyJoaXN0b3J5IjpbLTY5NTY4MTg4NSwtNzUzNTU5MjcyLDYwMz
 IzNjY0MiwtODM5NzMyNTYzLDE0NTgyMDEyMTIsMTEzMzYxMTIy
 OSw3NDc0NDc4MzIsMTEwNTk4ODQ4OCwtMjQ1MDU2NDE3LDE1NT
 k5MzM5NDYsLTExNjYzNTA0NzYsOTU3MzIxNDI4LC0xMjgyNDg1
