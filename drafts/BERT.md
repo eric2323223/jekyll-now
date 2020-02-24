@@ -110,11 +110,14 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [How to make custom AI-generated text with GPT2](https://minimaxir.com/2019/09/howto-gpt2/)
 [GPT2: Understand language generation through visualization](https://towardsdatascience.com/openai-gpt-2-understanding-language-generation-through-visualization-8252f683b2f8)
 [GPT为什么不能双向？](https://www.zhihu.com/question/322034410/answer/794201004)
+[📚The Current Best of Universal Word Embeddings and Sentence Embeddings](https://medium.com/huggingface/universal-word-sentence-embeddings-ce48ddc8fc3a)
+[🦄 How to build a State-of-the-Art Conversational AI with Transfer Learning](https://medium.com/huggingface/how-to-build-a-state-of-the-art-conversational-ai-with-transfer-learning-2d818ac26313)
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTYzODQ0NDg2MiwtNzUzNTU5MjcyLDYwMz
-IzNjY0MiwtODM5NzMyNTYzLDE0NTgyMDEyMTIsMTEzMzYxMTIy
-OSw3NDc0NDc4MzIsMTEwNTk4ODQ4OCwtMjQ1MDU2NDE3LDE1NT
-k5MzM5NDYsLTExNjYzNTA0NzYsOTU3MzIxNDI4LC0xMjgyNDg1
-NzQzLC0yMTQ3MDQyMDgzLC02NjczODg4MywtMTY2ODQzMjQ5N1
-19
+eyJoaXN0b3J5IjpbNTQ1OTA2ODkxLC02Mzg0NDQ4NjIsLTc1Mz
+U1OTI3Miw2MDMyMzY2NDIsLTgzOTczMjU2MywxNDU4MjAxMjEy
+LDExMzM2MTEyMjksNzQ3NDQ3ODMyLDExMDU5ODg0ODgsLTI0NT
+A1NjQxNywxNTU5OTMzOTQ2LC0xMTY2MzUwNDc2LDk1NzMyMTQy
+OCwtMTI4MjQ4NTc0MywtMjE0NzA0MjA4MywtNjY3Mzg4ODMsLT
+E2Njg0MzI0OTddfQ==
 -->
