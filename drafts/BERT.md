@@ -112,12 +112,12 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [GPT为什么不能双向？](https://www.zhihu.com/question/322034410/answer/794201004)
 [📚The Current Best of Universal Word Embeddings and Sentence Embeddings](https://medium.com/huggingface/universal-word-sentence-embeddings-ce48ddc8fc3a)
 [🦄 How to build a State-of-the-Art Conversational AI with Transfer Learning](https://medium.com/huggingface/how-to-build-a-state-of-the-art-conversational-ai-with-transfer-learning-2d818ac26313)
-
+[Practical Applications of Open AI’s GPT-2 Deep Learning Model](https://medium.com/the-research-nest/practical-applications-of-open-ais-gpt-2-deep-learning-model-14701f18a432)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTQ1OTA2ODkxLC02Mzg0NDQ4NjIsLTc1Mz
-U1OTI3Miw2MDMyMzY2NDIsLTgzOTczMjU2MywxNDU4MjAxMjEy
-LDExMzM2MTEyMjksNzQ3NDQ3ODMyLDExMDU5ODg0ODgsLTI0NT
-A1NjQxNywxNTU5OTMzOTQ2LC0xMTY2MzUwNDc2LDk1NzMyMTQy
-OCwtMTI4MjQ4NTc0MywtMjE0NzA0MjA4MywtNjY3Mzg4ODMsLT
-E2Njg0MzI0OTddfQ==
+eyJoaXN0b3J5IjpbMTA4NDY2NzgwNSwtNjM4NDQ0ODYyLC03NT
+M1NTkyNzIsNjAzMjM2NjQyLC04Mzk3MzI1NjMsMTQ1ODIwMTIx
+MiwxMTMzNjExMjI5LDc0NzQ0NzgzMiwxMTA1OTg4NDg4LC0yND
+UwNTY0MTcsMTU1OTkzMzk0NiwtMTE2NjM1MDQ3Niw5NTczMjE0
+MjgsLTEyODI0ODU3NDMsLTIxNDcwNDIwODMsLTY2NzM4ODgzLC
+0xNjY4NDMyNDk3XX0=
 -->
