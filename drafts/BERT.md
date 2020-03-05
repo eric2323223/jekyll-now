@@ -113,11 +113,12 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [📚The Current Best of Universal Word Embeddings and Sentence Embeddings](https://medium.com/huggingface/universal-word-sentence-embeddings-ce48ddc8fc3a)
 [🦄 How to build a State-of-the-Art Conversational AI with Transfer Learning](https://medium.com/huggingface/how-to-build-a-state-of-the-art-conversational-ai-with-transfer-learning-2d818ac26313)
 [Practical Applications of Open AI’s GPT-2 Deep Learning Model](https://medium.com/the-research-nest/practical-applications-of-open-ais-gpt-2-deep-learning-model-14701f18a432)
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTA4NDY2NzgwNSwtNjM4NDQ0ODYyLC03NT
-M1NTkyNzIsNjAzMjM2NjQyLC04Mzk3MzI1NjMsMTQ1ODIwMTIx
-MiwxMTMzNjExMjI5LDc0NzQ0NzgzMiwxMTA1OTg4NDg4LC0yND
-UwNTY0MTcsMTU1OTkzMzk0NiwtMTE2NjM1MDQ3Niw5NTczMjE0
-MjgsLTEyODI0ODU3NDMsLTIxNDcwNDIwODMsLTY2NzM4ODgzLC
-0xNjY4NDMyNDk3XX0=
+eyJoaXN0b3J5IjpbNzIyMjkzMzg3LDEwODQ2Njc4MDUsLTYzOD
+Q0NDg2MiwtNzUzNTU5MjcyLDYwMzIzNjY0MiwtODM5NzMyNTYz
+LDE0NTgyMDEyMTIsMTEzMzYxMTIyOSw3NDc0NDc4MzIsMTEwNT
+k4ODQ4OCwtMjQ1MDU2NDE3LDE1NTk5MzM5NDYsLTExNjYzNTA0
+NzYsOTU3MzIxNDI4LC0xMjgyNDg1NzQzLC0yMTQ3MDQyMDgzLC
+02NjczODg4MywtMTY2ODQzMjQ5N119
 -->
