@@ -1,6 +1,6 @@
 # NLP transfer learning 
 
-# How BERT is built and its application
+# NLP的迁移学习-BERT篇
 
 # Training objective of self-supervised learning - From Word2Vec to Elmo to Bert to XLNet
 
@@ -10,6 +10,7 @@ self-supervised learning is important area because it can greatly reduce the eff
 ## 预训练模型的诞生
 迁移学习在计算机视觉cv领域取得的成功让人们思考如何让它帮助NLP
 ### NLP的迁移学习
+我们知道在CV中的迁移学习过程是首先训练一个通用的的图像特征提取模型（如VGG， resnet等），再结合下游任务需要通过扩展第一阶段的模型来进行fine tuning。进行与CV任务类似，应用迁移学习解决NLP问题也可以分为两个阶段。首先通过预训练学习出
 #### 预训练
 - output: embeddings
 	- static embedding
@@ -19,10 +20,12 @@ self-supervised learning is important area because it can greatly reduce the eff
 	- 
 #### fine tune
 ## BERT简介
+BERT是一个预训练模型，它可以提取输入序列的上下文信息，
 ### BERT的目标
 
 
 ## BERT模型结构-transformer encoder
+
 ## BERT的预训练
 - MLM
 - NSP
@@ -162,7 +165,7 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [BERT Explained](https://towardsdatascience.com/bert-explained-state-of-the-art-language-model-for-nlp-f8b21a9b6270)
 [Zero shot GPT2](https://rakeshchada.github.io/Zero-Shot-GPT-2.html)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTA2MDg5MDI2NCwxOTU1ODYzMDc5LC00Nz
+eyJoaXN0b3J5IjpbLTE5MjI0NjEyMSwxOTU1ODYzMDc5LC00Nz
 Y4NzIyNDUsMTA4NDY2NzgwNSwtNjM4NDQ0ODYyLC03NTM1NTky
 NzIsNjAzMjM2NjQyLC04Mzk3MzI1NjMsMTQ1ODIwMTIxMiwxMT
 MzNjExMjI5LDc0NzQ0NzgzMiwxMTA1OTg4NDg4LC0yNDUwNTY0
