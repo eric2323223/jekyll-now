@@ -1,9 +1,22 @@
 # NLP transfer learning 
 
+# How BERT is built and its application
 
 # Training objective of self-supervised learning - From Word2Vec to Elmo to Bert to XLNet
 
 self-supervised learning is important area because it can greatly reduce the effort of training deep model, 
+
+作为NLP迁移学习的成功应用，BERT证明了。。。本文旨在介绍BERT模型的结构和设计原理，以及BERT的应用。
+## 预训练模型的诞生
+## BERT简介
+### BERT的目标
+
+
+## 
+
+
+
+
 
 
 ## Transfer learning
@@ -117,10 +130,11 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [BERT explained](https://towardsdatascience.com/bert-explained-state-of-the-art-language-model-for-nlp-f8b21a9b6270)
 [BERT Explained](https://towardsdatascience.com/bert-explained-state-of-the-art-language-model-for-nlp-f8b21a9b6270)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTk1NTg2MzA3OSwtNDc2ODcyMjQ1LDEwOD
-Q2Njc4MDUsLTYzODQ0NDg2MiwtNzUzNTU5MjcyLDYwMzIzNjY0
-MiwtODM5NzMyNTYzLDE0NTgyMDEyMTIsMTEzMzYxMTIyOSw3ND
-c0NDc4MzIsMTEwNTk4ODQ4OCwtMjQ1MDU2NDE3LDE1NTk5MzM5
-NDYsLTExNjYzNTA0NzYsOTU3MzIxNDI4LC0xMjgyNDg1NzQzLC
-0yMTQ3MDQyMDgzLC02NjczODg4MywtMTY2ODQzMjQ5N119
+eyJoaXN0b3J5IjpbLTExMTA3MjQyNjQsMTk1NTg2MzA3OSwtND
+c2ODcyMjQ1LDEwODQ2Njc4MDUsLTYzODQ0NDg2MiwtNzUzNTU5
+MjcyLDYwMzIzNjY0MiwtODM5NzMyNTYzLDE0NTgyMDEyMTIsMT
+EzMzYxMTIyOSw3NDc0NDc4MzIsMTEwNTk4ODQ4OCwtMjQ1MDU2
+NDE3LDE1NTk5MzM5NDYsLTExNjYzNTA0NzYsOTU3MzIxNDI4LC
+0xMjgyNDg1NzQzLC0yMTQ3MDQyMDgzLC02NjczODg4MywtMTY2
+ODQzMjQ5N119
 -->
