@@ -8,11 +8,19 @@ self-supervised learning is important area because it can greatly reduce the eff
 
 作为NLP迁移学习的成功应用，BERT证明了。。。本文旨在介绍BERT模型的结构和设计原理，以及BERT的应用。
 ## 预训练模型的诞生
+迁移学习在计算机视觉cv领域取得的成功让人们思考如何让它帮助NLP
+### NLP预训练
+- output: embeddings
+	- static embedding
+	- dynamic embedding
+- self-supervised learning
+	- Language model based 
+	- 
 ## BERT简介
 ### BERT的目标
 
 
-## 
+## BERT模型结构-transformer encoder
 
 
 
@@ -130,11 +138,11 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [BERT explained](https://towardsdatascience.com/bert-explained-state-of-the-art-language-model-for-nlp-f8b21a9b6270)
 [BERT Explained](https://towardsdatascience.com/bert-explained-state-of-the-art-language-model-for-nlp-f8b21a9b6270)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTExMTA3MjQyNjQsMTk1NTg2MzA3OSwtND
-c2ODcyMjQ1LDEwODQ2Njc4MDUsLTYzODQ0NDg2MiwtNzUzNTU5
-MjcyLDYwMzIzNjY0MiwtODM5NzMyNTYzLDE0NTgyMDEyMTIsMT
-EzMzYxMTIyOSw3NDc0NDc4MzIsMTEwNTk4ODQ4OCwtMjQ1MDU2
-NDE3LDE1NTk5MzM5NDYsLTExNjYzNTA0NzYsOTU3MzIxNDI4LC
-0xMjgyNDg1NzQzLC0yMTQ3MDQyMDgzLC02NjczODg4MywtMTY2
-ODQzMjQ5N119
+eyJoaXN0b3J5IjpbLTc1NTgxMzA0MiwxOTU1ODYzMDc5LC00Nz
+Y4NzIyNDUsMTA4NDY2NzgwNSwtNjM4NDQ0ODYyLC03NTM1NTky
+NzIsNjAzMjM2NjQyLC04Mzk3MzI1NjMsMTQ1ODIwMTIxMiwxMT
+MzNjExMjI5LDc0NzQ0NzgzMiwxMTA1OTg4NDg4LC0yNDUwNTY0
+MTcsMTU1OTkzMzk0NiwtMTE2NjM1MDQ3Niw5NTczMjE0MjgsLT
+EyODI0ODU3NDMsLTIxNDcwNDIwODMsLTY2NzM4ODgzLC0xNjY4
+NDMyNDk3XX0=
 -->
