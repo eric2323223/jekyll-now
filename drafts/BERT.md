@@ -115,9 +115,9 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [Practical Applications of Open AI’s GPT-2 Deep Learning Model](https://medium.com/the-research-nest/practical-applications-of-open-ais-gpt-2-deep-learning-model-14701f18a432)
 [Unsupervised NER with BERT](https://www.quora.com/q/idpysofgzpanjxuh/Unsupervised-NER-using-BERT)
 [BERT explained](https://towardsdatascience.com/bert-explained-state-of-the-art-language-model-for-nlp-f8b21a9b6270)
-
+[BERT Explained](https://towardsdatascience.com/bert-explained-state-of-the-art-language-model-for-nlp-f8b21a9b6270)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTY0NDU0NTg0NywtNDc2ODcyMjQ1LDEwOD
+eyJoaXN0b3J5IjpbMTk1NTg2MzA3OSwtNDc2ODcyMjQ1LDEwOD
 Q2Njc4MDUsLTYzODQ0NDg2MiwtNzUzNTU5MjcyLDYwMzIzNjY0
 MiwtODM5NzMyNTYzLDE0NTgyMDEyMTIsMTEzMzYxMTIyOSw3ND
 c0NDc4MzIsMTEwNTk4ODQ4OCwtMjQ1MDU2NDE3LDE1NTk5MzM5
