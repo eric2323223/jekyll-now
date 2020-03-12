@@ -171,15 +171,16 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [Practical Applications of Open AI’s GPT-2 Deep Learning Model](https://medium.com/the-research-nest/practical-applications-of-open-ais-gpt-2-deep-learning-model-14701f18a432)
 [Unsupervised NER with BERT](https://www.quora.com/q/idpysofgzpanjxuh/Unsupervised-NER-using-BERT)
 [BERT explained](https://towardsdatascience.com/bert-explained-state-of-the-art-language-model-for-nlp-f8b21a9b6270)
-[BERT Explained](https://towardsdatascience.com/bert-explained-state-of-the-art-language-model-for-nlp-f8b21a9b6270)
 [Zero shot GPT2](https://rakeshchada.github.io/Zero-Shot-GPT-2.html)
 [Practical Applications of Open AI’s GPT-2 Deep Learning Model](https://medium.com/the-research-nest/practical-applications-of-open-ais-gpt-2-deep-learning-model-14701f18a432)
+[Understanding BERT Part 2: BERT Specifics](https://medium.com/dissecting-bert/dissecting-bert-part2-335ff2ed9c73)
+[Google BERT — Pre Training and Fine Tuning for NLP Tasks](https://medium.com/@ranko.mosic/googles-bert-nlp-5b2bb1236d78)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTczNDAwMDkwMywzNTEyODQzMiwtNjE0MT
-k3NzIxLC0xOTIyNDYxMjEsMTk1NTg2MzA3OSwtNDc2ODcyMjQ1
-LDEwODQ2Njc4MDUsLTYzODQ0NDg2MiwtNzUzNTU5MjcyLDYwMz
-IzNjY0MiwtODM5NzMyNTYzLDE0NTgyMDEyMTIsMTEzMzYxMTIy
-OSw3NDc0NDc4MzIsMTEwNTk4ODQ4OCwtMjQ1MDU2NDE3LDE1NT
-k5MzM5NDYsLTExNjYzNTA0NzYsOTU3MzIxNDI4LC0xMjgyNDg1
-NzQzXX0=
+eyJoaXN0b3J5IjpbODI3MjYyNTQsMzUxMjg0MzIsLTYxNDE5Nz
+cyMSwtMTkyMjQ2MTIxLDE5NTU4NjMwNzksLTQ3Njg3MjI0NSwx
+MDg0NjY3ODA1LC02Mzg0NDQ4NjIsLTc1MzU1OTI3Miw2MDMyMz
+Y2NDIsLTgzOTczMjU2MywxNDU4MjAxMjEyLDExMzM2MTEyMjks
+NzQ3NDQ3ODMyLDExMDU5ODg0ODgsLTI0NTA1NjQxNywxNTU5OT
+MzOTQ2LC0xMTY2MzUwNDc2LDk1NzMyMTQyOCwtMTI4MjQ4NTc0
+M119
 -->
