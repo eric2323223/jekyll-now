@@ -7,8 +7,9 @@
 self-supervised learning is important area because it can greatly reduce the effort of training deep model, 
 
 作为NLP迁移学习的成功应用，BERT证明了。。。本文旨在介绍BERT模型的结构和设计原理，以及BERT的应用。
-## 预训练模型的诞生
-迁移学习在计算机视觉cv领域取得的成功让人们思考如何让它帮助NLP
+## 迁移学习-预训练模型的诞生
+![enter image description here](https://miro.medium.com/max/3283/1*Z11P-CjNYWBofEbmGQrptA.png)
+迁移学习旨在通过重用 。。。来加速学习和增强预测的准确性，对于当今越来越复杂的神经网络来说，需要巨大的人力物力和时间成本。。。使用迁移学习是非常有意义的。通过再imagenet训练视觉特征提取网络，数据比较从头训练和使用迁移训练。。。
 ### NLP的迁移学习
 我们知道在CV中的迁移学习过程是首先训练一个通用的的图像特征提取模型（如VGG， resnet等），再结合下游任务需要通过扩展第一阶段的模型来进行fine tuning。进行与CV任务类似，应用迁移学习解决NLP问题也可以分为两个阶段。首先通过预训练学习出
 #### 预训练
@@ -173,11 +174,11 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [BERT Explained](https://towardsdatascience.com/bert-explained-state-of-the-art-language-model-for-nlp-f8b21a9b6270)
 [Zero shot GPT2](https://rakeshchada.github.io/Zero-Shot-GPT-2.html)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTYxNDE5NzcyMSwtMTkyMjQ2MTIxLDE5NT
-U4NjMwNzksLTQ3Njg3MjI0NSwxMDg0NjY3ODA1LC02Mzg0NDQ4
-NjIsLTc1MzU1OTI3Miw2MDMyMzY2NDIsLTgzOTczMjU2MywxND
-U4MjAxMjEyLDExMzM2MTEyMjksNzQ3NDQ3ODMyLDExMDU5ODg0
-ODgsLTI0NTA1NjQxNywxNTU5OTMzOTQ2LC0xMTY2MzUwNDc2LD
-k1NzMyMTQyOCwtMTI4MjQ4NTc0MywtMjE0NzA0MjA4MywtNjY3
-Mzg4ODNdfQ==
+eyJoaXN0b3J5IjpbLTIwMzIxNzA0MzksLTYxNDE5NzcyMSwtMT
+kyMjQ2MTIxLDE5NTU4NjMwNzksLTQ3Njg3MjI0NSwxMDg0NjY3
+ODA1LC02Mzg0NDQ4NjIsLTc1MzU1OTI3Miw2MDMyMzY2NDIsLT
+gzOTczMjU2MywxNDU4MjAxMjEyLDExMzM2MTEyMjksNzQ3NDQ3
+ODMyLDExMDU5ODg0ODgsLTI0NTA1NjQxNywxNTU5OTMzOTQ2LC
+0xMTY2MzUwNDc2LDk1NzMyMTQyOCwtMTI4MjQ4NTc0MywtMjE0
+NzA0MjA4M119
 -->
