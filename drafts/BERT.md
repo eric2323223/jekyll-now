@@ -173,12 +173,13 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [BERT explained](https://towardsdatascience.com/bert-explained-state-of-the-art-language-model-for-nlp-f8b21a9b6270)
 [BERT Explained](https://towardsdatascience.com/bert-explained-state-of-the-art-language-model-for-nlp-f8b21a9b6270)
 [Zero shot GPT2](https://rakeshchada.github.io/Zero-Shot-GPT-2.html)
+[Practical Applications of Open AI’s GPT-2 Deep Learning Model](https://medium.com/the-research-nest/practical-applications-of-open-ais-gpt-2-deep-learning-model-14701f18a432)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzUxMzc4MjI3LDM1MTI4NDMyLC02MTQxOT
-c3MjEsLTE5MjI0NjEyMSwxOTU1ODYzMDc5LC00NzY4NzIyNDUs
-MTA4NDY2NzgwNSwtNjM4NDQ0ODYyLC03NTM1NTkyNzIsNjAzMj
-M2NjQyLC04Mzk3MzI1NjMsMTQ1ODIwMTIxMiwxMTMzNjExMjI5
-LDc0NzQ0NzgzMiwxMTA1OTg4NDg4LC0yNDUwNTY0MTcsMTU1OT
-kzMzk0NiwtMTE2NjM1MDQ3Niw5NTczMjE0MjgsLTEyODI0ODU3
-NDNdfQ==
+eyJoaXN0b3J5IjpbMTczNDAwMDkwMywzNTEyODQzMiwtNjE0MT
+k3NzIxLC0xOTIyNDYxMjEsMTk1NTg2MzA3OSwtNDc2ODcyMjQ1
+LDEwODQ2Njc4MDUsLTYzODQ0NDg2MiwtNzUzNTU5MjcyLDYwMz
+IzNjY0MiwtODM5NzMyNTYzLDE0NTgyMDEyMTIsMTEzMzYxMTIy
+OSw3NDc0NDc4MzIsMTEwNTk4ODQ4OCwtMjQ1MDU2NDE3LDE1NT
+k5MzM5NDYsLTExNjYzNTA0NzYsOTU3MzIxNDI4LC0xMjgyNDg1
+NzQzXX0=
 -->
