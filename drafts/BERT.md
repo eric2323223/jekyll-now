@@ -11,7 +11,7 @@ self-supervised learning is important area because it can greatly reduce the eff
 ![enter image description here](https://miro.medium.com/max/3283/1*Z11P-CjNYWBofEbmGQrptA.png)
 迁移学习旨在通过重用 。。。来加速学习和增强预测的准确性，对于当今越来越复杂的神经网络来说，需要巨大的人力物力和时间成本。。。使用迁移学习是非常有意义的。通过再imagenet训练视觉特征提取网络，数据比较从头训练和使用迁移训练。。。
 ### NLP的迁移学习
-我们知道在CV中的迁移学习过程是首先训练一个通用的的图像特征提取模型（如VGG， resnet等），再结合下游任务需要通过扩展第一阶段的模型来进行fine tuning。进行与CV任务类似，应用迁移学习解决NLP问题也可以分为两个阶段。首先通过预训练学习出可重用的特征提取模型，也叫预训练模型。由于NLP主要关注语言（字符序列）的理解和处理，作为语言基本组成单位的词（word）也就自然成为了预训练的关注点。
+我们知道在CV中的迁移学习过程是首先训练一个通用的的图像特征提取模型（如VGG19， ResNet50等），再结合下游任务需要通过扩展第一阶段的模型来进行fine tuning。进行与CV任务类似，应用迁移学习解决NLP问题也可以分为两个阶段。首先通过预训练学习出可重用的特征提取模型，也叫预训练模型。由于NLP主要关注语言（字符序列）的理解和处理，作为语言基本组成单位的词（word）也就自然成为了预训练的关注点。
 #### 预训练
 - output: embeddings
 	- static embedding
@@ -174,11 +174,11 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [BERT Explained](https://towardsdatascience.com/bert-explained-state-of-the-art-language-model-for-nlp-f8b21a9b6270)
 [Zero shot GPT2](https://rakeshchada.github.io/Zero-Shot-GPT-2.html)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzUxMjg0MzIsLTYxNDE5NzcyMSwtMTkyMj
-Q2MTIxLDE5NTU4NjMwNzksLTQ3Njg3MjI0NSwxMDg0NjY3ODA1
-LC02Mzg0NDQ4NjIsLTc1MzU1OTI3Miw2MDMyMzY2NDIsLTgzOT
-czMjU2MywxNDU4MjAxMjEyLDExMzM2MTEyMjksNzQ3NDQ3ODMy
-LDExMDU5ODg0ODgsLTI0NTA1NjQxNywxNTU5OTMzOTQ2LC0xMT
-Y2MzUwNDc2LDk1NzMyMTQyOCwtMTI4MjQ4NTc0MywtMjE0NzA0
-MjA4M119
+eyJoaXN0b3J5IjpbMzUxMzc4MjI3LDM1MTI4NDMyLC02MTQxOT
+c3MjEsLTE5MjI0NjEyMSwxOTU1ODYzMDc5LC00NzY4NzIyNDUs
+MTA4NDY2NzgwNSwtNjM4NDQ0ODYyLC03NTM1NTkyNzIsNjAzMj
+M2NjQyLC04Mzk3MzI1NjMsMTQ1ODIwMTIxMiwxMTMzNjExMjI5
+LDc0NzQ0NzgzMiwxMTA1OTg4NDg4LC0yNDUwNTY0MTcsMTU1OT
+kzMzk0NiwtMTE2NjM1MDQ3Niw5NTczMjE0MjgsLTEyODI0ODU3
+NDNdfQ==
 -->
