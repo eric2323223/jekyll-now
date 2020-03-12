@@ -28,6 +28,14 @@ BERT是一个预训练模型，它可以提取输入序列的上下文信息，
 
 ## BERT的预训练
 - MLM
+[https://towardsdatascience.com/bert-explained-state-of-the-art-language-model-for-nlp-f8b21a9b6270](https://towardsdatascience.com/bert-explained-state-of-the-art-language-model-for-nlp-f8b21a9b6270)
+Training the language model in BERT is done by predicting 15% of the tokens in the input, that were randomly picked. These tokens are pre-processed as follows — 80% are replaced with a “[MASK]” token, 10% with a random word, and 10% use the original word. The intuition that led the authors to pick this approach is as follows (Thanks to Jacob Devlin from Google for the insight):
+
+-   If we used [MASK] 100% of the time the model wouldn’t necessarily produce good token representations for non-masked words. The non-masked tokens were still used for context, but the model was optimized for predicting masked words.
+-   If we used [MASK] 90% of the time and random words 10% of the time, this would teach the model that the observed word is  _never_  correct.
+-   If we used [MASK] 90% of the time and kept the same word 10% of the time, then the model could just trivially copy the non-contextual embedding.
+
+No ablation was done on the ratios of this approach, and it may have worked better with different ratios. In addition, the model performance wasn’t tested with simply masking 100% of the selected tokens.
 - NSP
 ## BERT的fine tune	
 - sentence classification(sentiment classification)
@@ -165,11 +173,11 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [BERT Explained](https://towardsdatascience.com/bert-explained-state-of-the-art-language-model-for-nlp-f8b21a9b6270)
 [Zero shot GPT2](https://rakeshchada.github.io/Zero-Shot-GPT-2.html)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE5MjI0NjEyMSwxOTU1ODYzMDc5LC00Nz
-Y4NzIyNDUsMTA4NDY2NzgwNSwtNjM4NDQ0ODYyLC03NTM1NTky
-NzIsNjAzMjM2NjQyLC04Mzk3MzI1NjMsMTQ1ODIwMTIxMiwxMT
-MzNjExMjI5LDc0NzQ0NzgzMiwxMTA1OTg4NDg4LC0yNDUwNTY0
-MTcsMTU1OTkzMzk0NiwtMTE2NjM1MDQ3Niw5NTczMjE0MjgsLT
-EyODI0ODU3NDMsLTIxNDcwNDIwODMsLTY2NzM4ODgzLC0xNjY4
-NDMyNDk3XX0=
+eyJoaXN0b3J5IjpbLTYxNDE5NzcyMSwtMTkyMjQ2MTIxLDE5NT
+U4NjMwNzksLTQ3Njg3MjI0NSwxMDg0NjY3ODA1LC02Mzg0NDQ4
+NjIsLTc1MzU1OTI3Miw2MDMyMzY2NDIsLTgzOTczMjU2MywxND
+U4MjAxMjEyLDExMzM2MTEyMjksNzQ3NDQ3ODMyLDExMDU5ODg0
+ODgsLTI0NTA1NjQxNywxNTU5OTMzOTQ2LC0xMTY2MzUwNDc2LD
+k1NzMyMTQyOCwtMTI4MjQ4NTc0MywtMjE0NzA0MjA4MywtNjY3
+Mzg4ODNdfQ==
 -->
