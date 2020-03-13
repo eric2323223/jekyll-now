@@ -26,11 +26,15 @@ self-supervised learning is important area because it can greatly reduce the eff
 - 
 ## BERT简介
 BERT是一个预训练模型，它可以提取输入序列的上下文信息，
-### BERT的目标
+![enter image description here](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6Tpws-svHjCwryVCZcEAxIWZ9LjTrg46pSmBG-mi2DMVwDamd)
 
+- bidirectional
+- context dependent embedding
+- 
 
 ## BERT模型结构-transformer encoder
-
+### embedding layer
+![enter image description here](https://i.stack.imgur.com/QCcYF.png)
 ## BERT的预训练
 - MLM
 [https://towardsdatascience.com/bert-explained-state-of-the-art-language-model-for-nlp-f8b21a9b6270](https://towardsdatascience.com/bert-explained-state-of-the-art-language-model-for-nlp-f8b21a9b6270)
@@ -179,12 +183,13 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [Practical Applications of Open AI’s GPT-2 Deep Learning Model](https://medium.com/the-research-nest/practical-applications-of-open-ais-gpt-2-deep-learning-model-14701f18a432)
 [Understanding BERT Part 2: BERT Specifics](https://medium.com/dissecting-bert/dissecting-bert-part2-335ff2ed9c73)
 [Google BERT — Pre Training and Fine Tuning for NLP Tasks](https://medium.com/@ranko.mosic/googles-bert-nlp-5b2bb1236d78)
+[why BERT has 3 embedding layers?](https://mc.ai/why-bert-has-3-embedding-layers-and-their-implementation-details/)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTg3Mjc0NzQzOCwtNDk0MjgxMDk4LDM1MT
-I4NDMyLC02MTQxOTc3MjEsLTE5MjI0NjEyMSwxOTU1ODYzMDc5
-LC00NzY4NzIyNDUsMTA4NDY2NzgwNSwtNjM4NDQ0ODYyLC03NT
-M1NTkyNzIsNjAzMjM2NjQyLC04Mzk3MzI1NjMsMTQ1ODIwMTIx
-MiwxMTMzNjExMjI5LDc0NzQ0NzgzMiwxMTA1OTg4NDg4LC0yND
-UwNTY0MTcsMTU1OTkzMzk0NiwtMTE2NjM1MDQ3Niw5NTczMjE0
-MjhdfQ==
+eyJoaXN0b3J5IjpbLTE3NzM0ODI1OTUsLTQ5NDI4MTA5OCwzNT
+EyODQzMiwtNjE0MTk3NzIxLC0xOTIyNDYxMjEsMTk1NTg2MzA3
+OSwtNDc2ODcyMjQ1LDEwODQ2Njc4MDUsLTYzODQ0NDg2MiwtNz
+UzNTU5MjcyLDYwMzIzNjY0MiwtODM5NzMyNTYzLDE0NTgyMDEy
+MTIsMTEzMzYxMTIyOSw3NDc0NDc4MzIsMTEwNTk4ODQ4OCwtMj
+Q1MDU2NDE3LDE1NTk5MzM5NDYsLTExNjYzNTA0NzYsOTU3MzIx
+NDI4XX0=
 -->
