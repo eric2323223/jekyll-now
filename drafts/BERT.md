@@ -15,8 +15,13 @@ self-supervised learning is important area because it can greatly reduce the eff
 我们知道在CV中的迁移学习过程是首先训练一个通用的的图像特征提取模型（如VGG19， ResNet50等），再结合下游任务需要通过扩展第一阶段的模型来进行fine tuning。进行与CV任务类似，应用迁移学习解决NLP问题也可以分为两个阶段。首先通过预训练学习出可重用的特征提取模型，也叫预训练模型。由于NLP主要关注语言（字符序列）的理解和处理，作为语言基本组成单位的词（word）也就自然成为了预训练的关注点。预训练的目标经历逐步的发展变化
 #### 预训练
 - output: embeddings
-	- static embedding
-	- dynamic embedding
+	- 静态词编码（static word embedding），比Word2Vec，Glove等，顾名思义这类编码赋予每个词固定的编码值，并且编码值体现了词的代表的含义，我们可以通过对编码值的运算得到有意义的结果，比如著名的例子
+***king — man + woman = queen***
+![enter image description here](https://miro.medium.com/max/634/1*dm9dudL37B6JG8saeR3zIw.png)
+
+	- 语境词编码（contextualized word embedding），静态词编码的最大的问题在于它只能个每一个词一个编码值，无法处理一词多义的情况。将“我爱吃苹果”和“我爱苹果手机”中的苹果赋予相同的编码是不合适的，更好的方式是结合词出现的上下文判断词的含义，这就是
+	
+	
 - self-supervised learning
 	- Language model based 
 	- 单向 - 双向
@@ -46,7 +51,7 @@ BERT是一个预训练模型，它可以提取输入序列的上下文信息，
 ## BERT的预训练
 - add special tokens to input
 	- [CLS]
-	- [SEP]	- 
+	- [SEP]
 	- 
 - MLM
 [https://towardsdatascience.com/bert-explained-state-of-the-art-language-model-for-nlp-f8b21a9b6270](https://towardsdatascience.com/bert-explained-state-of-the-art-language-model-for-nlp-f8b21a9b6270)
@@ -200,11 +205,11 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [Google BERT — Pre Training and Fine Tuning for NLP Tasks](https://medium.com/@ranko.mosic/googles-bert-nlp-5b2bb1236d78)
 [why BERT has 3 embedding layers?](https://mc.ai/why-bert-has-3-embedding-layers-and-their-implementation-details/)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNzAzNzQ5NzA4LDExNjgxNTc4NzcsLTQ5ND
-I4MTA5OCwzNTEyODQzMiwtNjE0MTk3NzIxLC0xOTIyNDYxMjEs
-MTk1NTg2MzA3OSwtNDc2ODcyMjQ1LDEwODQ2Njc4MDUsLTYzOD
-Q0NDg2MiwtNzUzNTU5MjcyLDYwMzIzNjY0MiwtODM5NzMyNTYz
-LDE0NTgyMDEyMTIsMTEzMzYxMTIyOSw3NDc0NDc4MzIsMTEwNT
-k4ODQ4OCwtMjQ1MDU2NDE3LDE1NTk5MzM5NDYsLTExNjYzNTA0
-NzZdfQ==
+eyJoaXN0b3J5IjpbLTE3NjcyNzc2MzgsMTE2ODE1Nzg3NywtND
+k0MjgxMDk4LDM1MTI4NDMyLC02MTQxOTc3MjEsLTE5MjI0NjEy
+MSwxOTU1ODYzMDc5LC00NzY4NzIyNDUsMTA4NDY2NzgwNSwtNj
+M4NDQ0ODYyLC03NTM1NTkyNzIsNjAzMjM2NjQyLC04Mzk3MzI1
+NjMsMTQ1ODIwMTIxMiwxMTMzNjExMjI5LDc0NzQ0NzgzMiwxMT
+A1OTg4NDg4LC0yNDUwNTY0MTcsMTU1OTkzMzk0NiwtMTE2NjM1
+MDQ3Nl19
 -->
