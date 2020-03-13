@@ -26,16 +26,27 @@ self-supervised learning is important area because it can greatly reduce the eff
 - 
 ## BERT简介
 BERT是一个预训练模型，它可以提取输入序列的上下文信息，
-![enter image description here](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6Tpws-svHjCwryVCZcEAxIWZ9LjTrg46pSmBG-mi2DMVwDamd)
+
 
 - bidirectional
 - context dependent embedding
 - 
 
-## BERT模型结构-transformer encoder
+## BERT模型结构
+### Transformer encoder based
+![enter image description here](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6Tpws-svHjCwryVCZcEAxIWZ9LjTrg46pSmBG-mi2DMVwDamd)
+输出是
+
 ### embedding layer
+[https://mc.ai/why-bert-has-3-embedding-layers-and-their-implementation-details/](https://mc.ai/why-bert-has-3-embedding-layers-and-their-implementation-details/)
 ![enter image description here](https://i.stack.imgur.com/QCcYF.png)
+
+
 ## BERT的预训练
+- add special tokens to input
+	- [CLS]
+	- [SEP]	- 
+	- 
 - MLM
 [https://towardsdatascience.com/bert-explained-state-of-the-art-language-model-for-nlp-f8b21a9b6270](https://towardsdatascience.com/bert-explained-state-of-the-art-language-model-for-nlp-f8b21a9b6270)
 Training the language model in BERT is done by predicting 15% of the tokens in the input, that were randomly picked. These tokens are pre-processed as follows — 80% are replaced with a “[MASK]” token, 10% with a random word, and 10% use the original word. The intuition that led the authors to pick this approach is as follows (Thanks to Jacob Devlin from Google for the insight):
@@ -47,9 +58,12 @@ Training the language model in BERT is done by predicting 15% of the tokens in t
 No ablation was done on the ratios of this approach, and it may have worked better with different ratios. In addition, the model performance wasn’t tested with simply masking 100% of the selected tokens.
 - NSP
 ## BERT的fine tune	
-- sentence classification(sentiment classification)
-- token classification NER
-- SQUAD & unsupervised SQUAD
+- how about [CLS] and [SEP]?
+- 
+- downstream tasks
+	- sentence classification(sentiment classification)
+	- token classification NER
+	- SQUAD & unsupervised SQUAD
 
 ## BERT应用
 
@@ -185,11 +199,11 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [Google BERT — Pre Training and Fine Tuning for NLP Tasks](https://medium.com/@ranko.mosic/googles-bert-nlp-5b2bb1236d78)
 [why BERT has 3 embedding layers?](https://mc.ai/why-bert-has-3-embedding-layers-and-their-implementation-details/)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE3NzM0ODI1OTUsLTQ5NDI4MTA5OCwzNT
-EyODQzMiwtNjE0MTk3NzIxLC0xOTIyNDYxMjEsMTk1NTg2MzA3
-OSwtNDc2ODcyMjQ1LDEwODQ2Njc4MDUsLTYzODQ0NDg2MiwtNz
-UzNTU5MjcyLDYwMzIzNjY0MiwtODM5NzMyNTYzLDE0NTgyMDEy
-MTIsMTEzMzYxMTIyOSw3NDc0NDc4MzIsMTEwNTk4ODQ4OCwtMj
-Q1MDU2NDE3LDE1NTk5MzM5NDYsLTExNjYzNTA0NzYsOTU3MzIx
-NDI4XX0=
+eyJoaXN0b3J5IjpbMTE2ODE1Nzg3NywtNDk0MjgxMDk4LDM1MT
+I4NDMyLC02MTQxOTc3MjEsLTE5MjI0NjEyMSwxOTU1ODYzMDc5
+LC00NzY4NzIyNDUsMTA4NDY2NzgwNSwtNjM4NDQ0ODYyLC03NT
+M1NTkyNzIsNjAzMjM2NjQyLC04Mzk3MzI1NjMsMTQ1ODIwMTIx
+MiwxMTMzNjExMjI5LDc0NzQ0NzgzMiwxMTA1OTg4NDg4LC0yND
+UwNTY0MTcsMTU1OTkzMzk0NiwtMTE2NjM1MDQ3Niw5NTczMjE0
+MjhdfQ==
 -->
