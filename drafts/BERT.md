@@ -207,12 +207,13 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [Google BERT — Pre Training and Fine Tuning for NLP Tasks](https://medium.com/@ranko.mosic/googles-bert-nlp-5b2bb1236d78)
 [why BERT has 3 embedding layers?](https://mc.ai/why-bert-has-3-embedding-layers-and-their-implementation-details/)
 [from-pre-trained-word-embeddings-to-pre-trained-language-models-focus-on-bert](https://towardsdatascience.com/from-pre-trained-word-embeddings-to-pre-trained-language-models-focus-on-bert-343815627598)
+[google BERT - pretraining and finetuing for NLP tasks](https://medium.com/@ranko.mosic/googles-bert-nlp-5b2bb1236d78)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjU1OTg2NTcwLC0yMDE5NDg4MjI3LDExNj
-gxNTc4NzcsLTQ5NDI4MTA5OCwzNTEyODQzMiwtNjE0MTk3NzIx
-LC0xOTIyNDYxMjEsMTk1NTg2MzA3OSwtNDc2ODcyMjQ1LDEwOD
-Q2Njc4MDUsLTYzODQ0NDg2MiwtNzUzNTU5MjcyLDYwMzIzNjY0
-MiwtODM5NzMyNTYzLDE0NTgyMDEyMTIsMTEzMzYxMTIyOSw3ND
-c0NDc4MzIsMTEwNTk4ODQ4OCwtMjQ1MDU2NDE3LDE1NTk5MzM5
-NDZdfQ==
+eyJoaXN0b3J5IjpbMzYwMzM5MjIzLDY1NTk4NjU3MCwtMjAxOT
+Q4ODIyNywxMTY4MTU3ODc3LC00OTQyODEwOTgsMzUxMjg0MzIs
+LTYxNDE5NzcyMSwtMTkyMjQ2MTIxLDE5NTU4NjMwNzksLTQ3Nj
+g3MjI0NSwxMDg0NjY3ODA1LC02Mzg0NDQ4NjIsLTc1MzU1OTI3
+Miw2MDMyMzY2NDIsLTgzOTczMjU2MywxNDU4MjAxMjEyLDExMz
+M2MTEyMjksNzQ3NDQ3ODMyLDExMDU5ODg0ODgsLTI0NTA1NjQx
+N119
 -->
