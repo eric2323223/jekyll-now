@@ -65,6 +65,9 @@ No ablation was done on the ratios of this approach, and it may have worked bett
 - NSP
 - optimizer
 [https://towardsdatascience.com/an-intuitive-understanding-of-the-lamb-optimizer-46f8c0ae4866](https://towardsdatascience.com/an-intuitive-understanding-of-the-lamb-optimizer-46f8c0ae4866)
+- size matters
+- 
+
 ## BERT的fine tune	
 - how about [CLS] and [SEP]?
 - 
@@ -75,7 +78,7 @@ No ablation was done on the ratios of this approach, and it may have worked bett
 
 ## BERT应用
 ### environment-colab
-### 
+### DistilBERT
 
 
 ## 总结
@@ -210,7 +213,7 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [from-pre-trained-word-embeddings-to-pre-trained-language-models-focus-on-bert](https://towardsdatascience.com/from-pre-trained-word-embeddings-to-pre-trained-language-models-focus-on-bert-343815627598)
 [google BERT - pretraining and finetuing for NLP tasks](https://medium.com/@ranko.mosic/googles-bert-nlp-5b2bb1236d78)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjc1NTI4NjU2LDY1NTk4NjU3MCwtMjAxOT
+eyJoaXN0b3J5IjpbNDQ1MzAzODU5LDY1NTk4NjU3MCwtMjAxOT
 Q4ODIyNywxMTY4MTU3ODc3LC00OTQyODEwOTgsMzUxMjg0MzIs
 LTYxNDE5NzcyMSwtMTkyMjQ2MTIxLDE5NTU4NjMwNzksLTQ3Nj
 g3MjI0NSwxMDg0NjY3ODA1LC02Mzg0NDQ4NjIsLTc1MzU1OTI3
