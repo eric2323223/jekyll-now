@@ -63,6 +63,8 @@ Training the language model in BERT is done by predicting 15% of the tokens in t
 
 No ablation was done on the ratios of this approach, and it may have worked better with different ratios. In addition, the model performance wasn’t tested with simply masking 100% of the selected tokens.
 - NSP
+- optimizer
+[https://towardsdatascience.com/an-intuitive-understanding-of-the-lamb-optimizer-46f8c0ae4866](https://towardsdatascience.com/an-intuitive-understanding-of-the-lamb-optimizer-46f8c0ae4866)
 ## BERT的fine tune	
 - how about [CLS] and [SEP]?
 - 
@@ -204,12 +206,13 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [Understanding BERT Part 2: BERT Specifics](https://medium.com/dissecting-bert/dissecting-bert-part2-335ff2ed9c73)
 [Google BERT — Pre Training and Fine Tuning for NLP Tasks](https://medium.com/@ranko.mosic/googles-bert-nlp-5b2bb1236d78)
 [why BERT has 3 embedding layers?](https://mc.ai/why-bert-has-3-embedding-layers-and-their-implementation-details/)
+[from-pre-trained-word-embeddings-to-pre-trained-language-models-focus-on-bert](https://towardsdatascience.com/from-pre-trained-word-embeddings-to-pre-trained-language-models-focus-on-bert-343815627598)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwMTk0ODgyMjcsMTE2ODE1Nzg3NywtND
-k0MjgxMDk4LDM1MTI4NDMyLC02MTQxOTc3MjEsLTE5MjI0NjEy
-MSwxOTU1ODYzMDc5LC00NzY4NzIyNDUsMTA4NDY2NzgwNSwtNj
-M4NDQ0ODYyLC03NTM1NTkyNzIsNjAzMjM2NjQyLC04Mzk3MzI1
-NjMsMTQ1ODIwMTIxMiwxMTMzNjExMjI5LDc0NzQ0NzgzMiwxMT
-A1OTg4NDg4LC0yNDUwNTY0MTcsMTU1OTkzMzk0NiwtMTE2NjM1
-MDQ3Nl19
+eyJoaXN0b3J5IjpbNjU1OTg2NTcwLC0yMDE5NDg4MjI3LDExNj
+gxNTc4NzcsLTQ5NDI4MTA5OCwzNTEyODQzMiwtNjE0MTk3NzIx
+LC0xOTIyNDYxMjEsMTk1NTg2MzA3OSwtNDc2ODcyMjQ1LDEwOD
+Q2Njc4MDUsLTYzODQ0NDg2MiwtNzUzNTU5MjcyLDYwMzIzNjY0
+MiwtODM5NzMyNTYzLDE0NTgyMDEyMTIsMTEzMzYxMTIyOSw3ND
+c0NDc4MzIsMTEwNTk4ODQ4OCwtMjQ1MDU2NDE3LDE1NTk5MzM5
+NDZdfQ==
 -->
