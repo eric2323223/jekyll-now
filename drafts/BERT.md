@@ -50,8 +50,8 @@ BERT是一个预训练模型，它可以提取输入序列的上下文信息，
 
 ## BERT的预训练
 - add special tokens to input
-	- [CLS]
-	- [SEP]
+	- [CLS] 用于分类任务
+	- [SEP] 用于分割
 	- 
 - MLM
 [https://towardsdatascience.com/bert-explained-state-of-the-art-language-model-for-nlp-f8b21a9b6270](https://towardsdatascience.com/bert-explained-state-of-the-art-language-model-for-nlp-f8b21a9b6270)
@@ -213,11 +213,11 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [from-pre-trained-word-embeddings-to-pre-trained-language-models-focus-on-bert](https://towardsdatascience.com/from-pre-trained-word-embeddings-to-pre-trained-language-models-focus-on-bert-343815627598)
 [google BERT - pretraining and finetuing for NLP tasks](https://medium.com/@ranko.mosic/googles-bert-nlp-5b2bb1236d78)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNDQ1MzAzODU5LDY1NTk4NjU3MCwtMjAxOT
-Q4ODIyNywxMTY4MTU3ODc3LC00OTQyODEwOTgsMzUxMjg0MzIs
-LTYxNDE5NzcyMSwtMTkyMjQ2MTIxLDE5NTU4NjMwNzksLTQ3Nj
-g3MjI0NSwxMDg0NjY3ODA1LC02Mzg0NDQ4NjIsLTc1MzU1OTI3
-Miw2MDMyMzY2NDIsLTgzOTczMjU2MywxNDU4MjAxMjEyLDExMz
-M2MTEyMjksNzQ3NDQ3ODMyLDExMDU5ODg0ODgsLTI0NTA1NjQx
-N119
+eyJoaXN0b3J5IjpbLTIwMTc4MjcwOCw0NDUzMDM4NTksNjU1OT
+g2NTcwLC0yMDE5NDg4MjI3LDExNjgxNTc4NzcsLTQ5NDI4MTA5
+OCwzNTEyODQzMiwtNjE0MTk3NzIxLC0xOTIyNDYxMjEsMTk1NT
+g2MzA3OSwtNDc2ODcyMjQ1LDEwODQ2Njc4MDUsLTYzODQ0NDg2
+MiwtNzUzNTU5MjcyLDYwMzIzNjY0MiwtODM5NzMyNTYzLDE0NT
+gyMDEyMTIsMTEzMzYxMTIyOSw3NDc0NDc4MzIsMTEwNTk4ODQ4
+OF19
 -->
