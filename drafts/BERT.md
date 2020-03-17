@@ -19,7 +19,7 @@ self-supervised learning is important area because it can greatly reduce the eff
 ***king — man + woman = queen***
 ![enter image description here](https://miro.medium.com/max/634/1*dm9dudL37B6JG8saeR3zIw.png)
 
-	- 语境词编码（contextualized word embedding），静态词编码的最大的问题在于它只能个每一个词一个编码值，无法处理一词多义的情况。将“我爱吃苹果”和“我爱苹果手机”中的苹果赋予相同的编码是不合适的，更合理的方式是通过结合词出现的上下文判断词的含义，比如通过“吃”和“手机”来判断“苹果”分别代表一种水果和一个品牌，这就是语境词编码的基本思想。那么如何
+	- 语境词编码（contextualized word embedding），静态词编码的最大的问题在于它只能个每一个词一个编码值，无法处理一词多义的情况。将“我爱吃苹果”和“我爱苹果手机”中的苹果赋予相同的编码是不合适的，更合理的方式是通过结合词出现的上下文判断词的含义，比如通过“吃”和“手机”来判断上面两句话中的“苹果”分别代表一种水果和一个品牌，这就是语境词编码的基本思想。所以从使用者角度来说，我们需要一个模型能过通过输入语句得到（计算出）该语句的含义，或者该语句中每个词的含义。
 	
 	
 - self-supervised learning
@@ -213,11 +213,11 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [from-pre-trained-word-embeddings-to-pre-trained-language-models-focus-on-bert](https://towardsdatascience.com/from-pre-trained-word-embeddings-to-pre-trained-language-models-focus-on-bert-343815627598)
 [google BERT - pretraining and finetuing for NLP tasks](https://medium.com/@ranko.mosic/googles-bert-nlp-5b2bb1236d78)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwMTc4MjcwOCw0NDUzMDM4NTksNjU1OT
-g2NTcwLC0yMDE5NDg4MjI3LDExNjgxNTc4NzcsLTQ5NDI4MTA5
-OCwzNTEyODQzMiwtNjE0MTk3NzIxLC0xOTIyNDYxMjEsMTk1NT
-g2MzA3OSwtNDc2ODcyMjQ1LDEwODQ2Njc4MDUsLTYzODQ0NDg2
-MiwtNzUzNTU5MjcyLDYwMzIzNjY0MiwtODM5NzMyNTYzLDE0NT
-gyMDEyMTIsMTEzMzYxMTIyOSw3NDc0NDc4MzIsMTEwNTk4ODQ4
-OF19
+eyJoaXN0b3J5IjpbMTQ2NDgxNzkyLDQ0NTMwMzg1OSw2NTU5OD
+Y1NzAsLTIwMTk0ODgyMjcsMTE2ODE1Nzg3NywtNDk0MjgxMDk4
+LDM1MTI4NDMyLC02MTQxOTc3MjEsLTE5MjI0NjEyMSwxOTU1OD
+YzMDc5LC00NzY4NzIyNDUsMTA4NDY2NzgwNSwtNjM4NDQ0ODYy
+LC03NTM1NTkyNzIsNjAzMjM2NjQyLC04Mzk3MzI1NjMsMTQ1OD
+IwMTIxMiwxMTMzNjExMjI5LDc0NzQ0NzgzMiwxMTA1OTg4NDg4
+XX0=
 -->
