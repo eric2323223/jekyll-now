@@ -19,13 +19,12 @@ self-supervised learning is important area because it can greatly reduce the eff
 ***king — man + woman = queen***
 ![enter image description here](https://miro.medium.com/max/634/1*dm9dudL37B6JG8saeR3zIw.png)
 
-	- 语境词编码（contextualized word embedding），静态词编码的最大的问题在于它只能个每一个词一个编码值，无法处理一词多义的情况。将“我爱吃苹果”和“我爱苹果手机”中的苹果赋予相同的编码是不合适的，更合理的方式是通过结合词出现的上下文判断词的含义，比如通过“吃”和“手机”来判断上面两句话中的“苹果”分别代表一种水果和一个品牌，这就是语境词编码的基本思想。所以从使用者角度来说，我们需要一个模型能过通过输入语句得到（计算出）该语句的含义，或者该语句中每个词的含义。
-	
-	
+	- 语境词编码（contextualized word embedding），静态词编码的最大的问题在于它只能个每一个词一个编码值，无法处理一词多义的情况。将“我爱吃苹果”和“我爱苹果手机”中的苹果赋予相同的编码是不合适的，更合理的方式是通过结合词出现的上下文判断词的含义，比如通过“吃”和“手机”来判断上面两句话中的“苹果”分别代表一种水果和一个品牌，这就是语境词编码的基本思想。所以从使用者角度来说，我们需要一个模型能过通过输入语句得到（计算出）该语句的含义，或者该语句中每个词的含义。从这个意义上讲，我们本质上需要的是一种能够提取语义特征的能力，这和CV中的迁移学习的目标是一致的。
+		
 - self-supervised learning
 	- Language model based 
 	- 单向 - 双向
-	- 
+	
 #### fine tune
 - supervised
 - unsupervised
@@ -49,10 +48,7 @@ BERT是一个预训练模型，它可以提取输入序列的上下文信息，
 
 
 ## BERT的预训练
-- add special tokens to input
-	- [CLS] 用于分类任务
-	- [SEP] 用于分割
-	- 
+### 任务设计
 - MLM
 [https://towardsdatascience.com/bert-explained-state-of-the-art-language-model-for-nlp-f8b21a9b6270](https://towardsdatascience.com/bert-explained-state-of-the-art-language-model-for-nlp-f8b21a9b6270)
 Training the language model in BERT is done by predicting 15% of the tokens in the input, that were randomly picked. These tokens are pre-processed as follows — 80% are replaced with a “[MASK]” token, 10% with a random word, and 10% use the original word. The intuition that led the authors to pick this approach is as follows (Thanks to Jacob Devlin from Google for the insight):
@@ -63,7 +59,12 @@ Training the language model in BERT is done by predicting 15% of the tokens in t
 
 No ablation was done on the ratios of this approach, and it may have worked better with different ratios. In addition, the model performance wasn’t tested with simply masking 100% of the selected tokens.
 - NSP
-- optimizer
+### add special tokens to input
+- [CLS] 用于分类任务
+- [SEP] 用于分割
+- 
+
+### optimizer
 [https://towardsdatascience.com/an-intuitive-understanding-of-the-lamb-optimizer-46f8c0ae4866](https://towardsdatascience.com/an-intuitive-understanding-of-the-lamb-optimizer-46f8c0ae4866)
 - size matters
 - 
@@ -213,11 +214,11 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [from-pre-trained-word-embeddings-to-pre-trained-language-models-focus-on-bert](https://towardsdatascience.com/from-pre-trained-word-embeddings-to-pre-trained-language-models-focus-on-bert-343815627598)
 [google BERT - pretraining and finetuing for NLP tasks](https://medium.com/@ranko.mosic/googles-bert-nlp-5b2bb1236d78)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTQ2NDgxNzkyLDQ0NTMwMzg1OSw2NTU5OD
-Y1NzAsLTIwMTk0ODgyMjcsMTE2ODE1Nzg3NywtNDk0MjgxMDk4
-LDM1MTI4NDMyLC02MTQxOTc3MjEsLTE5MjI0NjEyMSwxOTU1OD
-YzMDc5LC00NzY4NzIyNDUsMTA4NDY2NzgwNSwtNjM4NDQ0ODYy
-LC03NTM1NTkyNzIsNjAzMjM2NjQyLC04Mzk3MzI1NjMsMTQ1OD
-IwMTIxMiwxMTMzNjExMjI5LDc0NzQ0NzgzMiwxMTA1OTg4NDg4
+eyJoaXN0b3J5IjpbMTcyMzE0MzY3NSwxNDY0ODE3OTIsNDQ1Mz
+AzODU5LDY1NTk4NjU3MCwtMjAxOTQ4ODIyNywxMTY4MTU3ODc3
+LC00OTQyODEwOTgsMzUxMjg0MzIsLTYxNDE5NzcyMSwtMTkyMj
+Q2MTIxLDE5NTU4NjMwNzksLTQ3Njg3MjI0NSwxMDg0NjY3ODA1
+LC02Mzg0NDQ4NjIsLTc1MzU1OTI3Miw2MDMyMzY2NDIsLTgzOT
+czMjU2MywxNDU4MjAxMjEyLDExMzM2MTEyMjksNzQ3NDQ3ODMy
 XX0=
 -->
