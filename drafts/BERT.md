@@ -61,7 +61,7 @@ No ablation was done on the ratios of this approach, and it may have worked bett
 - NSP
 ### add special tokens to input
 - [CLS] 用于分类任务
-- [SEP] 用于分割
+- [SEP] 用于分割语句
 - 
 
 ### optimizer
@@ -79,6 +79,8 @@ No ablation was done on the ratios of this approach, and it may have worked bett
 
 ## BERT应用
 ### environment-colab
+### huggingface transformer
+### BERT as a service
 ### DistilBERT
 
 
@@ -214,11 +216,11 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [from-pre-trained-word-embeddings-to-pre-trained-language-models-focus-on-bert](https://towardsdatascience.com/from-pre-trained-word-embeddings-to-pre-trained-language-models-focus-on-bert-343815627598)
 [google BERT - pretraining and finetuing for NLP tasks](https://medium.com/@ranko.mosic/googles-bert-nlp-5b2bb1236d78)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTcyMzE0MzY3NSwxNDY0ODE3OTIsNDQ1Mz
-AzODU5LDY1NTk4NjU3MCwtMjAxOTQ4ODIyNywxMTY4MTU3ODc3
-LC00OTQyODEwOTgsMzUxMjg0MzIsLTYxNDE5NzcyMSwtMTkyMj
-Q2MTIxLDE5NTU4NjMwNzksLTQ3Njg3MjI0NSwxMDg0NjY3ODA1
-LC02Mzg0NDQ4NjIsLTc1MzU1OTI3Miw2MDMyMzY2NDIsLTgzOT
-czMjU2MywxNDU4MjAxMjEyLDExMzM2MTEyMjksNzQ3NDQ3ODMy
+eyJoaXN0b3J5IjpbLTY0ODI4ODY5LDE3MjMxNDM2NzUsMTQ2ND
+gxNzkyLDQ0NTMwMzg1OSw2NTU5ODY1NzAsLTIwMTk0ODgyMjcs
+MTE2ODE1Nzg3NywtNDk0MjgxMDk4LDM1MTI4NDMyLC02MTQxOT
+c3MjEsLTE5MjI0NjEyMSwxOTU1ODYzMDc5LC00NzY4NzIyNDUs
+MTA4NDY2NzgwNSwtNjM4NDQ0ODYyLC03NTM1NTkyNzIsNjAzMj
+M2NjQyLC04Mzk3MzI1NjMsMTQ1ODIwMTIxMiwxMTMzNjExMjI5
 XX0=
 -->
