@@ -81,7 +81,7 @@ No ablation was done on the ratios of this approach, and it may have worked bett
 ### environment-colab
  - User BERT base model
  - Tweak: batch size, max length
- - Mixed precision
+ - Mixed precision training
  - Gradient checkpoint
 ### huggingface transformer
 ### BERT as a service
@@ -220,11 +220,11 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [from-pre-trained-word-embeddings-to-pre-trained-language-models-focus-on-bert](https://towardsdatascience.com/from-pre-trained-word-embeddings-to-pre-trained-language-models-focus-on-bert-343815627598)
 [google BERT - pretraining and finetuing for NLP tasks](https://medium.com/@ranko.mosic/googles-bert-nlp-5b2bb1236d78)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTkxODYwNjM3LDE3MjMxNDM2NzUsMTQ2ND
-gxNzkyLDQ0NTMwMzg1OSw2NTU5ODY1NzAsLTIwMTk0ODgyMjcs
-MTE2ODE1Nzg3NywtNDk0MjgxMDk4LDM1MTI4NDMyLC02MTQxOT
-c3MjEsLTE5MjI0NjEyMSwxOTU1ODYzMDc5LC00NzY4NzIyNDUs
-MTA4NDY2NzgwNSwtNjM4NDQ0ODYyLC03NTM1NTkyNzIsNjAzMj
-M2NjQyLC04Mzk3MzI1NjMsMTQ1ODIwMTIxMiwxMTMzNjExMjI5
-XX0=
+eyJoaXN0b3J5IjpbLTM3MDI5MjIzOSwxNzIzMTQzNjc1LDE0Nj
+Q4MTc5Miw0NDUzMDM4NTksNjU1OTg2NTcwLC0yMDE5NDg4MjI3
+LDExNjgxNTc4NzcsLTQ5NDI4MTA5OCwzNTEyODQzMiwtNjE0MT
+k3NzIxLC0xOTIyNDYxMjEsMTk1NTg2MzA3OSwtNDc2ODcyMjQ1
+LDEwODQ2Njc4MDUsLTYzODQ0NDg2MiwtNzUzNTU5MjcyLDYwMz
+IzNjY0MiwtODM5NzMyNTYzLDE0NTgyMDEyMTIsMTEzMzYxMTIy
+OV19
 -->
