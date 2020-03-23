@@ -42,7 +42,7 @@ BERT是一个预训练模型，它可以提取输入序列的上下文信息，
 ### Transformer encoder based
 ![enter image description here](https://miro.medium.com/max/1095/0*ViwaI3Vvbnd-CJSQ.png)
 - 输入
-- 编码
+- 编码层
 - Transformer编码器
 
 
@@ -226,7 +226,7 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [from-pre-trained-word-embeddings-to-pre-trained-language-models-focus-on-bert](https://towardsdatascience.com/from-pre-trained-word-embeddings-to-pre-trained-language-models-focus-on-bert-343815627598)
 [google BERT - pretraining and finetuing for NLP tasks](https://medium.com/@ranko.mosic/googles-bert-nlp-5b2bb1236d78)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE3ODY5MTU4MDMsLTM3MDI5MjIzOSwxNz
+eyJoaXN0b3J5IjpbLTE3NTQwMDg4OTUsLTM3MDI5MjIzOSwxNz
 IzMTQzNjc1LDE0NjQ4MTc5Miw0NDUzMDM4NTksNjU1OTg2NTcw
 LC0yMDE5NDg4MjI3LDExNjgxNTc4NzcsLTQ5NDI4MTA5OCwzNT
 EyODQzMiwtNjE0MTk3NzIxLC0xOTIyNDYxMjEsMTk1NTg2MzA3
