@@ -27,6 +27,7 @@ self-supervised learning is important area because it can greatly reduce the eff
 	
 #### fine tune
 - supervised
+	- 
 - unsupervised
 - 
 ## BERT简介
@@ -39,13 +40,18 @@ BERT是一个预训练模型，它可以提取输入序列的上下文信息，
 
 ## BERT模型结构
 ### Transformer encoder based
-![enter image description here](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6Tpws-svHjCwryVCZcEAxIWZ9LjTrg46pSmBG-mi2DMVwDamd)
-输出是
+![enter image description here](https://miro.medium.com/max/1095/0*ViwaI3Vvbnd-CJSQ.png)
+- 输入
+- 编码
+- Transformer编码器
+
 
 ### embedding layer
 [https://mc.ai/why-bert-has-3-embedding-layers-and-their-implementation-details/](https://mc.ai/why-bert-has-3-embedding-layers-and-their-implementation-details/)
 ![enter image description here](https://i.stack.imgur.com/QCcYF.png)
+### Transformer编码器
 
+### 输出
 
 ## BERT的预训练
 ### 任务设计
@@ -220,11 +226,11 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [from-pre-trained-word-embeddings-to-pre-trained-language-models-focus-on-bert](https://towardsdatascience.com/from-pre-trained-word-embeddings-to-pre-trained-language-models-focus-on-bert-343815627598)
 [google BERT - pretraining and finetuing for NLP tasks](https://medium.com/@ranko.mosic/googles-bert-nlp-5b2bb1236d78)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTM3MDI5MjIzOSwxNzIzMTQzNjc1LDE0Nj
-Q4MTc5Miw0NDUzMDM4NTksNjU1OTg2NTcwLC0yMDE5NDg4MjI3
-LDExNjgxNTc4NzcsLTQ5NDI4MTA5OCwzNTEyODQzMiwtNjE0MT
-k3NzIxLC0xOTIyNDYxMjEsMTk1NTg2MzA3OSwtNDc2ODcyMjQ1
-LDEwODQ2Njc4MDUsLTYzODQ0NDg2MiwtNzUzNTU5MjcyLDYwMz
-IzNjY0MiwtODM5NzMyNTYzLDE0NTgyMDEyMTIsMTEzMzYxMTIy
-OV19
+eyJoaXN0b3J5IjpbLTE3ODY5MTU4MDMsLTM3MDI5MjIzOSwxNz
+IzMTQzNjc1LDE0NjQ4MTc5Miw0NDUzMDM4NTksNjU1OTg2NTcw
+LC0yMDE5NDg4MjI3LDExNjgxNTc4NzcsLTQ5NDI4MTA5OCwzNT
+EyODQzMiwtNjE0MTk3NzIxLC0xOTIyNDYxMjEsMTk1NTg2MzA3
+OSwtNDc2ODcyMjQ1LDEwODQ2Njc4MDUsLTYzODQ0NDg2MiwtNz
+UzNTU5MjcyLDYwMzIzNjY0MiwtODM5NzMyNTYzLDE0NTgyMDEy
+MTJdfQ==
 -->
