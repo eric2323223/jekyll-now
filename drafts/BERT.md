@@ -23,6 +23,7 @@ self-supervised learning is important area because it can greatly reduce the eff
 		
 - self-supervised learning
 Imagenet将超过一千四百万图片通过众包的方式进行人工标注，将他们分成2万多个不同分类，这项从2007年开始的浩大工程为计算机视觉图形相关的监督式机器学习提供了高质量的训练数据，从而为CV迁移学习打下了基础。同样的为了NLP领域也由类似的需求：为每个词建立正确的标签数据来帮助进行监督训练，根据语言的特点，设计了语言模型（Language Model）这种训练任务来进行。。。LM属于自监督（self supervised）训练方法，使用这种训练方法不需要为语句进行人工标注，而只使用语句序列本身就可以进行训练。LM是一种统计方法，用于计算一个序列$W$（由词$w_i, w_2, ... w_m$组成的一句话）出现的概率$$P(W)=P(w_1,w_2,w_3,...w_m)$$LM也可以用于计算在一个序列中某个词$w_{n+1}$出现的概率$$P(w_{n+1}|w_1,w_2, w_3,...w_n)$$
+根据这样一个基本假设：正确的语句出现的概率比不正确的语句出现的概率大
 The good LM should calculate higher probabilities to “real” and “frequently observed” sentences than the ones that are wrong accordingly to natural language grammar or those that are rarely observed.
 -   **Machine translation:**  translating a sentence saying about height it would probably state that  P(tall  man)>P(large  man)P(tall man)>P(large man)  as the ‘_large_’ might also refer to weight or general appearance thus, not as probable as ‘_tall_’
     
@@ -232,11 +233,11 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [google BERT - pretraining and finetuing for NLP tasks](https://medium.com/@ranko.mosic/googles-bert-nlp-5b2bb1236d78)
 [NLP: Explaining Neural language model](https://mchromiak.github.io/articles/2017/Nov/30/Explaining-Neural-Language-Modeling/#.XniDIWgzZPY)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjMxMDM4Mzk0LC0zNzAyOTIyMzksMTcyMz
-E0MzY3NSwxNDY0ODE3OTIsNDQ1MzAzODU5LDY1NTk4NjU3MCwt
-MjAxOTQ4ODIyNywxMTY4MTU3ODc3LC00OTQyODEwOTgsMzUxMj
-g0MzIsLTYxNDE5NzcyMSwtMTkyMjQ2MTIxLDE5NTU4NjMwNzks
-LTQ3Njg3MjI0NSwxMDg0NjY3ODA1LC02Mzg0NDQ4NjIsLTc1Mz
-U1OTI3Miw2MDMyMzY2NDIsLTgzOTczMjU2MywxNDU4MjAxMjEy
-XX0=
+eyJoaXN0b3J5IjpbLTY4Mzk5MzE2NiwtMzcwMjkyMjM5LDE3Mj
+MxNDM2NzUsMTQ2NDgxNzkyLDQ0NTMwMzg1OSw2NTU5ODY1NzAs
+LTIwMTk0ODgyMjcsMTE2ODE1Nzg3NywtNDk0MjgxMDk4LDM1MT
+I4NDMyLC02MTQxOTc3MjEsLTE5MjI0NjEyMSwxOTU1ODYzMDc5
+LC00NzY4NzIyNDUsMTA4NDY2NzgwNSwtNjM4NDQ0ODYyLC03NT
+M1NTkyNzIsNjAzMjM2NjQyLC04Mzk3MzI1NjMsMTQ1ODIwMTIx
+Ml19
 -->
