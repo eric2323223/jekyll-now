@@ -28,8 +28,9 @@ The good LM should calculate higher probabilities to “real” and “frequentl
 -   **Machine translation:**  translating a sentence saying about height it would probably state that  P(tall  man)>P(large  man)P(tall man)>P(large man)  as the ‘_large_’ might also refer to weight or general appearance thus, not as probable as ‘_tall_’
     
 -   **Spelling Correction:**  Spell correcting sentence: “Put you name into form”, so that  P(name  into  form)>P(name  into  from)
-	- 使用LM进行训练，可以按照从前到后的顺序进行预测，$argmax$比如通过“”判断后一个词是“”，也可以按照从后向前的顺序，比如通过“”判断前一个词是“”。
-	- 单向 - 双向
+由此我们选择概率最大的词作为预测值$$\argmax P(w_n|w_1,w_2,w_3,...w_{n-1})$$
+	- 使用LM进行训练，可以按照从前到后的顺序进行预测，比如通过“”判断后一个词是“”，也可以按照从后向前的顺序，$$\argmax P(w_i|w_n,w_{n-1},w_{n-2}, ...w_{i+1})$$比如通过“”判断前一个词是“”。
+	
 	
 #### fine tune
 - supervised
@@ -233,7 +234,7 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [google BERT - pretraining and finetuing for NLP tasks](https://medium.com/@ranko.mosic/googles-bert-nlp-5b2bb1236d78)
 [NLP: Explaining Neural language model](https://mchromiak.github.io/articles/2017/Nov/30/Explaining-Neural-Language-Modeling/#.XniDIWgzZPY)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTI4MDcxMTI1MiwtNjgzOTkzMTY2LC0zNz
+eyJoaXN0b3J5IjpbMTU4MjQ1MTIzNiwtNjgzOTkzMTY2LC0zNz
 AyOTIyMzksMTcyMzE0MzY3NSwxNDY0ODE3OTIsNDQ1MzAzODU5
 LDY1NTk4NjU3MCwtMjAxOTQ4ODIyNywxMTY4MTU3ODc3LC00OT
 QyODEwOTgsMzUxMjg0MzIsLTYxNDE5NzcyMSwtMTkyMjQ2MTIx
