@@ -32,11 +32,14 @@ The good LM should calculate higher probabilities to “real” and “frequentl
 	- 使用LM进行训练，可以按照从前到后的顺序进行预测，比如通过“”判断后一个词是“”，也可以按照从后向前的顺序，$$\argmax P(w_i|w_n,w_{n-1},w_{n-2}, ...w_{i+1})$$比如通过“”判断前一个词是“”。
 	
 	
-#### fine tune
-- supervised
-	- 
-- unsupervised
-- 
+#### 微调 fine tune
+由于使用海量的数据进行预训练，预训练模型通常具有一般的常识，由此作为基础再进行微调，使得模型能更好的适合特定任务。微调工作可以以下两种形式：
+- 监督式微调supervised fine tuning
+使用少量任务相关的标记数据来进行微调，通常的做法是在预训练模型的后面直接加上上一个分类器（由全连接和softmax运算构成）使模型输出一个预测类型，计算cross entropy误差从而通过反向传递更新模型参数。
+- 无监督式微调unsupervised fine tuning
+- zero shot learning
+无微调适用于容量更大预训练模型，这类模型一般包含了更多的常识，比如GPT2使用了xx的高质量数据进行预训练，无需微调也可能在不同下游任务重生成可接受的预测。对于这类模型，只需要给出少量的样例让模型理解预测意图。。。
+
 ## BERT简介
 BERT是一个预训练模型，它可以提取输入序列的上下文信息，
 
@@ -89,7 +92,7 @@ No ablation was done on the ratios of this approach, and it may have worked bett
 - downstream tasks
 	- sentence classification(sentiment classification)
 	- token classification NER
-	- SQUAD & unsupervised SQUAD
+	- SQuAD & unsupervised SQUAD
 
 ## BERT应用
 ### environment-colab
@@ -100,7 +103,7 @@ No ablation was done on the ratios of this approach, and it may have worked bett
 ### huggingface transformer
 ### BERT as a service
 ### DistilBERT
-
+### SQUAD
 
 ## 总结
 
@@ -235,7 +238,7 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [google BERT - pretraining and finetuing for NLP tasks](https://medium.com/@ranko.mosic/googles-bert-nlp-5b2bb1236d78)
 [NLP: Explaining Neural language model](https://mchromiak.github.io/articles/2017/Nov/30/Explaining-Neural-Language-Modeling/#.XniDIWgzZPY)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNDM4NjYwMjc4LC02ODM5OTMxNjYsLTM3MD
+eyJoaXN0b3J5IjpbNTQ0NDU4Mzg2LC02ODM5OTMxNjYsLTM3MD
 I5MjIzOSwxNzIzMTQzNjc1LDE0NjQ4MTc5Miw0NDUzMDM4NTks
 NjU1OTg2NTcwLC0yMDE5NDg4MjI3LDExNjgxNTc4NzcsLTQ5ND
 I4MTA5OCwzNTEyODQzMiwtNjE0MTk3NzIxLC0xOTIyNDYxMjEs
