@@ -41,12 +41,13 @@ The good LM should calculate higher probabilities to “real” and “frequentl
 无微调适用于容量更大预训练模型，这类模型一般包含了更多的常识，比如GPT2使用了xx的高质量数据进行预训练，无需微调也可能在不同下游任务重生成可接受的预测。对于这类模型，只需要给出少量的样例让模型理解预测意图。。。
 
 ## BERT简介
-BERT是一个预训练模型，它可以提取输入序列的上下文信息，
-
-
-- bidirectional
-$$$$
+BERT（Bidirectional Encoder From Transformer）是一个预训练模型，它可以提取输入序列的上下文信息，
 - context dependent embedding
+BERT模型生成的元素编码属于动态编码
+- bidirectional Language Model
+BERT属于双向语言模型，这是由于它是以Attention机制为基础。注意力机制可以一次看到所有的序列元素，因此每个元素的编码都是根据前面和hou
+并非所有的基于attention机制的模型都是双向语言模型，比如GPT使用了遮罩的方式是模型无法看到当前元素之后的序列信息，因此它属于单向语言模型。
+
 - 
 
 ## BERT模型结构
@@ -66,6 +67,7 @@ $$$$
 
 ## BERT的预训练
 ### 任务设计
+BERT的预训练被设计为多任务学习（multi-task learning），包含两个任务：
 - MLM
 [https://towardsdatascience.com/bert-explained-state-of-the-art-language-model-for-nlp-f8b21a9b6270](https://towardsdatascience.com/bert-explained-state-of-the-art-language-model-for-nlp-f8b21a9b6270)
 Training the language model in BERT is done by predicting 15% of the tokens in the input, that were randomly picked. These tokens are pre-processed as follows — 80% are replaced with a “[MASK]” token, 10% with a random word, and 10% use the original word. The intuition that led the authors to pick this approach is as follows (Thanks to Jacob Devlin from Google for the insight):
@@ -238,11 +240,11 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [google BERT - pretraining and finetuing for NLP tasks](https://medium.com/@ranko.mosic/googles-bert-nlp-5b2bb1236d78)
 [NLP: Explaining Neural language model](https://mchromiak.github.io/articles/2017/Nov/30/Explaining-Neural-Language-Modeling/#.XniDIWgzZPY)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNzExMTY2MzEsLTY4Mzk5MzE2NiwtMzcwMj
-kyMjM5LDE3MjMxNDM2NzUsMTQ2NDgxNzkyLDQ0NTMwMzg1OSw2
-NTU5ODY1NzAsLTIwMTk0ODgyMjcsMTE2ODE1Nzg3NywtNDk0Mj
-gxMDk4LDM1MTI4NDMyLC02MTQxOTc3MjEsLTE5MjI0NjEyMSwx
-OTU1ODYzMDc5LC00NzY4NzIyNDUsMTA4NDY2NzgwNSwtNjM4ND
-Q0ODYyLC03NTM1NTkyNzIsNjAzMjM2NjQyLC04Mzk3MzI1NjNd
-fQ==
+eyJoaXN0b3J5IjpbMTEzMjYxNDQzMywtNjgzOTkzMTY2LC0zNz
+AyOTIyMzksMTcyMzE0MzY3NSwxNDY0ODE3OTIsNDQ1MzAzODU5
+LDY1NTk4NjU3MCwtMjAxOTQ4ODIyNywxMTY4MTU3ODc3LC00OT
+QyODEwOTgsMzUxMjg0MzIsLTYxNDE5NzcyMSwtMTkyMjQ2MTIx
+LDE5NTU4NjMwNzksLTQ3Njg3MjI0NSwxMDg0NjY3ODA1LC02Mz
+g0NDQ4NjIsLTc1MzU1OTI3Miw2MDMyMzY2NDIsLTgzOTczMjU2
+M119
 -->
