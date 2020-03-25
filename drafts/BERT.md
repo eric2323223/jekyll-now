@@ -42,6 +42,7 @@ BERT是一个预训练模型，它可以提取输入序列的上下文信息，
 
 
 - bidirectional
+$$$$
 - context dependent embedding
 - 
 
@@ -234,11 +235,11 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [google BERT - pretraining and finetuing for NLP tasks](https://medium.com/@ranko.mosic/googles-bert-nlp-5b2bb1236d78)
 [NLP: Explaining Neural language model](https://mchromiak.github.io/articles/2017/Nov/30/Explaining-Neural-Language-Modeling/#.XniDIWgzZPY)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTU4MjQ1MTIzNiwtNjgzOTkzMTY2LC0zNz
-AyOTIyMzksMTcyMzE0MzY3NSwxNDY0ODE3OTIsNDQ1MzAzODU5
-LDY1NTk4NjU3MCwtMjAxOTQ4ODIyNywxMTY4MTU3ODc3LC00OT
-QyODEwOTgsMzUxMjg0MzIsLTYxNDE5NzcyMSwtMTkyMjQ2MTIx
-LDE5NTU4NjMwNzksLTQ3Njg3MjI0NSwxMDg0NjY3ODA1LC02Mz
-g0NDQ4NjIsLTc1MzU1OTI3Miw2MDMyMzY2NDIsLTgzOTczMjU2
-M119
+eyJoaXN0b3J5IjpbNDM4NjYwMjc4LC02ODM5OTMxNjYsLTM3MD
+I5MjIzOSwxNzIzMTQzNjc1LDE0NjQ4MTc5Miw0NDUzMDM4NTks
+NjU1OTg2NTcwLC0yMDE5NDg4MjI3LDExNjgxNTc4NzcsLTQ5ND
+I4MTA5OCwzNTEyODQzMiwtNjE0MTk3NzIxLC0xOTIyNDYxMjEs
+MTk1NTg2MzA3OSwtNDc2ODcyMjQ1LDEwODQ2Njc4MDUsLTYzOD
+Q0NDg2MiwtNzUzNTU5MjcyLDYwMzIzNjY0MiwtODM5NzMyNTYz
+XX0=
 -->
