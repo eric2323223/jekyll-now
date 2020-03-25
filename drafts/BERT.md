@@ -45,8 +45,8 @@ BERT（Bidirectional Encoder From Transformer）是一个预训练模型，它�
 - context dependent embedding
 BERT模型生成的元素编码属于动态编码
 - bidirectional Language Model
-BERT属于双向语言模型，这是由于它是以Attention机制为基础。注意力机制可以一次看到所有的序列元素，因此每个元素的编码都是根据前面和hou
-并非所有的基于attention机制的模型都是双向语言模型，比如GPT使用了遮罩的方式是模型无法看到当前元素之后的序列信息，因此它属于单向语言模型。
+这是由于它是以Attention机制为基础。注意力机制可以一次看到所有的序列元素，每个元素的编码的计算都包含了该元素之前和之后的序列信息，因此BERT属于双向语言模型。
+并非所有的基于attention机制的模型都是双向语言模型，比如GPT使用了遮罩的方式使模型无法看到当前元素之后的序列信息，因此它属于单向语言模型。
 
 - 
 
@@ -240,11 +240,11 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [google BERT - pretraining and finetuing for NLP tasks](https://medium.com/@ranko.mosic/googles-bert-nlp-5b2bb1236d78)
 [NLP: Explaining Neural language model](https://mchromiak.github.io/articles/2017/Nov/30/Explaining-Neural-Language-Modeling/#.XniDIWgzZPY)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTEzMjYxNDQzMywtNjgzOTkzMTY2LC0zNz
-AyOTIyMzksMTcyMzE0MzY3NSwxNDY0ODE3OTIsNDQ1MzAzODU5
-LDY1NTk4NjU3MCwtMjAxOTQ4ODIyNywxMTY4MTU3ODc3LC00OT
-QyODEwOTgsMzUxMjg0MzIsLTYxNDE5NzcyMSwtMTkyMjQ2MTIx
-LDE5NTU4NjMwNzksLTQ3Njg3MjI0NSwxMDg0NjY3ODA1LC02Mz
-g0NDQ4NjIsLTc1MzU1OTI3Miw2MDMyMzY2NDIsLTgzOTczMjU2
-M119
+eyJoaXN0b3J5IjpbODc0MjQ3MTgzLC02ODM5OTMxNjYsLTM3MD
+I5MjIzOSwxNzIzMTQzNjc1LDE0NjQ4MTc5Miw0NDUzMDM4NTks
+NjU1OTg2NTcwLC0yMDE5NDg4MjI3LDExNjgxNTc4NzcsLTQ5ND
+I4MTA5OCwzNTEyODQzMiwtNjE0MTk3NzIxLC0xOTIyNDYxMjEs
+MTk1NTg2MzA3OSwtNDc2ODcyMjQ1LDEwODQ2Njc4MDUsLTYzOD
+Q0NDg2MiwtNzUzNTU5MjcyLDYwMzIzNjY0MiwtODM5NzMyNTYz
+XX0=
 -->
