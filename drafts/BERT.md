@@ -82,7 +82,9 @@ BERT模型生成的元素编码属于动态编码
 ### 编码层
 [https://mc.ai/why-bert-has-3-embedding-layers-and-their-implementation-details/](https://mc.ai/why-bert-has-3-embedding-layers-and-their-implementation-details/)
 ![enter image description here](https://i.stack.imgur.com/QCcYF.png)
-- 
+- 词编码
+- 段编码
+- 位置编码
 ### Transformer编码器
 
 ### 输出
@@ -112,7 +114,7 @@ No ablation was done on the ratios of this approach, and it may have worked bett
 
 ## BERT的fine tune	
 - how about [CLS] and [SEP]?
-- 
+![enter image description here](https://lilianweng.github.io/lil-log/assets/images/BERT-downstream-tasks.png)
 - downstream tasks
 	- sentence classification(sentiment classification)
 	- token classification NER
@@ -262,11 +264,11 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [google BERT - pretraining and finetuing for NLP tasks](https://medium.com/@ranko.mosic/googles-bert-nlp-5b2bb1236d78)
 [NLP: Explaining Neural language model](https://mchromiak.github.io/articles/2017/Nov/30/Explaining-Neural-Language-Modeling/#.XniDIWgzZPY)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTY2MzA1MzM4Nyw4NzQyNDcxODMsLTY4Mz
-k5MzE2NiwtMzcwMjkyMjM5LDE3MjMxNDM2NzUsMTQ2NDgxNzky
-LDQ0NTMwMzg1OSw2NTU5ODY1NzAsLTIwMTk0ODgyMjcsMTE2OD
-E1Nzg3NywtNDk0MjgxMDk4LDM1MTI4NDMyLC02MTQxOTc3MjEs
-LTE5MjI0NjEyMSwxOTU1ODYzMDc5LC00NzY4NzIyNDUsMTA4ND
-Y2NzgwNSwtNjM4NDQ0ODYyLC03NTM1NTkyNzIsNjAzMjM2NjQy
-XX0=
+eyJoaXN0b3J5IjpbLTIwMDYzNzE4ODQsODc0MjQ3MTgzLC02OD
+M5OTMxNjYsLTM3MDI5MjIzOSwxNzIzMTQzNjc1LDE0NjQ4MTc5
+Miw0NDUzMDM4NTksNjU1OTg2NTcwLC0yMDE5NDg4MjI3LDExNj
+gxNTc4NzcsLTQ5NDI4MTA5OCwzNTEyODQzMiwtNjE0MTk3NzIx
+LC0xOTIyNDYxMjEsMTk1NTg2MzA3OSwtNDc2ODcyMjQ1LDEwOD
+Q2Njc4MDUsLTYzODQ0NDg2MiwtNzUzNTU5MjcyLDYwMzIzNjY0
+Ml19
 -->
