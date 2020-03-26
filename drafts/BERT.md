@@ -1,13 +1,13 @@
 # NLP transfer learning 
 
 # NLP的迁移学习-BERT篇
-
+迁移学习让普通人应用复杂强大模型解决实际问题的捷径，利用注意力机制的强大能力，BERT在NLP领域的一系列任务的基准测试中取得了新高。本文旨在介绍BERT的结构，特性，预训练方法和微调方法，并试图解释BERT模型设计背后的原因。最后回归应用，介绍了如何利用BERT预训练模型在colab平台快速实现智能问答。
 # Training objective of self-supervised learning - From Word2Vec to Elmo to Bert to XLNet
 
 self-supervised learning is important area because it can greatly reduce the effort of training deep model, 
 
 作为NLP迁移学习的成功应用，BERT证明了。。。本文旨在介绍BERT模型的结构和设计原理，以及BERT的应用。
-## 迁移学习-预训练模型的诞生
+## 迁移学习和预训练模型
 ![enter image description here](https://miro.medium.com/max/3283/1*Z11P-CjNYWBofEbmGQrptA.png)
 迁移学习旨在通过重用 。。。来加速学习和增强预测的准确性，对于当今越来越复杂的神经网络来说，需要巨大的人力物力和时间成本。。。使用迁移学习是非常有意义的。通过再imagenet训练视觉特征提取网络，数据比较从头训练和使用迁移训练。。。
 现实的问题是获取足够的标记数据非常困难，因此
@@ -245,11 +245,11 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [google BERT - pretraining and finetuing for NLP tasks](https://medium.com/@ranko.mosic/googles-bert-nlp-5b2bb1236d78)
 [NLP: Explaining Neural language model](https://mchromiak.github.io/articles/2017/Nov/30/Explaining-Neural-Language-Modeling/#.XniDIWgzZPY)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjA2ODAzNjc5Niw4NzQyNDcxODMsLTY4Mz
-k5MzE2NiwtMzcwMjkyMjM5LDE3MjMxNDM2NzUsMTQ2NDgxNzky
-LDQ0NTMwMzg1OSw2NTU5ODY1NzAsLTIwMTk0ODgyMjcsMTE2OD
-E1Nzg3NywtNDk0MjgxMDk4LDM1MTI4NDMyLC02MTQxOTc3MjEs
-LTE5MjI0NjEyMSwxOTU1ODYzMDc5LC00NzY4NzIyNDUsMTA4ND
-Y2NzgwNSwtNjM4NDQ0ODYyLC03NTM1NTkyNzIsNjAzMjM2NjQy
-XX0=
+eyJoaXN0b3J5IjpbLTE4NjczMzAwOTAsODc0MjQ3MTgzLC02OD
+M5OTMxNjYsLTM3MDI5MjIzOSwxNzIzMTQzNjc1LDE0NjQ4MTc5
+Miw0NDUzMDM4NTksNjU1OTg2NTcwLC0yMDE5NDg4MjI3LDExNj
+gxNTc4NzcsLTQ5NDI4MTA5OCwzNTEyODQzMiwtNjE0MTk3NzIx
+LC0xOTIyNDYxMjEsMTk1NTg2MzA3OSwtNDc2ODcyMjQ1LDEwOD
+Q2Njc4MDUsLTYzODQ0NDg2MiwtNzUzNTU5MjcyLDYwMzIzNjY0
+Ml19
 -->
