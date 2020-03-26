@@ -2,6 +2,26 @@
 
 # NLP的迁移学习-BERT篇
 迁移学习让普通人应用复杂强大模型解决实际问题的捷径，利用注意力机制的强大能力，BERT在NLP领域的一系列任务的基准测试中取得了新高。本文旨在介绍BERT的结构，特性，预训练方法和微调方法，并试图解释BERT模型设计背后的原因。最后回归应用，介绍了如何利用BERT预训练模型在colab平台快速实现智能问答。
+1. 迁移学习和预训练模型
+    1.1 NLP的迁移学习
+    1.2 语言模型
+2. BERT简介
+3. BERT模型结构
+    3.1 编码层
+    3.2 Transformer编码器
+4. BERT的预训练
+    4.1 任务设计
+    4.2 预训练流程
+    4.3 优化
+5. BERT的微调
+    5.1 情绪分析任务
+    5.2 名称实体识别NER任务
+    5.3 通用语言理解GLUE任务
+    5.4 问答SQuAD任务
+6. BERT的应用-实现一个智能问答机器人
+    6.1 环境搭建
+    6.2 实验流程
+7. 总结
 # Training objective of self-supervised learning - From Word2Vec to Elmo to Bert to XLNet
 
 self-supervised learning is important area because it can greatly reduce the effort of training deep model, 
@@ -58,14 +78,11 @@ BERT模型生成的元素编码属于动态编码
 ## BERT模型结构
 ### Transformer encoder based
 ![enter image description here](https://miro.medium.com/max/1095/0*ViwaI3Vvbnd-CJSQ.png)
-- 输入
-- 编码层
-- Transformer编码器
 
-
-### embedding layer
+### 编码层
 [https://mc.ai/why-bert-has-3-embedding-layers-and-their-implementation-details/](https://mc.ai/why-bert-has-3-embedding-layers-and-their-implementation-details/)
 ![enter image description here](https://i.stack.imgur.com/QCcYF.png)
+- 
 ### Transformer编码器
 
 ### 输出
@@ -245,11 +262,11 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [google BERT - pretraining and finetuing for NLP tasks](https://medium.com/@ranko.mosic/googles-bert-nlp-5b2bb1236d78)
 [NLP: Explaining Neural language model](https://mchromiak.github.io/articles/2017/Nov/30/Explaining-Neural-Language-Modeling/#.XniDIWgzZPY)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE4NjczMzAwOTAsODc0MjQ3MTgzLC02OD
-M5OTMxNjYsLTM3MDI5MjIzOSwxNzIzMTQzNjc1LDE0NjQ4MTc5
-Miw0NDUzMDM4NTksNjU1OTg2NTcwLC0yMDE5NDg4MjI3LDExNj
-gxNTc4NzcsLTQ5NDI4MTA5OCwzNTEyODQzMiwtNjE0MTk3NzIx
-LC0xOTIyNDYxMjEsMTk1NTg2MzA3OSwtNDc2ODcyMjQ1LDEwOD
-Q2Njc4MDUsLTYzODQ0NDg2MiwtNzUzNTU5MjcyLDYwMzIzNjY0
-Ml19
+eyJoaXN0b3J5IjpbLTY2MzA1MzM4Nyw4NzQyNDcxODMsLTY4Mz
+k5MzE2NiwtMzcwMjkyMjM5LDE3MjMxNDM2NzUsMTQ2NDgxNzky
+LDQ0NTMwMzg1OSw2NTU5ODY1NzAsLTIwMTk0ODgyMjcsMTE2OD
+E1Nzg3NywtNDk0MjgxMDk4LDM1MTI4NDMyLC02MTQxOTc3MjEs
+LTE5MjI0NjEyMSwxOTU1ODYzMDc5LC00NzY4NzIyNDUsMTA4ND
+Y2NzgwNSwtNjM4NDQ0ODYyLC03NTM1NTkyNzIsNjAzMjM2NjQy
+XX0=
 -->
