@@ -101,8 +101,15 @@ Training the language model in BERT is done by predicting 15% of the tokens in t
 -   If we used [MASK] 90% of the time and kept the same word 10% of the time, then the model could just trivially copy the non-contextual embedding.
 
 No ablation was done on the ratios of this approach, and it may have worked better with different ratios. In addition, the model performance wasn’t tested with simply masking 100% of the selected tokens.
+细节三：对于任务一，对于在数据中随机选择 15% 的标记，其中80%被换位[mask]，10%不变、10%随机替换其他单词，原因是什么？
+
+**两个缺点：**
+
+1、因为Bert用于下游任务微调时， [MASK] 标记不会出现，它只出现在预训练任务中。这就造成了预训练和微调之间的不匹配，微调不出现[MASK]这个标记，模型好像就没有了着力点、不知从哪入手。所以只将80%的替换为[mask]，但这也**只是缓解、不能解决**。
+
+2、相较于传统语言模型，Bert的每批次训练数据中只有 15% 的标记被预测，这导致模型需要更多的训练步骤来收敛。
 - NSP
-### add special tokens to input
+### 特殊符号
 - [CLS] 用于分类任务
 - [SEP] 用于分割语句
 - 
@@ -264,11 +271,11 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [google BERT - pretraining and finetuing for NLP tasks](https://medium.com/@ranko.mosic/googles-bert-nlp-5b2bb1236d78)
 [NLP: Explaining Neural language model](https://mchromiak.github.io/articles/2017/Nov/30/Explaining-Neural-Language-Modeling/#.XniDIWgzZPY)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwMDYzNzE4ODQsODc0MjQ3MTgzLC02OD
-M5OTMxNjYsLTM3MDI5MjIzOSwxNzIzMTQzNjc1LDE0NjQ4MTc5
-Miw0NDUzMDM4NTksNjU1OTg2NTcwLC0yMDE5NDg4MjI3LDExNj
-gxNTc4NzcsLTQ5NDI4MTA5OCwzNTEyODQzMiwtNjE0MTk3NzIx
-LC0xOTIyNDYxMjEsMTk1NTg2MzA3OSwtNDc2ODcyMjQ1LDEwOD
-Q2Njc4MDUsLTYzODQ0NDg2MiwtNzUzNTU5MjcyLDYwMzIzNjY0
-Ml19
+eyJoaXN0b3J5IjpbLTcyMjQxODU3NiwtMjAwNjM3MTg4NCw4Nz
+QyNDcxODMsLTY4Mzk5MzE2NiwtMzcwMjkyMjM5LDE3MjMxNDM2
+NzUsMTQ2NDgxNzkyLDQ0NTMwMzg1OSw2NTU5ODY1NzAsLTIwMT
+k0ODgyMjcsMTE2ODE1Nzg3NywtNDk0MjgxMDk4LDM1MTI4NDMy
+LC02MTQxOTc3MjEsLTE5MjI0NjEyMSwxOTU1ODYzMDc5LC00Nz
+Y4NzIyNDUsMTA4NDY2NzgwNSwtNjM4NDQ0ODYyLC03NTM1NTky
+NzJdfQ==
 -->
