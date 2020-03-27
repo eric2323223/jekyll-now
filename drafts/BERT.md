@@ -126,7 +126,28 @@ No ablation was done on the ratios of this approach, and it may have worked bett
 	- sentence classification(sentiment classification)
 	- token classification NER
 	- SQuAD & unsupervised SQUAD
+- 微调技巧
+[https://zhuanlan.zhihu.com/p/109143667](https://zhuanlan.zhihu.com/p/109143667)
+	1.  **长文本处理**
 
+		对于长文本文中做了两种处理方式，截断和切分。
+
+		-   截断：一般来说文本中最重要的信息是开始和结尾，因此文中对于长文本做了截断处理。
+
+		> head-only：保留前510个字符  
+		> tail-only：保留后510个字符  
+		> head+tail：保留前128个和后382个字符
+		
+		- 切分: 将文本分成k段，每段的输入和Bert常规输入相同，第一个字符是[CLS]表示这段的加权信息。文中使用了Max-pooling, Average pooling和self-attention结合这些片段的表示。
+		- 
+	下面是实验的结果，head+tail的表示在两个数据集上的效果都比较好。应该是长文本结合了句首和句尾的信息，获取的信息比较均衡。不过奇怪的是拼接的方式整体居然不如截断，个人猜测可能是将句子切成几段之后增加了模型的不稳定性，而错误叠加起来可能就会被放大。而max-pooling和self-attention也更加强调了文本中比较有用的信息，所以整体效果优于average.
+	![enter image description here](https://pic3.zhimg.com/80/v2-f932b2ed7aa4af745b512e2e0f43093e_720w.jpg)
+
+## BERT的改进
+### task design
+- spanBERT [https://zhuanlan.zhihu.com/p/75893972](https://zhuanlan.zhihu.com/p/75893972)
+### distillation
+### LAMP？not a BERT improvement
 ## BERT应用
 ### environment-colab
  - User BERT base model
@@ -270,8 +291,10 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [from-pre-trained-word-embeddings-to-pre-trained-language-models-focus-on-bert](https://towardsdatascience.com/from-pre-trained-word-embeddings-to-pre-trained-language-models-focus-on-bert-343815627598)
 [google BERT - pretraining and finetuing for NLP tasks](https://medium.com/@ranko.mosic/googles-bert-nlp-5b2bb1236d78)
 [NLP: Explaining Neural language model](https://mchromiak.github.io/articles/2017/Nov/30/Explaining-Neural-Language-Modeling/#.XniDIWgzZPY)
+[Bert微调技巧实验大全](https://zhuanlan.zhihu.com/p/109143667)
+[BERT finetune的艺术](https://zhuanlan.zhihu.com/p/62642374)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTcyMjQxODU3NiwtMjAwNjM3MTg4NCw4Nz
+eyJoaXN0b3J5IjpbLTkwNzk0Mjc5MiwtMjAwNjM3MTg4NCw4Nz
 QyNDcxODMsLTY4Mzk5MzE2NiwtMzcwMjkyMjM5LDE3MjMxNDM2
 NzUsMTQ2NDgxNzkyLDQ0NTMwMzg1OSw2NTU5ODY1NzAsLTIwMT
 k0ODgyMjcsMTE2ODE1Nzg3NywtNDk0MjgxMDk4LDM1MTI4NDMy
