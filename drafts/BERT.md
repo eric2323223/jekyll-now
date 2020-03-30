@@ -120,39 +120,36 @@ No ablation was done on the ratios of this approach, and it may have worked bett
 
 2、相较于传统语言模型，Bert的每批次训练数据中只有 15% 的标记被预测，这导致模型需要更多的训练步骤来收敛。
 - NSP
-### 特殊符号
-- [CLS] 用于分类任务
-- [SEP] 用于分割语句
-- 
-
+### 损失函数
+### 预训练流程
+[http://jalammar.github.io/a-visual-guide-to-using-bert-for-the-first-time/](http://jalammar.github.io/a-visual-guide-to-using-bert-for-the-first-time/)  Recapping a sentence’s journey
 ### optimizer
 [https://towardsdatascience.com/an-intuitive-understanding-of-the-lamb-optimizer-46f8c0ae4866](https://towardsdatascience.com/an-intuitive-understanding-of-the-lamb-optimizer-46f8c0ae4866)
 - size matters
 - 
 
 ## BERT的fine tune	
-- how about [CLS] and [SEP]?
+### 微调任务类型
 ![enter image description here](https://lilianweng.github.io/lil-log/assets/images/BERT-downstream-tasks.png)
-- downstream tasks
-	- sentence classification(sentiment classification)
-	- token classification NER
-	- SQuAD & unsupervised SQUAD
-- 微调技巧
+	- sentence classification(sentiment classification)训练数据样例
+	- token classification NER训练数据样例
+	- SQuAD & unsupervised SQUAD训练数据样例
+### 微调技巧
+1. 调整参数（内存），模型选择
+2.  **长文本处理**
 [https://zhuanlan.zhihu.com/p/109143667](https://zhuanlan.zhihu.com/p/109143667)
-	1.  **长文本处理**
+	对于长文本文中做了两种处理方式，截断和切分。
 
-		对于长文本文中做了两种处理方式，截断和切分。
+	-   截断：一般来说文本中最重要的信息是开始和结尾，因此文中对于长文本做了截断处理。
 
-		-   截断：一般来说文本中最重要的信息是开始和结尾，因此文中对于长文本做了截断处理。
-
-		> head-only：保留前510个字符  
-		> tail-only：保留后510个字符  
-		> head+tail：保留前128个和后382个字符
-		
-		- 切分: 将文本分成k段，每段的输入和Bert常规输入相同，第一个字符是[CLS]表示这段的加权信息。文中使用了Max-pooling, Average pooling和self-attention结合这些片段的表示。
-		- 
-	下面是实验的结果，head+tail的表示在两个数据集上的效果都比较好。应该是长文本结合了句首和句尾的信息，获取的信息比较均衡。不过奇怪的是拼接的方式整体居然不如截断，个人猜测可能是将句子切成几段之后增加了模型的不稳定性，而错误叠加起来可能就会被放大。而max-pooling和self-attention也更加强调了文本中比较有用的信息，所以整体效果优于average.
-	![enter image description here](https://pic3.zhimg.com/80/v2-f932b2ed7aa4af745b512e2e0f43093e_720w.jpg)
+	> head-only：保留前510个字符  
+	> tail-only：保留后510个字符  
+	> head+tail：保留前128个和后382个字符
+	
+	- 切分: 将文本分成k段，每段的输入和Bert常规输入相同，第一个字符是[CLS]表示这段的加权信息。文中使用了Max-pooling, Average pooling和self-attention结合这些片段的表示。
+	- 
+下面是实验的结果，head+tail的表示在两个数据集上的效果都比较好。应该是长文本结合了句首和句尾的信息，获取的信息比较均衡。不过奇怪的是拼接的方式整体居然不如截断，个人猜测可能是将句子切成几段之后增加了模型的不稳定性，而错误叠加起来可能就会被放大。而max-pooling和self-attention也更加强调了文本中比较有用的信息，所以整体效果优于average.
+![enter image description here](https://pic3.zhimg.com/80/v2-f932b2ed7aa4af745b512e2e0f43093e_720w.jpg)
 
 ## BERT的改进
 ### task design
@@ -306,11 +303,11 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [BERT finetune的艺术](https://zhuanlan.zhihu.com/p/62642374)
 [Bert在NLP各领域的应用进展](https://zhuanlan.zhihu.com/p/68446772)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjEwNjI1NjUsLTkwNzk0Mjc5MiwtMjAwNj
-M3MTg4NCw4NzQyNDcxODMsLTY4Mzk5MzE2NiwtMzcwMjkyMjM5
-LDE3MjMxNDM2NzUsMTQ2NDgxNzkyLDQ0NTMwMzg1OSw2NTU5OD
-Y1NzAsLTIwMTk0ODgyMjcsMTE2ODE1Nzg3NywtNDk0MjgxMDk4
-LDM1MTI4NDMyLC02MTQxOTc3MjEsLTE5MjI0NjEyMSwxOTU1OD
-YzMDc5LC00NzY4NzIyNDUsMTA4NDY2NzgwNSwtNjM4NDQ0ODYy
-XX0=
+eyJoaXN0b3J5IjpbMzEzNjM3ODcxLC05MDc5NDI3OTIsLTIwMD
+YzNzE4ODQsODc0MjQ3MTgzLC02ODM5OTMxNjYsLTM3MDI5MjIz
+OSwxNzIzMTQzNjc1LDE0NjQ4MTc5Miw0NDUzMDM4NTksNjU1OT
+g2NTcwLC0yMDE5NDg4MjI3LDExNjgxNTc4NzcsLTQ5NDI4MTA5
+OCwzNTEyODQzMiwtNjE0MTk3NzIxLC0xOTIyNDYxMjEsMTk1NT
+g2MzA3OSwtNDc2ODcyMjQ1LDEwODQ2Njc4MDUsLTYzODQ0NDg2
+Ml19
 -->
