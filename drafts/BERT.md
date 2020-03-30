@@ -293,12 +293,13 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [NLP: Explaining Neural language model](https://mchromiak.github.io/articles/2017/Nov/30/Explaining-Neural-Language-Modeling/#.XniDIWgzZPY)
 [Bert微调技巧实验大全](https://zhuanlan.zhihu.com/p/109143667)
 [BERT finetune的艺术](https://zhuanlan.zhihu.com/p/62642374)
+[Bert在NLP各领域的应用进展](https://zhuanlan.zhihu.com/p/68446772)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTkwNzk0Mjc5MiwtMjAwNjM3MTg4NCw4Nz
-QyNDcxODMsLTY4Mzk5MzE2NiwtMzcwMjkyMjM5LDE3MjMxNDM2
-NzUsMTQ2NDgxNzkyLDQ0NTMwMzg1OSw2NTU5ODY1NzAsLTIwMT
-k0ODgyMjcsMTE2ODE1Nzg3NywtNDk0MjgxMDk4LDM1MTI4NDMy
-LC02MTQxOTc3MjEsLTE5MjI0NjEyMSwxOTU1ODYzMDc5LC00Nz
-Y4NzIyNDUsMTA4NDY2NzgwNSwtNjM4NDQ0ODYyLC03NTM1NTky
-NzJdfQ==
+eyJoaXN0b3J5IjpbLTIwMzYwMjU4MTgsLTkwNzk0Mjc5MiwtMj
+AwNjM3MTg4NCw4NzQyNDcxODMsLTY4Mzk5MzE2NiwtMzcwMjky
+MjM5LDE3MjMxNDM2NzUsMTQ2NDgxNzkyLDQ0NTMwMzg1OSw2NT
+U5ODY1NzAsLTIwMTk0ODgyMjcsMTE2ODE1Nzg3NywtNDk0Mjgx
+MDk4LDM1MTI4NDMyLC02MTQxOTc3MjEsLTE5MjI0NjEyMSwxOT
+U1ODYzMDc5LC00NzY4NzIyNDUsMTA4NDY2NzgwNSwtNjM4NDQ0
+ODYyXX0=
 -->
