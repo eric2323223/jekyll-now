@@ -50,6 +50,7 @@ The good LM should calculate higher probabilities to “real” and “frequentl
 -   **Spelling Correction:**  Spell correcting sentence: “Put you name into form”, so that  P(name  into  form)>P(name  into  from)
 由此我们选择概率最大的词作为预测值$$\argmax P(w_n|w_1,w_2,w_3,...w_{n-1})$$
 	- 使用LM进行训练，可以按照从前到后的顺序进行预测，比如通过“”判断后一个词是“”，也可以按照从后向前的顺序，$$\argmax P(w_i|w_n,w_{n-1},w_{n-2}, ...w_{i+1})$$比如通过“”判断前一个词是“”。
+	> 
 	
 	
 #### 微调 fine tune
@@ -98,6 +99,9 @@ BERT模型主要包含这个部分，编码层和Transformer编码器
 不同于Transformer的基于周期函数的固定位置编码方法，BERT采用可学习的位置编码方式，bert中的最大句子长度是512 所以Position Embedding layer 是一个size为（512，768）的lookup table
 ### Transformer编码器
 Transformer模型是由google ai于2017年发布的一个编码器-解码器架构模型，最初应用于机器翻译。Transformer的最大特点是使用注意力机制（attention mechanism），解决了使用RNN模型造成的梯度爆炸和无法并行的问题，并且实践证明transformer中提出的多头注意力具有强大的特征提取能力，性能超越了RNN,CNN等传统方法。
+> Transformer所使用的注意力机制的核心思想是去计算一句话中的每个词对于这句话中所有词的相互关系，然后认为这些词与词之间的相互关系在一定程度上反应了这句话中不同词之间的关联性以及重要程度。因此再利用这些相互关系来调整每个词的重要性（权重）就可以获得每个词新的表达。这个新的表征不但蕴含了该词本身，还蕴含了其他词与这个词的关系，因此和单纯的词向量相比是一个更加全局的表达。
+> Transformer通过对输入的文本不断进行这样的注意力机制层和普通的非线性层交叠来得到最终的文本表达。
+
 Transformer由编码器和解码器组成，编码器负责将输入序列中的每个元素（word）转换为包含上下文信息的特征向量，再由解码器根据编码后的特征向量生成输出序列。BERT模型中只使用了transformer的编码器，它主要由若干个结构相同的编码层连接而成。每一个编码层主要有一个多头自注意力计算单元和按位前馈网络组成，多头自注意力计算单元负责为每个输入元素生成特征向量，前馈网络能够通过组合元素特征向量生成更复杂的特征向量。
 ### 输出
 
@@ -125,18 +129,16 @@ No ablation was done on the ratios of this approach, and it may have worked bett
 total_loss = masked_lm_loss + next_sentence_loss
 ### 预训练流程
 [http://jalammar.github.io/a-visual-guide-to-using-bert-for-the-first-time/](http://jalammar.github.io/a-visual-guide-to-using-bert-for-the-first-time/)  Recapping a sentence’s journey
-1. raw input: "BERT is awesome"
+1. Add special token to raw input: "BERT is awesome. BERT is wonderful" becomes "[CLS] BERT is awesome [SEP] BERT is wonderful [SEP]"
 2. Embedding
 	2.1 word embedding: tokenization
 	2.2 positional embedding
 	2.3 segment embedding
 3. Transformer encoder: 
-### optimizer
-[https://towardsdatascience.com/an-intuitive-understanding-of-the-lamb-optimizer-46f8c0ae4866](https://towardsdatascience.com/an-intuitive-understanding-of-the-lamb-optimizer-46f8c0ae4866)
-- size matters
-- 
 
-## BERT的fine tune	
+
+## BERT的微调fine tune
+
 ### 微调任务类型
 ![enter image description here](https://lilianweng.github.io/lil-log/assets/images/BERT-downstream-tasks.png)
 	- sentence classification(sentiment classification)训练数据样例
@@ -312,7 +314,7 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [Bert在NLP各领域的应用进展](https://zhuanlan.zhihu.com/p/68446772)
 [GPT2 finetune @familiarcycle.net/](https://familiarcycle.net/)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTI5MTkyNDE0NSwzMTM2Mzc4NzEsLTkwNz
+eyJoaXN0b3J5IjpbMTAyNDE3ODI3MywzMTM2Mzc4NzEsLTkwNz
 k0Mjc5MiwtMjAwNjM3MTg4NCw4NzQyNDcxODMsLTY4Mzk5MzE2
 NiwtMzcwMjkyMjM5LDE3MjMxNDM2NzUsMTQ2NDgxNzkyLDQ0NT
 MwMzg1OSw2NTU5ODY1NzAsLTIwMTk0ODgyMjcsMTE2ODE1Nzg3
