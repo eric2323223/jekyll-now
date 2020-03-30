@@ -77,18 +77,20 @@ BERT模型生成的元素编码属于动态编码，它能根据输入序列生�
 
 ## BERT模型结构
 ### Transformer encoder based
+BERT模型主要包含这个部分，编码层和Transformer编码器
 ![enter image description here](https://miro.medium.com/max/1095/0*ViwaI3Vvbnd-CJSQ.png)
 
 ### 编码层
 编码层的作用是
 1. 将输入语句（BERT is powerful）转换为模型可处理的浮点数向量
-2. 加入特殊符号
+2. 加入特殊符号[CLS][SEP]
+
     embeddings = inputs_embeds + position_embeddings + token_type_embeddings
 
 [https://mc.ai/why-bert-has-3-embedding-layers-and-their-implementation-details/](https://mc.ai/why-bert-has-3-embedding-layers-and-their-implementation-details/)
 ![enter image description here](https://i.stack.imgur.com/QCcYF.png)
 - 词编码(config.vocab_size, config.hidden_size, padding_idx=0)
-
+[https://www.topbots.com/generalized-language-models-bert-openai-gpt2/#input-embedding](https://www.topbots.com/generalized-language-models-bert-openai-gpt2/#input-embedding)
 - 段编码(config.type_vocab_size, config.hidden_size)
 由于BERT可以处理1或2条语句，用于区分不同语句
 - 位置编码(config.max_position_embeddings, config.hidden_size)
@@ -304,11 +306,11 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [BERT finetune的艺术](https://zhuanlan.zhihu.com/p/62642374)
 [Bert在NLP各领域的应用进展](https://zhuanlan.zhihu.com/p/68446772)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTUxMDMwODQ4NywtOTA3OTQyNzkyLC0yMD
-A2MzcxODg0LDg3NDI0NzE4MywtNjgzOTkzMTY2LC0zNzAyOTIy
-MzksMTcyMzE0MzY3NSwxNDY0ODE3OTIsNDQ1MzAzODU5LDY1NT
-k4NjU3MCwtMjAxOTQ4ODIyNywxMTY4MTU3ODc3LC00OTQyODEw
-OTgsMzUxMjg0MzIsLTYxNDE5NzcyMSwtMTkyMjQ2MTIxLDE5NT
-U4NjMwNzksLTQ3Njg3MjI0NSwxMDg0NjY3ODA1LC02Mzg0NDQ4
-NjJdfQ==
+eyJoaXN0b3J5IjpbNjEwNjI1NjUsLTkwNzk0Mjc5MiwtMjAwNj
+M3MTg4NCw4NzQyNDcxODMsLTY4Mzk5MzE2NiwtMzcwMjkyMjM5
+LDE3MjMxNDM2NzUsMTQ2NDgxNzkyLDQ0NTMwMzg1OSw2NTU5OD
+Y1NzAsLTIwMTk0ODgyMjcsMTE2ODE1Nzg3NywtNDk0MjgxMDk4
+LDM1MTI4NDMyLC02MTQxOTc3MjEsLTE5MjI0NjEyMSwxOTU1OD
+YzMDc5LC00NzY4NzIyNDUsMTA4NDY2NzgwNSwtNjM4NDQ0ODYy
+XX0=
 -->
