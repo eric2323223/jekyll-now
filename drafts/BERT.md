@@ -50,9 +50,14 @@ The good LM should calculate higher probabilities to “real” and “frequentl
 -   **Spelling Correction:**  Spell correcting sentence: “Put you name into form”, so that  P(name  into  form)>P(name  into  from)
 由此我们选择概率最大的词作为预测值$$\argmax P(w_n|w_1,w_2,w_3,...w_{n-1})$$
 	- 使用LM进行训练，可以按照从前到后的顺序进行预测，比如通过“”判断后一个词是“”，也可以按照从后向前的顺序，$$\argmax P(w_i|w_n,w_{n-1},w_{n-2}, ...w_{i+1})$$比如通过“”判断前一个词是“”。
-	> 
-	
-	
+>  今天 天气 不错， 我们 去 公园 玩 吧。
+
+这句话，单向语言模型在学习的时候是从左向右进行学习的，先给模型看到“今天 天气”两个词，然后告诉模型下一个要填的词是“不错”。然而单向语言模型有一个欠缺，就是模型学习的时候总是按照句子的一个方向去学的，因此模型学习每个词的时候只看到了上文，并没有看到下文。更加合理的方式应该是让模型同时通过上下文去学习，这个过程有点类似于完形填空题。例如：
+
+>今天 天气 { }， 我们 去 公园 玩 吧。
+
+通过这样的学习，模型能够更好地把握“不错”这个词所出现的上下文语境。
+
 #### 微调 fine tune
 由于使用海量的数据进行预训练，预训练模型通常具有一般的常识，由此作为基础再进行微调，使得模型能更好的适合特定任务。微调工作可以以下两种形式：
 - 监督式微调supervised fine tuning
@@ -110,13 +115,15 @@ Transformer由编码器和解码器组成，编码器负责将输入序列中的
 BERT的预训练被设计为多任务学习（multi-task learning），包含两个任务：
 - MLM
 [https://towardsdatascience.com/bert-explained-state-of-the-art-language-model-for-nlp-f8b21a9b6270](https://towardsdatascience.com/bert-explained-state-of-the-art-language-model-for-nlp-f8b21a9b6270)
-Training the language model in BERT is done by predicting 15% of the tokens in the input, that were randomly picked. These tokens are pre-processed as follows — 80% are replaced with a “[MASK]” token, 10% with a random word, and 10% use the original word. The intuition that led the authors to pick this approach is as follows (Thanks to Jacob Devlin from Google for the insight):
+给定一个句子，会随机Mask 15%的词，然后让BERT来预测这些Mask的词，如同上述10.1所述，在输入侧引入[Mask]标记，会导致预训练阶段和Fine-tuning阶段不一致的问题，因此在论文中为了缓解这一问题，采取了如下措施：
 
--   If we used [MASK] 100% of the time the model wouldn’t necessarily produce good token representations for non-masked words. The non-masked tokens were still used for context, but the model was optimized for predicting masked words.
--   If we used [MASK] 90% of the time and random words 10% of the time, this would teach the model that the observed word is  _never_  correct.
--   If we used [MASK] 90% of the time and kept the same word 10% of the time, then the model could just trivially copy the non-contextual embedding.
+如果某个Token在被选中的15%个Token里，则按照下面的方式随机的执行：
 
-No ablation was done on the ratios of this approach, and it may have worked better with different ratios. In addition, the model performance wasn’t tested with simply masking 100% of the selected tokens.
+-   80%的概率替换成[MASK]，比如my dog is hairy → my dog is [MASK]
+-   10%的概率替换成随机的一个词，比如my dog is hairy → my dog is apple
+-   10%的概率替换成它本身，比如my dog is hairy → my dog is hairy
+
+这样做的好处是，BERT并不知道[MASK]替换的是这15%个Token中的哪一个词(**注意：这里意思是输入的时候不知道[MASK]替换的是哪一个词，但是输出还是知道要预测哪个词的**)，而且任何一个词都有可能是被替换掉的，比如它看到的apple可能是被替换的词。这样强迫模型在编码当前时刻的时候不能太依赖于当前的词，而要考虑它的上下文，甚至对其上下文进行”纠错”。比如上面的例子模型在编码apple是根据上下文my dog is应该把apple(部分)编码成hairy的语义而不是apple的语义。
 细节三：对于任务一，对于在数据中随机选择 15% 的标记，其中80%被换位[mask]，10%不变、10%随机替换其他单词，原因是什么？
 
 **两个缺点：**
@@ -127,6 +134,23 @@ No ablation was done on the ratios of this approach, and it may have worked bett
 - NSP
 ### 损失函数
 total_loss = masked_lm_loss + next_sentence_loss
+BERT的损失函数由两部分组成，第一部分是来自 Mask-LM 的**单词级别分类任务**，另一部分是**句子级别的分类任务**。通过这两个任务的联合学习，可以使得 BERT 学习到的表征既有 token 级别信息，同时也包含了句子级别的语义信息。具体损失函数如下：
+
+![[公式]](https://www.zhihu.com/equation?tex=L%5Cleft%28%5Ctheta%2C+%5Ctheta_%7B1%7D%2C+%5Ctheta_%7B2%7D%5Cright%29%3DL_%7B1%7D%5Cleft%28%5Ctheta%2C+%5Ctheta_%7B1%7D%5Cright%29%2BL_%7B2%7D%5Cleft%28%5Ctheta%2C+%5Ctheta_%7B2%7D%5Cright%29)
+
+其中  ![[公式]](https://www.zhihu.com/equation?tex=%5Ctheta)  ​ 是 BERT 中 Encoder 部分的参数，​  ![[公式]](https://www.zhihu.com/equation?tex=%5Ctheta_1)  是 Mask-LM 任务中在 Encoder 上所接的输出层中的参数，​  ![[公式]](https://www.zhihu.com/equation?tex=%5Ctheta_2)  则是句子预测任务中在 Encoder 接上的分类器参数。因此，在第一部分的损失函数中，如果被 mask 的词集合为 M，因为它是一个词典大小 |V| 上的多分类问题，那么具体说来有：
+
+![[公式]](https://www.zhihu.com/equation?tex=L_%7B1%7D%5Cleft%28%5Ctheta%2C+%5Ctheta_%7B1%7D%5Cright%29%3D-%5Csum_%7Bi%3D1%7D%5E%7BM%7D+%5Clog+p%5Cleft%28m%3Dm_%7Bi%7D+%7C+%5Ctheta%2C+%5Ctheta_%7B1%7D%5Cright%29%2C+m_%7Bi%7D+%5Cin%5B1%2C2%2C+%5Cldots%2C%7CV%7C%5D)
+
+在句子预测任务中，也是一个分类问题的损失函数：
+
+![[公式]](https://www.zhihu.com/equation?tex=L_%7B2%7D%5Cleft%28%5Ctheta%2C+%5Ctheta_%7B2%7D%5Cright%29%3D-%5Csum_%7Bj%3D1%7D%5E%7BN%7D+%5Clog+p%5Cleft%28n%3Dn_%7Bi%7D+%7C+%5Ctheta%2C+%5Ctheta_%7B2%7D%5Cright%29%2C+n_%7Bi%7D+%5Cin%5B%5Ctext+%7BIsNext%7D%2C+%5Ctext+%7BNotNext%7D%5D)
+
+因此，两个任务联合学习的损失函数是：
+
+![[公式]](https://www.zhihu.com/equation?tex=L%5Cleft%28%5Ctheta%2C+%5Ctheta_%7B1%7D%2C+%5Ctheta_%7B2%7D%5Cright%29%3D-%5Csum_%7Bi%3D1%7D%5E%7BM%7D+%5Clog+p%5Cleft%28m%3Dm_%7Bi%7D+%7C+%5Ctheta%2C+%5Ctheta_%7B1%7D%5Cright%29-%5Csum_%7Bj%3D1%7D%5E%7BN%7D+%5Clog+p%5Cleft%28n%3Dn_%7Bi%7D+%7C+%5Ctheta%2C+%5Ctheta_%7B2%7D%5Cright%29)
+
+具体的预训练工程实现细节方面，BERT 还利用了一系列策略，使得模型更易于训练，比如对于学习率的 warm-up 策略，使用的激活函数不再是普通的 ReLu，而是 GeLu，也使用了 dropout 等常见的训练技巧。
 ### 预训练流程
 [http://jalammar.github.io/a-visual-guide-to-using-bert-for-the-first-time/](http://jalammar.github.io/a-visual-guide-to-using-bert-for-the-first-time/)  Recapping a sentence’s journey
 1. Add special token to raw input: "BERT is awesome. BERT is wonderful" becomes "[CLS] BERT is awesome [SEP] BERT is wonderful [SEP]"
@@ -136,14 +160,41 @@ total_loss = masked_lm_loss + next_sentence_loss
 	2.3 segment embedding
 3. Transformer encoder: 
 
+like this
+![enter image description here](https://pic3.zhimg.com/v2-d2fc03b3008e1371e224bc2efef6ecfa_b.jpg)
+
 
 ## BERT的微调fine tune
 
 ### 微调任务类型
 ![enter image description here](https://lilianweng.github.io/lil-log/assets/images/BERT-downstream-tasks.png)
-	- sentence classification(sentiment classification)训练数据样例
-	- token classification NER训练数据样例
-	- SQuAD & unsupervised SQUAD训练数据样例
+### **7.1 针对句子语义相似度的任务**
+  
+![](https://pic1.zhimg.com/80/v2-971f887ed616ea0f65941c8dc15ee128_720w.jpg)
+
+  实际操作时，上述最后一句话之后还会加一个[SEP] token，语义相似度任务将两个句子按照上述方式输入即可，之后与论文中的分类任务一样，将[CLS] token位置对应的输出，接上softmax做分类即可(实际上GLUE任务中就有很多语义相似度的数据集)。
+
+### **7.2 针对多标签分类的任务**
+
+多标签分类任务，即MultiLabel，指的是一个样本可能同时属于多个类，即有多个标签。以商品为例，一件L尺寸的棉服，则该样本就有至少两个标签——型号：L，类型：冬装。
+
+对于多标签分类任务，显而易见的朴素做法就是不管样本属于几个类，就给它训练几个分类模型即可，然后再一一判断在该类别中，其属于那个子类别，但是这样做未免太暴力了，而多标签分类任务，其实是可以**只用一个模型**来解决的。
+
+利用BERT模型解决多标签分类问题时，其输入与普通单标签分类问题一致，得到其embedding表示之后(也就是BERT输出层的embedding)，有几个label就连接到几个全连接层(也可以称为projection layer)，然后再分别接上softmax分类层，这样的话会得到​  ![[公式]](https://www.zhihu.com/equation?tex=loss_1%2C%5C+loss_2%2C%5C+%5Ccdots%2C%5C+loss_n)  ，最后再将所有的loss相加起来即可。这种做法就相当于将n个分类模型的特征提取层参数共享，得到一个共享的表示(其维度可以视任务而定，由于是多标签分类任务，因此其维度可以适当增大一些)，最后再做多标签分类任务。
+
+### **7.3 针对翻译的任务**
+
+针对翻译的任务，我自己想到一种做法，因为BERT本身会产生embedding这样的“副产品”，因此可以直接利用BERT输出层得到的embedding，然后在做机器翻译任务时，将其作为输入/输出的embedding表示，这样做的话，可能会遇到UNK的问题，为了解决UNK的问题，可以将得到的词向量embedding拼接字向量的embedding得到输入/输出的表示(对应到英文就是token embedding拼接经过charcnn的embedding的表示)。
+
+### **7.4 针对文本生成的任务**
+
+关于生成任务，搜到以下几篇论文：
+
+[BERT has a Mouth, and It Must Speak: BERT as a Markov Random Field Language Model](https://link.zhihu.com/?target=https%3A//arxiv.org/abs/1902.04094)
+
+[MASS: Masked Sequence to Sequence Pre-training for Language Generation](https://link.zhihu.com/?target=https%3A//arxiv.org/abs/1905.02450)
+
+[Unified Language Model Pre-training for Natural Language Understanding and Generation](https://link.zhihu.com/?target=https%3A//arxiv.org/abs/1905.03197)
 ### 微调技巧
 1. 调整参数（内存），模型选择
 2.  **长文本处理**
@@ -162,6 +213,7 @@ total_loss = masked_lm_loss + next_sentence_loss
 ![enter image description here](https://pic3.zhimg.com/80/v2-f932b2ed7aa4af745b512e2e0f43093e_720w.jpg)
 
 ## BERT的改进
+[关于BERT的若干问题整理记录](https://zhuanlan.zhihu.com/p/95594311)
 ### task design
 - spanBERT [https://zhuanlan.zhihu.com/p/75893972](https://zhuanlan.zhihu.com/p/75893972)
 ### distillation
@@ -314,7 +366,7 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [Bert在NLP各领域的应用进展](https://zhuanlan.zhihu.com/p/68446772)
 [GPT2 finetune @familiarcycle.net/](https://familiarcycle.net/)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTAyNDE3ODI3MywzMTM2Mzc4NzEsLTkwNz
+eyJoaXN0b3J5IjpbLTYxMDUzOTcxNSwzMTM2Mzc4NzEsLTkwNz
 k0Mjc5MiwtMjAwNjM3MTg4NCw4NzQyNDcxODMsLTY4Mzk5MzE2
 NiwtMzcwMjkyMjM5LDE3MjMxNDM2NzUsMTQ2NDgxNzkyLDQ0NT
 MwMzg1OSw2NTU5ODY1NzAsLTIwMTk0ODgyMjcsMTE2ODE1Nzg3
