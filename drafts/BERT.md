@@ -86,6 +86,7 @@ BERT模型主要包含这个部分，编码层和Transformer编码器
 2. 加入特殊符号[CLS][SEP]
 
     embeddings = inputs_embeds + position_embeddings + token_type_embeddings
+    为什么可以相加？[https://www.zhihu.com/question/374835153/answer/1069173198](https://www.zhihu.com/question/374835153/answer/1069173198)
 
 [https://mc.ai/why-bert-has-3-embedding-layers-and-their-implementation-details/](https://mc.ai/why-bert-has-3-embedding-layers-and-their-implementation-details/)
 ![enter image description here](https://i.stack.imgur.com/QCcYF.png)
@@ -121,8 +122,14 @@ No ablation was done on the ratios of this approach, and it may have worked bett
 2、相较于传统语言模型，Bert的每批次训练数据中只有 15% 的标记被预测，这导致模型需要更多的训练步骤来收敛。
 - NSP
 ### 损失函数
+total_loss = masked_lm_loss + next_sentence_loss
 ### 预训练流程
 [http://jalammar.github.io/a-visual-guide-to-using-bert-for-the-first-time/](http://jalammar.github.io/a-visual-guide-to-using-bert-for-the-first-time/)  Recapping a sentence’s journey
+1. raw input: "BERT is awesome"
+2. Embedding
+	2.1 tokenization: 
+	2.2 
+3. Transformer encoder: 
 ### optimizer
 [https://towardsdatascience.com/an-intuitive-understanding-of-the-lamb-optimizer-46f8c0ae4866](https://towardsdatascience.com/an-intuitive-understanding-of-the-lamb-optimizer-46f8c0ae4866)
 - size matters
@@ -302,12 +309,13 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [Bert微调技巧实验大全](https://zhuanlan.zhihu.com/p/109143667)
 [BERT finetune的艺术](https://zhuanlan.zhihu.com/p/62642374)
 [Bert在NLP各领域的应用进展](https://zhuanlan.zhihu.com/p/68446772)
+[GPT2 finetune @familiarcycle.net/](https://familiarcycle.net/)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzEzNjM3ODcxLC05MDc5NDI3OTIsLTIwMD
-YzNzE4ODQsODc0MjQ3MTgzLC02ODM5OTMxNjYsLTM3MDI5MjIz
-OSwxNzIzMTQzNjc1LDE0NjQ4MTc5Miw0NDUzMDM4NTksNjU1OT
-g2NTcwLC0yMDE5NDg4MjI3LDExNjgxNTc4NzcsLTQ5NDI4MTA5
-OCwzNTEyODQzMiwtNjE0MTk3NzIxLC0xOTIyNDYxMjEsMTk1NT
-g2MzA3OSwtNDc2ODcyMjQ1LDEwODQ2Njc4MDUsLTYzODQ0NDg2
-Ml19
+eyJoaXN0b3J5IjpbLTY1NTExOTAsMzEzNjM3ODcxLC05MDc5ND
+I3OTIsLTIwMDYzNzE4ODQsODc0MjQ3MTgzLC02ODM5OTMxNjYs
+LTM3MDI5MjIzOSwxNzIzMTQzNjc1LDE0NjQ4MTc5Miw0NDUzMD
+M4NTksNjU1OTg2NTcwLC0yMDE5NDg4MjI3LDExNjgxNTc4Nzcs
+LTQ5NDI4MTA5OCwzNTEyODQzMiwtNjE0MTk3NzIxLC0xOTIyND
+YxMjEsMTk1NTg2MzA3OSwtNDc2ODcyMjQ1LDEwODQ2Njc4MDVd
+fQ==
 -->
