@@ -68,7 +68,7 @@ BERT（Bidirectional Encoder Representations from Transformer）是一个预训�
 BERT最大的创新是将Transformer模型应用到了语言模型中，。。。。影响和决定了BERT很多特殊性质。在BERT之前，
 
 - context dependent embedding
-BERT模型生成的元素编码属于动态编码
+BERT模型生成的元素编码属于动态编码，它能根据输入序列生成每个序列元素（word）在序列上下文中的特征向量
 - bidirectional Language Model
 这是由于它是以Attention机制为基础。注意力机制可以一次看到所有的序列元素，每个元素的编码的计算都包含了该元素之前和之后的序列信息，因此BERT属于双向语言模型，并且由于能够同时看到前向和后向的信息，BERT不同于以往的双向语言模型，如ELMO，。。。。。。
 并非所有的基于attention机制的模型都是双向语言模型，比如GPT使用了遮罩的方式使模型无法看到当前元素之后的序列信息，因此它属于单向语言模型。
@@ -86,7 +86,8 @@ BERT模型生成的元素编码属于动态编码
 - 段编码
 - 位置编码
 ### Transformer编码器
-
+Transformer模型是由google ai于2017年发布的一个编码器-解码器架构模型，最初应用于机器翻译。Transformer的最大特点是使用注意力机制（attention mechanism），解决了使用RNN模型造成的梯度爆炸和无法并行的问题，并且实践证明transformer中提出的多头注意力具有强大的特征提取能力，性能超越了RNN,CNN等传统方法。
+Transformer由编码器和解码器组成，编码器负责将输入序列中的每个元素（word）转换为包含上下文信息的特征向量
 ### 输出
 
 ## BERT的预训练
@@ -295,11 +296,11 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [BERT finetune的艺术](https://zhuanlan.zhihu.com/p/62642374)
 [Bert在NLP各领域的应用进展](https://zhuanlan.zhihu.com/p/68446772)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwMzYwMjU4MTgsLTkwNzk0Mjc5MiwtMj
-AwNjM3MTg4NCw4NzQyNDcxODMsLTY4Mzk5MzE2NiwtMzcwMjky
-MjM5LDE3MjMxNDM2NzUsMTQ2NDgxNzkyLDQ0NTMwMzg1OSw2NT
-U5ODY1NzAsLTIwMTk0ODgyMjcsMTE2ODE1Nzg3NywtNDk0Mjgx
-MDk4LDM1MTI4NDMyLC02MTQxOTc3MjEsLTE5MjI0NjEyMSwxOT
-U1ODYzMDc5LC00NzY4NzIyNDUsMTA4NDY2NzgwNSwtNjM4NDQ0
-ODYyXX0=
+eyJoaXN0b3J5IjpbNTQzODAwNDA1LC05MDc5NDI3OTIsLTIwMD
+YzNzE4ODQsODc0MjQ3MTgzLC02ODM5OTMxNjYsLTM3MDI5MjIz
+OSwxNzIzMTQzNjc1LDE0NjQ4MTc5Miw0NDUzMDM4NTksNjU1OT
+g2NTcwLC0yMDE5NDg4MjI3LDExNjgxNTc4NzcsLTQ5NDI4MTA5
+OCwzNTEyODQzMiwtNjE0MTk3NzIxLC0xOTIyNDYxMjEsMTk1NT
+g2MzA3OSwtNDc2ODcyMjQ1LDEwODQ2Njc4MDUsLTYzODQ0NDg2
+Ml19
 -->
