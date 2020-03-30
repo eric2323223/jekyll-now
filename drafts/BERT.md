@@ -87,7 +87,7 @@ BERT模型生成的元素编码属于动态编码，它能根据输入序列生�
 - 位置编码
 ### Transformer编码器
 Transformer模型是由google ai于2017年发布的一个编码器-解码器架构模型，最初应用于机器翻译。Transformer的最大特点是使用注意力机制（attention mechanism），解决了使用RNN模型造成的梯度爆炸和无法并行的问题，并且实践证明transformer中提出的多头注意力具有强大的特征提取能力，性能超越了RNN,CNN等传统方法。
-Transformer由编码器和解码器组成，编码器负责将输入序列中的每个元素（word）转换为包含上下文信息的特征向量
+Transformer由编码器和解码器组成，编码器负责将输入序列中的每个元素（word）转换为包含上下文信息的特征向量，再由解码器根据编码后的特征向量生成输出序列。BERT模型中只使用了transformer的编码器，它主要由若干个结构相同的编码层连接而成。每一个编码层主要有一个多头注意力计算单元和按位前馈网络组成，多头注意力计算单元负责
 ### 输出
 
 ## BERT的预训练
@@ -296,11 +296,11 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [BERT finetune的艺术](https://zhuanlan.zhihu.com/p/62642374)
 [Bert在NLP各领域的应用进展](https://zhuanlan.zhihu.com/p/68446772)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTQzODAwNDA1LC05MDc5NDI3OTIsLTIwMD
-YzNzE4ODQsODc0MjQ3MTgzLC02ODM5OTMxNjYsLTM3MDI5MjIz
-OSwxNzIzMTQzNjc1LDE0NjQ4MTc5Miw0NDUzMDM4NTksNjU1OT
-g2NTcwLC0yMDE5NDg4MjI3LDExNjgxNTc4NzcsLTQ5NDI4MTA5
-OCwzNTEyODQzMiwtNjE0MTk3NzIxLC0xOTIyNDYxMjEsMTk1NT
-g2MzA3OSwtNDc2ODcyMjQ1LDEwODQ2Njc4MDUsLTYzODQ0NDg2
-Ml19
+eyJoaXN0b3J5IjpbMTAwMTE3MjU3NywtOTA3OTQyNzkyLC0yMD
+A2MzcxODg0LDg3NDI0NzE4MywtNjgzOTkzMTY2LC0zNzAyOTIy
+MzksMTcyMzE0MzY3NSwxNDY0ODE3OTIsNDQ1MzAzODU5LDY1NT
+k4NjU3MCwtMjAxOTQ4ODIyNywxMTY4MTU3ODc3LC00OTQyODEw
+OTgsMzUxMjg0MzIsLTYxNDE5NzcyMSwtMTkyMjQ2MTIxLDE5NT
+U4NjMwNzksLTQ3Njg3MjI0NSwxMDg0NjY3ODA1LC02Mzg0NDQ4
+NjJdfQ==
 -->
