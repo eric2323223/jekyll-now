@@ -80,12 +80,19 @@ BERT模型生成的元素编码属于动态编码，它能根据输入序列生�
 ![enter image description here](https://miro.medium.com/max/1095/0*ViwaI3Vvbnd-CJSQ.png)
 
 ### 编码层
+编码层的作用是
+1. 将输入语句（BERT is powerful）转换为模型可处理的浮点数向量
+2. 加入特殊符号
+    embeddings = inputs_embeds + position_embeddings + token_type_embeddings
+
 [https://mc.ai/why-bert-has-3-embedding-layers-and-their-implementation-details/](https://mc.ai/why-bert-has-3-embedding-layers-and-their-implementation-details/)
 ![enter image description here](https://i.stack.imgur.com/QCcYF.png)
-- 词编码
-- 段编码
-- 位置编码
-是由（
+- 词编码(config.vocab_size, config.hidden_size, padding_idx=0)
+
+- 段编码(config.type_vocab_size, config.hidden_size)
+由于BERT可以处理1或2条语句，用于区分不同语句
+- 位置编码(config.max_position_embeddings, config.hidden_size)
+不同于Transformer的基于周期函数的固定位置编码方法，BERT采用可学习的位置编码方式，bert中的最大句子长度是512 所以Position Embedding layer 是一个size为（512，768）的lookup table
 ### Transformer编码器
 Transformer模型是由google ai于2017年发布的一个编码器-解码器架构模型，最初应用于机器翻译。Transformer的最大特点是使用注意力机制（attention mechanism），解决了使用RNN模型造成的梯度爆炸和无法并行的问题，并且实践证明transformer中提出的多头注意力具有强大的特征提取能力，性能超越了RNN,CNN等传统方法。
 Transformer由编码器和解码器组成，编码器负责将输入序列中的每个元素（word）转换为包含上下文信息的特征向量，再由解码器根据编码后的特征向量生成输出序列。BERT模型中只使用了transformer的编码器，它主要由若干个结构相同的编码层连接而成。每一个编码层主要有一个多头自注意力计算单元和按位前馈网络组成，多头自注意力计算单元负责为每个输入元素生成特征向量，前馈网络能够通过组合元素特征向量生成更复杂的特征向量。
@@ -297,7 +304,7 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [BERT finetune的艺术](https://zhuanlan.zhihu.com/p/62642374)
 [Bert在NLP各领域的应用进展](https://zhuanlan.zhihu.com/p/68446772)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTk1MzEzOTk5NiwtOTA3OTQyNzkyLC0yMD
+eyJoaXN0b3J5IjpbMTUxMDMwODQ4NywtOTA3OTQyNzkyLC0yMD
 A2MzcxODg0LDg3NDI0NzE4MywtNjgzOTkzMTY2LC0zNzAyOTIy
 MzksMTcyMzE0MzY3NSwxNDY0ODE3OTIsNDQ1MzAzODU5LDY1NT
 k4NjU3MCwtMjAxOTQ4ODIyNywxMTY4MTU3ODc3LC00OTQyODEw
