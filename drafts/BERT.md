@@ -127,8 +127,9 @@ total_loss = masked_lm_loss + next_sentence_loss
 [http://jalammar.github.io/a-visual-guide-to-using-bert-for-the-first-time/](http://jalammar.github.io/a-visual-guide-to-using-bert-for-the-first-time/)  Recapping a sentence’s journey
 1. raw input: "BERT is awesome"
 2. Embedding
-	2.1 tokenization: 
-	2.2 
+	2.1 word embedding: tokenization
+	2.2 positional embedding
+	2.3 segment embedding
 3. Transformer encoder: 
 ### optimizer
 [https://towardsdatascience.com/an-intuitive-understanding-of-the-lamb-optimizer-46f8c0ae4866](https://towardsdatascience.com/an-intuitive-understanding-of-the-lamb-optimizer-46f8c0ae4866)
@@ -311,11 +312,11 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [Bert在NLP各领域的应用进展](https://zhuanlan.zhihu.com/p/68446772)
 [GPT2 finetune @familiarcycle.net/](https://familiarcycle.net/)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTY1NTExOTAsMzEzNjM3ODcxLC05MDc5ND
-I3OTIsLTIwMDYzNzE4ODQsODc0MjQ3MTgzLC02ODM5OTMxNjYs
-LTM3MDI5MjIzOSwxNzIzMTQzNjc1LDE0NjQ4MTc5Miw0NDUzMD
-M4NTksNjU1OTg2NTcwLC0yMDE5NDg4MjI3LDExNjgxNTc4Nzcs
-LTQ5NDI4MTA5OCwzNTEyODQzMiwtNjE0MTk3NzIxLC0xOTIyND
-YxMjEsMTk1NTg2MzA3OSwtNDc2ODcyMjQ1LDEwODQ2Njc4MDVd
-fQ==
+eyJoaXN0b3J5IjpbMTI5MTkyNDE0NSwzMTM2Mzc4NzEsLTkwNz
+k0Mjc5MiwtMjAwNjM3MTg4NCw4NzQyNDcxODMsLTY4Mzk5MzE2
+NiwtMzcwMjkyMjM5LDE3MjMxNDM2NzUsMTQ2NDgxNzkyLDQ0NT
+MwMzg1OSw2NTU5ODY1NzAsLTIwMTk0ODgyMjcsMTE2ODE1Nzg3
+NywtNDk0MjgxMDk4LDM1MTI4NDMyLC02MTQxOTc3MjEsLTE5Mj
+I0NjEyMSwxOTU1ODYzMDc5LC00NzY4NzIyNDUsMTA4NDY2Nzgw
+NV19
 -->
