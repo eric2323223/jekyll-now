@@ -1,5 +1,3 @@
-# NLP transfer learning 
-
 # NLP的迁移学习-BERT篇
 迁移学习让普通人应用复杂强大模型解决实际问题的捷径，利用注意力机制的强大能力，BERT在NLP领域的一系列任务的基准测试中取得了新高。本文旨在介绍BERT的结构，特性，预训练方法和微调方法，并试图解释BERT模型设计背后的原因。最后回归应用，介绍了如何利用BERT预训练模型在colab平台快速实现智能问答。
 1. 迁移学习和预训练模型
@@ -22,7 +20,7 @@
     6.1 环境搭建
     6.2 实验流程
 7. 总结
-# Training objective of self-supervised learning - From Word2Vec to Elmo to Bert to XLNet
+
 
 self-supervised learning is important area because it can greatly reduce the effort of training deep model, 
 
@@ -72,16 +70,15 @@ The good LM should calculate higher probabilities to “real” and “frequentl
 无微调适用于容量更大预训练模型，这类模型一般包含了更多的常识，比如GPT2使用了xx的高质量数据进行预训练，无需微调也可能在不同下游任务重生成可接受的预测。对于这类模型，只需要给出少量的样例让模型理解预测意图。。。
 
 ## BERT简介
-When BERT was published it achieved [state-of-the-art] performance in 11 [natural language understanding] tasks:[[1]] [GLUE]task set (consisting of 8 tasks), [MultiNLI] [SQuAD] v1.1, SQuAD v2.0
+BERT（Bidirectional Encoder Representations from Transformer）是一个用于提取输入序列特征信息的预训练模型。When BERT was published it achieved [state-of-the-art] performance in 11 [natural language understanding] tasks:[[1]] [GLUE]task set (consisting of 8 tasks), [MultiNLI] [SQuAD] v1.1, SQuAD v2.0
 2018, google发表了论文BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding， 2019年google将BERT模型应用到了搜索服务中，现在已经支持了超过70种语言
-BERT（Bidirectional Encoder Representations from Transformer）是一个预训练模型，它可以提取输入序列的上下文信息，
 
 BERT最大的创新是将Transformer模型应用到了语言模型中，。。。。影响和决定了BERT很多特殊性质。在BERT之前，
 
 - context dependent embedding
 BERT模型生成的元素编码属于动态编码，它能根据输入序列生成每个序列元素（word）在序列上下文中的特征向量
 - bidirectional Language Model
-这是由于它是以Attention机制为基础。注意力机制可以一次看到所有的序列元素，每个元素的编码的计算都包含了该元素之前和之后的序列信息，因此BERT属于双向语言模型，并且由于能够同时看到前向和后向的信息，BERT不同于以往的双向语言模型，如ELMO，。。。。。。
+这是由于它是以Attention机制为基础。注意力机制可以一次看到所有的序列元素，每个元素的编码的计算都包含了该元素之前和之后的序列信息，因此BERT属于双向语言模型，并且由于能够同时看到前向和后向的信息，BERT不同于以往的双向语言模型，如ELMO，。。。。。。deep bidirectional 
 并非所有的基于attention机制的模型都是双向语言模型，比如GPT使用了遮罩的方式使模型无法看到当前元素之后的序列信息，因此它属于单向语言模型。
 
 - 
@@ -187,19 +184,8 @@ like this
 
 利用BERT模型解决多标签分类问题时，其输入与普通单标签分类问题一致，得到其embedding表示之后(也就是BERT输出层的embedding)，有几个label就连接到几个全连接层(也可以称为projection layer)，然后再分别接上softmax分类层，这样的话会得到​  ![[公式]](https://www.zhihu.com/equation?tex=loss_1%2C%5C+loss_2%2C%5C+%5Ccdots%2C%5C+loss_n)  ，最后再将所有的loss相加起来即可。这种做法就相当于将n个分类模型的特征提取层参数共享，得到一个共享的表示(其维度可以视任务而定，由于是多标签分类任务，因此其维度可以适当增大一些)，最后再做多标签分类任务。
 
-### **7.3 针对翻译的任务**
+### **7.4 文本生成？NO!**
 
-针对翻译的任务，我自己想到一种做法，因为BERT本身会产生embedding这样的“副产品”，因此可以直接利用BERT输出层得到的embedding，然后在做机器翻译任务时，将其作为输入/输出的embedding表示，这样做的话，可能会遇到UNK的问题，为了解决UNK的问题，可以将得到的词向量embedding拼接字向量的embedding得到输入/输出的表示(对应到英文就是token embedding拼接经过charcnn的embedding的表示)。
-
-### **7.4 针对文本生成的任务**
-
-关于生成任务，搜到以下几篇论文：
-
-[BERT has a Mouth, and It Must Speak: BERT as a Markov Random Field Language Model](https://link.zhihu.com/?target=https%3A//arxiv.org/abs/1902.04094)
-
-[MASS: Masked Sequence to Sequence Pre-training for Language Generation](https://link.zhihu.com/?target=https%3A//arxiv.org/abs/1905.02450)
-
-[Unified Language Model Pre-training for Natural Language Understanding and Generation](https://link.zhihu.com/?target=https%3A//arxiv.org/abs/1905.03197)
 ### 微调技巧
 1. 调整参数（内存），模型选择
 2.  **长文本处理**
@@ -373,11 +359,11 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [Bert在NLP各领域的应用进展](https://zhuanlan.zhihu.com/p/68446772)
 [GPT2 finetune @familiarcycle.net/](https://familiarcycle.net/)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE5NDk3MzE5NjYsLTYxMDUzOTcxNSwzMT
-M2Mzc4NzEsLTkwNzk0Mjc5MiwtMjAwNjM3MTg4NCw4NzQyNDcx
-ODMsLTY4Mzk5MzE2NiwtMzcwMjkyMjM5LDE3MjMxNDM2NzUsMT
-Q2NDgxNzkyLDQ0NTMwMzg1OSw2NTU5ODY1NzAsLTIwMTk0ODgy
-MjcsMTE2ODE1Nzg3NywtNDk0MjgxMDk4LDM1MTI4NDMyLC02MT
-QxOTc3MjEsLTE5MjI0NjEyMSwxOTU1ODYzMDc5LC00NzY4NzIy
-NDVdfQ==
+eyJoaXN0b3J5IjpbLTYwMDQ5MTI0MywtNjEwNTM5NzE1LDMxMz
+YzNzg3MSwtOTA3OTQyNzkyLC0yMDA2MzcxODg0LDg3NDI0NzE4
+MywtNjgzOTkzMTY2LC0zNzAyOTIyMzksMTcyMzE0MzY3NSwxND
+Y0ODE3OTIsNDQ1MzAzODU5LDY1NTk4NjU3MCwtMjAxOTQ4ODIy
+NywxMTY4MTU3ODc3LC00OTQyODEwOTgsMzUxMjg0MzIsLTYxND
+E5NzcyMSwtMTkyMjQ2MTIxLDE5NTU4NjMwNzksLTQ3Njg3MjI0
+NV19
 -->
