@@ -219,6 +219,8 @@ like this
 ### distillation
 ### LAMP？not a BERT improvement
 ## BERT应用
+[https://github.com/ProHiryu/bert-chinese-ner](https://github.com/ProHiryu/bert-chinese-ner)
+[https://github.com/chiahsuan156/ODSQA](https://github.com/chiahsuan156/ODSQA)
 ### environment-colab
  - User BERT base model
  - Tweak: batch size, max length
@@ -366,11 +368,11 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [Bert在NLP各领域的应用进展](https://zhuanlan.zhihu.com/p/68446772)
 [GPT2 finetune @familiarcycle.net/](https://familiarcycle.net/)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTYxMDUzOTcxNSwzMTM2Mzc4NzEsLTkwNz
-k0Mjc5MiwtMjAwNjM3MTg4NCw4NzQyNDcxODMsLTY4Mzk5MzE2
-NiwtMzcwMjkyMjM5LDE3MjMxNDM2NzUsMTQ2NDgxNzkyLDQ0NT
-MwMzg1OSw2NTU5ODY1NzAsLTIwMTk0ODgyMjcsMTE2ODE1Nzg3
-NywtNDk0MjgxMDk4LDM1MTI4NDMyLC02MTQxOTc3MjEsLTE5Mj
-I0NjEyMSwxOTU1ODYzMDc5LC00NzY4NzIyNDUsMTA4NDY2Nzgw
-NV19
+eyJoaXN0b3J5IjpbLTE1NjM0NDUxMzksLTYxMDUzOTcxNSwzMT
+M2Mzc4NzEsLTkwNzk0Mjc5MiwtMjAwNjM3MTg4NCw4NzQyNDcx
+ODMsLTY4Mzk5MzE2NiwtMzcwMjkyMjM5LDE3MjMxNDM2NzUsMT
+Q2NDgxNzkyLDQ0NTMwMzg1OSw2NTU5ODY1NzAsLTIwMTk0ODgy
+MjcsMTE2ODE1Nzg3NywtNDk0MjgxMDk4LDM1MTI4NDMyLC02MT
+QxOTc3MjEsLTE5MjI0NjEyMSwxOTU1ODYzMDc5LC00NzY4NzIy
+NDVdfQ==
 -->
