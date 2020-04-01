@@ -86,7 +86,7 @@ BERT模型生成的元素编码属于动态编码，它能根据输入序列生�
 ## BERT模型结构
 ### Transformer encoder based
 BERT模型主要包含这个部分，编码层和Transformer编码器
-![enter image description here](https://miro.medium.com/max/1095/0*ViwaI3Vvbnd-CJSQ.png)
+![enter image description here](https://www.lyrn.ai/wp-content/uploads/2018/11/transformer.png)
 
 ### 编码层
 编码层的作用是
@@ -101,7 +101,7 @@ BERT模型主要包含这个部分，编码层和Transformer编码器
 - 词编码(config.vocab_size, config.hidden_size, padding_idx=0)
 [https://www.topbots.com/generalized-language-models-bert-openai-gpt2/#input-embedding](https://www.topbots.com/generalized-language-models-bert-openai-gpt2/#input-embedding)
 - 段编码(config.type_vocab_size, config.hidden_size)
-由于BERT可以处理1或2条语句，用于区分不同语句
+在BERT处理多条语句时，用于区分不同语句
 - 位置编码(config.max_position_embeddings, config.hidden_size)
 不同于Transformer的基于周期函数的固定位置编码方法，BERT采用可学习的位置编码方式，bert中的最大句子长度是512 所以Position Embedding layer 是一个size为（512，768）的lookup table
 ### Transformer编码器
@@ -360,11 +360,11 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [GPT2 finetune @familiarcycle.net/](https://familiarcycle.net/)
 [paper-dissected-bert-pre-training-of-deep-bidirectional-transformers-for-language-understanding-explained](https://mlexplained.com/2019/01/07/paper-dissected-bert-pre-training-of-deep-bidirectional-transformers-for-language-understanding-explained/)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE4MjM2OTEyNzgsLTYwMDQ5MTI0MywtNj
-EwNTM5NzE1LDMxMzYzNzg3MSwtOTA3OTQyNzkyLC0yMDA2Mzcx
-ODg0LDg3NDI0NzE4MywtNjgzOTkzMTY2LC0zNzAyOTIyMzksMT
-cyMzE0MzY3NSwxNDY0ODE3OTIsNDQ1MzAzODU5LDY1NTk4NjU3
-MCwtMjAxOTQ4ODIyNywxMTY4MTU3ODc3LC00OTQyODEwOTgsMz
-UxMjg0MzIsLTYxNDE5NzcyMSwtMTkyMjQ2MTIxLDE5NTU4NjMw
-NzldfQ==
+eyJoaXN0b3J5IjpbLTcxMDY3NDkxOCwtMTgyMzY5MTI3OCwtNj
+AwNDkxMjQzLC02MTA1Mzk3MTUsMzEzNjM3ODcxLC05MDc5NDI3
+OTIsLTIwMDYzNzE4ODQsODc0MjQ3MTgzLC02ODM5OTMxNjYsLT
+M3MDI5MjIzOSwxNzIzMTQzNjc1LDE0NjQ4MTc5Miw0NDUzMDM4
+NTksNjU1OTg2NTcwLC0yMDE5NDg4MjI3LDExNjgxNTc4NzcsLT
+Q5NDI4MTA5OCwzNTEyODQzMiwtNjE0MTk3NzIxLC0xOTIyNDYx
+MjFdfQ==
 -->
