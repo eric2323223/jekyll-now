@@ -32,8 +32,11 @@ self-supervised learning is important area because it can greatly reduce the eff
 迁移学习旨在通过重用 。。。来加速学习和增强预测的准确性，对于当今越来越复杂的神经网络来说，需要巨大的人力物力和时间成本。。。使用迁移学习是非常有意义的。通过再imagenet训练视觉特征提取网络，数据比较从头训练和使用迁移训练。。。
 现实的问题是获取足够的标记数据非常困难，因此
 ### NLP的迁移学习
-我们知道在CV中的迁移学习过程是首先训练一个通用的的图像特征提取模型（如VGG19， ResNet50等），再结合下游任务需要通过扩展第一阶段的模型来进行fine tuning。进行与CV任务类似，应用迁移学习解决NLP问题也可以分为两个阶段。首先通过预训练学习出可重用的特征提取模型，也叫预训练模型。由于NLP主要关注语言（字符序列）的理解和处理，作为语言基本组成单位的词（word）也就自然成为了预训练的关注点。预训练的目标经历逐步的发展变化
-#### 预训练
+我们知道在CV中的迁移学习过程是首先训练一个通用的的图像特征提取模型（如VGG19， ResNet50等），再结合下游任务需要通过扩展第一阶段的模型来进行fine tuning。进行与CV任务类似，应用迁移学习解决NLP问题也可以分为两个阶段。首先通过预训练学习出可重用的特征提取模型，也叫预训练模型。
+> NLP的最大挑战之一是缺乏足够的培训数据。总体而言，有大量文本数据可用，但是如果我们要创建特定于任务的数据集，则需要将该堆划分为很多不同的字段。而当我们这样做时，我们最终仅得到数千或数十万个人标记的培训示例。不幸的是，为了表现良好，基于深度学习的NLP模型需要大量的数据-在数百万或数十亿的带注释的训练示例上进行训练时，他们看到了重大改进。为了帮助弥合数据鸿沟，研究人员开发了各种技术，可在网络上使用大量未注释的文本来训练通用语言表示模型（这称为预训练）。然后，可以在较小的特定于任务的数据集上微调这些通用的预训练模型，例如，在处理诸如问题回答和情感分析之类的问题时。与从头开始对较小的特定于任务的数据集进行训练相比，此方法可显着提高准确性。
+![enter image description here](https://miro.medium.com/max/1400/1*e9EVwFCujZjkJYMR2-o5PQ.png)
+由于NLP主要关注语言（字符序列）的理解和处理，作为语言基本组成单位的词（word）也就自然成为了预训练的关注点。预训练的目标经历逐步的发展变化
+#### 预训练 pre training
 - output: embeddings
 	- 静态词编码（static word embedding），比Word2Vec，Glove等，顾名思义这类编码赋予每个词固定的编码值，并且编码值体现了词的代表的含义，我们可以通过对编码值的运算得到有意义的结果，比如著名的例子
 ***king — man + woman = queen***
@@ -368,11 +371,11 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [Bert在NLP各领域的应用进展](https://zhuanlan.zhihu.com/p/68446772)
 [GPT2 finetune @familiarcycle.net/](https://familiarcycle.net/)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1NjM0NDUxMzksLTYxMDUzOTcxNSwzMT
-M2Mzc4NzEsLTkwNzk0Mjc5MiwtMjAwNjM3MTg4NCw4NzQyNDcx
-ODMsLTY4Mzk5MzE2NiwtMzcwMjkyMjM5LDE3MjMxNDM2NzUsMT
-Q2NDgxNzkyLDQ0NTMwMzg1OSw2NTU5ODY1NzAsLTIwMTk0ODgy
-MjcsMTE2ODE1Nzg3NywtNDk0MjgxMDk4LDM1MTI4NDMyLC02MT
-QxOTc3MjEsLTE5MjI0NjEyMSwxOTU1ODYzMDc5LC00NzY4NzIy
-NDVdfQ==
+eyJoaXN0b3J5IjpbMTc5NjUzNDQ4NCwtNjEwNTM5NzE1LDMxMz
+YzNzg3MSwtOTA3OTQyNzkyLC0yMDA2MzcxODg0LDg3NDI0NzE4
+MywtNjgzOTkzMTY2LC0zNzAyOTIyMzksMTcyMzE0MzY3NSwxND
+Y0ODE3OTIsNDQ1MzAzODU5LDY1NTk4NjU3MCwtMjAxOTQ4ODIy
+NywxMTY4MTU3ODc3LC00OTQyODEwOTgsMzUxMjg0MzIsLTYxND
+E5NzcyMSwtMTkyMjQ2MTIxLDE5NTU4NjMwNzksLTQ3Njg3MjI0
+NV19
 -->
