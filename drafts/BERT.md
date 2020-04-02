@@ -69,7 +69,7 @@ The good LM should calculate higher probabilities to “real” and “frequentl
 - supervised learning
 使用少量任务相关的标记数据来进行微调，通常的做法是在预训练模型的后面直接加上上一个分类器（由全连接和softmax运算构成）使模型输出一个预测类型，计算cross entropy误差从而通过反向传递更新模型参数。
 	- 更新全部模型参数
-	- 只更新任务层参数
+	- 只更新任务层参数 - 预训练模型只作为特征提取器
 
 
 ## ~~- unsupervised fine tuning? - clustering and measure class separation - classify result by compute distances to different classes -~~
@@ -369,11 +369,11 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [GPT2 finetune @familiarcycle.net/](https://familiarcycle.net/)
 [paper-dissected-bert-pre-training-of-deep-bidirectional-transformers-for-language-understanding-explained](https://mlexplained.com/2019/01/07/paper-dissected-bert-pre-training-of-deep-bidirectional-transformers-for-language-understanding-explained/)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTU4MzUyNzIzNCw4MDA3MzI1NzQsLTE4Mj
-M2OTEyNzgsLTYwMDQ5MTI0MywtNjEwNTM5NzE1LDMxMzYzNzg3
-MSwtOTA3OTQyNzkyLC0yMDA2MzcxODg0LDg3NDI0NzE4MywtNj
-gzOTkzMTY2LC0zNzAyOTIyMzksMTcyMzE0MzY3NSwxNDY0ODE3
-OTIsNDQ1MzAzODU5LDY1NTk4NjU3MCwtMjAxOTQ4ODIyNywxMT
-Y4MTU3ODc3LC00OTQyODEwOTgsMzUxMjg0MzIsLTYxNDE5Nzcy
-MV19
+eyJoaXN0b3J5IjpbNTQyMDMyODA1LDgwMDczMjU3NCwtMTgyMz
+Y5MTI3OCwtNjAwNDkxMjQzLC02MTA1Mzk3MTUsMzEzNjM3ODcx
+LC05MDc5NDI3OTIsLTIwMDYzNzE4ODQsODc0MjQ3MTgzLC02OD
+M5OTMxNjYsLTM3MDI5MjIzOSwxNzIzMTQzNjc1LDE0NjQ4MTc5
+Miw0NDUzMDM4NTksNjU1OTg2NTcwLC0yMDE5NDg4MjI3LDExNj
+gxNTc4NzcsLTQ5NDI4MTA5OCwzNTEyODQzMiwtNjE0MTk3NzIx
+XX0=
 -->
