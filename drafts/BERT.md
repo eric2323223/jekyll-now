@@ -112,7 +112,7 @@ Transformer模型是由google ai于2017年发布的一个编码器-解码器架�
 
 Transformer由编码器和解码器组成，编码器负责将输入序列中的每个元素（word）转换为包含上下文信息的特征向量，再由解码器根据编码后的特征向量生成输出序列。BERT模型中只使用了transformer的编码器，它主要由若干个结构相同的编码层连接而成。每一个编码层主要有一个多头自注意力计算单元（Multi-Head Attention）和按位前馈网络(Feed Forward)组成，多头自注意力计算单元负责为每个输入元素生成特征向量，前馈网络能够通过组合元素特征向量生成更复杂的特征向量。
 ### 输出
-
+![enter image description here](https://docs.google.com/drawings/d/e/2PACX-1vSqp25HORnsDrfUfkTFUgKeTC7IITVZrTMXBuf6eSp4_HmCsGRoGwAxEoN87fuhT98Xsc4IulE_U4vM/pub?w=960&h=720)
 ## BERT的预训练
 ### 任务设计
 BERT的预训练被设计为多任务学习（multi-task learning），包含两个任务：
@@ -156,7 +156,7 @@ BERT的损失函数由两部分组成，第一部分是来自 Mask-LM 的**单�
 具体的预训练工程实现细节方面，BERT 还利用了一系列策略，使得模型更易于训练，比如对于学习率的 warm-up 策略，使用的激活函数不再是普通的 ReLu，而是 GeLu，也使用了 dropout 等常见的训练技巧。
 ### 预训练流程
 [http://jalammar.github.io/a-visual-guide-to-using-bert-for-the-first-time/](http://jalammar.github.io/a-visual-guide-to-using-bert-for-the-first-time/)  Recapping a sentence’s journey
-1. Add special token to raw input: "BERT is awesome. BERT is wonderful" becomes "[CLS] BERT is awesome [SEP] BERT is wonderful [SEP]"
+1. Preprocessing: Add special token to raw input: "BERT is awesome. BERT is wonderful" becomes "[CLS] BERT is awesome [SEP] BERT is wonderful [SEP]"
 2. Embedding
 	2.1 word embedding: tokenization
 	2.2 positional embedding
@@ -164,7 +164,7 @@ BERT的损失函数由两部分组成，第一部分是来自 Mask-LM 的**单�
 3. Transformer encoder: 
 
 like this
-![enter image description here](https://pic3.zhimg.com/v2-d2fc03b3008e1371e224bc2efef6ecfa_b.jpg)
+
 
 
 ## BERT的微调fine tune
@@ -361,11 +361,11 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [GPT2 finetune @familiarcycle.net/](https://familiarcycle.net/)
 [paper-dissected-bert-pre-training-of-deep-bidirectional-transformers-for-language-understanding-explained](https://mlexplained.com/2019/01/07/paper-dissected-bert-pre-training-of-deep-bidirectional-transformers-for-language-understanding-explained/)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1OTUwNTc0NCwtMTgyMzY5MTI3OCwtNj
-AwNDkxMjQzLC02MTA1Mzk3MTUsMzEzNjM3ODcxLC05MDc5NDI3
-OTIsLTIwMDYzNzE4ODQsODc0MjQ3MTgzLC02ODM5OTMxNjYsLT
-M3MDI5MjIzOSwxNzIzMTQzNjc1LDE0NjQ4MTc5Miw0NDUzMDM4
-NTksNjU1OTg2NTcwLC0yMDE5NDg4MjI3LDExNjgxNTc4NzcsLT
-Q5NDI4MTA5OCwzNTEyODQzMiwtNjE0MTk3NzIxLC0xOTIyNDYx
-MjFdfQ==
+eyJoaXN0b3J5IjpbLTIxMTAyMjM5MjAsLTE4MjM2OTEyNzgsLT
+YwMDQ5MTI0MywtNjEwNTM5NzE1LDMxMzYzNzg3MSwtOTA3OTQy
+NzkyLC0yMDA2MzcxODg0LDg3NDI0NzE4MywtNjgzOTkzMTY2LC
+0zNzAyOTIyMzksMTcyMzE0MzY3NSwxNDY0ODE3OTIsNDQ1MzAz
+ODU5LDY1NTk4NjU3MCwtMjAxOTQ4ODIyNywxMTY4MTU3ODc3LC
+00OTQyODEwOTgsMzUxMjg0MzIsLTYxNDE5NzcyMSwtMTkyMjQ2
+MTIxXX0=
 -->
