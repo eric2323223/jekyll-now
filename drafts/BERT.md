@@ -103,15 +103,16 @@ BERT模型主要包含这个部分，编码层和Transformer编码器
 - 段编码(config.type_vocab_size, config.hidden_size)
 在BERT处理多条语句时，用于区分不同语句
 - 位置编码(config.max_position_embeddings, config.hidden_size)
-不同于Transformer的基于周期函数的固定位置编码方法，BERT采用可学习的位置编码方式，bert中的最大句子长度是512 所以Position Embedding layer 是一个size为（512，768）的lookup table
+由于注意力计算不关心输入序列元素的先后循序，因此需要事先加入位置信息再输入模型。不同于Transformer的基于周期函数的固定位置编码方法，BERT采用可学习的位置编码方式，bert中的最大句子长度是512 所以Position Embedding layer 是一个size为（512，768）的lookup table，其中的每一个元素都是可学习的参数，随预训练这些位置相关的参数收敛，使得不同序列相同位置的参数相同，若$w1_n$,$w2_n$分别表示序列$W1,W2$的第$n$个元素，则$P$位置编码满足
+$$P(w1_n)=P(w2_n)$$
 ### Transformer编码器
 Transformer模型是由google ai于2017年发布的一个编码器-解码器架构模型，最初应用于机器翻译。Transformer的最大特点是使用注意力机制（attention mechanism），解决了使用RNN模型造成的梯度爆炸和无法并行的问题，并且实践证明transformer中提出的多头注意力具有强大的特征提取能力，性能超越了RNN,CNN等传统方法。
 > Transformer所使用的注意力机制的核心思想是去计算一句话中的每个词对于这句话中所有词的相互关系，然后认为这些词与词之间的相互关系在一定程度上反应了这句话中不同词之间的关联性以及重要程度。因此再利用这些相互关系来调整每个词的重要性（权重）就可以获得每个词新的表达。这个新的表征不但蕴含了该词本身，还蕴含了其他词与这个词的关系，因此和单纯的词向量相比是一个更加全局的表达。
 > Transformer通过对输入的文本不断进行这样的注意力机制层和普通的非线性层交叠来得到最终的文本表达。
-![enter image description here](https://glassboxmedicine.files.wordpress.com/2019/08/encoder.png)
+
 
 Transformer由编码器和解码器组成，编码器负责将输入序列中的每个元素（word）转换为包含上下文信息的特征向量，再由解码器根据编码后的特征向量生成输出序列。BERT模型中只使用了transformer的编码器，它主要由若干个结构相同的编码层连接而成。每一个编码层主要有一个多头自注意力计算单元（Multi-Head Attention）和按位前馈网络(Feed Forward)组成，多头自注意力计算单元负责为每个输入元素生成特征向量，前馈网络能够通过组合元素特征向量生成更复杂的特征向量。
-### 输出
+
 ![enter image description here](https://docs.google.com/drawings/d/e/2PACX-1vSqp25HORnsDrfUfkTFUgKeTC7IITVZrTMXBuf6eSp4_HmCsGRoGwAxEoN87fuhT98Xsc4IulE_U4vM/pub?w=960&h=720)
 ## BERT的预训练
 ### 任务设计
@@ -361,11 +362,11 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [GPT2 finetune @familiarcycle.net/](https://familiarcycle.net/)
 [paper-dissected-bert-pre-training-of-deep-bidirectional-transformers-for-language-understanding-explained](https://mlexplained.com/2019/01/07/paper-dissected-bert-pre-training-of-deep-bidirectional-transformers-for-language-understanding-explained/)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIxMTAyMjM5MjAsLTE4MjM2OTEyNzgsLT
-YwMDQ5MTI0MywtNjEwNTM5NzE1LDMxMzYzNzg3MSwtOTA3OTQy
-NzkyLC0yMDA2MzcxODg0LDg3NDI0NzE4MywtNjgzOTkzMTY2LC
-0zNzAyOTIyMzksMTcyMzE0MzY3NSwxNDY0ODE3OTIsNDQ1MzAz
-ODU5LDY1NTk4NjU3MCwtMjAxOTQ4ODIyNywxMTY4MTU3ODc3LC
-00OTQyODEwOTgsMzUxMjg0MzIsLTYxNDE5NzcyMSwtMTkyMjQ2
-MTIxXX0=
+eyJoaXN0b3J5IjpbMTU3MzIxNjU0NywtMTgyMzY5MTI3OCwtNj
+AwNDkxMjQzLC02MTA1Mzk3MTUsMzEzNjM3ODcxLC05MDc5NDI3
+OTIsLTIwMDYzNzE4ODQsODc0MjQ3MTgzLC02ODM5OTMxNjYsLT
+M3MDI5MjIzOSwxNzIzMTQzNjc1LDE0NjQ4MTc5Miw0NDUzMDM4
+NTksNjU1OTg2NTcwLC0yMDE5NDg4MjI3LDExNjgxNTc4NzcsLT
+Q5NDI4MTA5OCwzNTEyODQzMiwtNjE0MTk3NzIxLC0xOTIyNDYx
+MjFdfQ==
 -->
