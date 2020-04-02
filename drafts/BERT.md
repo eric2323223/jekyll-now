@@ -32,6 +32,7 @@ self-supervised learning is important area because it can greatly reduce the eff
 ### NLP的迁移学习
 我们知道在CV中的迁移学习过程是首先训练一个通用的的图像特征提取模型（如VGG19， ResNet50等），再结合下游任务需要通过扩展第一阶段的模型来进行fine tuning。进行与CV任务类似，应用迁移学习解决NLP问题也可以分为两个阶段。首先通过预训练学习出可重用的特征提取模型，也叫预训练模型。
 > NLP的最大挑战之一是缺乏足够的培训数据。总体而言，有大量文本数据可用，但是如果我们要创建特定于任务的数据集，则需要将该堆划分为很多不同的字段。而当我们这样做时，我们最终仅得到数千或数十万个人标记的培训示例。不幸的是，为了表现良好，基于深度学习的NLP模型需要大量的数据-在数百万或数十亿的带注释的训练示例上进行训练时，他们看到了重大改进。为了帮助弥合数据鸿沟，研究人员开发了各种技术，可在网络上使用大量未注释的文本来训练通用语言表示模型（这称为预训练）。然后，可以在较小的特定于任务的数据集上微调这些通用的预训练模型，例如，在处理诸如问题回答和情感分析之类的问题时。与从头开始对较小的特定于任务的数据集进行训练相比，此方法可显着提高准确性。
+
 ![enter image description here](https://docs.google.com/drawings/d/e/2PACX-1vStoAwye3EraSC6HH5m_S8VOsVEp3hsTtQuAVF-dEmPlFvEZqAxBHDQryl3FnVf_BZ6Csb969AGbChe/pub?w=791&h=385)
 
 由于NLP主要关注语言（字符序列）的理解和处理，作为语言基本组成单位的词（word）也就自然成为了预训练的关注点。预训练的目标经历逐步的发展变化
@@ -62,12 +63,20 @@ The good LM should calculate higher probabilities to “real” and “frequentl
 通过这样的学习，模型能够更好地把握“不错”这个词所出现的上下文语境。
 
 #### 微调 fine tune
-由于使用海量的数据进行预训练，预训练模型通常具有一般的常识，由此作为基础再进行微调，使得模型能更好的适合特定任务。微调工作可以以下两种形式：
-- 监督式微调supervised fine tuning
+由于使用海量的数据进行预训练，预训练模型通常具有一般的常识，由此作为基础再进行微调，使得模型能更好的适合特定任务。
+- 模型调整
+通常做法是在预训练模型基础上增加任务相关的层，如由全连接层和softmax运算构成的分类层用于分类任务。
+- supervised learning
 使用少量任务相关的标记数据来进行微调，通常的做法是在预训练模型的后面直接加上上一个分类器（由全连接和softmax运算构成）使模型输出一个预测类型，计算cross entropy误差从而通过反向传递更新模型参数。
-- **无监督式微调unsupervised fine tuning**?
+	- 更新全部模型参数
+	- 只更新任务层参数
+
+
+## ~~- unsupervised fine tuning? - clustering and measure class separation - classify result by compute distances to different classes -~~
+
+
 - zero shot learning
-无微调适用于容量更大预训练模型，这类模型一般包含了更多的常识，比如GPT2使用了xx的高质量数据进行预训练，无需微调也可能在不同下游任务重生成可接受的预测。对于这类模型，只需要给出少量的样例让模型理解预测意图。。。
+~~无微调适用于容量更大预训练模型，这类模型一般包含了更多的常识，比如GPT2使用了xx的高质量数据进行预训练，无需微调也可能在不同下游任务重生成可接受的预测。对于这类模型，只需要给出少量的样例让模型理解预测意图。。。~~
 
 ## BERT简介
 BERT（Bidirectional Encoder Representations from Transformer）是一个用于提取输入序列特征信息的预训练模型。When BERT was published it achieved [state-of-the-art] performance in 11 [natural language understanding] tasks:[[1]] [GLUE]task set (consisting of 8 tasks), [MultiNLI] [SQuAD] v1.1, SQuAD v2.0
@@ -103,7 +112,7 @@ BERT模型主要包含这个部分，编码层和Transformer编码器
 - 段编码(config.type_vocab_size, config.hidden_size)
 在BERT处理多条语句时，用于区分不同语句
 - 位置编码(config.max_position_embeddings, config.hidden_size)
-由于注意力计算不关心输入序列元素的先后循序，因此需要事先加入位置信息再输入模型。不同于Transformer的基于周期函数的固定位置编码方法，BERT采用可学习的位置编码方式，bert中的最大句子长度是512 所以Position Embedding layer 是一个size为（512，768）的lookup table，其中的每一个元素都是可学习的参数，随预训练这些位置相关的参数收敛，。。。相比Transformer的位置编码，似乎没考虑相对位置
+由于注意力计算不关心输入序列元素的先后循序，因此需要事先加入位置信息再输入模型。不同于Transformer的基于周期函数的固定位置编码方法，BERT采用可学习的位置编码方式，bert中的最大句子长度是512 所以Position Embedding layer 是一个size为（512，768）的lookup table，其中的每一个元素都是可学习的参数，随预训练这些位置相关的参数收敛，。。。**相比Transformer的位置编码，似乎没考虑相对位置????**
 ### Transformer编码器
 Transformer模型是由google ai于2017年发布的一个编码器-解码器架构模型，最初应用于机器翻译。Transformer的最大特点是使用注意力机制（attention mechanism），解决了使用RNN模型造成的梯度爆炸和无法并行的问题，并且实践证明transformer中提出的多头注意力具有强大的特征提取能力，性能超越了RNN,CNN等传统方法。
 > Transformer所使用的注意力机制的核心思想是去计算一句话中的每个词对于这句话中所有词的相互关系，然后认为这些词与词之间的相互关系在一定程度上反应了这句话中不同词之间的关联性以及重要程度。因此再利用这些相互关系来调整每个词的重要性（权重）就可以获得每个词新的表达。这个新的表征不但蕴含了该词本身，还蕴含了其他词与这个词的关系，因此和单纯的词向量相比是一个更加全局的表达。
@@ -360,11 +369,11 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [GPT2 finetune @familiarcycle.net/](https://familiarcycle.net/)
 [paper-dissected-bert-pre-training-of-deep-bidirectional-transformers-for-language-understanding-explained](https://mlexplained.com/2019/01/07/paper-dissected-bert-pre-training-of-deep-bidirectional-transformers-for-language-understanding-explained/)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODAwNzMyNTc0LC0xODIzNjkxMjc4LC02MD
-A0OTEyNDMsLTYxMDUzOTcxNSwzMTM2Mzc4NzEsLTkwNzk0Mjc5
-MiwtMjAwNjM3MTg4NCw4NzQyNDcxODMsLTY4Mzk5MzE2NiwtMz
-cwMjkyMjM5LDE3MjMxNDM2NzUsMTQ2NDgxNzkyLDQ0NTMwMzg1
-OSw2NTU5ODY1NzAsLTIwMTk0ODgyMjcsMTE2ODE1Nzg3NywtND
-k0MjgxMDk4LDM1MTI4NDMyLC02MTQxOTc3MjEsLTE5MjI0NjEy
+eyJoaXN0b3J5IjpbMTU4MzUyNzIzNCw4MDA3MzI1NzQsLTE4Mj
+M2OTEyNzgsLTYwMDQ5MTI0MywtNjEwNTM5NzE1LDMxMzYzNzg3
+MSwtOTA3OTQyNzkyLC0yMDA2MzcxODg0LDg3NDI0NzE4MywtNj
+gzOTkzMTY2LC0zNzAyOTIyMzksMTcyMzE0MzY3NSwxNDY0ODE3
+OTIsNDQ1MzAzODU5LDY1NTk4NjU3MCwtMjAxOTQ4ODIyNywxMT
+Y4MTU3ODc3LC00OTQyODEwOTgsMzUxMjg0MzIsLTYxNDE5Nzcy
 MV19
 -->
