@@ -29,6 +29,10 @@ self-supervised learning is important area because it can greatly reduce the eff
 ![enter image description here](https://miro.medium.com/max/3283/1*Z11P-CjNYWBofEbmGQrptA.png)
 迁移学习旨在通过重用 。。。来加速学习和增强预测的准确性，对于当今越来越复杂的神经网络来说，需要巨大的人力物力和时间成本。。。使用迁移学习是非常有意义的。通过再imagenet训练视觉特征提取网络，数据比较从头训练和使用迁移训练。。。
 现实的问题是获取足够的标记数据非常困难，因此
+好处
+1. save time
+2. save money
+3. 
 ### NLP的迁移学习
 我们知道在CV中的迁移学习过程是首先训练一个通用的的图像特征提取模型（如VGG19， ResNet50等），再结合下游任务需要通过扩展第一阶段的模型来进行fine tuning。进行与CV任务类似，应用迁移学习解决NLP问题也可以分为两个阶段。首先通过预训练学习出可重用的特征提取模型，也叫预训练模型。
 
@@ -369,7 +373,7 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [GPT2 finetune @familiarcycle.net/](https://familiarcycle.net/)
 [paper-dissected-bert-pre-training-of-deep-bidirectional-transformers-for-language-understanding-explained](https://mlexplained.com/2019/01/07/paper-dissected-bert-pre-training-of-deep-bidirectional-transformers-for-language-understanding-explained/)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNzQ3Mzg0OTQ3LDgwMDczMjU3NCwtMTgyMz
+eyJoaXN0b3J5IjpbNTA4MzQ3NTQzLDgwMDczMjU3NCwtMTgyMz
 Y5MTI3OCwtNjAwNDkxMjQzLC02MTA1Mzk3MTUsMzEzNjM3ODcx
 LC05MDc5NDI3OTIsLTIwMDYzNzE4ODQsODc0MjQ3MTgzLC02OD
 M5OTMxNjYsLTM3MDI5MjIzOSwxNzIzMTQzNjc1LDE0NjQ4MTc5
