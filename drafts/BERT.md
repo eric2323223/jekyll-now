@@ -37,8 +37,7 @@ self-supervised learning is important area because it can greatly reduce the eff
 
 由于NLP主要关注语言（字符序列）的理解和处理，作为语言基本组成单位的词（word）也就自然成为了预训练的关注点。预训练的目标经历逐步的发展变化
 #### 预训练 pre training
-
-- output: embeddings
+- 目标: 生成词（字）编码 word embedding
 	- 静态词编码（static word embedding），比Word2Vec，Glove等，顾名思义这类编码赋予每个词固定的编码值，并且编码值体现了词的代表的含义，我们可以通过对编码值的运算得到有意义的结果，比如著名的例子 ***king — man + woman = queen***
 
 	- 语境词编码（contextualized word embedding），静态词编码的最大的问题在于它只能个每一个词一个编码值，无法处理一词多义的情况。将“我爱吃苹果”和“我爱苹果手机”中的苹果赋予相同的编码是不合适的，更合理的方式是通过结合词出现的上下文判断词的含义，比如通过“吃”和“手机”来判断上面两句话中的“苹果”分别代表一种水果和一个品牌，这就是语境词编码的基本思想。所以从使用者角度来说，我们需要一个模型能过通过输入语句得到（计算出）该语句的含义，或者该语句中每个词的含义。从这个意义上讲，我们本质上需要的是一种能够提取语义特征的能力，这和CV中的迁移学习的目标是一致的。
@@ -367,7 +366,7 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [GPT2 finetune @familiarcycle.net/](https://familiarcycle.net/)
 [paper-dissected-bert-pre-training-of-deep-bidirectional-transformers-for-language-understanding-explained](https://mlexplained.com/2019/01/07/paper-dissected-bert-pre-training-of-deep-bidirectional-transformers-for-language-understanding-explained/)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTM5MTUwODc4MCw4MDA3MzI1NzQsLTE4Mj
+eyJoaXN0b3J5IjpbMjA4NDU0NTk5NCw4MDA3MzI1NzQsLTE4Mj
 M2OTEyNzgsLTYwMDQ5MTI0MywtNjEwNTM5NzE1LDMxMzYzNzg3
 MSwtOTA3OTQyNzkyLC0yMDA2MzcxODg0LDg3NDI0NzE4MywtNj
 gzOTkzMTY2LC0zNzAyOTIyMzksMTcyMzE0MzY3NSwxNDY0ODE3
