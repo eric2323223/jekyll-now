@@ -31,19 +31,22 @@ self-supervised learning is important area because it can greatly reduce the eff
 现实的问题是获取足够的标记数据非常困难，因此
 ### NLP的迁移学习
 我们知道在CV中的迁移学习过程是首先训练一个通用的的图像特征提取模型（如VGG19， ResNet50等），再结合下游任务需要通过扩展第一阶段的模型来进行fine tuning。进行与CV任务类似，应用迁移学习解决NLP问题也可以分为两个阶段。首先通过预训练学习出可重用的特征提取模型，也叫预训练模型。
-> NLP的最大挑战之一是缺乏足够的培训数据。总体而言，有大量文本数据可用，但是如果我们要创建特定于任务的数据集，则需要将该堆划分为很多不同的字段。而当我们这样做时，我们最终仅得到数千或数十万个人标记的培训示例。不幸的是，为了表现良好，基于深度学习的NLP模型需要大量的数据-在数百万或数十亿的带注释的训练示例上进行训练时，他们看到了重大改进。为了帮助弥合数据鸿沟，研究人员开发了各种技术，可在网络上使用大量未注释的文本来训练通用语言表示模型（这称为预训练）。然后，可以在较小的特定于任务的数据集上微调这些通用的预训练模型，例如，在处理诸如问题回答和情感分析之类的问题时。与从头开始对较小的特定于任务的数据集进行训练相比，此方法可显着提高准确性。
 
 ![enter image description here](https://docs.google.com/drawings/d/e/2PACX-1vStoAwye3EraSC6HH5m_S8VOsVEp3hsTtQuAVF-dEmPlFvEZqAxBHDQryl3FnVf_BZ6Csb969AGbChe/pub?w=791&h=385)
 
 由于NLP主要关注语言（字符序列）的理解和处理，作为语言基本组成单位的词（word）也就自然成为了预训练的关注点。预训练的目标经历逐步的发展变化
 #### 预训练 pre training
-- 目标: 生成词（字）编码 word embedding
-	- 静态词编码（static word embedding），比Word2Vec，Glove等，顾名思义这类编码赋予每个词固定的编码值，并且编码值体现了词的代表的含义，我们可以通过对编码值的运算得到有意义的结果，比如著名的例子 ***king — man + woman = queen***
+#####  训练目标: 生成词（字）编码 word embedding
+- 静态词编码（static word embedding），比Word2Vec，Glove等，顾名思义这类编码赋予每个词固定的编码值，并且编码值体现了词的代表的含义，我们可以通过对编码值的运算得到有意义的结果，比如著名的例子 ***king — man + woman = queen***
 
-	- 语境词编码（contextualized word embedding），静态词编码的最大的问题在于它只能个每一个词一个编码值，无法处理一词多义的情况。将“我爱吃苹果”和“我爱苹果手机”中的苹果赋予相同的编码是不合适的，更合理的方式是通过结合词出现的上下文判断词的含义，比如通过“吃”和“手机”来判断上面两句话中的“苹果”分别代表一种水果和一个品牌，这就是语境词编码的基本思想。所以从使用者角度来说，我们需要一个模型能过通过输入语句得到（计算出）该语句的含义，或者该语句中每个词的含义。从这个意义上讲，我们本质上需要的是一种能够提取语义特征的能力，这和CV中的迁移学习的目标是一致的。
+- 语境词编码（contextualized word embedding），静态词编码的最大的问题在于它只能个每一个词一个编码值，无法处理一词多义的情况。将“我爱吃苹果”和“我爱苹果手机”中的苹果赋予相同的编码是不合适的，更合理的方式是通过结合词出现的上下文判断词的含义，比如通过“吃”和“手机”来判断上面两句话中的“苹果”分别代表一种水果和一个品牌，这就是语境词编码的基本思想。所以从使用者角度来说，我们需要一个模型能过通过输入语句得到（计算出）该语句的含义，或者该语句中每个词的含义。从这个意义上讲，我们本质上需要的是一种能够提取语义特征的能力，这和CV中的迁移学习的目标是一致的。
 		
-- self-supervised learning
-Imagenet将超过一千四百万图片通过众包的方式进行人工标注，将他们分成2万多个不同分类，这项从2007年开始的浩大工程为计算机视觉图形相关的监督式机器学习提供了高质量的训练数据，从而为CV迁移学习打下了基础。同样的为了NLP领域也由类似的需求：为每个词建立正确的标签数据来帮助进行监督训练，根据语言的特点，设计了语言模型（Language Model）这种训练任务来进行。。。LM属于自监督（self supervised）训练方法，使用这种训练方法不需要为语句进行人工标注，而只使用语句序列本身就可以进行训练。LM是一种统计方法，用于计算一个序列$W$（由词$w_i, w_2, ... w_m$组成的一句话）出现的概率$$P(W)=P(w_1,w_2,w_3,...w_m)$$LM也可以用于计算在一个序列中某个词$w_{n+1}$出现的概率$$P(w_{n+1}|w_1,w_2, w_3,...w_n)$$
+##### 训练方式  self-supervised learning
+Imagenet将超过一千四百万图片通过众包的方式进行人工标注，将他们分成2万多个不同分类，这项从2007年开始的浩大工程为计算机视觉图形相关的监督式机器学习提供了高质量的训练数据，从而为CV迁移学习打下了基础。
+由于语言的动态特性，NLP任务
+> NLP的最大挑战之一是缺乏足够的培训数据。总体而言，有大量文本数据可用，但是如果我们要创建特定于任务的数据集，则需要将该堆划分为很多不同的字段。而当我们这样做时，我们最终仅得到数千或数十万个人标记的培训示例。不幸的是，为了表现良好，基于深度学习的NLP模型需要大量的数据-在数百万或数十亿的带注释的训练示例上进行训练时，他们看到了重大改进。为了帮助弥合数据鸿沟，研究人员开发了各种技术，可在网络上使用大量未注释的文本来训练通用语言表示模型（这称为预训练）。然后，可以在较小的特定于任务的数据集上微调这些通用的预训练模型，例如，在处理诸如问题回答和情感分析之类的问题时。与从头开始对较小的特定于任务的数据集进行训练相比，此方法可显着提高准确性。
+
+同样的为了NLP领域也由类似的需求：为每个词建立正确的标签数据来帮助进行监督训练，根据语言的特点，设计了语言模型（Language Model）这种训练任务来进行。。。LM属于自监督（self supervised）训练方法，使用这种训练方法不需要为语句进行人工标注，而只使用语句序列本身就可以进行训练。LM是一种统计方法，用于计算一个序列$W$（由词$w_i, w_2, ... w_m$组成的一句话）出现的概率$$P(W)=P(w_1,w_2,w_3,...w_m)$$LM也可以用于计算在一个序列中某个词$w_{n+1}$出现的概率$$P(w_{n+1}|w_1,w_2, w_3,...w_n)$$
 根据这样一个基本假设：正确的语句出现的概率比不正确的语句出现的概率大
 The good LM should calculate higher probabilities to “real” and “frequently observed” sentences than the ones that are wrong accordingly to natural language grammar or those that are rarely observed.
 -   **Machine translation:**  translating a sentence saying about height it would probably state that  P(tall  man)>P(large  man)P(tall man)>P(large man)  as the ‘_large_’ might also refer to weight or general appearance thus, not as probable as ‘_tall_’
@@ -366,11 +369,11 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [GPT2 finetune @familiarcycle.net/](https://familiarcycle.net/)
 [paper-dissected-bert-pre-training-of-deep-bidirectional-transformers-for-language-understanding-explained](https://mlexplained.com/2019/01/07/paper-dissected-bert-pre-training-of-deep-bidirectional-transformers-for-language-understanding-explained/)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjA4NDU0NTk5NCw4MDA3MzI1NzQsLTE4Mj
-M2OTEyNzgsLTYwMDQ5MTI0MywtNjEwNTM5NzE1LDMxMzYzNzg3
-MSwtOTA3OTQyNzkyLC0yMDA2MzcxODg0LDg3NDI0NzE4MywtNj
-gzOTkzMTY2LC0zNzAyOTIyMzksMTcyMzE0MzY3NSwxNDY0ODE3
-OTIsNDQ1MzAzODU5LDY1NTk4NjU3MCwtMjAxOTQ4ODIyNywxMT
-Y4MTU3ODc3LC00OTQyODEwOTgsMzUxMjg0MzIsLTYxNDE5Nzcy
-MV19
+eyJoaXN0b3J5IjpbNzQ3Mzg0OTQ3LDgwMDczMjU3NCwtMTgyMz
+Y5MTI3OCwtNjAwNDkxMjQzLC02MTA1Mzk3MTUsMzEzNjM3ODcx
+LC05MDc5NDI3OTIsLTIwMDYzNzE4ODQsODc0MjQ3MTgzLC02OD
+M5OTMxNjYsLTM3MDI5MjIzOSwxNzIzMTQzNjc1LDE0NjQ4MTc5
+Miw0NDUzMDM4NTksNjU1OTg2NTcwLC0yMDE5NDg4MjI3LDExNj
+gxNTc4NzcsLTQ5NDI4MTA5OCwzNTEyODQzMiwtNjE0MTk3NzIx
+XX0=
 -->
