@@ -37,23 +37,22 @@ self-supervised learning is important area because it can greatly reduce the eff
 ~~>迁移学习放松了训练数据必须与测试数据独立且同分布(i.i.d)的假设，激励我们利用迁移学习来解决训练数据不足的问题。在迁移学习中，训练数据和测试数据不需要是i.i.d。不需要对目标域内的模型进行从零开始的训练，可以显著降低对目标域内训练数据和训练时间的需求。~~
 由于迁移学习能带来巨大收益，人们追求更加通用的迁移学习源模型，以使得更多不同的任务能从中受益。因此目前人们使用海量数据专门训练旨在包含大量通用知识的源模型，也叫预训练模型，并以此为节点将迁移学习分为了两步：
 - 预训练阶段
-使用海量训练数据训练一个可重用的模型（通常是能够理解复杂特征的深度模型），由于模型复杂数据量大，这个阶段会耗费大量的计算资源，最终获得预训练模型。在CV领域最成功的迁移学习的的应用是imagenet训练数据及建立在其基础之上的预训练模型，如VGG19， ResNet50。他们都是用监督式训练，即
+使用海量训练数据训练一个可重用的模型（通常是能够理解复杂特征的深度模型），由于模型复杂数据量大，这个阶段会耗费大量的计算资源，最终获得预训练模型。在CV领域最成功的迁移学习的的应用是imagenet训练数据及建立在其基础之上的预训练模型，如VGG19， ResNet50。他们采用用监督式训练，即每个imagenet数据集中的图片都有一个人工标注的描述该图片所属类型的标签。Imagenet将超过一千四百万图片通过众包的方式进行人工标注，将他们分成2万多个不同分类，这项从2007年开始的浩大工程为计算机视觉图形相关的监督式机器学习提供了高质量的训练数据，从而为CV迁移学习打下了基础。
 - 微调阶段
 根据任务的需要，在预训练模型的基础上设计并加入相应的模型结构，比如。。。。再使用任务相关的少量训练数据来调整模型参数使其适应该任务。
 
 ### NLP的迁移学习
-NLP的迁移学习同样分为预训练和微调两步，
-![enter image description here](https://docs.google.com/drawings/d/e/2PACX-1vStoAwye3EraSC6HH5m_S8VOsVEp3hsTtQuAVF-dEmPlFvEZqAxBHDQryl3FnVf_BZ6Csb969AGbChe/pub?w=791&h=385)
+NLP的迁移学习同样分为预训练和微调两步，预CV任务不同的是在预训练阶段NLP采用了自监督学习（self supervised learning）方式，这是由于NLP中的基本元素-word（或字）的含义通常由其所在的语句的上下文来决定，具有高度的灵活性，无法向CV中那个用一个固定的标签来标记。![enter image description here](https://docs.google.com/drawings/d/e/2PACX-1vStoAwye3EraSC6HH5m_S8VOsVEp3hsTtQuAVF-dEmPlFvEZqAxBHDQryl3FnVf_BZ6Csb969AGbChe/pub?w=791&h=385)
 
 由于NLP主要关注语言（字符序列）的理解和处理，作为语言基本组成单位的词（word）也就自然成为了预训练的关注点。预训练的目标经历逐步的发展变化
 #### 预训练 pre training
 #####  训练目标: 生成词（字）编码 word embedding
-- 静态词编码（static word embedding），比Word2Vec，Glove等，顾名思义这类编码赋予每个词固定的编码值，并且编码值体现了词的代表的含义，我们可以通过对编码值的运算得到有意义的结果，比如著名的例子 ***king — man + woman = queen***
+- 静态词编码（static word embedding），这是一类早期的固定编码方式，比Word2Vec，Glove等，顾名思义这类编码赋予每个词固定的编码值，并且编码值体现了词的代表的含义，我们可以通过对编码值的运算得到有意义的结果，比如著名的例子 ***king — man + woman = queen***
 
 - 语境词编码（contextualized word embedding），静态词编码的最大的问题在于它只能个每一个词一个编码值，无法处理一词多义的情况。将“我爱吃苹果”和“我爱苹果手机”中的苹果赋予相同的编码是不合适的，更合理的方式是通过结合词出现的上下文判断词的含义，比如通过“吃”和“手机”来判断上面两句话中的“苹果”分别代表一种水果和一个品牌，这就是语境词编码的基本思想。所以从使用者角度来说，我们需要一个模型能过通过输入语句得到（计算出）该语句的含义，或者该语句中每个词的含义。从这个意义上讲，我们本质上需要的是一种能够提取语义特征的能力，这和CV中的迁移学习的目标是一致的。
 		
 ##### 训练方式  self-supervised learning
-Imagenet将超过一千四百万图片通过众包的方式进行人工标注，将他们分成2万多个不同分类，这项从2007年开始的浩大工程为计算机视觉图形相关的监督式机器学习提供了高质量的训练数据，从而为CV迁移学习打下了基础。
+
 由于语言的动态特性，NLP任务
 > NLP的最大挑战之一是缺乏足够的培训数据。总体而言，有大量文本数据可用，但是如果我们要创建特定于任务的数据集，则需要将该堆划分为很多不同的字段。而当我们这样做时，我们最终仅得到数千或数十万个人标记的培训示例。不幸的是，为了表现良好，基于深度学习的NLP模型需要大量的数据-在数百万或数十亿的带注释的训练示例上进行训练时，他们看到了重大改进。为了帮助弥合数据鸿沟，研究人员开发了各种技术，可在网络上使用大量未注释的文本来训练通用语言表示模型（这称为预训练）。然后，可以在较小的特定于任务的数据集上微调这些通用的预训练模型，例如，在处理诸如问题回答和情感分析之类的问题时。与从头开始对较小的特定于任务的数据集进行训练相比，此方法可显着提高准确性。
 
@@ -373,11 +372,11 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [GPT2 finetune @familiarcycle.net/](https://familiarcycle.net/)
 [paper-dissected-bert-pre-training-of-deep-bidirectional-transformers-for-language-understanding-explained](https://mlexplained.com/2019/01/07/paper-dissected-bert-pre-training-of-deep-bidirectional-transformers-for-language-understanding-explained/)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTUyMzk5NzY0LDQ2OTY4NDE3MCwtMzY3Nz
-Y2Nzk4LDgwMDczMjU3NCwtMTgyMzY5MTI3OCwtNjAwNDkxMjQz
-LC02MTA1Mzk3MTUsMzEzNjM3ODcxLC05MDc5NDI3OTIsLTIwMD
-YzNzE4ODQsODc0MjQ3MTgzLC02ODM5OTMxNjYsLTM3MDI5MjIz
-OSwxNzIzMTQzNjc1LDE0NjQ4MTc5Miw0NDUzMDM4NTksNjU1OT
-g2NTcwLC0yMDE5NDg4MjI3LDExNjgxNTc4NzcsLTQ5NDI4MTA5
-OF19
+eyJoaXN0b3J5IjpbLTEyMzAyNDcyOTIsNDY5Njg0MTcwLC0zNj
+c3NjY3OTgsODAwNzMyNTc0LC0xODIzNjkxMjc4LC02MDA0OTEy
+NDMsLTYxMDUzOTcxNSwzMTM2Mzc4NzEsLTkwNzk0Mjc5MiwtMj
+AwNjM3MTg4NCw4NzQyNDcxODMsLTY4Mzk5MzE2NiwtMzcwMjky
+MjM5LDE3MjMxNDM2NzUsMTQ2NDgxNzkyLDQ0NTMwMzg1OSw2NT
+U5ODY1NzAsLTIwMTk0ODgyMjcsMTE2ODE1Nzg3NywtNDk0Mjgx
+MDk4XX0=
 -->
