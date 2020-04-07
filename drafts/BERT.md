@@ -35,7 +35,7 @@ self-supervised learning is important area because it can greatly reduce the eff
 迁移学习(Transfer learning) 顾名思义就是在源任务模型和新任务模型具有相关性的前提下，把已经训练好的模型参数迁移到新的模型来帮助新模型训练，这样就可以在源任务模型的基础上针对新任务进行调整和改进，而不必从零开始，从而节省大量的时间和金钱。
 
 ~~>迁移学习放松了训练数据必须与测试数据独立且同分布(i.i.d)的假设，激励我们利用迁移学习来解决训练数据不足的问题。在迁移学习中，训练数据和测试数据不需要是i.i.d。不需要对目标域内的模型进行从零开始的训练，可以显著降低对目标域内训练数据和训练时间的需求。~~
-由于迁移学习能带来巨大收益，人们追求更加通用的迁移学习源模型，以使得更多不同的任务能从中受益。因此目前人们使用海量数据专门训练包含大量通用知识的源模型，也叫预训练模型，
+由于迁移学习能带来巨大收益，人们追求更加通用的迁移学习源模型，以使得更多不同的任务能从中受益。因此目前人们使用海量数据专门训练旨在包含大量通用知识的源模型，也叫预训练模型。
 
 
 ### NLP的迁移学习
@@ -371,11 +371,11 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [GPT2 finetune @familiarcycle.net/](https://familiarcycle.net/)
 [paper-dissected-bert-pre-training-of-deep-bidirectional-transformers-for-language-understanding-explained](https://mlexplained.com/2019/01/07/paper-dissected-bert-pre-training-of-deep-bidirectional-transformers-for-language-understanding-explained/)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzQyNjcwMDMsNDY5Njg0MTcwLC0zNjc3Nj
-Y3OTgsODAwNzMyNTc0LC0xODIzNjkxMjc4LC02MDA0OTEyNDMs
-LTYxMDUzOTcxNSwzMTM2Mzc4NzEsLTkwNzk0Mjc5MiwtMjAwNj
-M3MTg4NCw4NzQyNDcxODMsLTY4Mzk5MzE2NiwtMzcwMjkyMjM5
-LDE3MjMxNDM2NzUsMTQ2NDgxNzkyLDQ0NTMwMzg1OSw2NTU5OD
-Y1NzAsLTIwMTk0ODgyMjcsMTE2ODE1Nzg3NywtNDk0MjgxMDk4
-XX0=
+eyJoaXN0b3J5IjpbLTE5MDkyNjI2MDcsNDY5Njg0MTcwLC0zNj
+c3NjY3OTgsODAwNzMyNTc0LC0xODIzNjkxMjc4LC02MDA0OTEy
+NDMsLTYxMDUzOTcxNSwzMTM2Mzc4NzEsLTkwNzk0Mjc5MiwtMj
+AwNjM3MTg4NCw4NzQyNDcxODMsLTY4Mzk5MzE2NiwtMzcwMjky
+MjM5LDE3MjMxNDM2NzUsMTQ2NDgxNzkyLDQ0NTMwMzg1OSw2NT
+U5ODY1NzAsLTIwMTk0ODgyMjcsMTE2ODE1Nzg3NywtNDk0Mjgx
+MDk4XX0=
 -->
