@@ -35,12 +35,14 @@ self-supervised learning is important area because it can greatly reduce the eff
 迁移学习(Transfer learning) 顾名思义就是在源任务模型和新任务模型具有相关性的前提下，把已经训练好的模型参数迁移到新的模型来帮助新模型训练，这样就可以在源任务模型的基础上针对新任务进行调整和改进，而不必从零开始，从而节省大量的时间和金钱。
 
 ~~>迁移学习放松了训练数据必须与测试数据独立且同分布(i.i.d)的假设，激励我们利用迁移学习来解决训练数据不足的问题。在迁移学习中，训练数据和测试数据不需要是i.i.d。不需要对目标域内的模型进行从零开始的训练，可以显著降低对目标域内训练数据和训练时间的需求。~~
-由于迁移学习能带来巨大收益，人们追求更加通用的迁移学习源模型，以使得更多不同的任务能从中受益。因此目前人们使用海量数据专门训练旨在包含大量通用知识的源模型，也叫预训练模型。
-
+由于迁移学习能带来巨大收益，人们追求更加通用的迁移学习源模型，以使得更多不同的任务能从中受益。因此目前人们使用海量数据专门训练旨在包含大量通用知识的源模型，也叫预训练模型，并以此为节点将迁移学习分为了两步：
+- 预训练阶段
+使用海量训练数据训练一个可重用的模型（通常是能够理解复杂特征的深度模型），由于模型复杂数据量大，这个阶段会耗费大量的计算资源，最终获得预训练模型。在CV领域最成功的迁移学习的的应用是imagenet训练数据及建立在其基础之上的预训练模型，如VGG19， ResNet50。他们都是用监督式训练，即
+- 微调阶段
+根据任务的需要，在预训练模型的基础上设计并加入相应的模型结构，比如。。。。再使用任务相关的少量训练数据来调整模型参数使其适应该任务。
 
 ### NLP的迁移学习
-我们知道在CV中的迁移学习过程是首先训练一个通用的的图像特征提取模型（如VGG19， ResNet50等），再结合下游任务需要通过扩展第一阶段的模型来进行fine tuning。进行与CV任务类似，应用迁移学习解决NLP问题也可以分为两个阶段。首先通过预训练学习出可重用的特征提取模型，也叫预训练模型。
-
+NLP的迁移学习同样分为预训练和微调两步，
 ![enter image description here](https://docs.google.com/drawings/d/e/2PACX-1vStoAwye3EraSC6HH5m_S8VOsVEp3hsTtQuAVF-dEmPlFvEZqAxBHDQryl3FnVf_BZ6Csb969AGbChe/pub?w=791&h=385)
 
 由于NLP主要关注语言（字符序列）的理解和处理，作为语言基本组成单位的词（word）也就自然成为了预训练的关注点。预训练的目标经历逐步的发展变化
@@ -371,11 +373,11 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [GPT2 finetune @familiarcycle.net/](https://familiarcycle.net/)
 [paper-dissected-bert-pre-training-of-deep-bidirectional-transformers-for-language-understanding-explained](https://mlexplained.com/2019/01/07/paper-dissected-bert-pre-training-of-deep-bidirectional-transformers-for-language-understanding-explained/)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE5MDkyNjI2MDcsNDY5Njg0MTcwLC0zNj
-c3NjY3OTgsODAwNzMyNTc0LC0xODIzNjkxMjc4LC02MDA0OTEy
-NDMsLTYxMDUzOTcxNSwzMTM2Mzc4NzEsLTkwNzk0Mjc5MiwtMj
-AwNjM3MTg4NCw4NzQyNDcxODMsLTY4Mzk5MzE2NiwtMzcwMjky
-MjM5LDE3MjMxNDM2NzUsMTQ2NDgxNzkyLDQ0NTMwMzg1OSw2NT
-U5ODY1NzAsLTIwMTk0ODgyMjcsMTE2ODE1Nzg3NywtNDk0Mjgx
-MDk4XX0=
+eyJoaXN0b3J5IjpbNTUyMzk5NzY0LDQ2OTY4NDE3MCwtMzY3Nz
+Y2Nzk4LDgwMDczMjU3NCwtMTgyMzY5MTI3OCwtNjAwNDkxMjQz
+LC02MTA1Mzk3MTUsMzEzNjM3ODcxLC05MDc5NDI3OTIsLTIwMD
+YzNzE4ODQsODc0MjQ3MTgzLC02ODM5OTMxNjYsLTM3MDI5MjIz
+OSwxNzIzMTQzNjc1LDE0NjQ4MTc5Miw0NDUzMDM4NTksNjU1OT
+g2NTcwLC0yMDE5NDg4MjI3LDExNjgxNTc4NzcsLTQ5NDI4MTA5
+OF19
 -->
