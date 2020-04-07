@@ -28,7 +28,7 @@ self-supervised learning is important area because it can greatly reduce the eff
 ## 迁移学习和预训练模型
 ![enter image description here](https://docs.google.com/drawings/d/e/2PACX-1vR6JBirfomJ2dxM1GDEl2GUZOXZeuyqcjRr7w6-t-s2vloOyAZk8GTRP1IyVmczcmyEINONHs5DhpH0/pub?w=593&h=343)
 
-深度学习由于在处理复杂特征（图像，声音，文本）的任务上相比传统机器学习方法有巨大的优势，获得了越来越多的关注和发展。为了不断增强预测效果，深度学习的模型呈现出越来越复杂的趋势。与传统的机器学习方法相比，深度学习对训练数据的依赖非常强，这是由于模型需要大量的数据来自主的理解数据的潜在（复杂）特征。一般来说，模型越复杂就需要越多的数据进行训练。这就导致了新的深度模型需要海量的数据~~一个有趣的现象是，模型的规模和所需数据量的大小几乎是线性关系。一个较为合理的解释是，对于一个特定的问题，模型的表达空间必须足够大，以发现数据下的模式。模型中的预定层可以识别训练数据的高级特性，后续层可以识别帮助做出最终决策所需的信息。~~
+深度学习由于在处理复杂特征（图像，声音，文本）的任务上相比传统机器学习方法有巨大的优势，获得了越来越多的关注和发展。为了不断增强预测效果，深度学习的模型呈现出越来越复杂的趋势。与传统的机器学习方法相比，深度学习对训练数据的依赖非常强，这是由于模型需要大量的数据来自主的理解数据的潜在（复杂）特征。一般来说，模型越复杂就需要越多的数据进行训练。这就导致了比较新的深度模型需要海量的数据来进行训练。由于训练数据通常需要人工标记因此海量训练数据的获取成本是非常高的，这使得训练或者改进深度模型成文耗时耗力的过程，非常不利于深度模型的tuiguang~~一个有趣的现象是，模型的规模和所需数据量的大小几乎是线性关系。一个较为合理的解释是，对于一个特定的问题，模型的表达空间必须足够大，以发现数据下的模式。模型中的预定层可以识别训练数据的高级特性，后续层可以识别帮助做出最终决策所需的信息。~~
 
 >**训练数据不足**是一些特殊领域中不可避免的问题。数据的收集是复杂和昂贵的，这使得构建大规模、高质量的带注释的数据集非常困难。例如，生物信息学数据集中的每个样本经常显示一个临床试验或一个痛苦的病人。此外，即使我们付出了昂贵的代价来获取训练数据集，也很容易过时，不能有效地应用于新的任务中。
 >迁移学习(Transfer learning) 顾名思义就是就是把已学训练好的模型参数迁移到新的模型来帮助新模型训练。考虑到大部分数据或任务是存在相关性的，所以通过迁移学习我们可以将已经学到的模型参数（也可理解为模型学到的知识）通过某种方式来分享给新模型从而加快并优化模型的学习效率不用像大多数网络那样从零学习（starting from scratch，tabula rasa）。
@@ -373,11 +373,11 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [GPT2 finetune @familiarcycle.net/](https://familiarcycle.net/)
 [paper-dissected-bert-pre-training-of-deep-bidirectional-transformers-for-language-understanding-explained](https://mlexplained.com/2019/01/07/paper-dissected-bert-pre-training-of-deep-bidirectional-transformers-for-language-understanding-explained/)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0ODQ4MTI4OTcsLTM2Nzc2Njc5OCw4MD
-A3MzI1NzQsLTE4MjM2OTEyNzgsLTYwMDQ5MTI0MywtNjEwNTM5
-NzE1LDMxMzYzNzg3MSwtOTA3OTQyNzkyLC0yMDA2MzcxODg0LD
-g3NDI0NzE4MywtNjgzOTkzMTY2LC0zNzAyOTIyMzksMTcyMzE0
-MzY3NSwxNDY0ODE3OTIsNDQ1MzAzODU5LDY1NTk4NjU3MCwtMj
-AxOTQ4ODIyNywxMTY4MTU3ODc3LC00OTQyODEwOTgsMzUxMjg0
-MzJdfQ==
+eyJoaXN0b3J5IjpbNDY5Njg0MTcwLC0zNjc3NjY3OTgsODAwNz
+MyNTc0LC0xODIzNjkxMjc4LC02MDA0OTEyNDMsLTYxMDUzOTcx
+NSwzMTM2Mzc4NzEsLTkwNzk0Mjc5MiwtMjAwNjM3MTg4NCw4Nz
+QyNDcxODMsLTY4Mzk5MzE2NiwtMzcwMjkyMjM5LDE3MjMxNDM2
+NzUsMTQ2NDgxNzkyLDQ0NTMwMzg1OSw2NTU5ODY1NzAsLTIwMT
+k0ODgyMjcsMTE2ODE1Nzg3NywtNDk0MjgxMDk4LDM1MTI4NDMy
+XX0=
 -->
