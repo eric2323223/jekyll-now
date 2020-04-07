@@ -30,16 +30,14 @@ self-supervised learning is important area because it can greatly reduce the eff
 
 深度学习由于在处理复杂特征（图像，声音，文本）的任务上相比传统机器学习方法有巨大的优势，获得了越来越多的关注和发展。为了不断增强预测效果，深度学习的模型呈现出越来越复杂的趋势。与传统的机器学习方法相比，深度学习对训练数据的依赖非常强，这是由于模型需要大量的数据来自主的理解数据的潜在（复杂）特征。一般来说，模型越复杂就需要越多的数据进行训练。这就导致了比较新的深度模型需要海量的数据来进行训练。由于训练数据通常需要人工标记因此海量训练数据的获取成本是非常高的，这使得训练或者改进深度模型成文耗时耗力的过程，非常不利于深度模型的推广和应用。~~一个有趣的现象是，模型的规模和所需数据量的大小几乎是线性关系。一个较为合理的解释是，对于一个特定的问题，模型的表达空间必须足够大，以发现数据下的模式。模型中的预定层可以识别训练数据的高级特性，后续层可以识别帮助做出最终决策所需的信息。~~
 
->**训练数据不足**是一些特殊领域中不可避免的问题。数据的收集是复杂和昂贵的，这使得构建大规模、高质量的带注释的数据集非常困难。例如，生物信息学数据集中的每个样本经常显示一个临床试验或一个痛苦的病人。此外，即使我们付出了昂贵的代价来获取训练数据集，也很容易过时，不能有效地应用于新的任务中。
->迁移学习(Transfer learning) 顾名思义就是就是把已学训练好的模型参数迁移到新的模型来帮助新模型训练。考虑到大部分数据或任务是存在相关性的，所以通过迁移学习我们可以将已经学到的模型参数（也可理解为模型学到的知识）通过某种方式来分享给新模型从而加快并优化模型的学习效率不用像大多数网络那样从零学习（starting from scratch，tabula rasa）。
->迁移学习放松了训练数据必须与测试数据独立且同分布(i.i.d)的假设，激励我们利用迁移学习来解决训练数据不足的问题。在迁移学习中，训练数据和测试数据不需要是i.i.d。不需要对目标域内的模型进行从零开始的训练，可以显著降低对目标域内训练数据和训练时间的需求。
+~~>**训练数据不足**是一些特殊领域中不可避免的问题。数据的收集是复杂和昂贵的，这使得构建大规模、高质量的带注释的数据集非常困难。例如，生物信息学数据集中的每个样本经常显示一个临床试验或一个痛苦的病人。此外，即使我们付出了昂贵的代价来获取训练数据集，也很容易过时，不能有效地应用于新的任务中。~~
 
-迁移学习旨在通过重用 。。。来加速学习和增强预测的准确性，对于当今越来越复杂的神经网络来说，需要巨大的人力物力和时间成本。。。使用迁移学习是非常有意义的。通过再imagenet训练视觉特征提取网络，数据比较从头训练和使用迁移训练。。。
-现实的问题是获取足够的标记数据非常困难，因此
-好处
-1. save time
-2. save money
-3. 
+迁移学习(Transfer learning) 顾名思义就是在源任务模型和新任务模型具有相关性的前提下，把已经训练好的模型参数迁移到新的模型来帮助新模型训练，这样就可以在源任务模型的基础上针对新任务进行调整和改进，而不必从零开始，从而节省大量的时间和金钱。
+
+~~>迁移学习放松了训练数据必须与测试数据独立且同分布(i.i.d)的假设，激励我们利用迁移学习来解决训练数据不足的问题。在迁移学习中，训练数据和测试数据不需要是i.i.d。不需要对目标域内的模型进行从零开始的训练，可以显著降低对目标域内训练数据和训练时间的需求。~~
+由于迁移学习能带来巨大收益，人们追求更加通用的迁移学习源模型，以使得更多不同的任务能从中受益。因此目前人们使用海量数据专门训练包含大量通用知识的源模型，也叫预训练模型，
+
+
 ### NLP的迁移学习
 我们知道在CV中的迁移学习过程是首先训练一个通用的的图像特征提取模型（如VGG19， ResNet50等），再结合下游任务需要通过扩展第一阶段的模型来进行fine tuning。进行与CV任务类似，应用迁移学习解决NLP问题也可以分为两个阶段。首先通过预训练学习出可重用的特征提取模型，也叫预训练模型。
 
@@ -373,11 +371,11 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [GPT2 finetune @familiarcycle.net/](https://familiarcycle.net/)
 [paper-dissected-bert-pre-training-of-deep-bidirectional-transformers-for-language-understanding-explained](https://mlexplained.com/2019/01/07/paper-dissected-bert-pre-training-of-deep-bidirectional-transformers-for-language-understanding-explained/)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjAwNDE0NzYxNSw0Njk2ODQxNzAsLTM2Nz
-c2Njc5OCw4MDA3MzI1NzQsLTE4MjM2OTEyNzgsLTYwMDQ5MTI0
-MywtNjEwNTM5NzE1LDMxMzYzNzg3MSwtOTA3OTQyNzkyLC0yMD
-A2MzcxODg0LDg3NDI0NzE4MywtNjgzOTkzMTY2LC0zNzAyOTIy
-MzksMTcyMzE0MzY3NSwxNDY0ODE3OTIsNDQ1MzAzODU5LDY1NT
-k4NjU3MCwtMjAxOTQ4ODIyNywxMTY4MTU3ODc3LC00OTQyODEw
-OThdfQ==
+eyJoaXN0b3J5IjpbMzQyNjcwMDMsNDY5Njg0MTcwLC0zNjc3Nj
+Y3OTgsODAwNzMyNTc0LC0xODIzNjkxMjc4LC02MDA0OTEyNDMs
+LTYxMDUzOTcxNSwzMTM2Mzc4NzEsLTkwNzk0Mjc5MiwtMjAwNj
+M3MTg4NCw4NzQyNDcxODMsLTY4Mzk5MzE2NiwtMzcwMjkyMjM5
+LDE3MjMxNDM2NzUsMTQ2NDgxNzkyLDQ0NTMwMzg1OSw2NTU5OD
+Y1NzAsLTIwMTk0ODgyMjcsMTE2ODE1Nzg3NywtNDk0MjgxMDk4
+XX0=
 -->
