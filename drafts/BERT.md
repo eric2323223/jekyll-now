@@ -43,7 +43,7 @@ self-supervised learning is important area because it can greatly reduce the eff
 根据任务的需要，在预训练模型的基础上设计并加入相应的模型结构，比如。。。。再使用任务相关的少量训练数据来调整模型参数使其适应该任务。
 
 ### NLP的迁移学习
-NLP的迁移学习同样分为预训练和微调两步，预CV任务不同的是在预训练阶段NLP采用了自监督学习（self supervised learning）方式，这是由于NLP中的基本元素-word（或字）的含义通常由其所在的语句的上下文来决定，具有高度的灵活性，无法向CV中那个用一个固定的标签来标记。![enter image description here](https://docs.google.com/drawings/d/e/2PACX-1vStoAwye3EraSC6HH5m_S8VOsVEp3hsTtQuAVF-dEmPlFvEZqAxBHDQryl3FnVf_BZ6Csb969AGbChe/pub?w=791&h=385)
+NLP的迁移学习同样分为预训练和微调两步，预CV任务不同的是在预训练阶段NLP采用了自监督学习（self supervised learning）方式，这是由于NLP中的基本元素-word（或字）的含义通常由其所在的语句的上下文来决定，具有高度的灵活性，无法像CV中那个用一个固定的标签来标记。所幸的是使用语言模型可以很好地利用现有文本资料使用自监督学习的方式来进行预训练。![enter image description here](https://docs.google.com/drawings/d/e/2PACX-1vStoAwye3EraSC6HH5m_S8VOsVEp3hsTtQuAVF-dEmPlFvEZqAxBHDQryl3FnVf_BZ6Csb969AGbChe/pub?w=791&h=385)
 
 由于NLP主要关注语言（字符序列）的理解和处理，作为语言基本组成单位的词（word）也就自然成为了预训练的关注点。预训练的目标经历逐步的发展变化
 #### 预训练 pre training
@@ -137,7 +137,16 @@ BERT的预训练被设计为多任务学习（multi-task learning），包含两
 -   80%的概率替换成[MASK]，比如my dog is hairy → my dog is [MASK]
 -   10%的概率替换成随机的一个词，比如my dog is hairy → my dog is apple
 -   10%的概率替换成它本身，比如my dog is hairy → my dog is hairy
+>_Why did they not use a ‘<MASK>’ replacement token all around?_
+If the model had been trained on only predicting ‘<MASK>’ tokens and then never saw this token during fine-tuning, it would have thought that there was no need to predict anything and this would have hampered performance. Furthermore, the model would have only learned a contextual representation of the ‘<MASK>’ token and this would have made it learn slowly (since only 15% of the input tokens are masked). By sometimes asking it to predict a word in a position that did not have a ‘<MASK>’ token, the model needed to learn a contextual representation of  _all_  the words in the input sentence, just in case it was asked to predict them afterwards.
+_Are not random tokens enough? Why did they leave some sentences intact?_
+Well, ideally we want the model’s representation of the masked token to be better than random. By sometimes keeping the sentence intact (while still asking the model to predict the chosen token) the authors biased the model to learn a meaningful representation of the masked tokens.
+_Will random tokens confuse the model?_
+The model will indeed try to use the embedding of the random token to help in its prediction and it will learn that it was actually not useful once it sees the target (correct token). However, the random replacement happened in 1.5% of the tokens (10%*15%) and the authors claim that it did not affect the model’s performance.
 
+_The model will only predict 15% of the tokens but language models predict 100% of tokens, does this mean that the model needs more iterations to achieve the same loss?_
+
+Yes, the model does converge more slowly but the increased steps in converging are justified by an considerable improvement in downstream performance.
 这样做的好处是，BERT并不知道[MASK]替换的是这15%个Token中的哪一个词(**注意：这里意思是输入的时候不知道[MASK]替换的是哪一个词，但是输出还是知道要预测哪个词的**)，而且任何一个词都有可能是被替换掉的，比如它看到的apple可能是被替换的词。这样强迫模型在编码当前时刻的时候不能太依赖于当前的词，而要考虑它的上下文，甚至对其上下文进行”纠错”。比如上面的例子模型在编码apple是根据上下文my dog is应该把apple(部分)编码成hairy的语义而不是apple的语义。
 细节三：对于任务一，对于在数据中随机选择 15% 的标记，其中80%被换位[mask]，10%不变、10%随机替换其他单词，原因是什么？
 
@@ -147,6 +156,11 @@ BERT的预训练被设计为多任务学习（multi-task learning），包含两
 
 2、相较于传统语言模型，Bert的每批次训练数据中只有 15% 的标记被预测，这导致模型需要更多的训练步骤来收敛。
 - NSP
+>_Why is a second task necessary at all?_
+The authors pre-trained their model in  _Next Sentence Prediction_  because they thought important that the model knew how to relate two different sentences to perform downstream tasks like question answering or natural language inference and the “masked language model” did not capture this knowledge. They prove that pre-training with this second task notably increases performance in both question answering and natural language inference.
+_What percentage of sentences where actually next sentences?_
+50% of the sentences were paired with actual adjacent sentences in the corpus and 50% of them were paired with sentences picked randomly from the corpus.
+
 ### 损失函数
 total_loss = masked_lm_loss + next_sentence_loss
 BERT的损失函数由两部分组成，第一部分是来自 Mask-LM 的**单词级别分类任务**，另一部分是**句子级别的分类任务**。通过这两个任务的联合学习，可以使得 BERT 学习到的表征既有 token 级别信息，同时也包含了句子级别的语义信息。具体损失函数如下：
@@ -373,7 +387,7 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [GPT2 finetune @familiarcycle.net/](https://familiarcycle.net/)
 [paper-dissected-bert-pre-training-of-deep-bidirectional-transformers-for-language-understanding-explained](https://mlexplained.com/2019/01/07/paper-dissected-bert-pre-training-of-deep-bidirectional-transformers-for-language-understanding-explained/)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEwMDc4MTY1ODcsNDY5Njg0MTcwLC0zNj
+eyJoaXN0b3J5IjpbLTE5ODcxODMyMzQsNDY5Njg0MTcwLC0zNj
 c3NjY3OTgsODAwNzMyNTc0LC0xODIzNjkxMjc4LC02MDA0OTEy
 NDMsLTYxMDUzOTcxNSwzMTM2Mzc4NzEsLTkwNzk0Mjc5MiwtMj
 AwNjM3MTg4NCw4NzQyNDcxODMsLTY4Mzk5MzE2NiwtMzcwMjky
