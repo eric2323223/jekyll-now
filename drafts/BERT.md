@@ -117,6 +117,20 @@ BERT模型主要包含这个部分，编码层和Transformer编码器
 在BERT处理多条语句时，用于区分不同语句
 - 位置编码(config.max_position_embeddings, config.hidden_size)
 由于注意力计算不关心输入序列元素的先后循序，因此需要事先加入位置信息再输入模型。不同于Transformer的基于周期函数的固定位置编码方法，BERT采用可学习的位置编码方式，bert中的最大句子长度是512 所以Position Embedding layer 是一个size为（512，768）的lookup table，其中的每一个元素都是可学习的参数，随预训练这些位置相关的参数收敛，。。。**相比Transformer的位置编码，似乎没考虑相对位置????**
+- why 512?
+>Theoretically there is nothing restricting a Transformer to have greater sequence length. Practically, there are resource constraints - especially memory complexity when doing self-attention which is quadratic in terms of sequence length. Another reason why BERT is restricted to 512 may be because that was the sequence length it was originally restricted to while training but I am not sure.
+>[https://github.com/google-research/bert/issues/27](https://github.com/google-research/bert/issues/27)
+>We don't plan to make major changes to this library, so anything like that would be part of a separate project.
+Our recommended recipe is exactly what you describe (it's what we do for SQuAD), but you can actually fine-tune on it normally (we just don't do it for SQuAD because only a few percent of SQuAD documents are longer than 384 do so it didnt matter. But we should have).
+Let's say you have:
+`the man went to the store and bought a gallon of milk`
+And had  `max_seq_length = 6, stride = 3`, then you could split it up like this:
+```
+the man went to the store
+to the store and bought a
+and bought a gallon of milk
+```
+>So from  `BertModel`'s perspective this is a 3x6 minibatch, but crucially you can reshape it after you get it back from  `BertModel.get_sequence_output()`  and softmax over all the tokens when you compute the loss (with some masking to make sure you don't double count the boundary words like  `to the store`  and  `and bought a`). So you will be fine-tuning over the whole document end-to-end. The exact implementation is task-specific of course.
 ### Transformer编码器
 Transformer模型是由google ai于2017年发布的一个编码器-解码器架构模型，最初应用于机器翻译。Transformer的最大特点是使用注意力机制（attention mechanism），解决了使用RNN模型造成的梯度爆炸和无法并行的问题，并且实践证明transformer中提出的多头注意力具有强大的特征提取能力，性能超越了RNN,CNN等传统方法。
 > Transformer所使用的注意力机制的核心思想是去计算一句话中的每个词对于这句话中所有词的相互关系，然后认为这些词与词之间的相互关系在一定程度上反应了这句话中不同词之间的关联性以及重要程度。因此再利用这些相互关系来调整每个词的重要性（权重）就可以获得每个词新的表达。这个新的表征不但蕴含了该词本身，还蕴含了其他词与这个词的关系，因此和单纯的词向量相比是一个更加全局的表达。
@@ -253,7 +267,7 @@ like this
 ### task design
 - spanBERT [https://zhuanlan.zhihu.com/p/75893972](https://zhuanlan.zhihu.com/p/75893972)
 ### distillation
-### LAMP？not a BERT improvement
+~~### LAMP？not a BERT improvement~~
 ## BERT应用
 [https://github.com/ProHiryu/bert-chinese-ner](https://github.com/ProHiryu/bert-chinese-ner)
 [https://github.com/chiahsuan156/ODSQA](https://github.com/chiahsuan156/ODSQA)
@@ -406,11 +420,11 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [paper-dissected-bert-pre-training-of-deep-bidirectional-transformers-for-language-understanding-explained](https://mlexplained.com/2019/01/07/paper-dissected-bert-pre-training-of-deep-bidirectional-transformers-for-language-understanding-explained/)
 [Understanding BERT part2](https://medium.com/dissecting-bert/dissecting-bert-part2-335ff2ed9c73)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjY2NjUxMjY4LC01MDU1NTU5NDYsLTE5Nz
-E3ODE5Myw0Njk2ODQxNzAsLTM2Nzc2Njc5OCw4MDA3MzI1NzQs
-LTE4MjM2OTEyNzgsLTYwMDQ5MTI0MywtNjEwNTM5NzE1LDMxMz
-YzNzg3MSwtOTA3OTQyNzkyLC0yMDA2MzcxODg0LDg3NDI0NzE4
-MywtNjgzOTkzMTY2LC0zNzAyOTIyMzksMTcyMzE0MzY3NSwxND
-Y0ODE3OTIsNDQ1MzAzODU5LDY1NTk4NjU3MCwtMjAxOTQ4ODIy
-N119
+eyJoaXN0b3J5IjpbLTg3OTQ3NzU5NSwtNTA1NTU1OTQ2LC0xOT
+cxNzgxOTMsNDY5Njg0MTcwLC0zNjc3NjY3OTgsODAwNzMyNTc0
+LC0xODIzNjkxMjc4LC02MDA0OTEyNDMsLTYxMDUzOTcxNSwzMT
+M2Mzc4NzEsLTkwNzk0Mjc5MiwtMjAwNjM3MTg4NCw4NzQyNDcx
+ODMsLTY4Mzk5MzE2NiwtMzcwMjkyMjM5LDE3MjMxNDM2NzUsMT
+Q2NDgxNzkyLDQ0NTMwMzg1OSw2NTU5ODY1NzAsLTIwMTk0ODgy
+MjddfQ==
 -->
