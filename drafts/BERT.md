@@ -127,7 +127,8 @@ Transformer由编码器和解码器组成，编码器负责将输入序列中的
 ![enter image description here](https://docs.google.com/drawings/d/e/2PACX-1vSqp25HORnsDrfUfkTFUgKeTC7IITVZrTMXBuf6eSp4_HmCsGRoGwAxEoN87fuhT98Xsc4IulE_U4vM/pub?w=960&h=720)
 ## BERT的预训练
 ### 任务设计
-BERT的预训练被设计为多任务学习（multi-task learning），包含两个任务：
+BERT的预训练被设计为多任务学习（multi-task learning），包含两个任务：一个是 Masked Language Model，另一个是 Next Sentence Prediction。**前者用于建模更广泛的上下文，通过 mask 来强制模型给每个词记住更多的上下文信息；后者用来建模多个句子之间的关系，强迫 [CLS] token 的顶层状态编码更多的篇章信息。**
+
 - MLM
 [https://towardsdatascience.com/bert-explained-state-of-the-art-language-model-for-nlp-f8b21a9b6270](https://towardsdatascience.com/bert-explained-state-of-the-art-language-model-for-nlp-f8b21a9b6270)
 给定一个句子，会随机Mask 15%的词，然后让BERT来预测这些Mask的词，如同上述10.1所述，在输入侧引入[Mask]标记，会导致预训练阶段和Fine-tuning阶段不一致的问题，因此在论文中为了缓解这一问题，采取了如下措施：
@@ -160,6 +161,8 @@ Yes, the model does converge more slowly but the increased steps in converging a
 
 2、相较于传统语言模型，Bert的每批次训练数据中只有 15% 的标记被预测，这导致模型需要更多的训练步骤来收敛。
 - NSP
+>Next Sentence Prediction（NSP）的任务是判断句子B是否是句子A的下文。如果是的话输出’IsNext‘，否则输出’NotNext‘。训练数据的生成方式是从平行语料中随机抽取的连续两句话，其中50%保留抽取的两句话，它们符合IsNext关系，另外50%的第二句话是随机从预料中提取的，它们的关系是NotNext的。这个关系保存在图4中的`[CLS]`符号中。
+
 >_Why is a second task necessary at all?_
 The authors pre-trained their model in  _Next Sentence Prediction_  because they thought important that the model knew how to relate two different sentences to perform downstream tasks like question answering or natural language inference and the “masked language model” did not capture this knowledge. They prove that pre-training with this second task notably increases performance in both question answering and natural language inference.
 _What percentage of sentences where actually next sentences?_
@@ -400,11 +403,11 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [paper-dissected-bert-pre-training-of-deep-bidirectional-transformers-for-language-understanding-explained](https://mlexplained.com/2019/01/07/paper-dissected-bert-pre-training-of-deep-bidirectional-transformers-for-language-understanding-explained/)
 [Understanding BERT part2](https://medium.com/dissecting-bert/dissecting-bert-part2-335ff2ed9c73)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE5NzE3ODE5Myw0Njk2ODQxNzAsLTM2Nz
-c2Njc5OCw4MDA3MzI1NzQsLTE4MjM2OTEyNzgsLTYwMDQ5MTI0
-MywtNjEwNTM5NzE1LDMxMzYzNzg3MSwtOTA3OTQyNzkyLC0yMD
-A2MzcxODg0LDg3NDI0NzE4MywtNjgzOTkzMTY2LC0zNzAyOTIy
-MzksMTcyMzE0MzY3NSwxNDY0ODE3OTIsNDQ1MzAzODU5LDY1NT
-k4NjU3MCwtMjAxOTQ4ODIyNywxMTY4MTU3ODc3LC00OTQyODEw
-OThdfQ==
+eyJoaXN0b3J5IjpbLTUwNTU1NTk0NiwtMTk3MTc4MTkzLDQ2OT
+Y4NDE3MCwtMzY3NzY2Nzk4LDgwMDczMjU3NCwtMTgyMzY5MTI3
+OCwtNjAwNDkxMjQzLC02MTA1Mzk3MTUsMzEzNjM3ODcxLC05MD
+c5NDI3OTIsLTIwMDYzNzE4ODQsODc0MjQ3MTgzLC02ODM5OTMx
+NjYsLTM3MDI5MjIzOSwxNzIzMTQzNjc1LDE0NjQ4MTc5Miw0ND
+UzMDM4NTksNjU1OTg2NTcwLC0yMDE5NDg4MjI3LDExNjgxNTc4
+NzddfQ==
 -->
