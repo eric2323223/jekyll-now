@@ -126,6 +126,9 @@ Transformer由编码器和解码器组成，编码器负责将输入序列中的
 
 ![enter image description here](https://docs.google.com/drawings/d/e/2PACX-1vSqp25HORnsDrfUfkTFUgKeTC7IITVZrTMXBuf6eSp4_HmCsGRoGwAxEoN87fuhT98Xsc4IulE_U4vM/pub?w=960&h=720)
 ## BERT的预训练
+datasets: 
+- BooksCorpus (800M words)
+- EnglishWikipedia (2.5B words)
 ### 任务设计
 BERT的预训练被设计为多任务学习（multi-task learning），包含两个任务：一个是 Masked Language Model，另一个是 Next Sentence Prediction。**前者用于建模更广泛的上下文，通过 mask 来强制模型给每个词记住更多的上下文信息；后者用来建模多个句子之间的关系，强迫 [CLS] token 的顶层状态编码更多的篇章信息。**
 
@@ -403,11 +406,11 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [paper-dissected-bert-pre-training-of-deep-bidirectional-transformers-for-language-understanding-explained](https://mlexplained.com/2019/01/07/paper-dissected-bert-pre-training-of-deep-bidirectional-transformers-for-language-understanding-explained/)
 [Understanding BERT part2](https://medium.com/dissecting-bert/dissecting-bert-part2-335ff2ed9c73)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTUwNTU1NTk0NiwtMTk3MTc4MTkzLDQ2OT
-Y4NDE3MCwtMzY3NzY2Nzk4LDgwMDczMjU3NCwtMTgyMzY5MTI3
-OCwtNjAwNDkxMjQzLC02MTA1Mzk3MTUsMzEzNjM3ODcxLC05MD
-c5NDI3OTIsLTIwMDYzNzE4ODQsODc0MjQ3MTgzLC02ODM5OTMx
-NjYsLTM3MDI5MjIzOSwxNzIzMTQzNjc1LDE0NjQ4MTc5Miw0ND
-UzMDM4NTksNjU1OTg2NTcwLC0yMDE5NDg4MjI3LDExNjgxNTc4
-NzddfQ==
+eyJoaXN0b3J5IjpbNjY2NjUxMjY4LC01MDU1NTU5NDYsLTE5Nz
+E3ODE5Myw0Njk2ODQxNzAsLTM2Nzc2Njc5OCw4MDA3MzI1NzQs
+LTE4MjM2OTEyNzgsLTYwMDQ5MTI0MywtNjEwNTM5NzE1LDMxMz
+YzNzg3MSwtOTA3OTQyNzkyLC0yMDA2MzcxODg0LDg3NDI0NzE4
+MywtNjgzOTkzMTY2LC0zNzAyOTIyMzksMTcyMzE0MzY3NSwxND
+Y0ODE3OTIsNDQ1MzAzODU5LDY1NTk4NjU3MCwtMjAxOTQ4ODIy
+N119
 -->
