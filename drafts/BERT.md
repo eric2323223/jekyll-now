@@ -137,16 +137,20 @@ BERT的预训练被设计为多任务学习（multi-task learning），包含两
 -   80%的概率替换成[MASK]，比如my dog is hairy → my dog is [MASK]
 -   10%的概率替换成随机的一个词，比如my dog is hairy → my dog is apple
 -   10%的概率替换成它本身，比如my dog is hairy → my dog is hairy
+>-   If we used [MASK] 100% of the time the model wouldn’t necessarily produce good token representations for non-masked words. The non-masked tokens were still used for context, but the model was optimized for predicting masked words.
+>-   If we used [MASK] 90% of the time and random words 10% of the time, this would teach the model that the observed word is  _never_  correct.
+>-   If we used [MASK] 90% of the time and kept the same word 10% of the time, then the model could just trivially copy the non-contextual embedding.
+
+
 >_Why did they not use a ‘<MASK>’ replacement token all around?_
 If the model had been trained on only predicting ‘<MASK>’ tokens and then never saw this token during fine-tuning, it would have thought that there was no need to predict anything and this would have hampered performance. Furthermore, the model would have only learned a contextual representation of the ‘<MASK>’ token and this would have made it learn slowly (since only 15% of the input tokens are masked). By sometimes asking it to predict a word in a position that did not have a ‘<MASK>’ token, the model needed to learn a contextual representation of  _all_  the words in the input sentence, just in case it was asked to predict them afterwards.
 _Are not random tokens enough? Why did they leave some sentences intact?_
 Well, ideally we want the model’s representation of the masked token to be better than random. By sometimes keeping the sentence intact (while still asking the model to predict the chosen token) the authors biased the model to learn a meaningful representation of the masked tokens.
 _Will random tokens confuse the model?_
 The model will indeed try to use the embedding of the random token to help in its prediction and it will learn that it was actually not useful once it sees the target (correct token). However, the random replacement happened in 1.5% of the tokens (10%*15%) and the authors claim that it did not affect the model’s performance.
-
 _The model will only predict 15% of the tokens but language models predict 100% of tokens, does this mean that the model needs more iterations to achieve the same loss?_
-
 Yes, the model does converge more slowly but the increased steps in converging are justified by an considerable improvement in downstream performance.
+
 这样做的好处是，BERT并不知道[MASK]替换的是这15%个Token中的哪一个词(**注意：这里意思是输入的时候不知道[MASK]替换的是哪一个词，但是输出还是知道要预测哪个词的**)，而且任何一个词都有可能是被替换掉的，比如它看到的apple可能是被替换的词。这样强迫模型在编码当前时刻的时候不能太依赖于当前的词，而要考虑它的上下文，甚至对其上下文进行”纠错”。比如上面的例子模型在编码apple是根据上下文my dog is应该把apple(部分)编码成hairy的语义而不是apple的语义。
 细节三：对于任务一，对于在数据中随机选择 15% 的标记，其中80%被换位[mask]，10%不变、10%随机替换其他单词，原因是什么？
 
@@ -181,6 +185,14 @@ BERT的损失函数由两部分组成，第一部分是来自 Mask-LM 的**单�
 
 具体的预训练工程实现细节方面，BERT 还利用了一系列策略，使得模型更易于训练，比如对于学习率的 warm-up 策略，使用的激活函数不再是普通的 ReLu，而是 GeLu，也使用了 dropout 等常见的训练技巧。
 ### 预训练流程
+>The pre-training corpus was built from BookCorpus (800M words) and English Wikipedia (2,500M words). Tokens were tokenized using 37,000 WordPiece tokens.
+To generate the pre-training sequences, the authors got random samples in batches of two (50% of the time adjacent to each other) such that the combined length of the two chosen sentences was ≤512 tokens. Once each sequence was built, 15% of its tokens were masked.
+An example of a pre-training sequence presented in the paper is:
+> > Input = [CLS] the man went to [MASK] store [SEP] he bought a gallon [MASK] milk [SEP]
+In this case the sentences are adjacent, so the label in [CLS] would be ‘<IsNext>’ as in:
+> > Input = <IsNext> the man went to [MASK] store [SEP] he bought a gallon [MASK] milk [SEP]
+The loss was calculated as the sum of the mean masked LM likelihood and the mean next sentence prediction likelihood.
+
 [http://jalammar.github.io/a-visual-guide-to-using-bert-for-the-first-time/](http://jalammar.github.io/a-visual-guide-to-using-bert-for-the-first-time/)  Recapping a sentence’s journey
 1. Preprocessing: Add special token to raw input: "BERT is awesome. BERT is wonderful" becomes "[CLS] BERT is awesome [SEP] BERT is wonderful [SEP]"
 2. Embedding
@@ -386,12 +398,13 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [Bert在NLP各领域的应用进展](https://zhuanlan.zhihu.com/p/68446772)
 [GPT2 finetune @familiarcycle.net/](https://familiarcycle.net/)
 [paper-dissected-bert-pre-training-of-deep-bidirectional-transformers-for-language-understanding-explained](https://mlexplained.com/2019/01/07/paper-dissected-bert-pre-training-of-deep-bidirectional-transformers-for-language-understanding-explained/)
+[Understanding BERT part2](https://medium.com/dissecting-bert/dissecting-bert-part2-335ff2ed9c73)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE5ODcxODMyMzQsNDY5Njg0MTcwLC0zNj
-c3NjY3OTgsODAwNzMyNTc0LC0xODIzNjkxMjc4LC02MDA0OTEy
-NDMsLTYxMDUzOTcxNSwzMTM2Mzc4NzEsLTkwNzk0Mjc5MiwtMj
-AwNjM3MTg4NCw4NzQyNDcxODMsLTY4Mzk5MzE2NiwtMzcwMjky
-MjM5LDE3MjMxNDM2NzUsMTQ2NDgxNzkyLDQ0NTMwMzg1OSw2NT
-U5ODY1NzAsLTIwMTk0ODgyMjcsMTE2ODE1Nzg3NywtNDk0Mjgx
-MDk4XX0=
+eyJoaXN0b3J5IjpbLTE5NzE3ODE5Myw0Njk2ODQxNzAsLTM2Nz
+c2Njc5OCw4MDA3MzI1NzQsLTE4MjM2OTEyNzgsLTYwMDQ5MTI0
+MywtNjEwNTM5NzE1LDMxMzYzNzg3MSwtOTA3OTQyNzkyLC0yMD
+A2MzcxODg0LDg3NDI0NzE4MywtNjgzOTkzMTY2LC0zNzAyOTIy
+MzksMTcyMzE0MzY3NSwxNDY0ODE3OTIsNDQ1MzAzODU5LDY1NT
+k4NjU3MCwtMjAxOTQ4ODIyNywxMTY4MTU3ODc3LC00OTQyODEw
+OThdfQ==
 -->
