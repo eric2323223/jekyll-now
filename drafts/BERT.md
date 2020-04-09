@@ -243,6 +243,10 @@ like this
 对于多标签分类任务，显而易见的朴素做法就是不管样本属于几个类，就给它训练几个分类模型即可，然后再一一判断在该类别中，其属于那个子类别，但是这样做未免太暴力了，而多标签分类任务，其实是可以**只用一个模型**来解决的。
 
 利用BERT模型解决多标签分类问题时，其输入与普通单标签分类问题一致，得到其embedding表示之后(也就是BERT输出层的embedding)，有几个label就连接到几个全连接层(也可以称为projection layer)，然后再分别接上softmax分类层，这样的话会得到​  ![[公式]](https://www.zhihu.com/equation?tex=loss_1%2C%5C+loss_2%2C%5C+%5Ccdots%2C%5C+loss_n)  ，最后再将所有的loss相加起来即可。这种做法就相当于将n个分类模型的特征提取层参数共享，得到一个共享的表示(其维度可以视任务而定，由于是多标签分类任务，因此其维度可以适当增大一些)，最后再做多标签分类任务。
+### SQuAD
+deal with looooong senquence: 
+[https://github.com/google-research/bert/issues/66](https://github.com/google-research/bert/issues/66)
+how to get the context vector?
 
 ### **7.4 文本生成？NO!**
 
@@ -421,7 +425,7 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [paper-dissected-bert-pre-training-of-deep-bidirectional-transformers-for-language-understanding-explained](https://mlexplained.com/2019/01/07/paper-dissected-bert-pre-training-of-deep-bidirectional-transformers-for-language-understanding-explained/)
 [Understanding BERT part2](https://medium.com/dissecting-bert/dissecting-bert-part2-335ff2ed9c73)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2Njk1ODY2NzgsLTUwNTU1NTk0NiwtMT
+eyJoaXN0b3J5IjpbLTIwODI0MDI5MDYsLTUwNTU1NTk0NiwtMT
 k3MTc4MTkzLDQ2OTY4NDE3MCwtMzY3NzY2Nzk4LDgwMDczMjU3
 NCwtMTgyMzY5MTI3OCwtNjAwNDkxMjQzLC02MTA1Mzk3MTUsMz
 EzNjM3ODcxLC05MDc5NDI3OTIsLTIwMDYzNzE4ODQsODc0MjQ3
