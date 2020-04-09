@@ -120,6 +120,7 @@ BERT模型主要包含这个部分，编码层和Transformer编码器
 - why 512?
 >Theoretically there is nothing restricting a Transformer to have greater sequence length. Practically, there are resource constraints - especially memory complexity when doing self-attention which is quadratic in terms of sequence length. Another reason why BERT is restricted to 512 may be because that was the sequence length it was originally restricted to while training but I am not sure.
 >[https://github.com/google-research/bert/issues/27](https://github.com/google-research/bert/issues/27)
+>[https://github.com/google-research/bert/issues/66](https://github.com/google-research/bert/issues/66)
 >We don't plan to make major changes to this library, so anything like that would be part of a separate project.
 Our recommended recipe is exactly what you describe (it's what we do for SQuAD), but you can actually fine-tune on it normally (we just don't do it for SQuAD because only a few percent of SQuAD documents are longer than 384 do so it didnt matter. But we should have).
 Let's say you have:
@@ -420,11 +421,11 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [paper-dissected-bert-pre-training-of-deep-bidirectional-transformers-for-language-understanding-explained](https://mlexplained.com/2019/01/07/paper-dissected-bert-pre-training-of-deep-bidirectional-transformers-for-language-understanding-explained/)
 [Understanding BERT part2](https://medium.com/dissecting-bert/dissecting-bert-part2-335ff2ed9c73)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTg3OTQ3NzU5NSwtNTA1NTU1OTQ2LC0xOT
-cxNzgxOTMsNDY5Njg0MTcwLC0zNjc3NjY3OTgsODAwNzMyNTc0
-LC0xODIzNjkxMjc4LC02MDA0OTEyNDMsLTYxMDUzOTcxNSwzMT
-M2Mzc4NzEsLTkwNzk0Mjc5MiwtMjAwNjM3MTg4NCw4NzQyNDcx
-ODMsLTY4Mzk5MzE2NiwtMzcwMjkyMjM5LDE3MjMxNDM2NzUsMT
-Q2NDgxNzkyLDQ0NTMwMzg1OSw2NTU5ODY1NzAsLTIwMTk0ODgy
-MjddfQ==
+eyJoaXN0b3J5IjpbLTE2Njk1ODY2NzgsLTUwNTU1NTk0NiwtMT
+k3MTc4MTkzLDQ2OTY4NDE3MCwtMzY3NzY2Nzk4LDgwMDczMjU3
+NCwtMTgyMzY5MTI3OCwtNjAwNDkxMjQzLC02MTA1Mzk3MTUsMz
+EzNjM3ODcxLC05MDc5NDI3OTIsLTIwMDYzNzE4ODQsODc0MjQ3
+MTgzLC02ODM5OTMxNjYsLTM3MDI5MjIzOSwxNzIzMTQzNjc1LD
+E0NjQ4MTc5Miw0NDUzMDM4NTksNjU1OTg2NTcwLC0yMDE5NDg4
+MjI3XX0=
 -->
