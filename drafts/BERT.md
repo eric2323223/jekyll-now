@@ -424,12 +424,13 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [GPT2 finetune @familiarcycle.net/](https://familiarcycle.net/)
 [paper-dissected-bert-pre-training-of-deep-bidirectional-transformers-for-language-understanding-explained](https://mlexplained.com/2019/01/07/paper-dissected-bert-pre-training-of-deep-bidirectional-transformers-for-language-understanding-explained/)
 [Understanding BERT part2](https://medium.com/dissecting-bert/dissecting-bert-part2-335ff2ed9c73)
+[BERT源码分析](https://blog.csdn.net/weixin_37947156/article/details/94885499)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwODI0MDI5MDYsLTUwNTU1NTk0NiwtMT
-k3MTc4MTkzLDQ2OTY4NDE3MCwtMzY3NzY2Nzk4LDgwMDczMjU3
-NCwtMTgyMzY5MTI3OCwtNjAwNDkxMjQzLC02MTA1Mzk3MTUsMz
-EzNjM3ODcxLC05MDc5NDI3OTIsLTIwMDYzNzE4ODQsODc0MjQ3
-MTgzLC02ODM5OTMxNjYsLTM3MDI5MjIzOSwxNzIzMTQzNjc1LD
-E0NjQ4MTc5Miw0NDUzMDM4NTksNjU1OTg2NTcwLC0yMDE5NDg4
-MjI3XX0=
+eyJoaXN0b3J5IjpbMzkxNDQ2NTQ2LC0yMDgyNDAyOTA2LC01MD
+U1NTU5NDYsLTE5NzE3ODE5Myw0Njk2ODQxNzAsLTM2Nzc2Njc5
+OCw4MDA3MzI1NzQsLTE4MjM2OTEyNzgsLTYwMDQ5MTI0MywtNj
+EwNTM5NzE1LDMxMzYzNzg3MSwtOTA3OTQyNzkyLC0yMDA2Mzcx
+ODg0LDg3NDI0NzE4MywtNjgzOTkzMTY2LC0zNzAyOTIyMzksMT
+cyMzE0MzY3NSwxNDY0ODE3OTIsNDQ1MzAzODU5LDY1NTk4NjU3
+MF19
 -->
