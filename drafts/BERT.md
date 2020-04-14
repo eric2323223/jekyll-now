@@ -150,13 +150,14 @@ BERT的预训练被设计为多任务学习（multi-task learning），包含两
 - Masked Language Model  - MLM
 注意力机制的使用使得BERT模型能够同时“看到”所有的序列元素，因此无法使用传统语言模型通过预测下一个元素的方式来进行训练。因此BERT使用了预测随机遮罩元素的方式，即masked language model。这种MLM训练的思路类似于填词游戏，通过上下文的信息来判断模型被隐藏的词，（如果mask太多，会丢失context，如果mask太少，训练太慢）
 [https://towardsdatascience.com/bert-explained-state-of-the-art-language-model-for-nlp-f8b21a9b6270](https://towardsdatascience.com/bert-explained-state-of-the-art-language-model-for-nlp-f8b21a9b6270)
-BERT的具体做法是给定一个句子，随机Mask 15%的词（即用[Mask]来替换原来的词），然后输入BERT模型并让BERT来预测这些Mask的词，如同上述10.1所述，在输入侧引入[Mask]标记，会导致预训练阶段和Fine-tuning阶段不一致的问题，因此在论文中为了缓解这一问题，采取了如下措施：
+BERT的具体做法是给定一个句子，随机Mask 15%的词（即用[Mask]来替换原来的词），然后输入BERT模型并让BERT来预测这些Mask的词，~~如同上述10.1所述，在输入侧引入[Mask]标记，会导致预训练阶段和Fine-tuning阶段不一致的问题，因此在论文中为了缓解这一问题，采取了如下措施：~~
 
-如果某个Token在被选中的15%个Token里，则按照下面的方式随机的执行：
+对于每个在被选中的15%的Token里，则按照下面的方式随机的执行：
 
 -   80%的概率替换成[MASK]，比如my dog is hairy → my dog is [MASK]
 -   10%的概率替换成随机的一个词，比如my dog is hairy → my dog is apple
 -   10%的概率替换成它本身，比如my dog is hairy → my dog is hairy
+-   举例，一个100词组成的句子通过处理可能得到9个词被替换为[MASK],1个词被替换为随机的词
 >-   If we used [MASK] 100% of the time the model wouldn’t necessarily produce good token representations for non-masked words. The non-masked tokens were still used for context, but the model was optimized for predicting masked words.
 >-   If we used [MASK] 90% of the time and random words 10% of the time, this would teach the model that the observed word is  _never_  correct.
 >-   If we used [MASK] 90% of the time and kept the same word 10% of the time, then the model could just trivially copy the non-contextual embedding.
@@ -427,7 +428,7 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [Understanding BERT part2](https://medium.com/dissecting-bert/dissecting-bert-part2-335ff2ed9c73)
 [BERT源码分析](https://blog.csdn.net/weixin_37947156/article/details/94885499)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwMjAxMDg2MzEsMzkxNDQ2NTQ2LC0yMD
+eyJoaXN0b3J5IjpbLTIwMTAwMzc5NzMsMzkxNDQ2NTQ2LC0yMD
 gyNDAyOTA2LC01MDU1NTU5NDYsLTE5NzE3ODE5Myw0Njk2ODQx
 NzAsLTM2Nzc2Njc5OCw4MDA3MzI1NzQsLTE4MjM2OTEyNzgsLT
 YwMDQ5MTI0MywtNjEwNTM5NzE1LDMxMzYzNzg3MSwtOTA3OTQy
