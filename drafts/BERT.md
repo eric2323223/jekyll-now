@@ -161,12 +161,13 @@ BERT的具体做法是给定一个句子，随机Mask 15%的词（即用[Mask]�
 -   10%的概率替换成它本身，比如my dog is hairy → my dog is hairy
 
 BERT is designed to help computers understand the meaning of ambiguous language in text by using surrounding text to establish context.
-BERT is [MASK] to help milk [MASK] the meaning of ambiguous language in text by using surrounding text to [MASK] context
+BERT is [MASK] to help **milk** understand the meaning of ambiguous language in text by using **surrounding** text to [MASK] context
+任务目标： 预测所有[MASK] 以及milk和surrounding位置上的词
+测试数据： milk=computers, [MASK]=designed, surrounding=surrounding, [MASK]=establish
 
--   举例，一个100词组成的句子通过处理可能得到9个词被替换为[MASK],1个词被替换为随机的词
-这样的设计是基于如下的考虑
  - 如果只做[MASK]替换，预训练模型会被训练为对[MASK]进行预测，所以只会加强[MASK]附近上下文的分析而不是全部序列的分析。 而微调阶段的目标是分析整个序列，它的输入不包含[MASK]，与预训练模型的目标不一致，因此会导致预训练模型在微调阶段性能下降。
- - 为了更加符合微调阶段的目标，作者加入l了一种新的预处理方式，即以10%的几率随机替换为其他词而不是[MASK]。由于输入序列的每一个词都有可能被替换为其他词，因此模型无法完全相信所有输入元素，
+ - 为了更加符合微调阶段的目标，作者加入l了一种新的预处理方式，即以10%的几率随机替换为其他词而不是[MASK]（如milk）。这就要求模型要对所有输入元素的上下文进行分析，从而满足微调的需要。
+ - 使用原词替换（如surrounding）是
  - >-   If we used [MASK] 100% of the time the model wouldn’t necessarily produce good token representations for non-masked words. The non-masked tokens were still used for context, but the model was optimized for predicting masked words.
 >-   If we used [MASK] 90% of the time and random words 10% of the time, this would teach the model that the observed word is  _never_  correct.
 >-   If we used [MASK] 90% of the time and kept the same word 10% of the time, then the model could just trivially copy the non-contextual embedding.
@@ -438,11 +439,11 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [BERT源码分析](https://blog.csdn.net/weixin_37947156/article/details/94885499)
 [BERT author explain BERT](https://www.reddit.com/r/MachineLearning/comments/9nfqxz/r_bert_pretraining_of_deep_bidirectional/)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTExMTQwOTEyNjEsLTEwMjkzNDAzODIsMz
-kxNDQ2NTQ2LC0yMDgyNDAyOTA2LC01MDU1NTU5NDYsLTE5NzE3
-ODE5Myw0Njk2ODQxNzAsLTM2Nzc2Njc5OCw4MDA3MzI1NzQsLT
-E4MjM2OTEyNzgsLTYwMDQ5MTI0MywtNjEwNTM5NzE1LDMxMzYz
-Nzg3MSwtOTA3OTQyNzkyLC0yMDA2MzcxODg0LDg3NDI0NzE4My
-wtNjgzOTkzMTY2LC0zNzAyOTIyMzksMTcyMzE0MzY3NSwxNDY0
-ODE3OTJdfQ==
+eyJoaXN0b3J5IjpbLTUwNTc4ODMwLC0xMDI5MzQwMzgyLDM5MT
+Q0NjU0NiwtMjA4MjQwMjkwNiwtNTA1NTU1OTQ2LC0xOTcxNzgx
+OTMsNDY5Njg0MTcwLC0zNjc3NjY3OTgsODAwNzMyNTc0LC0xOD
+IzNjkxMjc4LC02MDA0OTEyNDMsLTYxMDUzOTcxNSwzMTM2Mzc4
+NzEsLTkwNzk0Mjc5MiwtMjAwNjM3MTg4NCw4NzQyNDcxODMsLT
+Y4Mzk5MzE2NiwtMzcwMjkyMjM5LDE3MjMxNDM2NzUsMTQ2NDgx
+NzkyXX0=
 -->
