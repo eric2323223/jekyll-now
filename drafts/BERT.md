@@ -161,12 +161,12 @@ BERT的具体做法是给定一个句子，随机Mask 15%的词（即用[Mask]�
 -   10%的概率替换成它本身，比如my dog is hairy → my dog is hairy
 
 BERT is designed to help computers understand the meaning of ambiguous language in text by using surrounding text to establish context.
-BERT is [MASK] to help **milk** understand the meaning of ambiguous language in text by using **surrounding** text to [MASK] context
+BERT is [MASK1] to help **milk** understand the meaning of ambiguous language in text by using **surrounding** text to [MASK2] context
 任务目标： 预测所有[MASK] 以及milk和surrounding位置上的词
-测试数据： milk=computers, [MASK]=designed, surrounding=surrounding, [MASK]=establish
+测试数据：[MASK1]=designed, milk=computers, surrounding=surrounding, [MASK2]=establish
 
  - 如果只做[MASK]替换，预训练模型会被训练为对[MASK]进行预测，所以只会加强[MASK]附近上下文的分析而不是全部序列的分析。 而微调阶段的目标是分析整个序列，它的输入不包含[MASK]，与预训练模型的目标不一致，因此会导致预训练模型在微调阶段性能下降。
- - 为了更加符合微调阶段的目标，作者加入l了一种新的预处理方式，即以10%的几率随机替换为其他词而不是[MASK]（如milk）。这就要求模型要对所有输入元素的上下文进行分析，从而满足微调的需要。
+ - 为了更加符合微调阶段的目标，作者加入l了一种新的预处理方式，即以10%的几率随机将原词computer替换为其他词milk而不是[MASK]，为了得出正确结果（computer）模型需要分析milk的上下文。由于所有的词都可能被替换，这就要求模型要对所有输入元素的上下文进行分析，从而满足微调的需要。
  - 使用原词替换（如surrounding）是
  - >-   If we used [MASK] 100% of the time the model wouldn’t necessarily produce good token representations for non-masked words. The non-masked tokens were still used for context, but the model was optimized for predicting masked words.
 >-   If we used [MASK] 90% of the time and random words 10% of the time, this would teach the model that the observed word is  _never_  correct.
@@ -187,7 +187,7 @@ Yes, the model does converge more slowly but the increased steps in converging a
 
 **两个缺点：**
 
-1、因为Bert用于下游任务微调时， [MASK] 标记不会出现，它只出现在预训练任务中。这就造成了预训练和微调之间的不匹配，微调不出现[MASK]这个标记，模型好像就没有了着力点、不知从哪入手。所以只将80%的替换为[mask]，但这也**只是缓解、不能解决**。
+1、因为Bert用于下游任务微调时， [MASK] 标记不会出现，它只出现在预训练任务中。这就造成了预训练和微调之间的不匹配，微调不出现[MASK]这个标记，模型好像就没有了着力点、不知从哪入手。所以只将80%的替换为[MASK]，但这也**只是缓解、不能解决**。
 
 2、相较于传统语言模型，Bert的每批次训练数据中只有 15% 的标记被预测，这导致模型需要更多的训练步骤来收敛。
 - NSP
@@ -441,7 +441,7 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [BERT源码分析](https://blog.csdn.net/weixin_37947156/article/details/94885499)
 [BERT author explain BERT](https://www.reddit.com/r/MachineLearning/comments/9nfqxz/r_bert_pretraining_of_deep_bidirectional/)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTA5OTY1NDcyNSwtMTAyOTM0MDM4MiwzOT
+eyJoaXN0b3J5IjpbLTgxNjQ0NDM0NCwtMTAyOTM0MDM4MiwzOT
 E0NDY1NDYsLTIwODI0MDI5MDYsLTUwNTU1NTk0NiwtMTk3MTc4
 MTkzLDQ2OTY4NDE3MCwtMzY3NzY2Nzk4LDgwMDczMjU3NCwtMT
 gyMzY5MTI3OCwtNjAwNDkxMjQzLC02MTA1Mzk3MTUsMzEzNjM3
