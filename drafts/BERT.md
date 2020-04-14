@@ -86,7 +86,9 @@ The good LM should calculate higher probabilities to “real” and “frequentl
 BERT（Bidirectional Encoder Representations from Transformer）是一个用于提取输入序列特征信息的预训练模型。When BERT was published it achieved [state-of-the-art] performance in 11 [natural language understanding] tasks:[[1]] [GLUE]task set (consisting of 8 tasks), [MultiNLI] [SQuAD] v1.1, SQuAD v2.0
 2018, google发表了论文BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding， 2019年google将BERT模型应用到了搜索服务中，现在已经支持了超过70种语言
 
-BERT最大的创新是将Transformer模型应用到了语言模型中，。。。。影响和决定了BERT很多特殊性质。在BERT之前，
+BERT最大的创新是将Transformer模型应用到了语言模型中，实现deep bidirectional contexual embedding。。。。影响和决定了BERT很多特殊性质。
+
+**bidirectional <-> LM 的矛盾如何解决？ MLM**
 
 - context dependent embedding
 BERT模型生成的元素编码属于动态编码，它能根据输入序列生成每个序列元素（word）在序列上下文中的特征向量
@@ -160,7 +162,7 @@ BERT的具体做法是给定一个句子，随机Mask 15%的词（即用[Mask]�
 -   举例，一个100词组成的句子通过处理可能得到9个词被替换为[MASK],1个词被替换为随机的词
 这样的设计是基于如下的考虑
  - 如果只做[MASK]替换，预训练模型会被训练为对[MASK]进行预测，所以只会加强[MASK]附近上下文的分析而不是全部序列的分析。 而微调阶段的目标是分析整个序列，它的输入不包含[MASK]，与预训练模型的目标不一致，因此会导致预训练模型在微调阶段性能下降。
- - 为了更加符合微调阶段的目标，作者加入一种新的预处理方式，即以10%的几率随机替换为其他词而不是[MASK]。由于输入序列的每一个词都有可能被替换为其他词，因此模型无法完全相信所有输入元素，
+ - 为了更加符合微调阶段的目标，作者加入l了一种新的预处理方式，即以10%的几率随机替换为其他词而不是[MASK]。由于输入序列的每一个词都有可能被替换为其他词，因此模型无法完全相信所有输入元素，
  - >-   If we used [MASK] 100% of the time the model wouldn’t necessarily produce good token representations for non-masked words. The non-masked tokens were still used for context, but the model was optimized for predicting masked words.
 >-   If we used [MASK] 90% of the time and random words 10% of the time, this would teach the model that the observed word is  _never_  correct.
 >-   If we used [MASK] 90% of the time and kept the same word 10% of the time, then the model could just trivially copy the non-contextual embedding.
@@ -430,12 +432,13 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [paper-dissected-bert-pre-training-of-deep-bidirectional-transformers-for-language-understanding-explained](https://mlexplained.com/2019/01/07/paper-dissected-bert-pre-training-of-deep-bidirectional-transformers-for-language-understanding-explained/)
 [Understanding BERT part2](https://medium.com/dissecting-bert/dissecting-bert-part2-335ff2ed9c73)
 [BERT源码分析](https://blog.csdn.net/weixin_37947156/article/details/94885499)
+[BERT author explain BERT](https://www.reddit.com/r/MachineLearning/comments/9nfqxz/r_bert_pretraining_of_deep_bidirectional/)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTI3MzMwNjEyNiwzOTE0NDY1NDYsLTIwOD
-I0MDI5MDYsLTUwNTU1NTk0NiwtMTk3MTc4MTkzLDQ2OTY4NDE3
-MCwtMzY3NzY2Nzk4LDgwMDczMjU3NCwtMTgyMzY5MTI3OCwtNj
-AwNDkxMjQzLC02MTA1Mzk3MTUsMzEzNjM3ODcxLC05MDc5NDI3
-OTIsLTIwMDYzNzE4ODQsODc0MjQ3MTgzLC02ODM5OTMxNjYsLT
-M3MDI5MjIzOSwxNzIzMTQzNjc1LDE0NjQ4MTc5Miw0NDUzMDM4
-NTldfQ==
+eyJoaXN0b3J5IjpbLTEwMjkzNDAzODIsMzkxNDQ2NTQ2LC0yMD
+gyNDAyOTA2LC01MDU1NTU5NDYsLTE5NzE3ODE5Myw0Njk2ODQx
+NzAsLTM2Nzc2Njc5OCw4MDA3MzI1NzQsLTE4MjM2OTEyNzgsLT
+YwMDQ5MTI0MywtNjEwNTM5NzE1LDMxMzYzNzg3MSwtOTA3OTQy
+NzkyLC0yMDA2MzcxODg0LDg3NDI0NzE4MywtNjgzOTkzMTY2LC
+0zNzAyOTIyMzksMTcyMzE0MzY3NSwxNDY0ODE3OTIsNDQ1MzAz
+ODU5XX0=
 -->
