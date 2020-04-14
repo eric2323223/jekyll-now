@@ -158,6 +158,9 @@ BERT的具体做法是给定一个句子，随机Mask 15%的词（即用[Mask]�
 -   10%的概率替换成随机的一个词，比如my dog is hairy → my dog is apple
 -   10%的概率替换成它本身，比如my dog is hairy → my dog is hairy
 -   举例，一个100词组成的句子通过处理可能得到9个词被替换为[MASK],1个词被替换为随机的词
+这样的设计是基于如下的考虑
+ - 如果只做[MASK]替换，预训练模型会被训练为对[MASK]进行预测，所以只会加强[MASK]附近上下文的分析而不是全部序列的分析。 而微调阶段的目标是分析整个序列，它的输入不包含[MASK]，与预训练模型的目标不一致，因此会导致预训练模型在微调阶段性能下降。
+ - 
 >-   If we used [MASK] 100% of the time the model wouldn’t necessarily produce good token representations for non-masked words. The non-masked tokens were still used for context, but the model was optimized for predicting masked words.
 >-   If we used [MASK] 90% of the time and random words 10% of the time, this would teach the model that the observed word is  _never_  correct.
 >-   If we used [MASK] 90% of the time and kept the same word 10% of the time, then the model could just trivially copy the non-contextual embedding.
@@ -428,11 +431,11 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [Understanding BERT part2](https://medium.com/dissecting-bert/dissecting-bert-part2-335ff2ed9c73)
 [BERT源码分析](https://blog.csdn.net/weixin_37947156/article/details/94885499)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwMTAwMzc5NzMsMzkxNDQ2NTQ2LC0yMD
-gyNDAyOTA2LC01MDU1NTU5NDYsLTE5NzE3ODE5Myw0Njk2ODQx
-NzAsLTM2Nzc2Njc5OCw4MDA3MzI1NzQsLTE4MjM2OTEyNzgsLT
-YwMDQ5MTI0MywtNjEwNTM5NzE1LDMxMzYzNzg3MSwtOTA3OTQy
-NzkyLC0yMDA2MzcxODg0LDg3NDI0NzE4MywtNjgzOTkzMTY2LC
-0zNzAyOTIyMzksMTcyMzE0MzY3NSwxNDY0ODE3OTIsNDQ1MzAz
-ODU5XX0=
+eyJoaXN0b3J5IjpbLTk5NzY5MzA5MywzOTE0NDY1NDYsLTIwOD
+I0MDI5MDYsLTUwNTU1NTk0NiwtMTk3MTc4MTkzLDQ2OTY4NDE3
+MCwtMzY3NzY2Nzk4LDgwMDczMjU3NCwtMTgyMzY5MTI3OCwtNj
+AwNDkxMjQzLC02MTA1Mzk3MTUsMzEzNjM3ODcxLC05MDc5NDI3
+OTIsLTIwMDYzNzE4ODQsODc0MjQ3MTgzLC02ODM5OTMxNjYsLT
+M3MDI5MjIzOSwxNzIzMTQzNjc1LDE0NjQ4MTc5Miw0NDUzMDM4
+NTldfQ==
 -->
