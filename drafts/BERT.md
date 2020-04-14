@@ -191,6 +191,8 @@ Yes, the model does converge more slowly but the increased steps in converging a
 
 2、相较于传统语言模型，Bert的每批次训练数据中只有 15% 的标记被预测，这导致模型需要更多的训练步骤来收敛。
 - NSP
+>The BERT framework was pre-trained using text from Wikipedia and can be fine-tuned with question and answer datasets.
+
 >Next Sentence Prediction（NSP）的任务是判断句子B是否是句子A的下文。如果是的话输出’IsNext‘，否则输出’NotNext‘。训练数据的生成方式是从平行语料中随机抽取的连续两句话，其中50%保留抽取的两句话，它们符合IsNext关系，另外50%的第二句话是随机从预料中提取的，它们的关系是NotNext的。这个关系保存在图4中的`[CLS]`符号中。
 
 >_Why is a second task necessary at all?_
@@ -439,11 +441,11 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [BERT源码分析](https://blog.csdn.net/weixin_37947156/article/details/94885499)
 [BERT author explain BERT](https://www.reddit.com/r/MachineLearning/comments/9nfqxz/r_bert_pretraining_of_deep_bidirectional/)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTUwNTc4ODMwLC0xMDI5MzQwMzgyLDM5MT
-Q0NjU0NiwtMjA4MjQwMjkwNiwtNTA1NTU1OTQ2LC0xOTcxNzgx
-OTMsNDY5Njg0MTcwLC0zNjc3NjY3OTgsODAwNzMyNTc0LC0xOD
-IzNjkxMjc4LC02MDA0OTEyNDMsLTYxMDUzOTcxNSwzMTM2Mzc4
-NzEsLTkwNzk0Mjc5MiwtMjAwNjM3MTg4NCw4NzQyNDcxODMsLT
-Y4Mzk5MzE2NiwtMzcwMjkyMjM5LDE3MjMxNDM2NzUsMTQ2NDgx
-NzkyXX0=
+eyJoaXN0b3J5IjpbMTA5OTY1NDcyNSwtMTAyOTM0MDM4MiwzOT
+E0NDY1NDYsLTIwODI0MDI5MDYsLTUwNTU1NTk0NiwtMTk3MTc4
+MTkzLDQ2OTY4NDE3MCwtMzY3NzY2Nzk4LDgwMDczMjU3NCwtMT
+gyMzY5MTI3OCwtNjAwNDkxMjQzLC02MTA1Mzk3MTUsMzEzNjM3
+ODcxLC05MDc5NDI3OTIsLTIwMDYzNzE4ODQsODc0MjQ3MTgzLC
+02ODM5OTMxNjYsLTM3MDI5MjIzOSwxNzIzMTQzNjc1LDE0NjQ4
+MTc5Ml19
 -->
