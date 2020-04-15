@@ -236,7 +236,7 @@ Each training data contains Two sentences, such as "BERT is awesome."
 3. Transformer encoder: 
 
 like this
-
+![enter image description here](https://docs.google.com/drawings/d/e/2PACX-1vRFdq5CGCgn5WdAHdz88Z5ePsIU58vHz0HVYx56PQ3TP7Xi2WAbSkAbWx1Q4VA8ZkJ3mpSvlpmV1v-0/pub?w=1169&h=245)
 
 
 ## BERT的微调fine tune
@@ -440,11 +440,11 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [BERT源码分析](https://blog.csdn.net/weixin_37947156/article/details/94885499)
 [BERT author explain BERT](https://www.reddit.com/r/MachineLearning/comments/9nfqxz/r_bert_pretraining_of_deep_bidirectional/)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQ4OTI1NTI4MywtMTAyOTM0MDM4MiwzOT
-E0NDY1NDYsLTIwODI0MDI5MDYsLTUwNTU1NTk0NiwtMTk3MTc4
-MTkzLDQ2OTY4NDE3MCwtMzY3NzY2Nzk4LDgwMDczMjU3NCwtMT
-gyMzY5MTI3OCwtNjAwNDkxMjQzLC02MTA1Mzk3MTUsMzEzNjM3
-ODcxLC05MDc5NDI3OTIsLTIwMDYzNzE4ODQsODc0MjQ3MTgzLC
-02ODM5OTMxNjYsLTM3MDI5MjIzOSwxNzIzMTQzNjc1LDE0NjQ4
-MTc5Ml19
+eyJoaXN0b3J5IjpbMTg0Mzk4NTQyNSwtNDg5MjU1MjgzLC0xMD
+I5MzQwMzgyLDM5MTQ0NjU0NiwtMjA4MjQwMjkwNiwtNTA1NTU1
+OTQ2LC0xOTcxNzgxOTMsNDY5Njg0MTcwLC0zNjc3NjY3OTgsOD
+AwNzMyNTc0LC0xODIzNjkxMjc4LC02MDA0OTEyNDMsLTYxMDUz
+OTcxNSwzMTM2Mzc4NzEsLTkwNzk0Mjc5MiwtMjAwNjM3MTg4NC
+w4NzQyNDcxODMsLTY4Mzk5MzE2NiwtMzcwMjkyMjM5LDE3MjMx
+NDM2NzVdfQ==
 -->
