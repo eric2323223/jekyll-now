@@ -185,11 +185,6 @@ Yes, the model does converge more slowly but the increased steps in converging a
 这样做的好处是，BERT并不知道[MASK]替换的是这15%个Token中的哪一个词(**注意：这里意思是输入的时候不知道[MASK]替换的是哪一个词，但是输出还是知道要预测哪个词的**)，而且任何一个词都有可能是被替换掉的，比如它看到的apple可能是被替换的词。这样强迫模型在编码当前时刻的时候不能太依赖于当前的词，而要考虑它的上下文，甚至对其上下文进行”纠错”。比如上面的例子模型在编码apple是根据上下文my dog is应该把apple(部分)编码成hairy的语义而不是apple的语义。
 细节三：对于任务一，对于在数据中随机选择 15% 的标记，其中80%被换位[mask]，10%不变、10%随机替换其他单词，原因是什么？
 
-**两个缺点：**
-
-1、因为Bert用于下游任务微调时， [MASK] 标记不会出现，它只出现在预训练任务中。这就造成了预训练和微调之间的不匹配，微调不出现[MASK]这个标记，模型好像就没有了着力点、不知从哪入手。所以只将80%的替换为[MASK]，但这也**只是缓解、不能解决**。
-
-2、相较于传统语言模型，Bert的每批次训练数据中只有 15% 的标记被预测，这导致模型需要更多的训练步骤来收敛。
 - NSP
 >The BERT framework was pre-trained using text from Wikipedia and can be fine-tuned with question and answer datasets.
 
@@ -441,7 +436,7 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [BERT源码分析](https://blog.csdn.net/weixin_37947156/article/details/94885499)
 [BERT author explain BERT](https://www.reddit.com/r/MachineLearning/comments/9nfqxz/r_bert_pretraining_of_deep_bidirectional/)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQyMjUxMzA4MywtMTAyOTM0MDM4MiwzOT
+eyJoaXN0b3J5IjpbMTY0NjA1NzgxMiwtMTAyOTM0MDM4MiwzOT
 E0NDY1NDYsLTIwODI0MDI5MDYsLTUwNTU1NTk0NiwtMTk3MTc4
 MTkzLDQ2OTY4NDE3MCwtMzY3NzY2Nzk4LDgwMDczMjU3NCwtMT
 gyMzY5MTI3OCwtNjAwNDkxMjQzLC02MTA1Mzk3MTUsMzEzNjM3
