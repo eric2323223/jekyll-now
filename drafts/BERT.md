@@ -182,9 +182,6 @@ The model will indeed try to use the embedding of the random token to help in it
 _The model will only predict 15% of the tokens but language models predict 100% of tokens, does this mean that the model needs more iterations to achieve the same loss?_
 Yes, the model does converge more slowly but the increased steps in converging are justified by an considerable improvement in downstream performance.
 
-这样做的好处是，BERT并不知道[MASK]替换的是这15%个Token中的哪一个词(**注意：这里意思是输入的时候不知道[MASK]替换的是哪一个词，但是输出还是知道要预测哪个词的**)，而且任何一个词都有可能是被替换掉的，比如它看到的apple可能是被替换的词。这样强迫模型在编码当前时刻的时候不能太依赖于当前的词，而要考虑它的上下文，甚至对其上下文进行”纠错”。比如上面的例子模型在编码apple是根据上下文my dog is应该把apple(部分)编码成hairy的语义而不是apple的语义。
-细节三：对于任务一，对于在数据中随机选择 15% 的标记，其中80%被换位[mask]，10%不变、10%随机替换其他单词，原因是什么？
-
 - NSP
 >The BERT framework was pre-trained using text from Wikipedia and can be fine-tuned with question and answer datasets.
 
@@ -197,7 +194,7 @@ _What percentage of sentences where actually next sentences?_
 
 ### 损失函数
 total_loss = masked_lm_loss + next_sentence_loss
-BERT的损失函数由两部分组成，第一部分是来自 Mask-LM 的**单词级别分类任务**，另一部分是**句子级别的分类任务**。通过这两个任务的联合学习，可以使得 BERT 学习到的表征既有 token 级别信息，同时也包含了句子级别的语义信息。具体损失函数如下：
+与任务相对应，BERT的损失函数由两部分组成，第一部分是来自 Mask-LM 的**单词级别分类任务**，另一部分是**句子级别的分类任务**。通过这两个任务的联合学习，可以使得 BERT 学习到的表征既有 token 级别信息，同时也包含了句子级别的语义信息。具体损失函数如下：
 
 ![[公式]](https://www.zhihu.com/equation?tex=L%5Cleft%28%5Ctheta%2C+%5Ctheta_%7B1%7D%2C+%5Ctheta_%7B2%7D%5Cright%29%3DL_%7B1%7D%5Cleft%28%5Ctheta%2C+%5Ctheta_%7B1%7D%5Cright%29%2BL_%7B2%7D%5Cleft%28%5Ctheta%2C+%5Ctheta_%7B2%7D%5Cright%29)
 
@@ -214,6 +211,7 @@ BERT的损失函数由两部分组成，第一部分是来自 Mask-LM 的**单�
 ![[公式]](https://www.zhihu.com/equation?tex=L%5Cleft%28%5Ctheta%2C+%5Ctheta_%7B1%7D%2C+%5Ctheta_%7B2%7D%5Cright%29%3D-%5Csum_%7Bi%3D1%7D%5E%7BM%7D+%5Clog+p%5Cleft%28m%3Dm_%7Bi%7D+%7C+%5Ctheta%2C+%5Ctheta_%7B1%7D%5Cright%29-%5Csum_%7Bj%3D1%7D%5E%7BN%7D+%5Clog+p%5Cleft%28n%3Dn_%7Bi%7D+%7C+%5Ctheta%2C+%5Ctheta_%7B2%7D%5Cright%29)
 
 具体的预训练工程实现细节方面，BERT 还利用了一系列策略，使得模型更易于训练，比如对于学习率的 warm-up 策略，使用的激活函数不再是普通的 ReLu，而是 GeLu，也使用了 dropout 等常见的训练技巧。
+
 ### 预训练流程
 >The pre-training corpus was built from BookCorpus (800M words) and English Wikipedia (2,500M words). Tokens were tokenized using 37,000 WordPiece tokens.
 To generate the pre-training sequences, the authors got random samples in batches of two (50% of the time adjacent to each other) such that the combined length of the two chosen sentences was ≤512 tokens. Once each sequence was built, 15% of its tokens were masked.
@@ -224,7 +222,13 @@ In this case the sentences are adjacent, so the label in [CLS] would be ‘<IsNe
 The loss was calculated as the sum of the mean masked LM likelihood and the mean next sentence prediction likelihood.
 
 [http://jalammar.github.io/a-visual-guide-to-using-bert-for-the-first-time/](http://jalammar.github.io/a-visual-guide-to-using-bert-for-the-first-time/)  Recapping a sentence’s journey
-1. Preprocessing: Add special token to raw input: "BERT is awesome. BERT is wonderful" becomes "[CLS] BERT is awesome [SEP] BERT is wonderful [SEP]"
+Each training data contains Two sentences, such as "BERT is awesome. I love BERT. "
+1. Preprocessing: 
+	1.1 . Add special token to raw input: [CLS] BERT is awesome. [SEP] I love BERT. [SEP]"
+	1.2.  Add masks to some words: [CLS] BERT [MASK] awesome. [SEP] I love BERT. [SEP
+	1.3.  Generate pretrain data
+		1.3.1 for MLM: X=
+		1.3.2 for NSP: 
 2. Embedding
 	2.1 word embedding: tokenization
 	2.2 positional embedding
@@ -436,7 +440,7 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [BERT源码分析](https://blog.csdn.net/weixin_37947156/article/details/94885499)
 [BERT author explain BERT](https://www.reddit.com/r/MachineLearning/comments/9nfqxz/r_bert_pretraining_of_deep_bidirectional/)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTY0NjA1NzgxMiwtMTAyOTM0MDM4MiwzOT
+eyJoaXN0b3J5IjpbMTk4NTMwNTk4MCwtMTAyOTM0MDM4MiwzOT
 E0NDY1NDYsLTIwODI0MDI5MDYsLTUwNTU1NTk0NiwtMTk3MTc4
 MTkzLDQ2OTY4NDE3MCwtMzY3NzY2Nzk4LDgwMDczMjU3NCwtMT
 gyMzY5MTI3OCwtNjAwNDkxMjQzLC02MTA1Mzk3MTUsMzEzNjM3
