@@ -222,12 +222,12 @@ In this case the sentences are adjacent, so the label in [CLS] would be ‘<IsNe
 The loss was calculated as the sum of the mean masked LM likelihood and the mean next sentence prediction likelihood.
 
 [http://jalammar.github.io/a-visual-guide-to-using-bert-for-the-first-time/](http://jalammar.github.io/a-visual-guide-to-using-bert-for-the-first-time/)  Recapping a sentence’s journey
-Each training data contains Two sentences, such as "BERT is awesome. I love BERT. "
+Each training data contains Two sentences, such as "BERT is awesome."
 1. Preprocessing: 
 	1.1 . Add special token to raw input: [CLS] BERT is awesome. [SEP] I love BERT. [SEP]"
 	1.2.  Add masks to some words: [CLS] BERT [MASK] awesome. [SEP] I love BERT. [SEP
 	1.3.  Generate pretrain data
-		1.3.1 for MLM: X=
+		1.3.1 for MLM: {tokens:["CLS", "BERT", "MASK", "awesome", "SEP"], masked_token:{index:2, value:"is"}}
 		1.3.2 for NSP: 
 2. Embedding
 	2.1 word embedding: tokenization
@@ -440,7 +440,7 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [BERT源码分析](https://blog.csdn.net/weixin_37947156/article/details/94885499)
 [BERT author explain BERT](https://www.reddit.com/r/MachineLearning/comments/9nfqxz/r_bert_pretraining_of_deep_bidirectional/)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTk4NTMwNTk4MCwtMTAyOTM0MDM4MiwzOT
+eyJoaXN0b3J5IjpbLTQ4OTI1NTI4MywtMTAyOTM0MDM4MiwzOT
 E0NDY1NDYsLTIwODI0MDI5MDYsLTUwNTU1NTk0NiwtMTk3MTc4
 MTkzLDQ2OTY4NDE3MCwtMzY3NzY2Nzk4LDgwMDczMjU3NCwtMT
 gyMzY5MTI3OCwtNjAwNDkxMjQzLC02MTA1Mzk3MTUsMzEzNjM3
