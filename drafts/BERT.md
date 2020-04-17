@@ -222,7 +222,7 @@ In this case the sentences are adjacent, so the label in [CLS] would be ‘<IsNe
 The loss was calculated as the sum of the mean masked LM likelihood and the mean next sentence prediction likelihood.
 
 [http://jalammar.github.io/a-visual-guide-to-using-bert-for-the-first-time/](http://jalammar.github.io/a-visual-guide-to-using-bert-for-the-first-time/)  Recapping a sentence’s journey
-Each training data contains Two sentences, $W_1\{w_{11}, w_{12}, w_{13}, w_{14}, w_{15}\}, W2\{w_{21}, w_{22},w_{23},w_{24},w_{25}\}$
+Each training data contains Two sentences, $W_1[w_{11}, w_{12}, w_{13}, w_{14}, w_{15}], W2[w_{21}, w_{22},w_{23},w_{24},w_{25}]$
 1. Preprocessing: 
 ![enter image description here](https://docs.google.com/drawings/d/e/2PACX-1vRFdq5CGCgn5WdAHdz88Z5ePsIU58vHz0HVYx56PQ3TP7Xi2WAbSkAbWx1Q4VA8ZkJ3mpSvlpmV1v-0/pub?w=1169&h=245)
 	1.1 . Add special token to raw input: [CLS] BERT is awesome. [SEP] I love BERT. [SEP]"
@@ -441,11 +441,11 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [BERT源码分析](https://blog.csdn.net/weixin_37947156/article/details/94885499)
 [BERT author explain BERT](https://www.reddit.com/r/MachineLearning/comments/9nfqxz/r_bert_pretraining_of_deep_bidirectional/)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTY4NjA0MjUyOSwxODQzOTg1NDI1LC00OD
-kyNTUyODMsLTEwMjkzNDAzODIsMzkxNDQ2NTQ2LC0yMDgyNDAy
-OTA2LC01MDU1NTU5NDYsLTE5NzE3ODE5Myw0Njk2ODQxNzAsLT
-M2Nzc2Njc5OCw4MDA3MzI1NzQsLTE4MjM2OTEyNzgsLTYwMDQ5
-MTI0MywtNjEwNTM5NzE1LDMxMzYzNzg3MSwtOTA3OTQyNzkyLC
-0yMDA2MzcxODg0LDg3NDI0NzE4MywtNjgzOTkzMTY2LC0zNzAy
-OTIyMzldfQ==
+eyJoaXN0b3J5IjpbLTg3NzYxNDk0MywxNjg2MDQyNTI5LDE4ND
+M5ODU0MjUsLTQ4OTI1NTI4MywtMTAyOTM0MDM4MiwzOTE0NDY1
+NDYsLTIwODI0MDI5MDYsLTUwNTU1NTk0NiwtMTk3MTc4MTkzLD
+Q2OTY4NDE3MCwtMzY3NzY2Nzk4LDgwMDczMjU3NCwtMTgyMzY5
+MTI3OCwtNjAwNDkxMjQzLC02MTA1Mzk3MTUsMzEzNjM3ODcxLC
+05MDc5NDI3OTIsLTIwMDYzNzE4ODQsODc0MjQ3MTgzLC02ODM5
+OTMxNjZdfQ==
 -->
