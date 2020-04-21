@@ -440,12 +440,13 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [Understanding BERT part2](https://medium.com/dissecting-bert/dissecting-bert-part2-335ff2ed9c73)
 [BERT源码分析](https://blog.csdn.net/weixin_37947156/article/details/94885499)
 [BERT author explain BERT](https://www.reddit.com/r/MachineLearning/comments/9nfqxz/r_bert_pretraining_of_deep_bidirectional/)
+[Examining BERT's raw embeddings](https://towardsdatascience.com/examining-berts-raw-embeddings-fd905cb22df7)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTg3NzYxNDk0MywxNjg2MDQyNTI5LDE4ND
-M5ODU0MjUsLTQ4OTI1NTI4MywtMTAyOTM0MDM4MiwzOTE0NDY1
-NDYsLTIwODI0MDI5MDYsLTUwNTU1NTk0NiwtMTk3MTc4MTkzLD
-Q2OTY4NDE3MCwtMzY3NzY2Nzk4LDgwMDczMjU3NCwtMTgyMzY5
-MTI3OCwtNjAwNDkxMjQzLC02MTA1Mzk3MTUsMzEzNjM3ODcxLC
-05MDc5NDI3OTIsLTIwMDYzNzE4ODQsODc0MjQ3MTgzLC02ODM5
-OTMxNjZdfQ==
+eyJoaXN0b3J5IjpbLTEwOTM1ODc3OTAsMTY4NjA0MjUyOSwxOD
+QzOTg1NDI1LC00ODkyNTUyODMsLTEwMjkzNDAzODIsMzkxNDQ2
+NTQ2LC0yMDgyNDAyOTA2LC01MDU1NTU5NDYsLTE5NzE3ODE5My
+w0Njk2ODQxNzAsLTM2Nzc2Njc5OCw4MDA3MzI1NzQsLTE4MjM2
+OTEyNzgsLTYwMDQ5MTI0MywtNjEwNTM5NzE1LDMxMzYzNzg3MS
+wtOTA3OTQyNzkyLC0yMDA2MzcxODg0LDg3NDI0NzE4MywtNjgz
+OTkzMTY2XX0=
 -->
