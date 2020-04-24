@@ -167,7 +167,7 @@ BERT is [MASK1] to help **milk** understand the meaning of ambiguous language in
 
  - 如果只做[MASK]替换，预训练模型会被训练为对[MASK]进行预测，所以只会加强[MASK]附近上下文的分析而不是全部序列的分析。 而微调阶段的目标是分析整个序列，它的输入不包含[MASK]，与预训练模型的目标不一致，因此会导致预训练模型在微调阶段性能下降。
  - 为了更加符合微调阶段的目标，作者加入l了一种新的预处理方式，即以10%的几率随机将原词computer替换为其他词milk而不是[MASK]，为了得出正确结果（computer）模型需要分析milk的上下文。由于所有的词都可能被替换，这就要求模型要对所有输入元素的上下文进行分析，从而满足微调的需要。
- - 使用原词替换（如surrounding）是由于。。。。
+ - 考虑到如果只用[Mask]和任意词进行替换，模型会任务看到当前的词都是不真实的（替换过的），因此预训练时也会也10%的概率使用原词替换（如surrounding），这样模型也会参考当前词来生成embedding。
  - >-   If we used [MASK] 100% of the time the model wouldn’t necessarily produce good token representations for non-masked words. The non-masked tokens were still used for context, but the model was optimized for predicting masked words.
 >-   If we used [MASK] 90% of the time and random words 10% of the time, this would teach the model that the observed word is  _never_  correct.
 >-   If we used [MASK] 90% of the time and kept the same word 10% of the time, then the model could just trivially copy the non-contextual embedding.
@@ -442,11 +442,11 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [BERT author explain BERT](https://www.reddit.com/r/MachineLearning/comments/9nfqxz/r_bert_pretraining_of_deep_bidirectional/)
 [Examining BERT's raw embeddings](https://towardsdatascience.com/examining-berts-raw-embeddings-fd905cb22df7)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEwOTM1ODc3OTAsMTY4NjA0MjUyOSwxOD
-QzOTg1NDI1LC00ODkyNTUyODMsLTEwMjkzNDAzODIsMzkxNDQ2
-NTQ2LC0yMDgyNDAyOTA2LC01MDU1NTU5NDYsLTE5NzE3ODE5My
-w0Njk2ODQxNzAsLTM2Nzc2Njc5OCw4MDA3MzI1NzQsLTE4MjM2
-OTEyNzgsLTYwMDQ5MTI0MywtNjEwNTM5NzE1LDMxMzYzNzg3MS
-wtOTA3OTQyNzkyLC0yMDA2MzcxODg0LDg3NDI0NzE4MywtNjgz
-OTkzMTY2XX0=
+eyJoaXN0b3J5IjpbMjExMjI0NjU0NywtMTA5MzU4Nzc5MCwxNj
+g2MDQyNTI5LDE4NDM5ODU0MjUsLTQ4OTI1NTI4MywtMTAyOTM0
+MDM4MiwzOTE0NDY1NDYsLTIwODI0MDI5MDYsLTUwNTU1NTk0Ni
+wtMTk3MTc4MTkzLDQ2OTY4NDE3MCwtMzY3NzY2Nzk4LDgwMDcz
+MjU3NCwtMTgyMzY5MTI3OCwtNjAwNDkxMjQzLC02MTA1Mzk3MT
+UsMzEzNjM3ODcxLC05MDc5NDI3OTIsLTIwMDYzNzE4ODQsODc0
+MjQ3MTgzXX0=
 -->
