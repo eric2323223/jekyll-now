@@ -155,7 +155,7 @@ BERT的预训练被设计为多任务学习（multi-task learning），包含两
 BERT的具体做法是给定一个句子，随机Mask 15%的词（即用[Mask]来替换原来的词），然后输入BERT模型并让BERT来预测这些Mask的词，~~如同上述10.1所述，在输入侧引入[Mask]标记，会导致预训练阶段和Fine-tuning阶段不一致的问题，因此在论文中为了缓解这一问题，采取了如下措施：~~
 
 对于每个在被选中的15%的Token里，则按照下面的方式随机的执行：
-> We didn't try a lot of ablation on this. Those numbers are just what made sense to me and the only thing that I tried. It's possible that other values will work better (or more likely, the system isn't very sensitive to the exact hyperparameters).   [https://github.com/google-research/bert/issues/85](https://github.com/google-research/bert/issues/85)
+
 -   80%的概率替换成[MASK]，比如my dog is hairy → my dog is [MASK]
 -   10%的概率替换成随机的一个词，比如my dog is hairy → my dog is apple
 -   10%的概率替换成它本身，比如my dog is hairy → my dog is hairy
@@ -167,11 +167,10 @@ BERT is [MASK1] to help **milk** understand the meaning of ambiguous language in
 
  - 如果只做[MASK]替换，预训练模型会被训练为对[MASK]进行预测，所以只会加强[MASK]附近上下文的分析而不是全部序列的分析。 而微调阶段的目标是分析整个序列，它的输入不包含[MASK]，与预训练模型的目标不一致，因此会导致预训练模型在微调阶段性能下降。
  - 为了更加符合微调阶段的目标，作者加入l了一种新的预处理方式，即以10%的几率随机将原词computer替换为其他词milk而不是[MASK]，为了得出正确结果（computer）模型需要分析milk的上下文。由于所有的词都可能被替换，这就要求模型要对所有输入元素的上下文进行分析，从而满足微调的需要。
- - 考虑到如果只用[Mask]和任意词进行替换，模型会任务看到当前的词都是不真实的（替换过的），因此预训练时也会也10%的概率使用原词替换（如surrounding），这样模型也会参考当前词来生成embedding。
- - >-   If we used [MASK] 100% of the time the model wouldn’t necessarily produce good token representations for non-masked words. The non-masked tokens were still used for context, but the model was optimized for predicting masked words.
->-   If we used [MASK] 90% of the time and random words 10% of the time, this would teach the model that the observed word is  _never_  correct.
->-   If we used [MASK] 90% of the time and kept the same word 10% of the time, then the model could just trivially copy the non-contextual embedding.
-
+ - 考虑到如果只用[Mask]和任意词进行替换，模型会认为看到当前的词都是不真实的（替换过的），这会导致生成embedding的过程完全不参考当前词。为此预训练时也会也10%的概率使用原词替换（如surrounding），这样模型也会参考当前词来生成embedding。
+ - 对于为何也80%，10%和10%的比例分别进行Mask，随机词和原词替换，作者的解释是
+ > We didn't try a lot of ablation on this. Those numbers are just what made sense to me and the only thing that I tried. It's possible that other values will work better (or more likely, the system isn't very sensitive to the exact hyperparameters).   [https://github.com/google-research/bert/issues/85](https://github.com/google-research/bert/issues/85)
+- 最后，由于MLM只预测15%的序列元素，因此比标准LM训练速度要慢。
 
 >_Why did they not use a ‘<MASK>’ replacement token all around?_
 If the model had been trained on only predicting ‘<MASK>’ tokens and then never saw this token during fine-tuning, it would have thought that there was no need to predict anything and this would have hampered performance. Furthermore, the model would have only learned a contextual representation of the ‘<MASK>’ token and this would have made it learn slowly (since only 15% of the input tokens are masked). By sometimes asking it to predict a word in a position that did not have a ‘<MASK>’ token, the model needed to learn a contextual representation of  _all_  the words in the input sentence, just in case it was asked to predict them afterwards.
@@ -442,11 +441,11 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [BERT author explain BERT](https://www.reddit.com/r/MachineLearning/comments/9nfqxz/r_bert_pretraining_of_deep_bidirectional/)
 [Examining BERT's raw embeddings](https://towardsdatascience.com/examining-berts-raw-embeddings-fd905cb22df7)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjExMjI0NjU0NywtMTA5MzU4Nzc5MCwxNj
-g2MDQyNTI5LDE4NDM5ODU0MjUsLTQ4OTI1NTI4MywtMTAyOTM0
-MDM4MiwzOTE0NDY1NDYsLTIwODI0MDI5MDYsLTUwNTU1NTk0Ni
-wtMTk3MTc4MTkzLDQ2OTY4NDE3MCwtMzY3NzY2Nzk4LDgwMDcz
-MjU3NCwtMTgyMzY5MTI3OCwtNjAwNDkxMjQzLC02MTA1Mzk3MT
-UsMzEzNjM3ODcxLC05MDc5NDI3OTIsLTIwMDYzNzE4ODQsODc0
-MjQ3MTgzXX0=
+eyJoaXN0b3J5IjpbLTEzODI2OTU3NzgsMjExMjI0NjU0NywtMT
+A5MzU4Nzc5MCwxNjg2MDQyNTI5LDE4NDM5ODU0MjUsLTQ4OTI1
+NTI4MywtMTAyOTM0MDM4MiwzOTE0NDY1NDYsLTIwODI0MDI5MD
+YsLTUwNTU1NTk0NiwtMTk3MTc4MTkzLDQ2OTY4NDE3MCwtMzY3
+NzY2Nzk4LDgwMDczMjU3NCwtMTgyMzY5MTI3OCwtNjAwNDkxMj
+QzLC02MTA1Mzk3MTUsMzEzNjM3ODcxLC05MDc5NDI3OTIsLTIw
+MDYzNzE4ODRdfQ==
 -->
