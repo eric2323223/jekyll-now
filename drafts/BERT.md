@@ -168,7 +168,7 @@ BERT is [MASK1] to help **milk** understand the meaning of ambiguous language in
  - 如果只做[MASK]替换，预训练模型会被训练为对[MASK]进行预测，所以只会加强[MASK]附近上下文的分析而不是全部序列的分析。 而微调阶段的目标是分析整个序列，它的输入不包含[MASK]，与预训练模型的目标不一致，因此会导致预训练模型在微调阶段性能下降。
  - 为了更加符合微调阶段的目标，作者加入l了一种新的预处理方式，即以10%的几率随机将原词computer替换为其他词milk而不是[MASK]，为了得出正确结果（computer）模型需要分析milk的上下文。由于所有的词都可能被替换，这就要求模型要对所有输入元素的上下文进行分析，从而满足微调的需要。
  - 考虑到如果只用[Mask]和任意词进行替换，模型会认为看到当前的词都是不真实的（替换过的），这会导致生成embedding的过程完全不参考当前词。为此预训练时也会也10%的概率使用原词替换（如surrounding），这样模型也会参考当前词来生成embedding。
- - 对于为何也80%，10%和10%的比例分别进行Mask，随机词和原词替换，作者的解释是
+ - 对于为何也80%，10%和10%的比例分别进行Mask，随机词和原词替换，作者的解释是基于经验设计的比例，可能存在效果更好的比例分布，但是最终结果应该会比较接近。
  > We didn't try a lot of ablation on this. Those numbers are just what made sense to me and the only thing that I tried. It's possible that other values will work better (or more likely, the system isn't very sensitive to the exact hyperparameters).   [https://github.com/google-research/bert/issues/85](https://github.com/google-research/bert/issues/85)
 - 最后，由于MLM只预测15%的序列元素，因此比标准LM训练速度要慢。
 
@@ -301,8 +301,7 @@ how to get the context vector?
 
 ## 总结
 
-
-
+BERT的核心思想是使用Transformer来进行深度双向上下文的语义分析，MLM是为了解决深度双向
 
 
 
@@ -441,11 +440,11 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [BERT author explain BERT](https://www.reddit.com/r/MachineLearning/comments/9nfqxz/r_bert_pretraining_of_deep_bidirectional/)
 [Examining BERT's raw embeddings](https://towardsdatascience.com/examining-berts-raw-embeddings-fd905cb22df7)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzODI2OTU3NzgsMjExMjI0NjU0NywtMT
-A5MzU4Nzc5MCwxNjg2MDQyNTI5LDE4NDM5ODU0MjUsLTQ4OTI1
-NTI4MywtMTAyOTM0MDM4MiwzOTE0NDY1NDYsLTIwODI0MDI5MD
-YsLTUwNTU1NTk0NiwtMTk3MTc4MTkzLDQ2OTY4NDE3MCwtMzY3
-NzY2Nzk4LDgwMDczMjU3NCwtMTgyMzY5MTI3OCwtNjAwNDkxMj
-QzLC02MTA1Mzk3MTUsMzEzNjM3ODcxLC05MDc5NDI3OTIsLTIw
-MDYzNzE4ODRdfQ==
+eyJoaXN0b3J5IjpbNDk1Mjk5MDU4LDIxMTIyNDY1NDcsLTEwOT
+M1ODc3OTAsMTY4NjA0MjUyOSwxODQzOTg1NDI1LC00ODkyNTUy
+ODMsLTEwMjkzNDAzODIsMzkxNDQ2NTQ2LC0yMDgyNDAyOTA2LC
+01MDU1NTU5NDYsLTE5NzE3ODE5Myw0Njk2ODQxNzAsLTM2Nzc2
+Njc5OCw4MDA3MzI1NzQsLTE4MjM2OTEyNzgsLTYwMDQ5MTI0My
+wtNjEwNTM5NzE1LDMxMzYzNzg3MSwtOTA3OTQyNzkyLC0yMDA2
+MzcxODg0XX0=
 -->
