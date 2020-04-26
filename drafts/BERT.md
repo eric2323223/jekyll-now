@@ -182,7 +182,6 @@ _The model will only predict 15% of the tokens but language models predict 100% 
 Yes, the model does converge more slowly but the increased steps in converging are justified by an considerable improvement in downstream performance.
 
 - NSP
->The BERT framework was pre-trained using text from Wikipedia and can be fine-tuned with question and answer datasets.
 
 >Next Sentence Prediction（NSP）的任务是判断句子B是否是句子A的下文。如果是的话输出’IsNext‘，否则输出’NotNext‘。训练数据的生成方式是从平行语料中随机抽取的连续两句话，其中50%保留抽取的两句话，它们符合IsNext关系，另外50%的第二句话是随机从预料中提取的，它们的关系是NotNext的。这个关系保存在图4中的`[CLS]`符号中。
 
@@ -210,6 +209,7 @@ total_loss = masked_lm_loss + next_sentence_loss
 ![[公式]](https://www.zhihu.com/equation?tex=L%5Cleft%28%5Ctheta%2C+%5Ctheta_%7B1%7D%2C+%5Ctheta_%7B2%7D%5Cright%29%3D-%5Csum_%7Bi%3D1%7D%5E%7BM%7D+%5Clog+p%5Cleft%28m%3Dm_%7Bi%7D+%7C+%5Ctheta%2C+%5Ctheta_%7B1%7D%5Cright%29-%5Csum_%7Bj%3D1%7D%5E%7BN%7D+%5Clog+p%5Cleft%28n%3Dn_%7Bi%7D+%7C+%5Ctheta%2C+%5Ctheta_%7B2%7D%5Cright%29)
 
 具体的预训练工程实现细节方面，BERT 还利用了一系列策略，使得模型更易于训练，比如对于学习率的 warm-up 策略，使用的激活函数不再是普通的 ReLu，而是 GeLu，也使用了 dropout 等常见的训练技巧。
+### 预训练技巧
 
 ### 预训练流程
 >The pre-training corpus was built from BookCorpus (800M words) and English Wikipedia (2,500M words). Tokens were tokenized using 37,000 WordPiece tokens.
@@ -441,11 +441,11 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [BERT author explain BERT](https://www.reddit.com/r/MachineLearning/comments/9nfqxz/r_bert_pretraining_of_deep_bidirectional/)
 [Examining BERT's raw embeddings](https://towardsdatascience.com/examining-berts-raw-embeddings-fd905cb22df7)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTA5NTYxNDYzNCwyMTEyMjQ2NTQ3LC0xMD
-kzNTg3NzkwLDE2ODYwNDI1MjksMTg0Mzk4NTQyNSwtNDg5MjU1
-MjgzLC0xMDI5MzQwMzgyLDM5MTQ0NjU0NiwtMjA4MjQwMjkwNi
-wtNTA1NTU1OTQ2LC0xOTcxNzgxOTMsNDY5Njg0MTcwLC0zNjc3
-NjY3OTgsODAwNzMyNTc0LC0xODIzNjkxMjc4LC02MDA0OTEyND
-MsLTYxMDUzOTcxNSwzMTM2Mzc4NzEsLTkwNzk0Mjc5MiwtMjAw
-NjM3MTg4NF19
+eyJoaXN0b3J5IjpbLTIxMjI4NjE0OTEsMjExMjI0NjU0NywtMT
+A5MzU4Nzc5MCwxNjg2MDQyNTI5LDE4NDM5ODU0MjUsLTQ4OTI1
+NTI4MywtMTAyOTM0MDM4MiwzOTE0NDY1NDYsLTIwODI0MDI5MD
+YsLTUwNTU1NTk0NiwtMTk3MTc4MTkzLDQ2OTY4NDE3MCwtMzY3
+NzY2Nzk4LDgwMDczMjU3NCwtMTgyMzY5MTI3OCwtNjAwNDkxMj
+QzLC02MTA1Mzk3MTUsMzEzNjM3ODcxLC05MDc5NDI3OTIsLTIw
+MDYzNzE4ODRdfQ==
 -->
