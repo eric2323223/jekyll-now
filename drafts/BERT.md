@@ -257,7 +257,7 @@ like this
 
 利用BERT模型解决多标签分类问题时，其输入与普通单标签分类问题一致，得到其embedding表示之后(也就是BERT输出层的embedding)，有几个label就连接到几个全连接层(也可以称为projection layer)，然后再分别接上softmax分类层，这样的话会得到​  ![[公式]](https://www.zhihu.com/equation?tex=loss_1%2C%5C+loss_2%2C%5C+%5Ccdots%2C%5C+loss_n)  ，最后再将所有的loss相加起来即可。这种做法就相当于将n个分类模型的特征提取层参数共享，得到一个共享的表示(其维度可以视任务而定，由于是多标签分类任务，因此其维度可以适当增大一些)，最后再做多标签分类任务。
 ### SQuAD
-deal with looooong senquence: 
+deal with looooong senquence（>512）: 
 [https://github.com/google-research/bert/issues/66](https://github.com/google-research/bert/issues/66)
 how to get the context vector?
 
@@ -301,7 +301,8 @@ how to get the context vector?
 
 ## 总结
 
-BERT的核心思想是使用Transformer来进行深度双向上下文的语义分析，MLM是为了解决深度双向
+BERT的核心思想是使用Transformer来进行深度双向上下文的语义分析，由于深度双向会导致。。而无法使用LM进行训练，作者利用了MLM并设计了相应的预处理来解决预训练和微调训练的冲突。。。
+BERT给我们的启示是
 
 
 
@@ -440,11 +441,11 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [BERT author explain BERT](https://www.reddit.com/r/MachineLearning/comments/9nfqxz/r_bert_pretraining_of_deep_bidirectional/)
 [Examining BERT's raw embeddings](https://towardsdatascience.com/examining-berts-raw-embeddings-fd905cb22df7)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNDk1Mjk5MDU4LDIxMTIyNDY1NDcsLTEwOT
-M1ODc3OTAsMTY4NjA0MjUyOSwxODQzOTg1NDI1LC00ODkyNTUy
-ODMsLTEwMjkzNDAzODIsMzkxNDQ2NTQ2LC0yMDgyNDAyOTA2LC
-01MDU1NTU5NDYsLTE5NzE3ODE5Myw0Njk2ODQxNzAsLTM2Nzc2
-Njc5OCw4MDA3MzI1NzQsLTE4MjM2OTEyNzgsLTYwMDQ5MTI0My
-wtNjEwNTM5NzE1LDMxMzYzNzg3MSwtOTA3OTQyNzkyLC0yMDA2
-MzcxODg0XX0=
+eyJoaXN0b3J5IjpbMTA5NTYxNDYzNCwyMTEyMjQ2NTQ3LC0xMD
+kzNTg3NzkwLDE2ODYwNDI1MjksMTg0Mzk4NTQyNSwtNDg5MjU1
+MjgzLC0xMDI5MzQwMzgyLDM5MTQ0NjU0NiwtMjA4MjQwMjkwNi
+wtNTA1NTU1OTQ2LC0xOTcxNzgxOTMsNDY5Njg0MTcwLC0zNjc3
+NjY3OTgsODAwNzMyNTc0LC0xODIzNjkxMjc4LC02MDA0OTEyND
+MsLTYxMDUzOTcxNSwzMTM2Mzc4NzEsLTkwNzk0Mjc5MiwtMjAw
+NjM3MTg4NF19
 -->
