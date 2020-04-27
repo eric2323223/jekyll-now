@@ -210,7 +210,8 @@ total_loss = masked_lm_loss + next_sentence_loss
 
 具体的预训练工程实现细节方面，BERT 还利用了一系列策略，使得模型更易于训练，比如对于学习率的 warm-up 策略，使用的激活函数不再是普通的 ReLu，而是 GeLu，也使用了 dropout 等常见的训练技巧。
 ### 预训练技巧
-
+- Transformer related :  dropout, layer_norm, residual
+- 
 ### 预训练流程
 >The pre-training corpus was built from BookCorpus (800M words) and English Wikipedia (2,500M words). Tokens were tokenized using 37,000 WordPiece tokens.
 To generate the pre-training sequences, the authors got random samples in batches of two (50% of the time adjacent to each other) such that the combined length of the two chosen sentences was ≤512 tokens. Once each sequence was built, 15% of its tokens were masked.
@@ -441,11 +442,11 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [BERT author explain BERT](https://www.reddit.com/r/MachineLearning/comments/9nfqxz/r_bert_pretraining_of_deep_bidirectional/)
 [Examining BERT's raw embeddings](https://towardsdatascience.com/examining-berts-raw-embeddings-fd905cb22df7)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIxMjI4NjE0OTEsMjExMjI0NjU0NywtMT
-A5MzU4Nzc5MCwxNjg2MDQyNTI5LDE4NDM5ODU0MjUsLTQ4OTI1
-NTI4MywtMTAyOTM0MDM4MiwzOTE0NDY1NDYsLTIwODI0MDI5MD
-YsLTUwNTU1NTk0NiwtMTk3MTc4MTkzLDQ2OTY4NDE3MCwtMzY3
-NzY2Nzk4LDgwMDczMjU3NCwtMTgyMzY5MTI3OCwtNjAwNDkxMj
-QzLC02MTA1Mzk3MTUsMzEzNjM3ODcxLC05MDc5NDI3OTIsLTIw
-MDYzNzE4ODRdfQ==
+eyJoaXN0b3J5IjpbODg1NDMwNjg1LC0yMTIyODYxNDkxLDIxMT
+IyNDY1NDcsLTEwOTM1ODc3OTAsMTY4NjA0MjUyOSwxODQzOTg1
+NDI1LC00ODkyNTUyODMsLTEwMjkzNDAzODIsMzkxNDQ2NTQ2LC
+0yMDgyNDAyOTA2LC01MDU1NTU5NDYsLTE5NzE3ODE5Myw0Njk2
+ODQxNzAsLTM2Nzc2Njc5OCw4MDA3MzI1NzQsLTE4MjM2OTEyNz
+gsLTYwMDQ5MTI0MywtNjEwNTM5NzE1LDMxMzYzNzg3MSwtOTA3
+OTQyNzkyXX0=
 -->
