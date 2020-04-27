@@ -148,7 +148,7 @@ Transformer由编码器和解码器组成，编码器负责将输入序列中的
 - EnglishWikipedia (2.5B words)
 ### 任务设计
 BERT的预训练被设计为多任务学习（multi-task learning），包含两个任务：一个是 Masked Language Model，另一个是 Next Sentence Prediction。**前者用于建模更广泛的上下文，通过 mask 来强制模型给每个词记住更多的上下文信息；后者用来建模多个句子之间的关系，**
-
+![enter image description here](https://www.researchgate.net/profile/Jan_Christian_Blaise_Cruz/publication/334160936/figure/fig1/AS:776030256111617@1562031439583/Overall-BERT-pretraining-and-finetuning-framework-Note-that-the-same-architecture-in.ppm)
 - Masked Language Model  - MLM
 注意力机制的使用使得BERT模型能够同时“看到”所有的序列元素，因此无法使用传统语言模型通过预测下一个元素的方式来进行训练。因此BERT使用了预测随机遮罩元素的方式，即masked language model。这种MLM训练的思路类似于填词游戏，通过上下文的信息来判断模型被隐藏的词，（如果mask太多，会丢失context，如果mask太少，训练太慢）
 [https://towardsdatascience.com/bert-explained-state-of-the-art-language-model-for-nlp-f8b21a9b6270](https://towardsdatascience.com/bert-explained-state-of-the-art-language-model-for-nlp-f8b21a9b6270)
@@ -263,7 +263,7 @@ deal with looooong senquence（>512）:
 how to get the context vector?
 
 ### **7.4 文本生成？NO!**
-
+remember BERT does not include decoder?
 ### 微调技巧
 1. 调整参数（内存），模型选择
 2.  **长文本处理**
@@ -288,6 +288,9 @@ how to get the context vector?
 ### distillation
 ~~### LAMP？not a BERT improvement~~
 ## BERT应用
+### imageBert
+### codeBert
+## BERT in action
 [https://github.com/ProHiryu/bert-chinese-ner](https://github.com/ProHiryu/bert-chinese-ner)
 [https://github.com/chiahsuan156/ODSQA](https://github.com/chiahsuan156/ODSQA)
 ### environment-colab
@@ -442,11 +445,11 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [BERT author explain BERT](https://www.reddit.com/r/MachineLearning/comments/9nfqxz/r_bert_pretraining_of_deep_bidirectional/)
 [Examining BERT's raw embeddings](https://towardsdatascience.com/examining-berts-raw-embeddings-fd905cb22df7)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODg1NDMwNjg1LC0yMTIyODYxNDkxLDIxMT
-IyNDY1NDcsLTEwOTM1ODc3OTAsMTY4NjA0MjUyOSwxODQzOTg1
-NDI1LC00ODkyNTUyODMsLTEwMjkzNDAzODIsMzkxNDQ2NTQ2LC
-0yMDgyNDAyOTA2LC01MDU1NTU5NDYsLTE5NzE3ODE5Myw0Njk2
-ODQxNzAsLTM2Nzc2Njc5OCw4MDA3MzI1NzQsLTE4MjM2OTEyNz
-gsLTYwMDQ5MTI0MywtNjEwNTM5NzE1LDMxMzYzNzg3MSwtOTA3
-OTQyNzkyXX0=
+eyJoaXN0b3J5IjpbMTYzMjA2NjU5Miw4ODU0MzA2ODUsLTIxMj
+I4NjE0OTEsMjExMjI0NjU0NywtMTA5MzU4Nzc5MCwxNjg2MDQy
+NTI5LDE4NDM5ODU0MjUsLTQ4OTI1NTI4MywtMTAyOTM0MDM4Mi
+wzOTE0NDY1NDYsLTIwODI0MDI5MDYsLTUwNTU1NTk0NiwtMTk3
+MTc4MTkzLDQ2OTY4NDE3MCwtMzY3NzY2Nzk4LDgwMDczMjU3NC
+wtMTgyMzY5MTI3OCwtNjAwNDkxMjQzLC02MTA1Mzk3MTUsMzEz
+NjM3ODcxXX0=
 -->
