@@ -220,24 +220,23 @@ An example of a pre-training sequence presented in the paper is:
 In this case the sentences are adjacent, so the label in [CLS] would be ‘<IsNext>’ as in:
 > > Input = <IsNext> the man went to [MASK] store [SEP] he bought a gallon [MASK] milk [SEP]
 The loss was calculated as the sum of the mean masked LM likelihood and the mean next sentence prediction likelihood.
-
+![enter image description here](https://docs.google.com/drawings/d/e/2PACX-1vRFdq5CGCgn5WdAHdz88Z5ePsIU58vHz0HVYx56PQ3TP7Xi2WAbSkAbWx1Q4VA8ZkJ3mpSvlpmV1v-0/pub?w=1746&h=911)
 [http://jalammar.github.io/a-visual-guide-to-using-bert-for-the-first-time/](http://jalammar.github.io/a-visual-guide-to-using-bert-for-the-first-time/)  Recapping a sentence’s journey
 Each training data contains Two sentences, $W_1[w_{11}, w_{12}, w_{13}, w_{14}, w_{15}], W2[w_{21}, w_{22},w_{23},w_{24},w_{25}]$
 1. Preprocessing: 
-![enter image description here](https://docs.google.com/drawings/d/e/2PACX-1vRFdq5CGCgn5WdAHdz88Z5ePsIU58vHz0HVYx56PQ3TP7Xi2WAbSkAbWx1Q4VA8ZkJ3mpSvlpmV1v-0/pub?w=1169&h=245)
+
 	1.1 . Add special token to raw input: [CLS] BERT is awesome. [SEP] I love BERT. [SEP]"
 	1.2.  Add masks to some words: [CLS] BERT [MASK] awesome. [SEP] I love BERT. [SEP
 	1.3.  Generate pretrain data
 		1.3.1 for MLM: {tokens:["CLS", "BERT", "MASK", "awesome", "SEP"], masked_token:{index:2, value:"is"}}
 		1.3.2 for NSP: 
-3. Embedding
+2. Embedding
 	2.1 word embedding:  wordpiece tokenization
 	2.2 positional embedding
 	2.3 segment embedding
-4. Transformer encoder: 
-
-like this
-
+3. Transformer encoder: 
+4. Prediction
+5. 计算loss，更新weights
 
 
 ## BERT的微调fine tune
@@ -445,11 +444,11 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [BERT author explain BERT](https://www.reddit.com/r/MachineLearning/comments/9nfqxz/r_bert_pretraining_of_deep_bidirectional/)
 [Examining BERT's raw embeddings](https://towardsdatascience.com/examining-berts-raw-embeddings-fd905cb22df7)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTYzMjA2NjU5Miw4ODU0MzA2ODUsLTIxMj
-I4NjE0OTEsMjExMjI0NjU0NywtMTA5MzU4Nzc5MCwxNjg2MDQy
-NTI5LDE4NDM5ODU0MjUsLTQ4OTI1NTI4MywtMTAyOTM0MDM4Mi
-wzOTE0NDY1NDYsLTIwODI0MDI5MDYsLTUwNTU1NTk0NiwtMTk3
-MTc4MTkzLDQ2OTY4NDE3MCwtMzY3NzY2Nzk4LDgwMDczMjU3NC
-wtMTgyMzY5MTI3OCwtNjAwNDkxMjQzLC02MTA1Mzk3MTUsMzEz
-NjM3ODcxXX0=
+eyJoaXN0b3J5IjpbMzc5NzYwOTI2LDE2MzIwNjY1OTIsODg1ND
+MwNjg1LC0yMTIyODYxNDkxLDIxMTIyNDY1NDcsLTEwOTM1ODc3
+OTAsMTY4NjA0MjUyOSwxODQzOTg1NDI1LC00ODkyNTUyODMsLT
+EwMjkzNDAzODIsMzkxNDQ2NTQ2LC0yMDgyNDAyOTA2LC01MDU1
+NTU5NDYsLTE5NzE3ODE5Myw0Njk2ODQxNzAsLTM2Nzc2Njc5OC
+w4MDA3MzI1NzQsLTE4MjM2OTEyNzgsLTYwMDQ5MTI0MywtNjEw
+NTM5NzE1XX0=
 -->
