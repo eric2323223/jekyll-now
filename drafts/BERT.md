@@ -243,21 +243,24 @@ Each training data contains Two sentences, $W_1[w_{11}, w_{12}, w_{13}, w_{14}, 
 
 ### 微调任务类型
 ![enter image description here](https://lilianweng.github.io/lil-log/assets/images/BERT-downstream-tasks.png)
-### **7.1 针对句子语义相似度的任务**
-  
+### 语义分析
+输入一句话，预测这句话的分类，如分析一条购买评价的语义是肯定的还是否定的。
+### 语义相似度分析
+输入两句话，分析他们的语义是相似的还是不同的。
+预处理
 ![](https://pic1.zhimg.com/80/v2-971f887ed616ea0f65941c8dc15ee128_720w.jpg)
 
   实际操作时，上述最后一句话之后还会加一个[SEP] token，语义相似度任务将两个句子按照上述方式输入即可，之后与论文中的分类任务一样，将[CLS] token位置对应的输出，接上softmax做分类即可(实际上GLUE任务中就有很多语义相似度的数据集)。
 
-### **7.2 针对多标签分类的任务**
+### 多标签分类 NER
 
 多标签分类任务，即MultiLabel，指的是一个样本可能同时属于多个类，即有多个标签。以商品为例，一件L尺寸的棉服，则该样本就有至少两个标签——型号：L，类型：冬装。
 
 对于多标签分类任务，显而易见的朴素做法就是不管样本属于几个类，就给它训练几个分类模型即可，然后再一一判断在该类别中，其属于那个子类别，但是这样做未免太暴力了，而多标签分类任务，其实是可以**只用一个模型**来解决的。
 
 利用BERT模型解决多标签分类问题时，其输入与普通单标签分类问题一致，得到其embedding表示之后(也就是BERT输出层的embedding)，有几个label就连接到几个全连接层(也可以称为projection layer)，然后再分别接上softmax分类层，这样的话会得到​  ![[公式]](https://www.zhihu.com/equation?tex=loss_1%2C%5C+loss_2%2C%5C+%5Ccdots%2C%5C+loss_n)  ，最后再将所有的loss相加起来即可。这种做法就相当于将n个分类模型的特征提取层参数共享，得到一个共享的表示(其维度可以视任务而定，由于是多标签分类任务，因此其维度可以适当增大一些)，最后再做多标签分类任务。
-### SQuAD
-deal with looooong senquence（>512）: 
+### 限定上下文问答
+can deal with looooong senquence？（>512）: 
 [https://github.com/google-research/bert/issues/66](https://github.com/google-research/bert/issues/66)
 how to get the context vector?
 
@@ -444,7 +447,7 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [BERT author explain BERT](https://www.reddit.com/r/MachineLearning/comments/9nfqxz/r_bert_pretraining_of_deep_bidirectional/)
 [Examining BERT's raw embeddings](https://towardsdatascience.com/examining-berts-raw-embeddings-fd905cb22df7)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTQxNDEwNTA2LDE2MzIwNjY1OTIsODg1ND
+eyJoaXN0b3J5IjpbODIyNTc4MzYxLDE2MzIwNjY1OTIsODg1ND
 MwNjg1LC0yMTIyODYxNDkxLDIxMTIyNDY1NDcsLTEwOTM1ODc3
 OTAsMTY4NjA0MjUyOSwxODQzOTg1NDI1LC00ODkyNTUyODMsLT
 EwMjkzNDAzODIsMzkxNDQ2NTQ2LC0yMDgyNDAyOTA2LC01MDU1
