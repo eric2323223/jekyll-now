@@ -307,7 +307,7 @@ remember BERT does not include decoder?
 
 ## 总结
 
-BERT的核心思想是使用Transformer来进行深度双向上下文的语义分析，由于深度双向会导致。。而无法使用LM进行训练，作者利用了MLM并设计了相应的预处理来解决预训练和微调训练的冲突。。。
+BERT的核心思想是使用Transformer来进行深度双向上下文的语义分析，但是由于深度双向会导致。。而无法使用LM进行训练，作者利用了MLM并设计了相应的预处理来解决预训练和微调训练的冲突。。。
 BERT给我们的启示是
 
 
@@ -447,11 +447,11 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [BERT author explain BERT](https://www.reddit.com/r/MachineLearning/comments/9nfqxz/r_bert_pretraining_of_deep_bidirectional/)
 [Examining BERT's raw embeddings](https://towardsdatascience.com/examining-berts-raw-embeddings-fd905cb22df7)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODIyNTc4MzYxLDE2MzIwNjY1OTIsODg1ND
-MwNjg1LC0yMTIyODYxNDkxLDIxMTIyNDY1NDcsLTEwOTM1ODc3
-OTAsMTY4NjA0MjUyOSwxODQzOTg1NDI1LC00ODkyNTUyODMsLT
-EwMjkzNDAzODIsMzkxNDQ2NTQ2LC0yMDgyNDAyOTA2LC01MDU1
-NTU5NDYsLTE5NzE3ODE5Myw0Njk2ODQxNzAsLTM2Nzc2Njc5OC
-w4MDA3MzI1NzQsLTE4MjM2OTEyNzgsLTYwMDQ5MTI0MywtNjEw
-NTM5NzE1XX0=
+eyJoaXN0b3J5IjpbMTk4MzExNDYwOCw4MjI1NzgzNjEsMTYzMj
+A2NjU5Miw4ODU0MzA2ODUsLTIxMjI4NjE0OTEsMjExMjI0NjU0
+NywtMTA5MzU4Nzc5MCwxNjg2MDQyNTI5LDE4NDM5ODU0MjUsLT
+Q4OTI1NTI4MywtMTAyOTM0MDM4MiwzOTE0NDY1NDYsLTIwODI0
+MDI5MDYsLTUwNTU1NTk0NiwtMTk3MTc4MTkzLDQ2OTY4NDE3MC
+wtMzY3NzY2Nzk4LDgwMDczMjU3NCwtMTgyMzY5MTI3OCwtNjAw
+NDkxMjQzXX0=
 -->
