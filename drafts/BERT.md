@@ -240,7 +240,7 @@ Each training data contains Two sentences, $W_1[w_{11}, w_{12}, w_{13}, w_{14}, 
 
 
 ## BERT的微调fine tune
-如上所述，BERT这种通用预训练模型利用hen'sh
+如上所述，BERT这种通用预训练模型利用深度很大的复杂模型来提取复杂特征，这使得它的预训练需要超级强大的
 因此相比预训练，微调对于普通人更具现实意义。
 ### 微调任务类型
 ![enter image description here](https://lilianweng.github.io/lil-log/assets/images/BERT-downstream-tasks.png)
@@ -448,7 +448,7 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [BERT author explain BERT](https://www.reddit.com/r/MachineLearning/comments/9nfqxz/r_bert_pretraining_of_deep_bidirectional/)
 [Examining BERT's raw embeddings](https://towardsdatascience.com/examining-berts-raw-embeddings-fd905cb22df7)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzNDY1NDk2MDQsLTE5NDAwMjAwNDYsMT
+eyJoaXN0b3J5IjpbLTE2MzUyNjgxODIsLTE5NDAwMjAwNDYsMT
 c2NTA1MDIzLDEyODA0MTM1ODIsNTc0Mzg3MjI2LDgyMjU3ODM2
 MSwxNjMyMDY2NTkyLDg4NTQzMDY4NSwtMjEyMjg2MTQ5MSwyMT
 EyMjQ2NTQ3LC0xMDkzNTg3NzkwLDE2ODYwNDI1MjksMTg0Mzk4
