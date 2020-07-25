@@ -240,7 +240,7 @@ Each training data contains Two sentences, $W_1[w_{11}, w_{12}, w_{13}, w_{14}, 
 
 
 ## BERT的微调fine tune
-
+相比预训练，微调对于普通人更具xian'shi'yi'yi
 ### 微调任务类型
 ![enter image description here](https://lilianweng.github.io/lil-log/assets/images/BERT-downstream-tasks.png)
 ### 语义分析
@@ -447,11 +447,11 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [BERT author explain BERT](https://www.reddit.com/r/MachineLearning/comments/9nfqxz/r_bert_pretraining_of_deep_bidirectional/)
 [Examining BERT's raw embeddings](https://towardsdatascience.com/examining-berts-raw-embeddings-fd905cb22df7)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE5NDAwMjAwNDYsMTc2NTA1MDIzLDEyOD
-A0MTM1ODIsNTc0Mzg3MjI2LDgyMjU3ODM2MSwxNjMyMDY2NTky
-LDg4NTQzMDY4NSwtMjEyMjg2MTQ5MSwyMTEyMjQ2NTQ3LC0xMD
-kzNTg3NzkwLDE2ODYwNDI1MjksMTg0Mzk4NTQyNSwtNDg5MjU1
-MjgzLC0xMDI5MzQwMzgyLDM5MTQ0NjU0NiwtMjA4MjQwMjkwNi
-wtNTA1NTU1OTQ2LC0xOTcxNzgxOTMsNDY5Njg0MTcwLC0zNjc3
-NjY3OThdfQ==
+eyJoaXN0b3J5IjpbLTQ5NzYzNjU2OCwtMTk0MDAyMDA0NiwxNz
+Y1MDUwMjMsMTI4MDQxMzU4Miw1NzQzODcyMjYsODIyNTc4MzYx
+LDE2MzIwNjY1OTIsODg1NDMwNjg1LC0yMTIyODYxNDkxLDIxMT
+IyNDY1NDcsLTEwOTM1ODc3OTAsMTY4NjA0MjUyOSwxODQzOTg1
+NDI1LC00ODkyNTUyODMsLTEwMjkzNDAzODIsMzkxNDQ2NTQ2LC
+0yMDgyNDAyOTA2LC01MDU1NTU5NDYsLTE5NzE3ODE5Myw0Njk2
+ODQxNzBdfQ==
 -->
