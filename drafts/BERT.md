@@ -28,7 +28,7 @@ self-supervised learning is important area because it can greatly reduce the eff
 ## 迁移学习和预训练模型
 ![enter image description here](https://docs.google.com/drawings/d/e/2PACX-1vR6JBirfomJ2dxM1GDEl2GUZOXZeuyqcjRr7w6-t-s2vloOyAZk8GTRP1IyVmczcmyEINONHs5DhpH0/pub?w=593&h=343)
 
-深度学习由于在处理复杂特征（图像，声音，文本）的任务上相比传统机器学习方法有巨大的优势，获得了越来越多的关注和发展。为了不断增强预测效果，深度学习的模型呈现出越来越复杂的趋势。深度学习对训练数据的依赖非常强，这是由于复杂模型需要大量的数据才有可能的理解数据的潜在（复杂）特征。一般来说，模型越复杂就需要越多的数据进行训练。这就导致了比较新的深度模型需要海量的数据来进行训练。由于训练数据通常需要人工标记因此海量训练数据的获取成本是非常高，这使得训练或者改进深度模型成为耗时耗力的过程，非常不利于深度模型的推广和应用。~~一个有趣的现象是，模型的规模和所需数据量的大小几乎是线性关系。一个较为合理的解释是，对于一个特定的问题，模型的表达空间必须足够大，以发现数据下的模式。模型中的预定层可以识别训练数据的高级特性，后续层可以识别帮助做出最终决策所需的信息。~~
+深度学习由于在处理复杂特征（图像，声音，文本）的任务上相比传统机器学习方法有巨大的优势，获得了越来越多的关注和发展。为了不断增强预测效果，深度学习模型呈现出越来越复杂的趋势。深度学习对训练数据的依赖非常强，这是由于复杂模型需要大量的数据才有可能的理解数据的潜在（复杂）特征。一般来说，模型越复杂就需要越多的数据进行训练。这就导致了比较新的深度模型需要海量的数据来进行训练。由于训练数据通常需要人工标记因此海量训练数据的获取成本是非常高，这使得训练或者改进深度模型成为耗时耗力的过程，非常不利于深度模型的推广和应用。~~一个有趣的现象是，模型的规模和所需数据量的大小几乎是线性关系。一个较为合理的解释是，对于一个特定的问题，模型的表达空间必须足够大，以发现数据下的模式。模型中的预定层可以识别训练数据的高级特性，后续层可以识别帮助做出最终决策所需的信息。~~
 
 ~~>**训练数据不足**是一些特殊领域中不可避免的问题。数据的收集是复杂和昂贵的，这使得构建大规模、高质量的带注释的数据集非常困难。例如，生物信息学数据集中的每个样本经常显示一个临床试验或一个痛苦的病人。此外，即使我们付出了昂贵的代价来获取训练数据集，也很容易过时，不能有效地应用于新的任务中。~~
 
@@ -448,11 +448,11 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [BERT author explain BERT](https://www.reddit.com/r/MachineLearning/comments/9nfqxz/r_bert_pretraining_of_deep_bidirectional/)
 [Examining BERT's raw embeddings](https://towardsdatascience.com/examining-berts-raw-embeddings-fd905cb22df7)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQzOTkwMjc0LC0xOTQwMDIwMDQ2LDE3Nj
-UwNTAyMywxMjgwNDEzNTgyLDU3NDM4NzIyNiw4MjI1NzgzNjEs
-MTYzMjA2NjU5Miw4ODU0MzA2ODUsLTIxMjI4NjE0OTEsMjExMj
-I0NjU0NywtMTA5MzU4Nzc5MCwxNjg2MDQyNTI5LDE4NDM5ODU0
-MjUsLTQ4OTI1NTI4MywtMTAyOTM0MDM4MiwzOTE0NDY1NDYsLT
-IwODI0MDI5MDYsLTUwNTU1NTk0NiwtMTk3MTc4MTkzLDQ2OTY4
-NDE3MF19
+eyJoaXN0b3J5IjpbMjQ3NjQ3NTcyLC00Mzk5MDI3NCwtMTk0MD
+AyMDA0NiwxNzY1MDUwMjMsMTI4MDQxMzU4Miw1NzQzODcyMjYs
+ODIyNTc4MzYxLDE2MzIwNjY1OTIsODg1NDMwNjg1LC0yMTIyOD
+YxNDkxLDIxMTIyNDY1NDcsLTEwOTM1ODc3OTAsMTY4NjA0MjUy
+OSwxODQzOTg1NDI1LC00ODkyNTUyODMsLTEwMjkzNDAzODIsMz
+kxNDQ2NTQ2LC0yMDgyNDAyOTA2LC01MDU1NTU5NDYsLTE5NzE3
+ODE5M119
 -->
