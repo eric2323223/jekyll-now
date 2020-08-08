@@ -255,18 +255,12 @@ Each training data contains Two sentences, $W_1[w_{11}, w_{12}, w_{13}, w_{14}, 
 微调层结构：全连接+分类器
 
     class BertForSequenceClassification(BertPreTrainedModel):
-
-    def __init__(self, config):
-
-super().__init__(config)
-
-self.num_labels = config.num_labels
-
-self.bert = BertModel(config)
-
-self.dropout = nn.Dropout(config.hidden_dropout_prob)
-
-self.classifier = nn.Linear(config.hidden_size, config.num_labels)
+        def __init__(self, config):
+            super().__init__(config)
+            self.num_labels = config.num_labels
+            self.bert = BertModel(config)
+            self.dropout = nn.Dropout(config.hidden_dropout_prob)
+            self.classifier = nn.Linear(config.hidden_size, config.num_labels)
 
 训练
 
@@ -482,7 +476,7 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [BERT author explain BERT](https://www.reddit.com/r/MachineLearning/comments/9nfqxz/r_bert_pretraining_of_deep_bidirectional/)
 [Examining BERT's raw embeddings](https://towardsdatascience.com/examining-berts-raw-embeddings-fd905cb22df7)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTk0NDcxNjU0LC0xMzU2MzMxODU5LC0xND
+eyJoaXN0b3J5IjpbNDQ1MzExMDc4LC0xMzU2MzMxODU5LC0xND
 I3MjU5OTAzLDExMzYyMTU0LDE4NzI0MjY3MDUsMTQ1MjQ5MTA5
 MSwtNjEyMjIwNzUzLDE5ODY5MDY3NjgsMTQwMzU0MTg3MSwyND
 c2NDc1NzIsLTQzOTkwMjc0LC0xOTQwMDIwMDQ2LDE3NjUwNTAy
