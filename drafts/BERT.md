@@ -252,7 +252,7 @@ Each training data contains Two sentences, $W_1[w_{11}, w_{12}, w_{13}, w_{14}, 
 ![enter image description here](https://lilianweng.github.io/lil-log/assets/images/BERT-downstream-tasks.png)
 ### 语义分析
 这种类型的任务对输入（一句话）进行语义分析。输入一句话，预测这句话的分类，如分析一条购买评价的语义是肯定的还是否定的。
-wei'tia
+微调层结构：全连接+分类器
 
 ### 语义相似度分析
 输入两句话，分析他们的语义是相似的还是不同的。
@@ -260,6 +260,7 @@ wei'tia
 ![](https://pic1.zhimg.com/80/v2-971f887ed616ea0f65941c8dc15ee128_720w.jpg)
 
   实际操作时，上述最后一句话之后还会加一个[SEP] token，语义相似度任务将两个句子按照上述方式输入即可，之后与论文中的分类任务一样，将[CLS] token位置对应的输出，接上softmax做分类即可(实际上GLUE任务中就有很多语义相似度的数据集)。
+  微调层：
 
 ### 多标签分类 NER
 
@@ -456,11 +457,11 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [BERT author explain BERT](https://www.reddit.com/r/MachineLearning/comments/9nfqxz/r_bert_pretraining_of_deep_bidirectional/)
 [Examining BERT's raw embeddings](https://towardsdatascience.com/examining-berts-raw-embeddings-fd905cb22df7)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTc2MDAzNzU2MywxMTM2MjE1NCwxODcyND
-I2NzA1LDE0NTI0OTEwOTEsLTYxMjIyMDc1MywxOTg2OTA2NzY4
-LDE0MDM1NDE4NzEsMjQ3NjQ3NTcyLC00Mzk5MDI3NCwtMTk0MD
-AyMDA0NiwxNzY1MDUwMjMsMTI4MDQxMzU4Miw1NzQzODcyMjYs
-ODIyNTc4MzYxLDE2MzIwNjY1OTIsODg1NDMwNjg1LC0yMTIyOD
-YxNDkxLDIxMTIyNDY1NDcsLTEwOTM1ODc3OTAsMTY4NjA0MjUy
-OV19
+eyJoaXN0b3J5IjpbLTE0MjcyNTk5MDMsMTEzNjIxNTQsMTg3Mj
+QyNjcwNSwxNDUyNDkxMDkxLC02MTIyMjA3NTMsMTk4NjkwNjc2
+OCwxNDAzNTQxODcxLDI0NzY0NzU3MiwtNDM5OTAyNzQsLTE5ND
+AwMjAwNDYsMTc2NTA1MDIzLDEyODA0MTM1ODIsNTc0Mzg3MjI2
+LDgyMjU3ODM2MSwxNjMyMDY2NTkyLDg4NTQzMDY4NSwtMjEyMj
+g2MTQ5MSwyMTEyMjQ2NTQ3LC0xMDkzNTg3NzkwLDE2ODYwNDI1
+MjldfQ==
 -->
