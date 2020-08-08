@@ -264,6 +264,9 @@ Each training data contains Two sentences, $W_1[w_{11}, w_{12}, w_{13}, w_{14}, 
 
 [https://github.com/huggingface/transformers/blob/c67d1a0259cbb3aef31952b4f37d4fee0e36f134/src/transformers/modeling_bert.py#L1291-L1299](https://github.com/huggingface/transformers/blob/c67d1a0259cbb3aef31952b4f37d4fee0e36f134/src/transformers/modeling_bert.py#L1291-L1299)
 训练（图？）
+- 损失函数：cross-entropy
+- 
+预测
 
     from transformers import BertTokenizer, BertForSequenceClassification
     import torch
@@ -477,11 +480,11 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [BERT author explain BERT](https://www.reddit.com/r/MachineLearning/comments/9nfqxz/r_bert_pretraining_of_deep_bidirectional/)
 [Examining BERT's raw embeddings](https://towardsdatascience.com/examining-berts-raw-embeddings-fd905cb22df7)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbOTQ1NTQzNjc5LDgzOTk5NjIyMywtMjAxNz
-MwMTgwLDIxMjU0MzM0OTYsNDQ1MzExMDc4LC0xMzU2MzMxODU5
-LC0xNDI3MjU5OTAzLDExMzYyMTU0LDE4NzI0MjY3MDUsMTQ1Mj
-Q5MTA5MSwtNjEyMjIwNzUzLDE5ODY5MDY3NjgsMTQwMzU0MTg3
-MSwyNDc2NDc1NzIsLTQzOTkwMjc0LC0xOTQwMDIwMDQ2LDE3Nj
-UwNTAyMywxMjgwNDEzNTgyLDU3NDM4NzIyNiw4MjI1NzgzNjFd
+eyJoaXN0b3J5IjpbMzIzNDU2ODE3LDk0NTU0MzY3OSw4Mzk5OT
+YyMjMsLTIwMTczMDE4MCwyMTI1NDMzNDk2LDQ0NTMxMTA3OCwt
+MTM1NjMzMTg1OSwtMTQyNzI1OTkwMywxMTM2MjE1NCwxODcyND
+I2NzA1LDE0NTI0OTEwOTEsLTYxMjIyMDc1MywxOTg2OTA2NzY4
+LDE0MDM1NDE4NzEsMjQ3NjQ3NTcyLC00Mzk5MDI3NCwtMTk0MD
+AyMDA0NiwxNzY1MDUwMjMsMTI4MDQxMzU4Miw1NzQzODcyMjZd
 fQ==
 -->
