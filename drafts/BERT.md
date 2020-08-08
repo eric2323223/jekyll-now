@@ -257,11 +257,11 @@ Each training data contains Two sentences, $W_1[w_{11}, w_{12}, w_{13}, w_{14}, 
     from transformers import BertTokenizer, BertForSequenceClassification
     import torch
     tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
-model = BertForSequenceClassification.from_pretrained('bert-base-uncased')
-inputs = tokenizer("Hello, my dog is cute", return_tensors="pt")
-labels = torch.tensor([1]).unsqueeze(0)  # Batch size 1
-outputs = model(**inputs, labels=labels)
-loss, logits = outputs[:2]
+    model = BertForSequenceClassification.from_pretrained('bert-base-uncased')
+    inputs = tokenizer("Hello, my dog is cute", return_tensors="pt")
+    labels = torch.tensor([1]).unsqueeze(0)  # Batch size 1
+    outputs = model(**inputs, labels=labels)
+    loss, logits = outputs[:2]
 
 ### 语义相似度分析
 输入两句话，分析他们的语义是相似的还是不同的。
@@ -466,11 +466,11 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [BERT author explain BERT](https://www.reddit.com/r/MachineLearning/comments/9nfqxz/r_bert_pretraining_of_deep_bidirectional/)
 [Examining BERT's raw embeddings](https://towardsdatascience.com/examining-berts-raw-embeddings-fd905cb22df7)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTQzOTgyMzQwNSwtMTQyNzI1OTkwMywxMT
-M2MjE1NCwxODcyNDI2NzA1LDE0NTI0OTEwOTEsLTYxMjIyMDc1
-MywxOTg2OTA2NzY4LDE0MDM1NDE4NzEsMjQ3NjQ3NTcyLC00Mz
-k5MDI3NCwtMTk0MDAyMDA0NiwxNzY1MDUwMjMsMTI4MDQxMzU4
-Miw1NzQzODcyMjYsODIyNTc4MzYxLDE2MzIwNjY1OTIsODg1ND
-MwNjg1LC0yMTIyODYxNDkxLDIxMTIyNDY1NDcsLTEwOTM1ODc3
-OTBdfQ==
+eyJoaXN0b3J5IjpbLTEzNTYzMzE4NTksLTE0MjcyNTk5MDMsMT
+EzNjIxNTQsMTg3MjQyNjcwNSwxNDUyNDkxMDkxLC02MTIyMjA3
+NTMsMTk4NjkwNjc2OCwxNDAzNTQxODcxLDI0NzY0NzU3MiwtND
+M5OTAyNzQsLTE5NDAwMjAwNDYsMTc2NTA1MDIzLDEyODA0MTM1
+ODIsNTc0Mzg3MjI2LDgyMjU3ODM2MSwxNjMyMDY2NTkyLDg4NT
+QzMDY4NSwtMjEyMjg2MTQ5MSwyMTEyMjQ2NTQ3LC0xMDkzNTg3
+NzkwXX0=
 -->
