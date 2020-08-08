@@ -254,6 +254,22 @@ Each training data contains Two sentences, $W_1[w_{11}, w_{12}, w_{13}, w_{14}, 
 这种类型的任务对输入（一句话）进行语义分析。输入一句话，预测这句话的分类，如分析一条购买评价的语义是肯定的还是否定的。
 微调层结构：全连接+分类器
 
+    class BertForSequenceClassification(BertPreTrainedModel):
+
+    def __init__(self, config):
+
+super().__init__(config)
+
+self.num_labels = config.num_labels
+
+self.bert = BertModel(config)
+
+self.dropout = nn.Dropout(config.hidden_dropout_prob)
+
+self.classifier = nn.Linear(config.hidden_size, config.num_labels)
+
+训练
+
     from transformers import BertTokenizer, BertForSequenceClassification
     import torch
     tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
@@ -466,11 +482,11 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [BERT author explain BERT](https://www.reddit.com/r/MachineLearning/comments/9nfqxz/r_bert_pretraining_of_deep_bidirectional/)
 [Examining BERT's raw embeddings](https://towardsdatascience.com/examining-berts-raw-embeddings-fd905cb22df7)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzNTYzMzE4NTksLTE0MjcyNTk5MDMsMT
-EzNjIxNTQsMTg3MjQyNjcwNSwxNDUyNDkxMDkxLC02MTIyMjA3
-NTMsMTk4NjkwNjc2OCwxNDAzNTQxODcxLDI0NzY0NzU3MiwtND
-M5OTAyNzQsLTE5NDAwMjAwNDYsMTc2NTA1MDIzLDEyODA0MTM1
-ODIsNTc0Mzg3MjI2LDgyMjU3ODM2MSwxNjMyMDY2NTkyLDg4NT
-QzMDY4NSwtMjEyMjg2MTQ5MSwyMTEyMjQ2NTQ3LC0xMDkzNTg3
-NzkwXX0=
+eyJoaXN0b3J5IjpbNTk0NDcxNjU0LC0xMzU2MzMxODU5LC0xND
+I3MjU5OTAzLDExMzYyMTU0LDE4NzI0MjY3MDUsMTQ1MjQ5MTA5
+MSwtNjEyMjIwNzUzLDE5ODY5MDY3NjgsMTQwMzU0MTg3MSwyND
+c2NDc1NzIsLTQzOTkwMjc0LC0xOTQwMDIwMDQ2LDE3NjUwNTAy
+MywxMjgwNDEzNTgyLDU3NDM4NzIyNiw4MjI1NzgzNjEsMTYzMj
+A2NjU5Miw4ODU0MzA2ODUsLTIxMjI4NjE0OTEsMjExMjI0NjU0
+N119
 -->
