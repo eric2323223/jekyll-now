@@ -252,7 +252,7 @@ Each training data contains Two sentences, $W_1[w_{11}, w_{12}, w_{13}, w_{14}, 
 ![enter image description here](https://lilianweng.github.io/lil-log/assets/images/BERT-downstream-tasks.png)
 ### 语义分析
 这种类型的任务对输入（一句话）进行语义分析。输入一句话，预测这句话的分类，如分析一条购买评价的语义是肯定的还是否定的。
-微调层结构：全连接+分类器
+微调层结构：全连接+分类器[https://github.com/huggingface/transformers/blob/c67d1a0259cbb3aef31952b4f37d4fee0e36f134/src/transformers/modeling_bert.py#L1234-L1241](https://github.com/huggingface/transformers/blob/c67d1a0259cbb3aef31952b4f37d4fee0e36f134/src/transformers/modeling_bert.py#L1234-L1241)
 
     class BertForSequenceClassification(BertPreTrainedModel):
         def __init__(self, config):
@@ -262,6 +262,7 @@ Each training data contains Two sentences, $W_1[w_{11}, w_{12}, w_{13}, w_{14}, 
             self.dropout = nn.Dropout(config.hidden_dropout_prob)
             self.classifier = nn.Linear(config.hidden_size, config.num_labels)
 
+[https://github.com/huggingface/transformers/blob/c67d1a0259cbb3aef31952b4f37d4fee0e36f134/src/transformers/modeling_bert.py#L1291-L1299](https://github.com/huggingface/transformers/blob/c67d1a0259cbb3aef31952b4f37d4fee0e36f134/src/transformers/modeling_bert.py#L1291-L1299)
 训练
 
     from transformers import BertTokenizer, BertForSequenceClassification
@@ -476,11 +477,11 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [BERT author explain BERT](https://www.reddit.com/r/MachineLearning/comments/9nfqxz/r_bert_pretraining_of_deep_bidirectional/)
 [Examining BERT's raw embeddings](https://towardsdatascience.com/examining-berts-raw-embeddings-fd905cb22df7)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNDQ1MzExMDc4LC0xMzU2MzMxODU5LC0xND
-I3MjU5OTAzLDExMzYyMTU0LDE4NzI0MjY3MDUsMTQ1MjQ5MTA5
-MSwtNjEyMjIwNzUzLDE5ODY5MDY3NjgsMTQwMzU0MTg3MSwyND
-c2NDc1NzIsLTQzOTkwMjc0LC0xOTQwMDIwMDQ2LDE3NjUwNTAy
-MywxMjgwNDEzNTgyLDU3NDM4NzIyNiw4MjI1NzgzNjEsMTYzMj
-A2NjU5Miw4ODU0MzA2ODUsLTIxMjI4NjE0OTEsMjExMjI0NjU0
-N119
+eyJoaXN0b3J5IjpbMjEyNTQzMzQ5Niw0NDUzMTEwNzgsLTEzNT
+YzMzE4NTksLTE0MjcyNTk5MDMsMTEzNjIxNTQsMTg3MjQyNjcw
+NSwxNDUyNDkxMDkxLC02MTIyMjA3NTMsMTk4NjkwNjc2OCwxND
+AzNTQxODcxLDI0NzY0NzU3MiwtNDM5OTAyNzQsLTE5NDAwMjAw
+NDYsMTc2NTA1MDIzLDEyODA0MTM1ODIsNTc0Mzg3MjI2LDgyMj
+U3ODM2MSwxNjMyMDY2NTkyLDg4NTQzMDY4NSwtMjEyMjg2MTQ5
+MV19
 -->
