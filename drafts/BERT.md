@@ -32,7 +32,7 @@ self-supervised learning is important area because it can greatly reduce the eff
 
 ~~>**训练数据不足**是一些特殊领域中不可避免的问题。数据的收集是复杂和昂贵的，这使得构建大规模、高质量的带注释的数据集非常困难。例如，生物信息学数据集中的每个样本经常显示一个临床试验或一个痛苦的病人。此外，即使我们付出了昂贵的代价来获取训练数据集，也很容易过时，不能有效地应用于新的任务中。~~
 
-为了解决这个问题，人们尝试将深度学习过程中产生的具有共性的知识提取出来用于类似目标的机器学习任务中去，这样。。就可以“站在巨人的肩膀上”而不必从头开始，从而节省了大量的资源和时间，这就是迁移学习(Transfer learning)的基本思想。
+为了解决这个问题，人们尝试将深度学习过程中产生的具有共性的知识提取出来用于类似目标的机器学习任务中去，这样。。就可以“站在巨人的肩膀上”而不必从头开始，从而节省了大量的资源和时间，这就是迁移学习(Transfer learning)的基本思想。这种学习方式最大的不同是它将一个训练任务分成了两个阶段
 
 迁移学习是在源任务模型和新任务模型具有相关性的前提下，把已经训练好的模型参数迁移到新的模型来帮助新模型训练，这样就可以在源任务模型的基础上针对新任务进行调整和改进，而不必从零开始，从而节省大量的时间和金钱。
 
@@ -450,11 +450,11 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [BERT author explain BERT](https://www.reddit.com/r/MachineLearning/comments/9nfqxz/r_bert_pretraining_of_deep_bidirectional/)
 [Examining BERT's raw embeddings](https://towardsdatascience.com/examining-berts-raw-embeddings-fd905cb22df7)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTg3NjE3NDAzMSwxNDAzNTQxODcxLDI0Nz
-Y0NzU3MiwtNDM5OTAyNzQsLTE5NDAwMjAwNDYsMTc2NTA1MDIz
-LDEyODA0MTM1ODIsNTc0Mzg3MjI2LDgyMjU3ODM2MSwxNjMyMD
-Y2NTkyLDg4NTQzMDY4NSwtMjEyMjg2MTQ5MSwyMTEyMjQ2NTQ3
-LC0xMDkzNTg3NzkwLDE2ODYwNDI1MjksMTg0Mzk4NTQyNSwtND
-g5MjU1MjgzLC0xMDI5MzQwMzgyLDM5MTQ0NjU0NiwtMjA4MjQw
-MjkwNl19
+eyJoaXN0b3J5IjpbMTMwMDU0NzM0LDE0MDM1NDE4NzEsMjQ3Nj
+Q3NTcyLC00Mzk5MDI3NCwtMTk0MDAyMDA0NiwxNzY1MDUwMjMs
+MTI4MDQxMzU4Miw1NzQzODcyMjYsODIyNTc4MzYxLDE2MzIwNj
+Y1OTIsODg1NDMwNjg1LC0yMTIyODYxNDkxLDIxMTIyNDY1NDcs
+LTEwOTM1ODc3OTAsMTY4NjA0MjUyOSwxODQzOTg1NDI1LC00OD
+kyNTUyODMsLTEwMjkzNDAzODIsMzkxNDQ2NTQ2LC0yMDgyNDAy
+OTA2XX0=
 -->
