@@ -263,7 +263,7 @@ Each training data contains Two sentences, $W_1[w_{11}, w_{12}, w_{13}, w_{14}, 
             self.classifier = nn.Linear(config.hidden_size, config.num_labels)
 
 [https://github.com/huggingface/transformers/blob/c67d1a0259cbb3aef31952b4f37d4fee0e36f134/src/transformers/modeling_bert.py#L1291-L1299](https://github.com/huggingface/transformers/blob/c67d1a0259cbb3aef31952b4f37d4fee0e36f134/src/transformers/modeling_bert.py#L1291-L1299)
-训练
+训练（图？）
 
     from transformers import BertTokenizer, BertForSequenceClassification
     import torch
@@ -477,11 +477,11 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [BERT author explain BERT](https://www.reddit.com/r/MachineLearning/comments/9nfqxz/r_bert_pretraining_of_deep_bidirectional/)
 [Examining BERT's raw embeddings](https://towardsdatascience.com/examining-berts-raw-embeddings-fd905cb22df7)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODM5OTk2MjIzLC0yMDE3MzAxODAsMjEyNT
-QzMzQ5Niw0NDUzMTEwNzgsLTEzNTYzMzE4NTksLTE0MjcyNTk5
-MDMsMTEzNjIxNTQsMTg3MjQyNjcwNSwxNDUyNDkxMDkxLC02MT
-IyMjA3NTMsMTk4NjkwNjc2OCwxNDAzNTQxODcxLDI0NzY0NzU3
-MiwtNDM5OTAyNzQsLTE5NDAwMjAwNDYsMTc2NTA1MDIzLDEyOD
-A0MTM1ODIsNTc0Mzg3MjI2LDgyMjU3ODM2MSwxNjMyMDY2NTky
-XX0=
+eyJoaXN0b3J5IjpbOTQ1NTQzNjc5LDgzOTk5NjIyMywtMjAxNz
+MwMTgwLDIxMjU0MzM0OTYsNDQ1MzExMDc4LC0xMzU2MzMxODU5
+LC0xNDI3MjU5OTAzLDExMzYyMTU0LDE4NzI0MjY3MDUsMTQ1Mj
+Q5MTA5MSwtNjEyMjIwNzUzLDE5ODY5MDY3NjgsMTQwMzU0MTg3
+MSwyNDc2NDc1NzIsLTQzOTkwMjc0LC0xOTQwMDIwMDQ2LDE3Nj
+UwNTAyMywxMjgwNDEzNTgyLDU3NDM4NzIyNiw4MjI1NzgzNjFd
+fQ==
 -->
