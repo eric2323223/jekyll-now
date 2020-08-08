@@ -96,6 +96,7 @@ BERT最大的创新是将Transformer模型应用到了语言模型中，实现de
 BERT模型生成的元素编码属于动态编码，它能根据输入序列生成每个序列元素（word）在序列上下文中的特征向量
 - bidirectional Language Model
 这是由于它是以Attention机制为基础。注意力机制可以一次看到所有的序列元素，每个元素的编码的计算都包含了该元素之前和之后的序列信息，因此BERT属于双向语言模型，并且由于能够同时看到前向和后向的信息，BERT不同于以往的双向语言模型，如ELMO，。。。。。。deep bidirectional 
+![enter image description here](https://miro.medium.com/max/1234/1*KbAUVetHPMreJdcbicmJrw.png)
 并非所有的基于attention机制的模型都是双向语言模型，比如GPT使用了遮罩的方式使模型无法看到当前元素之后的序列信息，因此它属于单向语言模型。
 
 - 
@@ -454,11 +455,11 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [BERT author explain BERT](https://www.reddit.com/r/MachineLearning/comments/9nfqxz/r_bert_pretraining_of_deep_bidirectional/)
 [Examining BERT's raw embeddings](https://towardsdatascience.com/examining-berts-raw-embeddings-fd905cb22df7)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTg3MjQyNjcwNSwxNDUyNDkxMDkxLC02MT
-IyMjA3NTMsMTk4NjkwNjc2OCwxNDAzNTQxODcxLDI0NzY0NzU3
-MiwtNDM5OTAyNzQsLTE5NDAwMjAwNDYsMTc2NTA1MDIzLDEyOD
-A0MTM1ODIsNTc0Mzg3MjI2LDgyMjU3ODM2MSwxNjMyMDY2NTky
-LDg4NTQzMDY4NSwtMjEyMjg2MTQ5MSwyMTEyMjQ2NTQ3LC0xMD
-kzNTg3NzkwLDE2ODYwNDI1MjksMTg0Mzk4NTQyNSwtNDg5MjU1
-MjgzXX0=
+eyJoaXN0b3J5IjpbMTEzNjIxNTQsMTg3MjQyNjcwNSwxNDUyND
+kxMDkxLC02MTIyMjA3NTMsMTk4NjkwNjc2OCwxNDAzNTQxODcx
+LDI0NzY0NzU3MiwtNDM5OTAyNzQsLTE5NDAwMjAwNDYsMTc2NT
+A1MDIzLDEyODA0MTM1ODIsNTc0Mzg3MjI2LDgyMjU3ODM2MSwx
+NjMyMDY2NTkyLDg4NTQzMDY4NSwtMjEyMjg2MTQ5MSwyMTEyMj
+Q2NTQ3LC0xMDkzNTg3NzkwLDE2ODYwNDI1MjksMTg0Mzk4NTQy
+NV19
 -->
