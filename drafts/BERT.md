@@ -246,13 +246,13 @@ Each training data contains Two sentences, $W_1[w_{11}, w_{12}, w_{13}, w_{14}, 
 如上所述，BERT这种通用预训练模型利用深度很大的复杂模型来提取复杂特征，这使得它的预训练需要强大的计算资源，普通人基本无法参与。预训练-微调这种两阶段训练
 因此相比预训练，微调对于没有大量计算资源的普通爱好者更具现实意义。
 通过不同类型的微调任务，BERT可以完成多种类型的学习任务。
-feng
+**方法：固定预训练模型的参数，训练微调层的参数**
 ![enter image description here](https://www.researchgate.net/profile/Jan_Christian_Blaise_Cruz/publication/334160936/figure/fig1/AS:776030256111617@1562031439583/Overall-BERT-pretraining-and-finetuning-framework-Note-that-the-same-architecture-in.ppm)
 ### 微调任务类型
 ![enter image description here](https://lilianweng.github.io/lil-log/assets/images/BERT-downstream-tasks.png)
 ### 语义分析
 这种类型的任务对输入（一句话）进行语义分析。输入一句话，预测这句话的分类，如分析一条购买评价的语义是肯定的还是否定的。
-
+wei'tia
 
 ### 语义相似度分析
 输入两句话，分析他们的语义是相似的还是不同的。
@@ -456,11 +456,11 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [BERT author explain BERT](https://www.reddit.com/r/MachineLearning/comments/9nfqxz/r_bert_pretraining_of_deep_bidirectional/)
 [Examining BERT's raw embeddings](https://towardsdatascience.com/examining-berts-raw-embeddings-fd905cb22df7)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0MzMwMzg3NTIsMTEzNjIxNTQsMTg3Mj
-QyNjcwNSwxNDUyNDkxMDkxLC02MTIyMjA3NTMsMTk4NjkwNjc2
-OCwxNDAzNTQxODcxLDI0NzY0NzU3MiwtNDM5OTAyNzQsLTE5ND
-AwMjAwNDYsMTc2NTA1MDIzLDEyODA0MTM1ODIsNTc0Mzg3MjI2
-LDgyMjU3ODM2MSwxNjMyMDY2NTkyLDg4NTQzMDY4NSwtMjEyMj
-g2MTQ5MSwyMTEyMjQ2NTQ3LC0xMDkzNTg3NzkwLDE2ODYwNDI1
-MjldfQ==
+eyJoaXN0b3J5IjpbLTc2MDAzNzU2MywxMTM2MjE1NCwxODcyND
+I2NzA1LDE0NTI0OTEwOTEsLTYxMjIyMDc1MywxOTg2OTA2NzY4
+LDE0MDM1NDE4NzEsMjQ3NjQ3NTcyLC00Mzk5MDI3NCwtMTk0MD
+AyMDA0NiwxNzY1MDUwMjMsMTI4MDQxMzU4Miw1NzQzODcyMjYs
+ODIyNTc4MzYxLDE2MzIwNjY1OTIsODg1NDMwNjg1LC0yMTIyOD
+YxNDkxLDIxMTIyNDY1NDcsLTEwOTM1ODc3OTAsMTY4NjA0MjUy
+OV19
 -->
