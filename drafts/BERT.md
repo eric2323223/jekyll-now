@@ -249,6 +249,8 @@ Each training data contains Two sentences, $W_1[w_{11}, w_{12}, w_{13}, w_{14}, 
 ![enter image description here](https://lilianweng.github.io/lil-log/assets/images/BERT-downstream-tasks.png)
 ### 语义分析
 这种类型的任务对输入（一句话）进行语义分析。输入一句话，预测这句话的分类，如分析一条购买评价的语义是肯定的还是否定的。
+
+
 ### 语义相似度分析
 输入两句话，分析他们的语义是相似的还是不同的。
 预处理
@@ -451,11 +453,11 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [BERT author explain BERT](https://www.reddit.com/r/MachineLearning/comments/9nfqxz/r_bert_pretraining_of_deep_bidirectional/)
 [Examining BERT's raw embeddings](https://towardsdatascience.com/examining-berts-raw-embeddings-fd905cb22df7)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTYxMjIyMDc1MywxOTg2OTA2NzY4LDE0MD
-M1NDE4NzEsMjQ3NjQ3NTcyLC00Mzk5MDI3NCwtMTk0MDAyMDA0
-NiwxNzY1MDUwMjMsMTI4MDQxMzU4Miw1NzQzODcyMjYsODIyNT
-c4MzYxLDE2MzIwNjY1OTIsODg1NDMwNjg1LC0yMTIyODYxNDkx
-LDIxMTIyNDY1NDcsLTEwOTM1ODc3OTAsMTY4NjA0MjUyOSwxOD
-QzOTg1NDI1LC00ODkyNTUyODMsLTEwMjkzNDAzODIsMzkxNDQ2
-NTQ2XX0=
+eyJoaXN0b3J5IjpbMTQ1MjQ5MTA5MSwtNjEyMjIwNzUzLDE5OD
+Y5MDY3NjgsMTQwMzU0MTg3MSwyNDc2NDc1NzIsLTQzOTkwMjc0
+LC0xOTQwMDIwMDQ2LDE3NjUwNTAyMywxMjgwNDEzNTgyLDU3ND
+M4NzIyNiw4MjI1NzgzNjEsMTYzMjA2NjU5Miw4ODU0MzA2ODUs
+LTIxMjI4NjE0OTEsMjExMjI0NjU0NywtMTA5MzU4Nzc5MCwxNj
+g2MDQyNTI5LDE4NDM5ODU0MjUsLTQ4OTI1NTI4MywtMTAyOTM0
+MDM4Ml19
 -->
