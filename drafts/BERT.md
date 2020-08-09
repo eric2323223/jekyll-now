@@ -277,13 +277,12 @@ Each training data contains Two sentences, $W_1[w_{11}, w_{12}, w_{13}, w_{14}, 
     outputs = model(**inputs, labels=labels)
     loss, logits = outputs[:2]
 
-### 语义相似度分析
+~~### 语义相似度分析
 输入两句话，分析他们的语义是相似的还是不同的。
 预处理
 ![](https://pic1.zhimg.com/80/v2-971f887ed616ea0f65941c8dc15ee128_720w.jpg)
-
   实际操作时，上述最后一句话之后还会加一个[SEP] token，语义相似度任务将两个句子按照上述方式输入即可，之后与论文中的分类任务一样，将[CLS] token位置对应的输出，接上softmax做分类即可(实际上GLUE任务中就有很多语义相似度的数据集)。
-  微调层：
+  微调层：~~
 
 ### 多标签分类 NER
 
@@ -292,7 +291,8 @@ Each training data contains Two sentences, $W_1[w_{11}, w_{12}, w_{13}, w_{14}, 
 对于多标签分类任务，显而易见的朴素做法就是不管样本属于几个类，就给它训练几个分类模型即可，然后再一一判断在该类别中，其属于那个子类别，但是这样做未免太暴力了，而多标签分类任务，其实是可以**只用一个模型**来解决的。
 
 利用BERT模型解决多标签分类问题时，其输入与普通单标签分类问题一致，得到其embedding表示之后(也就是BERT输出层的embedding)，有几个label就连接到几个全连接层(也可以称为projection layer)，然后再分别接上softmax分类层，这样的话会得到​  ![[公式]](https://www.zhihu.com/equation?tex=loss_1%2C%5C+loss_2%2C%5C+%5Ccdots%2C%5C+loss_n)  ，最后再将所有的loss相加起来即可。这种做法就相当于将n个分类模型的特征提取层参数共享，得到一个共享的表示(其维度可以视任务而定，由于是多标签分类任务，因此其维度可以适当增大一些)，最后再做多标签分类任务。
-### 限定上下文问答
+### 限定上下文问答 SQuAD
+
 can deal with looooong senquence？（>512）: 
 [https://github.com/google-research/bert/issues/66](https://github.com/google-research/bert/issues/66)
 how to get the context vector?
@@ -482,11 +482,11 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [BERT author explain BERT](https://www.reddit.com/r/MachineLearning/comments/9nfqxz/r_bert_pretraining_of_deep_bidirectional/)
 [Examining BERT's raw embeddings](https://towardsdatascience.com/examining-berts-raw-embeddings-fd905cb22df7)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTM5NDg1ODg0NSwzMjM0NTY4MTcsOTQ1NT
-QzNjc5LDgzOTk5NjIyMywtMjAxNzMwMTgwLDIxMjU0MzM0OTYs
-NDQ1MzExMDc4LC0xMzU2MzMxODU5LC0xNDI3MjU5OTAzLDExMz
-YyMTU0LDE4NzI0MjY3MDUsMTQ1MjQ5MTA5MSwtNjEyMjIwNzUz
-LDE5ODY5MDY3NjgsMTQwMzU0MTg3MSwyNDc2NDc1NzIsLTQzOT
-kwMjc0LC0xOTQwMDIwMDQ2LDE3NjUwNTAyMywxMjgwNDEzNTgy
+eyJoaXN0b3J5IjpbMTc4OTkzOTcwMywxMzk0ODU4ODQ1LDMyMz
+Q1NjgxNyw5NDU1NDM2NzksODM5OTk2MjIzLC0yMDE3MzAxODAs
+MjEyNTQzMzQ5Niw0NDUzMTEwNzgsLTEzNTYzMzE4NTksLTE0Mj
+cyNTk5MDMsMTEzNjIxNTQsMTg3MjQyNjcwNSwxNDUyNDkxMDkx
+LC02MTIyMjA3NTMsMTk4NjkwNjc2OCwxNDAzNTQxODcxLDI0Nz
+Y0NzU3MiwtNDM5OTAyNzQsLTE5NDAwMjAwNDYsMTc2NTA1MDIz
 XX0=
 -->
