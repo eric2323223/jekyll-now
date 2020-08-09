@@ -299,6 +299,8 @@ how to get the context vector?
 
 ### **7.4 文本生成？NO!**
 remember BERT does not include decoder?
+- Bert use transformer as encoder, there is no decoder in BERT
+- 
 ### 微调技巧
 1. 调整参数（内存），模型选择
 2.  **长文本处理**
@@ -480,11 +482,11 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [BERT author explain BERT](https://www.reddit.com/r/MachineLearning/comments/9nfqxz/r_bert_pretraining_of_deep_bidirectional/)
 [Examining BERT's raw embeddings](https://towardsdatascience.com/examining-berts-raw-embeddings-fd905cb22df7)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzIzNDU2ODE3LDk0NTU0MzY3OSw4Mzk5OT
-YyMjMsLTIwMTczMDE4MCwyMTI1NDMzNDk2LDQ0NTMxMTA3OCwt
-MTM1NjMzMTg1OSwtMTQyNzI1OTkwMywxMTM2MjE1NCwxODcyND
-I2NzA1LDE0NTI0OTEwOTEsLTYxMjIyMDc1MywxOTg2OTA2NzY4
-LDE0MDM1NDE4NzEsMjQ3NjQ3NTcyLC00Mzk5MDI3NCwtMTk0MD
-AyMDA0NiwxNzY1MDUwMjMsMTI4MDQxMzU4Miw1NzQzODcyMjZd
-fQ==
+eyJoaXN0b3J5IjpbMTM5NDg1ODg0NSwzMjM0NTY4MTcsOTQ1NT
+QzNjc5LDgzOTk5NjIyMywtMjAxNzMwMTgwLDIxMjU0MzM0OTYs
+NDQ1MzExMDc4LC0xMzU2MzMxODU5LC0xNDI3MjU5OTAzLDExMz
+YyMTU0LDE4NzI0MjY3MDUsMTQ1MjQ5MTA5MSwtNjEyMjIwNzUz
+LDE5ODY5MDY3NjgsMTQwMzU0MTg3MSwyNDc2NDc1NzIsLTQzOT
+kwMjc0LC0xOTQwMDIwMDQ2LDE3NjUwNTAyMywxMjgwNDEzNTgy
+XX0=
 -->
