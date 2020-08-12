@@ -32,12 +32,12 @@ self-supervised learning is important area because it can greatly reduce the eff
 
 ~~>**训练数据不足**是一些特殊领域中不可避免的问题。数据的收集是复杂和昂贵的，这使得构建大规模、高质量的带注释的数据集非常困难。例如，生物信息学数据集中的每个样本经常显示一个临床试验或一个痛苦的病人。此外，即使我们付出了昂贵的代价来获取训练数据集，也很容易过时，不能有效地应用于新的任务中。~~
 
-为了解决这个问题，人们尝试将深度学习过程中产生的具有共性的知识提取出来用于类似目标的机器学习任务中去，这样。。就可以“站在巨人的肩膀上”而不必从头开始，从而节省了大量的资源和时间，这就是迁移学习(Transfer learning)的基本思想。这种学习方式最大的不同是它将一个训练任务分成了两个阶段。。。
+为了解决这个问题，人们尝试将深度学习过程中产生的具有共性的知识提取出来用于类似目标的机器学习任务中去，这样。。就可以“站在巨人的肩膀上”而不必从零开始，从而节省了大量的资源和时间，这就是迁移学习(Transfer learning)的基本思想。这种学习方式最大的不同是它将一个训练任务分成了两个阶段。。。
 
 迁移学习是在源任务模型和新任务模型具有相关性的前提下，把已经训练好的模型参数迁移到新的模型来帮助新模型训练，这样就可以在源任务模型的基础上针对新任务进行调整和改进，而不必从零开始，从而节省大量的时间和金钱。
 
 ~~>迁移学习放松了训练数据必须与测试数据独立且同分布(i.i.d)的假设，激励我们利用迁移学习来解决训练数据不足的问题。在迁移学习中，训练数据和测试数据不需要是i.i.d。不需要对目标域内的模型进行从零开始的训练，可以显著降低对目标域内训练数据和训练时间的需求。~~
-，并以此为节点将迁移学习分为了两步：
+
 - 预训练阶段
 由于迁移学习能带来巨大收益，人们追求更加通用的迁移学习源模型，以使得更多不同的任务能从中受益。因此目前人们使用海量数据专门训练旨在包含大量通用知识的源模型，也叫预训练模型
 使用海量训练数据训练一个可重用的模型（通常是能够理解复杂特征的深度模型），由于模型复杂数据量大，这个阶段会耗费大量的计算资源，最终获得预训练模型。预训练的基础是优质的海量训练数据集，例如
@@ -484,11 +484,11 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [BERT author explain BERT](https://www.reddit.com/r/MachineLearning/comments/9nfqxz/r_bert_pretraining_of_deep_bidirectional/)
 [Examining BERT's raw embeddings](https://towardsdatascience.com/examining-berts-raw-embeddings-fd905cb22df7)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTgxMTc1Mjg4MywtNzMxMzQ4OTczLDE3OD
-k5Mzk3MDMsMTM5NDg1ODg0NSwzMjM0NTY4MTcsOTQ1NTQzNjc5
-LDgzOTk5NjIyMywtMjAxNzMwMTgwLDIxMjU0MzM0OTYsNDQ1Mz
-ExMDc4LC0xMzU2MzMxODU5LC0xNDI3MjU5OTAzLDExMzYyMTU0
-LDE4NzI0MjY3MDUsMTQ1MjQ5MTA5MSwtNjEyMjIwNzUzLDE5OD
-Y5MDY3NjgsMTQwMzU0MTg3MSwyNDc2NDc1NzIsLTQzOTkwMjc0
-XX0=
+eyJoaXN0b3J5IjpbLTE1NjU5ODEzMDIsLTczMTM0ODk3MywxNz
+g5OTM5NzAzLDEzOTQ4NTg4NDUsMzIzNDU2ODE3LDk0NTU0MzY3
+OSw4Mzk5OTYyMjMsLTIwMTczMDE4MCwyMTI1NDMzNDk2LDQ0NT
+MxMTA3OCwtMTM1NjMzMTg1OSwtMTQyNzI1OTkwMywxMTM2MjE1
+NCwxODcyNDI2NzA1LDE0NTI0OTEwOTEsLTYxMjIyMDc1MywxOT
+g2OTA2NzY4LDE0MDM1NDE4NzEsMjQ3NjQ3NTcyLC00Mzk5MDI3
+NF19
 -->
