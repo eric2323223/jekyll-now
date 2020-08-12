@@ -90,6 +90,7 @@ BERT（Bidirectional Encoder Representations from Transformer）是一个用于�
 
 BERT最大的创新是将Transformer模型应用到了语言模型中，实现deep bidirectional contextual embedding。。。。影响和决定了BERT很多特殊性质。
 
+
 **bidirectional <-> LM 的矛盾如何解决？ MLM**
 
 - context dependent embedding
@@ -482,11 +483,11 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [BERT author explain BERT](https://www.reddit.com/r/MachineLearning/comments/9nfqxz/r_bert_pretraining_of_deep_bidirectional/)
 [Examining BERT's raw embeddings](https://towardsdatascience.com/examining-berts-raw-embeddings-fd905cb22df7)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTc4OTkzOTcwMywxMzk0ODU4ODQ1LDMyMz
-Q1NjgxNyw5NDU1NDM2NzksODM5OTk2MjIzLC0yMDE3MzAxODAs
-MjEyNTQzMzQ5Niw0NDUzMTEwNzgsLTEzNTYzMzE4NTksLTE0Mj
-cyNTk5MDMsMTEzNjIxNTQsMTg3MjQyNjcwNSwxNDUyNDkxMDkx
-LC02MTIyMjA3NTMsMTk4NjkwNjc2OCwxNDAzNTQxODcxLDI0Nz
-Y0NzU3MiwtNDM5OTAyNzQsLTE5NDAwMjAwNDYsMTc2NTA1MDIz
-XX0=
+eyJoaXN0b3J5IjpbLTEzMTU3MTM4MywxNzg5OTM5NzAzLDEzOT
+Q4NTg4NDUsMzIzNDU2ODE3LDk0NTU0MzY3OSw4Mzk5OTYyMjMs
+LTIwMTczMDE4MCwyMTI1NDMzNDk2LDQ0NTMxMTA3OCwtMTM1Nj
+MzMTg1OSwtMTQyNzI1OTkwMywxMTM2MjE1NCwxODcyNDI2NzA1
+LDE0NTI0OTEwOTEsLTYxMjIyMDc1MywxOTg2OTA2NzY4LDE0MD
+M1NDE4NzEsMjQ3NjQ3NTcyLC00Mzk5MDI3NCwtMTk0MDAyMDA0
+Nl19
 -->
