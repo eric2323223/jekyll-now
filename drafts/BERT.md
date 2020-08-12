@@ -37,8 +37,9 @@ self-supervised learning is important area because it can greatly reduce the eff
 迁移学习是在源任务模型和新任务模型具有相关性的前提下，把已经训练好的模型参数迁移到新的模型来帮助新模型训练，这样就可以在源任务模型的基础上针对新任务进行调整和改进，而不必从零开始，从而节省大量的时间和金钱。
 
 ~~>迁移学习放松了训练数据必须与测试数据独立且同分布(i.i.d)的假设，激励我们利用迁移学习来解决训练数据不足的问题。在迁移学习中，训练数据和测试数据不需要是i.i.d。不需要对目标域内的模型进行从零开始的训练，可以显著降低对目标域内训练数据和训练时间的需求。~~
-由于迁移学习能带来巨大收益，人们追求更加通用的迁移学习源模型，以使得更多不同的任务能从中受益。因此目前人们使用海量数据专门训练旨在包含大量通用知识的源模型，也叫预训练模型，并以此为节点将迁移学习分为了两步：
+，并以此为节点将迁移学习分为了两步：
 - 预训练阶段
+由于迁移学习能带来巨大收益，人们追求更加通用的迁移学习源模型，以使得更多不同的任务能从中受益。因此目前人们使用海量数据专门训练旨在包含大量通用知识的源模型，也叫预训练模型
 使用海量训练数据训练一个可重用的模型（通常是能够理解复杂特征的深度模型），由于模型复杂数据量大，这个阶段会耗费大量的计算资源，最终获得预训练模型。预训练的基础是优质的海量训练数据集，例如
 在CV领域最成功的迁移学习的的应用是imagenet训练数据集及建立在其基础之上的预训练模型，如VGG19， ResNet50。预训练采用监督式训练，即每个imagenet数据集中的图片都有一个人工标注的描述该图片所属类型的标签。Imagenet将超过一千四百万图片通过众包的方式进行人工标注，将他们分成2万多个不同分类，这项从2007年开始的浩大工程为计算机视觉图形相关的预训练提供了高质量的训练数据，从而为CV迁移学习打下了基础。
 - 微调阶段
@@ -483,11 +484,11 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [BERT author explain BERT](https://www.reddit.com/r/MachineLearning/comments/9nfqxz/r_bert_pretraining_of_deep_bidirectional/)
 [Examining BERT's raw embeddings](https://towardsdatascience.com/examining-berts-raw-embeddings-fd905cb22df7)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTczMTM0ODk3MywxNzg5OTM5NzAzLDEzOT
-Q4NTg4NDUsMzIzNDU2ODE3LDk0NTU0MzY3OSw4Mzk5OTYyMjMs
-LTIwMTczMDE4MCwyMTI1NDMzNDk2LDQ0NTMxMTA3OCwtMTM1Nj
-MzMTg1OSwtMTQyNzI1OTkwMywxMTM2MjE1NCwxODcyNDI2NzA1
-LDE0NTI0OTEwOTEsLTYxMjIyMDc1MywxOTg2OTA2NzY4LDE0MD
-M1NDE4NzEsMjQ3NjQ3NTcyLC00Mzk5MDI3NCwtMTk0MDAyMDA0
-Nl19
+eyJoaXN0b3J5IjpbMTgxMTc1Mjg4MywtNzMxMzQ4OTczLDE3OD
+k5Mzk3MDMsMTM5NDg1ODg0NSwzMjM0NTY4MTcsOTQ1NTQzNjc5
+LDgzOTk5NjIyMywtMjAxNzMwMTgwLDIxMjU0MzM0OTYsNDQ1Mz
+ExMDc4LC0xMzU2MzMxODU5LC0xNDI3MjU5OTAzLDExMzYyMTU0
+LDE4NzI0MjY3MDUsMTQ1MjQ5MTA5MSwtNjEyMjIwNzUzLDE5OD
+Y5MDY3NjgsMTQwMzU0MTg3MSwyNDc2NDc1NzIsLTQzOTkwMjc0
+XX0=
 -->
