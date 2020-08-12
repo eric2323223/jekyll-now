@@ -39,7 +39,7 @@ self-supervised learning is important area because it can greatly reduce the eff
 ~~>迁移学习放松了训练数据必须与测试数据独立且同分布(i.i.d)的假设，激励我们利用迁移学习来解决训练数据不足的问题。在迁移学习中，训练数据和测试数据不需要是i.i.d。不需要对目标域内的模型进行从零开始的训练，可以显著降低对目标域内训练数据和训练时间的需求。~~
 
 - 预训练阶段
-这个阶段的训练目标是生成包含可重用知识的模型-预训练模型。预训练这是一个耗时耗力的巨大工程，为了使得更多不同的任务能从中受益，人们追求更加通用的预训练模型，由于通用知识的复杂性，预训练模型都非常复杂。而这类复杂模型只能靠海量来进行训练数据训练一个可重用的模型（通常是能够理解复杂特征的深度模型），由于模型复杂数据量大，这个阶段会耗费大量的计算资源，最终获得预训练模型。预训练的基础是优质的海量训练数据集，例如在CV领域最成功的迁移学习的的应用是imagenet训练数据集及建立在其基础之上的预训练模型，如VGG19， ResNet50。预训练采用监督式训练，即每个imagenet数据集中的图片都有一个人工标注的描述该图片所属类型的标签。Imagenet将超过一千四百万图片通过众包的方式进行人工标注，将他们分成2万多个不同分类，这项从2007年开始的浩大工程为计算机视觉图形相关的预训练提供了高质量的训练数据，从而为CV迁移学习打下了基础。
+这个阶段的训练目标是生成包含可重用知识的模型-预训练模型。预训练这是一个耗时耗力的巨大工程，为了使得更多不同的任务能从中受益，人们追求更加通用的预训练模型，由于通用知识的复杂性，预训练模型都非常复杂。而这类复杂模型只能靠海量来进行训练，这个阶段会耗费大量的计算资源。除了数据量要求大之外，预训练对数据的质量也有较高要求，例如在CV领域最成功的迁移学习的的应用是imagenet训练数据集及建立在其基础之上的预训练模型，如VGG19， ResNet50。预训练采用监督式训练，即每个imagenet数据集中的图片都有一个人工标注的描述该图片所属类型的标签。Imagenet将超过一千四百万图片通过众包的方式进行人工标注，将他们分成2万多个不同分类，这项从2007年开始的浩大工程为计算机视觉图形相关的预训练提供了高质量的训练数据，从而为CV迁移学习打下了基础。
 - 微调阶段
 根据任务的需要，在预训练模型的基础上设计并加入相应的模型结构，比如。。。。再使用任务相关的少量训练数据来调整模型参数使其适应该任务。
 
@@ -482,11 +482,11 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [BERT author explain BERT](https://www.reddit.com/r/MachineLearning/comments/9nfqxz/r_bert_pretraining_of_deep_bidirectional/)
 [Examining BERT's raw embeddings](https://towardsdatascience.com/examining-berts-raw-embeddings-fd905cb22df7)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE5MTA4NDg5MDUsMTk2Nzc1ODUyNywtNz
-MxMzQ4OTczLDE3ODk5Mzk3MDMsMTM5NDg1ODg0NSwzMjM0NTY4
-MTcsOTQ1NTQzNjc5LDgzOTk5NjIyMywtMjAxNzMwMTgwLDIxMj
-U0MzM0OTYsNDQ1MzExMDc4LC0xMzU2MzMxODU5LC0xNDI3MjU5
-OTAzLDExMzYyMTU0LDE4NzI0MjY3MDUsMTQ1MjQ5MTA5MSwtNj
-EyMjIwNzUzLDE5ODY5MDY3NjgsMTQwMzU0MTg3MSwyNDc2NDc1
-NzJdfQ==
+eyJoaXN0b3J5IjpbLTYwNDIxNzUyMSwxOTY3NzU4NTI3LC03Mz
+EzNDg5NzMsMTc4OTkzOTcwMywxMzk0ODU4ODQ1LDMyMzQ1Njgx
+Nyw5NDU1NDM2NzksODM5OTk2MjIzLC0yMDE3MzAxODAsMjEyNT
+QzMzQ5Niw0NDUzMTEwNzgsLTEzNTYzMzE4NTksLTE0MjcyNTk5
+MDMsMTEzNjIxNTQsMTg3MjQyNjcwNSwxNDUyNDkxMDkxLC02MT
+IyMjA3NTMsMTk4NjkwNjc2OCwxNDAzNTQxODcxLDI0NzY0NzU3
+Ml19
 -->
