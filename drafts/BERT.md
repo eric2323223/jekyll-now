@@ -94,7 +94,7 @@ BERT最大的创新是将Transformer模型应用到了语言模型中，实现de
 
 **bidirectional <-> LM 的矛盾如何解决？ MLM+NSP** 
 
-BERT模型生成的元素编码属于动态的双向语境编码，它能根据输入序列生成每个序列元素（word）在序列上下文中的特征向量， 与ELMO不同的是，它基于注意力机制（attention mechanism）, 利用
+BERT模型生成的元素编码属于动态的双向语境编码，它能根据输入序列生成每个序列元素（word）在序列上下文中的特征向量， 与ELMO不同的是，它基于注意力机制（attention mechanism）, 利用Transformerqiang
 
 这是由于它是以Attention机制为基础。注意力机制可以一次看到所有的序列元素，每个元素的编码的计算都包含了该元素之前和之后的序列信息，因此BERT属于双向语言模型，并且由于能够同时看到前向和后向的信息，BERT不同于以往的双向语言模型，如ELMO，。。。。。。deep bidirectional 
 ![enter image description here](https://miro.medium.com/max/1234/1*KbAUVetHPMreJdcbicmJrw.png)
@@ -483,11 +483,11 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [BERT author explain BERT](https://www.reddit.com/r/MachineLearning/comments/9nfqxz/r_bert_pretraining_of_deep_bidirectional/)
 [Examining BERT's raw embeddings](https://towardsdatascience.com/examining-berts-raw-embeddings-fd905cb22df7)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwNzMzODkyMTgsLTgyODk4MzY2OSwxOD
-g5NDY2NjE5LDIwMDUzNTk0MTksLTkxNTY2NjQ3OSwxNjYyMjgz
-NTMsMTk2Nzc1ODUyNywtNzMxMzQ4OTczLDE3ODk5Mzk3MDMsMT
-M5NDg1ODg0NSwzMjM0NTY4MTcsOTQ1NTQzNjc5LDgzOTk5NjIy
-MywtMjAxNzMwMTgwLDIxMjU0MzM0OTYsNDQ1MzExMDc4LC0xMz
-U2MzMxODU5LC0xNDI3MjU5OTAzLDExMzYyMTU0LDE4NzI0MjY3
-MDVdfQ==
+eyJoaXN0b3J5IjpbMTE5NTcyOTU0MywtMjA3MzM4OTIxOCwtOD
+I4OTgzNjY5LDE4ODk0NjY2MTksMjAwNTM1OTQxOSwtOTE1NjY2
+NDc5LDE2NjIyODM1MywxOTY3NzU4NTI3LC03MzEzNDg5NzMsMT
+c4OTkzOTcwMywxMzk0ODU4ODQ1LDMyMzQ1NjgxNyw5NDU1NDM2
+NzksODM5OTk2MjIzLC0yMDE3MzAxODAsMjEyNTQzMzQ5Niw0ND
+UzMTEwNzgsLTEzNTYzMzE4NTksLTE0MjcyNTk5MDMsMTEzNjIx
+NTRdfQ==
 -->
