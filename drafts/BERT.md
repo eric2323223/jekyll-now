@@ -55,7 +55,7 @@ NLP的迁移学习同样分为预训练和微调两步，预CV任务不同的是
 	- 单向语境编码 
 	- 双向语境编码 elmo
 		
-##### 训练方式  self-supervised learning
+##### 预训练方式  self-supervised learning
 
 由于语言的动态特性，NLP任务
 > NLP的最大挑战之一是缺乏足够的培训数据。总体而言，有大量文本数据可用，但是如果我们要创建特定于任务的数据集，则需要将该堆划分为很多不同的字段。而当我们这样做时，我们最终仅得到数千或数十万个人标记的培训示例。不幸的是，为了表现良好，基于深度学习的NLP模型需要大量的数据-在数百万或数十亿的带注释的训练示例上进行训练时，他们看到了重大改进。为了帮助弥合数据鸿沟，研究人员开发了各种技术，可在网络上使用大量未注释的文本来训练通用语言表示模型（这称为预训练）。然后，可以在较小的特定于任务的数据集上微调这些通用的预训练模型，例如，在处理诸如问题回答和情感分析之类的问题时。与从头开始对较小的特定于任务的数据集进行训练相比，此方法可显着提高准确性。
@@ -484,11 +484,11 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [BERT author explain BERT](https://www.reddit.com/r/MachineLearning/comments/9nfqxz/r_bert_pretraining_of_deep_bidirectional/)
 [Examining BERT's raw embeddings](https://towardsdatascience.com/examining-berts-raw-embeddings-fd905cb22df7)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEwNjQ4ODYyNzEsLTkxNTY2NjQ3OSwxNj
-YyMjgzNTMsMTk2Nzc1ODUyNywtNzMxMzQ4OTczLDE3ODk5Mzk3
-MDMsMTM5NDg1ODg0NSwzMjM0NTY4MTcsOTQ1NTQzNjc5LDgzOT
-k5NjIyMywtMjAxNzMwMTgwLDIxMjU0MzM0OTYsNDQ1MzExMDc4
-LC0xMzU2MzMxODU5LC0xNDI3MjU5OTAzLDExMzYyMTU0LDE4Nz
-I0MjY3MDUsMTQ1MjQ5MTA5MSwtNjEyMjIwNzUzLDE5ODY5MDY3
-NjhdfQ==
+eyJoaXN0b3J5IjpbMjAwNTM1OTQxOSwtOTE1NjY2NDc5LDE2Nj
+IyODM1MywxOTY3NzU4NTI3LC03MzEzNDg5NzMsMTc4OTkzOTcw
+MywxMzk0ODU4ODQ1LDMyMzQ1NjgxNyw5NDU1NDM2NzksODM5OT
+k2MjIzLC0yMDE3MzAxODAsMjEyNTQzMzQ5Niw0NDUzMTEwNzgs
+LTEzNTYzMzE4NTksLTE0MjcyNTk5MDMsMTEzNjIxNTQsMTg3Mj
+QyNjcwNSwxNDUyNDkxMDkxLC02MTIyMjA3NTMsMTk4NjkwNjc2
+OF19
 -->
