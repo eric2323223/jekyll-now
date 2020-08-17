@@ -170,7 +170,7 @@ BERT is [MASK1] to help **milk** understand the meaning of ambiguous language in
 测试数据：[MASK1]=designed, milk=computers, surrounding=surrounding, [MASK2]=establish
 
  - 如果只做[MASK]替换，预训练模型会被训练为对[MASK]进行预测，所以只会加强[MASK]附近上下文的分析而不是全部序列的分析。 而微调阶段的目标是分析整个序列，它的输入不包含[MASK]，与预训练模型的目标不一致，因此会导致预训练模型在微调阶段性能下降。
- - 为了更加符合微调阶段的目标，作者加入l了一种新的预处理方式，即以10%的几率随机将原词computer替换为其他词milk而不是[MASK]，为了得出正确结果（computer）模型需要分析milk的上下文。由于所有的词都可能被替换，这就要求模型要对所有输入元素的上下文进行分析，从而满足微调的需要。
+ - 为了更加符合微调阶段的目标，作者加入了一种新的预处理方式，即以10%的几率随机将原词computer替换为其他词milk而不是[MASK]，为了得出正确结果（computer）模型需要分析milk的上下文。由于所有的词都可能被替换，这就要求模型要对所有输入元素的上下文进行分析，从而满足微调的需要。
  - 考虑到如果只用[Mask]和任意词进行替换，模型会认为看到当前的词都是不真实的（替换过的），这会导致生成embedding的过程完全不参考当前词。为此预训练时也会也10%的概率使用原词替换（如surrounding），这样模型也会参考当前词来生成embedding。
  - 对于为何也80%，10%和10%的比例分别进行Mask，随机词和原词替换，作者的解释是基于经验设计的比例，可能存在效果更好的比例分布，但是最终结果应该相差不大。
  > We didn't try a lot of ablation on this. Those numbers are just what made sense to me and the only thing that I tried. It's possible that other values will work better (or more likely, the system isn't very sensitive to the exact hyperparameters).   [https://github.com/google-research/bert/issues/85](https://github.com/google-research/bert/issues/85)
@@ -483,11 +483,11 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [BERT author explain BERT](https://www.reddit.com/r/MachineLearning/comments/9nfqxz/r_bert_pretraining_of_deep_bidirectional/)
 [Examining BERT's raw embeddings](https://towardsdatascience.com/examining-berts-raw-embeddings-fd905cb22df7)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTE3NzA2MDUzMiwtMjA3MzM4OTIxOCwtOD
-I4OTgzNjY5LDE4ODk0NjY2MTksMjAwNTM1OTQxOSwtOTE1NjY2
-NDc5LDE2NjIyODM1MywxOTY3NzU4NTI3LC03MzEzNDg5NzMsMT
-c4OTkzOTcwMywxMzk0ODU4ODQ1LDMyMzQ1NjgxNyw5NDU1NDM2
-NzksODM5OTk2MjIzLC0yMDE3MzAxODAsMjEyNTQzMzQ5Niw0ND
-UzMTEwNzgsLTEzNTYzMzE4NTksLTE0MjcyNTk5MDMsMTEzNjIx
-NTRdfQ==
+eyJoaXN0b3J5IjpbLTU2NTkyMzI3NCwxMTc3MDYwNTMyLC0yMD
+czMzg5MjE4LC04Mjg5ODM2NjksMTg4OTQ2NjYxOSwyMDA1MzU5
+NDE5LC05MTU2NjY0NzksMTY2MjI4MzUzLDE5Njc3NTg1MjcsLT
+czMTM0ODk3MywxNzg5OTM5NzAzLDEzOTQ4NTg4NDUsMzIzNDU2
+ODE3LDk0NTU0MzY3OSw4Mzk5OTYyMjMsLTIwMTczMDE4MCwyMT
+I1NDMzNDk2LDQ0NTMxMTA3OCwtMTM1NjMzMTg1OSwtMTQyNzI1
+OTkwM119
 -->
