@@ -52,7 +52,7 @@ NLP的迁移学习同样分为预训练和微调两步，预CV任务不同的是
 - 静态词编码（static word embedding），这是一类早期的固定编码方式，比Word2Vec，Glove等，顾名思义这类编码赋予每个词固定的编码值，并且编码值体现了词的代表的含义，我们可以通过对编码值的运算得到有意义的结果，比如著名的例子 ***king — man + woman = queen***
 
 - 语境词编码（contextualized word embedding），静态词编码的最大的问题在于它只能个每一个词一个编码值，无法处理一词多义的情况。将“我爱吃苹果”和“我爱苹果手机”中的苹果赋予相同的编码是不合适的，更合理的方式是通过结合词出现的上下文判断词的含义，比如通过“吃”和“手机”来判断上面两句话中的“苹果”分别代表一种水果和一个品牌，这就是语境词编码的基本思想。所以从使用者角度来说，我们需要一个模型能过通过输入语句得到（计算出）该语句的含义，或者该语句中每个词的含义。从这个意义上讲，我们本质上需要的是一种能够提取语义特征的能力，这和CV中的迁移学习的目标是一致的。
-	- 单向语境编码 
+	- 单向语境编码 LSTM
 	- 双向语境编码 elmo
 		
 ##### 预训练方式  self-supervised learning
@@ -484,11 +484,11 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [BERT author explain BERT](https://www.reddit.com/r/MachineLearning/comments/9nfqxz/r_bert_pretraining_of_deep_bidirectional/)
 [Examining BERT's raw embeddings](https://towardsdatascience.com/examining-berts-raw-embeddings-fd905cb22df7)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjAwNTM1OTQxOSwtOTE1NjY2NDc5LDE2Nj
-IyODM1MywxOTY3NzU4NTI3LC03MzEzNDg5NzMsMTc4OTkzOTcw
-MywxMzk0ODU4ODQ1LDMyMzQ1NjgxNyw5NDU1NDM2NzksODM5OT
-k2MjIzLC0yMDE3MzAxODAsMjEyNTQzMzQ5Niw0NDUzMTEwNzgs
-LTEzNTYzMzE4NTksLTE0MjcyNTk5MDMsMTEzNjIxNTQsMTg3Mj
-QyNjcwNSwxNDUyNDkxMDkxLC02MTIyMjA3NTMsMTk4NjkwNjc2
-OF19
+eyJoaXN0b3J5IjpbMTg4OTQ2NjYxOSwyMDA1MzU5NDE5LC05MT
+U2NjY0NzksMTY2MjI4MzUzLDE5Njc3NTg1MjcsLTczMTM0ODk3
+MywxNzg5OTM5NzAzLDEzOTQ4NTg4NDUsMzIzNDU2ODE3LDk0NT
+U0MzY3OSw4Mzk5OTYyMjMsLTIwMTczMDE4MCwyMTI1NDMzNDk2
+LDQ0NTMxMTA3OCwtMTM1NjMzMTg1OSwtMTQyNzI1OTkwMywxMT
+M2MjE1NCwxODcyNDI2NzA1LDE0NTI0OTEwOTEsLTYxMjIyMDc1
+M119
 -->
