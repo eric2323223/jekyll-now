@@ -253,6 +253,7 @@ Each training data contains Two sentences, $W_1[w_{11}, w_{12}, w_{13}, w_{14}, 
 ![enter image description here](https://lilianweng.github.io/lil-log/assets/images/BERT-downstream-tasks.png)
 ### 语义分析
 这种类型的任务对输入（一句话）进行语义分析。输入一句话，预测这句话的分类，如分析一条购买评价的语义是肯定的还是否定的。
+Make use of the CLS token
 微调层结构：分类器（全连接+softmax）[https://github.com/huggingface/transformers/blob/c67d1a0259cbb3aef31952b4f37d4fee0e36f134/src/transformers/modeling_bert.py#L1234-L1241](https://github.com/huggingface/transformers/blob/c67d1a0259cbb3aef31952b4f37d4fee0e36f134/src/transformers/modeling_bert.py#L1234-L1241)
 
     class BertForSequenceClassification(BertPreTrainedModel):
@@ -293,7 +294,7 @@ Each training data contains Two sentences, $W_1[w_{11}, w_{12}, w_{13}, w_{14}, 
 
 利用BERT模型解决多标签分类问题时，其输入与普通单标签分类问题一致，得到其embedding表示之后(也就是BERT输出层的embedding)，有几个label就连接到几个全连接层(也可以称为projection layer)，然后再分别接上softmax分类层，这样的话会得到​  ![[公式]](https://www.zhihu.com/equation?tex=loss_1%2C%5C+loss_2%2C%5C+%5Ccdots%2C%5C+loss_n)  ，最后再将所有的loss相加起来即可。这种做法就相当于将n个分类模型的特征提取层参数共享，得到一个共享的表示(其维度可以视任务而定，由于是多标签分类任务，因此其维度可以适当增大一些)，最后再做多标签分类任务。
 ### 限定上下文问答 SQuAD
-
+Use classification head for each token
 can deal with looooong senquence？（>512）: 
 [https://github.com/google-research/bert/issues/66](https://github.com/google-research/bert/issues/66)
 how to get the context vector?
@@ -483,11 +484,11 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [BERT author explain BERT](https://www.reddit.com/r/MachineLearning/comments/9nfqxz/r_bert_pretraining_of_deep_bidirectional/)
 [Examining BERT's raw embeddings](https://towardsdatascience.com/examining-berts-raw-embeddings-fd905cb22df7)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTU2NTkyMzI3NCwxMTc3MDYwNTMyLC0yMD
-czMzg5MjE4LC04Mjg5ODM2NjksMTg4OTQ2NjYxOSwyMDA1MzU5
-NDE5LC05MTU2NjY0NzksMTY2MjI4MzUzLDE5Njc3NTg1MjcsLT
-czMTM0ODk3MywxNzg5OTM5NzAzLDEzOTQ4NTg4NDUsMzIzNDU2
-ODE3LDk0NTU0MzY3OSw4Mzk5OTYyMjMsLTIwMTczMDE4MCwyMT
-I1NDMzNDk2LDQ0NTMxMTA3OCwtMTM1NjMzMTg1OSwtMTQyNzI1
-OTkwM119
+eyJoaXN0b3J5IjpbMTc2ODM3NjMxMiwtNTY1OTIzMjc0LDExNz
+cwNjA1MzIsLTIwNzMzODkyMTgsLTgyODk4MzY2OSwxODg5NDY2
+NjE5LDIwMDUzNTk0MTksLTkxNTY2NjQ3OSwxNjYyMjgzNTMsMT
+k2Nzc1ODUyNywtNzMxMzQ4OTczLDE3ODk5Mzk3MDMsMTM5NDg1
+ODg0NSwzMjM0NTY4MTcsOTQ1NTQzNjc5LDgzOTk5NjIyMywtMj
+AxNzMwMTgwLDIxMjU0MzM0OTYsNDQ1MzExMDc4LC0xMzU2MzMx
+ODU5XX0=
 -->
