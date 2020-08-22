@@ -219,7 +219,7 @@ total_loss = masked_lm_loss + next_sentence_loss
 ### 预训练流程
 预训练的目的是生成能够给下游任务使用的通用模型，因此BERT在预训练中加入两个特殊token，CLS和SEP。
 CLS加在输入序列的开头，它也参与Transformer计算。我们知道注意力计算是对所有元素以一定的权重进行加权平均，由于CLS本身不包含任何意义，因此与序列中的其他元素都不相关，因此CLS token通过注意力运算的结果是将所有元素的意思以相似的权重进行加权平局，这也就是整个序列的unbias意义。由于CLS embedding包含了这个序列的含义，因此在对序列进行分类等微调任务中会直接对CLS embedding进行分类训练。
-另一个特殊token是SEP，当输入序列中包含多个句子时，使用这个token分隔不同的句子。和CLS不同的是，SEP embedding本身不会用于微调任务，它主要用于预训练中的NSP子任务
+另一个特殊token是SEP，当输入序列中包含多个句子时，使用这个token分隔不同的句子。和CLS不同的是，SEP embedding本身不会用于微调任务，它主要用于预训练中的NSP子任务。
 >The pre-training corpus was built from BookCorpus (800M words) and English Wikipedia (2,500M words). Tokens were tokenized using 37,000 WordPiece tokens.
 To generate the pre-training sequences, the authors got random samples in batches of two (50% of the time adjacent to each other) such that the combined length of the two chosen sentences was ≤512 tokens. Once each sequence was built, 15% of its tokens were masked.
 An example of a pre-training sequence presented in the paper is:
@@ -487,11 +487,11 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [BERT author explain BERT](https://www.reddit.com/r/MachineLearning/comments/9nfqxz/r_bert_pretraining_of_deep_bidirectional/)
 [Examining BERT's raw embeddings](https://towardsdatascience.com/examining-berts-raw-embeddings-fd905cb22df7)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjU5ODc4MTU5LC0xODY1ODA3NzYxLC0xMj
-M3MjExMjA4LDE3NjgzNzYzMTIsLTU2NTkyMzI3NCwxMTc3MDYw
-NTMyLC0yMDczMzg5MjE4LC04Mjg5ODM2NjksMTg4OTQ2NjYxOS
-wyMDA1MzU5NDE5LC05MTU2NjY0NzksMTY2MjI4MzUzLDE5Njc3
-NTg1MjcsLTczMTM0ODk3MywxNzg5OTM5NzAzLDEzOTQ4NTg4ND
-UsMzIzNDU2ODE3LDk0NTU0MzY3OSw4Mzk5OTYyMjMsLTIwMTcz
-MDE4MF19
+eyJoaXN0b3J5IjpbLTYxNTI5OTIzOSw2NTk4NzgxNTksLTE4Nj
+U4MDc3NjEsLTEyMzcyMTEyMDgsMTc2ODM3NjMxMiwtNTY1OTIz
+Mjc0LDExNzcwNjA1MzIsLTIwNzMzODkyMTgsLTgyODk4MzY2OS
+wxODg5NDY2NjE5LDIwMDUzNTk0MTksLTkxNTY2NjQ3OSwxNjYy
+MjgzNTMsMTk2Nzc1ODUyNywtNzMxMzQ4OTczLDE3ODk5Mzk3MD
+MsMTM5NDg1ODg0NSwzMjM0NTY4MTcsOTQ1NTQzNjc5LDgzOTk5
+NjIyM119
 -->
