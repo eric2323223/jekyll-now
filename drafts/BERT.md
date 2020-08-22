@@ -235,8 +235,9 @@ Each training data contains Two sentences, $W_1[w_{11}, w_{12}, w_{13}, w_{14}, 
 	1.1 . 加入特殊符号CLS和SEP： [CLS] BERT is awesome. [SEP] I love BERT. [SEP]"
 	1.2.  Add masks to some words: [CLS] BERT [MASK] awesome. [SEP] I love BERT. [SEP
 	1.3.  Generate pretrain data
-		1.3.1 for MLM: {tokens:["CLS", "BERT", "MASK", "awesome", "SEP"], masked_token:{index:2, value:"is"}}
-		1.3.2 for NSP:  50% isNext, 50% isNotNext
+		1.3.1 for NSP:  50% isNext, 50% isNotNext
+		1.3.2 for MLM: {tokens:["CLS", "BERT", "MASK", "awesome", "SEP"], masked_token:{index:2, value:"is"}}
+		
 2. Embedding
 	2.1 word embedding:  wordpiece tokenization
 	2.2 positional embedding
@@ -487,11 +488,11 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [BERT author explain BERT](https://www.reddit.com/r/MachineLearning/comments/9nfqxz/r_bert_pretraining_of_deep_bidirectional/)
 [Examining BERT's raw embeddings](https://towardsdatascience.com/examining-berts-raw-embeddings-fd905cb22df7)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTIwMDUwNzMyMiw2NTk4NzgxNTksLTE4Nj
-U4MDc3NjEsLTEyMzcyMTEyMDgsMTc2ODM3NjMxMiwtNTY1OTIz
-Mjc0LDExNzcwNjA1MzIsLTIwNzMzODkyMTgsLTgyODk4MzY2OS
-wxODg5NDY2NjE5LDIwMDUzNTk0MTksLTkxNTY2NjQ3OSwxNjYy
-MjgzNTMsMTk2Nzc1ODUyNywtNzMxMzQ4OTczLDE3ODk5Mzk3MD
-MsMTM5NDg1ODg0NSwzMjM0NTY4MTcsOTQ1NTQzNjc5LDgzOTk5
-NjIyM119
+eyJoaXN0b3J5IjpbMjExMzI5OTYyMCwxMjAwNTA3MzIyLDY1OT
+g3ODE1OSwtMTg2NTgwNzc2MSwtMTIzNzIxMTIwOCwxNzY4Mzc2
+MzEyLC01NjU5MjMyNzQsMTE3NzA2MDUzMiwtMjA3MzM4OTIxOC
+wtODI4OTgzNjY5LDE4ODk0NjY2MTksMjAwNTM1OTQxOSwtOTE1
+NjY2NDc5LDE2NjIyODM1MywxOTY3NzU4NTI3LC03MzEzNDg5Nz
+MsMTc4OTkzOTcwMywxMzk0ODU4ODQ1LDMyMzQ1NjgxNyw5NDU1
+NDM2NzldfQ==
 -->
