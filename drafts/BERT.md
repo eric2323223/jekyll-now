@@ -218,7 +218,7 @@ total_loss = masked_lm_loss + next_sentence_loss
 - 
 ### 预训练流程
 预训练的目的是生成能够给下游任务使用的通用模型，因此BERT在预训练中加入两个特殊token，CLS和SEP。CLS加在输入序列的开头，它也参与Transformer计算。我们知道注意力机制的本质是对所有元素以一定的权重进行加权平均，由于CLS本身不包含任何意义，因此与序列中的其他元素都不相关，因此CLS token通过注意力运算的结果是将所有元素的意思以相似的权重进行加权平局，这也就是整个序列的unbias意义。这个embedding可用用来进行例如对序列进行分类等微调任务。
-另一个特殊token是SEP，这个token用来分隔不同的句子
+另一个特殊token是SEP，当输入序列中包含多个句子时，这个token用来分隔不同的句子
 
 
 
@@ -489,11 +489,11 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [BERT author explain BERT](https://www.reddit.com/r/MachineLearning/comments/9nfqxz/r_bert_pretraining_of_deep_bidirectional/)
 [Examining BERT's raw embeddings](https://towardsdatascience.com/examining-berts-raw-embeddings-fd905cb22df7)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEyMzcyMTEyMDgsMTc2ODM3NjMxMiwtNT
-Y1OTIzMjc0LDExNzcwNjA1MzIsLTIwNzMzODkyMTgsLTgyODk4
-MzY2OSwxODg5NDY2NjE5LDIwMDUzNTk0MTksLTkxNTY2NjQ3OS
-wxNjYyMjgzNTMsMTk2Nzc1ODUyNywtNzMxMzQ4OTczLDE3ODk5
-Mzk3MDMsMTM5NDg1ODg0NSwzMjM0NTY4MTcsOTQ1NTQzNjc5LD
-gzOTk5NjIyMywtMjAxNzMwMTgwLDIxMjU0MzM0OTYsNDQ1MzEx
-MDc4XX0=
+eyJoaXN0b3J5IjpbMTU4NTkxMzExLC0xMjM3MjExMjA4LDE3Nj
+gzNzYzMTIsLTU2NTkyMzI3NCwxMTc3MDYwNTMyLC0yMDczMzg5
+MjE4LC04Mjg5ODM2NjksMTg4OTQ2NjYxOSwyMDA1MzU5NDE5LC
+05MTU2NjY0NzksMTY2MjI4MzUzLDE5Njc3NTg1MjcsLTczMTM0
+ODk3MywxNzg5OTM5NzAzLDEzOTQ4NTg4NDUsMzIzNDU2ODE3LD
+k0NTU0MzY3OSw4Mzk5OTYyMjMsLTIwMTczMDE4MCwyMTI1NDMz
+NDk2XX0=
 -->
