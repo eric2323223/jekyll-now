@@ -217,7 +217,7 @@ total_loss = masked_lm_loss + next_sentence_loss
 - Transformer related :  dropout, layer_norm, residual
 - 
 ### 预训练流程
-预训练的目的是生成能够给下游任务使用的通用模型，因此BERT在预训练中加入两个特殊token，CLS和SEP。CLS加在输入序列的开头，它也参与Transformer计算，但由于CLS本身不包含任何意义，因此与序列中的其他元素都不相关，因此最后通过注意力运算的结果是将其他元素的意思以相似的权重进行加权平局，也就是整个序列的
+预训练的目的是生成能够给下游任务使用的通用模型，因此BERT在预训练中加入两个特殊token，CLS和SEP。CLS加在输入序列的开头，它也参与Transformer计算。我们知道注意力机制的本质是对所有元素以一定的权重进行加权平均，由于CLS本身不包含任何意义，因此与序列中的其他元素都不相关，因此最后通过注意力运算的结果是将其他元素的意思以相似的权重进行加权平局，也就是整个序列的unbias意义
 >The pre-training corpus was built from BookCorpus (800M words) and English Wikipedia (2,500M words). Tokens were tokenized using 37,000 WordPiece tokens.
 To generate the pre-training sequences, the authors got random samples in batches of two (50% of the time adjacent to each other) such that the combined length of the two chosen sentences was ≤512 tokens. Once each sequence was built, 15% of its tokens were masked.
 An example of a pre-training sequence presented in the paper is:
@@ -485,11 +485,11 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [BERT author explain BERT](https://www.reddit.com/r/MachineLearning/comments/9nfqxz/r_bert_pretraining_of_deep_bidirectional/)
 [Examining BERT's raw embeddings](https://towardsdatascience.com/examining-berts-raw-embeddings-fd905cb22df7)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTExMjc0NDg4MjQsMTc2ODM3NjMxMiwtNT
-Y1OTIzMjc0LDExNzcwNjA1MzIsLTIwNzMzODkyMTgsLTgyODk4
-MzY2OSwxODg5NDY2NjE5LDIwMDUzNTk0MTksLTkxNTY2NjQ3OS
-wxNjYyMjgzNTMsMTk2Nzc1ODUyNywtNzMxMzQ4OTczLDE3ODk5
-Mzk3MDMsMTM5NDg1ODg0NSwzMjM0NTY4MTcsOTQ1NTQzNjc5LD
-gzOTk5NjIyMywtMjAxNzMwMTgwLDIxMjU0MzM0OTYsNDQ1MzEx
-MDc4XX0=
+eyJoaXN0b3J5IjpbMTA5OTcxNzI1MiwxNzY4Mzc2MzEyLC01Nj
+U5MjMyNzQsMTE3NzA2MDUzMiwtMjA3MzM4OTIxOCwtODI4OTgz
+NjY5LDE4ODk0NjY2MTksMjAwNTM1OTQxOSwtOTE1NjY2NDc5LD
+E2NjIyODM1MywxOTY3NzU4NTI3LC03MzEzNDg5NzMsMTc4OTkz
+OTcwMywxMzk0ODU4ODQ1LDMyMzQ1NjgxNyw5NDU1NDM2NzksOD
+M5OTk2MjIzLC0yMDE3MzAxODAsMjEyNTQzMzQ5Niw0NDUzMTEw
+NzhdfQ==
 -->
