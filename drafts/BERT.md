@@ -212,7 +212,7 @@ total_loss = masked_lm_loss + next_sentence_loss
 
 ![[公式]](https://www.zhihu.com/equation?tex=L%5Cleft%28%5Ctheta%2C+%5Ctheta_%7B1%7D%2C+%5Ctheta_%7B2%7D%5Cright%29%3D-%5Csum_%7Bi%3D1%7D%5E%7BM%7D+%5Clog+p%5Cleft%28m%3Dm_%7Bi%7D+%7C+%5Ctheta%2C+%5Ctheta_%7B1%7D%5Cright%29-%5Csum_%7Bj%3D1%7D%5E%7BN%7D+%5Clog+p%5Cleft%28n%3Dn_%7Bi%7D+%7C+%5Ctheta%2C+%5Ctheta_%7B2%7D%5Cright%29)
 
-具体的预训练工程实现细节方面，BERT 还利用了一系列策略，使得模型更易于训练，除了常用的layer normalization之外，还有对于学习率的 warm-up 策略，使用的激活函数不再是普通的 ReLu，而是 GeLu，也使用了 dropout 等常见的训练技巧。
+具体的预训练工程实现细节方面，BERT 还利用了一系列策略，使得模型更易于训练，除了常用的layer normalization，dropout之外，还有对于学习率的 warm-up 策略，使用的激活函数不再是普通的 ReLu，而是 GeLu。
 ### 预训练技巧
 - Transformer related :  dropout, layer_norm, residual
 - 
@@ -484,11 +484,11 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [BERT author explain BERT](https://www.reddit.com/r/MachineLearning/comments/9nfqxz/r_bert_pretraining_of_deep_bidirectional/)
 [Examining BERT's raw embeddings](https://towardsdatascience.com/examining-berts-raw-embeddings-fd905cb22df7)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQ3NDgzNDI5NiwxNzY4Mzc2MzEyLC01Nj
-U5MjMyNzQsMTE3NzA2MDUzMiwtMjA3MzM4OTIxOCwtODI4OTgz
-NjY5LDE4ODk0NjY2MTksMjAwNTM1OTQxOSwtOTE1NjY2NDc5LD
-E2NjIyODM1MywxOTY3NzU4NTI3LC03MzEzNDg5NzMsMTc4OTkz
-OTcwMywxMzk0ODU4ODQ1LDMyMzQ1NjgxNyw5NDU1NDM2NzksOD
-M5OTk2MjIzLC0yMDE3MzAxODAsMjEyNTQzMzQ5Niw0NDUzMTEw
-NzhdfQ==
+eyJoaXN0b3J5IjpbLTEyNzM3OTUwMDcsMTc2ODM3NjMxMiwtNT
+Y1OTIzMjc0LDExNzcwNjA1MzIsLTIwNzMzODkyMTgsLTgyODk4
+MzY2OSwxODg5NDY2NjE5LDIwMDUzNTk0MTksLTkxNTY2NjQ3OS
+wxNjYyMjgzNTMsMTk2Nzc1ODUyNywtNzMxMzQ4OTczLDE3ODk5
+Mzk3MDMsMTM5NDg1ODg0NSwzMjM0NTY4MTcsOTQ1NTQzNjc5LD
+gzOTk5NjIyMywtMjAxNzMwMTgwLDIxMjU0MzM0OTYsNDQ1MzEx
+MDc4XX0=
 -->
