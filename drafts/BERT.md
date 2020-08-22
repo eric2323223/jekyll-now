@@ -245,6 +245,7 @@ Each training data contains Two sentences, $W_1[w_{11}, w_{12}, w_{13}, w_{14}, 
 3. Transformer编码: 
 4. 预测
 5. 计算loss，更新weights
+	loss = mlm loss + nsp loss
 
 
 ## BERT的微调fine tune
@@ -488,7 +489,7 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [BERT author explain BERT](https://www.reddit.com/r/MachineLearning/comments/9nfqxz/r_bert_pretraining_of_deep_bidirectional/)
 [Examining BERT's raw embeddings](https://towardsdatascience.com/examining-berts-raw-embeddings-fd905cb22df7)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzU3NDk1ODkyLDIxMTMyOTk2MjAsMTIwMD
+eyJoaXN0b3J5IjpbLTk0NzcwNTc0LDIxMTMyOTk2MjAsMTIwMD
 UwNzMyMiw2NTk4NzgxNTksLTE4NjU4MDc3NjEsLTEyMzcyMTEy
 MDgsMTc2ODM3NjMxMiwtNTY1OTIzMjc0LDExNzcwNjA1MzIsLT
 IwNzMzODkyMTgsLTgyODk4MzY2OSwxODg5NDY2NjE5LDIwMDUz
