@@ -304,6 +304,10 @@ Each training data contains Two sentences, $W_1[w_{11}, w_{12}, w_{13}, w_{14}, 
 在输入
 
 - 训练数据
+	- question
+	- reference
+	- answer_start_pos
+	- answer
 - 
 Use classification head for each token
 can deal with looooong senquence？（>512）: 
@@ -502,11 +506,11 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [BERT author explain BERT](https://www.reddit.com/r/MachineLearning/comments/9nfqxz/r_bert_pretraining_of_deep_bidirectional/)
 [Examining BERT's raw embeddings](https://towardsdatascience.com/examining-berts-raw-embeddings-fd905cb22df7)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwNjg3MTM3NDQsLTU3MTMyODMwNiwtMj
-E1OTE4OTkwLC0xOTc0MjY1NTI1LDIxMTMyOTk2MjAsMTIwMDUw
-NzMyMiw2NTk4NzgxNTksLTE4NjU4MDc3NjEsLTEyMzcyMTEyMD
-gsMTc2ODM3NjMxMiwtNTY1OTIzMjc0LDExNzcwNjA1MzIsLTIw
-NzMzODkyMTgsLTgyODk4MzY2OSwxODg5NDY2NjE5LDIwMDUzNT
-k0MTksLTkxNTY2NjQ3OSwxNjYyMjgzNTMsMTk2Nzc1ODUyNywt
-NzMxMzQ4OTczXX0=
+eyJoaXN0b3J5IjpbLTUxNzE5MzM4NywtMjA2ODcxMzc0NCwtNT
+cxMzI4MzA2LC0yMTU5MTg5OTAsLTE5NzQyNjU1MjUsMjExMzI5
+OTYyMCwxMjAwNTA3MzIyLDY1OTg3ODE1OSwtMTg2NTgwNzc2MS
+wtMTIzNzIxMTIwOCwxNzY4Mzc2MzEyLC01NjU5MjMyNzQsMTE3
+NzA2MDUzMiwtMjA3MzM4OTIxOCwtODI4OTgzNjY5LDE4ODk0Nj
+Y2MTksMjAwNTM1OTQxOSwtOTE1NjY2NDc5LDE2NjIyODM1Mywx
+OTY3NzU4NTI3XX0=
 -->
