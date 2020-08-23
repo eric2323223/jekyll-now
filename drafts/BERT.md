@@ -261,7 +261,7 @@ Each training data contains Two sentences, $W_1[w_{11}, w_{12}, w_{13}, w_{14}, 
 ### 语义分析
 这种类型的任务对输入（一句话）进行语义分析。输入一句话，预测这句话的分类，如分析一条购买评价的语义是肯定的还是否定的。
 - 训练数据
-	- xu
+	- x={}, y=
 - Make use of the CLS token
 - 微调层结构：分类器（全连接+softmax）[https://github.com/huggingface/transformers/blob/c67d1a0259cbb3aef31952b4f37d4fee0e36f134/src/transformers/modeling_bert.py#L1234-L1241](https://github.com/huggingface/transformers/blob/c67d1a0259cbb3aef31952b4f37d4fee0e36f134/src/transformers/modeling_bert.py#L1234-L1241)
 
@@ -498,7 +498,7 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [BERT author explain BERT](https://www.reddit.com/r/MachineLearning/comments/9nfqxz/r_bert_pretraining_of_deep_bidirectional/)
 [Examining BERT's raw embeddings](https://towardsdatascience.com/examining-berts-raw-embeddings-fd905cb22df7)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTExOTk0NTI0NjgsLTU3MTMyODMwNiwtMj
+eyJoaXN0b3J5IjpbLTE3MTAxMDM2MDIsLTU3MTMyODMwNiwtMj
 E1OTE4OTkwLC0xOTc0MjY1NTI1LDIxMTMyOTk2MjAsMTIwMDUw
 NzMyMiw2NTk4NzgxNTksLTE4NjU4MDc3NjEsLTEyMzcyMTEyMD
 gsMTc2ODM3NjMxMiwtNTY1OTIzMjc0LDExNzcwNjA1MzIsLTIw
