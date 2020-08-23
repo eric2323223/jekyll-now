@@ -261,7 +261,7 @@ Each training data contains Two sentences, $W_1[w_{11}, w_{12}, w_{13}, w_{14}, 
 ### 语义分析
 这种类型的任务对输入（一句话）进行语义分析。输入一句话，预测这句话的分类，如分析一条购买评价的语义是肯定的还是否定的。
 - 训练数据
-	- $x={x_1, x_2, x_3}, y=label$
+	- $x={x_1, x_2, x_3, ... , x_n}, y=label$
 - Make use of the CLS token
 - 微调层结构：分类器（全连接+softmax）[https://github.com/huggingface/transformers/blob/c67d1a0259cbb3aef31952b4f37d4fee0e36f134/src/transformers/modeling_bert.py#L1234-L1241](https://github.com/huggingface/transformers/blob/c67d1a0259cbb3aef31952b4f37d4fee0e36f134/src/transformers/modeling_bert.py#L1234-L1241)
 
@@ -301,6 +301,7 @@ Each training data contains Two sentences, $W_1[w_{11}, w_{12}, w_{13}, w_{14}, 
 利用BERT模型解决多标签分类问题时，其输入与普通单标签分类问题一致，得到其embedding表示之后(也就是BERT输出层的embedding)，有几个label就连接到几个全连接层(也可以称为projection layer)，然后再分别接上softmax分类层，这样的话会得到​  ![[公式]](https://www.zhihu.com/equation?tex=loss_1%2C%5C+loss_2%2C%5C+%5Ccdots%2C%5C+loss_n)  ，最后再将所有的loss相加起来即可。这种做法就相当于将n个分类模型的特征提取层参数共享，得到一个共享的表示(其维度可以视任务而定，由于是多标签分类任务，因此其维度可以适当增大一些)，最后再做多标签分类任务。~~
 
 ### 限定上下文问答 SQuAD
+在输入
 Use classification head for each token
 can deal with looooong senquence？（>512）: 
 [https://github.com/google-research/bert/issues/66](https://github.com/google-research/bert/issues/66)
@@ -498,11 +499,11 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [BERT author explain BERT](https://www.reddit.com/r/MachineLearning/comments/9nfqxz/r_bert_pretraining_of_deep_bidirectional/)
 [Examining BERT's raw embeddings](https://towardsdatascience.com/examining-berts-raw-embeddings-fd905cb22df7)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE3MjkwMjgyMSwtNTcxMzI4MzA2LC0yMT
-U5MTg5OTAsLTE5NzQyNjU1MjUsMjExMzI5OTYyMCwxMjAwNTA3
-MzIyLDY1OTg3ODE1OSwtMTg2NTgwNzc2MSwtMTIzNzIxMTIwOC
-wxNzY4Mzc2MzEyLC01NjU5MjMyNzQsMTE3NzA2MDUzMiwtMjA3
-MzM4OTIxOCwtODI4OTgzNjY5LDE4ODk0NjY2MTksMjAwNTM1OT
-QxOSwtOTE1NjY2NDc5LDE2NjIyODM1MywxOTY3NzU4NTI3LC03
-MzEzNDg5NzNdfQ==
+eyJoaXN0b3J5IjpbLTE4MDQ4OTY0ODAsLTU3MTMyODMwNiwtMj
+E1OTE4OTkwLC0xOTc0MjY1NTI1LDIxMTMyOTk2MjAsMTIwMDUw
+NzMyMiw2NTk4NzgxNTksLTE4NjU4MDc3NjEsLTEyMzcyMTEyMD
+gsMTc2ODM3NjMxMiwtNTY1OTIzMjc0LDExNzcwNjA1MzIsLTIw
+NzMzODkyMTgsLTgyODk4MzY2OSwxODg5NDY2NjE5LDIwMDUzNT
+k0MTksLTkxNTY2NjQ3OSwxNjYyMjgzNTMsMTk2Nzc1ODUyNywt
+NzMxMzQ4OTczXX0=
 -->
