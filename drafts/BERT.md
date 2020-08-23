@@ -309,7 +309,8 @@ Each training data contains Two sentences, $W_1[w_{11}, w_{12}, w_{13}, w_{14}, 
 	- answer_start_pos
 	- answer_end_pos
 - 训练流程
-	- question 【SEP
+	- question + [SEP] + reference
+	- 
 Use classification head for each token
 can deal with looooong senquence？（>512）: 
 [https://github.com/google-research/bert/issues/66](https://github.com/google-research/bert/issues/66)
@@ -507,11 +508,11 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [BERT author explain BERT](https://www.reddit.com/r/MachineLearning/comments/9nfqxz/r_bert_pretraining_of_deep_bidirectional/)
 [Examining BERT's raw embeddings](https://towardsdatascience.com/examining-berts-raw-embeddings-fd905cb22df7)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE4MjAzNTY3MywtMjA2ODcxMzc0NCwtNT
-cxMzI4MzA2LC0yMTU5MTg5OTAsLTE5NzQyNjU1MjUsMjExMzI5
-OTYyMCwxMjAwNTA3MzIyLDY1OTg3ODE1OSwtMTg2NTgwNzc2MS
-wtMTIzNzIxMTIwOCwxNzY4Mzc2MzEyLC01NjU5MjMyNzQsMTE3
-NzA2MDUzMiwtMjA3MzM4OTIxOCwtODI4OTgzNjY5LDE4ODk0Nj
-Y2MTksMjAwNTM1OTQxOSwtOTE1NjY2NDc5LDE2NjIyODM1Mywx
-OTY3NzU4NTI3XX0=
+eyJoaXN0b3J5IjpbLTc0NjgwNjMsLTIwNjg3MTM3NDQsLTU3MT
+MyODMwNiwtMjE1OTE4OTkwLC0xOTc0MjY1NTI1LDIxMTMyOTk2
+MjAsMTIwMDUwNzMyMiw2NTk4NzgxNTksLTE4NjU4MDc3NjEsLT
+EyMzcyMTEyMDgsMTc2ODM3NjMxMiwtNTY1OTIzMjc0LDExNzcw
+NjA1MzIsLTIwNzMzODkyMTgsLTgyODk4MzY2OSwxODg5NDY2Nj
+E5LDIwMDUzNTk0MTksLTkxNTY2NjQ3OSwxNjYyMjgzNTMsMTk2
+Nzc1ODUyN119
 -->
