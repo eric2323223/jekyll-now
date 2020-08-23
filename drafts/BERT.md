@@ -308,14 +308,14 @@ how to get the context vector?
 remember BERT does not include decoder?
 - Bert use transformer as encoder, there is no decoder in BERT
 - 
+
+
 ### 微调技巧
 1. 调整参数（内存），模型选择
 2.  **长文本处理**
 [https://zhuanlan.zhihu.com/p/109143667](https://zhuanlan.zhihu.com/p/109143667)
 	对于长文本文中做了两种处理方式，截断和切分。
-
 	-   截断：一般来说文本中最重要的信息是开始和结尾，因此文中对于长文本做了截断处理。
-
 	> head-only：保留前510个字符  
 	> tail-only：保留后510个字符  
 	> head+tail：保留前128个和后382个字符
@@ -489,7 +489,7 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [BERT author explain BERT](https://www.reddit.com/r/MachineLearning/comments/9nfqxz/r_bert_pretraining_of_deep_bidirectional/)
 [Examining BERT's raw embeddings](https://towardsdatascience.com/examining-berts-raw-embeddings-fd905cb22df7)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTU4ODUyOTQzMCwtMjE1OTE4OTkwLC0xOT
+eyJoaXN0b3J5IjpbLTU3MTMyODMwNiwtMjE1OTE4OTkwLC0xOT
 c0MjY1NTI1LDIxMTMyOTk2MjAsMTIwMDUwNzMyMiw2NTk4Nzgx
 NTksLTE4NjU4MDc3NjEsLTEyMzcyMTEyMDgsMTc2ODM3NjMxMi
 wtNTY1OTIzMjc0LDExNzcwNjA1MzIsLTIwNzMzODkyMTgsLTgy
