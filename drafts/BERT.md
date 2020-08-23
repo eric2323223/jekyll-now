@@ -310,6 +310,8 @@ remember BERT does not include decoder?
 - 
 
 
+
+
 ### 微调技巧
 1. 调整参数（内存），模型选择
 2.  **长文本处理**
@@ -489,11 +491,11 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [BERT author explain BERT](https://www.reddit.com/r/MachineLearning/comments/9nfqxz/r_bert_pretraining_of_deep_bidirectional/)
 [Examining BERT's raw embeddings](https://towardsdatascience.com/examining-berts-raw-embeddings-fd905cb22df7)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTU3MTMyODMwNiwtMjE1OTE4OTkwLC0xOT
-c0MjY1NTI1LDIxMTMyOTk2MjAsMTIwMDUwNzMyMiw2NTk4Nzgx
-NTksLTE4NjU4MDc3NjEsLTEyMzcyMTEyMDgsMTc2ODM3NjMxMi
-wtNTY1OTIzMjc0LDExNzcwNjA1MzIsLTIwNzMzODkyMTgsLTgy
-ODk4MzY2OSwxODg5NDY2NjE5LDIwMDUzNTk0MTksLTkxNTY2Nj
-Q3OSwxNjYyMjgzNTMsMTk2Nzc1ODUyNywtNzMxMzQ4OTczLDE3
-ODk5Mzk3MDNdfQ==
+eyJoaXN0b3J5IjpbMTU2NjAyMjM4NiwtNTcxMzI4MzA2LC0yMT
+U5MTg5OTAsLTE5NzQyNjU1MjUsMjExMzI5OTYyMCwxMjAwNTA3
+MzIyLDY1OTg3ODE1OSwtMTg2NTgwNzc2MSwtMTIzNzIxMTIwOC
+wxNzY4Mzc2MzEyLC01NjU5MjMyNzQsMTE3NzA2MDUzMiwtMjA3
+MzM4OTIxOCwtODI4OTgzNjY5LDE4ODk0NjY2MTksMjAwNTM1OT
+QxOSwtOTE1NjY2NDc5LDE2NjIyODM1MywxOTY3NzU4NTI3LC03
+MzEzNDg5NzNdfQ==
 -->
