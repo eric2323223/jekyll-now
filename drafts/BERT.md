@@ -304,10 +304,17 @@ can deal with looooong senquence？（>512）:
 [https://github.com/google-research/bert/issues/66](https://github.com/google-research/bert/issues/66)
 how to get the context vector?
 
-### **7.4 文本生成？NO!**
+- **文本生成？NO!**
 remember BERT does not include decoder?
 - Bert use transformer as encoder, there is no decoder in BERT
 - 
+
+## 总结
+
+BERT的核心思想是使用Transformer来进行深度双向上下文的语义分析，但是Transformer是一把双刃剑，它一方面提供了强大深度双向处理能力，而一方面也使传统的语言模型LM训练方法收到了影响。  由于深度双向会导致。。而无法使用LM进行训练，作者利用了MLM并设计了相应的预处理来解决预训练和微调训练的冲突。。。
+BERT给我们的启示是
+
+
 
 
 
@@ -349,10 +356,8 @@ remember BERT does not include decoder?
 ### DistilBERT
 ### SQUAD
 
-## 总结
 
-BERT的核心思想是使用Transformer来进行深度双向上下文的语义分析，但是Transformer是一把双刃剑，它一方面提供了强大深度双向处理能力，而一方面也使传统的语言模型LM训练方法收到了影响。  由于深度双向会导致。。而无法使用LM进行训练，作者利用了MLM并设计了相应的预处理来解决预训练和微调训练的冲突。。。
-BERT给我们的启示是
+
 
 
 
@@ -491,7 +496,7 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [BERT author explain BERT](https://www.reddit.com/r/MachineLearning/comments/9nfqxz/r_bert_pretraining_of_deep_bidirectional/)
 [Examining BERT's raw embeddings](https://towardsdatascience.com/examining-berts-raw-embeddings-fd905cb22df7)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTU2NjAyMjM4NiwtNTcxMzI4MzA2LC0yMT
+eyJoaXN0b3J5IjpbLTU5ODcxMjgwNywtNTcxMzI4MzA2LC0yMT
 U5MTg5OTAsLTE5NzQyNjU1MjUsMjExMzI5OTYyMCwxMjAwNTA3
 MzIyLDY1OTg3ODE1OSwtMTg2NTgwNzc2MSwtMTIzNzIxMTIwOC
 wxNzY4Mzc2MzEyLC01NjU5MjMyNzQsMTE3NzA2MDUzMiwtMjA3
