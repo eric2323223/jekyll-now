@@ -239,9 +239,9 @@ Each training data contains Two sentences, $W_1[w_{11}, w_{12}, w_{13}, w_{14}, 
 		1.3.2 for MLM: {tokens:["CLS", "BERT", "MASK", "awesome", "SEP"], masked_token:{index:2, value:"is"}}
 		
 2. Embedding
-	2.1 word embedding:  wordpiece tokenization (shape)
-	2.2 positional embedding (shape)
-	2.3 segment embedding (shape)
+	2.1 word embedding:  wordpiece tokenization (shape=(vocab_size*hidden_size))
+	2.2 positional embedding (shape=(max_position * hidden_size))
+	2.3 segment embedding (shape=(segment_size * hidden_size)
 3. Transformer编码: 
 4. 预测
 5. 计算loss(mlm loss + nsp loss)，更新weights
@@ -488,11 +488,11 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [BERT author explain BERT](https://www.reddit.com/r/MachineLearning/comments/9nfqxz/r_bert_pretraining_of_deep_bidirectional/)
 [Examining BERT's raw embeddings](https://towardsdatascience.com/examining-berts-raw-embeddings-fd905cb22df7)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE5NzQyNjU1MjUsMjExMzI5OTYyMCwxMj
-AwNTA3MzIyLDY1OTg3ODE1OSwtMTg2NTgwNzc2MSwtMTIzNzIx
-MTIwOCwxNzY4Mzc2MzEyLC01NjU5MjMyNzQsMTE3NzA2MDUzMi
-wtMjA3MzM4OTIxOCwtODI4OTgzNjY5LDE4ODk0NjY2MTksMjAw
-NTM1OTQxOSwtOTE1NjY2NDc5LDE2NjIyODM1MywxOTY3NzU4NT
-I3LC03MzEzNDg5NzMsMTc4OTkzOTcwMywxMzk0ODU4ODQ1LDMy
-MzQ1NjgxN119
+eyJoaXN0b3J5IjpbNDQ1MTc5MDU0LC0xOTc0MjY1NTI1LDIxMT
+MyOTk2MjAsMTIwMDUwNzMyMiw2NTk4NzgxNTksLTE4NjU4MDc3
+NjEsLTEyMzcyMTEyMDgsMTc2ODM3NjMxMiwtNTY1OTIzMjc0LD
+ExNzcwNjA1MzIsLTIwNzMzODkyMTgsLTgyODk4MzY2OSwxODg5
+NDY2NjE5LDIwMDUzNTk0MTksLTkxNTY2NjQ3OSwxNjYyMjgzNT
+MsMTk2Nzc1ODUyNywtNzMxMzQ4OTczLDE3ODk5Mzk3MDMsMTM5
+NDg1ODg0NV19
 -->
