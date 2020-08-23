@@ -293,13 +293,11 @@ Make use of the CLS token
   实际操作时，上述最后一句话之后还会加一个[SEP] token，语义相似度任务将两个句子按照上述方式输入即可，之后与论文中的分类任务一样，将[CLS] token位置对应的输出，接上softmax做分类即可(实际上GLUE任务中就有很多语义相似度的数据集)。
   微调层：~~
 
-### 多标签分类 NER
-
+~~### 多标签分类 NER
 多标签分类任务，即MultiLabel，指的是一个样本可能同时属于多个类，即有多个标签。以商品为例，一件L尺寸的棉服，则该样本就有至少两个标签——型号：L，类型：冬装。
-
 对于多标签分类任务，显而易见的朴素做法就是不管样本属于几个类，就给它训练几个分类模型即可，然后再一一判断在该类别中，其属于那个子类别，但是这样做未免太暴力了，而多标签分类任务，其实是可以**只用一个模型**来解决的。
+利用BERT模型解决多标签分类问题时，其输入与普通单标签分类问题一致，得到其embedding表示之后(也就是BERT输出层的embedding)，有几个label就连接到几个全连接层(也可以称为projection layer)，然后再分别接上softmax分类层，这样的话会得到​  ![[公式]](https://www.zhihu.com/equation?tex=loss_1%2C%5C+loss_2%2C%5C+%5Ccdots%2C%5C+loss_n)  ，最后再将所有的loss相加起来即可。这种做法就相当于将n个分类模型的特征提取层参数共享，得到一个共享的表示(其维度可以视任务而定，由于是多标签分类任务，因此其维度可以适当增大一些)，最后再做多标签分类任务。~~
 
-利用BERT模型解决多标签分类问题时，其输入与普通单标签分类问题一致，得到其embedding表示之后(也就是BERT输出层的embedding)，有几个label就连接到几个全连接层(也可以称为projection layer)，然后再分别接上softmax分类层，这样的话会得到​  ![[公式]](https://www.zhihu.com/equation?tex=loss_1%2C%5C+loss_2%2C%5C+%5Ccdots%2C%5C+loss_n)  ，最后再将所有的loss相加起来即可。这种做法就相当于将n个分类模型的特征提取层参数共享，得到一个共享的表示(其维度可以视任务而定，由于是多标签分类任务，因此其维度可以适当增大一些)，最后再做多标签分类任务。
 ### 限定上下文问答 SQuAD
 Use classification head for each token
 can deal with looooong senquence？（>512）: 
@@ -491,11 +489,11 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [BERT author explain BERT](https://www.reddit.com/r/MachineLearning/comments/9nfqxz/r_bert_pretraining_of_deep_bidirectional/)
 [Examining BERT's raw embeddings](https://towardsdatascience.com/examining-berts-raw-embeddings-fd905cb22df7)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIxNTkxODk5MCwtMTk3NDI2NTUyNSwyMT
-EzMjk5NjIwLDEyMDA1MDczMjIsNjU5ODc4MTU5LC0xODY1ODA3
-NzYxLC0xMjM3MjExMjA4LDE3NjgzNzYzMTIsLTU2NTkyMzI3NC
-wxMTc3MDYwNTMyLC0yMDczMzg5MjE4LC04Mjg5ODM2NjksMTg4
-OTQ2NjYxOSwyMDA1MzU5NDE5LC05MTU2NjY0NzksMTY2MjI4Mz
-UzLDE5Njc3NTg1MjcsLTczMTM0ODk3MywxNzg5OTM5NzAzLDEz
-OTQ4NTg4NDVdfQ==
+eyJoaXN0b3J5IjpbLTU4ODUyOTQzMCwtMjE1OTE4OTkwLC0xOT
+c0MjY1NTI1LDIxMTMyOTk2MjAsMTIwMDUwNzMyMiw2NTk4Nzgx
+NTksLTE4NjU4MDc3NjEsLTEyMzcyMTEyMDgsMTc2ODM3NjMxMi
+wtNTY1OTIzMjc0LDExNzcwNjA1MzIsLTIwNzMzODkyMTgsLTgy
+ODk4MzY2OSwxODg5NDY2NjE5LDIwMDUzNTk0MTksLTkxNTY2Nj
+Q3OSwxNjYyMjgzNTMsMTk2Nzc1ODUyNywtNzMxMzQ4OTczLDE3
+ODk5Mzk3MDNdfQ==
 -->
