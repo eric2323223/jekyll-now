@@ -240,9 +240,9 @@ Each training data contains Two sentences, $W_1[w_{11}, w_{12}, w_{13}, w_{14}, 
 		
 2. Embedding
 	2.1 word embedding(WE):  wordpiece tokenization (shape=(vocab_size * hidden_size))
-	2.2 positional embedding (shape=(max_position * hidden_size))
-	2.3 segment embedding (shape=(segment_size * hidden_size))
-	Bert embeddings = word
+	2.2 positional embedding(PE): (shape=(max_position * hidden_size))
+	2.3 segment embedding(SE): (shape=(segment_size * hidden_size))
+	Bert embeddings = WE + PE + SE
 3. Transformer编码: 
 4. 预测
 5. 计算loss(mlm loss + nsp loss)，更新weights
@@ -489,7 +489,7 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [BERT author explain BERT](https://www.reddit.com/r/MachineLearning/comments/9nfqxz/r_bert_pretraining_of_deep_bidirectional/)
 [Examining BERT's raw embeddings](https://towardsdatascience.com/examining-berts-raw-embeddings-fd905cb22df7)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNDMyMDE1NzY2LC0xOTc0MjY1NTI1LDIxMT
+eyJoaXN0b3J5IjpbMjIyOTM3NTI4LC0xOTc0MjY1NTI1LDIxMT
 MyOTk2MjAsMTIwMDUwNzMyMiw2NTk4NzgxNTksLTE4NjU4MDc3
 NjEsLTEyMzcyMTEyMDgsMTc2ODM3NjMxMiwtNTY1OTIzMjc0LD
 ExNzcwNjA1MzIsLTIwNzMzODkyMTgsLTgyODk4MzY2OSwxODg5
