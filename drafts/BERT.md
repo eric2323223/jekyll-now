@@ -302,7 +302,7 @@ Each training data contains Two sentences, $W_1[w_{11}, w_{12}, w_{13}, w_{14}, 
 
 ### 限定上下文问答 SQuAD
 在输入
-- 预测answer span，
+- 预测answer span(start pos, end pos)
 - 训练数据
 	- question
 	- reference
@@ -508,11 +508,11 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [BERT author explain BERT](https://www.reddit.com/r/MachineLearning/comments/9nfqxz/r_bert_pretraining_of_deep_bidirectional/)
 [Examining BERT's raw embeddings](https://towardsdatascience.com/examining-berts-raw-embeddings-fd905cb22df7)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE3MjE1MTA0MjUsLTc0NjgwNjMsLTIwNj
-g3MTM3NDQsLTU3MTMyODMwNiwtMjE1OTE4OTkwLC0xOTc0MjY1
-NTI1LDIxMTMyOTk2MjAsMTIwMDUwNzMyMiw2NTk4NzgxNTksLT
-E4NjU4MDc3NjEsLTEyMzcyMTEyMDgsMTc2ODM3NjMxMiwtNTY1
-OTIzMjc0LDExNzcwNjA1MzIsLTIwNzMzODkyMTgsLTgyODk4Mz
-Y2OSwxODg5NDY2NjE5LDIwMDUzNTk0MTksLTkxNTY2NjQ3OSwx
-NjYyMjgzNTNdfQ==
+eyJoaXN0b3J5IjpbLTM4ODAzMTIxMSwtNzQ2ODA2MywtMjA2OD
+cxMzc0NCwtNTcxMzI4MzA2LC0yMTU5MTg5OTAsLTE5NzQyNjU1
+MjUsMjExMzI5OTYyMCwxMjAwNTA3MzIyLDY1OTg3ODE1OSwtMT
+g2NTgwNzc2MSwtMTIzNzIxMTIwOCwxNzY4Mzc2MzEyLC01NjU5
+MjMyNzQsMTE3NzA2MDUzMiwtMjA3MzM4OTIxOCwtODI4OTgzNj
+Y5LDE4ODk0NjY2MTksMjAwNTM1OTQxOSwtOTE1NjY2NDc5LDE2
+NjIyODM1M119
 -->
