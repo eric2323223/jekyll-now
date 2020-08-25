@@ -194,7 +194,7 @@ Yes, the model does converge more slowly but the increased steps in converging a
 The authors pre-trained their model in  _Next Sentence Prediction_  because they thought important that the model knew how to relate two different sentences to perform downstream tasks like question answering or natural language inference and the “masked language model” did not capture this knowledge. They prove that pre-training with this second task notably increases performance in both question answering and natural language inference.
 _What percentage of sentences where actually next sentences?_
 50% of the sentences were paired with actual adjacent sentences in the corpus and 50% of them were paired with sentences picked randomly from the corpus.
-### 预训练=BERT
+### 预训练=BERT + MSM，NSP head
 ### 损失函数
 total_loss = masked_lm_loss + next_sentence_loss
 与任务相对应，BERT的损失函数由两部分组成，第一部分是来自 Mask-LM 的**单词级别分类任务**，另一部分是**句子级别的分类任务**。通过这两个任务的联合学习，可以使得 BERT 学习到的表征既有 token 级别信息，同时也包含了句子级别的语义信息。具体损失函数如下：
@@ -509,7 +509,7 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [BERT author explain BERT](https://www.reddit.com/r/MachineLearning/comments/9nfqxz/r_bert_pretraining_of_deep_bidirectional/)
 [Examining BERT's raw embeddings](https://towardsdatascience.com/examining-berts-raw-embeddings-fd905cb22df7)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODcwODQyMjYsLTEwODcxMjEzNTEsLTM4OD
+eyJoaXN0b3J5IjpbOTU1MjEzMzcsLTEwODcxMjEzNTEsLTM4OD
 AzMTIxMSwtNzQ2ODA2MywtMjA2ODcxMzc0NCwtNTcxMzI4MzA2
 LC0yMTU5MTg5OTAsLTE5NzQyNjU1MjUsMjExMzI5OTYyMCwxMj
 AwNTA3MzIyLDY1OTg3ODE1OSwtMTg2NTgwNzc2MSwtMTIzNzIx
