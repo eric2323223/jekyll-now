@@ -151,7 +151,6 @@ Transformer由编码器和解码器组成，编码器负责将输入序列中的
 - BooksCorpus (800M words)
 - EnglishWikipedia (2.5B words)
 
-
 ### 任务设计
 BERT的预训练被设计为多任务学习（multi-task learning），包含两个任务：一个是 Masked Language Model，另一个是 Next Sentence Prediction。这种设计的原因是由于BERT使用的注意力机制有全局的视野，能够一次同时访问序列的所有元素，因此无法使用传统的语言模型那种一步一看的训练方式。**前者用于建模更广泛的上下文，通过 mask 来强制模型给每个词记住更多的上下文信息；后者用来建模多个句子之间的关系，**
 ![enter image description here](https://www.researchgate.net/profile/Jan_Christian_Blaise_Cruz/publication/334160936/figure/fig1/AS:776030256111617@1562031439583/Overall-BERT-pretraining-and-finetuning-framework-Note-that-the-same-architecture-in.ppm)
@@ -195,7 +194,7 @@ Yes, the model does converge more slowly but the increased steps in converging a
 The authors pre-trained their model in  _Next Sentence Prediction_  because they thought important that the model knew how to relate two different sentences to perform downstream tasks like question answering or natural language inference and the “masked language model” did not capture this knowledge. They prove that pre-training with this second task notably increases performance in both question answering and natural language inference.
 _What percentage of sentences where actually next sentences?_
 50% of the sentences were paired with actual adjacent sentences in the corpus and 50% of them were paired with sentences picked randomly from the corpus.
-
+### 预训练=BERT
 ### 损失函数
 total_loss = masked_lm_loss + next_sentence_loss
 与任务相对应，BERT的损失函数由两部分组成，第一部分是来自 Mask-LM 的**单词级别分类任务**，另一部分是**句子级别的分类任务**。通过这两个任务的联合学习，可以使得 BERT 学习到的表征既有 token 级别信息，同时也包含了句子级别的语义信息。具体损失函数如下：
@@ -510,11 +509,11 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [BERT author explain BERT](https://www.reddit.com/r/MachineLearning/comments/9nfqxz/r_bert_pretraining_of_deep_bidirectional/)
 [Examining BERT's raw embeddings](https://towardsdatascience.com/examining-berts-raw-embeddings-fd905cb22df7)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEwODcxMjEzNTEsLTM4ODAzMTIxMSwtNz
-Q2ODA2MywtMjA2ODcxMzc0NCwtNTcxMzI4MzA2LC0yMTU5MTg5
-OTAsLTE5NzQyNjU1MjUsMjExMzI5OTYyMCwxMjAwNTA3MzIyLD
-Y1OTg3ODE1OSwtMTg2NTgwNzc2MSwtMTIzNzIxMTIwOCwxNzY4
-Mzc2MzEyLC01NjU5MjMyNzQsMTE3NzA2MDUzMiwtMjA3MzM4OT
-IxOCwtODI4OTgzNjY5LDE4ODk0NjY2MTksMjAwNTM1OTQxOSwt
-OTE1NjY2NDc5XX0=
+eyJoaXN0b3J5IjpbODcwODQyMjYsLTEwODcxMjEzNTEsLTM4OD
+AzMTIxMSwtNzQ2ODA2MywtMjA2ODcxMzc0NCwtNTcxMzI4MzA2
+LC0yMTU5MTg5OTAsLTE5NzQyNjU1MjUsMjExMzI5OTYyMCwxMj
+AwNTA3MzIyLDY1OTg3ODE1OSwtMTg2NTgwNzc2MSwtMTIzNzIx
+MTIwOCwxNzY4Mzc2MzEyLC01NjU5MjMyNzQsMTE3NzA2MDUzMi
+wtMjA3MzM4OTIxOCwtODI4OTgzNjY5LDE4ODk0NjY2MTksMjAw
+NTM1OTQxOV19
 -->
