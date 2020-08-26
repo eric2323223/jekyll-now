@@ -154,7 +154,7 @@ Transformer由编码器和解码器组成，编码器负责将输入序列中的
 ### 任务设计
 BERT的预训练被设计为多任务学习（multi-task learning），包含两个任务：一个是 Masked Language Model，另一个是 Next Sentence Prediction。这种设计的原因是由于BERT使用的注意力机制有全局的视野，能够一次同时访问序列的所有元素，因此无法使用传统的语言模型那种一步一看的训练方式。**前者用于建模更广泛的上下文，通过 mask 来强制模型给每个词记住更多的上下文信息；后者用来建模多个句子之间的关系，**
 ![enter image description here](https://www.researchgate.net/profile/Jan_Christian_Blaise_Cruz/publication/334160936/figure/fig1/AS:776030256111617@1562031439583/Overall-BERT-pretraining-and-finetuning-framework-Note-that-the-same-architecture-in.ppm)
-- Masked Language Model  - MLM
+#### Masked Language Model  - MLM
 注意力机制的使用使得BERT模型能够同时“看到”所有的序列元素，因此无法使用传统语言模型通过预测下一个元素的方式来进行训练。因此BERT使用了预测随机遮罩元素的方式，即masked language model。这种MLM训练的思路类似于填词游戏，通过上下文的信息来判断模型被隐藏的词，（如果mask太多，会丢失context，如果mask太少，训练太慢）
 [https://towardsdatascience.com/bert-explained-state-of-the-art-language-model-for-nlp-f8b21a9b6270](https://towardsdatascience.com/bert-explained-state-of-the-art-language-model-for-nlp-f8b21a9b6270)
 BERT的具体做法是给定一个句子，随机Mask 15%的词（即用[Mask]来替换原来的词），然后输入BERT模型并让BERT来预测这些Mask的词，~~如同上述10.1所述，在输入侧引入[Mask]标记，会导致预训练阶段和Fine-tuning阶段不一致的问题，因此在论文中为了缓解这一问题，采取了如下措施：~~
@@ -185,8 +185,8 @@ _Will random tokens confuse the model?_
 The model will indeed try to use the embedding of the random token to help in its prediction and it will learn that it was actually not useful once it sees the target (correct token). However, the random replacement happened in 1.5% of the tokens (10%*15%) and the authors claim that it did not affect the model’s performance.
 _The model will only predict 15% of the tokens but language models predict 100% of tokens, does this mean that the model needs more iterations to achieve the same loss?_
 Yes, the model does converge more slowly but the increased steps in converging are justified by an considerable improvement in downstream performance.
-
-- NSP
+##### MLM loss
+#### NSP
 
 >Next Sentence Prediction（NSP）的任务是判断句子B是否是句子A的下文。如果是的话输出’IsNext‘，否则输出’NotNext‘。训练数据的生成方式是从平行语料中随机抽取的连续两句话，其中50%保留抽取的两句话，它们符合IsNext关系，另外50%的第二句话是随机从预料中提取的，它们的关系是NotNext的。这个关系保存在图4中的`[CLS]`符号中。
 
@@ -194,6 +194,7 @@ Yes, the model does converge more slowly but the increased steps in converging a
 The authors pre-trained their model in  _Next Sentence Prediction_  because they thought important that the model knew how to relate two different sentences to perform downstream tasks like question answering or natural language inference and the “masked language model” did not capture this knowledge. They prove that pre-training with this second task notably increases performance in both question answering and natural language inference.
 _What percentage of sentences where actually next sentences?_
 50% of the sentences were paired with actual adjacent sentences in the corpus and 50% of them were paired with sentences picked randomly from the corpus.
+##### NSP loss
 ### 预训练=BERT + MSM，NSP head
 ![enter image description here](https://miro.medium.com/max/1270/1*i8zICfESnaGt4EVRcWBLKw.png)
 ### 损失函数
@@ -510,11 +511,11 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [BERT author explain BERT](https://www.reddit.com/r/MachineLearning/comments/9nfqxz/r_bert_pretraining_of_deep_bidirectional/)
 [Examining BERT's raw embeddings](https://towardsdatascience.com/examining-berts-raw-embeddings-fd905cb22df7)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzMDMwMzY1Myw5NTUyMTMzNywtMTA4Nz
-EyMTM1MSwtMzg4MDMxMjExLC03NDY4MDYzLC0yMDY4NzEzNzQ0
-LC01NzEzMjgzMDYsLTIxNTkxODk5MCwtMTk3NDI2NTUyNSwyMT
-EzMjk5NjIwLDEyMDA1MDczMjIsNjU5ODc4MTU5LC0xODY1ODA3
-NzYxLC0xMjM3MjExMjA4LDE3NjgzNzYzMTIsLTU2NTkyMzI3NC
-wxMTc3MDYwNTMyLC0yMDczMzg5MjE4LC04Mjg5ODM2NjksMTg4
-OTQ2NjYxOV19
+eyJoaXN0b3J5IjpbMTk1NTE1MjM1NCwtMTMwMzAzNjUzLDk1NT
+IxMzM3LC0xMDg3MTIxMzUxLC0zODgwMzEyMTEsLTc0NjgwNjMs
+LTIwNjg3MTM3NDQsLTU3MTMyODMwNiwtMjE1OTE4OTkwLC0xOT
+c0MjY1NTI1LDIxMTMyOTk2MjAsMTIwMDUwNzMyMiw2NTk4Nzgx
+NTksLTE4NjU4MDc3NjEsLTEyMzcyMTEyMDgsMTc2ODM3NjMxMi
+wtNTY1OTIzMjc0LDExNzcwNjA1MzIsLTIwNzMzODkyMTgsLTgy
+ODk4MzY2OV19
 -->
