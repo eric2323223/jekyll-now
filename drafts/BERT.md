@@ -16,10 +16,7 @@
     5.2 名称实体识别NER任务
     5.3 通用语言理解GLUE任务
     5.4 问答SQuAD任务
-6. BERT的应用-实现一个智能问答机器人
-    6.1 环境搭建
-    6.2 实验流程
-7. 总结
+6. 总结
 
 
 self-supervised learning is important area because it can greatly reduce the effort of training deep model, 
@@ -138,6 +135,7 @@ to the store and bought a
 and bought a gallon of milk
 ```
 >So from  `BertModel`'s perspective this is a 3x6 minibatch, but crucially you can reshape it after you get it back from  `BertModel.get_sequence_output()`  and softmax over all the tokens when you compute the loss (with some masking to make sure you don't double count the boundary words like  `to the store`  and  `and bought a`). So you will be fine-tuning over the whole document end-to-end. The exact implementation is task-specific of course.
+
 ### Transformer编码器
 Transformer模型是由google ai于2017年发布的一个编码器-解码器架构模型，最初应用于机器翻译。Transformer的最大特点是使用注意力机制（attention mechanism），解决了使用RNN模型造成的梯度爆炸和无法并行的问题，并且实践证明transformer中提出的多头注意力具有强大的特征提取能力，性能超越了RNN,CNN等传统方法。
 > Transformer所使用的注意力机制的核心思想是去计算一句话中的每个词对于这句话中所有词的相互关系，然后认为这些词与词之间的相互关系在一定程度上反应了这句话中不同词之间的关联性以及重要程度。因此再利用这些相互关系来调整每个词的重要性（权重）就可以获得每个词新的表达。这个新的表征不但蕴含了该词本身，还蕴含了其他词与这个词的关系，因此和单纯的词向量相比是一个更加全局的表达。
@@ -511,11 +509,11 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [BERT author explain BERT](https://www.reddit.com/r/MachineLearning/comments/9nfqxz/r_bert_pretraining_of_deep_bidirectional/)
 [Examining BERT's raw embeddings](https://towardsdatascience.com/examining-berts-raw-embeddings-fd905cb22df7)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjAxODI2ODQwNywxMTc0MDA0OTkzLDE5NT
-UxNTIzNTQsLTEzMDMwMzY1Myw5NTUyMTMzNywtMTA4NzEyMTM1
-MSwtMzg4MDMxMjExLC03NDY4MDYzLC0yMDY4NzEzNzQ0LC01Nz
-EzMjgzMDYsLTIxNTkxODk5MCwtMTk3NDI2NTUyNSwyMTEzMjk5
-NjIwLDEyMDA1MDczMjIsNjU5ODc4MTU5LC0xODY1ODA3NzYxLC
-0xMjM3MjExMjA4LDE3NjgzNzYzMTIsLTU2NTkyMzI3NCwxMTc3
-MDYwNTMyXX0=
+eyJoaXN0b3J5IjpbODY0MzA3Njg1LDIwMTgyNjg0MDcsMTE3ND
+AwNDk5MywxOTU1MTUyMzU0LC0xMzAzMDM2NTMsOTU1MjEzMzcs
+LTEwODcxMjEzNTEsLTM4ODAzMTIxMSwtNzQ2ODA2MywtMjA2OD
+cxMzc0NCwtNTcxMzI4MzA2LC0yMTU5MTg5OTAsLTE5NzQyNjU1
+MjUsMjExMzI5OTYyMCwxMjAwNTA3MzIyLDY1OTg3ODE1OSwtMT
+g2NTgwNzc2MSwtMTIzNzIxMTIwOCwxNzY4Mzc2MzEyLC01NjU5
+MjMyNzRdfQ==
 -->
