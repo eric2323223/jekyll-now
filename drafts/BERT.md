@@ -144,6 +144,7 @@ Transformer模型是由google ai于2017年发布的一个编码器-解码器架�
 Transformer由编码器和解码器组成，编码器负责将输入序列中的每个元素（word）转换为包含上下文信息的特征向量，再由解码器根据编码后的特征向量生成输出序列。BERT模型中只使用了transformer的编码器，它主要由若干个结构相同的编码层连接而成。每一个编码层主要有一个多头自注意力计算单元（Multi-Head Attention）和按位前馈网络(Feed Forward)组成，多头自注意力计算单元负责为每个输入元素生成特征向量，前馈网络能够通过组合元素特征向量生成更复杂的特征向量。
 
 ![enter image description here](https://docs.google.com/drawings/d/e/2PACX-1vSqp25HORnsDrfUfkTFUgKeTC7IITVZrTMXBuf6eSp4_HmCsGRoGwAxEoN87fuhT98Xsc4IulE_U4vM/pub?w=960&h=720)
+
 ## BERT的预训练
 训练数据: 
 - BooksCorpus (800M words)
@@ -184,6 +185,7 @@ The model will indeed try to use the embedding of the random token to help in it
 _The model will only predict 15% of the tokens but language models predict 100% of tokens, does this mean that the model needs more iterations to achieve the same loss?_
 Yes, the model does converge more slowly but the increased steps in converging are justified by an considerable improvement in downstream performance.
 ##### MLM loss
+
 #### NSP
 
 >Next Sentence Prediction（NSP）的任务是判断句子B是否是句子A的下文。如果是的话输出’IsNext‘，否则输出’NotNext‘。训练数据的生成方式是从平行语料中随机抽取的连续两句话，其中50%保留抽取的两句话，它们符合IsNext关系，另外50%的第二句话是随机从预料中提取的，它们的关系是NotNext的。这个关系保存在图4中的`[CLS]`符号中。
@@ -509,11 +511,11 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [BERT author explain BERT](https://www.reddit.com/r/MachineLearning/comments/9nfqxz/r_bert_pretraining_of_deep_bidirectional/)
 [Examining BERT's raw embeddings](https://towardsdatascience.com/examining-berts-raw-embeddings-fd905cb22df7)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODY0MzA3Njg1LDIwMTgyNjg0MDcsMTE3ND
-AwNDk5MywxOTU1MTUyMzU0LC0xMzAzMDM2NTMsOTU1MjEzMzcs
-LTEwODcxMjEzNTEsLTM4ODAzMTIxMSwtNzQ2ODA2MywtMjA2OD
-cxMzc0NCwtNTcxMzI4MzA2LC0yMTU5MTg5OTAsLTE5NzQyNjU1
-MjUsMjExMzI5OTYyMCwxMjAwNTA3MzIyLDY1OTg3ODE1OSwtMT
-g2NTgwNzc2MSwtMTIzNzIxMTIwOCwxNzY4Mzc2MzEyLC01NjU5
-MjMyNzRdfQ==
+eyJoaXN0b3J5IjpbMTM5ODEzNzA2MSwyMDE4MjY4NDA3LDExNz
+QwMDQ5OTMsMTk1NTE1MjM1NCwtMTMwMzAzNjUzLDk1NTIxMzM3
+LC0xMDg3MTIxMzUxLC0zODgwMzEyMTEsLTc0NjgwNjMsLTIwNj
+g3MTM3NDQsLTU3MTMyODMwNiwtMjE1OTE4OTkwLC0xOTc0MjY1
+NTI1LDIxMTMyOTk2MjAsMTIwMDUwNzMyMiw2NTk4NzgxNTksLT
+E4NjU4MDc3NjEsLTEyMzcyMTEyMDgsMTc2ODM3NjMxMiwtNTY1
+OTIzMjc0XX0=
 -->
