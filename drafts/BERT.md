@@ -100,7 +100,7 @@ BERT模型生成的元素编码属于动态的双向语境编码，它能根据�
 
 - 
 
-## BERT模型结构
+## BERTyu'xu模型结构
 ### Transformer encoder based
 BERT模型主要包含这个部分，编码层和Transformer编码器
 ![enter image description here](https://www.lyrn.ai/wp-content/uploads/2018/11/transformer.png)
@@ -512,11 +512,11 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [BERT author explain BERT](https://www.reddit.com/r/MachineLearning/comments/9nfqxz/r_bert_pretraining_of_deep_bidirectional/)
 [Examining BERT's raw embeddings](https://towardsdatascience.com/examining-berts-raw-embeddings-fd905cb22df7)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1MDcxMjgyMzIsLTM3NzQ2ODc2MCwxMz
-k4MTM3MDYxLDIwMTgyNjg0MDcsMTE3NDAwNDk5MywxOTU1MTUy
-MzU0LC0xMzAzMDM2NTMsOTU1MjEzMzcsLTEwODcxMjEzNTEsLT
-M4ODAzMTIxMSwtNzQ2ODA2MywtMjA2ODcxMzc0NCwtNTcxMzI4
-MzA2LC0yMTU5MTg5OTAsLTE5NzQyNjU1MjUsMjExMzI5OTYyMC
-wxMjAwNTA3MzIyLDY1OTg3ODE1OSwtMTg2NTgwNzc2MSwtMTIz
-NzIxMTIwOF19
+eyJoaXN0b3J5IjpbODkxOTU1MTA4LC0xNTA3MTI4MjMyLC0zNz
+c0Njg3NjAsMTM5ODEzNzA2MSwyMDE4MjY4NDA3LDExNzQwMDQ5
+OTMsMTk1NTE1MjM1NCwtMTMwMzAzNjUzLDk1NTIxMzM3LC0xMD
+g3MTIxMzUxLC0zODgwMzEyMTEsLTc0NjgwNjMsLTIwNjg3MTM3
+NDQsLTU3MTMyODMwNiwtMjE1OTE4OTkwLC0xOTc0MjY1NTI1LD
+IxMTMyOTk2MjAsMTIwMDUwNzMyMiw2NTk4NzgxNTksLTE4NjU4
+MDc3NjFdfQ==
 -->
