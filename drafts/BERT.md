@@ -76,10 +76,10 @@ The good LM should calculate higher probabilities to “real” and “frequentl
 ### 微调 fine tune
 由于使用海量的数据进行预训练，预训练模型通常具有一般的常识，由此作为基础再进行微调，使得模型能更好的适合特定任务。
 - 模型调整
-通常做法是在预训练模型基础上增加任务相关的层，如由全连接层和softmax运算构成的分类层用于分类任务。
+通常做法是在预训练模型基础上增加任务相关的层，如由全连接层和softmax运算构成的分类层用于分类任务。对于NLP的预训练生成的
 - supervised learning
 使用少量任务相关的标记数据来进行微调，通常的做法是在预训练模型的后面直接加上上一个分类器（由全连接和softmax运算构成）使模型输出一个预测类型，计算cross entropy误差从而通过反向传递更新模型参数。
-	- 更新全部模型参数
+	- ~~更新全部模型参数~~
 	- 只更新任务层参数 - 预训练模型只作为特征提取器
 
 ## BERT简介
@@ -511,11 +511,11 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [BERT author explain BERT](https://www.reddit.com/r/MachineLearning/comments/9nfqxz/r_bert_pretraining_of_deep_bidirectional/)
 [Examining BERT's raw embeddings](https://towardsdatascience.com/examining-berts-raw-embeddings-fd905cb22df7)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTM3NzQ2ODc2MCwxMzk4MTM3MDYxLDIwMT
-gyNjg0MDcsMTE3NDAwNDk5MywxOTU1MTUyMzU0LC0xMzAzMDM2
-NTMsOTU1MjEzMzcsLTEwODcxMjEzNTEsLTM4ODAzMTIxMSwtNz
-Q2ODA2MywtMjA2ODcxMzc0NCwtNTcxMzI4MzA2LC0yMTU5MTg5
-OTAsLTE5NzQyNjU1MjUsMjExMzI5OTYyMCwxMjAwNTA3MzIyLD
-Y1OTg3ODE1OSwtMTg2NTgwNzc2MSwtMTIzNzIxMTIwOCwxNzY4
-Mzc2MzEyXX0=
+eyJoaXN0b3J5IjpbNzc2MzMyMjY0LC0zNzc0Njg3NjAsMTM5OD
+EzNzA2MSwyMDE4MjY4NDA3LDExNzQwMDQ5OTMsMTk1NTE1MjM1
+NCwtMTMwMzAzNjUzLDk1NTIxMzM3LC0xMDg3MTIxMzUxLC0zOD
+gwMzEyMTEsLTc0NjgwNjMsLTIwNjg3MTM3NDQsLTU3MTMyODMw
+NiwtMjE1OTE4OTkwLC0xOTc0MjY1NTI1LDIxMTMyOTk2MjAsMT
+IwMDUwNzMyMiw2NTk4NzgxNTksLTE4NjU4MDc3NjEsLTEyMzcy
+MTEyMDhdfQ==
 -->
