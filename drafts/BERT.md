@@ -77,7 +77,7 @@ The good LM should calculate higher probabilities to “real” and “frequentl
 由于使用海量的数据进行预训练，预训练模型通常具有一般的常识，由此作为基础再进行微调，使得模型能更好的适合特定任务。
 - 模型调整
 通常做法是在预训练模型基础上增加任务相关的层，由于NLP的预训练模型通常是包含序列上下文的embeddings，如由全连接层和softmax运算构成的分类层用于分类任务。
-
+![enter image description here](https://miro.medium.com/max/2248/1*GVcm-gUJ5r6niWB6OsOg_w.png)
 - supervised learning
 使用少量任务相关的标记数据来进行微调，通常的做法是在预训练模型的后面直接加上上一个分类器（由全连接和softmax运算构成）使模型输出一个预测类型，计算cross entropy误差从而通过反向传递更新模型参数。
 	- ~~更新全部模型参数~~
@@ -512,11 +512,11 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [BERT author explain BERT](https://www.reddit.com/r/MachineLearning/comments/9nfqxz/r_bert_pretraining_of_deep_bidirectional/)
 [Examining BERT's raw embeddings](https://towardsdatascience.com/examining-berts-raw-embeddings-fd905cb22df7)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODUwMTEwMTk0LC0xNTA3MTI4MjMyLC0zNz
-c0Njg3NjAsMTM5ODEzNzA2MSwyMDE4MjY4NDA3LDExNzQwMDQ5
-OTMsMTk1NTE1MjM1NCwtMTMwMzAzNjUzLDk1NTIxMzM3LC0xMD
-g3MTIxMzUxLC0zODgwMzEyMTEsLTc0NjgwNjMsLTIwNjg3MTM3
-NDQsLTU3MTMyODMwNiwtMjE1OTE4OTkwLC0xOTc0MjY1NTI1LD
-IxMTMyOTk2MjAsMTIwMDUwNzMyMiw2NTk4NzgxNTksLTE4NjU4
-MDc3NjFdfQ==
+eyJoaXN0b3J5IjpbNzkzNTQyNTM3LDg1MDExMDE5NCwtMTUwNz
+EyODIzMiwtMzc3NDY4NzYwLDEzOTgxMzcwNjEsMjAxODI2ODQw
+NywxMTc0MDA0OTkzLDE5NTUxNTIzNTQsLTEzMDMwMzY1Myw5NT
+UyMTMzNywtMTA4NzEyMTM1MSwtMzg4MDMxMjExLC03NDY4MDYz
+LC0yMDY4NzEzNzQ0LC01NzEzMjgzMDYsLTIxNTkxODk5MCwtMT
+k3NDI2NTUyNSwyMTEzMjk5NjIwLDEyMDA1MDczMjIsNjU5ODc4
+MTU5XX0=
 -->
