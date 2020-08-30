@@ -73,7 +73,7 @@ The good LM should calculate higher probabilities to “real” and “frequentl
 
 通过这样的学习，模型能够更好地把握“不错”这个词所出现的上下文语境。
 
-#### 微调 fine tune
+### 微调 fine tune
 由于使用海量的数据进行预训练，预训练模型通常具有一般的常识，由此作为基础再进行微调，使得模型能更好的适合特定任务。
 - 模型调整
 通常做法是在预训练模型基础上增加任务相关的层，如由全连接层和softmax运算构成的分类层用于分类任务。
@@ -511,7 +511,7 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [BERT author explain BERT](https://www.reddit.com/r/MachineLearning/comments/9nfqxz/r_bert_pretraining_of_deep_bidirectional/)
 [Examining BERT's raw embeddings](https://towardsdatascience.com/examining-berts-raw-embeddings-fd905cb22df7)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTMyNjU4MjU4OSwxMzk4MTM3MDYxLDIwMT
+eyJoaXN0b3J5IjpbLTM3NzQ2ODc2MCwxMzk4MTM3MDYxLDIwMT
 gyNjg0MDcsMTE3NDAwNDk5MywxOTU1MTUyMzU0LC0xMzAzMDM2
 NTMsOTU1MjEzMzcsLTEwODcxMjEzNTEsLTM4ODAzMTIxMSwtNz
 Q2ODA2MywtMjA2ODcxMzc0NCwtNTcxMzI4MzA2LC0yMTU5MTg5
