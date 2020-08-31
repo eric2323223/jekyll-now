@@ -84,14 +84,14 @@ The good LM should calculate higher probabilities to “real” and “frequentl
 	- 只更新任务层参数 - 预训练模型只作为特征提取器
 
 ## BERT简介
-BERT（Bidirectional Encoder Representations from Transformer），同他名字说的一样，BERT是一个基于Transformershi'xian的双向编码器，  是一个用于提取输入序列特征信息的预训练模型。When BERT was published it achieved [state-of-the-art] performance in 11 [natural language understanding] tasks:[[1]] [GLUE]task set (consisting of 8 tasks), [MultiNLI] [SQuAD] v1.1, SQuAD v2.0
+BERT（Bidirectional Encoder Representations from Transformer），同他名字说的一样，BERT是一个利用Transformer实现的双向编码器，  用于提取输入序列特征信息的预训练模型。When BERT was published it achieved [state-of-the-art] performance in 11 [natural language understanding] tasks:[[1]] [GLUE]task set (consisting of 8 tasks), [MultiNLI] [SQuAD] v1.1, SQuAD v2.0
 2018, google发表了论文BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding， 2019年google将BERT模型应用到了搜索服务中，现在已经支持了超过70种语言
 
 BERT最大的创新是将Transformer模型应用到了语言模型中，实现deep bidirectional contextual embedding。。。。影响和决定了BERT很多特殊性质。
 
 
 **bidirectional <-> LM 的矛盾如何解决？ MLM+NSP** 
-
+前文提到了
 BERT模型生成的元素编码属于动态的双向语境编码，它能根据输入序列生成每个序列元素（word）在序列上下文中的特征向量， 与ELMO不同的是，它基于注意力机制（attention mechanism）, 利用Transformer强大的特征提取能力，实现了深度双向语境编码。
 
 这是由于它是以Attention机制为基础。注意力机制可以一次看到所有的序列元素，每个元素的编码的计算都包含了该元素之前和之后的序列信息，因此BERT属于双向语言模型，并且由于能够同时看到前向和后向的信息，BERT不同于以往的双向语言模型，如ELMO，。。。。。。deep bidirectional 
@@ -512,11 +512,11 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [BERT author explain BERT](https://www.reddit.com/r/MachineLearning/comments/9nfqxz/r_bert_pretraining_of_deep_bidirectional/)
 [Examining BERT's raw embeddings](https://towardsdatascience.com/examining-berts-raw-embeddings-fd905cb22df7)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2NTE5MTExMTAsNzkzNTQyNTM3LDg1MD
-ExMDE5NCwtMTUwNzEyODIzMiwtMzc3NDY4NzYwLDEzOTgxMzcw
-NjEsMjAxODI2ODQwNywxMTc0MDA0OTkzLDE5NTUxNTIzNTQsLT
-EzMDMwMzY1Myw5NTUyMTMzNywtMTA4NzEyMTM1MSwtMzg4MDMx
-MjExLC03NDY4MDYzLC0yMDY4NzEzNzQ0LC01NzEzMjgzMDYsLT
-IxNTkxODk5MCwtMTk3NDI2NTUyNSwyMTEzMjk5NjIwLDEyMDA1
-MDczMjJdfQ==
+eyJoaXN0b3J5IjpbMTgyODcxNzk1MSw3OTM1NDI1MzcsODUwMT
+EwMTk0LC0xNTA3MTI4MjMyLC0zNzc0Njg3NjAsMTM5ODEzNzA2
+MSwyMDE4MjY4NDA3LDExNzQwMDQ5OTMsMTk1NTE1MjM1NCwtMT
+MwMzAzNjUzLDk1NTIxMzM3LC0xMDg3MTIxMzUxLC0zODgwMzEy
+MTEsLTc0NjgwNjMsLTIwNjg3MTM3NDQsLTU3MTMyODMwNiwtMj
+E1OTE4OTkwLC0xOTc0MjY1NTI1LDIxMTMyOTk2MjAsMTIwMDUw
+NzMyMl19
 -->
