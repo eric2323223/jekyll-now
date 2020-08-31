@@ -84,7 +84,7 @@ The good LM should calculate higher probabilities to “real” and “frequentl
 	- 只更新任务层参数 - 预训练模型只作为特征提取器
 
 ## BERT简介
-BERT（Bidirectional Encoder Representations from Transformer）是一个用于提取输入序列特征信息的预训练模型。When BERT was published it achieved [state-of-the-art] performance in 11 [natural language understanding] tasks:[[1]] [GLUE]task set (consisting of 8 tasks), [MultiNLI] [SQuAD] v1.1, SQuAD v2.0
+BERT（Bidirectional Encoder Representations from Transformer），同他名字说的一样，BERT是一个双向的编码器  是一个用于提取输入序列特征信息的预训练模型。When BERT was published it achieved [state-of-the-art] performance in 11 [natural language understanding] tasks:[[1]] [GLUE]task set (consisting of 8 tasks), [MultiNLI] [SQuAD] v1.1, SQuAD v2.0
 2018, google发表了论文BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding， 2019年google将BERT模型应用到了搜索服务中，现在已经支持了超过70种语言
 
 BERT最大的创新是将Transformer模型应用到了语言模型中，实现deep bidirectional contextual embedding。。。。影响和决定了BERT很多特殊性质。
@@ -512,11 +512,11 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [BERT author explain BERT](https://www.reddit.com/r/MachineLearning/comments/9nfqxz/r_bert_pretraining_of_deep_bidirectional/)
 [Examining BERT's raw embeddings](https://towardsdatascience.com/examining-berts-raw-embeddings-fd905cb22df7)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNzkzNTQyNTM3LDg1MDExMDE5NCwtMTUwNz
-EyODIzMiwtMzc3NDY4NzYwLDEzOTgxMzcwNjEsMjAxODI2ODQw
-NywxMTc0MDA0OTkzLDE5NTUxNTIzNTQsLTEzMDMwMzY1Myw5NT
-UyMTMzNywtMTA4NzEyMTM1MSwtMzg4MDMxMjExLC03NDY4MDYz
-LC0yMDY4NzEzNzQ0LC01NzEzMjgzMDYsLTIxNTkxODk5MCwtMT
-k3NDI2NTUyNSwyMTEzMjk5NjIwLDEyMDA1MDczMjIsNjU5ODc4
-MTU5XX0=
+eyJoaXN0b3J5IjpbMTc3MDIzNjU0Miw3OTM1NDI1MzcsODUwMT
+EwMTk0LC0xNTA3MTI4MjMyLC0zNzc0Njg3NjAsMTM5ODEzNzA2
+MSwyMDE4MjY4NDA3LDExNzQwMDQ5OTMsMTk1NTE1MjM1NCwtMT
+MwMzAzNjUzLDk1NTIxMzM3LC0xMDg3MTIxMzUxLC0zODgwMzEy
+MTEsLTc0NjgwNjMsLTIwNjg3MTM3NDQsLTU3MTMyODMwNiwtMj
+E1OTE4OTkwLC0xOTc0MjY1NTI1LDIxMTMyOTk2MjAsMTIwMDUw
+NzMyMl19
 -->
