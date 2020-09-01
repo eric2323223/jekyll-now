@@ -146,6 +146,8 @@ Transformer由编码器和解码器组成，编码器负责将输入序列中的
 
 ![enter image description here](https://docs.google.com/drawings/d/e/2PACX-1vSqp25HORnsDrfUfkTFUgKeTC7IITVZrTMXBuf6eSp4_HmCsGRoGwAxEoN87fuhT98Xsc4IulE_U4vM/pub?w=960&h=720)
 
+### BERT预训练模型的能力
+
 ## BERT的预训练
 训练数据: 
 - BooksCorpus (800M words)
@@ -512,11 +514,11 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [BERT author explain BERT](https://www.reddit.com/r/MachineLearning/comments/9nfqxz/r_bert_pretraining_of_deep_bidirectional/)
 [Examining BERT's raw embeddings](https://towardsdatascience.com/examining-berts-raw-embeddings-fd905cb22df7)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzNjY2NjM5OTIsNDc3MjQ0MTEsNTYyMz
-U4MTY5LDE2NDgxNDAwMDIsMTk3NzgxMDAzNiwxMDgyMDA5NDA1
-LDE1MTg5MTIxMDcsLTIwMzM3NTk4MjAsLTEyNzE4MTY2ODMsNz
-kzNTQyNTM3LDg1MDExMDE5NCwtMTUwNzEyODIzMiwtMzc3NDY4
-NzYwLDEzOTgxMzcwNjEsMjAxODI2ODQwNywxMTc0MDA0OTkzLD
-E5NTUxNTIzNTQsLTEzMDMwMzY1Myw5NTUyMTMzNywtMTA4NzEy
-MTM1MV19
+eyJoaXN0b3J5IjpbLTE0MzA5NzIzMDgsLTEzNjY2NjM5OTIsND
+c3MjQ0MTEsNTYyMzU4MTY5LDE2NDgxNDAwMDIsMTk3NzgxMDAz
+NiwxMDgyMDA5NDA1LDE1MTg5MTIxMDcsLTIwMzM3NTk4MjAsLT
+EyNzE4MTY2ODMsNzkzNTQyNTM3LDg1MDExMDE5NCwtMTUwNzEy
+ODIzMiwtMzc3NDY4NzYwLDEzOTgxMzcwNjEsMjAxODI2ODQwNy
+wxMTc0MDA0OTkzLDE5NTUxNTIzNTQsLTEzMDMwMzY1Myw5NTUy
+MTMzN119
 -->
