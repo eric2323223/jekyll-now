@@ -190,7 +190,9 @@ The model will indeed try to use the embedding of the random token to help in it
 _The model will only predict 15% of the tokens but language models predict 100% of tokens, does this mean that the model needs more iterations to achieve the same loss?_
 Yes, the model does converge more slowly but the increased steps in converging are justified by an considerable improvement in downstream performance.
 ##### MLM 误差函数
-
+```
+masked_lm_loss = loss_fct(prediction_scores.view(-1, self.config.vocab_size), labels.view(-1))
+```
 
 
 #### NSP
@@ -202,6 +204,9 @@ The authors pre-trained their model in  _Next Sentence Prediction_  because they
 _What percentage of sentences where actually next sentences?_
 50% of the sentences were paired with actual adjacent sentences in the corpus and 50% of them were paired with sentences picked randomly from the corpus.
 ##### NSP loss
+```
+
+```
 ### 预训练=BERT + MSM，NSP head
 ![enter image description here](https://miro.medium.com/max/1270/1*i8zICfESnaGt4EVRcWBLKw.png)
 ### 损失函数
@@ -518,11 +523,11 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [BERT author explain BERT](https://www.reddit.com/r/MachineLearning/comments/9nfqxz/r_bert_pretraining_of_deep_bidirectional/)
 [Examining BERT's raw embeddings](https://towardsdatascience.com/examining-berts-raw-embeddings-fd905cb22df7)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE3OTg2NzQ3OTIsLTY5NzQ5MTYsMTUzMD
-gzNTk0NSwtMTM2NjY2Mzk5Miw0NzcyNDQxMSw1NjIzNTgxNjks
-MTY0ODE0MDAwMiwxOTc3ODEwMDM2LDEwODIwMDk0MDUsMTUxOD
-kxMjEwNywtMjAzMzc1OTgyMCwtMTI3MTgxNjY4Myw3OTM1NDI1
-MzcsODUwMTEwMTk0LC0xNTA3MTI4MjMyLC0zNzc0Njg3NjAsMT
-M5ODEzNzA2MSwyMDE4MjY4NDA3LDExNzQwMDQ5OTMsMTk1NTE1
-MjM1NF19
+eyJoaXN0b3J5IjpbNzMwOTM2MTI1LC0xNzk4Njc0NzkyLC02OT
+c0OTE2LDE1MzA4MzU5NDUsLTEzNjY2NjM5OTIsNDc3MjQ0MTEs
+NTYyMzU4MTY5LDE2NDgxNDAwMDIsMTk3NzgxMDAzNiwxMDgyMD
+A5NDA1LDE1MTg5MTIxMDcsLTIwMzM3NTk4MjAsLTEyNzE4MTY2
+ODMsNzkzNTQyNTM3LDg1MDExMDE5NCwtMTUwNzEyODIzMiwtMz
+c3NDY4NzYwLDEzOTgxMzcwNjEsMjAxODI2ODQwNywxMTc0MDA0
+OTkzXX0=
 -->
