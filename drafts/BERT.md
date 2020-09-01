@@ -271,6 +271,8 @@ Each training data contains Two sentences, $W_1[w_{11}, w_{12}, w_{13}, w_{14}, 
 因此相比预训练，微调对于没有大量计算资源的普通爱好者更具现实意义。
 通过不同类型的微调任务，BERT可以完成多种类型的学习任务。
 **方法：固定预训练模型的参数，训练微调层的参数**
+
+![enter image description here](https://www.topbots.com/wp-content/uploads/2019/12/cover_transfer_learning_1600px_web.jpg)
 ![enter image description here](https://www.researchgate.net/profile/Jan_Christian_Blaise_Cruz/publication/334160936/figure/fig1/AS:776030256111617@1562031439583/Overall-BERT-pretraining-and-finetuning-framework-Note-that-the-same-architecture-in.ppm)
 ### 微调任务类型
 > ![enter image description here](https://lilianweng.github.io/lil-log/assets/images/BERT-downstream-tasks.png)
@@ -528,11 +530,11 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [BERT author explain BERT](https://www.reddit.com/r/MachineLearning/comments/9nfqxz/r_bert_pretraining_of_deep_bidirectional/)
 [Examining BERT's raw embeddings](https://towardsdatascience.com/examining-berts-raw-embeddings-fd905cb22df7)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTExMTUwMzQwMTUsLTM3NTc1ODcwNSwtMT
-c5ODY3NDc5MiwtNjk3NDkxNiwxNTMwODM1OTQ1LC0xMzY2NjYz
-OTkyLDQ3NzI0NDExLDU2MjM1ODE2OSwxNjQ4MTQwMDAyLDE5Nz
-c4MTAwMzYsMTA4MjAwOTQwNSwxNTE4OTEyMTA3LC0yMDMzNzU5
-ODIwLC0xMjcxODE2NjgzLDc5MzU0MjUzNyw4NTAxMTAxOTQsLT
-E1MDcxMjgyMzIsLTM3NzQ2ODc2MCwxMzk4MTM3MDYxLDIwMTgy
-Njg0MDddfQ==
+eyJoaXN0b3J5IjpbLTgzMDkzNzY5MywtMzc1NzU4NzA1LC0xNz
+k4Njc0NzkyLC02OTc0OTE2LDE1MzA4MzU5NDUsLTEzNjY2NjM5
+OTIsNDc3MjQ0MTEsNTYyMzU4MTY5LDE2NDgxNDAwMDIsMTk3Nz
+gxMDAzNiwxMDgyMDA5NDA1LDE1MTg5MTIxMDcsLTIwMzM3NTk4
+MjAsLTEyNzE4MTY2ODMsNzkzNTQyNTM3LDg1MDExMDE5NCwtMT
+UwNzEyODIzMiwtMzc3NDY4NzYwLDEzOTgxMzcwNjEsMjAxODI2
+ODQwN119
 -->
