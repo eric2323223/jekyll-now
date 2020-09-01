@@ -101,7 +101,6 @@ BERT模型生成的元素编码属于动态的双向语境编码，它能根据�
 
 虽然attention就有全局视野，但也不是完全不能使用LM方式进行训练，比如GPT使用了遮罩的方式使模型无法看到当前元素之后的序列信息，因此它属于单向语言模型。
 
-- 
 
 ## BERT预训练模型结构
 ### Transformer encoder based
@@ -515,11 +514,11 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [BERT author explain BERT](https://www.reddit.com/r/MachineLearning/comments/9nfqxz/r_bert_pretraining_of_deep_bidirectional/)
 [Examining BERT's raw embeddings](https://towardsdatascience.com/examining-berts-raw-embeddings-fd905cb22df7)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTYwMDAyMDY1MiwxNjQ4MTQwMDAyLDE5Nz
-c4MTAwMzYsMTA4MjAwOTQwNSwxNTE4OTEyMTA3LC0yMDMzNzU5
-ODIwLC0xMjcxODE2NjgzLDc5MzU0MjUzNyw4NTAxMTAxOTQsLT
-E1MDcxMjgyMzIsLTM3NzQ2ODc2MCwxMzk4MTM3MDYxLDIwMTgy
-Njg0MDcsMTE3NDAwNDk5MywxOTU1MTUyMzU0LC0xMzAzMDM2NT
-MsOTU1MjEzMzcsLTEwODcxMjEzNTEsLTM4ODAzMTIxMSwtNzQ2
-ODA2M119
+eyJoaXN0b3J5IjpbNTYyMzU4MTY5LDE2NDgxNDAwMDIsMTk3Nz
+gxMDAzNiwxMDgyMDA5NDA1LDE1MTg5MTIxMDcsLTIwMzM3NTk4
+MjAsLTEyNzE4MTY2ODMsNzkzNTQyNTM3LDg1MDExMDE5NCwtMT
+UwNzEyODIzMiwtMzc3NDY4NzYwLDEzOTgxMzcwNjEsMjAxODI2
+ODQwNywxMTc0MDA0OTkzLDE5NTUxNTIzNTQsLTEzMDMwMzY1My
+w5NTUyMTMzNywtMTA4NzEyMTM1MSwtMzg4MDMxMjExLC03NDY4
+MDYzXX0=
 -->
