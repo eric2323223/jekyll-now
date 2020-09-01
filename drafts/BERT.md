@@ -228,9 +228,9 @@ total_loss = masked_lm_loss + next_sentence_loss
 ![[公式]](https://www.zhihu.com/equation?tex=L%5Cleft%28%5Ctheta%2C+%5Ctheta_%7B1%7D%2C+%5Ctheta_%7B2%7D%5Cright%29%3D-%5Csum_%7Bi%3D1%7D%5E%7BM%7D+%5Clog+p%5Cleft%28m%3Dm_%7Bi%7D+%7C+%5Ctheta%2C+%5Ctheta_%7B1%7D%5Cright%29-%5Csum_%7Bj%3D1%7D%5E%7BN%7D+%5Clog+p%5Cleft%28n%3Dn_%7Bi%7D+%7C+%5Ctheta%2C+%5Ctheta_%7B2%7D%5Cright%29)
 
 >### 预训练技巧
-具体的预训练工程实现细节方面，BERT 还利用了一系列策略，使得模型更易于训练，除了常用的layer normalization，dropout之外，还有对于学习率的 warm-up 策略，使用的激活函数不再是普通的 ReLu，而是 GeLu。
-- Transformer related :  dropout, layer_norm, residual
-- 
+>具体的预训练工程实现细节方面，BERT 还利用了一系列策略，使得模型更易于训练，除了常用的layer normalization，dropout之外，还有对于学习率的 warm-up 策略，使用的激活函数不再是普通的 ReLu，而是 GeLu。
+>- Transformer related :  dropout, layer_norm, residual
+ 
 ### 预训练流程
 预训练的目的是生成能够给下游任务使用的通用模型，因此BERT在预训练中加入两个特殊token，CLS和SEP。
 CLS加在输入序列的开头，它也参与Transformer计算。我们知道注意力计算是对所有元素以一定的权重进行加权平均，由于CLS本身不包含任何意义，因此与序列中的其他元素都不相关，因此CLS token通过注意力运算的结果是将所有元素的意思以相似的权重进行加权平局，这也就是整个序列的unbias意义。由于CLS embedding包含了这个序列的含义，因此在对序列进行分类等微调任务中会直接对CLS embedding进行分类训练。
@@ -242,6 +242,7 @@ An example of a pre-training sequence presented in the paper is:
 In this case the sentences are adjacent, so the label in [CLS] would be ‘<IsNext>’ as in:
 > > Input = <IsNext> the man went to [MASK] store [SEP] he bought a gallon [MASK] milk [SEP]
 The loss was calculated as the sum of the mean masked LM likelihood and the mean next sentence prediction likelihood.
+
 ![enter image description here](https://docs.google.com/drawings/d/e/2PACX-1vRFdq5CGCgn5WdAHdz88Z5ePsIU58vHz0HVYx56PQ3TP7Xi2WAbSkAbWx1Q4VA8ZkJ3mpSvlpmV1v-0/pub?w=1746&h=911)
 [http://jalammar.github.io/a-visual-guide-to-using-bert-for-the-first-time/](http://jalammar.github.io/a-visual-guide-to-using-bert-for-the-first-time/)  Recapping a sentence’s journey
 Each training data contains Two sentences, $W_1[w_{11}, w_{12}, w_{13}, w_{14}, w_{15}], W2[w_{21}, w_{22},w_{23},w_{24},w_{25}]$
@@ -523,7 +524,7 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [BERT author explain BERT](https://www.reddit.com/r/MachineLearning/comments/9nfqxz/r_bert_pretraining_of_deep_bidirectional/)
 [Examining BERT's raw embeddings](https://towardsdatascience.com/examining-berts-raw-embeddings-fd905cb22df7)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTM2NzU2NDE3NiwtMTc5ODY3NDc5MiwtNj
+eyJoaXN0b3J5IjpbLTM3NTc1ODcwNSwtMTc5ODY3NDc5MiwtNj
 k3NDkxNiwxNTMwODM1OTQ1LC0xMzY2NjYzOTkyLDQ3NzI0NDEx
 LDU2MjM1ODE2OSwxNjQ4MTQwMDAyLDE5Nzc4MTAwMzYsMTA4Mj
 AwOTQwNSwxNTE4OTEyMTA3LC0yMDMzNzU5ODIwLC0xMjcxODE2
