@@ -235,7 +235,7 @@ The loss was calculated as the sum of the mean masked LM likelihood and the mean
 [http://jalammar.github.io/a-visual-guide-to-using-bert-for-the-first-time/](http://jalammar.github.io/a-visual-guide-to-using-bert-for-the-first-time/)  Recapping a sentence’s journey
 Each training data contains Two sentences, $W_1[w_{11}, w_{12}, w_{13}, w_{14}, w_{15}], W2[w_{21}, w_{22},w_{23},w_{24},w_{25}]$
 1. 预处理: 
-    1.0  tokenization
+    1.0  tokenization (WordPiece)
 	1.1 . 加入特殊符号CLS和SEP： [CLS] BERT is awesome. [SEP] I love BERT. [SEP]"
 	1.2.  Add masks to some words: [CLS] BERT [MASK] awesome. [SEP] I love BERT. [SEP
 	1.3.  Generate pretrain data
@@ -512,11 +512,11 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [BERT author explain BERT](https://www.reddit.com/r/MachineLearning/comments/9nfqxz/r_bert_pretraining_of_deep_bidirectional/)
 [Examining BERT's raw embeddings](https://towardsdatascience.com/examining-berts-raw-embeddings-fd905cb22df7)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNDc3MjQ0MTEsNTYyMzU4MTY5LDE2NDgxND
-AwMDIsMTk3NzgxMDAzNiwxMDgyMDA5NDA1LDE1MTg5MTIxMDcs
-LTIwMzM3NTk4MjAsLTEyNzE4MTY2ODMsNzkzNTQyNTM3LDg1MD
-ExMDE5NCwtMTUwNzEyODIzMiwtMzc3NDY4NzYwLDEzOTgxMzcw
-NjEsMjAxODI2ODQwNywxMTc0MDA0OTkzLDE5NTUxNTIzNTQsLT
-EzMDMwMzY1Myw5NTUyMTMzNywtMTA4NzEyMTM1MSwtMzg4MDMx
-MjExXX0=
+eyJoaXN0b3J5IjpbLTEzNjY2NjM5OTIsNDc3MjQ0MTEsNTYyMz
+U4MTY5LDE2NDgxNDAwMDIsMTk3NzgxMDAzNiwxMDgyMDA5NDA1
+LDE1MTg5MTIxMDcsLTIwMzM3NTk4MjAsLTEyNzE4MTY2ODMsNz
+kzNTQyNTM3LDg1MDExMDE5NCwtMTUwNzEyODIzMiwtMzc3NDY4
+NzYwLDEzOTgxMzcwNjEsMjAxODI2ODQwNywxMTc0MDA0OTkzLD
+E5NTUxNTIzNTQsLTEzMDMwMzY1Myw5NTUyMTMzNywtMTA4NzEy
+MTM1MV19
 -->
