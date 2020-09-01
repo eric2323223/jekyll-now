@@ -154,7 +154,7 @@ Transformer由编码器和解码器组成，编码器负责将输入序列中的
 - EnglishWikipedia (2.5B words)
 
 ### 任务设计
-为了让预训练模型学习到更多的通用知识，BERT的预训练被设计为多任务学习（multi-task learning），包含两个任务：一个是 Masked Language Model，训练模型理解单个句子的含义；另一个是 Next Sentence Prediction，训练模型理解不同语句之间的上下文关系。
+我们知道文字中蕴含的意思是以为了让预训练模型学习到更多的通用知识，BERT的预训练被设计为多任务学习（multi-task learning），包含两个任务：一个是 Masked Language Model，训练模型理解单个句子的含义；另一个是 Next Sentence Prediction，训练模型理解不同语句之间的上下文关系。
 MLM这种设计的原因是由于BERT使用的注意力机制有全局的视野，能够一次同时访问序列的所有元素，因此无法使用传统的语言模型那种一步一看的训练方式。**前者用于建模更广泛的上下文，通过 mask 来强制模型给每个词记住更多的上下文信息；后者用来建模多个句子之间的关系，**
 ![enter image description here](https://www.researchgate.net/profile/Jan_Christian_Blaise_Cruz/publication/334160936/figure/fig1/AS:776030256111617@1562031439583/Overall-BERT-pretraining-and-finetuning-framework-Note-that-the-same-architecture-in.ppm)
 #### Masked Language Model  - MLM
@@ -515,11 +515,11 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [BERT author explain BERT](https://www.reddit.com/r/MachineLearning/comments/9nfqxz/r_bert_pretraining_of_deep_bidirectional/)
 [Examining BERT's raw embeddings](https://towardsdatascience.com/examining-berts-raw-embeddings-fd905cb22df7)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTYwNDE0NDczNCwxNTMwODM1OTQ1LC0xMz
-Y2NjYzOTkyLDQ3NzI0NDExLDU2MjM1ODE2OSwxNjQ4MTQwMDAy
-LDE5Nzc4MTAwMzYsMTA4MjAwOTQwNSwxNTE4OTEyMTA3LC0yMD
-MzNzU5ODIwLC0xMjcxODE2NjgzLDc5MzU0MjUzNyw4NTAxMTAx
-OTQsLTE1MDcxMjgyMzIsLTM3NzQ2ODc2MCwxMzk4MTM3MDYxLD
-IwMTgyNjg0MDcsMTE3NDAwNDk5MywxOTU1MTUyMzU0LC0xMzAz
-MDM2NTNdfQ==
+eyJoaXN0b3J5IjpbLTIxMjUyNzE4OTksMTUzMDgzNTk0NSwtMT
+M2NjY2Mzk5Miw0NzcyNDQxMSw1NjIzNTgxNjksMTY0ODE0MDAw
+MiwxOTc3ODEwMDM2LDEwODIwMDk0MDUsMTUxODkxMjEwNywtMj
+AzMzc1OTgyMCwtMTI3MTgxNjY4Myw3OTM1NDI1MzcsODUwMTEw
+MTk0LC0xNTA3MTI4MjMyLC0zNzc0Njg3NjAsMTM5ODEzNzA2MS
+wyMDE4MjY4NDA3LDExNzQwMDQ5OTMsMTk1NTE1MjM1NCwtMTMw
+MzAzNjUzXX0=
 -->
