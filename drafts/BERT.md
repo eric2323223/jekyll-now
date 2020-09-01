@@ -191,6 +191,8 @@ _The model will only predict 15% of the tokens but language models predict 100% 
 Yes, the model does converge more slowly but the increased steps in converging are justified by an considerable improvement in downstream performance.
 ##### MLM 误差函数
 
+
+
 #### NSP
 
 >Next Sentence Prediction（NSP）的任务是判断句子B是否是句子A的下文。如果是的话输出’IsNext‘，否则输出’NotNext‘。训练数据的生成方式是从平行语料中随机抽取的连续两句话，其中50%保留抽取的两句话，它们符合IsNext关系，另外50%的第二句话是随机从预料中提取的，它们的关系是NotNext的。这个关系保存在图4中的`[CLS]`符号中。
@@ -516,11 +518,11 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [BERT author explain BERT](https://www.reddit.com/r/MachineLearning/comments/9nfqxz/r_bert_pretraining_of_deep_bidirectional/)
 [Examining BERT's raw embeddings](https://towardsdatascience.com/examining-berts-raw-embeddings-fd905cb22df7)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTY5NzQ5MTYsMTUzMDgzNTk0NSwtMTM2Nj
-Y2Mzk5Miw0NzcyNDQxMSw1NjIzNTgxNjksMTY0ODE0MDAwMiwx
-OTc3ODEwMDM2LDEwODIwMDk0MDUsMTUxODkxMjEwNywtMjAzMz
-c1OTgyMCwtMTI3MTgxNjY4Myw3OTM1NDI1MzcsODUwMTEwMTk0
-LC0xNTA3MTI4MjMyLC0zNzc0Njg3NjAsMTM5ODEzNzA2MSwyMD
-E4MjY4NDA3LDExNzQwMDQ5OTMsMTk1NTE1MjM1NCwtMTMwMzAz
-NjUzXX0=
+eyJoaXN0b3J5IjpbLTE3OTg2NzQ3OTIsLTY5NzQ5MTYsMTUzMD
+gzNTk0NSwtMTM2NjY2Mzk5Miw0NzcyNDQxMSw1NjIzNTgxNjks
+MTY0ODE0MDAwMiwxOTc3ODEwMDM2LDEwODIwMDk0MDUsMTUxOD
+kxMjEwNywtMjAzMzc1OTgyMCwtMTI3MTgxNjY4Myw3OTM1NDI1
+MzcsODUwMTEwMTk0LC0xNTA3MTI4MjMyLC0zNzc0Njg3NjAsMT
+M5ODEzNzA2MSwyMDE4MjY4NDA3LDExNzQwMDQ5OTMsMTk1NTE1
+MjM1NF19
 -->
