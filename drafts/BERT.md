@@ -100,12 +100,12 @@ BERT模型生成的元素编码属于动态的双向语境编码，它能根据�
 虽然attention就有全局视野，但也不是完全不能使用LM方式进行训练，比如GPT使用了遮罩的方式使模型无法看到当前元素之后的序列信息，因此它属于单向语言模型。
 
 
-## BERT预训练模型结构
-### Transformer encoder based
+### BERT预训练模型结构
+
 BERT模型主要包含这个部分，编码层和Transformer编码器
 ![enter image description here](https://www.lyrn.ai/wp-content/uploads/2018/11/transformer.png)
 
-### 编码层
+#### 编码层
 编码层的作用是
 1. 将输入语句（BERT is powerful）转换为模型可处理的浮点数向量
 2. 加入特殊符号[CLS][SEP] -- No! this is done in data preprocessing
@@ -512,11 +512,11 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [BERT author explain BERT](https://www.reddit.com/r/MachineLearning/comments/9nfqxz/r_bert_pretraining_of_deep_bidirectional/)
 [Examining BERT's raw embeddings](https://towardsdatascience.com/examining-berts-raw-embeddings-fd905cb22df7)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTc1ODc3MTI1MSw1NjIzNTgxNjksMTY0OD
-E0MDAwMiwxOTc3ODEwMDM2LDEwODIwMDk0MDUsMTUxODkxMjEw
-NywtMjAzMzc1OTgyMCwtMTI3MTgxNjY4Myw3OTM1NDI1MzcsOD
-UwMTEwMTk0LC0xNTA3MTI4MjMyLC0zNzc0Njg3NjAsMTM5ODEz
-NzA2MSwyMDE4MjY4NDA3LDExNzQwMDQ5OTMsMTk1NTE1MjM1NC
-wtMTMwMzAzNjUzLDk1NTIxMzM3LC0xMDg3MTIxMzUxLC0zODgw
-MzEyMTFdfQ==
+eyJoaXN0b3J5IjpbLTEyNTY1Nzg5OTgsNTYyMzU4MTY5LDE2ND
+gxNDAwMDIsMTk3NzgxMDAzNiwxMDgyMDA5NDA1LDE1MTg5MTIx
+MDcsLTIwMzM3NTk4MjAsLTEyNzE4MTY2ODMsNzkzNTQyNTM3LD
+g1MDExMDE5NCwtMTUwNzEyODIzMiwtMzc3NDY4NzYwLDEzOTgx
+MzcwNjEsMjAxODI2ODQwNywxMTc0MDA0OTkzLDE5NTUxNTIzNT
+QsLTEzMDMwMzY1Myw5NTUyMTMzNywtMTA4NzEyMTM1MSwtMzg4
+MDMxMjExXX0=
 -->
