@@ -273,7 +273,7 @@ Each training data contains Two sentences, $W_1[w_{11}, w_{12}, w_{13}, w_{14}, 
 **方法：固定预训练模型的参数，训练微调层的参数**
 ![enter image description here](https://www.researchgate.net/profile/Jan_Christian_Blaise_Cruz/publication/334160936/figure/fig1/AS:776030256111617@1562031439583/Overall-BERT-pretraining-and-finetuning-framework-Note-that-the-same-architecture-in.ppm)
 ### 微调任务类型
-![enter image description here](https://lilianweng.github.io/lil-log/assets/images/BERT-downstream-tasks.png)
+> ![enter image description here](https://lilianweng.github.io/lil-log/assets/images/BERT-downstream-tasks.png)
 ### 语义分析
 
 ![](https://docs.google.com/drawings/d/e/2PACX-1vStZ1DhjhFi-1LIWS7hCHsvTzu_SQ-DS9Dh6MDCC2qcjmmDcuWte2Ii3wATxx149_NX-OOVzU1nqbr9/pub?w=884&h=709)
@@ -319,7 +319,7 @@ Each training data contains Two sentences, $W_1[w_{11}, w_{12}, w_{13}, w_{14}, 
 利用BERT模型解决多标签分类问题时，其输入与普通单标签分类问题一致，得到其embedding表示之后(也就是BERT输出层的embedding)，有几个label就连接到几个全连接层(也可以称为projection layer)，然后再分别接上softmax分类层，这样的话会得到​  ![[公式]](https://www.zhihu.com/equation?tex=loss_1%2C%5C+loss_2%2C%5C+%5Ccdots%2C%5C+loss_n)  ，最后再将所有的loss相加起来即可。这种做法就相当于将n个分类模型的特征提取层参数共享，得到一个共享的表示(其维度可以视任务而定，由于是多标签分类任务，因此其维度可以适当增大一些)，最后再做多标签分类任务。~~
 
 ### 限定上下文问答 SQuAD
-[](https://docs.google.com/drawings/d/e/2PACX-1vSGC-bIM19eOTk96audRUt_wo5hNgsIQpPZVo0pRfMLLxmCpYihvwaKYtcHI2Eyikmk4amBFMSNur6T/pub?w=835&h=686)
+![](https://docs.google.com/drawings/d/e/2PACX-1vSGC-bIM19eOTk96audRUt_wo5hNgsIQpPZVo0pRfMLLxmCpYihvwaKYtcHI2Eyikmk4amBFMSNur6T/pub?w=835&h=686)
 
 在输入
 - 预测answer span(start pos, end pos)
@@ -528,7 +528,7 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [BERT author explain BERT](https://www.reddit.com/r/MachineLearning/comments/9nfqxz/r_bert_pretraining_of_deep_bidirectional/)
 [Examining BERT's raw embeddings](https://towardsdatascience.com/examining-berts-raw-embeddings-fd905cb22df7)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwOTM2ODA0NDAsLTM3NTc1ODcwNSwtMT
+eyJoaXN0b3J5IjpbLTExMTUwMzQwMTUsLTM3NTc1ODcwNSwtMT
 c5ODY3NDc5MiwtNjk3NDkxNiwxNTMwODM1OTQ1LC0xMzY2NjYz
 OTkyLDQ3NzI0NDExLDU2MjM1ODE2OSwxNjQ4MTQwMDAyLDE5Nz
 c4MTAwMzYsMTA4MjAwOTQwNSwxNTE4OTEyMTA3LC0yMDMzNzU5
