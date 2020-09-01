@@ -193,8 +193,6 @@ Yes, the model does converge more slowly but the increased steps in converging a
 ```
 masked_lm_loss = loss_fct(prediction_scores.view(-1, self.config.vocab_size), labels.view(-1))
 ```
-
-
 #### NSP
 
 >Next Sentence Prediction（NSP）的任务是判断句子B是否是句子A的下文。如果是的话输出’IsNext‘，否则输出’NotNext‘。训练数据的生成方式是从平行语料中随机抽取的连续两句话，其中50%保留抽取的两句话，它们符合IsNext关系，另外50%的第二句话是随机从预料中提取的，它们的关系是NotNext的。这个关系保存在图4中的`[CLS]`符号中。
@@ -205,12 +203,14 @@ _What percentage of sentences where actually next sentences?_
 50% of the sentences were paired with actual adjacent sentences in the corpus and 50% of them were paired with sentences picked randomly from the corpus.
 ##### NSP loss
 ```
-
+next_sentence_loss = loss_fct(seq_relationship_score.view(-1, 2), next_sentence_label.view(-1))
 ```
 ### 预训练=BERT + MSM，NSP head
 ![enter image description here](https://miro.medium.com/max/1270/1*i8zICfESnaGt4EVRcWBLKw.png)
 ### 损失函数
+```
 total_loss = masked_lm_loss + next_sentence_loss
+```
 与任务相对应，BERT的损失函数由两部分组成，第一部分是来自 Mask-LM 的**单词级别分类任务**，另一部分是**句子级别的分类任务**。通过这两个任务的联合学习，可以使得 BERT 学习到的表征既有 token 级别信息，同时也包含了句子级别的语义信息。具体损失函数如下：
 
 ![[公式]](https://www.zhihu.com/equation?tex=L%5Cleft%28%5Ctheta%2C+%5Ctheta_%7B1%7D%2C+%5Ctheta_%7B2%7D%5Cright%29%3DL_%7B1%7D%5Cleft%28%5Ctheta%2C+%5Ctheta_%7B1%7D%5Cright%29%2BL_%7B2%7D%5Cleft%28%5Ctheta%2C+%5Ctheta_%7B2%7D%5Cright%29)
@@ -227,7 +227,7 @@ total_loss = masked_lm_loss + next_sentence_loss
 
 ![[公式]](https://www.zhihu.com/equation?tex=L%5Cleft%28%5Ctheta%2C+%5Ctheta_%7B1%7D%2C+%5Ctheta_%7B2%7D%5Cright%29%3D-%5Csum_%7Bi%3D1%7D%5E%7BM%7D+%5Clog+p%5Cleft%28m%3Dm_%7Bi%7D+%7C+%5Ctheta%2C+%5Ctheta_%7B1%7D%5Cright%29-%5Csum_%7Bj%3D1%7D%5E%7BN%7D+%5Clog+p%5Cleft%28n%3Dn_%7Bi%7D+%7C+%5Ctheta%2C+%5Ctheta_%7B2%7D%5Cright%29)
 
-### 预训练技巧
+>### 预训练技巧
 具体的预训练工程实现细节方面，BERT 还利用了一系列策略，使得模型更易于训练，除了常用的layer normalization，dropout之外，还有对于学习率的 warm-up 策略，使用的激活函数不再是普通的 ReLu，而是 GeLu。
 - Transformer related :  dropout, layer_norm, residual
 - 
@@ -523,11 +523,11 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [BERT author explain BERT](https://www.reddit.com/r/MachineLearning/comments/9nfqxz/r_bert_pretraining_of_deep_bidirectional/)
 [Examining BERT's raw embeddings](https://towardsdatascience.com/examining-berts-raw-embeddings-fd905cb22df7)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNzMwOTM2MTI1LC0xNzk4Njc0NzkyLC02OT
-c0OTE2LDE1MzA4MzU5NDUsLTEzNjY2NjM5OTIsNDc3MjQ0MTEs
-NTYyMzU4MTY5LDE2NDgxNDAwMDIsMTk3NzgxMDAzNiwxMDgyMD
-A5NDA1LDE1MTg5MTIxMDcsLTIwMzM3NTk4MjAsLTEyNzE4MTY2
-ODMsNzkzNTQyNTM3LDg1MDExMDE5NCwtMTUwNzEyODIzMiwtMz
-c3NDY4NzYwLDEzOTgxMzcwNjEsMjAxODI2ODQwNywxMTc0MDA0
-OTkzXX0=
+eyJoaXN0b3J5IjpbLTM2NzU2NDE3NiwtMTc5ODY3NDc5MiwtNj
+k3NDkxNiwxNTMwODM1OTQ1LC0xMzY2NjYzOTkyLDQ3NzI0NDEx
+LDU2MjM1ODE2OSwxNjQ4MTQwMDAyLDE5Nzc4MTAwMzYsMTA4Mj
+AwOTQwNSwxNTE4OTEyMTA3LC0yMDMzNzU5ODIwLC0xMjcxODE2
+NjgzLDc5MzU0MjUzNyw4NTAxMTAxOTQsLTE1MDcxMjgyMzIsLT
+M3NzQ2ODc2MCwxMzk4MTM3MDYxLDIwMTgyNjg0MDcsMTE3NDAw
+NDk5M119
 -->
