@@ -275,6 +275,8 @@ Each training data contains Two sentences, $W_1[w_{11}, w_{12}, w_{13}, w_{14}, 
 ### 微调任务类型
 ![enter image description here](https://lilianweng.github.io/lil-log/assets/images/BERT-downstream-tasks.png)
 ### 语义分析
+
+[](https://docs.google.com/drawings/d/e/2PACX-1vStZ1DhjhFi-1LIWS7hCHsvTzu_SQ-DS9Dh6MDCC2qcjmmDcuWte2Ii3wATxx149_NX-OOVzU1nqbr9/pub?w=884&h=709)
 这种类型的任务对输入（一句话）进行语义分析。输入一句话，预测这句话的分类，如分析一条购买评价的语义是肯定的还是否定的。
 - 训练数据
 	- $x={x_1, x_2, x_3, ... , x_n}, y=label$
@@ -524,11 +526,11 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [BERT author explain BERT](https://www.reddit.com/r/MachineLearning/comments/9nfqxz/r_bert_pretraining_of_deep_bidirectional/)
 [Examining BERT's raw embeddings](https://towardsdatascience.com/examining-berts-raw-embeddings-fd905cb22df7)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTM3NTc1ODcwNSwtMTc5ODY3NDc5MiwtNj
-k3NDkxNiwxNTMwODM1OTQ1LC0xMzY2NjYzOTkyLDQ3NzI0NDEx
-LDU2MjM1ODE2OSwxNjQ4MTQwMDAyLDE5Nzc4MTAwMzYsMTA4Mj
-AwOTQwNSwxNTE4OTEyMTA3LC0yMDMzNzU5ODIwLC0xMjcxODE2
-NjgzLDc5MzU0MjUzNyw4NTAxMTAxOTQsLTE1MDcxMjgyMzIsLT
-M3NzQ2ODc2MCwxMzk4MTM3MDYxLDIwMTgyNjg0MDcsMTE3NDAw
-NDk5M119
+eyJoaXN0b3J5IjpbLTUwMDI4MDQ0OCwtMzc1NzU4NzA1LC0xNz
+k4Njc0NzkyLC02OTc0OTE2LDE1MzA4MzU5NDUsLTEzNjY2NjM5
+OTIsNDc3MjQ0MTEsNTYyMzU4MTY5LDE2NDgxNDAwMDIsMTk3Nz
+gxMDAzNiwxMDgyMDA5NDA1LDE1MTg5MTIxMDcsLTIwMzM3NTk4
+MjAsLTEyNzE4MTY2ODMsNzkzNTQyNTM3LDg1MDExMDE5NCwtMT
+UwNzEyODIzMiwtMzc3NDY4NzYwLDEzOTgxMzcwNjEsMjAxODI2
+ODQwN119
 -->
