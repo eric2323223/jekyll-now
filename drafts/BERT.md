@@ -189,7 +189,7 @@ _Will random tokens confuse the model?_
 The model will indeed try to use the embedding of the random token to help in its prediction and it will learn that it was actually not useful once it sees the target (correct token). However, the random replacement happened in 1.5% of the tokens (10%*15%) and the authors claim that it did not affect the model’s performance.
 _The model will only predict 15% of the tokens but language models predict 100% of tokens, does this mean that the model needs more iterations to achieve the same loss?_
 Yes, the model does converge more slowly but the increased steps in converging are justified by an considerable improvement in downstream performance.
-##### MLM loss
+##### MLM 误差函数
 
 #### NSP
 
@@ -516,11 +516,11 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [BERT author explain BERT](https://www.reddit.com/r/MachineLearning/comments/9nfqxz/r_bert_pretraining_of_deep_bidirectional/)
 [Examining BERT's raw embeddings](https://towardsdatascience.com/examining-berts-raw-embeddings-fd905cb22df7)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTg2MTE2NzYzNywxNTMwODM1OTQ1LC0xMz
-Y2NjYzOTkyLDQ3NzI0NDExLDU2MjM1ODE2OSwxNjQ4MTQwMDAy
-LDE5Nzc4MTAwMzYsMTA4MjAwOTQwNSwxNTE4OTEyMTA3LC0yMD
-MzNzU5ODIwLC0xMjcxODE2NjgzLDc5MzU0MjUzNyw4NTAxMTAx
-OTQsLTE1MDcxMjgyMzIsLTM3NzQ2ODc2MCwxMzk4MTM3MDYxLD
-IwMTgyNjg0MDcsMTE3NDAwNDk5MywxOTU1MTUyMzU0LC0xMzAz
-MDM2NTNdfQ==
+eyJoaXN0b3J5IjpbLTY5NzQ5MTYsMTUzMDgzNTk0NSwtMTM2Nj
+Y2Mzk5Miw0NzcyNDQxMSw1NjIzNTgxNjksMTY0ODE0MDAwMiwx
+OTc3ODEwMDM2LDEwODIwMDk0MDUsMTUxODkxMjEwNywtMjAzMz
+c1OTgyMCwtMTI3MTgxNjY4Myw3OTM1NDI1MzcsODUwMTEwMTk0
+LC0xNTA3MTI4MjMyLC0zNzc0Njg3NjAsMTM5ODEzNzA2MSwyMD
+E4MjY4NDA3LDExNzQwMDQ5OTMsMTk1NTE1MjM1NCwtMTMwMzAz
+NjUzXX0=
 -->
