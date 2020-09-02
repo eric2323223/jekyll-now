@@ -154,7 +154,7 @@ Transformer由编码器和解码器组成，编码器负责将输入序列中的
 - EnglishWikipedia (2.5B words)
 
 ### 任务设计
-自然语言中蕴含的意义是以句子的形式表现的，为了让预训练模型学习到更多的通用知识，BERT的预训练被设计为多任务学习（multi-task learning），包含两个任务：一个是 Masked Language Model，训练模型理解单个句子的含义；另一个是 Next Sentence Prediction，训练模型理解不同语句之间的上下文关系。
+自然语言中蕴含的意义是以句子的形式表现的，为了让预训练模型学习到更多的知识，BERT的预训练被设计为多任务学习（multi-task learning），包含两个任务：一个是 Masked Language Model，训练模型理解单个句子的含义；另一个是 Next Sentence Prediction，训练模型理解不同语句之间的上下文关系。
 >MLM这种设计的原因是由于BERT使用的注意力机制有全局的视野，能够一次同时访问序列的所有元素，因此无法使用传统的语言模型那种一步一看的训练方式。**前者用于建模更广泛的上下文，通过 mask 来强制模型给每个词记住更多的上下文信息；后者用来建模多个句子之间的关系，**
 
 ![enter image description here](https://www.researchgate.net/profile/Jan_Christian_Blaise_Cruz/publication/334160936/figure/fig1/AS:776030256111617@1562031439583/Overall-BERT-pretraining-and-finetuning-framework-Note-that-the-same-architecture-in.ppm)
@@ -530,11 +530,11 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [BERT author explain BERT](https://www.reddit.com/r/MachineLearning/comments/9nfqxz/r_bert_pretraining_of_deep_bidirectional/)
 [Examining BERT's raw embeddings](https://towardsdatascience.com/examining-berts-raw-embeddings-fd905cb22df7)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTgzMDkzNzY5MywtMzc1NzU4NzA1LC0xNz
-k4Njc0NzkyLC02OTc0OTE2LDE1MzA4MzU5NDUsLTEzNjY2NjM5
-OTIsNDc3MjQ0MTEsNTYyMzU4MTY5LDE2NDgxNDAwMDIsMTk3Nz
-gxMDAzNiwxMDgyMDA5NDA1LDE1MTg5MTIxMDcsLTIwMzM3NTk4
-MjAsLTEyNzE4MTY2ODMsNzkzNTQyNTM3LDg1MDExMDE5NCwtMT
-UwNzEyODIzMiwtMzc3NDY4NzYwLDEzOTgxMzcwNjEsMjAxODI2
-ODQwN119
+eyJoaXN0b3J5IjpbMTc5MDY3NzQ4OSwtODMwOTM3NjkzLC0zNz
+U3NTg3MDUsLTE3OTg2NzQ3OTIsLTY5NzQ5MTYsMTUzMDgzNTk0
+NSwtMTM2NjY2Mzk5Miw0NzcyNDQxMSw1NjIzNTgxNjksMTY0OD
+E0MDAwMiwxOTc3ODEwMDM2LDEwODIwMDk0MDUsMTUxODkxMjEw
+NywtMjAzMzc1OTgyMCwtMTI3MTgxNjY4Myw3OTM1NDI1MzcsOD
+UwMTEwMTk0LC0xNTA3MTI4MjMyLC0zNzc0Njg3NjAsMTM5ODEz
+NzA2MV19
 -->
