@@ -164,7 +164,7 @@ Transformer由编码器和解码器组成，编码器负责将输入序列中的
 
 BERT的具体做法是给定一个句子，随机遮罩15%的词（即用[Mask]来替换原来的词），然后输入BERT模型并让BERT来预测这些Mask的词，~~如同上述10.1所述，在输入侧引入[Mask]标记，会导致预训练阶段和Fine-tuning阶段不一致的问题，因此在论文中为了缓解这一问题，采取了如下措施：~~
 
-对于每个在被选中的15%的Token里，则按照下面的方式随机的执行：
+对于每个在被选中的15%的Token里，则按照下面的规则执行：
 
 -   80%的概率替换成[MASK]，比如my dog is hairy → my dog is [MASK]
 -   10%的概率替换成随机的一个词，比如my dog is hairy → my dog is apple
@@ -174,7 +174,8 @@ BERT的具体做法是给定一个句子，随机遮罩15%的词（即用[Mask]�
 BERT is [MASK1] to help **milk** understand the meaning of ambiguous language in text by using **surrounding** text to [MASK2] context
 任务目标： 预测所有[MASK] 以及milk和surrounding位置上的词
 测试数据：[MASK1]=designed, milk=computers, surrounding=surrounding, [MASK2]=establish
-dui
+
+对于被遮罩的词的替换规则
  - 如果只做[MASK]替换，预训练模型会被训练为对[MASK]进行预测，所以只会加强[MASK]附近上下文的分析而不是全部序列的分析。 而微调阶段的目标是分析整个序列，它的输入不包含[MASK]，与预训练模型的目标不一致，因此会导致预训练模型在微调阶段性能下降。
  - 为了更加符合微调阶段的目标，作者加入了一种新的预处理方式，即以10%的几率随机将原词computer替换为其他词milk而不是[MASK]，为了得出正确结果（computer）模型需要分析milk的上下文。由于所有的词都可能被替换，这就要求模型要对所有输入元素的上下文进行分析，从而满足微调的需要。
  - 考虑到如果只用[Mask]和任意词进行替换，模型会认为看到当前的词都是不真实的（替换过的），这会导致生成embedding的过程完全不参考当前词。为此预训练时也会也10%的概率使用原词替换（如surrounding），这样模型也会参考当前词来生成embedding。
@@ -531,7 +532,7 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [BERT author explain BERT](https://www.reddit.com/r/MachineLearning/comments/9nfqxz/r_bert_pretraining_of_deep_bidirectional/)
 [Examining BERT's raw embeddings](https://towardsdatascience.com/examining-berts-raw-embeddings-fd905cb22df7)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTg1NzIwNzQzOSwxOTk2MTczNzM5LDEzOT
+eyJoaXN0b3J5IjpbLTc2NTcwOTM5MywxOTk2MTczNzM5LDEzOT
 k3MTA2MCwtMTU0NTExNTEwMCwxNzA1MjIxODg1LC0xNDY4OTY1
 ODQyLC04MzA5Mzc2OTMsLTM3NTc1ODcwNSwtMTc5ODY3NDc5Mi
 wtNjk3NDkxNiwxNTMwODM1OTQ1LC0xMzY2NjYzOTkyLDQ3NzI0
