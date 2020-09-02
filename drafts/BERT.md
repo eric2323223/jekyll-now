@@ -194,6 +194,7 @@ _The model will only predict 15% of the tokens but language models predict 100% 
 Yes, the model does converge more slowly but the increased steps in converging are justified by an considerable improvement in downstream performance.
 ##### MLM 误差函数
 MLM需要对每个词进行预测（由于被遮罩的词有15%的机率被替换成随机词，因词模型不知道哪个词是被遮罩的），判断预测值和真实值的过程是典型的分类问题（每个不同的词都是一个类型，共有词汇表中所有词汇个类型），因此对误差计算使用分类问题常用的crossentropy函数。
+
 ```
 masked_lm_loss = CrossEntropyLoss(prediction_scores.view(-1, self.config.vocab_size), labels.view(-1))
 ```
@@ -534,11 +535,11 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [BERT author explain BERT](https://www.reddit.com/r/MachineLearning/comments/9nfqxz/r_bert_pretraining_of_deep_bidirectional/)
 [Examining BERT's raw embeddings](https://towardsdatascience.com/examining-berts-raw-embeddings-fd905cb22df7)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTU4MDIxODgzMCw4Mjk0NTk4NzgsLTc4Nz
-czMDUxMSwtMTEzNjQ4NzE3LC02OTYyOTM2NDMsLTEwMzg2NTU4
-MjcsODk5NTYzMTg4LC03NjU3MDkzOTMsMTk5NjE3MzczOSwxMz
-k5NzEwNjAsLTE1NDUxMTUxMDAsMTcwNTIyMTg4NSwtMTQ2ODk2
-NTg0MiwtODMwOTM3NjkzLC0zNzU3NTg3MDUsLTE3OTg2NzQ3OT
-IsLTY5NzQ5MTYsMTUzMDgzNTk0NSwtMTM2NjY2Mzk5Miw0Nzcy
-NDQxMV19
+eyJoaXN0b3J5IjpbLTE2NDMzOTExNzIsMTU4MDIxODgzMCw4Mj
+k0NTk4NzgsLTc4NzczMDUxMSwtMTEzNjQ4NzE3LC02OTYyOTM2
+NDMsLTEwMzg2NTU4MjcsODk5NTYzMTg4LC03NjU3MDkzOTMsMT
+k5NjE3MzczOSwxMzk5NzEwNjAsLTE1NDUxMTUxMDAsMTcwNTIy
+MTg4NSwtMTQ2ODk2NTg0MiwtODMwOTM3NjkzLC0zNzU3NTg3MD
+UsLTE3OTg2NzQ3OTIsLTY5NzQ5MTYsMTUzMDgzNTk0NSwtMTM2
+NjY2Mzk5Ml19
 -->
