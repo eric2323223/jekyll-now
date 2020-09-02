@@ -192,7 +192,7 @@ The model will indeed try to use the embedding of the random token to help in it
 _The model will only predict 15% of the tokens but language models predict 100% of tokens, does this mean that the model needs more iterations to achieve the same loss?_
 Yes, the model does converge more slowly but the increased steps in converging are justified by an considerable improvement in downstream performance.
 ##### MLM 误差函数
-MLM对每个词进行预测（由于被遮罩的词有15%的机率被替换成随机词，因词模型不知道哪个词是被遮罩的），判断预测值和真实值的过程是典型的分类问题（每个不同的词都是一个类型，共有词汇表中所有词汇个类型），因此对误差计算使用分类问题常用的crossentropy函数。
+MLM需要对每个词进行预测（由于被遮罩的词有15%的机率被替换成随机词，因词模型不知道哪个词是被遮罩的），判断预测值和真实值的过程是典型的分类问题（每个不同的词都是一个类型，共有词汇表中所有词汇个类型），因此对误差计算使用分类问题常用的crossentropy函数。
 ```
 masked_lm_loss = CrossEntropyLoss(prediction_scores.view(-1, self.config.vocab_size), labels.view(-1))
 ```
@@ -202,8 +202,7 @@ Next Sentence Prediction（NSP）的任务是判断句子B是否是句子A的下
 
 >_Why is a second task necessary at all?_
 The authors pre-trained their model in  _Next Sentence Prediction_  because they thought important that the model knew how to relate two different sentences to perform downstream tasks like question answering or natural language inference and the “masked language model” did not capture this knowledge. They prove that pre-training with this second task notably increases performance in both question answering and natural language inference.
-_What percentage of sentences where actually next sentences?_
-50% of the sentences were paired with actual adjacent sentences in the corpus and 50% of them were paired with sentences picked randomly from the corpus.
+
 ##### NSP loss
 
 ```
@@ -534,11 +533,11 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [BERT author explain BERT](https://www.reddit.com/r/MachineLearning/comments/9nfqxz/r_bert_pretraining_of_deep_bidirectional/)
 [Examining BERT's raw embeddings](https://towardsdatascience.com/examining-berts-raw-embeddings-fd905cb22df7)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE3MTgzMzc0MDMsLTc4NzczMDUxMSwtMT
-EzNjQ4NzE3LC02OTYyOTM2NDMsLTEwMzg2NTU4MjcsODk5NTYz
-MTg4LC03NjU3MDkzOTMsMTk5NjE3MzczOSwxMzk5NzEwNjAsLT
-E1NDUxMTUxMDAsMTcwNTIyMTg4NSwtMTQ2ODk2NTg0MiwtODMw
-OTM3NjkzLC0zNzU3NTg3MDUsLTE3OTg2NzQ3OTIsLTY5NzQ5MT
-YsMTUzMDgzNTk0NSwtMTM2NjY2Mzk5Miw0NzcyNDQxMSw1NjIz
-NTgxNjldfQ==
+eyJoaXN0b3J5IjpbODI5NDU5ODc4LC03ODc3MzA1MTEsLTExMz
+Y0ODcxNywtNjk2MjkzNjQzLC0xMDM4NjU1ODI3LDg5OTU2MzE4
+OCwtNzY1NzA5MzkzLDE5OTYxNzM3MzksMTM5OTcxMDYwLC0xNT
+Q1MTE1MTAwLDE3MDUyMjE4ODUsLTE0Njg5NjU4NDIsLTgzMDkz
+NzY5MywtMzc1NzU4NzA1LC0xNzk4Njc0NzkyLC02OTc0OTE2LD
+E1MzA4MzU5NDUsLTEzNjY2NjM5OTIsNDc3MjQ0MTEsNTYyMzU4
+MTY5XX0=
 -->
