@@ -210,7 +210,7 @@ The authors pre-trained their model in  _Next Sentence Prediction_  because they
 next_sentence_loss = loss_fct(seq_relationship_score.view(-1, 2), next_sentence_label.view(-1))
 ```
 ### 预训练模型架构
-**BERT(embeddings + ) + BertPretrainingHeads(MSM，NSP head)**
+**BERT(BertEmbeddings+BertEncoder+BertPooler) + BertPretrainingHeads(MSM，NSP head)**
 ![enter image description here](https://miro.medium.com/max/1270/1*i8zICfESnaGt4EVRcWBLKw.png)
 ### 损失函数
 ```
@@ -535,11 +535,11 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [BERT author explain BERT](https://www.reddit.com/r/MachineLearning/comments/9nfqxz/r_bert_pretraining_of_deep_bidirectional/)
 [Examining BERT's raw embeddings](https://towardsdatascience.com/examining-berts-raw-embeddings-fd905cb22df7)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE5MDIwNTI0OTcsNDYxNTQxODUsMTU4MD
-IxODgzMCw4Mjk0NTk4NzgsLTc4NzczMDUxMSwtMTEzNjQ4NzE3
-LC02OTYyOTM2NDMsLTEwMzg2NTU4MjcsODk5NTYzMTg4LC03Nj
-U3MDkzOTMsMTk5NjE3MzczOSwxMzk5NzEwNjAsLTE1NDUxMTUx
-MDAsMTcwNTIyMTg4NSwtMTQ2ODk2NTg0MiwtODMwOTM3NjkzLC
-0zNzU3NTg3MDUsLTE3OTg2NzQ3OTIsLTY5NzQ5MTYsMTUzMDgz
-NTk0NV19
+eyJoaXN0b3J5IjpbMTk1OTQwOTU3MCw0NjE1NDE4NSwxNTgwMj
+E4ODMwLDgyOTQ1OTg3OCwtNzg3NzMwNTExLC0xMTM2NDg3MTcs
+LTY5NjI5MzY0MywtMTAzODY1NTgyNyw4OTk1NjMxODgsLTc2NT
+cwOTM5MywxOTk2MTczNzM5LDEzOTk3MTA2MCwtMTU0NTExNTEw
+MCwxNzA1MjIxODg1LC0xNDY4OTY1ODQyLC04MzA5Mzc2OTMsLT
+M3NTc1ODcwNSwtMTc5ODY3NDc5MiwtNjk3NDkxNiwxNTMwODM1
+OTQ1XX0=
 -->
