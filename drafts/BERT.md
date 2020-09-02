@@ -283,7 +283,7 @@ Each training data contains Two sentences, $W_1[w_{11}, w_{12}, w_{13}, w_{14}, 
 ![enter image description here](https://www.topbots.com/wp-content/uploads/2019/12/cover_transfer_learning_1600px_web.jpg)
 ![enter image description here](https://www.researchgate.net/profile/Jan_Christian_Blaise_Cruz/publication/334160936/figure/fig1/AS:776030256111617@1562031439583/Overall-BERT-pretraining-and-finetuning-framework-Note-that-the-same-architecture-in.ppm)
 ### 微调任务类型
-> ![enter image description here](https://lilianweng.github.io/lil-log/assets/images/BERT-downstream-tasks.png)
+![enter image description here](https://lilianweng.github.io/lil-log/assets/images/BERT-downstream-tasks.png)
 ### 语义分析
 
 ![](https://docs.google.com/drawings/d/e/2PACX-1vStZ1DhjhFi-1LIWS7hCHsvTzu_SQ-DS9Dh6MDCC2qcjmmDcuWte2Ii3wATxx149_NX-OOVzU1nqbr9/pub?w=884&h=709)
@@ -538,7 +538,7 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [BERT author explain BERT](https://www.reddit.com/r/MachineLearning/comments/9nfqxz/r_bert_pretraining_of_deep_bidirectional/)
 [Examining BERT's raw embeddings](https://towardsdatascience.com/examining-berts-raw-embeddings-fd905cb22df7)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTkzNTAwMjYyMCwtMTI5NTI3MDY0NSw0Nj
+eyJoaXN0b3J5IjpbLTg2ODUyMDAzMCwtMTI5NTI3MDY0NSw0Nj
 E1NDE4NSwxNTgwMjE4ODMwLDgyOTQ1OTg3OCwtNzg3NzMwNTEx
 LC0xMTM2NDg3MTcsLTY5NjI5MzY0MywtMTAzODY1NTgyNyw4OT
 k1NjMxODgsLTc2NTcwOTM5MywxOTk2MTczNzM5LDEzOTk3MTA2
