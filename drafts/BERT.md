@@ -154,12 +154,12 @@ Transformer由编码器和解码器组成，编码器负责将输入序列中的
 - EnglishWikipedia (2.5B words)
 
 ### 任务设计
-自然语言中蕴含的意义是以句子的形式表现的，为了让预训练模型学习到更多的知识，BERT的预训练被设计为多任务学习（multi-task learning），包含两个任务：一个是 Masked Language Model，训练模型理解单个句子的含义；另一个是 Next Sentence Prediction，训练模型理解不同语句之间的上下文关系。
+自然语言中蕴含的意义是以句子的形式表现的，为了让预训练模型学习到更多的知识，BERT的预训练被设计为多任务学习（multi-task learning），包含两个任务：一个是 Masked Language Model，训练模型理解单个句子蕴含的意义；另一个是 Next Sentence Prediction，训练模型理解不同语句之间的上下文含义。
 >MLM这种设计的原因是由于BERT使用的注意力机制有全局的视野，能够一次同时访问序列的所有元素，因此无法使用传统的语言模型那种一步一看的训练方式。**前者用于建模更广泛的上下文，通过 mask 来强制模型给每个词记住更多的上下文信息；后者用来建模多个句子之间的关系，**
 
 ![enter image description here](https://www.researchgate.net/profile/Jan_Christian_Blaise_Cruz/publication/334160936/figure/fig1/AS:776030256111617@1562031439583/Overall-BERT-pretraining-and-finetuning-framework-Note-that-the-same-architecture-in.ppm)
 #### Masked Language Model  - MLM
-注意力机制的使用使得BERT模型能够同时“看到”所有的序列元素，因此无法使用传统语言模型通过预测下一个元素的方式来进行训练。因此BERT使用了预测随机遮罩元素的方式，即masked language model。这种MLM训练的思路类似于填词游戏，通过上下文的信息来判断模型被隐藏的词，（如果mask太多，会丢失context，如果mask太少，训练太慢）
+之所以BERT重新设计了MLM注意力机制的使用使得BERT模型能够同时“看到”所有的序列元素，因此无法使用传统语言模型通过预测下一个元素的方式来进行训练。因此BERT使用了预测随机遮罩元素的方式，即masked language model。这种MLM训练的思路类似于填词游戏，通过上下文的信息来判断模型被隐藏的词，（如果mask太多，会丢失context，如果mask太少，训练太慢）
 [https://towardsdatascience.com/bert-explained-state-of-the-art-language-model-for-nlp-f8b21a9b6270](https://towardsdatascience.com/bert-explained-state-of-the-art-language-model-for-nlp-f8b21a9b6270)
 BERT的具体做法是给定一个句子，随机Mask 15%的词（即用[Mask]来替换原来的词），然后输入BERT模型并让BERT来预测这些Mask的词，~~如同上述10.1所述，在输入侧引入[Mask]标记，会导致预训练阶段和Fine-tuning阶段不一致的问题，因此在论文中为了缓解这一问题，采取了如下措施：~~
 
@@ -530,11 +530,11 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [BERT author explain BERT](https://www.reddit.com/r/MachineLearning/comments/9nfqxz/r_bert_pretraining_of_deep_bidirectional/)
 [Examining BERT's raw embeddings](https://towardsdatascience.com/examining-berts-raw-embeddings-fd905cb22df7)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTc5MDY3NzQ4OSwtODMwOTM3NjkzLC0zNz
-U3NTg3MDUsLTE3OTg2NzQ3OTIsLTY5NzQ5MTYsMTUzMDgzNTk0
-NSwtMTM2NjY2Mzk5Miw0NzcyNDQxMSw1NjIzNTgxNjksMTY0OD
-E0MDAwMiwxOTc3ODEwMDM2LDEwODIwMDk0MDUsMTUxODkxMjEw
-NywtMjAzMzc1OTgyMCwtMTI3MTgxNjY4Myw3OTM1NDI1MzcsOD
-UwMTEwMTk0LC0xNTA3MTI4MjMyLC0zNzc0Njg3NjAsMTM5ODEz
-NzA2MV19
+eyJoaXN0b3J5IjpbNDkxOTIwNTg1LC04MzA5Mzc2OTMsLTM3NT
+c1ODcwNSwtMTc5ODY3NDc5MiwtNjk3NDkxNiwxNTMwODM1OTQ1
+LC0xMzY2NjYzOTkyLDQ3NzI0NDExLDU2MjM1ODE2OSwxNjQ4MT
+QwMDAyLDE5Nzc4MTAwMzYsMTA4MjAwOTQwNSwxNTE4OTEyMTA3
+LC0yMDMzNzU5ODIwLC0xMjcxODE2NjgzLDc5MzU0MjUzNyw4NT
+AxMTAxOTQsLTE1MDcxMjgyMzIsLTM3NzQ2ODc2MCwxMzk4MTM3
+MDYxXX0=
 -->
