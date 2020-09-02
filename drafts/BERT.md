@@ -159,7 +159,7 @@ Transformer由编码器和解码器组成，编码器负责将输入序列中的
 
 ![enter image description here](https://www.researchgate.net/profile/Jan_Christian_Blaise_Cruz/publication/334160936/figure/fig1/AS:776030256111617@1562031439583/Overall-BERT-pretraining-and-finetuning-framework-Note-that-the-same-architecture-in.ppm)
 #### Masked Language Model  - MLM
-之所以BERT使用重新设计的MLM，是由于注意力机制的使用使得BERT模型能够同时“看到”所有的序列元素，因此无法使用传统语言模型通过预测下一个元素的方式来进行训练。因此BERT使用了预测随机遮罩元素的方式，即masked language model。这种MLM训练的思路类似于填词游戏，通过上下文的信息来判断模型被隐藏的词。从原理上讲这种方式可以很好的匹配注意力机制的，但是（如果mask太多，会丢失context，如果mask太少，训练太慢）
+之所以BERT使用重新设计的MLM，是由于注意力机制的使用使得BERT模型能够同时“看到”所有的序列元素，因此无法使用传统语言模型通过预测下一个元素的方式来进行训练。因此BERT使用了预测随机遮罩元素的方式，即masked language model。这种MLM训练的思路类似于填词游戏，通过上下文的信息来判断模型被隐藏的词。从原理上讲这种方式可以很好的匹配注意力机制的运算方式，但是（如果mask太多，会丢失context，如果mask太少，训练太慢）
 [https://towardsdatascience.com/bert-explained-state-of-the-art-language-model-for-nlp-f8b21a9b6270](https://towardsdatascience.com/bert-explained-state-of-the-art-language-model-for-nlp-f8b21a9b6270)
 BERT的具体做法是给定一个句子，随机Mask 15%的词（即用[Mask]来替换原来的词），然后输入BERT模型并让BERT来预测这些Mask的词，~~如同上述10.1所述，在输入侧引入[Mask]标记，会导致预训练阶段和Fine-tuning阶段不一致的问题，因此在论文中为了缓解这一问题，采取了如下措施：~~
 
@@ -530,7 +530,7 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [BERT author explain BERT](https://www.reddit.com/r/MachineLearning/comments/9nfqxz/r_bert_pretraining_of_deep_bidirectional/)
 [Examining BERT's raw embeddings](https://towardsdatascience.com/examining-berts-raw-embeddings-fd905cb22df7)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE3Njk3MDg5ODEsLTgzMDkzNzY5MywtMz
+eyJoaXN0b3J5IjpbLTE0Njg5NjU4NDIsLTgzMDkzNzY5MywtMz
 c1NzU4NzA1LC0xNzk4Njc0NzkyLC02OTc0OTE2LDE1MzA4MzU5
 NDUsLTEzNjY2NjM5OTIsNDc3MjQ0MTEsNTYyMzU4MTY5LDE2ND
 gxNDAwMDIsMTk3NzgxMDAzNiwxMDgyMDA5NDA1LDE1MTg5MTIx
