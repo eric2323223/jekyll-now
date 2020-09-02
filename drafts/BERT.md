@@ -331,19 +331,16 @@ Each training data contains Two sentences, $W_1[w_{11}, w_{12}, w_{13}, w_{14}, 
 ### 限定上下文问答 SQuAD
 ![](https://docs.google.com/drawings/d/e/2PACX-1vSGC-bIM19eOTk96audRUt_wo5hNgsIQpPZVo0pRfMLLxmCpYihvwaKYtcHI2Eyikmk4amBFMSNur6T/pub?w=835&h=686)
 #### 任务介绍
+- 预测answer span(start pos, end pos)
 #### 模型架构
-
+- BERT预训练模型
+- SQuaD任务层
 #### 训练数据
 	- question
 	- reference
 	- answer_start_pos
 	- answer_end_pos
 #### 训练流程
-在输入
-- 预测answer span(start pos, end pos)
-- 训练数据
-
-- 训练流程
 	- question + [SEP] + reference
 	- 
 Use classification head for each token
@@ -543,7 +540,7 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [BERT author explain BERT](https://www.reddit.com/r/MachineLearning/comments/9nfqxz/r_bert_pretraining_of_deep_bidirectional/)
 [Examining BERT's raw embeddings](https://towardsdatascience.com/examining-berts-raw-embeddings-fd905cb22df7)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTg5NjkwNjQ3MCwtMTI5NTI3MDY0NSw0Nj
+eyJoaXN0b3J5IjpbMTk0MzQ5OTM1MSwtMTI5NTI3MDY0NSw0Nj
 E1NDE4NSwxNTgwMjE4ODMwLDgyOTQ1OTg3OCwtNzg3NzMwNTEx
 LC0xMTM2NDg3MTcsLTY5NjI5MzY0MywtMTAzODY1NTgyNyw4OT
 k1NjMxODgsLTc2NTcwOTM5MywxOTk2MTczNzM5LDEzOTk3MTA2
