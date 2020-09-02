@@ -198,7 +198,7 @@ masked_lm_loss = CrossEntropyLoss(prediction_scores.view(-1, self.config.vocab_s
 ```
 #### NSP
 
->Next Sentence Prediction（NSP）的任务是判断句子B是否是句子A的下文。如果是的话输出’IsNext‘，否则输出’NotNext‘。训练数据的生成方式是从平行语料中随机抽取的连续两句话，其中50%保留抽取的两句话，它们符合IsNext关系，另外50%的第二句话是随机从预料中提取的，它们的关系是NotNext的。这个关系保存在图4中的`[CLS]`符号中。
+Next Sentence Prediction（NSP）的任务是判断句子B是否是句子A的下文。如果是的话输出’IsNext‘，否则输出’NotNext‘。训练数据的生成方式是从平行语料中随机抽取的连续两句话，其中50%保留抽取的两句话，它们符合IsNext关系，另外50%的第二句话是随机从预料中提取的，它们的关系是NotNext的。这个关系保存在图4中的`[CLS]`符号中。
 
 >_Why is a second task necessary at all?_
 The authors pre-trained their model in  _Next Sentence Prediction_  because they thought important that the model knew how to relate two different sentences to perform downstream tasks like question answering or natural language inference and the “masked language model” did not capture this knowledge. They prove that pre-training with this second task notably increases performance in both question answering and natural language inference.
@@ -534,11 +534,11 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [BERT author explain BERT](https://www.reddit.com/r/MachineLearning/comments/9nfqxz/r_bert_pretraining_of_deep_bidirectional/)
 [Examining BERT's raw embeddings](https://towardsdatascience.com/examining-berts-raw-embeddings-fd905cb22df7)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTc4NzczMDUxMSwtMTEzNjQ4NzE3LC02OT
-YyOTM2NDMsLTEwMzg2NTU4MjcsODk5NTYzMTg4LC03NjU3MDkz
-OTMsMTk5NjE3MzczOSwxMzk5NzEwNjAsLTE1NDUxMTUxMDAsMT
-cwNTIyMTg4NSwtMTQ2ODk2NTg0MiwtODMwOTM3NjkzLC0zNzU3
-NTg3MDUsLTE3OTg2NzQ3OTIsLTY5NzQ5MTYsMTUzMDgzNTk0NS
-wtMTM2NjY2Mzk5Miw0NzcyNDQxMSw1NjIzNTgxNjksMTY0ODE0
-MDAwMl19
+eyJoaXN0b3J5IjpbLTE3MTgzMzc0MDMsLTc4NzczMDUxMSwtMT
+EzNjQ4NzE3LC02OTYyOTM2NDMsLTEwMzg2NTU4MjcsODk5NTYz
+MTg4LC03NjU3MDkzOTMsMTk5NjE3MzczOSwxMzk5NzEwNjAsLT
+E1NDUxMTUxMDAsMTcwNTIyMTg4NSwtMTQ2ODk2NTg0MiwtODMw
+OTM3NjkzLC0zNzU3NTg3MDUsLTE3OTg2NzQ3OTIsLTY5NzQ5MT
+YsMTUzMDgzNTk0NSwtMTM2NjY2Mzk5Miw0NzcyNDQxMSw1NjIz
+NTgxNjldfQ==
 -->
