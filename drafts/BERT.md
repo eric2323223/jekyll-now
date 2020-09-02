@@ -175,7 +175,7 @@ BERT is [MASK1] to help **milk** understand the meaning of ambiguous language in
 任务目标： 预测所有[MASK] 以及milk和surrounding位置上的词
 测试数据：[MASK1]=designed, milk=computers, surrounding=surrounding, [MASK2]=establish
 
-对于被遮罩的词的替换规则
+对于被遮罩词的替换规则
  - 如果只做[MASK]替换，预训练模型会被训练为对[MASK]进行预测，所以只会加强[MASK]附近上下文的分析而不是全部序列的分析。 而微调阶段的目标是分析整个序列，它的输入不包含[MASK]，与预训练模型的目标不一致，因此会导致预训练模型在微调阶段性能下降。
  - 为了更加符合微调阶段的目标，作者加入了一种新的预处理方式，即以10%的几率随机将原词computer替换为其他词milk而不是[MASK]，为了得出正确结果（computer）模型需要分析milk的上下文。由于所有的词都可能被替换，这就要求模型要对所有输入元素的上下文进行分析，从而满足微调的需要。
  - 考虑到如果只用[Mask]和任意词进行替换，模型会认为看到当前的词都是不真实的（替换过的），这会导致生成embedding的过程完全不参考当前词。为此预训练时也会也10%的概率使用原词替换（如surrounding），这样模型也会参考当前词来生成embedding。
@@ -192,6 +192,7 @@ The model will indeed try to use the embedding of the random token to help in it
 _The model will only predict 15% of the tokens but language models predict 100% of tokens, does this mean that the model needs more iterations to achieve the same loss?_
 Yes, the model does converge more slowly but the increased steps in converging are justified by an considerable improvement in downstream performance.
 ##### MLM 误差函数
+MLM对每个被zhe
 ```
 masked_lm_loss = loss_fct(prediction_scores.view(-1, self.config.vocab_size), labels.view(-1))
 ```
@@ -532,11 +533,11 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [BERT author explain BERT](https://www.reddit.com/r/MachineLearning/comments/9nfqxz/r_bert_pretraining_of_deep_bidirectional/)
 [Examining BERT's raw embeddings](https://towardsdatascience.com/examining-berts-raw-embeddings-fd905cb22df7)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTc2NTcwOTM5MywxOTk2MTczNzM5LDEzOT
-k3MTA2MCwtMTU0NTExNTEwMCwxNzA1MjIxODg1LC0xNDY4OTY1
-ODQyLC04MzA5Mzc2OTMsLTM3NTc1ODcwNSwtMTc5ODY3NDc5Mi
-wtNjk3NDkxNiwxNTMwODM1OTQ1LC0xMzY2NjYzOTkyLDQ3NzI0
-NDExLDU2MjM1ODE2OSwxNjQ4MTQwMDAyLDE5Nzc4MTAwMzYsMT
-A4MjAwOTQwNSwxNTE4OTEyMTA3LC0yMDMzNzU5ODIwLC0xMjcx
-ODE2NjgzXX0=
+eyJoaXN0b3J5IjpbLTk3MzA3MDY4MywtNzY1NzA5MzkzLDE5OT
+YxNzM3MzksMTM5OTcxMDYwLC0xNTQ1MTE1MTAwLDE3MDUyMjE4
+ODUsLTE0Njg5NjU4NDIsLTgzMDkzNzY5MywtMzc1NzU4NzA1LC
+0xNzk4Njc0NzkyLC02OTc0OTE2LDE1MzA4MzU5NDUsLTEzNjY2
+NjM5OTIsNDc3MjQ0MTEsNTYyMzU4MTY5LDE2NDgxNDAwMDIsMT
+k3NzgxMDAzNiwxMDgyMDA5NDA1LDE1MTg5MTIxMDcsLTIwMzM3
+NTk4MjBdfQ==
 -->
