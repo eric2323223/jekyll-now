@@ -170,7 +170,7 @@ BERT的具体做法是给定一个句子，随机遮罩15%的词（即用[Mask]�
 -   10%的概率替换成随机的一个词，比如my dog is hairy → my dog is apple
 -   10%的概率替换成它本身，比如my dog is hairy → my dog is hairy
 
-BERT is designed to help computers understand the meaning of ambiguous language in text by using surrounding text to establish context.
+>BERT is designed to help computers understand the meaning of ambiguous language in text by using surrounding text to establish context.
 BERT is [MASK1] to help **milk** understand the meaning of ambiguous language in text by using **surrounding** text to [MASK2] context
 任务目标： 预测所有[MASK] 以及milk和surrounding位置上的词
 测试数据：[MASK1]=designed, milk=computers, surrounding=surrounding, [MASK2]=establish
@@ -531,7 +531,7 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [BERT author explain BERT](https://www.reddit.com/r/MachineLearning/comments/9nfqxz/r_bert_pretraining_of_deep_bidirectional/)
 [Examining BERT's raw embeddings](https://towardsdatascience.com/examining-berts-raw-embeddings-fd905cb22df7)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTM4NTY0NjU4MSwxMzk5NzEwNjAsLTE1ND
+eyJoaXN0b3J5IjpbMTk5NjE3MzczOSwxMzk5NzEwNjAsLTE1ND
 UxMTUxMDAsMTcwNTIyMTg4NSwtMTQ2ODk2NTg0MiwtODMwOTM3
 NjkzLC0zNzU3NTg3MDUsLTE3OTg2NzQ3OTIsLTY5NzQ5MTYsMT
 UzMDgzNTk0NSwtMTM2NjY2Mzk5Miw0NzcyNDQxMSw1NjIzNTgx
