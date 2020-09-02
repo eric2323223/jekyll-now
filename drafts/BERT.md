@@ -192,7 +192,7 @@ The model will indeed try to use the embedding of the random token to help in it
 _The model will only predict 15% of the tokens but language models predict 100% of tokens, does this mean that the model needs more iterations to achieve the same loss?_
 Yes, the model does converge more slowly but the increased steps in converging are justified by an considerable improvement in downstream performance.
 ##### MLM 误差函数
-MLM对每个被遮罩的词进行预测，判断预测值和真实值的过程是典型的分类问题（每个不同的词dou'sh
+MLM对每个被遮罩的词进行预测，判断预测值和真实值的过程是典型的分类问题（每个不同的词都是一个类型），因此MLM的误差函数使用分类问题常用的crossentropy函数
 ```
 masked_lm_loss = loss_fct(prediction_scores.view(-1, self.config.vocab_size), labels.view(-1))
 ```
@@ -533,11 +533,11 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [BERT author explain BERT](https://www.reddit.com/r/MachineLearning/comments/9nfqxz/r_bert_pretraining_of_deep_bidirectional/)
 [Examining BERT's raw embeddings](https://towardsdatascience.com/examining-berts-raw-embeddings-fd905cb22df7)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQ1ODUxNjc2MSwtNzY1NzA5MzkzLDE5OT
-YxNzM3MzksMTM5OTcxMDYwLC0xNTQ1MTE1MTAwLDE3MDUyMjE4
-ODUsLTE0Njg5NjU4NDIsLTgzMDkzNzY5MywtMzc1NzU4NzA1LC
-0xNzk4Njc0NzkyLC02OTc0OTE2LDE1MzA4MzU5NDUsLTEzNjY2
-NjM5OTIsNDc3MjQ0MTEsNTYyMzU4MTY5LDE2NDgxNDAwMDIsMT
-k3NzgxMDAzNiwxMDgyMDA5NDA1LDE1MTg5MTIxMDcsLTIwMzM3
-NTk4MjBdfQ==
+eyJoaXN0b3J5IjpbODk5NTYzMTg4LC03NjU3MDkzOTMsMTk5Nj
+E3MzczOSwxMzk5NzEwNjAsLTE1NDUxMTUxMDAsMTcwNTIyMTg4
+NSwtMTQ2ODk2NTg0MiwtODMwOTM3NjkzLC0zNzU3NTg3MDUsLT
+E3OTg2NzQ3OTIsLTY5NzQ5MTYsMTUzMDgzNTk0NSwtMTM2NjY2
+Mzk5Miw0NzcyNDQxMSw1NjIzNTgxNjksMTY0ODE0MDAwMiwxOT
+c3ODEwMDM2LDEwODIwMDk0MDUsMTUxODkxMjEwNywtMjAzMzc1
+OTgyMF19
 -->
