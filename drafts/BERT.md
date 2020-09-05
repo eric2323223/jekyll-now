@@ -160,7 +160,7 @@ Transformer由编码器和解码器组成，编码器负责将输入序列中的
 
 ![enter image description here](https://miro.medium.com/max/412/1*ZLxPJwuHALDLTdqZfxhVNw.png)
 #### Masked Language Model  - Mask LM
-之所以BERT使用重新设计的MLM，是由于注意力机制的使用使得BERT模型能够同时“看到”所有的序列元素，因此无法使用传统语言模型通过预测下一个元素的方式来进行训练。因此BERT使用了masked language model（MLM），做法是随机挑选序列中的若干元素，将他们遮罩（mask）起来，通过训练模型预测这些注意力机制无法“看到”的元素的正确值来促使模型学习到整个序列的含义。这种MLM训练的思路类似于填词游戏，通过上下文的信息来判断模型被隐藏的词。从原理上讲这种方式可以很好的匹配注意力机制的运算方式，但是在实现训练中遮罩元素的数量对于训练的效果和速度都有很大影响如果mask太多，会丢失context，如果mask太少，训练太慢。
+之所以BERT使用重新设计的MLM，是由于注意力机制的使用使得BERT模型能够同时“看到”所有的序列元素，因此无法使用传统语言模型通过预测下一个元素的方式来进行训练。因此BERT使用了Mask LM，做法是随机挑选序列中的若干元素，将他们遮罩（mask）起来，使注意力通过训练模型预测这些注意力机制无法“看到”的元素的正确值来促使模型学习到整个序列的含义。这种MLM训练的思路类似于填词游戏，通过上下文的信息来判断模型被隐藏的词。从原理上讲这种方式可以很好的匹配注意力机制的运算方式，但是在实现训练中遮罩元素的数量对于训练的效果和速度都有很大影响如果mask太多，会丢失context，如果mask太少，训练太慢。
 >[https://towardsdatascience.com/bert-explained-state-of-the-art-language-model-for-nlp-f8b21a9b6270](https://towardsdatascience.com/bert-explained-state-of-the-art-language-model-for-nlp-f8b21a9b6270)
 
 BERT的具体做法是给定一个句子，随机遮罩15%的词（即用[Mask]来替换原来的词），然后输入BERT模型并让BERT来预测这些Mask的词，~~如同上述10.1所述，在输入侧引入[Mask]标记，会导致预训练阶段和Fine-tuning阶段不一致的问题，因此在论文中为了缓解这一问题，采取了如下措施：~~
@@ -540,11 +540,11 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [BERT author explain BERT](https://www.reddit.com/r/MachineLearning/comments/9nfqxz/r_bert_pretraining_of_deep_bidirectional/)
 [Examining BERT's raw embeddings](https://towardsdatascience.com/examining-berts-raw-embeddings-fd905cb22df7)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjAxMTUwMjQ5MSwxNDM4MDQyNzg2LC0xOD
-I1MTA3ODI5LDE5NDM0OTkzNTEsLTEyOTUyNzA2NDUsNDYxNTQx
-ODUsMTU4MDIxODgzMCw4Mjk0NTk4NzgsLTc4NzczMDUxMSwtMT
-EzNjQ4NzE3LC02OTYyOTM2NDMsLTEwMzg2NTU4MjcsODk5NTYz
-MTg4LC03NjU3MDkzOTMsMTk5NjE3MzczOSwxMzk5NzEwNjAsLT
-E1NDUxMTUxMDAsMTcwNTIyMTg4NSwtMTQ2ODk2NTg0MiwtODMw
-OTM3NjkzXX0=
+eyJoaXN0b3J5IjpbLTE0Njc0MTE1ODYsMTQzODA0Mjc4NiwtMT
+gyNTEwNzgyOSwxOTQzNDk5MzUxLC0xMjk1MjcwNjQ1LDQ2MTU0
+MTg1LDE1ODAyMTg4MzAsODI5NDU5ODc4LC03ODc3MzA1MTEsLT
+ExMzY0ODcxNywtNjk2MjkzNjQzLC0xMDM4NjU1ODI3LDg5OTU2
+MzE4OCwtNzY1NzA5MzkzLDE5OTYxNzM3MzksMTM5OTcxMDYwLC
+0xNTQ1MTE1MTAwLDE3MDUyMjE4ODUsLTE0Njg5NjU4NDIsLTgz
+MDkzNzY5M119
 -->
