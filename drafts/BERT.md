@@ -189,7 +189,7 @@ _Will random tokens confuse the model?_
 The model will indeed try to use the embedding of the random token to help in its prediction and it will learn that it was actually not useful once it sees the target (correct token). However, the random replacement happened in 1.5% of the tokens (10%*15%) and the authors claim that it did not affect the model’s performance.
 _The model will only predict 15% of the tokens but language models predict 100% of tokens, does this mean that the model needs more iterations to achieve the same loss?_
 Yes, the model does converge more slowly but the increased steps in converging are justified by an considerable improvement in downstream performance.
-#### 训练方法
+##### 训练方法
 ![enter image description here](https://pic4.zhimg.com/80/v2-4364096101aad977b125aa585d187387_720w.jpg)
 为了对token进行分类判断，需要在BERT的输出上增加一个多类型分类器（在实现中被称为MLM head），它包含一个全连接网络和softmax运算，可以将通过BERT 编码器编码过的token转换为vocabulary长度个输出，每个输出代表属于对应分类的概率。应用这个分类器对所有token计算出每个类型的概率，再和这个token的真实分类进行比较，通过cross entropy函数计算误差。之所以对全部token进行分类预测的原因是由于被遮罩的词有15%的机率被替换成随机词，因此每个词都可能是被遮罩过的。
 
@@ -541,11 +541,11 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [BERT author explain BERT](https://www.reddit.com/r/MachineLearning/comments/9nfqxz/r_bert_pretraining_of_deep_bidirectional/)
 [Examining BERT's raw embeddings](https://towardsdatascience.com/examining-berts-raw-embeddings-fd905cb22df7)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTI5NjE5NDYzOSw0NTY3Nzc5NTAsMjAwNz
-IxMDMwNCwtNDc5MDkyMDc1LDE0MzgwNDI3ODYsLTE4MjUxMDc4
-MjksMTk0MzQ5OTM1MSwtMTI5NTI3MDY0NSw0NjE1NDE4NSwxNT
-gwMjE4ODMwLDgyOTQ1OTg3OCwtNzg3NzMwNTExLC0xMTM2NDg3
-MTcsLTY5NjI5MzY0MywtMTAzODY1NTgyNyw4OTk1NjMxODgsLT
-c2NTcwOTM5MywxOTk2MTczNzM5LDEzOTk3MTA2MCwtMTU0NTEx
-NTEwMF19
+eyJoaXN0b3J5IjpbLTk3MTk0NDgwLC0yOTYxOTQ2MzksNDU2Nz
+c3OTUwLDIwMDcyMTAzMDQsLTQ3OTA5MjA3NSwxNDM4MDQyNzg2
+LC0xODI1MTA3ODI5LDE5NDM0OTkzNTEsLTEyOTUyNzA2NDUsND
+YxNTQxODUsMTU4MDIxODgzMCw4Mjk0NTk4NzgsLTc4NzczMDUx
+MSwtMTEzNjQ4NzE3LC02OTYyOTM2NDMsLTEwMzg2NTU4MjcsOD
+k5NTYzMTg4LC03NjU3MDkzOTMsMTk5NjE3MzczOSwxMzk5NzEw
+NjBdfQ==
 -->
