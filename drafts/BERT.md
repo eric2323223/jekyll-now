@@ -190,6 +190,7 @@ The model will indeed try to use the embedding of the random token to help in it
 _The model will only predict 15% of the tokens but language models predict 100% of tokens, does this mean that the model needs more iterations to achieve the same loss?_
 Yes, the model does converge more slowly but the increased steps in converging are justified by an considerable improvement in downstream performance.
 #### 训练方法
+![enter image description here](https://pic4.zhimg.com/80/v2-4364096101aad977b125aa585d187387_720w.jpg)
 MLM head
 ##### Mask LM 误差函数
 Mask LM需要对每个词进行预测（由于被遮罩的词有15%的机率被替换成随机词，因此每个词都可能是被遮罩过的），判断预测值和真实值的过程是典型的分类问题（每个不同的词都是一个类型，共有词汇表中所有词汇个类型），因此对误差计算使用分类问题常用的crossentropy函数。
@@ -202,6 +203,7 @@ Next Sentence Prediction（NSP）的任务是判断句子B是否是句子A的下
 >_Why is a second task necessary at all?_
 The authors pre-trained their model in  _Next Sentence Prediction_  because they thought important that the model knew how to relate two different sentences to perform downstream tasks like question answering or natural language inference and the “masked language model” did not capture this knowledge. They prove that pre-training with this second task notably increases performance in both question answering and natural language inference.
 #### 训练方法
+![enter image description here](https://picb.zhimg.com/80/v2-33d191eee24be9a47b7799b939564d74_720w.jpg)
 NSP head
 做法是对CLS token 进行分类判断
 ##### NSP 误差函数
@@ -540,11 +542,11 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [BERT author explain BERT](https://www.reddit.com/r/MachineLearning/comments/9nfqxz/r_bert_pretraining_of_deep_bidirectional/)
 [Examining BERT's raw embeddings](https://towardsdatascience.com/examining-berts-raw-embeddings-fd905cb22df7)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTI1OTM5MTg4MCwyMDA3MjEwMzA0LC00Nz
-kwOTIwNzUsMTQzODA0Mjc4NiwtMTgyNTEwNzgyOSwxOTQzNDk5
-MzUxLC0xMjk1MjcwNjQ1LDQ2MTU0MTg1LDE1ODAyMTg4MzAsOD
-I5NDU5ODc4LC03ODc3MzA1MTEsLTExMzY0ODcxNywtNjk2Mjkz
-NjQzLC0xMDM4NjU1ODI3LDg5OTU2MzE4OCwtNzY1NzA5MzkzLD
-E5OTYxNzM3MzksMTM5OTcxMDYwLC0xNTQ1MTE1MTAwLDE3MDUy
-MjE4ODVdfQ==
+eyJoaXN0b3J5IjpbNDU2Nzc3OTUwLDIwMDcyMTAzMDQsLTQ3OT
+A5MjA3NSwxNDM4MDQyNzg2LC0xODI1MTA3ODI5LDE5NDM0OTkz
+NTEsLTEyOTUyNzA2NDUsNDYxNTQxODUsMTU4MDIxODgzMCw4Mj
+k0NTk4NzgsLTc4NzczMDUxMSwtMTEzNjQ4NzE3LC02OTYyOTM2
+NDMsLTEwMzg2NTU4MjcsODk5NTYzMTg4LC03NjU3MDkzOTMsMT
+k5NjE3MzczOSwxMzk5NzEwNjAsLTE1NDUxMTUxMDAsMTcwNTIy
+MTg4NV19
 -->
