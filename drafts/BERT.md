@@ -191,6 +191,7 @@ _The model will only predict 15% of the tokens but language models predict 100% 
 Yes, the model does converge more slowly but the increased steps in converging are justified by an considerable improvement in downstream performance.
 #### 训练方法
 ![enter image description here](https://pic4.zhimg.com/80/v2-4364096101aad977b125aa585d187387_720w.jpg)
+为了
 MLM head
 ##### Mask LM 误差函数
 Mask LM需要对每个词进行预测（由于被遮罩的词有15%的机率被替换成随机词，因此每个词都可能是被遮罩过的），判断预测值和真实值的过程是典型的分类问题（每个不同的词都是一个类型，共有词汇表中所有词汇个类型），因此对误差计算使用分类问题常用的crossentropy函数。
@@ -542,11 +543,11 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [BERT author explain BERT](https://www.reddit.com/r/MachineLearning/comments/9nfqxz/r_bert_pretraining_of_deep_bidirectional/)
 [Examining BERT's raw embeddings](https://towardsdatascience.com/examining-berts-raw-embeddings-fd905cb22df7)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNDU2Nzc3OTUwLDIwMDcyMTAzMDQsLTQ3OT
-A5MjA3NSwxNDM4MDQyNzg2LC0xODI1MTA3ODI5LDE5NDM0OTkz
-NTEsLTEyOTUyNzA2NDUsNDYxNTQxODUsMTU4MDIxODgzMCw4Mj
-k0NTk4NzgsLTc4NzczMDUxMSwtMTEzNjQ4NzE3LC02OTYyOTM2
-NDMsLTEwMzg2NTU4MjcsODk5NTYzMTg4LC03NjU3MDkzOTMsMT
-k5NjE3MzczOSwxMzk5NzEwNjAsLTE1NDUxMTUxMDAsMTcwNTIy
-MTg4NV19
+eyJoaXN0b3J5IjpbLTc4NjI4NjM0MCw0NTY3Nzc5NTAsMjAwNz
+IxMDMwNCwtNDc5MDkyMDc1LDE0MzgwNDI3ODYsLTE4MjUxMDc4
+MjksMTk0MzQ5OTM1MSwtMTI5NTI3MDY0NSw0NjE1NDE4NSwxNT
+gwMjE4ODMwLDgyOTQ1OTg3OCwtNzg3NzMwNTExLC0xMTM2NDg3
+MTcsLTY5NjI5MzY0MywtMTAzODY1NTgyNyw4OTk1NjMxODgsLT
+c2NTcwOTM5MywxOTk2MTczNzM5LDEzOTk3MTA2MCwtMTU0NTEx
+NTEwMF19
 -->
