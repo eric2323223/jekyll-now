@@ -25,7 +25,7 @@ self-supervised learning is important area because it can greatly reduce the eff
 ## 迁移学习和预训练模型
 ![enter image description here](https://docs.google.com/drawings/d/e/2PACX-1vR6JBirfomJ2dxM1GDEl2GUZOXZeuyqcjRr7w6-t-s2vloOyAZk8GTRP1IyVmczcmyEINONHs5DhpH0/pub?w=593&h=343)
 
-深度学习由于在处理复杂特征（图像，声音，文本）的任务上相比传统机器学习方法有巨大的优势，获得了越来越多的关注和发展。为了不断增强预测效果，深度学习模型呈现出越来越复杂的趋势。深度学习对训练数据的依赖非常强，这是由于复杂模型需要大量的数据才有可能的理解数据的潜在（复杂）特征。一般来说，模型越复杂就需要越多的数据进行训练。这就导致了比较复杂的深度模型需要海量的数据来进行训练。由于训练数据通常需要人工标记因此海量训练数据的获取成本非常高，这使得训练或者改进深度模型成为耗时耗力的过程，非常不利于深度模型的推广和应用。
+深度学习由于在处理复杂特征（图像，声音，文本）的任务上相比传统机器学习方法有巨大的优势，获得了越来越多的关注和发展。随着任务复杂度的增加，深度学习模型呈现出越来越复杂的趋势。深度学习对训练数据的依赖非常强，这是由于复杂模型需要大量的数据才有可能的理解数据的潜在（复杂）特征。一般来说，模型越复杂就需要越多的数据进行训练。这就导致了比较复杂的深度模型需要海量的数据来进行训练。由于训练数据通常需要人工标记因此海量训练数据的获取成本非常高，这使得训练或者改进深度模型成为耗时耗力的过程，非常不利于深度模型的推广和应用。
 
 ~~>**训练数据不足**是一些特殊领域中不可避免的问题。数据的收集是复杂和昂贵的，这使得构建大规模、高质量的带注释的数据集非常困难。例如，生物信息学数据集中的每个样本经常显示一个临床试验或一个痛苦的病人。此外，即使我们付出了昂贵的代价来获取训练数据集，也很容易过时，不能有效地应用于新的任务中。~~
 
@@ -540,11 +540,11 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [BERT author explain BERT](https://www.reddit.com/r/MachineLearning/comments/9nfqxz/r_bert_pretraining_of_deep_bidirectional/)
 [Examining BERT's raw embeddings](https://towardsdatascience.com/examining-berts-raw-embeddings-fd905cb22df7)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE4MjUxMDc4MjksMTk0MzQ5OTM1MSwtMT
-I5NTI3MDY0NSw0NjE1NDE4NSwxNTgwMjE4ODMwLDgyOTQ1OTg3
-OCwtNzg3NzMwNTExLC0xMTM2NDg3MTcsLTY5NjI5MzY0MywtMT
-AzODY1NTgyNyw4OTk1NjMxODgsLTc2NTcwOTM5MywxOTk2MTcz
-NzM5LDEzOTk3MTA2MCwtMTU0NTExNTEwMCwxNzA1MjIxODg1LC
-0xNDY4OTY1ODQyLC04MzA5Mzc2OTMsLTM3NTc1ODcwNSwtMTc5
-ODY3NDc5Ml19
+eyJoaXN0b3J5IjpbMTQzODA0Mjc4NiwtMTgyNTEwNzgyOSwxOT
+QzNDk5MzUxLC0xMjk1MjcwNjQ1LDQ2MTU0MTg1LDE1ODAyMTg4
+MzAsODI5NDU5ODc4LC03ODc3MzA1MTEsLTExMzY0ODcxNywtNj
+k2MjkzNjQzLC0xMDM4NjU1ODI3LDg5OTU2MzE4OCwtNzY1NzA5
+MzkzLDE5OTYxNzM3MzksMTM5OTcxMDYwLC0xNTQ1MTE1MTAwLD
+E3MDUyMjE4ODUsLTE0Njg5NjU4NDIsLTgzMDkzNzY5MywtMzc1
+NzU4NzA1XX0=
 -->
