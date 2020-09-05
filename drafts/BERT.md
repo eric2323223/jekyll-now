@@ -202,7 +202,7 @@ Next Sentence Prediction（NSP）的任务是判断句子B是否是句子A的下
 The authors pre-trained their model in  _Next Sentence Prediction_  because they thought important that the model knew how to relate two different sentences to perform downstream tasks like question answering or natural language inference and the “masked language model” did not capture this knowledge. They prove that pre-training with this second task notably increases performance in both question answering and natural language inference.
 
 ##### NSP 误差函数
-NSP的目标是判断两个句子是否是连续的，因此属于二元分类问题，使用c
+NSP的目标是判断两个句子是否是连续的，因此属于二元分类问题，使用cross entropy函数计算误差
 ```
 next_sentence_loss = loss_fct(seq_relationship_score.view(-1, 2), next_sentence_label.view(-1))
 ```
@@ -537,7 +537,7 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [BERT author explain BERT](https://www.reddit.com/r/MachineLearning/comments/9nfqxz/r_bert_pretraining_of_deep_bidirectional/)
 [Examining BERT's raw embeddings](https://towardsdatascience.com/examining-berts-raw-embeddings-fd905cb22df7)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTU0MDgzMTczNCwtNDc5MDkyMDc1LDE0Mz
+eyJoaXN0b3J5IjpbMjAwNzIxMDMwNCwtNDc5MDkyMDc1LDE0Mz
 gwNDI3ODYsLTE4MjUxMDc4MjksMTk0MzQ5OTM1MSwtMTI5NTI3
 MDY0NSw0NjE1NDE4NSwxNTgwMjE4ODMwLDgyOTQ1OTg3OCwtNz
 g3NzMwNTExLC0xMTM2NDg3MTcsLTY5NjI5MzY0MywtMTAzODY1
