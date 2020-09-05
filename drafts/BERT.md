@@ -189,6 +189,8 @@ _Will random tokens confuse the model?_
 The model will indeed try to use the embedding of the random token to help in its prediction and it will learn that it was actually not useful once it sees the target (correct token). However, the random replacement happened in 1.5% of the tokens (10%*15%) and the authors claim that it did not affect the model’s performance.
 _The model will only predict 15% of the tokens but language models predict 100% of tokens, does this mean that the model needs more iterations to achieve the same loss?_
 Yes, the model does converge more slowly but the increased steps in converging are justified by an considerable improvement in downstream performance.
+#### 训练方法
+MLM head
 ##### Mask LM 误差函数
 Mask LM需要对每个词进行预测（由于被遮罩的词有15%的机率被替换成随机词，因此每个词都可能是被遮罩过的），判断预测值和真实值的过程是典型的分类问题（每个不同的词都是一个类型，共有词汇表中所有词汇个类型），因此对误差计算使用分类问题常用的crossentropy函数。
 ```
@@ -197,11 +199,11 @@ masked_lm_loss = CrossEntropyLoss(prediction_scores.view(-1, self.config.vocab_s
 #### Next Sentence Prediction（NSP）
 输入句子A和句子B，判断句子B是否是句子A的下一句，通过迭代训练，可以学习到句子间的关系，这对于文本匹配类任务显得尤为重要。
 Next Sentence Prediction（NSP）的任务是判断句子B是否是句子A的下文。如果是的话输出’IsNext‘，否则输出’NotNext‘。训练数据的生成方式是从平行语料中随机抽取的连续两句话，其中50%保留抽取的两句话，它们符合IsNext关系，另外50%的第二句话是随机从预料中提取的，它们的关系是NotNext的。这个关系保存在图4中的`[CLS]`符号中。
-zuo
+做法是对CLS token 进行分类判断
 
 >_Why is a second task necessary at all?_
 The authors pre-trained their model in  _Next Sentence Prediction_  because they thought important that the model knew how to relate two different sentences to perform downstream tasks like question answering or natural language inference and the “masked language model” did not capture this knowledge. They prove that pre-training with this second task notably increases performance in both question answering and natural language inference.
-
+#### NSP
 ##### NSP 误差函数
 NSP的目标是判断两个句子是否是连续的，因此属于二元分类问题，使用cross entropy函数计算误差
 ```
@@ -538,7 +540,7 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [BERT author explain BERT](https://www.reddit.com/r/MachineLearning/comments/9nfqxz/r_bert_pretraining_of_deep_bidirectional/)
 [Examining BERT's raw embeddings](https://towardsdatascience.com/examining-berts-raw-embeddings-fd905cb22df7)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEyMTExOTg5MzYsMjAwNzIxMDMwNCwtND
+eyJoaXN0b3J5IjpbLTEyMjEyNjEyNjAsMjAwNzIxMDMwNCwtND
 c5MDkyMDc1LDE0MzgwNDI3ODYsLTE4MjUxMDc4MjksMTk0MzQ5
 OTM1MSwtMTI5NTI3MDY0NSw0NjE1NDE4NSwxNTgwMjE4ODMwLD
 gyOTQ1OTg3OCwtNzg3NzMwNTExLC0xMTM2NDg3MTcsLTY5NjI5
