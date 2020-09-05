@@ -194,7 +194,7 @@ Mask LM需要对每个词进行预测（由于被遮罩的词有15%的机率被�
 ```
 masked_lm_loss = CrossEntropyLoss(prediction_scores.view(-1, self.config.vocab_size), labels.view(-1))
 ```
-#### Next Sentence PredictionNSP
+#### Next Sentence Prediction（NSP）
 输入句子A和句子B，判断句子B是否是句子A的下一句，通过迭代训练，可以学习到句子间的关系，这对于文本匹配类任务显得尤为重要。
 Next Sentence Prediction（NSP）的任务是判断句子B是否是句子A的下文。如果是的话输出’IsNext‘，否则输出’NotNext‘。训练数据的生成方式是从平行语料中随机抽取的连续两句话，其中50%保留抽取的两句话，它们符合IsNext关系，另外50%的第二句话是随机从预料中提取的，它们的关系是NotNext的。这个关系保存在图4中的`[CLS]`符号中。
 
@@ -537,11 +537,11 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [BERT author explain BERT](https://www.reddit.com/r/MachineLearning/comments/9nfqxz/r_bert_pretraining_of_deep_bidirectional/)
 [Examining BERT's raw embeddings](https://towardsdatascience.com/examining-berts-raw-embeddings-fd905cb22df7)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTA0MzExMDAzLDIwMDcyMTAzMDQsLTQ3OT
-A5MjA3NSwxNDM4MDQyNzg2LC0xODI1MTA3ODI5LDE5NDM0OTkz
-NTEsLTEyOTUyNzA2NDUsNDYxNTQxODUsMTU4MDIxODgzMCw4Mj
-k0NTk4NzgsLTc4NzczMDUxMSwtMTEzNjQ4NzE3LC02OTYyOTM2
-NDMsLTEwMzg2NTU4MjcsODk5NTYzMTg4LC03NjU3MDkzOTMsMT
-k5NjE3MzczOSwxMzk5NzEwNjAsLTE1NDUxMTUxMDAsMTcwNTIy
-MTg4NV19
+eyJoaXN0b3J5IjpbMjA2MDE0OTA0NiwyMDA3MjEwMzA0LC00Nz
+kwOTIwNzUsMTQzODA0Mjc4NiwtMTgyNTEwNzgyOSwxOTQzNDk5
+MzUxLC0xMjk1MjcwNjQ1LDQ2MTU0MTg1LDE1ODAyMTg4MzAsOD
+I5NDU5ODc4LC03ODc3MzA1MTEsLTExMzY0ODcxNywtNjk2Mjkz
+NjQzLC0xMDM4NjU1ODI3LDg5OTU2MzE4OCwtNzY1NzA5MzkzLD
+E5OTYxNzM3MzksMTM5OTcxMDYwLC0xNTQ1MTE1MTAwLDE3MDUy
+MjE4ODVdfQ==
 -->
