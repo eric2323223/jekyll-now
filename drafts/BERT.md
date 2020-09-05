@@ -163,11 +163,10 @@ Transformer由编码器和解码器组成，编码器负责将输入序列中的
 之所以BERT使用重新设计的MLM，是由于注意力机制的使用使得BERT模型能够同时“看到”所有的序列元素，因此无法使用传统语言模型通过预测下一个元素的方式来进行训练。因此BERT使用了Mask LM，做法是随机挑选序列中的若干元素，将他们遮（mask）起来，使注意力机制无法“看到”，通过训练模型预测未知元素的值来促使模型学习到整个序列的含义。Mask LM训练的思路类似于填词游戏，即通过上下文的信息来判断模型被隐藏的词。从原理上讲这种方式可以很好的匹配注意力机制的运算方式，但是在实现训练中遮罩元素的数量对于训练的效果和速度都有很大影响，如果mask太多，会丢失context，如果mask太少，训练太慢。
 >[https://towardsdatascience.com/bert-explained-state-of-the-art-language-model-for-nlp-f8b21a9b6270](https://towardsdatascience.com/bert-explained-state-of-the-art-language-model-for-nlp-f8b21a9b6270)
 
-BERT的做法是给定一个句子，随机遮住15%的词，然后输入BERT模型并让BERT来预测这些被遮住的词。具体来说，对于每个被遮住的词里：
-
--   80%的概率替换成[MASK]，比如my dog is hairy → my dog is [MASK]
--   10%的概率替换成随机的一个词，比如my dog is hairy → my dog is apple
--   10%的概率替换成它本身，比如my dog is hairy → my dog is hairy
+BERT的做法是给定一个句子，随机遮住15%的词，然后输入BERT模型并让BERT来预测这些被遮住的词。具体来说，对于每个被遮住的词，执行下面的遮罩替换规则：
+-   以80%的概率替换成[MASK]，比如my dog is hairy → my dog is [MASK]
+-   以10%的概率替换成随机的一个词，比如my dog is hairy → my dog is apple
+-   以10%的概率替换成它本身，比如my dog is hairy → my dog is hairy
 
 >BERT is designed to help computers understand the meaning of ambiguous language in text by using surrounding text to establish context.
 BERT is [MASK1] to help **milk** understand the meaning of ambiguous language in text by using **surrounding** text to [MASK2] context
@@ -538,7 +537,7 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [BERT author explain BERT](https://www.reddit.com/r/MachineLearning/comments/9nfqxz/r_bert_pretraining_of_deep_bidirectional/)
 [Examining BERT's raw embeddings](https://towardsdatascience.com/examining-berts-raw-embeddings-fd905cb22df7)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE3ODU3MDk5NzQsMTQzODA0Mjc4NiwtMT
+eyJoaXN0b3J5IjpbLTE3OTE0NDY1NjgsMTQzODA0Mjc4NiwtMT
 gyNTEwNzgyOSwxOTQzNDk5MzUxLC0xMjk1MjcwNjQ1LDQ2MTU0
 MTg1LDE1ODAyMTg4MzAsODI5NDU5ODc4LC03ODc3MzA1MTEsLT
 ExMzY0ODcxNywtNjk2MjkzNjQzLC0xMDM4NjU1ODI3LDg5OTU2
