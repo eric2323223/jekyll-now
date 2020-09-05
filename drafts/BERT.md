@@ -189,8 +189,8 @@ _Will random tokens confuse the model?_
 The model will indeed try to use the embedding of the random token to help in its prediction and it will learn that it was actually not useful once it sees the target (correct token). However, the random replacement happened in 1.5% of the tokens (10%*15%) and the authors claim that it did not affect the model’s performance.
 _The model will only predict 15% of the tokens but language models predict 100% of tokens, does this mean that the model needs more iterations to achieve the same loss?_
 Yes, the model does converge more slowly but the increased steps in converging are justified by an considerable improvement in downstream performance.
-##### MLM 误差函数
-MLM需要对每个词进行预测（由于被遮罩的词有15%的机率被替换成随机词，因词模型不知道哪个词是被遮罩的），判断预测值和真实值的过程是典型的分类问题（每个不同的词都是一个类型，共有词汇表中所有词汇个类型），因此对误差计算使用分类问题常用的crossentropy函数。
+##### Mask LM 误差函数
+Mask LM需要对每个词进行预测（由于被遮罩的词有15%的机率被替换成随机词，因词模型不知道哪个词是被遮罩的），判断预测值和真实值的过程是典型的分类问题（每个不同的词都是一个类型，共有词汇表中所有词汇个类型），因此对误差计算使用分类问题常用的crossentropy函数。
 ```
 masked_lm_loss = CrossEntropyLoss(prediction_scores.view(-1, self.config.vocab_size), labels.view(-1))
 ```
@@ -537,11 +537,11 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [BERT author explain BERT](https://www.reddit.com/r/MachineLearning/comments/9nfqxz/r_bert_pretraining_of_deep_bidirectional/)
 [Examining BERT's raw embeddings](https://towardsdatascience.com/examining-berts-raw-embeddings-fd905cb22df7)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE3OTE0NDY1NjgsMTQzODA0Mjc4NiwtMT
-gyNTEwNzgyOSwxOTQzNDk5MzUxLC0xMjk1MjcwNjQ1LDQ2MTU0
-MTg1LDE1ODAyMTg4MzAsODI5NDU5ODc4LC03ODc3MzA1MTEsLT
-ExMzY0ODcxNywtNjk2MjkzNjQzLC0xMDM4NjU1ODI3LDg5OTU2
-MzE4OCwtNzY1NzA5MzkzLDE5OTYxNzM3MzksMTM5OTcxMDYwLC
-0xNTQ1MTE1MTAwLDE3MDUyMjE4ODUsLTE0Njg5NjU4NDIsLTgz
-MDkzNzY5M119
+eyJoaXN0b3J5IjpbLTg0NTQzNDg0MiwxNDM4MDQyNzg2LC0xOD
+I1MTA3ODI5LDE5NDM0OTkzNTEsLTEyOTUyNzA2NDUsNDYxNTQx
+ODUsMTU4MDIxODgzMCw4Mjk0NTk4NzgsLTc4NzczMDUxMSwtMT
+EzNjQ4NzE3LC02OTYyOTM2NDMsLTEwMzg2NTU4MjcsODk5NTYz
+MTg4LC03NjU3MDkzOTMsMTk5NjE3MzczOSwxMzk5NzEwNjAsLT
+E1NDUxMTUxMDAsMTcwNTIyMTg4NSwtMTQ2ODk2NTg0MiwtODMw
+OTM3NjkzXX0=
 -->
