@@ -203,7 +203,7 @@ Next Sentence Prediction（NSP）的任务是判断句子B是否是句子A的下
 The authors pre-trained their model in  _Next Sentence Prediction_  because they thought important that the model knew how to relate two different sentences to perform downstream tasks like question answering or natural language inference and the “masked language model” did not capture this knowledge. They prove that pre-training with this second task notably increases performance in both question answering and natural language inference.
 #### 训练方法
 ![enter image description here](https://picb.zhimg.com/80/v2-33d191eee24be9a47b7799b939564d74_720w.jpg)
-NSP的训练目标是判断两个句子是否是连续的，因此它也属于二元（是和否）分类问题。和MLM相似，需要加上一个二值fen'lei
+NSP的训练目标是判断两个句子是否是连续的，因此它也属于二元（是和否）分类问题。和MLM相似，需要加上一个二值分类器来进行类型判断。由于【CLS】token包含了整个序列（包含lia
 NSP head
 做法是对CLS token 进行分类判断
 ##### NSP 误差函数
@@ -542,11 +542,11 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [BERT author explain BERT](https://www.reddit.com/r/MachineLearning/comments/9nfqxz/r_bert_pretraining_of_deep_bidirectional/)
 [Examining BERT's raw embeddings](https://towardsdatascience.com/examining-berts-raw-embeddings-fd905cb22df7)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTExNjYwNTM0MTEsLTEzMjU3MjI3NzIsLT
-E2OTM1NzI2MTEsLTk3MTk0NDgwLC0yOTYxOTQ2MzksNDU2Nzc3
-OTUwLDIwMDcyMTAzMDQsLTQ3OTA5MjA3NSwxNDM4MDQyNzg2LC
-0xODI1MTA3ODI5LDE5NDM0OTkzNTEsLTEyOTUyNzA2NDUsNDYx
-NTQxODUsMTU4MDIxODgzMCw4Mjk0NTk4NzgsLTc4NzczMDUxMS
-wtMTEzNjQ4NzE3LC02OTYyOTM2NDMsLTEwMzg2NTU4MjcsODk5
-NTYzMTg4XX0=
+eyJoaXN0b3J5IjpbLTYxODE0NzgwMiwtMTMyNTcyMjc3MiwtMT
+Y5MzU3MjYxMSwtOTcxOTQ0ODAsLTI5NjE5NDYzOSw0NTY3Nzc5
+NTAsMjAwNzIxMDMwNCwtNDc5MDkyMDc1LDE0MzgwNDI3ODYsLT
+E4MjUxMDc4MjksMTk0MzQ5OTM1MSwtMTI5NTI3MDY0NSw0NjE1
+NDE4NSwxNTgwMjE4ODMwLDgyOTQ1OTg3OCwtNzg3NzMwNTExLC
+0xMTM2NDg3MTcsLTY5NjI5MzY0MywtMTAzODY1NTgyNyw4OTk1
+NjMxODhdfQ==
 -->
