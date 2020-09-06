@@ -273,10 +273,11 @@ Each training data contains Two sentences, $W_1[w_{11}, w_{12}, w_{13}, w_{14}, 
 4. 预测
 	MLM_prediction = multi_class_predictor(BERT_embeddings)
 	multi_class_predictor = softmax(fully_connected(BERT_embedding_length, size(vocabulary))
+	
 	NSP_prediction = binary_class_predictor([CLS]_embeddings)
 	binary_class_predictor = softmax(fully_connected(BERT_embedding_length,2))
 	
-5. 计算loss(mlm loss + nsp loss)，更新weights
+5. 计算误差
 	MLM_loss = cross_entropy(MLM_prediction, true_mlm_labels)
 	NSP_loss = cross_entropy(NSP_prediction, true_nsp_label)
 	BERT_loss = MLM_loss + NSP_loss
@@ -548,11 +549,11 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [BERT author explain BERT](https://www.reddit.com/r/MachineLearning/comments/9nfqxz/r_bert_pretraining_of_deep_bidirectional/)
 [Examining BERT's raw embeddings](https://towardsdatascience.com/examining-berts-raw-embeddings-fd905cb22df7)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTg4ODAzMjUwMywyMDE2NTQ2NDQyLDE2NT
-E5OTg5NTcsLTI3NTkyOTU4MSw4NTQ4OTIxMzksLTEzMjU3MjI3
-NzIsLTE2OTM1NzI2MTEsLTk3MTk0NDgwLC0yOTYxOTQ2MzksND
-U2Nzc3OTUwLDIwMDcyMTAzMDQsLTQ3OTA5MjA3NSwxNDM4MDQy
-Nzg2LC0xODI1MTA3ODI5LDE5NDM0OTkzNTEsLTEyOTUyNzA2ND
-UsNDYxNTQxODUsMTU4MDIxODgzMCw4Mjk0NTk4NzgsLTc4Nzcz
-MDUxMV19
+eyJoaXN0b3J5IjpbODg1OTA4MjkzLDE4ODgwMzI1MDMsMjAxNj
+U0NjQ0MiwxNjUxOTk4OTU3LC0yNzU5Mjk1ODEsODU0ODkyMTM5
+LC0xMzI1NzIyNzcyLC0xNjkzNTcyNjExLC05NzE5NDQ4MCwtMj
+k2MTk0NjM5LDQ1Njc3Nzk1MCwyMDA3MjEwMzA0LC00NzkwOTIw
+NzUsMTQzODA0Mjc4NiwtMTgyNTEwNzgyOSwxOTQzNDk5MzUxLC
+0xMjk1MjcwNjQ1LDQ2MTU0MTg1LDE1ODAyMTg4MzAsODI5NDU5
+ODc4XX0=
 -->
