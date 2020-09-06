@@ -191,7 +191,7 @@ _The model will only predict 15% of the tokens but language models predict 100% 
 Yes, the model does converge more slowly but the increased steps in converging are justified by an considerable improvement in downstream performance.
 ##### 训练方法
 ![enter image description here](https://pic4.zhimg.com/80/v2-4364096101aad977b125aa585d187387_720w.jpg)
-为了对token进行分类判断，需要在BERT的输出上增加一个多类型分类器（在实现中被称为MLM head），它包含一个全连接网络和softmax运算，可以将通过BERT 编码器编码过的token转换为vocabulary长度个输出，每个输出代表属于对应分类的概率。应用这个分类器对所有token计算出每个类型的概率，再和这个token的真实分类进行比较，通过cross entropy函数计算误差。之所以对全部token进行分类预测的原因是由于被遮罩的词有15%的机率被替换成随机词，因此每个词都可能是被遮罩过的。
+当把vocabulary中所有的词都作为一个单独的类型时，对未知token进行预测   为了对token进行分类判断，需要在BERT的输出上增加一个多类型分类器（在实现中被称为MLM head），它包含一个全连接网络和softmax运算，可以将通过BERT 编码器编码过的token转换为vocabulary长度个输出，每个输出代表属于对应分类的概率。应用这个分类器对所有token计算出每个类型的概率，再和这个token的真实分类进行比较，通过cross entropy函数计算误差。之所以对全部token进行分类预测的原因是由于被遮罩的词有15%的机率被替换成随机词，因此每个词都可能是被遮罩过的。
 
 ```
 masked_lm_loss = CrossEntropyLoss(prediction_scores.view(-1, self.config.vocab_size), labels.view(-1))
@@ -541,11 +541,11 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [BERT author explain BERT](https://www.reddit.com/r/MachineLearning/comments/9nfqxz/r_bert_pretraining_of_deep_bidirectional/)
 [Examining BERT's raw embeddings](https://towardsdatascience.com/examining-berts-raw-embeddings-fd905cb22df7)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTk3MTk0NDgwLC0yOTYxOTQ2MzksNDU2Nz
-c3OTUwLDIwMDcyMTAzMDQsLTQ3OTA5MjA3NSwxNDM4MDQyNzg2
-LC0xODI1MTA3ODI5LDE5NDM0OTkzNTEsLTEyOTUyNzA2NDUsND
-YxNTQxODUsMTU4MDIxODgzMCw4Mjk0NTk4NzgsLTc4NzczMDUx
-MSwtMTEzNjQ4NzE3LC02OTYyOTM2NDMsLTEwMzg2NTU4MjcsOD
-k5NTYzMTg4LC03NjU3MDkzOTMsMTk5NjE3MzczOSwxMzk5NzEw
-NjBdfQ==
+eyJoaXN0b3J5IjpbLTE2OTM1NzI2MTEsLTk3MTk0NDgwLC0yOT
+YxOTQ2MzksNDU2Nzc3OTUwLDIwMDcyMTAzMDQsLTQ3OTA5MjA3
+NSwxNDM4MDQyNzg2LC0xODI1MTA3ODI5LDE5NDM0OTkzNTEsLT
+EyOTUyNzA2NDUsNDYxNTQxODUsMTU4MDIxODgzMCw4Mjk0NTk4
+NzgsLTc4NzczMDUxMSwtMTEzNjQ4NzE3LC02OTYyOTM2NDMsLT
+EwMzg2NTU4MjcsODk5NTYzMTg4LC03NjU3MDkzOTMsMTk5NjE3
+MzczOV19
 -->
