@@ -276,6 +276,7 @@ Each training data contains Two sentences, $W_1[w_{11}, w_{12}, w_{13}, w_{14}, 
 	
 5. 计算loss(mlm loss + nsp loss)，更新weights
 	MLM_loss = cross_entropy(MLM_prediction, true_labels)
+	NSP_loss = cross_entropy(NSP_prediction, true_labe
 	
 
 ## BERT的微调fine tune
@@ -544,11 +545,11 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [BERT author explain BERT](https://www.reddit.com/r/MachineLearning/comments/9nfqxz/r_bert_pretraining_of_deep_bidirectional/)
 [Examining BERT's raw embeddings](https://towardsdatascience.com/examining-berts-raw-embeddings-fd905cb22df7)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE5MzYxNjE2MDQsLTI3NTkyOTU4MSw4NT
-Q4OTIxMzksLTEzMjU3MjI3NzIsLTE2OTM1NzI2MTEsLTk3MTk0
-NDgwLC0yOTYxOTQ2MzksNDU2Nzc3OTUwLDIwMDcyMTAzMDQsLT
-Q3OTA5MjA3NSwxNDM4MDQyNzg2LC0xODI1MTA3ODI5LDE5NDM0
-OTkzNTEsLTEyOTUyNzA2NDUsNDYxNTQxODUsMTU4MDIxODgzMC
-w4Mjk0NTk4NzgsLTc4NzczMDUxMSwtMTEzNjQ4NzE3LC02OTYy
-OTM2NDNdfQ==
+eyJoaXN0b3J5IjpbNTMwODAyMjQyLC0yNzU5Mjk1ODEsODU0OD
+kyMTM5LC0xMzI1NzIyNzcyLC0xNjkzNTcyNjExLC05NzE5NDQ4
+MCwtMjk2MTk0NjM5LDQ1Njc3Nzk1MCwyMDA3MjEwMzA0LC00Nz
+kwOTIwNzUsMTQzODA0Mjc4NiwtMTgyNTEwNzgyOSwxOTQzNDk5
+MzUxLC0xMjk1MjcwNjQ1LDQ2MTU0MTg1LDE1ODAyMTg4MzAsOD
+I5NDU5ODc4LC03ODc3MzA1MTEsLTExMzY0ODcxNywtNjk2Mjkz
+NjQzXX0=
 -->
