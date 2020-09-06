@@ -208,11 +208,13 @@ NSP的训练目标是判断两个句子是否是连续的，因此它也属于�
 next_sentence_loss = loss_fct(seq_relationship_score.view(-1, 2), next_sentence_label.view(-1))
 ```
 ### 预训练模型架构
-- BERT(BertEmbeddings+BertEncoder+BertPooler) 
-可重用预训练模型
-- BertPretrainingHeads(MS、M head+NSP head)
-- 
-预训练层
+- 可重用预训练模型BERT(BertEmbeddings+BertEncoder+BertPooler) 
+
+
+- 预训练层BertPretrainingHeads(MLM head+NSP head)
+	- MLM head
+	- NSP head
+
 
 ### 损失函数
 ```
@@ -539,7 +541,7 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [BERT author explain BERT](https://www.reddit.com/r/MachineLearning/comments/9nfqxz/r_bert_pretraining_of_deep_bidirectional/)
 [Examining BERT's raw embeddings](https://towardsdatascience.com/examining-berts-raw-embeddings-fd905cb22df7)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTI1ODE2MTA1NSw4NTQ4OTIxMzksLTEzMj
+eyJoaXN0b3J5IjpbMTc4ODk2OTMxNSw4NTQ4OTIxMzksLTEzMj
 U3MjI3NzIsLTE2OTM1NzI2MTEsLTk3MTk0NDgwLC0yOTYxOTQ2
 MzksNDU2Nzc3OTUwLDIwMDcyMTAzMDQsLTQ3OTA5MjA3NSwxND
 M4MDQyNzg2LC0xODI1MTA3ODI5LDE5NDM0OTkzNTEsLTEyOTUy
