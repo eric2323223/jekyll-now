@@ -271,6 +271,7 @@ Each training data contains Two sentences, $W_1[w_{11}, w_{12}, w_{13}, w_{14}, 
 3. Transformer编码: 
     Bert embeddings = Transformer(E)
 4. 预测
+	MLM loss = cross_entro
 	
 6. 计算loss(mlm loss + nsp loss)，更新weights
 	
@@ -541,11 +542,11 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [BERT author explain BERT](https://www.reddit.com/r/MachineLearning/comments/9nfqxz/r_bert_pretraining_of_deep_bidirectional/)
 [Examining BERT's raw embeddings](https://towardsdatascience.com/examining-berts-raw-embeddings-fd905cb22df7)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTI3NTkyOTU4MSw4NTQ4OTIxMzksLTEzMj
-U3MjI3NzIsLTE2OTM1NzI2MTEsLTk3MTk0NDgwLC0yOTYxOTQ2
-MzksNDU2Nzc3OTUwLDIwMDcyMTAzMDQsLTQ3OTA5MjA3NSwxND
-M4MDQyNzg2LC0xODI1MTA3ODI5LDE5NDM0OTkzNTEsLTEyOTUy
-NzA2NDUsNDYxNTQxODUsMTU4MDIxODgzMCw4Mjk0NTk4NzgsLT
-c4NzczMDUxMSwtMTEzNjQ4NzE3LC02OTYyOTM2NDMsLTEwMzg2
-NTU4MjddfQ==
+eyJoaXN0b3J5IjpbLTM1MjI1OTM4LC0yNzU5Mjk1ODEsODU0OD
+kyMTM5LC0xMzI1NzIyNzcyLC0xNjkzNTcyNjExLC05NzE5NDQ4
+MCwtMjk2MTk0NjM5LDQ1Njc3Nzk1MCwyMDA3MjEwMzA0LC00Nz
+kwOTIwNzUsMTQzODA0Mjc4NiwtMTgyNTEwNzgyOSwxOTQzNDk5
+MzUxLC0xMjk1MjcwNjQ1LDQ2MTU0MTg1LDE1ODAyMTg4MzAsOD
+I5NDU5ODc4LC03ODc3MzA1MTEsLTExMzY0ODcxNywtNjk2Mjkz
+NjQzXX0=
 -->
