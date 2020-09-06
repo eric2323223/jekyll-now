@@ -210,7 +210,8 @@ next_sentence_loss = loss_fct(seq_relationship_score.view(-1, 2), next_sentence_
 ### 预训练模型架构
 - BERT(BertEmbeddings+BertEncoder+BertPooler) 
 可重用预训练模型
-- BertPretrainingHeads(MSM head+NSP head)
+- BertPretrainingHeads(MS、M head+NSP head)
+- 
 预训练层
 
 ### 损失函数
@@ -538,11 +539,11 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [BERT author explain BERT](https://www.reddit.com/r/MachineLearning/comments/9nfqxz/r_bert_pretraining_of_deep_bidirectional/)
 [Examining BERT's raw embeddings](https://towardsdatascience.com/examining-berts-raw-embeddings-fd905cb22df7)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODU0ODkyMTM5LC0xMzI1NzIyNzcyLC0xNj
-kzNTcyNjExLC05NzE5NDQ4MCwtMjk2MTk0NjM5LDQ1Njc3Nzk1
-MCwyMDA3MjEwMzA0LC00NzkwOTIwNzUsMTQzODA0Mjc4NiwtMT
-gyNTEwNzgyOSwxOTQzNDk5MzUxLC0xMjk1MjcwNjQ1LDQ2MTU0
-MTg1LDE1ODAyMTg4MzAsODI5NDU5ODc4LC03ODc3MzA1MTEsLT
-ExMzY0ODcxNywtNjk2MjkzNjQzLC0xMDM4NjU1ODI3LDg5OTU2
-MzE4OF19
+eyJoaXN0b3J5IjpbMTI1ODE2MTA1NSw4NTQ4OTIxMzksLTEzMj
+U3MjI3NzIsLTE2OTM1NzI2MTEsLTk3MTk0NDgwLC0yOTYxOTQ2
+MzksNDU2Nzc3OTUwLDIwMDcyMTAzMDQsLTQ3OTA5MjA3NSwxND
+M4MDQyNzg2LC0xODI1MTA3ODI5LDE5NDM0OTkzNTEsLTEyOTUy
+NzA2NDUsNDYxNTQxODUsMTU4MDIxODgzMCw4Mjk0NTk4NzgsLT
+c4NzczMDUxMSwtMTEzNjQ4NzE3LC02OTYyOTM2NDMsLTEwMzg2
+NTU4MjddfQ==
 -->
