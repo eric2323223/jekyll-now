@@ -164,7 +164,7 @@ Transformer由编码器和解码器组成，编码器负责将输入序列中的
 	- BertPooler
 
 - 预训练层BertPretrainingHeads(MLM head+NSP head)
-顾名思义，这层的目的是为了完成预训练任务，与yu
+顾名思义，这层的目的是为了完成预训练任务，与预训练
 	- MLM head
 	- NSP head
 
@@ -558,11 +558,11 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [BERT author explain BERT](https://www.reddit.com/r/MachineLearning/comments/9nfqxz/r_bert_pretraining_of_deep_bidirectional/)
 [Examining BERT's raw embeddings](https://towardsdatascience.com/examining-berts-raw-embeddings-fd905cb22df7)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbOTExODQwMjg4LC0xNjQ4NDIxMzQzLC0xOD
-kwODkyMDYsMTg4ODAzMjUwMywyMDE2NTQ2NDQyLDE2NTE5OTg5
-NTcsLTI3NTkyOTU4MSw4NTQ4OTIxMzksLTEzMjU3MjI3NzIsLT
-E2OTM1NzI2MTEsLTk3MTk0NDgwLC0yOTYxOTQ2MzksNDU2Nzc3
-OTUwLDIwMDcyMTAzMDQsLTQ3OTA5MjA3NSwxNDM4MDQyNzg2LC
-0xODI1MTA3ODI5LDE5NDM0OTkzNTEsLTEyOTUyNzA2NDUsNDYx
-NTQxODVdfQ==
+eyJoaXN0b3J5IjpbLTIxMjAyNjMxOTIsLTE2NDg0MjEzNDMsLT
+E4OTA4OTIwNiwxODg4MDMyNTAzLDIwMTY1NDY0NDIsMTY1MTk5
+ODk1NywtMjc1OTI5NTgxLDg1NDg5MjEzOSwtMTMyNTcyMjc3Mi
+wtMTY5MzU3MjYxMSwtOTcxOTQ0ODAsLTI5NjE5NDYzOSw0NTY3
+Nzc5NTAsMjAwNzIxMDMwNCwtNDc5MDkyMDc1LDE0MzgwNDI3OD
+YsLTE4MjUxMDc4MjksMTk0MzQ5OTM1MSwtMTI5NTI3MDY0NSw0
+NjE1NDE4NV19
 -->
