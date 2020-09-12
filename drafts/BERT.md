@@ -157,8 +157,9 @@ Transformer由编码器和解码器组成，编码器负责将输入序列中的
 自然语言中蕴含的意义是以句子的形式表现的，为了让预训练模型学习到更多的知识，BERT的预训练被设计为多任务学习（multi-task learning），包含两个任务：一个是 Masked Language Model(Mask LM)，训练模型理解单个句子蕴含的意义；另一个是 Next Sentence Prediction(NSP)，训练模型理解不同语句之间的上下文含义。通过这两个任务的联合学习，可以使得 BERT 学习到的表征既有 token 级别信息，同时也包含了句子级别的语义信息。
 
 ### 预训练模型架构
-为了完成为预训练的两个任务，模型需要进行相应的设计。总体来看，应用于预训练的模型分为两部分：
-- 可重用的预训练模BERT
+为了完成为预训练的两个任务，模型需要进行相应的设计。总体来看，应用于预训练的模型可以分为两部分：
+- 可重用的预训练模型-BERT
+这部分就是。。。预训练完成后这部分模型会包含可用于微调任务的通用zhi'shi，主要包含以下三部分：
 	- BertEmbeddings
 	- BertEncoder
 	- BertPooler
@@ -558,11 +559,11 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [BERT author explain BERT](https://www.reddit.com/r/MachineLearning/comments/9nfqxz/r_bert_pretraining_of_deep_bidirectional/)
 [Examining BERT's raw embeddings](https://towardsdatascience.com/examining-berts-raw-embeddings-fd905cb22df7)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODg2NTkzNjY4LC0xNjQ4NDIxMzQzLC0xOD
-kwODkyMDYsMTg4ODAzMjUwMywyMDE2NTQ2NDQyLDE2NTE5OTg5
-NTcsLTI3NTkyOTU4MSw4NTQ4OTIxMzksLTEzMjU3MjI3NzIsLT
-E2OTM1NzI2MTEsLTk3MTk0NDgwLC0yOTYxOTQ2MzksNDU2Nzc3
-OTUwLDIwMDcyMTAzMDQsLTQ3OTA5MjA3NSwxNDM4MDQyNzg2LC
-0xODI1MTA3ODI5LDE5NDM0OTkzNTEsLTEyOTUyNzA2NDUsNDYx
-NTQxODVdfQ==
+eyJoaXN0b3J5IjpbLTk4MzE2MzE3OSwtMTY0ODQyMTM0MywtMT
+g5MDg5MjA2LDE4ODgwMzI1MDMsMjAxNjU0NjQ0MiwxNjUxOTk4
+OTU3LC0yNzU5Mjk1ODEsODU0ODkyMTM5LC0xMzI1NzIyNzcyLC
+0xNjkzNTcyNjExLC05NzE5NDQ4MCwtMjk2MTk0NjM5LDQ1Njc3
+Nzk1MCwyMDA3MjEwMzA0LC00NzkwOTIwNzUsMTQzODA0Mjc4Ni
+wtMTgyNTEwNzgyOSwxOTQzNDk5MzUxLC0xMjk1MjcwNjQ1LDQ2
+MTU0MTg1XX0=
 -->
