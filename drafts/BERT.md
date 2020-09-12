@@ -155,25 +155,7 @@ Transformer由编码器和解码器组成，编码器负责将输入序列中的
 
 ### 任务设计
 自然语言中蕴含的意义是以句子的形式表现的，为了让预训练模型学习到更多的知识，BERT的预训练被设计为多任务学习（multi-task learning），包含两个任务：一个是 Masked Language Model(Mask LM)，训练模型理解单个句子蕴含的意义；另一个是 Next Sentence Prediction(NSP)，训练模型理解不同语句之间的上下文含义。通过这两个任务的联合学习，可以使得 BERT 学习到的表征既有 token 级别信息，同时也包含了句子级别的语义信息。
-
-### 预训练模型架构
-为了完成为预训练的两个任务，模型需要进行相应的设计。总体来看，应用于预训练的模型可以分为两部分：
-- 预训练模型-BERT
-这部分就是。。。预训练完成后这部分模型会包含可用于微调任务的通用知识，主要包含以下三部分：
-	- BertEmbeddings
-	- BertEncoder
-	- BertPooler
-
-- 预训练层BertPretrainingHeads(MLM head+NSP head)
-顾名思义，这层的目的是为了完成预训练任务，因此包含了两个模型结构分别用于进行MLM和NSP训练任务
-	- MLM head
-	- NSP head
-
->MLM这种设计的原因是由于BERT使用的注意力机制有全局的视野，能够一次同时访问序列的所有元素，因此无法使用传统的语言模型那种一步一看的训练方式。**前者用于建模更广泛的上下文，通过 mask 来强制模型给每个词记住更多的上下文信息；后者用来建模多个句子之间的关系，**
->![enter image description here](https://www.researchgate.net/profile/Jan_Christian_Blaise_Cruz/publication/334160936/figure/fig1/AS:776030256111617@1562031439583/Overall-BERT-pretraining-and-finetuning-framework-Note-that-the-same-architecture-in.ppm)
-
-![enter image description here](https://miro.medium.com/max/412/1*ZLxPJwuHALDLTdqZfxhVNw.png)
-#### Masked Language Model  - Mask LM
+#### Masked Language Model  - MLM
 之所以BERT使用重新设计的MLM，是由于注意力机制的使用使得BERT模型能够同时“看到”所有的序列元素，因此无法使用传统语言模型通过预测下一个元素的方式来进行训练。因此BERT使用了Mask LM，做法是随机挑选序列中的若干元素，将他们遮（mask）起来，使注意力机制无法“看到”，通过训练模型预测未知元素的值来促使模型学习到整个序列的含义。Mask LM训练的思路类似于填词游戏，即通过上下文的信息来判断模型被隐藏的词。从原理上讲这种方式可以很好的匹配注意力机制的运算方式，但是在实现训练中遮罩元素的数量对于训练的效果和速度都有很大影响，如果mask太多，会丢失context，如果mask太少，训练太慢。
 >[https://towardsdatascience.com/bert-explained-state-of-the-art-language-model-for-nlp-f8b21a9b6270](https://towardsdatascience.com/bert-explained-state-of-the-art-language-model-for-nlp-f8b21a9b6270)
 
@@ -203,18 +185,40 @@ _Will random tokens confuse the model?_
 The model will indeed try to use the embedding of the random token to help in its prediction and it will learn that it was actually not useful once it sees the target (correct token). However, the random replacement happened in 1.5% of the tokens (10%*15%) and the authors claim that it did not affect the model’s performance.
 _The model will only predict 15% of the tokens but language models predict 100% of tokens, does this mean that the model needs more iterations to achieve the same loss?_
 Yes, the model does converge more slowly but the increased steps in converging are justified by an considerable improvement in downstream performance.
-##### 训练方法
-![enter image description here](https://pic4.zhimg.com/80/v2-4364096101aad977b125aa585d187387_720w.jpg)
-当把词汇表（vocabulary）中的每一个词都作为一个单独的类型时，对未知token进行预测就变成了在所有类型中判断可能性最高的分类，也这就是典型的多类型分类问题。为了对token进行分类判断，需要在BERT的输出上增加一个多类型分类器（在实现中被称为MLM head），它包含一个全连接网络和softmax运算，可以将通过BERT 编码器编码过的token转换为vocabulary长度个输出，每个输出代表属于对应分类的概率。应用这个分类器对所有token计算出每个类型的概率，再和这个token的真实分类进行比较，通过cross entropy函数计算误差。~~之所以对全部token进行分类预测的原因是由于被遮罩的词有15%的机率被替换成随机词，因此每个词都可能是被遮罩过的。~~
-
-```
-masked_lm_loss = CrossEntropyLoss(prediction_scores.view(-1, self.config.vocab_size), labels.view(-1))
-```
 #### Next Sentence Prediction（NSP）
 输入句子A和句子B，判断句子B是否是句子A的下一句，通过迭代训练，可以学习到句子间的关系，这对于文本匹配类任务显得尤为重要。
 Next Sentence Prediction（NSP）的任务是判断句子B是否是句子A的下文。如果是的话输出’IsNext‘，否则输出’NotNext‘。训练数据的生成方式是从平行语料中随机抽取的连续两句话，其中50%保留抽取的两句话，它们符合IsNext关系，另外50%的第二句话是随机从预料中提取的，它们的关系是NotNext的。这个关系保存在图4中的`[CLS]`符号中。
 >_Why is a second task necessary at all?_
 The authors pre-trained their model in  _Next Sentence Prediction_  because they thought important that the model knew how to relate two different sentences to perform downstream tasks like question answering or natural language inference and the “masked language model” did not capture this knowledge. They prove that pre-training with this second task notably increases performance in both question answering and natural language inference.
+### 预训练模型架构
+为了完成为预训练的两个任务，模型需要进行相应的设计。总体来看，应用于预训练的模型可以分为两部分：
+- 预训练模型-BERT
+这部分就是。。。预训练完成后这部分模型会包含可用于微调任务的通用知识，主要包含以下三部分：
+	- BertEmbeddings
+	- BertEncoder
+	- BertPooler
+
+- 预训练层BertPretrainingHeads(MLM head+NSP head)
+顾名思义，这层的目的是为了完成预训练任务，因此包含了两个模型结构分别用于进行MLM和NSP训练任务
+	- MLM head
+	![enter image description here](https://pic4.zhimg.com/80/v2-4364096101aad977b125aa585d187387_720w.jpg)
+当把词汇表（vocabulary）中的每一个词都作为一个单独的类型时，对未知token进行预测就变成了在所有类型中判断可能性最高的分类，也这就是典型的多类型分类问题。为了对token进行分类判断，需要在BERT的输出上增加一个多类型分类器（在实现中被称为MLM head），它包含一个全连接网络和softmax运算，可以将通过BERT 编码器编码过的token转换为vocabulary长度个输出，每个输出代表属于对应分类的概率。应用这个分类器对所有token计算出每个类型的概率，再和这个token的真实分类进行比较，通过cross entropy函数计算误差。~~之所以对全部token进行分类预测的原因是由于被遮罩的词有15%的机率被替换成随机词，因此每个词都可能是被遮罩过的。~~
+
+	```
+	masked_lm_loss = CrossEntropyLoss(prediction_scores.view(-1, self.config.vocab_size), labels.view(-1))
+	```
+	- NSP head
+
+>MLM这种设计的原因是由于BERT使用的注意力机制有全局的视野，能够一次同时访问序列的所有元素，因此无法使用传统的语言模型那种一步一看的训练方式。**前者用于建模更广泛的上下文，通过 mask 来强制模型给每个词记住更多的上下文信息；后者用来建模多个句子之间的关系，**
+>![enter image description here](https://www.researchgate.net/profile/Jan_Christian_Blaise_Cruz/publication/334160936/figure/fig1/AS:776030256111617@1562031439583/Overall-BERT-pretraining-and-finetuning-framework-Note-that-the-same-architecture-in.ppm)
+
+![enter image description here](https://miro.medium.com/max/412/1*ZLxPJwuHALDLTdqZfxhVNw.png)
+
+
+
+
+
+
 ##### 训练方法
 ![enter image description here](https://picb.zhimg.com/80/v2-33d191eee24be9a47b7799b939564d74_720w.jpg)
 NSP的训练目标是判断两个句子是否是连续的，因此它也属于二元（是和否）分类问题。和MLM相似，需要加上一个二值分类器（NSP head）来进行类型判断。与MLM不同的是，由于【CLS】token包含了整个序列（包含两个句子）的含义，因此只需要对【CLS】token进行类型判断。预测误差和MLM一样使用cross entropy函数计算
@@ -559,11 +563,11 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [BERT author explain BERT](https://www.reddit.com/r/MachineLearning/comments/9nfqxz/r_bert_pretraining_of_deep_bidirectional/)
 [Examining BERT's raw embeddings](https://towardsdatascience.com/examining-berts-raw-embeddings-fd905cb22df7)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0OTEzODc4MjYsMTg5NzE2NDE0OCwtMT
-Y0ODQyMTM0MywtMTg5MDg5MjA2LDE4ODgwMzI1MDMsMjAxNjU0
-NjQ0MiwxNjUxOTk4OTU3LC0yNzU5Mjk1ODEsODU0ODkyMTM5LC
-0xMzI1NzIyNzcyLC0xNjkzNTcyNjExLC05NzE5NDQ4MCwtMjk2
-MTk0NjM5LDQ1Njc3Nzk1MCwyMDA3MjEwMzA0LC00NzkwOTIwNz
-UsMTQzODA0Mjc4NiwtMTgyNTEwNzgyOSwxOTQzNDk5MzUxLC0x
-Mjk1MjcwNjQ1XX0=
+eyJoaXN0b3J5IjpbMTc3MzMxNTY3MiwxODk3MTY0MTQ4LC0xNj
+Q4NDIxMzQzLC0xODkwODkyMDYsMTg4ODAzMjUwMywyMDE2NTQ2
+NDQyLDE2NTE5OTg5NTcsLTI3NTkyOTU4MSw4NTQ4OTIxMzksLT
+EzMjU3MjI3NzIsLTE2OTM1NzI2MTEsLTk3MTk0NDgwLC0yOTYx
+OTQ2MzksNDU2Nzc3OTUwLDIwMDcyMTAzMDQsLTQ3OTA5MjA3NS
+wxNDM4MDQyNzg2LC0xODI1MTA3ODI5LDE5NDM0OTkzNTEsLTEy
+OTUyNzA2NDVdfQ==
 -->
