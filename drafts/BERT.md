@@ -302,7 +302,8 @@ BERT模型在设计时就考虑到了方便下游任务，它可以应用在很�
 ### 单句分类问题
 
 ![](https://docs.google.com/drawings/d/e/2PACX-1vStZ1DhjhFi-1LIWS7hCHsvTzu_SQ-DS9Dh6MDCC2qcjmmDcuWte2Ii3wATxx149_NX-OOVzU1nqbr9/pub?w=884&h=709)
-这种类型的任务对输入（一句话）进行语义分析。输入一句话，预测这句话的分类，如分析一条购买评价的语义是肯定的还是否定的。
+- 任务介绍
+这种类型的任务对输入的一句话进行类型判断，例如分析一条购买评价的语义是肯定的还是否定的。
 - 训练数据
 	- $x={x_1, x_2, x_3, ... , x_n}, y=label$
 - Make use of the CLS token
@@ -317,7 +318,7 @@ BERT模型在设计时就考虑到了方便下游任务，它可以应用在很�
             self.classifier = nn.Linear(config.hidden_size, config.num_labels)
 
 [https://github.com/huggingface/transformers/blob/c67d1a0259cbb3aef31952b4f37d4fee0e36f134/src/transformers/modeling_bert.py#L1291-L1299](https://github.com/huggingface/transformers/blob/c67d1a0259cbb3aef31952b4f37d4fee0e36f134/src/transformers/modeling_bert.py#L1291-L1299)
-训练（图？）
+- 训练liu'c
 - 损失函数：cross-entropy
 - 
 预测
@@ -555,11 +556,11 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [BERT author explain BERT](https://www.reddit.com/r/MachineLearning/comments/9nfqxz/r_bert_pretraining_of_deep_bidirectional/)
 [Examining BERT's raw embeddings](https://towardsdatascience.com/examining-berts-raw-embeddings-fd905cb22df7)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTA4MjA1Mzg3OSwtMjI4MTQxOTc2LC0xND
-c5NTc3MDY4LC0xMTAyNTI3NzYzLDE4OTcxNjQxNDgsLTE2NDg0
-MjEzNDMsLTE4OTA4OTIwNiwxODg4MDMyNTAzLDIwMTY1NDY0ND
-IsMTY1MTk5ODk1NywtMjc1OTI5NTgxLDg1NDg5MjEzOSwtMTMy
-NTcyMjc3MiwtMTY5MzU3MjYxMSwtOTcxOTQ0ODAsLTI5NjE5ND
-YzOSw0NTY3Nzc5NTAsMjAwNzIxMDMwNCwtNDc5MDkyMDc1LDE0
-MzgwNDI3ODZdfQ==
+eyJoaXN0b3J5IjpbMTA4ODk4OTE1LC0yMjgxNDE5NzYsLTE0Nz
+k1NzcwNjgsLTExMDI1Mjc3NjMsMTg5NzE2NDE0OCwtMTY0ODQy
+MTM0MywtMTg5MDg5MjA2LDE4ODgwMzI1MDMsMjAxNjU0NjQ0Mi
+wxNjUxOTk4OTU3LC0yNzU5Mjk1ODEsODU0ODkyMTM5LC0xMzI1
+NzIyNzcyLC0xNjkzNTcyNjExLC05NzE5NDQ4MCwtMjk2MTk0Nj
+M5LDQ1Njc3Nzk1MCwyMDA3MjEwMzA0LC00NzkwOTIwNzUsMTQz
+ODA0Mjc4Nl19
 -->
