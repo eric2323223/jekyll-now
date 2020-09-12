@@ -381,7 +381,9 @@ remember BERT does not include decoder?
 BERT的核心思想是使用Transformer来进行深度双向上下文的语义分析，但是Transformer是一把双刃剑，它一方面提供了强大深度双向处理能力，而一方面也使传统的语言模型LM训练方法收到了影响。  由于深度双向会导致。。而无法使用LM进行训练，作者利用了MLM并设计了相应的预处理来解决预训练和微调训练的冲突。。。
 BERT最大的成功在于提供了一个方便可用的预训练模型
 
-从设计的角度 给我们的启示是
+从模型的角度来讲，为了让预训练模型服务于更多的下游任务，加入pooler
+
+从任务设计的角度，作者MLM， NSP
 
 
 
@@ -562,7 +564,7 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [BERT author explain BERT](https://www.reddit.com/r/MachineLearning/comments/9nfqxz/r_bert_pretraining_of_deep_bidirectional/)
 [Examining BERT's raw embeddings](https://towardsdatascience.com/examining-berts-raw-embeddings-fd905cb22df7)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTY3Mzk0NzQ0NiwtNjYxNDc4OTU0LC0xNz
+eyJoaXN0b3J5IjpbLTM1NjQ0OTAwNSwtNjYxNDc4OTU0LC0xNz
 M4NzMyMzIwLC0yMjgxNDE5NzYsLTE0Nzk1NzcwNjgsLTExMDI1
 Mjc3NjMsMTg5NzE2NDE0OCwtMTY0ODQyMTM0MywtMTg5MDg5Mj
 A2LDE4ODgwMzI1MDMsMjAxNjU0NjQ0MiwxNjUxOTk4OTU3LC0y
