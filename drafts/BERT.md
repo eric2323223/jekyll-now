@@ -303,9 +303,8 @@ BERT模型在设计时就考虑到了方便下游任务，它可以应用在很�
 
 ![](https://docs.google.com/drawings/d/e/2PACX-1vStZ1DhjhFi-1LIWS7hCHsvTzu_SQ-DS9Dh6MDCC2qcjmmDcuWte2Ii3wATxx149_NX-OOVzU1nqbr9/pub?w=884&h=709)
 - 任务介绍
-这种类型的任务shi对输入的一句话进行类型判断，例如分析一条购买评价的语义是肯定的还是否定的。
-- 训练数据
-	- $x={x_1, x_2, x_3, ... , x_n}, y=label$
+这种类型的任务对输入的一句话进行类型判断，例如分析一条购买评价的语义是肯定的还是否定的。
+
 - Make use of the CLS token
 - 微调层结构：分类器（全连接+softmax）[https://github.com/huggingface/transformers/blob/c67d1a0259cbb3aef31952b4f37d4fee0e36f134/src/transformers/modeling_bert.py#L1234-L1241](https://github.com/huggingface/transformers/blob/c67d1a0259cbb3aef31952b4f37d4fee0e36f134/src/transformers/modeling_bert.py#L1234-L1241)
 
@@ -318,6 +317,8 @@ BERT模型在设计时就考虑到了方便下游任务，它可以应用在很�
             self.classifier = nn.Linear(config.hidden_size, config.num_labels)
 
 [https://github.com/huggingface/transformers/blob/c67d1a0259cbb3aef31952b4f37d4fee0e36f134/src/transformers/modeling_bert.py#L1291-L1299](https://github.com/huggingface/transformers/blob/c67d1a0259cbb3aef31952b4f37d4fee0e36f134/src/transformers/modeling_bert.py#L1291-L1299)
+- 训练数据
+	- $x={x_1, x_2, x_3, ... , x_n}, y=label$
 - 训练流程
 - 损失函数：cross-entropy
 - 
@@ -369,6 +370,12 @@ remember BERT does not include decoder?
 - Bert use transformer as encoder, there is no decoder in BERT
 - 
 
+## BERT的改进
+[关于BERT的若干问题整理记录](https://zhuanlan.zhihu.com/p/95594311)
+### task design
+- spanBERT [https://zhuanlan.zhihu.com/p/75893972](https://zhuanlan.zhihu.com/p/75893972)
+### distillation
+
 ## 总结
 
 BERT的核心思想是使用Transformer来进行深度双向上下文的语义分析，但是Transformer是一把双刃剑，它一方面提供了强大深度双向处理能力，而一方面也使传统的语言模型LM训练方法收到了影响。  由于深度双向会导致。。而无法使用LM进行训练，作者利用了MLM并设计了相应的预处理来解决预训练和微调训练的冲突。。。
@@ -394,11 +401,8 @@ BERT给我们的启示是
 下面是实验的结果，head+tail的表示在两个数据集上的效果都比较好。应该是长文本结合了句首和句尾的信息，获取的信息比较均衡。不过奇怪的是拼接的方式整体居然不如截断，个人猜测可能是将句子切成几段之后增加了模型的不稳定性，而错误叠加起来可能就会被放大。而max-pooling和self-attention也更加强调了文本中比较有用的信息，所以整体效果优于average.
 ![enter image description here](https://pic3.zhimg.com/80/v2-f932b2ed7aa4af745b512e2e0f43093e_720w.jpg)
 
-## BERT的改进
-[关于BERT的若干问题整理记录](https://zhuanlan.zhihu.com/p/95594311)
-### task design
-- spanBERT [https://zhuanlan.zhihu.com/p/75893972](https://zhuanlan.zhihu.com/p/75893972)
-### distillation
+
+
 ~~### LAMP？not a BERT improvement~~
 ## BERT应用
 ### imageBert
@@ -414,7 +418,7 @@ BERT给我们的启示是
 ### huggingface transformer
 ### BERT as a service
 ### DistilBERT
-### SQUAD
+
 
 
 
@@ -556,11 +560,11 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [BERT author explain BERT](https://www.reddit.com/r/MachineLearning/comments/9nfqxz/r_bert_pretraining_of_deep_bidirectional/)
 [Examining BERT's raw embeddings](https://towardsdatascience.com/examining-berts-raw-embeddings-fd905cb22df7)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTY2MTQ3ODk1NCwtMTczODczMjMyMCwtMj
-I4MTQxOTc2LC0xNDc5NTc3MDY4LC0xMTAyNTI3NzYzLDE4OTcx
-NjQxNDgsLTE2NDg0MjEzNDMsLTE4OTA4OTIwNiwxODg4MDMyNT
-AzLDIwMTY1NDY0NDIsMTY1MTk5ODk1NywtMjc1OTI5NTgxLDg1
-NDg5MjEzOSwtMTMyNTcyMjc3MiwtMTY5MzU3MjYxMSwtOTcxOT
-Q0ODAsLTI5NjE5NDYzOSw0NTY3Nzc5NTAsMjAwNzIxMDMwNCwt
-NDc5MDkyMDc1XX0=
+eyJoaXN0b3J5IjpbLTIxMDM1OTgwNDMsLTY2MTQ3ODk1NCwtMT
+czODczMjMyMCwtMjI4MTQxOTc2LC0xNDc5NTc3MDY4LC0xMTAy
+NTI3NzYzLDE4OTcxNjQxNDgsLTE2NDg0MjEzNDMsLTE4OTA4OT
+IwNiwxODg4MDMyNTAzLDIwMTY1NDY0NDIsMTY1MTk5ODk1Nywt
+Mjc1OTI5NTgxLDg1NDg5MjEzOSwtMTMyNTcyMjc3MiwtMTY5Mz
+U3MjYxMSwtOTcxOTQ0ODAsLTI5NjE5NDYzOSw0NTY3Nzc5NTAs
+MjAwNzIxMDMwNF19
 -->
