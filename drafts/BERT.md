@@ -303,7 +303,7 @@ BERT模型在设计时就考虑到了方便下游任务，它可以应用在很�
 
 ![](https://docs.google.com/drawings/d/e/2PACX-1vStZ1DhjhFi-1LIWS7hCHsvTzu_SQ-DS9Dh6MDCC2qcjmmDcuWte2Ii3wATxx149_NX-OOVzU1nqbr9/pub?w=884&h=709)
 - 任务介绍
-这种类型的任务对输入的一句话进行类型判断，例如分析一条购买评价的语义是肯定的还是否定的。
+这种类型的任务shi对输入的一句话进行类型判断，例如分析一条购买评价的语义是肯定的还是否定的。
 - 训练数据
 	- $x={x_1, x_2, x_3, ... , x_n}, y=label$
 - Make use of the CLS token
@@ -556,11 +556,11 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [BERT author explain BERT](https://www.reddit.com/r/MachineLearning/comments/9nfqxz/r_bert_pretraining_of_deep_bidirectional/)
 [Examining BERT's raw embeddings](https://towardsdatascience.com/examining-berts-raw-embeddings-fd905cb22df7)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE3Mzg3MzIzMjAsLTIyODE0MTk3NiwtMT
-Q3OTU3NzA2OCwtMTEwMjUyNzc2MywxODk3MTY0MTQ4LC0xNjQ4
-NDIxMzQzLC0xODkwODkyMDYsMTg4ODAzMjUwMywyMDE2NTQ2ND
-QyLDE2NTE5OTg5NTcsLTI3NTkyOTU4MSw4NTQ4OTIxMzksLTEz
-MjU3MjI3NzIsLTE2OTM1NzI2MTEsLTk3MTk0NDgwLC0yOTYxOT
-Q2MzksNDU2Nzc3OTUwLDIwMDcyMTAzMDQsLTQ3OTA5MjA3NSwx
-NDM4MDQyNzg2XX0=
+eyJoaXN0b3J5IjpbLTY2MTQ3ODk1NCwtMTczODczMjMyMCwtMj
+I4MTQxOTc2LC0xNDc5NTc3MDY4LC0xMTAyNTI3NzYzLDE4OTcx
+NjQxNDgsLTE2NDg0MjEzNDMsLTE4OTA4OTIwNiwxODg4MDMyNT
+AzLDIwMTY1NDY0NDIsMTY1MTk5ODk1NywtMjc1OTI5NTgxLDg1
+NDg5MjEzOSwtMTMyNTcyMjc3MiwtMTY5MzU3MjYxMSwtOTcxOT
+Q0ODAsLTI5NjE5NDYzOSw0NTY3Nzc5NTAsMjAwNzIxMDMwNCwt
+NDc5MDkyMDc1XX0=
 -->
