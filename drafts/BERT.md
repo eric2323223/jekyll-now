@@ -290,7 +290,7 @@ Each training data contains Two sentences, $W_1[w_{11}, w_{12}, w_{13}, w_{14}, 
 ## BERT的微调（fine tuning）
 综上所述，BERT的重要意义不仅是架构上的改进，通过海量数据训练出来的BERT预训练模型更具实践意义，它使得不具备大量数据和计算资源的普通人也能够站在巨人的肩膀上，将其蕴含的强大通用知识运用在自己的机器学习任务中。
 微调是在BERT预训练模型的基础上加入针对性的微调网络结构（微调层），并利用（相对）少量数据来训练微调层使之能够满足一定的任务需要的学习过程。在微调训练中，BERT预训练模型的参数一般不会被训练（更新），BERT预训练模型网络只起到特征提取的作用。
-从本质上讲，基于transformer的BERT模型能够为序列元素生成具备上下文信息的编码  围绕着这个特点，作者设计了很多微调任务，总体来说
+从本质上讲，基于transformer的BERT模型能够为序列元素生成具备上下文信息的编码，围绕着这个特点，作者设计了很多微调任务，从。。。的角度可以将这些微调任务分为两类：单句语义分析和多句语义分析。
 > 利用BERT预训练模型进行微调的基本思路是利用BERT模型已经学好的参数进行。。。
 BERT模型在设计时就考虑到了方便下游任务，它可以应用在很多类新的
 **方法：固定预训练模型的参数，训练微调层的参数**
@@ -555,11 +555,11 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [BERT author explain BERT](https://www.reddit.com/r/MachineLearning/comments/9nfqxz/r_bert_pretraining_of_deep_bidirectional/)
 [Examining BERT's raw embeddings](https://towardsdatascience.com/examining-berts-raw-embeddings-fd905cb22df7)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0Nzk1NzcwNjgsLTExMDI1Mjc3NjMsMT
-g5NzE2NDE0OCwtMTY0ODQyMTM0MywtMTg5MDg5MjA2LDE4ODgw
-MzI1MDMsMjAxNjU0NjQ0MiwxNjUxOTk4OTU3LC0yNzU5Mjk1OD
-EsODU0ODkyMTM5LC0xMzI1NzIyNzcyLC0xNjkzNTcyNjExLC05
-NzE5NDQ4MCwtMjk2MTk0NjM5LDQ1Njc3Nzk1MCwyMDA3MjEwMz
-A0LC00NzkwOTIwNzUsMTQzODA0Mjc4NiwtMTgyNTEwNzgyOSwx
-OTQzNDk5MzUxXX0=
+eyJoaXN0b3J5IjpbLTIyODE0MTk3NiwtMTQ3OTU3NzA2OCwtMT
+EwMjUyNzc2MywxODk3MTY0MTQ4LC0xNjQ4NDIxMzQzLC0xODkw
+ODkyMDYsMTg4ODAzMjUwMywyMDE2NTQ2NDQyLDE2NTE5OTg5NT
+csLTI3NTkyOTU4MSw4NTQ4OTIxMzksLTEzMjU3MjI3NzIsLTE2
+OTM1NzI2MTEsLTk3MTk0NDgwLC0yOTYxOTQ2MzksNDU2Nzc3OT
+UwLDIwMDcyMTAzMDQsLTQ3OTA5MjA3NSwxNDM4MDQyNzg2LC0x
+ODI1MTA3ODI5XX0=
 -->
