@@ -154,7 +154,7 @@ Transformer由编码器和解码器组成，编码器负责将输入序列中的
 - EnglishWikipedia (2.5B words)
 
 ### 任务设计
-自然语言中蕴含的意义是以句子的形式表现的，为了让预训练模型学习到更多的知识，BERT的预训练被设计为多任务学习（multi-task learning），包含两个任务：一个是 Masked Language Model(Mask LM)，训练模型理解单个句子蕴含的意义；另一个是 Next Sentence Prediction(NSP)，训练模型理解不同语句之间的上下文含义。通过这两个任务的联合学习，可以使得 BERT 学习到的表征既有 token 级别信息，同时也包含了句子级别的语义信息。
+自然语言中蕴含的意义是以句子的形式表现的，为了让预训练模型学习到更多的知识，BERT的预训练被设计为多任务学习（multi-task learning），包含两个任务：一个是 Masked Language Model(MLM)，训练模型理解单个句子蕴含的意义；另一个是 Next Sentence Prediction(NSP)，训练模型理解不同语句之间的上下文含义。通过这两个任务的联合学习，可以使得 BERT 学习到的表征既有 token 级别信息，同时也包含了句子级别的语义信息。
 #### Masked Language Model  - MLM
 之所以BERT使用重新设计的MLM，是由于注意力机制的使用使得BERT模型能够同时“看到”所有的序列元素，因此无法使用传统语言模型通过预测下一个元素的方式来进行训练。因此BERT使用了Mask LM，做法是随机挑选序列中的若干元素，将他们遮（mask）起来，使注意力机制无法“看到”，通过训练模型预测未知元素的值来促使模型学习到整个序列的含义。Mask LM训练的思路类似于填词游戏，即通过上下文的信息来判断模型被隐藏的词。从原理上讲这种方式可以很好的匹配注意力机制的运算方式，但是在实现训练中遮罩元素的数量对于训练的效果和速度都有很大影响，如果mask太多，会丢失context，如果mask太少，训练太慢。
 >[https://towardsdatascience.com/bert-explained-state-of-the-art-language-model-for-nlp-f8b21a9b6270](https://towardsdatascience.com/bert-explained-state-of-the-art-language-model-for-nlp-f8b21a9b6270)
@@ -555,11 +555,11 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [BERT author explain BERT](https://www.reddit.com/r/MachineLearning/comments/9nfqxz/r_bert_pretraining_of_deep_bidirectional/)
 [Examining BERT's raw embeddings](https://towardsdatascience.com/examining-berts-raw-embeddings-fd905cb22df7)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTExMDI1Mjc3NjMsMTg5NzE2NDE0OCwtMT
-Y0ODQyMTM0MywtMTg5MDg5MjA2LDE4ODgwMzI1MDMsMjAxNjU0
-NjQ0MiwxNjUxOTk4OTU3LC0yNzU5Mjk1ODEsODU0ODkyMTM5LC
-0xMzI1NzIyNzcyLC0xNjkzNTcyNjExLC05NzE5NDQ4MCwtMjk2
-MTk0NjM5LDQ1Njc3Nzk1MCwyMDA3MjEwMzA0LC00NzkwOTIwNz
-UsMTQzODA0Mjc4NiwtMTgyNTEwNzgyOSwxOTQzNDk5MzUxLC0x
-Mjk1MjcwNjQ1XX0=
+eyJoaXN0b3J5IjpbLTE0Nzk1NzcwNjgsLTExMDI1Mjc3NjMsMT
+g5NzE2NDE0OCwtMTY0ODQyMTM0MywtMTg5MDg5MjA2LDE4ODgw
+MzI1MDMsMjAxNjU0NjQ0MiwxNjUxOTk4OTU3LC0yNzU5Mjk1OD
+EsODU0ODkyMTM5LC0xMzI1NzIyNzcyLC0xNjkzNTcyNjExLC05
+NzE5NDQ4MCwtMjk2MTk0NjM5LDQ1Njc3Nzk1MCwyMDA3MjEwMz
+A0LC00NzkwOTIwNzUsMTQzODA0Mjc4NiwtMTgyNTEwNzgyOSwx
+OTQzNDk5MzUxXX0=
 -->
