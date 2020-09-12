@@ -158,7 +158,7 @@ Transformer由编码器和解码器组成，编码器负责将输入序列中的
 
 ### 预训练模型架构
 为了完成为预训练的两个任务，模型需要进行相应的设计。总体来看，应用于预训练的模型可以分为两部分：
-- 可重用的预训练模型-BERT
+- 预训练模型-BERT
 这部分就是。。。预训练完成后这部分模型会包含可用于微调任务的通用知识，主要包含以下三部分：
 	- BertEmbeddings
 	- BertEncoder
@@ -559,11 +559,11 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [BERT author explain BERT](https://www.reddit.com/r/MachineLearning/comments/9nfqxz/r_bert_pretraining_of_deep_bidirectional/)
 [Examining BERT's raw embeddings](https://towardsdatascience.com/examining-berts-raw-embeddings-fd905cb22df7)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTg5NzE2NDE0OCwtMTY0ODQyMTM0MywtMT
-g5MDg5MjA2LDE4ODgwMzI1MDMsMjAxNjU0NjQ0MiwxNjUxOTk4
-OTU3LC0yNzU5Mjk1ODEsODU0ODkyMTM5LC0xMzI1NzIyNzcyLC
-0xNjkzNTcyNjExLC05NzE5NDQ4MCwtMjk2MTk0NjM5LDQ1Njc3
-Nzk1MCwyMDA3MjEwMzA0LC00NzkwOTIwNzUsMTQzODA0Mjc4Ni
-wtMTgyNTEwNzgyOSwxOTQzNDk5MzUxLC0xMjk1MjcwNjQ1LDQ2
-MTU0MTg1XX0=
+eyJoaXN0b3J5IjpbLTE0OTEzODc4MjYsMTg5NzE2NDE0OCwtMT
+Y0ODQyMTM0MywtMTg5MDg5MjA2LDE4ODgwMzI1MDMsMjAxNjU0
+NjQ0MiwxNjUxOTk4OTU3LC0yNzU5Mjk1ODEsODU0ODkyMTM5LC
+0xMzI1NzIyNzcyLC0xNjkzNTcyNjExLC05NzE5NDQ4MCwtMjk2
+MTk0NjM5LDQ1Njc3Nzk1MCwyMDA3MjEwMzA0LC00NzkwOTIwNz
+UsMTQzODA0Mjc4NiwtMTgyNTEwNzgyOSwxOTQzNDk5MzUxLC0x
+Mjk1MjcwNjQ1XX0=
 -->
