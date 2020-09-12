@@ -318,7 +318,7 @@ BERT模型在设计时就考虑到了方便下游任务，它可以应用在很�
             self.classifier = nn.Linear(config.hidden_size, config.num_labels)
 
 [https://github.com/huggingface/transformers/blob/c67d1a0259cbb3aef31952b4f37d4fee0e36f134/src/transformers/modeling_bert.py#L1291-L1299](https://github.com/huggingface/transformers/blob/c67d1a0259cbb3aef31952b4f37d4fee0e36f134/src/transformers/modeling_bert.py#L1291-L1299)
-- 训练liu'c
+- 训练流程
 - 损失函数：cross-entropy
 - 
 预测
@@ -346,17 +346,17 @@ BERT模型在设计时就考虑到了方便下游任务，它可以应用在很�
 
 ### 问答问题 SQuAD
 ![](https://docs.google.com/drawings/d/e/2PACX-1vSGC-bIM19eOTk96audRUt_wo5hNgsIQpPZVo0pRfMLLxmCpYihvwaKYtcHI2Eyikmk4amBFMSNur6T/pub?w=835&h=686)
-#### 任务介绍
-- 预测answer span(start pos, end pos)
-#### 模型架构
-- BERT预训练模型
-- SQuaD任务层
-#### 训练数据
+- 任务介绍
+预测answer span(start pos, end pos)
+- 模型架构
+	- BERT预训练模型
+	- SQuaD任务层
+- 训练数据
 	- question
 	- reference
 	- answer_start_pos
 	- answer_end_pos
-#### 训练流程
+- 训练流程
 	- question + [SEP] + reference
 	- 
 Use classification head for each token
@@ -556,11 +556,11 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [BERT author explain BERT](https://www.reddit.com/r/MachineLearning/comments/9nfqxz/r_bert_pretraining_of_deep_bidirectional/)
 [Examining BERT's raw embeddings](https://towardsdatascience.com/examining-berts-raw-embeddings-fd905cb22df7)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTA4ODk4OTE1LC0yMjgxNDE5NzYsLTE0Nz
-k1NzcwNjgsLTExMDI1Mjc3NjMsMTg5NzE2NDE0OCwtMTY0ODQy
-MTM0MywtMTg5MDg5MjA2LDE4ODgwMzI1MDMsMjAxNjU0NjQ0Mi
-wxNjUxOTk4OTU3LC0yNzU5Mjk1ODEsODU0ODkyMTM5LC0xMzI1
-NzIyNzcyLC0xNjkzNTcyNjExLC05NzE5NDQ4MCwtMjk2MTk0Nj
-M5LDQ1Njc3Nzk1MCwyMDA3MjEwMzA0LC00NzkwOTIwNzUsMTQz
-ODA0Mjc4Nl19
+eyJoaXN0b3J5IjpbLTE3Mzg3MzIzMjAsLTIyODE0MTk3NiwtMT
+Q3OTU3NzA2OCwtMTEwMjUyNzc2MywxODk3MTY0MTQ4LC0xNjQ4
+NDIxMzQzLC0xODkwODkyMDYsMTg4ODAzMjUwMywyMDE2NTQ2ND
+QyLDE2NTE5OTg5NTcsLTI3NTkyOTU4MSw4NTQ4OTIxMzksLTEz
+MjU3MjI3NzIsLTE2OTM1NzI2MTEsLTk3MTk0NDgwLC0yOTYxOT
+Q2MzksNDU2Nzc3OTUwLDIwMDcyMTAzMDQsLTQ3OTA5MjA3NSwx
+NDM4MDQyNzg2XX0=
 -->
