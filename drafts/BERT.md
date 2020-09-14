@@ -224,7 +224,7 @@ $$L_{nsp}(\theta, \theta_n) = - \sum_{i=1}^N \log p(n=n_i|\theta, \theta_n)$$
 
 
 ### 损失函数
-
+$$L(\theta, \theta_m, \theta_n) = L_{mlm} + L_{nsp}$$
 ```
 total_loss = masked_lm_loss + next_sentence_loss
 ```
@@ -568,11 +568,11 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [BERT author explain BERT](https://www.reddit.com/r/MachineLearning/comments/9nfqxz/r_bert_pretraining_of_deep_bidirectional/)
 [Examining BERT's raw embeddings](https://towardsdatascience.com/examining-berts-raw-embeddings-fd905cb22df7)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE4NjQ5OTM1NTEsLTM1NjQ0OTAwNSwtNj
-YxNDc4OTU0LC0xNzM4NzMyMzIwLC0yMjgxNDE5NzYsLTE0Nzk1
-NzcwNjgsLTExMDI1Mjc3NjMsMTg5NzE2NDE0OCwtMTY0ODQyMT
-M0MywtMTg5MDg5MjA2LDE4ODgwMzI1MDMsMjAxNjU0NjQ0Miwx
-NjUxOTk4OTU3LC0yNzU5Mjk1ODEsODU0ODkyMTM5LC0xMzI1Nz
-IyNzcyLC0xNjkzNTcyNjExLC05NzE5NDQ4MCwtMjk2MTk0NjM5
-LDQ1Njc3Nzk1MF19
+eyJoaXN0b3J5IjpbLTc5MTEwMTI2MiwtMzU2NDQ5MDA1LC02Nj
+E0Nzg5NTQsLTE3Mzg3MzIzMjAsLTIyODE0MTk3NiwtMTQ3OTU3
+NzA2OCwtMTEwMjUyNzc2MywxODk3MTY0MTQ4LC0xNjQ4NDIxMz
+QzLC0xODkwODkyMDYsMTg4ODAzMjUwMywyMDE2NTQ2NDQyLDE2
+NTE5OTg5NTcsLTI3NTkyOTU4MSw4NTQ4OTIxMzksLTEzMjU3Mj
+I3NzIsLTE2OTM1NzI2MTEsLTk3MTk0NDgwLC0yOTYxOTQ2Mzks
+NDU2Nzc3OTUwXX0=
 -->
