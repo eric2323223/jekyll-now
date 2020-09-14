@@ -211,7 +211,7 @@ $$ L_{mlm}(\theta, \theta_m) = -\sum_{i=1}^M\log p(m=m_i| \theta, \theta_m)$$
 	- NSP head
 ![enter image description here](https://picb.zhimg.com/80/v2-33d191eee24be9a47b7799b939564d74_720w.jpg)
 NSP的训练目标是判断两个句子是否是连续的，因此它也属于二元（是和否）分类问题。和MLM相似，需要加上一个二值分类器（NSP head）来进行类型判断。与MLM不同的是，由于【CLS】token包含了整个序列（包含两个句子）的含义，因此只需要对【CLS】token进行类型判断。预测误差和MLM一样使用cross entropy函数计算
-$$L_{nsp}(\theta, \theta_n) = - \sum_{i=1}^N$$
+$$L_{nsp}(\theta, \theta_n) = - \sum_{i=1}^N \log p(n=n_i|\theta, \theta_n)$$
 
 	```
 	next_sentence_loss = loss_fct(seq_relationship_score.view(-1, 2), next_sentence_label.view(-1))
@@ -224,6 +224,7 @@ $$L_{nsp}(\theta, \theta_n) = - \sum_{i=1}^N$$
 
 
 ### 损失函数
+
 ```
 total_loss = masked_lm_loss + next_sentence_loss
 ```
@@ -567,11 +568,11 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [BERT author explain BERT](https://www.reddit.com/r/MachineLearning/comments/9nfqxz/r_bert_pretraining_of_deep_bidirectional/)
 [Examining BERT's raw embeddings](https://towardsdatascience.com/examining-berts-raw-embeddings-fd905cb22df7)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNDcwNzY2ODkwLC0zNTY0NDkwMDUsLTY2MT
-Q3ODk1NCwtMTczODczMjMyMCwtMjI4MTQxOTc2LC0xNDc5NTc3
-MDY4LC0xMTAyNTI3NzYzLDE4OTcxNjQxNDgsLTE2NDg0MjEzND
-MsLTE4OTA4OTIwNiwxODg4MDMyNTAzLDIwMTY1NDY0NDIsMTY1
-MTk5ODk1NywtMjc1OTI5NTgxLDg1NDg5MjEzOSwtMTMyNTcyMj
-c3MiwtMTY5MzU3MjYxMSwtOTcxOTQ0ODAsLTI5NjE5NDYzOSw0
-NTY3Nzc5NTBdfQ==
+eyJoaXN0b3J5IjpbLTE4NjQ5OTM1NTEsLTM1NjQ0OTAwNSwtNj
+YxNDc4OTU0LC0xNzM4NzMyMzIwLC0yMjgxNDE5NzYsLTE0Nzk1
+NzcwNjgsLTExMDI1Mjc3NjMsMTg5NzE2NDE0OCwtMTY0ODQyMT
+M0MywtMTg5MDg5MjA2LDE4ODgwMzI1MDMsMjAxNjU0NjQ0Miwx
+NjUxOTk4OTU3LC0yNzU5Mjk1ODEsODU0ODkyMTM5LC0xMzI1Nz
+IyNzcyLC0xNjkzNTcyNjExLC05NzE5NDQ4MCwtMjk2MTk0NjM5
+LDQ1Njc3Nzk1MF19
 -->
