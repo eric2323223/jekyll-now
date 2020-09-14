@@ -188,6 +188,7 @@ Yes, the model does converge more slowly but the increased steps in converging a
 #### Next Sentence Prediction（NSP）
 输入句子A和句子B，判断句子B是否是句子A的下一句，通过迭代训练，可以学习到句子间的关系，这对于文本匹配类任务显得尤为重要。
 Next Sentence Prediction（NSP）的任务是判断句子B是否是句子A的下文。如果是的话输出’IsNext‘，否则输出’NotNext‘。训练数据的生成方式是从平行语料中随机抽取的连续两句话，其中50%保留抽取的两句话，它们符合IsNext关系，另外50%的第二句话是随机从预料中提取的，它们的关系是NotNext的。这个关系保存在图4中的`[CLS]`符号中。
+
 >_Why is a second task necessary at all?_
 The authors pre-trained their model in  _Next Sentence Prediction_  because they thought important that the model knew how to relate two different sentences to perform downstream tasks like question answering or natural language inference and the “masked language model” did not capture this knowledge. They prove that pre-training with this second task notably increases performance in both question answering and natural language inference.
 ### 预训练模型架构
@@ -580,11 +581,11 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [BERT author explain BERT](https://www.reddit.com/r/MachineLearning/comments/9nfqxz/r_bert_pretraining_of_deep_bidirectional/)
 [Examining BERT's raw embeddings](https://towardsdatascience.com/examining-berts-raw-embeddings-fd905cb22df7)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIxMjY5MTI0MzEsNTQzNzc2MDU0LC0xMz
-g5OTE5MDQ5LC0xMzk3NzE0NDA1LC0xMjQ0NTE2OTEzLDEwMzI2
-OTcwNzYsMTI4Nzk5NTk5NiwtNzkxMTAxMjYyLC0zNTY0NDkwMD
-UsLTY2MTQ3ODk1NCwtMTczODczMjMyMCwtMjI4MTQxOTc2LC0x
-NDc5NTc3MDY4LC0xMTAyNTI3NzYzLDE4OTcxNjQxNDgsLTE2ND
-g0MjEzNDMsLTE4OTA4OTIwNiwxODg4MDMyNTAzLDIwMTY1NDY0
-NDIsMTY1MTk5ODk1N119
+eyJoaXN0b3J5IjpbMjU2OTExNTg3LC0yMTI2OTEyNDMxLDU0Mz
+c3NjA1NCwtMTM4OTkxOTA0OSwtMTM5NzcxNDQwNSwtMTI0NDUx
+NjkxMywxMDMyNjk3MDc2LDEyODc5OTU5OTYsLTc5MTEwMTI2Mi
+wtMzU2NDQ5MDA1LC02NjE0Nzg5NTQsLTE3Mzg3MzIzMjAsLTIy
+ODE0MTk3NiwtMTQ3OTU3NzA2OCwtMTEwMjUyNzc2MywxODk3MT
+Y0MTQ4LC0xNjQ4NDIxMzQzLC0xODkwODkyMDYsMTg4ODAzMjUw
+MywyMDE2NTQ2NDQyXX0=
 -->
