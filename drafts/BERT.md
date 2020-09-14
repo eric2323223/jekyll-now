@@ -262,9 +262,6 @@ total_loss = masked_lm_loss + next_sentence_loss
 >具体的预训练工程实现细节方面，BERT 还利用了一系列策略，使得模型更易于训练，除了常用的layer normalization，dropout之外，还有对于学习率的 warm-up 策略，使用的激活函数不再是普通的 ReLu，而是 GeLu。
 >- Transformer related :  dropout, layer_norm, residual
  
-### 数据预处理
-为了
-
 ### 预训练流程
 
 我们结合图来看一下BERT预训练的完整流程
@@ -584,11 +581,11 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [BERT author explain BERT](https://www.reddit.com/r/MachineLearning/comments/9nfqxz/r_bert_pretraining_of_deep_bidirectional/)
 [Examining BERT's raw embeddings](https://towardsdatascience.com/examining-berts-raw-embeddings-fd905cb22df7)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEyNTAxODI3MTgsLTk2Mjc2MzYxLDc2Nz
-A0ODkzNCwtMjEyNjkxMjQzMSw1NDM3NzYwNTQsLTEzODk5MTkw
-NDksLTEzOTc3MTQ0MDUsLTEyNDQ1MTY5MTMsMTAzMjY5NzA3Ni
-wxMjg3OTk1OTk2LC03OTExMDEyNjIsLTM1NjQ0OTAwNSwtNjYx
-NDc4OTU0LC0xNzM4NzMyMzIwLC0yMjgxNDE5NzYsLTE0Nzk1Nz
-cwNjgsLTExMDI1Mjc3NjMsMTg5NzE2NDE0OCwtMTY0ODQyMTM0
-MywtMTg5MDg5MjA2XX0=
+eyJoaXN0b3J5IjpbMTUwNjgyNTk3LC0xMjUwMTgyNzE4LC05Nj
+I3NjM2MSw3NjcwNDg5MzQsLTIxMjY5MTI0MzEsNTQzNzc2MDU0
+LC0xMzg5OTE5MDQ5LC0xMzk3NzE0NDA1LC0xMjQ0NTE2OTEzLD
+EwMzI2OTcwNzYsMTI4Nzk5NTk5NiwtNzkxMTAxMjYyLC0zNTY0
+NDkwMDUsLTY2MTQ3ODk1NCwtMTczODczMjMyMCwtMjI4MTQxOT
+c2LC0xNDc5NTc3MDY4LC0xMTAyNTI3NzYzLDE4OTcxNjQxNDgs
+LTE2NDg0MjEzNDNdfQ==
 -->
