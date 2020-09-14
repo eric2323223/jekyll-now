@@ -195,7 +195,7 @@ The authors pre-trained their model in  _Next Sentence Prediction_  because they
 #### 预训练模型-BERT
 这部分就是。。。预训练完成后这部分模型会包含可用于微调任务的通用知识，主要包含以下三部分：
 - BertEmbeddings
-编码层包含以下三中编码运算，他们的输出
+编码层包含以下三中编码运算，他们的输出是相同尺寸的数值型向量，将他们进行按位相加后再送入BERT编码器。
 	- Token embedding
 	主要作用是将输入元素转换为BERT编码器可以处理的数值类型的向量
 	- position embedding
@@ -576,11 +576,11 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [BERT author explain BERT](https://www.reddit.com/r/MachineLearning/comments/9nfqxz/r_bert_pretraining_of_deep_bidirectional/)
 [Examining BERT's raw embeddings](https://towardsdatascience.com/examining-berts-raw-embeddings-fd905cb22df7)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIzNzIzMzY2MywtMTI0NDUxNjkxMywxMD
-MyNjk3MDc2LDEyODc5OTU5OTYsLTc5MTEwMTI2MiwtMzU2NDQ5
-MDA1LC02NjE0Nzg5NTQsLTE3Mzg3MzIzMjAsLTIyODE0MTk3Ni
-wtMTQ3OTU3NzA2OCwtMTEwMjUyNzc2MywxODk3MTY0MTQ4LC0x
-NjQ4NDIxMzQzLC0xODkwODkyMDYsMTg4ODAzMjUwMywyMDE2NT
-Q2NDQyLDE2NTE5OTg5NTcsLTI3NTkyOTU4MSw4NTQ4OTIxMzks
-LTEzMjU3MjI3NzJdfQ==
+eyJoaXN0b3J5IjpbLTExNzk1MTQxMDUsLTEyNDQ1MTY5MTMsMT
+AzMjY5NzA3NiwxMjg3OTk1OTk2LC03OTExMDEyNjIsLTM1NjQ0
+OTAwNSwtNjYxNDc4OTU0LC0xNzM4NzMyMzIwLC0yMjgxNDE5Nz
+YsLTE0Nzk1NzcwNjgsLTExMDI1Mjc3NjMsMTg5NzE2NDE0OCwt
+MTY0ODQyMTM0MywtMTg5MDg5MjA2LDE4ODgwMzI1MDMsMjAxNj
+U0NjQ0MiwxNjUxOTk4OTU3LC0yNzU5Mjk1ODEsODU0ODkyMTM5
+LC0xMzI1NzIyNzcyXX0=
 -->
