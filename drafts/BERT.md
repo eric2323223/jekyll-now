@@ -203,11 +203,10 @@ Tokenized后的输入序列首先进入编码层，包含以下三种编码运�
 	- segment embedding
 	在输入为多个句子时，为每个句子生成不同的段信息
 	
-- BertPooler？
-
-
 - BertEncoder
 BERTEncoder的主要作用是利用Transformer对每个Token进行上下文编码。BERT标准模型中使用的的transformer有12个encoding layer，每个encoding layer都有12个头的多头注意力计算模块。
+
+- BertPooler
 
 
 
@@ -581,11 +580,11 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [BERT author explain BERT](https://www.reddit.com/r/MachineLearning/comments/9nfqxz/r_bert_pretraining_of_deep_bidirectional/)
 [Examining BERT's raw embeddings](https://towardsdatascience.com/examining-berts-raw-embeddings-fd905cb22df7)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzODk5MTkwNDksLTEzOTc3MTQ0MDUsLT
-EyNDQ1MTY5MTMsMTAzMjY5NzA3NiwxMjg3OTk1OTk2LC03OTEx
-MDEyNjIsLTM1NjQ0OTAwNSwtNjYxNDc4OTU0LC0xNzM4NzMyMz
-IwLC0yMjgxNDE5NzYsLTE0Nzk1NzcwNjgsLTExMDI1Mjc3NjMs
-MTg5NzE2NDE0OCwtMTY0ODQyMTM0MywtMTg5MDg5MjA2LDE4OD
-gwMzI1MDMsMjAxNjU0NjQ0MiwxNjUxOTk4OTU3LC0yNzU5Mjk1
-ODEsODU0ODkyMTM5XX0=
+eyJoaXN0b3J5IjpbNTQzNzc2MDU0LC0xMzg5OTE5MDQ5LC0xMz
+k3NzE0NDA1LC0xMjQ0NTE2OTEzLDEwMzI2OTcwNzYsMTI4Nzk5
+NTk5NiwtNzkxMTAxMjYyLC0zNTY0NDkwMDUsLTY2MTQ3ODk1NC
+wtMTczODczMjMyMCwtMjI4MTQxOTc2LC0xNDc5NTc3MDY4LC0x
+MTAyNTI3NzYzLDE4OTcxNjQxNDgsLTE2NDg0MjEzNDMsLTE4OT
+A4OTIwNiwxODg4MDMyNTAzLDIwMTY1NDY0NDIsMTY1MTk5ODk1
+NywtMjc1OTI5NTgxXX0=
 -->
