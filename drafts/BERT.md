@@ -195,7 +195,7 @@ The authors pre-trained their model in  _Next Sentence Prediction_  because they
 #### 预训练模型-BERT
 这部分就是。。。预训练完成后这部分模型会包含可用于微调任务的通用知识，主要包含以下三部分：
 - BertEmbeddings
-由于使用了注意力机制
+注意力机制的使用
 	- Token embedding
 	- segment embedding
 	- position embedding
@@ -572,11 +572,11 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [BERT author explain BERT](https://www.reddit.com/r/MachineLearning/comments/9nfqxz/r_bert_pretraining_of_deep_bidirectional/)
 [Examining BERT's raw embeddings](https://towardsdatascience.com/examining-berts-raw-embeddings-fd905cb22df7)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTkxMTMzMTQ5NywxMjg3OTk1OTk2LC03OT
-ExMDEyNjIsLTM1NjQ0OTAwNSwtNjYxNDc4OTU0LC0xNzM4NzMy
-MzIwLC0yMjgxNDE5NzYsLTE0Nzk1NzcwNjgsLTExMDI1Mjc3Nj
-MsMTg5NzE2NDE0OCwtMTY0ODQyMTM0MywtMTg5MDg5MjA2LDE4
-ODgwMzI1MDMsMjAxNjU0NjQ0MiwxNjUxOTk4OTU3LC0yNzU5Mj
-k1ODEsODU0ODkyMTM5LC0xMzI1NzIyNzcyLC0xNjkzNTcyNjEx
-LC05NzE5NDQ4MF19
+eyJoaXN0b3J5IjpbLTE3MDg0NjIzNzIsMTI4Nzk5NTk5NiwtNz
+kxMTAxMjYyLC0zNTY0NDkwMDUsLTY2MTQ3ODk1NCwtMTczODcz
+MjMyMCwtMjI4MTQxOTc2LC0xNDc5NTc3MDY4LC0xMTAyNTI3Nz
+YzLDE4OTcxNjQxNDgsLTE2NDg0MjEzNDMsLTE4OTA4OTIwNiwx
+ODg4MDMyNTAzLDIwMTY1NDY0NDIsMTY1MTk5ODk1NywtMjc1OT
+I5NTgxLDg1NDg5MjEzOSwtMTMyNTcyMjc3MiwtMTY5MzU3MjYx
+MSwtOTcxOTQ0ODBdfQ==
 -->
