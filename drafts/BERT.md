@@ -204,8 +204,10 @@ Tokenized后的输入序列首先进入编码层，包含以下三种编码运�
 	在输入为多个句子时，为每个句子生成不同的段信息
 	
 - BertEncoder
-BERTEncoder的主要作用是利用Transformer对每个Token进行上下文编码。BERT标准模型中的transformer有12个encoding layer，每个encoding layer都有12个多注意力
+BERTEncoder的主要作用是利用Transformer对每个Token进行上下文编码。BERT标准模型中使用的的transformer有12个encoding layer，每个encoding layer都有12个头的多头注意力计算模块。
+
 - BertPooler
+
 
 #### 预训练层BertPretrainingHeads(MLM head+NSP head)
 顾名思义，这层的目的是为了完成预训练任务，因此包含了两个模型结构分别用于进行MLM和NSP训练任务
@@ -577,11 +579,11 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [BERT author explain BERT](https://www.reddit.com/r/MachineLearning/comments/9nfqxz/r_bert_pretraining_of_deep_bidirectional/)
 [Examining BERT's raw embeddings](https://towardsdatascience.com/examining-berts-raw-embeddings-fd905cb22df7)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0MjY4MzAwODMsLTEzOTc3MTQ0MDUsLT
-EyNDQ1MTY5MTMsMTAzMjY5NzA3NiwxMjg3OTk1OTk2LC03OTEx
-MDEyNjIsLTM1NjQ0OTAwNSwtNjYxNDc4OTU0LC0xNzM4NzMyMz
-IwLC0yMjgxNDE5NzYsLTE0Nzk1NzcwNjgsLTExMDI1Mjc3NjMs
-MTg5NzE2NDE0OCwtMTY0ODQyMTM0MywtMTg5MDg5MjA2LDE4OD
-gwMzI1MDMsMjAxNjU0NjQ0MiwxNjUxOTk4OTU3LC0yNzU5Mjk1
-ODEsODU0ODkyMTM5XX0=
+eyJoaXN0b3J5IjpbLTcwMjYzNTIyOCwtMTM5NzcxNDQwNSwtMT
+I0NDUxNjkxMywxMDMyNjk3MDc2LDEyODc5OTU5OTYsLTc5MTEw
+MTI2MiwtMzU2NDQ5MDA1LC02NjE0Nzg5NTQsLTE3Mzg3MzIzMj
+AsLTIyODE0MTk3NiwtMTQ3OTU3NzA2OCwtMTEwMjUyNzc2Mywx
+ODk3MTY0MTQ4LC0xNjQ4NDIxMzQzLC0xODkwODkyMDYsMTg4OD
+AzMjUwMywyMDE2NTQ2NDQyLDE2NTE5OTg5NTcsLTI3NTkyOTU4
+MSw4NTQ4OTIxMzldfQ==
 -->
