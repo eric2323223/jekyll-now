@@ -203,7 +203,7 @@ The authors pre-trained their model in  _Next Sentence Prediction_  because they
 	- MLM head
 	![enter image description here](https://pic4.zhimg.com/80/v2-4364096101aad977b125aa585d187387_720w.jpg)
 当把词汇表（vocabulary）中的每一个词都作为一个单独的类型时，对未知token进行预测就变成了在所有类型中判断可能性最高的分类，也这就是典型的多类型分类问题。为了对token进行分类判断，需要在BERT的输出上增加一个多类型分类器（在实现中被称为MLM head），它包含一个全连接网络和softmax运算，可以将通过BERT 编码器编码过的token转换为vocabulary长度个输出，每个输出代表属于对应分类的概率。应用这个分类器对所有token计算出每个类型的概率，再和这个token的真实分类进行比较，通过cross entropy函数计算误差。~~之所以对全部token进行分类预测的原因是由于被遮罩的词有15%的机率被替换成随机词，因此每个词都可能是被遮罩过的。~~
-$$ L_{mlm}(\theta, \theta_m) = \sum_{i=1}^M\log p(m=m_i| \theta, \theta_m)$$
+$$ L_{mlm}(\theta, \theta_m) = -\sum_{i=1}^M\log p(m=m_i| \theta, \theta_m)$$
 
 	```
 	masked_lm_loss = CrossEntropyLoss(prediction_scores.view(-1, self.config.vocab_size), labels.view(-1))
@@ -211,6 +211,8 @@ $$ L_{mlm}(\theta, \theta_m) = \sum_{i=1}^M\log p(m=m_i| \theta, \theta_m)$$
 	- NSP head
 ![enter image description here](https://picb.zhimg.com/80/v2-33d191eee24be9a47b7799b939564d74_720w.jpg)
 NSP的训练目标是判断两个句子是否是连续的，因此它也属于二元（是和否）分类问题。和MLM相似，需要加上一个二值分类器（NSP head）来进行类型判断。与MLM不同的是，由于【CLS】token包含了整个序列（包含两个句子）的含义，因此只需要对【CLS】token进行类型判断。预测误差和MLM一样使用cross entropy函数计算
+$$L_{nsp}(\theta, \theta_n) = - \sum_{i=1}^N$$
+
 	```
 	next_sentence_loss = loss_fct(seq_relationship_score.view(-1, 2), next_sentence_label.view(-1))
 	```
@@ -565,11 +567,11 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [BERT author explain BERT](https://www.reddit.com/r/MachineLearning/comments/9nfqxz/r_bert_pretraining_of_deep_bidirectional/)
 [Examining BERT's raw embeddings](https://towardsdatascience.com/examining-berts-raw-embeddings-fd905cb22df7)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1NDQ1NTQxMCwtMzU2NDQ5MDA1LC02Nj
-E0Nzg5NTQsLTE3Mzg3MzIzMjAsLTIyODE0MTk3NiwtMTQ3OTU3
-NzA2OCwtMTEwMjUyNzc2MywxODk3MTY0MTQ4LC0xNjQ4NDIxMz
-QzLC0xODkwODkyMDYsMTg4ODAzMjUwMywyMDE2NTQ2NDQyLDE2
-NTE5OTg5NTcsLTI3NTkyOTU4MSw4NTQ4OTIxMzksLTEzMjU3Mj
-I3NzIsLTE2OTM1NzI2MTEsLTk3MTk0NDgwLC0yOTYxOTQ2Mzks
-NDU2Nzc3OTUwXX0=
+eyJoaXN0b3J5IjpbNDcwNzY2ODkwLC0zNTY0NDkwMDUsLTY2MT
+Q3ODk1NCwtMTczODczMjMyMCwtMjI4MTQxOTc2LC0xNDc5NTc3
+MDY4LC0xMTAyNTI3NzYzLDE4OTcxNjQxNDgsLTE2NDg0MjEzND
+MsLTE4OTA4OTIwNiwxODg4MDMyNTAzLDIwMTY1NDY0NDIsMTY1
+MTk5ODk1NywtMjc1OTI5NTgxLDg1NDg5MjEzOSwtMTMyNTcyMj
+c3MiwtMTY5MzU3MjYxMSwtOTcxOTQ0ODAsLTI5NjE5NDYzOSw0
+NTY3Nzc5NTBdfQ==
 -->
