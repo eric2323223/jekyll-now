@@ -276,16 +276,16 @@ The loss was calculated as the sum of the mean masked LM likelihood and the mean
 ![enter image description here](https://docs.google.com/drawings/d/e/2PACX-1vRFdq5CGCgn5WdAHdz88Z5ePsIU58vHz0HVYx56PQ3TP7Xi2WAbSkAbWx1Q4VA8ZkJ3mpSvlpmV1v-0/pub?w=1746&h=911)
 [http://jalammar.github.io/a-visual-guide-to-using-bert-for-the-first-time/](http://jalammar.github.io/a-visual-guide-to-using-bert-for-the-first-time/)  Recapping a sentence’s journey
 Each training data contains Two sentences, $W_1[w_{11}, w_{12}, w_{13}, w_{14}, w_{15}], W2[w_{21}, w_{22},w_{23},w_{24},w_{25}]$
-1. 预处理: 
-    1.0  tokenization (WordPiece)
+1. 数据预处理: 
+    1.0  Tokenization (WordPiece)
 	1.1 . 加入特殊符号CLS和SEP： [CLS] BERT is awesome. [SEP] I love BERT. [SEP]"
 	1.2.  Add masks to some words: [CLS] BERT [MASK] awesome. [SEP] I love BERT. [SEP
-	1.3.  Generate pretrain data
+	1.3.  Generate labels
 		1.3.1 for NSP:  50% isNext, 50% isNotNext, true_label_{NSP}=
 		1.3.2 for MLM: {tokens:["CLS", "BERT", "MASK", "awesome", "SEP"], masked_token:{index:2, value:"is"}}
 		
-2. Embedding
-	2.1 word embedding(WE):  wordpiece tokenization (shape=(vocab_size * hidden_size))
+2. Embeddings
+	2.1 token embedding(TE):  wordpiece tokenization (shape=(vocab_size * hidden_size))
 	2.2 positional embedding(PE): (shape=(max_position * hidden_size))
 	2.3 segment embedding(SE): (shape=(segment_size * hidden_size))
 	E = WE + PE + SE
@@ -581,11 +581,11 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [BERT author explain BERT](https://www.reddit.com/r/MachineLearning/comments/9nfqxz/r_bert_pretraining_of_deep_bidirectional/)
 [Examining BERT's raw embeddings](https://towardsdatascience.com/examining-berts-raw-embeddings-fd905cb22df7)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTUwNjgyNTk3LC0xMjUwMTgyNzE4LC05Nj
-I3NjM2MSw3NjcwNDg5MzQsLTIxMjY5MTI0MzEsNTQzNzc2MDU0
-LC0xMzg5OTE5MDQ5LC0xMzk3NzE0NDA1LC0xMjQ0NTE2OTEzLD
-EwMzI2OTcwNzYsMTI4Nzk5NTk5NiwtNzkxMTAxMjYyLC0zNTY0
-NDkwMDUsLTY2MTQ3ODk1NCwtMTczODczMjMyMCwtMjI4MTQxOT
-c2LC0xNDc5NTc3MDY4LC0xMTAyNTI3NzYzLDE4OTcxNjQxNDgs
-LTE2NDg0MjEzNDNdfQ==
+eyJoaXN0b3J5IjpbLTY4NTQ2MjY4MiwtMTI1MDE4MjcxOCwtOT
+YyNzYzNjEsNzY3MDQ4OTM0LC0yMTI2OTEyNDMxLDU0Mzc3NjA1
+NCwtMTM4OTkxOTA0OSwtMTM5NzcxNDQwNSwtMTI0NDUxNjkxMy
+wxMDMyNjk3MDc2LDEyODc5OTU5OTYsLTc5MTEwMTI2MiwtMzU2
+NDQ5MDA1LC02NjE0Nzg5NTQsLTE3Mzg3MzIzMjAsLTIyODE0MT
+k3NiwtMTQ3OTU3NzA2OCwtMTEwMjUyNzc2MywxODk3MTY0MTQ4
+LC0xNjQ4NDIxMzQzXX0=
 -->
