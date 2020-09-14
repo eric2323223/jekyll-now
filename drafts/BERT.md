@@ -201,7 +201,7 @@ The authors pre-trained their model in  _Next Sentence Prediction_  because they
 	- position embedding
 	为每个词生成位置信息
 	- segment embedding
-	为多个句子生成不同的duan
+	在输入为多个句子时，为每个句子生成不同的段信息
 - BertEncoder
 - BertPooler
 
@@ -575,11 +575,11 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [BERT author explain BERT](https://www.reddit.com/r/MachineLearning/comments/9nfqxz/r_bert_pretraining_of_deep_bidirectional/)
 [Examining BERT's raw embeddings](https://towardsdatascience.com/examining-berts-raw-embeddings-fd905cb22df7)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQ4MTQ4NzY4MCwxMDMyNjk3MDc2LDEyOD
-c5OTU5OTYsLTc5MTEwMTI2MiwtMzU2NDQ5MDA1LC02NjE0Nzg5
-NTQsLTE3Mzg3MzIzMjAsLTIyODE0MTk3NiwtMTQ3OTU3NzA2OC
-wtMTEwMjUyNzc2MywxODk3MTY0MTQ4LC0xNjQ4NDIxMzQzLC0x
-ODkwODkyMDYsMTg4ODAzMjUwMywyMDE2NTQ2NDQyLDE2NTE5OT
-g5NTcsLTI3NTkyOTU4MSw4NTQ4OTIxMzksLTEzMjU3MjI3NzIs
-LTE2OTM1NzI2MTFdfQ==
+eyJoaXN0b3J5IjpbLTEyNDQ1MTY5MTMsMTAzMjY5NzA3NiwxMj
+g3OTk1OTk2LC03OTExMDEyNjIsLTM1NjQ0OTAwNSwtNjYxNDc4
+OTU0LC0xNzM4NzMyMzIwLC0yMjgxNDE5NzYsLTE0Nzk1NzcwNj
+gsLTExMDI1Mjc3NjMsMTg5NzE2NDE0OCwtMTY0ODQyMTM0Mywt
+MTg5MDg5MjA2LDE4ODgwMzI1MDMsMjAxNjU0NjQ0MiwxNjUxOT
+k4OTU3LC0yNzU5Mjk1ODEsODU0ODkyMTM5LC0xMzI1NzIyNzcy
+LC0xNjkzNTcyNjExXX0=
 -->
