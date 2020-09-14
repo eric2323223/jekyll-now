@@ -192,14 +192,14 @@ Next Sentence Prediction（NSP）的任务是判断句子B是否是句子A的下
 The authors pre-trained their model in  _Next Sentence Prediction_  because they thought important that the model knew how to relate two different sentences to perform downstream tasks like question answering or natural language inference and the “masked language model” did not capture this knowledge. They prove that pre-training with this second task notably increases performance in both question answering and natural language inference.
 ### 预训练模型架构
 为了完成为预训练的两个任务，模型需要进行相应的设计。总体来看，应用于预训练的模型可以分为两部分：
-- 预训练模型-BERT
+#### 预训练模型-BERT
 这部分就是。。。预训练完成后这部分模型会包含可用于微调任务的通用知识，主要包含以下三部分：
 	- BertEmbeddings
 	
-	- BertEncoder
-	- BertPooler
+- BertEncoder
+- BertPooler
 
-- 预训练层BertPretrainingHeads(MLM head+NSP head)
+#### 预训练层BertPretrainingHeads(MLM head+NSP head)
 顾名思义，这层的目的是为了完成预训练任务，因此包含了两个模型结构分别用于进行MLM和NSP训练任务
 	- MLM head
 	![enter image description here](https://pic4.zhimg.com/80/v2-4364096101aad977b125aa585d187387_720w.jpg)
@@ -569,11 +569,11 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [BERT author explain BERT](https://www.reddit.com/r/MachineLearning/comments/9nfqxz/r_bert_pretraining_of_deep_bidirectional/)
 [Examining BERT's raw embeddings](https://towardsdatascience.com/examining-berts-raw-embeddings-fd905cb22df7)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTI4Nzk5NTk5NiwtNzkxMTAxMjYyLC0zNT
-Y0NDkwMDUsLTY2MTQ3ODk1NCwtMTczODczMjMyMCwtMjI4MTQx
-OTc2LC0xNDc5NTc3MDY4LC0xMTAyNTI3NzYzLDE4OTcxNjQxND
-gsLTE2NDg0MjEzNDMsLTE4OTA4OTIwNiwxODg4MDMyNTAzLDIw
-MTY1NDY0NDIsMTY1MTk5ODk1NywtMjc1OTI5NTgxLDg1NDg5Mj
-EzOSwtMTMyNTcyMjc3MiwtMTY5MzU3MjYxMSwtOTcxOTQ0ODAs
-LTI5NjE5NDYzOV19
+eyJoaXN0b3J5IjpbNTA2ODQ5MDI0LDEyODc5OTU5OTYsLTc5MT
+EwMTI2MiwtMzU2NDQ5MDA1LC02NjE0Nzg5NTQsLTE3Mzg3MzIz
+MjAsLTIyODE0MTk3NiwtMTQ3OTU3NzA2OCwtMTEwMjUyNzc2My
+wxODk3MTY0MTQ4LC0xNjQ4NDIxMzQzLC0xODkwODkyMDYsMTg4
+ODAzMjUwMywyMDE2NTQ2NDQyLDE2NTE5OTg5NTcsLTI3NTkyOT
+U4MSw4NTQ4OTIxMzksLTEzMjU3MjI3NzIsLTE2OTM1NzI2MTEs
+LTk3MTk0NDgwXX0=
 -->
