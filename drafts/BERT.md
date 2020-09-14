@@ -263,7 +263,7 @@ total_loss = masked_lm_loss + next_sentence_loss
 >- Transformer related :  dropout, layer_norm, residual
  
 ### 预训练流程
-下面我们结合
+我们结合图来看一下BERT预训练的完整流程
 >The pre-training corpus was built from BookCorpus (800M words) and English Wikipedia (2,500M words). Tokens were tokenized using 37,000 WordPiece tokens.
 To generate the pre-training sequences, the authors got random samples in batches of two (50% of the time adjacent to each other) such that the combined length of the two chosen sentences was ≤512 tokens. Once each sequence was built, 15% of its tokens were masked.
 An example of a pre-training sequence presented in the paper is:
@@ -580,11 +580,11 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [BERT author explain BERT](https://www.reddit.com/r/MachineLearning/comments/9nfqxz/r_bert_pretraining_of_deep_bidirectional/)
 [Examining BERT's raw embeddings](https://towardsdatascience.com/examining-berts-raw-embeddings-fd905cb22df7)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0MzU5OTM2MzIsNzY3MDQ4OTM0LC0yMT
-I2OTEyNDMxLDU0Mzc3NjA1NCwtMTM4OTkxOTA0OSwtMTM5Nzcx
-NDQwNSwtMTI0NDUxNjkxMywxMDMyNjk3MDc2LDEyODc5OTU5OT
-YsLTc5MTEwMTI2MiwtMzU2NDQ5MDA1LC02NjE0Nzg5NTQsLTE3
-Mzg3MzIzMjAsLTIyODE0MTk3NiwtMTQ3OTU3NzA2OCwtMTEwMj
-UyNzc2MywxODk3MTY0MTQ4LC0xNjQ4NDIxMzQzLC0xODkwODky
-MDYsMTg4ODAzMjUwM119
+eyJoaXN0b3J5IjpbLTk2Mjc2MzYxLDc2NzA0ODkzNCwtMjEyNj
+kxMjQzMSw1NDM3NzYwNTQsLTEzODk5MTkwNDksLTEzOTc3MTQ0
+MDUsLTEyNDQ1MTY5MTMsMTAzMjY5NzA3NiwxMjg3OTk1OTk2LC
+03OTExMDEyNjIsLTM1NjQ0OTAwNSwtNjYxNDc4OTU0LC0xNzM4
+NzMyMzIwLC0yMjgxNDE5NzYsLTE0Nzk1NzcwNjgsLTExMDI1Mj
+c3NjMsMTg5NzE2NDE0OCwtMTY0ODQyMTM0MywtMTg5MDg5MjA2
+LDE4ODgwMzI1MDNdfQ==
 -->
