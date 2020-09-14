@@ -198,9 +198,10 @@ The authors pre-trained their model in  _Next Sentence Prediction_  because they
 编码层的主要作用是将输入元素转换为BERT编码器可以处理的数值类型的向量， 由于注意力机制本身没有位置的概念，因此需要再进行注意力计算之前先将位置信息加入输入元素中去，这和Transformer中的位置编码
 	- Token embedding
 	主要作用是将输入元素转换为BERT编码器可以处理的数值类型的向量
-	- segment embedding
 	- position embedding
-	- 
+	为每个词生成位置信息
+	- segment embedding
+	为多个句子生成不同的duan
 - BertEncoder
 - BertPooler
 
@@ -574,11 +575,11 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [BERT author explain BERT](https://www.reddit.com/r/MachineLearning/comments/9nfqxz/r_bert_pretraining_of_deep_bidirectional/)
 [Examining BERT's raw embeddings](https://towardsdatascience.com/examining-berts-raw-embeddings-fd905cb22df7)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTEwMjk1Mzc0LDEwMzI2OTcwNzYsMTI4Nz
-k5NTk5NiwtNzkxMTAxMjYyLC0zNTY0NDkwMDUsLTY2MTQ3ODk1
-NCwtMTczODczMjMyMCwtMjI4MTQxOTc2LC0xNDc5NTc3MDY4LC
-0xMTAyNTI3NzYzLDE4OTcxNjQxNDgsLTE2NDg0MjEzNDMsLTE4
-OTA4OTIwNiwxODg4MDMyNTAzLDIwMTY1NDY0NDIsMTY1MTk5OD
-k1NywtMjc1OTI5NTgxLDg1NDg5MjEzOSwtMTMyNTcyMjc3Miwt
-MTY5MzU3MjYxMV19
+eyJoaXN0b3J5IjpbLTQ4MTQ4NzY4MCwxMDMyNjk3MDc2LDEyOD
+c5OTU5OTYsLTc5MTEwMTI2MiwtMzU2NDQ5MDA1LC02NjE0Nzg5
+NTQsLTE3Mzg3MzIzMjAsLTIyODE0MTk3NiwtMTQ3OTU3NzA2OC
+wtMTEwMjUyNzc2MywxODk3MTY0MTQ4LC0xNjQ4NDIxMzQzLC0x
+ODkwODkyMDYsMTg4ODAzMjUwMywyMDE2NTQ2NDQyLDE2NTE5OT
+g5NTcsLTI3NTkyOTU4MSw4NTQ4OTIxMzksLTEzMjU3MjI3NzIs
+LTE2OTM1NzI2MTFdfQ==
 -->
