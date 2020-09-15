@@ -237,7 +237,7 @@ $$L_{nsp}(\theta, \theta_{nsp}) = - \sum_{i=1}^N \log p(n=n_i|\theta, \theta_{ns
 #### 损失函数
 与任务相对应，BERT的损失函数由两部分组成，第一部分是来自 MLM 的**单词级别分类任务**，另一部分是**句子级别的分类任务**。通过这两个任务的联合学习，可以使得 BERT 学习到的表征既有 单词级别信息，同时也包含了句子级别的语义信息。具体损失函数如下：
 $$L(\theta, \theta_{mlm}, \theta_{nsp}) = L_{mlm} + L_{nsp}$$
-可以看到，虽然我们的目的
+可以看到，虽然我们的目的是得到预训练模型（由$\theta$决定），但是为了训练 ，需要同时
 
 
 ![[公式]](https://www.zhihu.com/equation?tex=L%5Cleft%28%5Ctheta%2C+%5Ctheta_%7B1%7D%2C+%5Ctheta_%7B2%7D%5Cright%29%3DL_%7B1%7D%5Cleft%28%5Ctheta%2C+%5Ctheta_%7B1%7D%5Cright%29%2BL_%7B2%7D%5Cleft%28%5Ctheta%2C+%5Ctheta_%7B2%7D%5Cright%29)
@@ -577,11 +577,11 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [BERT author explain BERT](https://www.reddit.com/r/MachineLearning/comments/9nfqxz/r_bert_pretraining_of_deep_bidirectional/)
 [Examining BERT's raw embeddings](https://towardsdatascience.com/examining-berts-raw-embeddings-fd905cb22df7)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE3NjYyNDE5NzgsLTIwODUwODExNDMsLT
-E0MjYyNDYwMzUsLTEzMjYzODk2NDEsMTYyNDI3ODAxOCw2MTEw
-Mjk2ODksLTE0MjY2NzI5NDUsLTEyNTAxODI3MTgsLTk2Mjc2Mz
-YxLDc2NzA0ODkzNCwtMjEyNjkxMjQzMSw1NDM3NzYwNTQsLTEz
-ODk5MTkwNDksLTEzOTc3MTQ0MDUsLTEyNDQ1MTY5MTMsMTAzMj
-Y5NzA3NiwxMjg3OTk1OTk2LC03OTExMDEyNjIsLTM1NjQ0OTAw
-NSwtNjYxNDc4OTU0XX0=
+eyJoaXN0b3J5IjpbLTgxMDY4OTI4OSwtMjA4NTA4MTE0MywtMT
+QyNjI0NjAzNSwtMTMyNjM4OTY0MSwxNjI0Mjc4MDE4LDYxMTAy
+OTY4OSwtMTQyNjY3Mjk0NSwtMTI1MDE4MjcxOCwtOTYyNzYzNj
+EsNzY3MDQ4OTM0LC0yMTI2OTEyNDMxLDU0Mzc3NjA1NCwtMTM4
+OTkxOTA0OSwtMTM5NzcxNDQwNSwtMTI0NDUxNjkxMywxMDMyNj
+k3MDc2LDEyODc5OTU5OTYsLTc5MTEwMTI2MiwtMzU2NDQ5MDA1
+LC02NjE0Nzg5NTRdfQ==
 -->
