@@ -235,6 +235,7 @@ $$L_{nsp}(\theta, \theta_{nsp}) = - \sum_{i=1}^N \log p(n=n_i|\theta, \theta_{ns
 
 
 #### 损失函数
+BERT的预训练包含MLM任务和NSP任务，因此BERT预训练的误差函数
 $$L(\theta, \theta_{mlm}, \theta_{nsp}) = L_{mlm} + L_{nsp}$$
 ```
 total_loss = masked_lm_loss + next_sentence_loss
@@ -578,11 +579,11 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [BERT author explain BERT](https://www.reddit.com/r/MachineLearning/comments/9nfqxz/r_bert_pretraining_of_deep_bidirectional/)
 [Examining BERT's raw embeddings](https://towardsdatascience.com/examining-berts-raw-embeddings-fd905cb22df7)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEwNTU4OTAzMjgsLTE0MjYyNDYwMzUsLT
-EzMjYzODk2NDEsMTYyNDI3ODAxOCw2MTEwMjk2ODksLTE0MjY2
-NzI5NDUsLTEyNTAxODI3MTgsLTk2Mjc2MzYxLDc2NzA0ODkzNC
-wtMjEyNjkxMjQzMSw1NDM3NzYwNTQsLTEzODk5MTkwNDksLTEz
-OTc3MTQ0MDUsLTEyNDQ1MTY5MTMsMTAzMjY5NzA3NiwxMjg3OT
-k1OTk2LC03OTExMDEyNjIsLTM1NjQ0OTAwNSwtNjYxNDc4OTU0
-LC0xNzM4NzMyMzIwXX0=
+eyJoaXN0b3J5IjpbNjU0NTI2NDUxLC0xNDI2MjQ2MDM1LC0xMz
+I2Mzg5NjQxLDE2MjQyNzgwMTgsNjExMDI5Njg5LC0xNDI2Njcy
+OTQ1LC0xMjUwMTgyNzE4LC05NjI3NjM2MSw3NjcwNDg5MzQsLT
+IxMjY5MTI0MzEsNTQzNzc2MDU0LC0xMzg5OTE5MDQ5LC0xMzk3
+NzE0NDA1LC0xMjQ0NTE2OTEzLDEwMzI2OTcwNzYsMTI4Nzk5NT
+k5NiwtNzkxMTAxMjYyLC0zNTY0NDkwMDUsLTY2MTQ3ODk1NCwt
+MTczODczMjMyMF19
 -->
