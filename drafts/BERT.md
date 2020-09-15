@@ -239,12 +239,9 @@ $$L_{nsp}(\theta, \theta_{nsp}) = - \sum_{i=1}^N \log p(n=n_i|\theta, \theta_{ns
 $$L(\theta, \theta_{mlm}, \theta_{nsp}) = L_{mlm} + L_{nsp}$$
 可以看到，虽然我们的目的是得到预训练模型（由$\theta$决定），但是为了训练 $\theta$，需要同时训练 $\theta_{mlm}$和$\theta_{nsp}$， 在微调任务中会根据任务需要使用相应的模型结构替换预训练层，因此不会用到$\theta_{mlm}$和$\theta_{nsp}$
 
-
-![[公式]](https://www.zhihu.com/equation?tex=L%5Cleft%28%5Ctheta%2C+%5Ctheta_%7B1%7D%2C+%5Ctheta_%7B2%7D%5Cright%29%3DL_%7B1%7D%5Cleft%28%5Ctheta%2C+%5Ctheta_%7B1%7D%5Cright%29%2BL_%7B2%7D%5Cleft%28%5Ctheta%2C+%5Ctheta_%7B2%7D%5Cright%29)
-
-其中  ![[公式]](https://www.zhihu.com/equation?tex=%5Ctheta)  ​ 是 BERT 中 Encoder 部分的参数，​  ![[公式]](https://www.zhihu.com/equation?tex=%5Ctheta_1)  是 Mask-LM 任务中在 Encoder 上所接的输出层中的参数，​  ![[公式]](https://www.zhihu.com/equation?tex=%5Ctheta_2)  则是句子预测任务中在 Encoder 接上的分类器参数。因此，在第一部分的损失函数中，如果被 mask 的词集合为 M，因为它是一个词典大小 |V| 上的多分类问题，那么具体说来有：
-
-![[公式]](https://www.zhihu.com/equation?tex=L_%7B1%7D%5Cleft%28%5Ctheta%2C+%5Ctheta_%7B1%7D%5Cright%29%3D-%5Csum_%7Bi%3D1%7D%5E%7BM%7D+%5Clog+p%5Cleft%28m%3Dm_%7Bi%7D+%7C+%5Ctheta%2C+%5Ctheta_%7B1%7D%5Cright%29%2C+m_%7Bi%7D+%5Cin%5B1%2C2%2C+%5Cldots%2C%7CV%7C%5D)
+>![[公式]](https://www.zhihu.com/equation?tex=L%5Cleft%28%5Ctheta%2C+%5Ctheta_%7B1%7D%2C+%5Ctheta_%7B2%7D%5Cright%29%3DL_%7B1%7D%5Cleft%28%5Ctheta%2C+%5Ctheta_%7B1%7D%5Cright%29%2BL_%7B2%7D%5Cleft%28%5Ctheta%2C+%5Ctheta_%7B2%7D%5Cright%29)
+>其中  ![[公式]](https://www.zhihu.com/equation?tex=%5Ctheta)  ​ 是 BERT 中 Encoder 部分的参数，​  ![[公式]](https://www.zhihu.com/equation?tex=%5Ctheta_1)  是 Mask-LM 任务中在 Encoder 上所接的输出层中的参数，​  ![[公式]](https://www.zhihu.com/equation?tex=%5Ctheta_2)  则是句子预测任务中在 Encoder 接上的分类器参数。因此，在第一部分的损失函数中，如果被 mask 的词集合为 M，因为它是一个词典大小 |V| 上的多分类问题，那么具体说来有：
+>![[公式]](https://www.zhihu.com/equation?tex=L_%7B1%7D%5Cleft%28%5Ctheta%2C+%5Ctheta_%7B1%7D%5Cright%29%3D-%5Csum_%7Bi%3D1%7D%5E%7BM%7D+%5Clog+p%5Cleft%28m%3Dm_%7Bi%7D+%7C+%5Ctheta%2C+%5Ctheta_%7B1%7D%5Cright%29%2C+m_%7Bi%7D+%5Cin%5B1%2C2%2C+%5Cldots%2C%7CV%7C%5D)
 
 在句子预测任务中，也是一个分类问题的损失函数：
 
@@ -577,7 +574,7 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [BERT author explain BERT](https://www.reddit.com/r/MachineLearning/comments/9nfqxz/r_bert_pretraining_of_deep_bidirectional/)
 [Examining BERT's raw embeddings](https://towardsdatascience.com/examining-berts-raw-embeddings-fd905cb22df7)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2ODc1MTI3MTUsLTIwODUwODExNDMsLT
+eyJoaXN0b3J5IjpbLTEzNzkwOTQ0MzEsLTIwODUwODExNDMsLT
 E0MjYyNDYwMzUsLTEzMjYzODk2NDEsMTYyNDI3ODAxOCw2MTEw
 Mjk2ODksLTE0MjY2NzI5NDUsLTEyNTAxODI3MTgsLTk2Mjc2Mz
 YxLDc2NzA0ODkzNCwtMjEyNjkxMjQzMSw1NDM3NzYwNTQsLTEz
