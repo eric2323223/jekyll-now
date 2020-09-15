@@ -219,7 +219,7 @@ BERTEncoder的主要作用是利用Transformer对每个Token进行上下文编�
 当把词汇表（vocabulary）中的每一个词都作为一个单独的类型时，对未知token进行预测就变成了在所有类型中判断可能性最高的分类，也这就是典型的多类型分类问题。为了对token进行分类判断，需要在BERT的输出上增加一个多类型分类器（在实现中被称为MLM head），它包含一个全连接网络和softmax运算，可以将通过BERT 编码器编码过的token转换为vocabulary长度个输出，每个输出代表属于对应分类的概率。应用这个分类器对所有token计算出每个类型的概率，再和这个token的真实分类进行比较，通过cross entropy函数计算误差。~~之所以对全部token进行分类预测的原因是由于被遮罩的词有15%的机率被替换成随机词，因此每个词都可能是被遮罩过的。~~
 MLM任务的误差函数$L_{mlm}$可以形式化的表示为下式
 $$ L_{mlm}(\theta, \theta_m) = -\sum_{i=1}^M\log p(m=m_i| \theta, \theta_m)$$
-其中$\theta$表示
+$L_{mlm}$是关于$\theta , \theta_m$表示
 
 	```
 	masked_lm_loss = CrossEntropyLoss(prediction_scores.view(-1, self.config.vocab_size), labels.view(-1))
@@ -583,11 +583,11 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [BERT author explain BERT](https://www.reddit.com/r/MachineLearning/comments/9nfqxz/r_bert_pretraining_of_deep_bidirectional/)
 [Examining BERT's raw embeddings](https://towardsdatascience.com/examining-berts-raw-embeddings-fd905cb22df7)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzMjYzODk2NDEsMTYyNDI3ODAxOCw2MT
-EwMjk2ODksLTE0MjY2NzI5NDUsLTEyNTAxODI3MTgsLTk2Mjc2
-MzYxLDc2NzA0ODkzNCwtMjEyNjkxMjQzMSw1NDM3NzYwNTQsLT
-EzODk5MTkwNDksLTEzOTc3MTQ0MDUsLTEyNDQ1MTY5MTMsMTAz
-MjY5NzA3NiwxMjg3OTk1OTk2LC03OTExMDEyNjIsLTM1NjQ0OT
-AwNSwtNjYxNDc4OTU0LC0xNzM4NzMyMzIwLC0yMjgxNDE5NzYs
-LTE0Nzk1NzcwNjhdfQ==
+eyJoaXN0b3J5IjpbMTk0MzkxMTAxLC0xMzI2Mzg5NjQxLDE2Mj
+QyNzgwMTgsNjExMDI5Njg5LC0xNDI2NjcyOTQ1LC0xMjUwMTgy
+NzE4LC05NjI3NjM2MSw3NjcwNDg5MzQsLTIxMjY5MTI0MzEsNT
+QzNzc2MDU0LC0xMzg5OTE5MDQ5LC0xMzk3NzE0NDA1LC0xMjQ0
+NTE2OTEzLDEwMzI2OTcwNzYsMTI4Nzk5NTk5NiwtNzkxMTAxMj
+YyLC0zNTY0NDkwMDUsLTY2MTQ3ODk1NCwtMTczODczMjMyMCwt
+MjI4MTQxOTc2XX0=
 -->
