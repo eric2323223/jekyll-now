@@ -221,18 +221,12 @@ MLM任务的误差函数$L_{mlm}$可以形式化的表示为下式
 $$ L_{mlm}(\theta, \theta_{mlm}) = -\sum_{i=1}^M\log p(m=m_i| \theta, \theta_{mlm})$$
 其中  $\theta$表示BERT预训练模型的参数， $\theta_{mlm}$表示MLM任务层（多类型分类器）的参数，$M$表示数据集词典的容量
 
-	```
-	masked_lm_loss = CrossEntropyLoss(prediction_scores.view(-1, self.config.vocab_size), labels.view(-1))
-	```
 	- NSP head
 ![enter image description here](https://picb.zhimg.com/80/v2-33d191eee24be9a47b7799b939564d74_720w.jpg)
 NSP的训练目标是判断两个句子是否是连续的，因此它也属于二元（是和否）分类问题。和MLM相似，需要加上一个二值分类器（NSP head）来进行类型判断。与MLM不同的是，由于【CLS】token包含了整个序列（包含两个句子）的含义，因此只需要对【CLS】token进行类型判断。预测误差和MLM一样使用cross entropy函数计算
 NSP任务的误差函数$L_{nsp}$可以表示为
 $$L_{nsp}(\theta, \theta_{nsp}) = - \sum_{i=1}^N \log p(n=n_i|\theta, \theta_{nsp})$$
-其中 表示BERT预训练模型的参数，表示NSP任务层（分类器）的参数
-	```
-	next_sentence_loss = loss_fct(seq_relationship_score.view(-1, 2), next_sentence_label.view(-1))
-	```
+其中 $\theta$表示BERT预训练模型的参数，$\theta_{nsp}$表示NSP任务层（分类器）的参数，N表示类型的数量
 
 >MLM这种设计的原因是由于BERT使用的注意力机制有全局的视野，能够一次同时访问序列的所有元素，因此无法使用传统的语言模型那种一步一看的训练方式。**前者用于建模更广泛的上下文，通过 mask 来强制模型给每个词记住更多的上下文信息；后者用来建模多个句子之间的关系，**
 >![enter image description here](https://www.researchgate.net/profile/Jan_Christian_Blaise_Cruz/publication/334160936/figure/fig1/AS:776030256111617@1562031439583/Overall-BERT-pretraining-and-finetuning-framework-Note-that-the-same-architecture-in.ppm)
@@ -584,7 +578,7 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [BERT author explain BERT](https://www.reddit.com/r/MachineLearning/comments/9nfqxz/r_bert_pretraining_of_deep_bidirectional/)
 [Examining BERT's raw embeddings](https://towardsdatascience.com/examining-berts-raw-embeddings-fd905cb22df7)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE4NzI2OTQ0MzUsLTEzMjYzODk2NDEsMT
+eyJoaXN0b3J5IjpbLTE0MzgyNTU0NzMsLTEzMjYzODk2NDEsMT
 YyNDI3ODAxOCw2MTEwMjk2ODksLTE0MjY2NzI5NDUsLTEyNTAx
 ODI3MTgsLTk2Mjc2MzYxLDc2NzA0ODkzNCwtMjEyNjkxMjQzMS
 w1NDM3NzYwNTQsLTEzODk5MTkwNDksLTEzOTc3MTQ0MDUsLTEy
