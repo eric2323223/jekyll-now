@@ -235,8 +235,10 @@ $$L_{nsp}(\theta, \theta_{nsp}) = - \sum_{i=1}^N \log p(n=n_i|\theta, \theta_{ns
 
 
 #### 损失函数
-与任务相对应，BERT的损失函数由两部分组成，第一部分是来自 MLM 的**单词级别分类任务**，另一部分是**句子级别的分类任务**。通过这两个任务的联合学习，可以使得 BERT 学习到的表征既有 token 级别信息，同时也包含了句子级别的语义信息。具体损失函数如下：
+与任务相对应，BERT的损失函数由两部分组成，第一部分是来自 MLM 的**单词级别分类任务**，另一部分是**句子级别的分类任务**。通过这两个任务的联合学习，可以使得 BERT 学习到的表征既有 单词级别信息，同时也包含了句子级别的语义信息。具体损失函数如下：
 $$L(\theta, \theta_{mlm}, \theta_{nsp}) = L_{mlm} + L_{nsp}$$
+需要指出的是虽然
+
 
 ![[公式]](https://www.zhihu.com/equation?tex=L%5Cleft%28%5Ctheta%2C+%5Ctheta_%7B1%7D%2C+%5Ctheta_%7B2%7D%5Cright%29%3DL_%7B1%7D%5Cleft%28%5Ctheta%2C+%5Ctheta_%7B1%7D%5Cright%29%2BL_%7B2%7D%5Cleft%28%5Ctheta%2C+%5Ctheta_%7B2%7D%5Cright%29)
 
@@ -575,11 +577,11 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [BERT author explain BERT](https://www.reddit.com/r/MachineLearning/comments/9nfqxz/r_bert_pretraining_of_deep_bidirectional/)
 [Examining BERT's raw embeddings](https://towardsdatascience.com/examining-berts-raw-embeddings-fd905cb22df7)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTE5MTM2NjM2LC0xNDI2MjQ2MDM1LC0xMz
-I2Mzg5NjQxLDE2MjQyNzgwMTgsNjExMDI5Njg5LC0xNDI2Njcy
-OTQ1LC0xMjUwMTgyNzE4LC05NjI3NjM2MSw3NjcwNDg5MzQsLT
-IxMjY5MTI0MzEsNTQzNzc2MDU0LC0xMzg5OTE5MDQ5LC0xMzk3
-NzE0NDA1LC0xMjQ0NTE2OTEzLDEwMzI2OTcwNzYsMTI4Nzk5NT
-k5NiwtNzkxMTAxMjYyLC0zNTY0NDkwMDUsLTY2MTQ3ODk1NCwt
-MTczODczMjMyMF19
+eyJoaXN0b3J5IjpbLTIwODUwODExNDMsLTE0MjYyNDYwMzUsLT
+EzMjYzODk2NDEsMTYyNDI3ODAxOCw2MTEwMjk2ODksLTE0MjY2
+NzI5NDUsLTEyNTAxODI3MTgsLTk2Mjc2MzYxLDc2NzA0ODkzNC
+wtMjEyNjkxMjQzMSw1NDM3NzYwNTQsLTEzODk5MTkwNDksLTEz
+OTc3MTQ0MDUsLTEyNDQ1MTY5MTMsMTAzMjY5NzA3NiwxMjg3OT
+k1OTk2LC03OTExMDEyNjIsLTM1NjQ0OTAwNSwtNjYxNDc4OTU0
+LC0xNzM4NzMyMzIwXX0=
 -->
