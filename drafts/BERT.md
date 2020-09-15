@@ -242,13 +242,9 @@ $$L(\theta, \theta_{mlm}, \theta_{nsp}) = L_{mlm} + L_{nsp}$$
 >![[公式]](https://www.zhihu.com/equation?tex=L%5Cleft%28%5Ctheta%2C+%5Ctheta_%7B1%7D%2C+%5Ctheta_%7B2%7D%5Cright%29%3DL_%7B1%7D%5Cleft%28%5Ctheta%2C+%5Ctheta_%7B1%7D%5Cright%29%2BL_%7B2%7D%5Cleft%28%5Ctheta%2C+%5Ctheta_%7B2%7D%5Cright%29)
 >其中  ![[公式]](https://www.zhihu.com/equation?tex=%5Ctheta)  ​ 是 BERT 中 Encoder 部分的参数，​  ![[公式]](https://www.zhihu.com/equation?tex=%5Ctheta_1)  是 Mask-LM 任务中在 Encoder 上所接的输出层中的参数，​  ![[公式]](https://www.zhihu.com/equation?tex=%5Ctheta_2)  则是句子预测任务中在 Encoder 接上的分类器参数。因此，在第一部分的损失函数中，如果被 mask 的词集合为 M，因为它是一个词典大小 |V| 上的多分类问题，那么具体说来有：
 >![[公式]](https://www.zhihu.com/equation?tex=L_%7B1%7D%5Cleft%28%5Ctheta%2C+%5Ctheta_%7B1%7D%5Cright%29%3D-%5Csum_%7Bi%3D1%7D%5E%7BM%7D+%5Clog+p%5Cleft%28m%3Dm_%7Bi%7D+%7C+%5Ctheta%2C+%5Ctheta_%7B1%7D%5Cright%29%2C+m_%7Bi%7D+%5Cin%5B1%2C2%2C+%5Cldots%2C%7CV%7C%5D)
-
-在句子预测任务中，也是一个分类问题的损失函数：
-
+>在句子预测任务中，也是一个分类问题的损失函数：
 ![[公式]](https://www.zhihu.com/equation?tex=L_%7B2%7D%5Cleft%28%5Ctheta%2C+%5Ctheta_%7B2%7D%5Cright%29%3D-%5Csum_%7Bj%3D1%7D%5E%7BN%7D+%5Clog+p%5Cleft%28n%3Dn_%7Bi%7D+%7C+%5Ctheta%2C+%5Ctheta_%7B2%7D%5Cright%29%2C+n_%7Bi%7D+%5Cin%5B%5Ctext+%7BIsNext%7D%2C+%5Ctext+%7BNotNext%7D%5D)
-
 因此，两个任务联合学习的损失函数是：
-
 ![[公式]](https://www.zhihu.com/equation?tex=L%5Cleft%28%5Ctheta%2C+%5Ctheta_%7B1%7D%2C+%5Ctheta_%7B2%7D%5Cright%29%3D-%5Csum_%7Bi%3D1%7D%5E%7BM%7D+%5Clog+p%5Cleft%28m%3Dm_%7Bi%7D+%7C+%5Ctheta%2C+%5Ctheta_%7B1%7D%5Cright%29-%5Csum_%7Bj%3D1%7D%5E%7BN%7D+%5Clog+p%5Cleft%28n%3Dn_%7Bi%7D+%7C+%5Ctheta%2C+%5Ctheta_%7B2%7D%5Cright%29)
 
 >### 预训练技巧
@@ -574,11 +570,11 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [BERT author explain BERT](https://www.reddit.com/r/MachineLearning/comments/9nfqxz/r_bert_pretraining_of_deep_bidirectional/)
 [Examining BERT's raw embeddings](https://towardsdatascience.com/examining-berts-raw-embeddings-fd905cb22df7)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzNzkwOTQ0MzEsLTIwODUwODExNDMsLT
-E0MjYyNDYwMzUsLTEzMjYzODk2NDEsMTYyNDI3ODAxOCw2MTEw
-Mjk2ODksLTE0MjY2NzI5NDUsLTEyNTAxODI3MTgsLTk2Mjc2Mz
-YxLDc2NzA0ODkzNCwtMjEyNjkxMjQzMSw1NDM3NzYwNTQsLTEz
-ODk5MTkwNDksLTEzOTc3MTQ0MDUsLTEyNDQ1MTY5MTMsMTAzMj
-Y5NzA3NiwxMjg3OTk1OTk2LC03OTExMDEyNjIsLTM1NjQ0OTAw
-NSwtNjYxNDc4OTU0XX0=
+eyJoaXN0b3J5IjpbLTM4Mzc2OTg5OSwtMjA4NTA4MTE0MywtMT
+QyNjI0NjAzNSwtMTMyNjM4OTY0MSwxNjI0Mjc4MDE4LDYxMTAy
+OTY4OSwtMTQyNjY3Mjk0NSwtMTI1MDE4MjcxOCwtOTYyNzYzNj
+EsNzY3MDQ4OTM0LC0yMTI2OTEyNDMxLDU0Mzc3NjA1NCwtMTM4
+OTkxOTA0OSwtMTM5NzcxNDQwNSwtMTI0NDUxNjkxMywxMDMyNj
+k3MDc2LDEyODc5OTU5OTYsLTc5MTEwMTI2MiwtMzU2NDQ5MDA1
+LC02NjE0Nzg5NTRdfQ==
 -->
