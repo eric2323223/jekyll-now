@@ -323,7 +323,7 @@ BERT预训练模型解决这类问题的方法是对CLS符号的BERT编码进行
 	- 训练数据
 		- $X={x_1, x_2, x_3, ... , x_n}, y=label$
 	- 训练流程
-		1. 数据预处理，将CLS加入
+		1. 数据预处理，将CLS加入X前，
 		2. 
 	- 损失函数：cross-entropy
 
@@ -569,7 +569,7 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [BERT author explain BERT](https://www.reddit.com/r/MachineLearning/comments/9nfqxz/r_bert_pretraining_of_deep_bidirectional/)
 [Examining BERT's raw embeddings](https://towardsdatascience.com/examining-berts-raw-embeddings-fd905cb22df7)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2Njg5NDc5NjAsMTIyMzg4Mjc2OSw5NT
+eyJoaXN0b3J5IjpbLTExOTUyODQ4NzcsMTIyMzg4Mjc2OSw5NT
 A1NjE5OTYsOTQ5OTQ1OTQ4LC0zMDA0NTM0MjgsMjAwNzk3MDA0
 NSwtMTgwODg5NzE4LC0zODM3Njk4OTksLTIwODUwODExNDMsLT
 E0MjYyNDYwMzUsLTEzMjYzODk2NDEsMTYyNDI3ODAxOCw2MTEw
