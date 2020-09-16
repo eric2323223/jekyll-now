@@ -356,7 +356,7 @@ BERT预训练模型解决这类问题的方法是对CLS符号的BERT编码进行
 ### 问答问题 SQuAD
 ![](https://docs.google.com/drawings/d/e/2PACX-1vSGC-bIM19eOTk96audRUt_wo5hNgsIQpPZVo0pRfMLLxmCpYihvwaKYtcHI2Eyikmk4amBFMSNur6T/pub?w=835&h=686)
 - 任务介绍
-在给定的上下文中为一个具体的问题寻找答案。例如给定一段背景描述信息“今天是教师节，小明也在zhe”后，提出问题“”，让模型在背景描述信息中找到答案“”。这类问题，要求模型能够理解背景描述以及问题，
+在给定的上下文中为一个具体的问题寻找答案。例如给定一段背景描述信息“今天是教师节，小明昨天刚过了ai'ji”后，提出问题“”，让模型在背景描述信息中找到答案“”。这类问题，要求模型能够理解背景描述以及问题，
 预测answer span(start pos, end pos)
 - 模型架构
 	- BERT预训练模型
@@ -573,7 +573,7 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [BERT author explain BERT](https://www.reddit.com/r/MachineLearning/comments/9nfqxz/r_bert_pretraining_of_deep_bidirectional/)
 [Examining BERT's raw embeddings](https://towardsdatascience.com/examining-berts-raw-embeddings-fd905cb22df7)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTk4OTIwNTkxMCwyNjI2MjQwMjgsMTIyMz
+eyJoaXN0b3J5IjpbLTQxMjE2MjQ1NCwyNjI2MjQwMjgsMTIyMz
 g4Mjc2OSw5NTA1NjE5OTYsOTQ5OTQ1OTQ4LC0zMDA0NTM0Mjgs
 MjAwNzk3MDA0NSwtMTgwODg5NzE4LC0zODM3Njk4OTksLTIwOD
 UwODExNDMsLTE0MjYyNDYwMzUsLTEzMjYzODk2NDEsMTYyNDI3
