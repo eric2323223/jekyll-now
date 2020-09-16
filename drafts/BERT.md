@@ -381,8 +381,9 @@ BERT在这项测试中不仅刷新了人工智能系统的记录，甚至超过�
 		- 使用起始/终止位置分类器判断起止位置
 		- 使用cross entropy计算分类误差
 		- BP更新起始/终止位置分类器参数
-
+- BERT可以用来
 - BERT可以做文本生成吗？
+简单来说，BERT
 can deal with looooong senquence？（>512）: 
 [https://github.com/google-research/bert/issues/66](https://github.com/google-research/bert/issues/66)
 how to get the context vector?
@@ -587,7 +588,7 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [BERT author explain BERT](https://www.reddit.com/r/MachineLearning/comments/9nfqxz/r_bert_pretraining_of_deep_bidirectional/)
 [Examining BERT's raw embeddings](https://towardsdatascience.com/examining-berts-raw-embeddings-fd905cb22df7)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTI4NDMwMDA0NiwxMDM3OTQ1OTg0LDkwND
+eyJoaXN0b3J5IjpbLTU2OTA1ODgzMCwxMDM3OTQ1OTg0LDkwND
 Q2NDI2OSwxMDk3NjUxNDU3LC0xMjY0OTk5Nzk2LDE3NzU5Nzg3
 MDYsLTc3MzIyMDE1MiwtODc4ODk0NzM3LDQ3NDkyMzUxNCwtNj
 g1NzA4MDA5LDE3NTI1Mjg4OTEsLTExMjAwNDI4NjIsLTY5OTUw
