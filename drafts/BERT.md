@@ -323,6 +323,7 @@ BERT预训练模型解决这类问题的方法是对CLS符号的BERT编码进行
 	- 训练数据
 		- $x={x_1, x_2, x_3, ... , x_n}, y=label$
 	- 训练流程
+		1. 数据yu'ch
 	- 损失函数：cross-entropy
 
 预测
@@ -567,11 +568,11 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [BERT author explain BERT](https://www.reddit.com/r/MachineLearning/comments/9nfqxz/r_bert_pretraining_of_deep_bidirectional/)
 [Examining BERT's raw embeddings](https://towardsdatascience.com/examining-berts-raw-embeddings-fd905cb22df7)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTYyMDQ5ODQ2OCwxMjIzODgyNzY5LDk1MD
-U2MTk5Niw5NDk5NDU5NDgsLTMwMDQ1MzQyOCwyMDA3OTcwMDQ1
-LC0xODA4ODk3MTgsLTM4Mzc2OTg5OSwtMjA4NTA4MTE0MywtMT
-QyNjI0NjAzNSwtMTMyNjM4OTY0MSwxNjI0Mjc4MDE4LDYxMTAy
-OTY4OSwtMTQyNjY3Mjk0NSwtMTI1MDE4MjcxOCwtOTYyNzYzNj
-EsNzY3MDQ4OTM0LC0yMTI2OTEyNDMxLDU0Mzc3NjA1NCwtMTM4
-OTkxOTA0OV19
+eyJoaXN0b3J5IjpbLTEyMzY2NTc3ODEsMTIyMzg4Mjc2OSw5NT
+A1NjE5OTYsOTQ5OTQ1OTQ4LC0zMDA0NTM0MjgsMjAwNzk3MDA0
+NSwtMTgwODg5NzE4LC0zODM3Njk4OTksLTIwODUwODExNDMsLT
+E0MjYyNDYwMzUsLTEzMjYzODk2NDEsMTYyNDI3ODAxOCw2MTEw
+Mjk2ODksLTE0MjY2NzI5NDUsLTEyNTAxODI3MTgsLTk2Mjc2Mz
+YxLDc2NzA0ODkzNCwtMjEyNjkxMjQzMSw1NDM3NzYwNTQsLTEz
+ODk5MTkwNDldfQ==
 -->
