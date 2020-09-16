@@ -154,6 +154,10 @@ Transformer由编码器和解码器组成，编码器负责将输入序列中的
 训练数据: 
 - BooksCorpus (800M words)
 - EnglishWikipedia (2.5B words)
+- 
+>在本文中，我们将层数（即 Transformer 块）表示为L，将隐藏尺寸表示为H，将自注意力头（self-attention heads）的数量表示为A。在所有的情况下，我们都将前馈/滤波器尺寸设置为4H，即H = 768时，为3072，H = 1024时，为4096。我们主要报告两种模型尺寸上的结果，分别是：
+BERTBASE: L=12, H=768, A=12, 总参数=110M
+BERTLARGE: L=24, H=1024, A=16, 总参数=340M
 
 ### 任务设计
 自然语言中蕴含的意义是以句子的形式表现的，为了让预训练模型学习到更多的知识，BERT的预训练被设计为多任务学习（multi-task learning），包含两个任务：一个是 Masked Language Model(MLM)，训练模型理解单个句子蕴含的意义；另一个是 Next Sentence Prediction(NSP)，训练模型理解不同语句之间的上下文含义。通过这两个任务的联合学习，可以使得 BERT 学习到的表征既有 token 级别信息，同时也包含了句子级别的语义信息。
@@ -582,11 +586,11 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [BERT author explain BERT](https://www.reddit.com/r/MachineLearning/comments/9nfqxz/r_bert_pretraining_of_deep_bidirectional/)
 [Examining BERT's raw embeddings](https://towardsdatascience.com/examining-berts-raw-embeddings-fd905cb22df7)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTc1MjUyODg5MSwtMTEyMDA0Mjg2MiwtNj
-k5NTA4NDk1LDUyODg0Njk0MCwtNDEyMTYyNDU0LDI2MjYyNDAy
-OCwxMjIzODgyNzY5LDk1MDU2MTk5Niw5NDk5NDU5NDgsLTMwMD
-Q1MzQyOCwyMDA3OTcwMDQ1LC0xODA4ODk3MTgsLTM4Mzc2OTg5
-OSwtMjA4NTA4MTE0MywtMTQyNjI0NjAzNSwtMTMyNjM4OTY0MS
-wxNjI0Mjc4MDE4LDYxMTAyOTY4OSwtMTQyNjY3Mjk0NSwtMTI1
-MDE4MjcxOF19
+eyJoaXN0b3J5IjpbLTY4NTcwODAwOSwxNzUyNTI4ODkxLC0xMT
+IwMDQyODYyLC02OTk1MDg0OTUsNTI4ODQ2OTQwLC00MTIxNjI0
+NTQsMjYyNjI0MDI4LDEyMjM4ODI3NjksOTUwNTYxOTk2LDk0OT
+k0NTk0OCwtMzAwNDUzNDI4LDIwMDc5NzAwNDUsLTE4MDg4OTcx
+OCwtMzgzNzY5ODk5LC0yMDg1MDgxMTQzLC0xNDI2MjQ2MDM1LC
+0xMzI2Mzg5NjQxLDE2MjQyNzgwMTgsNjExMDI5Njg5LC0xNDI2
+NjcyOTQ1XX0=
 -->
