@@ -368,17 +368,16 @@ BERT预训练模型解决这类问题的方法是对CLS符号的BERT编码进行
 BERT在这项测试中不仅刷新了人工智能系统的记录，甚至超过了人类的表现，证明它的强大能力。
 对于机器学习算法来说，这项任务可以表示为当输入为背景介绍和问题时，对问题答案在背景介绍中的位置进行判断。由于答案的位置决定于它的起始和终止位置，而起止位置的判断可以理解为起止位置最可能出现在哪个位置上，属于分类问题（每个位置为一个类型），因此对答案位置的判断就变成了答案起止位置的分类问题。对应的，微调任务层由两个多类型分类器（分别进行起始和终止位置的分类判断）构成。
 - 训练方法
-预测answer span(start pos, end pos)
-- 模型架构
-	- BERT预训练模型
-	- SQuaD任务层
-- 训练数据
-	- question
-	- reference
-	- answer_start_pos
-	- answer_end_pos
-- 训练流程
-	- question + [SEP] + reference
+	- 模型架构
+		- BERT预训练模型
+		- SQuaD任务层
+	- 训练数据
+		- question
+		- reference
+		- answer_start_pos
+		- answer_end_pos
+	- 训练流程
+		- question + [SEP] + reference
 	- 
 Use classification head for each token
 can deal with looooong senquence？（>512）: 
@@ -585,11 +584,11 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [BERT author explain BERT](https://www.reddit.com/r/MachineLearning/comments/9nfqxz/r_bert_pretraining_of_deep_bidirectional/)
 [Examining BERT's raw embeddings](https://towardsdatascience.com/examining-berts-raw-embeddings-fd905cb22df7)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEyNjQ5OTk3OTYsMTc3NTk3ODcwNiwtNz
-czMjIwMTUyLC04Nzg4OTQ3MzcsNDc0OTIzNTE0LC02ODU3MDgw
-MDksMTc1MjUyODg5MSwtMTEyMDA0Mjg2MiwtNjk5NTA4NDk1LD
-UyODg0Njk0MCwtNDEyMTYyNDU0LDI2MjYyNDAyOCwxMjIzODgy
-NzY5LDk1MDU2MTk5Niw5NDk5NDU5NDgsLTMwMDQ1MzQyOCwyMD
-A3OTcwMDQ1LC0xODA4ODk3MTgsLTM4Mzc2OTg5OSwtMjA4NTA4
-MTE0M119
+eyJoaXN0b3J5IjpbMTA5NzY1MTQ1NywtMTI2NDk5OTc5NiwxNz
+c1OTc4NzA2LC03NzMyMjAxNTIsLTg3ODg5NDczNyw0NzQ5MjM1
+MTQsLTY4NTcwODAwOSwxNzUyNTI4ODkxLC0xMTIwMDQyODYyLC
+02OTk1MDg0OTUsNTI4ODQ2OTQwLC00MTIxNjI0NTQsMjYyNjI0
+MDI4LDEyMjM4ODI3NjksOTUwNTYxOTk2LDk0OTk0NTk0OCwtMz
+AwNDUzNDI4LDIwMDc5NzAwNDUsLTE4MDg4OTcxOCwtMzgzNzY5
+ODk5XX0=
 -->
