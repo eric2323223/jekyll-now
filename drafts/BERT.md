@@ -364,10 +364,7 @@ BERT预训练模型解决这类问题的方法是对CLS符号的BERT编码进行
 ### 问答问题 SQuAD
 ![](https://docs.google.com/drawings/d/e/2PACX-1vSGC-bIM19eOTk96audRUt_wo5hNgsIQpPZVo0pRfMLLxmCpYihvwaKYtcHI2Eyikmk4amBFMSNur6T/pub?w=835&h=686)
 - 任务介绍
-斯坦福问答数据集（SQuAD）是目前机器阅读领域的重要基准，是由众多数据标注者从维基百科文章中提取问题形成的。回答这些问题可能需要引用相关段落中的一部分。
-想要在 SQuAD 上取得好成绩，人工智能系统必须在可行的条件下回答问题，并在确定段落内容无法支持问题时选择不回答。对于现有模型来说，SQuAD2.0 是一项具有挑战性的自然语言理解任务。
-
-在给定的上下文中为一个具体的问题寻找答案。例如给定一段背景描述信息“*今天是教师节，小明送给了母亲一份特殊的节日礼物*”后，提出问题“*小明母亲的职业是什么？*”，让模型在背景描述信息中找到答案“教师”。
+斯坦福问答数据集（SQuAD）是目前机器阅读领域的重要基准，是由众多数据标注者从维基百科文章中提取问题形成的，用于评估人工智能系统对自然语言的理解能力。SQuAD的测试方法是在给定的上下文中为一个具体的问题寻找答案。例如给定一段背景描述信息“*今天是教师节，小明送给了母亲一份特殊的节日礼物*”后，提出问题“*小明母亲的职业是什么？*”，让模型在背景描述信息中找到答案“教师”。
 这类问题要求模型能够理解背景描述以及问题，BERT预训练模型通过海量的数据训练，有能力
 预测answer span(start pos, end pos)
 - 模型架构
@@ -586,11 +583,11 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [BERT author explain BERT](https://www.reddit.com/r/MachineLearning/comments/9nfqxz/r_bert_pretraining_of_deep_bidirectional/)
 [Examining BERT's raw embeddings](https://towardsdatascience.com/examining-berts-raw-embeddings-fd905cb22df7)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODA1MDIzNjEsLTY4NTcwODAwOSwxNzUyNT
-I4ODkxLC0xMTIwMDQyODYyLC02OTk1MDg0OTUsNTI4ODQ2OTQw
-LC00MTIxNjI0NTQsMjYyNjI0MDI4LDEyMjM4ODI3NjksOTUwNT
-YxOTk2LDk0OTk0NTk0OCwtMzAwNDUzNDI4LDIwMDc5NzAwNDUs
-LTE4MDg4OTcxOCwtMzgzNzY5ODk5LC0yMDg1MDgxMTQzLC0xND
-I2MjQ2MDM1LC0xMzI2Mzg5NjQxLDE2MjQyNzgwMTgsNjExMDI5
-Njg5XX0=
+eyJoaXN0b3J5IjpbNDc0OTIzNTE0LC02ODU3MDgwMDksMTc1Mj
+UyODg5MSwtMTEyMDA0Mjg2MiwtNjk5NTA4NDk1LDUyODg0Njk0
+MCwtNDEyMTYyNDU0LDI2MjYyNDAyOCwxMjIzODgyNzY5LDk1MD
+U2MTk5Niw5NDk5NDU5NDgsLTMwMDQ1MzQyOCwyMDA3OTcwMDQ1
+LC0xODA4ODk3MTgsLTM4Mzc2OTg5OSwtMjA4NTA4MTE0MywtMT
+QyNjI0NjAzNSwtMTMyNjM4OTY0MSwxNjI0Mjc4MDE4LDYxMTAy
+OTY4OV19
 -->
