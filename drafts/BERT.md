@@ -382,6 +382,7 @@ BERT在这项测试中不仅刷新了人工智能系统的记录，甚至超过�
 		- 使用cross entropy计算分类误差
 		- BP更新起始/终止位置分类器参数
 
+- BERT可以做文本生成吗？
 can deal with looooong senquence？（>512）: 
 [https://github.com/google-research/bert/issues/66](https://github.com/google-research/bert/issues/66)
 how to get the context vector?
@@ -586,11 +587,11 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [BERT author explain BERT](https://www.reddit.com/r/MachineLearning/comments/9nfqxz/r_bert_pretraining_of_deep_bidirectional/)
 [Examining BERT's raw embeddings](https://towardsdatascience.com/examining-berts-raw-embeddings-fd905cb22df7)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTAzNzk0NTk4NCw5MDQ0NjQyNjksMTA5Nz
-Y1MTQ1NywtMTI2NDk5OTc5NiwxNzc1OTc4NzA2LC03NzMyMjAx
-NTIsLTg3ODg5NDczNyw0NzQ5MjM1MTQsLTY4NTcwODAwOSwxNz
-UyNTI4ODkxLC0xMTIwMDQyODYyLC02OTk1MDg0OTUsNTI4ODQ2
-OTQwLC00MTIxNjI0NTQsMjYyNjI0MDI4LDEyMjM4ODI3NjksOT
-UwNTYxOTk2LDk0OTk0NTk0OCwtMzAwNDUzNDI4LDIwMDc5NzAw
-NDVdfQ==
+eyJoaXN0b3J5IjpbLTI4NDMwMDA0NiwxMDM3OTQ1OTg0LDkwND
+Q2NDI2OSwxMDk3NjUxNDU3LC0xMjY0OTk5Nzk2LDE3NzU5Nzg3
+MDYsLTc3MzIyMDE1MiwtODc4ODk0NzM3LDQ3NDkyMzUxNCwtNj
+g1NzA4MDA5LDE3NTI1Mjg4OTEsLTExMjAwNDI4NjIsLTY5OTUw
+ODQ5NSw1Mjg4NDY5NDAsLTQxMjE2MjQ1NCwyNjI2MjQwMjgsMT
+IyMzg4Mjc2OSw5NTA1NjE5OTYsOTQ5OTQ1OTQ4LC0zMDA0NTM0
+MjhdfQ==
 -->
