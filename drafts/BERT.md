@@ -378,7 +378,7 @@ BERT在这项测试中不仅刷新了人工智能系统的记录，甚至超过�
 		- answer_start_pos
 		- answer_end_pos
 	- 训练流程
-		- [CLS] + question + [SEP] + reference
+		- 加入token [CLS] + question + [SEP] + reference
 		- 
 Use classification head for each token
 can deal with looooong senquence？（>512）: 
@@ -585,11 +585,11 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [BERT author explain BERT](https://www.reddit.com/r/MachineLearning/comments/9nfqxz/r_bert_pretraining_of_deep_bidirectional/)
 [Examining BERT's raw embeddings](https://towardsdatascience.com/examining-berts-raw-embeddings-fd905cb22df7)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbOTA0NDY0MjY5LDEwOTc2NTE0NTcsLTEyNj
-Q5OTk3OTYsMTc3NTk3ODcwNiwtNzczMjIwMTUyLC04Nzg4OTQ3
-MzcsNDc0OTIzNTE0LC02ODU3MDgwMDksMTc1MjUyODg5MSwtMT
-EyMDA0Mjg2MiwtNjk5NTA4NDk1LDUyODg0Njk0MCwtNDEyMTYy
-NDU0LDI2MjYyNDAyOCwxMjIzODgyNzY5LDk1MDU2MTk5Niw5ND
-k5NDU5NDgsLTMwMDQ1MzQyOCwyMDA3OTcwMDQ1LC0xODA4ODk3
-MThdfQ==
+eyJoaXN0b3J5IjpbLTcyMzAzMDA3OSw5MDQ0NjQyNjksMTA5Nz
+Y1MTQ1NywtMTI2NDk5OTc5NiwxNzc1OTc4NzA2LC03NzMyMjAx
+NTIsLTg3ODg5NDczNyw0NzQ5MjM1MTQsLTY4NTcwODAwOSwxNz
+UyNTI4ODkxLC0xMTIwMDQyODYyLC02OTk1MDg0OTUsNTI4ODQ2
+OTQwLC00MTIxNjI0NTQsMjYyNjI0MDI4LDEyMjM4ODI3NjksOT
+UwNTYxOTk2LDk0OTk0NTk0OCwtMzAwNDUzNDI4LDIwMDc5NzAw
+NDVdfQ==
 -->
