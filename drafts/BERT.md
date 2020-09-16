@@ -365,7 +365,7 @@ BERT预训练模型解决这类问题的方法是对CLS符号的BERT编码进行
 ![](https://docs.google.com/drawings/d/e/2PACX-1vSGC-bIM19eOTk96audRUt_wo5hNgsIQpPZVo0pRfMLLxmCpYihvwaKYtcHI2Eyikmk4amBFMSNur6T/pub?w=835&h=686)
 - 任务介绍
 斯坦福问答数据集（SQuAD）是目前机器阅读领域的重要基准，是由众多数据标注者从维基百科文章中提取问题形成的，用于评估人工智能系统对自然语言的理解能力。SQuAD的理解测试方法是在给定的上下文中为一个具体的问题寻找答案。例如给定一段背景描述信息“*今天是教师节，小明送给了母亲一份特殊的节日礼物*”后，提出问题“*小明母亲的职业是什么？*”，让模型在背景描述信息中找到答案“教师”。
-BERT在这项测试中不仅刷新了人工智能系统的记录，甚至超过了人类的表现，证明它的强大能力。对于机器学习算法来说，这项任务可以表示为当输入为背景介绍和问题是，对问题结果在背景介绍中的位置进行判断。由于文本决定于文本的起始和终止位置，因此
+BERT在这项测试中不仅刷新了人工智能系统的记录，甚至超过了人类的表现，证明它的强大能力。对于机器学习算法来说，这项任务可以表示为当输入为背景介绍和问题是，对问题答案在背景介绍中的位置进行判断。由于答案的位置决定于它的起始和终止位置，因此
 预测answer span(start pos, end pos)
 - 模型架构
 	- BERT预训练模型
@@ -583,7 +583,7 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [BERT author explain BERT](https://www.reddit.com/r/MachineLearning/comments/9nfqxz/r_bert_pretraining_of_deep_bidirectional/)
 [Examining BERT's raw embeddings](https://towardsdatascience.com/examining-berts-raw-embeddings-fd905cb22df7)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTkxMjI1NjU3MywtODc4ODk0NzM3LDQ3ND
+eyJoaXN0b3J5IjpbLTc3MzIyMDE1MiwtODc4ODk0NzM3LDQ3ND
 kyMzUxNCwtNjg1NzA4MDA5LDE3NTI1Mjg4OTEsLTExMjAwNDI4
 NjIsLTY5OTUwODQ5NSw1Mjg4NDY5NDAsLTQxMjE2MjQ1NCwyNj
 I2MjQwMjgsMTIyMzg4Mjc2OSw5NTA1NjE5OTYsOTQ5OTQ1OTQ4
