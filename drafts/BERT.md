@@ -310,8 +310,7 @@ Each training data contains Two sentences, $W_1[w_{11}, w_{12}, w_{13}, w_{14}, 
 BERT预训练模型解决这类问题的方法是对CLS符号的BERT编码进行类型判断，这是由于CLS符号和句子中其他输入都没有关系，因此CLS符号的BERT编码实际上是以（大致）相同的权重加入所有输入元素的信息，这也就是整个句子的信息。因此，实现上只需要将CLS符号的BERT编码输入分类器运算就可以得到这个句子的类型判断。
 
 > 微调层结构：分类器（全连接+softmax）[https://github.com/huggingface/transformers/blob/c67d1a0259cbb3aef31952b4f37d4fee0e36f134/src/transformers/modeling_bert.py#L1234-L1241](https://github.com/huggingface/transformers/blob/c67d1a0259cbb3aef31952b4f37d4fee0e36f134/src/transformers/modeling_bert.py#L1234-L1241)
-
-    class BertForSequenceClassification(BertPreTrainedModel):
+ >class BertForSequenceClassification(BertPreTrainedModel):
         def __init__(self, config):
             super().__init__(config)
             self.num_labels = config.num_labels
@@ -319,11 +318,12 @@ BERT预训练模型解决这类问题的方法是对CLS符号的BERT编码进行
             self.dropout = nn.Dropout(config.hidden_dropout_prob)
             self.classifier = nn.Linear(config.hidden_size, config.num_labels)
 
-[https://github.com/huggingface/transformers/blob/c67d1a0259cbb3aef31952b4f37d4fee0e36f134/src/transformers/modeling_bert.py#L1291-L1299](https://github.com/huggingface/transformers/blob/c67d1a0259cbb3aef31952b4f37d4fee0e36f134/src/transformers/modeling_bert.py#L1291-L1299)
-- 训练数据
-	- $x={x_1, x_2, x_3, ... , x_n}, y=label$
-- 训练流程
-- 损失函数：cross-entropy
+>[https://github.com/huggingface/transformers/blob/c67d1a0259cbb3aef31952b4f37d4fee0e36f134/src/transformers/modeling_bert.py#L1291-L1299](https://github.com/huggingface/transformers/blob/c67d1a0259cbb3aef31952b4f37d4fee0e36f134/src/transformers/modeling_bert.py#L1291-L1299)
+- 微调训练
+	- 训练数据
+		- $x={x_1, x_2, x_3, ... , x_n}, y=label$
+	- 训练流程
+	- 损失函数：cross-entropy
 
 预测
 
@@ -567,7 +567,7 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [BERT author explain BERT](https://www.reddit.com/r/MachineLearning/comments/9nfqxz/r_bert_pretraining_of_deep_bidirectional/)
 [Examining BERT's raw embeddings](https://towardsdatascience.com/examining-berts-raw-embeddings-fd905cb22df7)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTU5MjcyOTI1NiwxMjIzODgyNzY5LDk1MD
+eyJoaXN0b3J5IjpbLTYyMDQ5ODQ2OCwxMjIzODgyNzY5LDk1MD
 U2MTk5Niw5NDk5NDU5NDgsLTMwMDQ1MzQyOCwyMDA3OTcwMDQ1
 LC0xODA4ODk3MTgsLTM4Mzc2OTg5OSwtMjA4NTA4MTE0MywtMT
 QyNjI0NjAzNSwtMTMyNjM4OTY0MSwxNjI0Mjc4MDE4LDYxMTAy
