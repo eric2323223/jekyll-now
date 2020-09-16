@@ -356,7 +356,7 @@ BERT预训练模型解决这类问题的方法是对CLS符号的BERT编码进行
 ### 问答问题 SQuAD
 ![](https://docs.google.com/drawings/d/e/2PACX-1vSGC-bIM19eOTk96audRUt_wo5hNgsIQpPZVo0pRfMLLxmCpYihvwaKYtcHI2Eyikmk4amBFMSNur6T/pub?w=835&h=686)
 - 任务介绍
-在给定的上下文中为一个具体的问题寻找答案。例如给定一段描述信息“”后，提出问题“”，让模型在描述信息中找到答案“”。这个问题
+在给定的上下文中为一个具体的问题寻找答案。例如给定一段描述信息“”后，提出问题“”，让模型在描述信息中找到答案“”。这类问题，要求模型能够理解
 预测answer span(start pos, end pos)
 - 模型架构
 	- BERT预训练模型
@@ -573,11 +573,11 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [BERT author explain BERT](https://www.reddit.com/r/MachineLearning/comments/9nfqxz/r_bert_pretraining_of_deep_bidirectional/)
 [Examining BERT's raw embeddings](https://towardsdatascience.com/examining-berts-raw-embeddings-fd905cb22df7)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzMzU3MzY5MzIsMjYyNjI0MDI4LDEyMj
-M4ODI3NjksOTUwNTYxOTk2LDk0OTk0NTk0OCwtMzAwNDUzNDI4
-LDIwMDc5NzAwNDUsLTE4MDg4OTcxOCwtMzgzNzY5ODk5LC0yMD
-g1MDgxMTQzLC0xNDI2MjQ2MDM1LC0xMzI2Mzg5NjQxLDE2MjQy
-NzgwMTgsNjExMDI5Njg5LC0xNDI2NjcyOTQ1LC0xMjUwMTgyNz
-E4LC05NjI3NjM2MSw3NjcwNDg5MzQsLTIxMjY5MTI0MzEsNTQz
-Nzc2MDU0XX0=
+eyJoaXN0b3J5IjpbLTIyODcyMTYxMSwyNjI2MjQwMjgsMTIyMz
+g4Mjc2OSw5NTA1NjE5OTYsOTQ5OTQ1OTQ4LC0zMDA0NTM0Mjgs
+MjAwNzk3MDA0NSwtMTgwODg5NzE4LC0zODM3Njk4OTksLTIwOD
+UwODExNDMsLTE0MjYyNDYwMzUsLTEzMjYzODk2NDEsMTYyNDI3
+ODAxOCw2MTEwMjk2ODksLTE0MjY2NzI5NDUsLTEyNTAxODI3MT
+gsLTk2Mjc2MzYxLDc2NzA0ODkzNCwtMjEyNjkxMjQzMSw1NDM3
+NzYwNTRdfQ==
 -->
