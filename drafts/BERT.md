@@ -85,6 +85,8 @@ The good LM should calculate higher probabilities to “real” and “frequentl
 
 ## BERT简介
 BERT（Bidirectional Encoder Representations from Transformer），同他名字说的一样，BERT是一个利用Transformer实现的双向编码器，  用于提取输入序列特征信息的预训练模型。When BERT was published it achieved [state-of-the-art] performance in 11 [natural language understanding] tasks:[[1]] [GLUE]task set (consisting of 8 tasks), [MultiNLI] [SQuAD] v1.1, SQuAD v2.0
+>它刷新了 11 个 NLP 任务的当前最优结果，包括将 GLUE 基准提升至 80.4%（7.6% 的绝对改进）、将 MultiNLI 的准确率提高到 86.7%（5.6% 的绝对改进），以及将 SQuAD v1.1 的问答测试 F1 得分提高至 93.2 分（提高 1.5 分）——比人类表现还高出 2 分。
+
 2018, google发表了论文BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding， 2019年google将BERT模型应用到了搜索服务中，现在已经支持了超过70种语言
 
 
@@ -575,11 +577,11 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [BERT author explain BERT](https://www.reddit.com/r/MachineLearning/comments/9nfqxz/r_bert_pretraining_of_deep_bidirectional/)
 [Examining BERT's raw embeddings](https://towardsdatascience.com/examining-berts-raw-embeddings-fd905cb22df7)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2Njk1Mzc0LC02OTk1MDg0OTUsNTI4OD
-Q2OTQwLC00MTIxNjI0NTQsMjYyNjI0MDI4LDEyMjM4ODI3Njks
-OTUwNTYxOTk2LDk0OTk0NTk0OCwtMzAwNDUzNDI4LDIwMDc5Nz
-AwNDUsLTE4MDg4OTcxOCwtMzgzNzY5ODk5LC0yMDg1MDgxMTQz
-LC0xNDI2MjQ2MDM1LC0xMzI2Mzg5NjQxLDE2MjQyNzgwMTgsNj
-ExMDI5Njg5LC0xNDI2NjcyOTQ1LC0xMjUwMTgyNzE4LC05NjI3
-NjM2MV19
+eyJoaXN0b3J5IjpbLTExMjAwNDI4NjIsLTY5OTUwODQ5NSw1Mj
+g4NDY5NDAsLTQxMjE2MjQ1NCwyNjI2MjQwMjgsMTIyMzg4Mjc2
+OSw5NTA1NjE5OTYsOTQ5OTQ1OTQ4LC0zMDA0NTM0MjgsMjAwNz
+k3MDA0NSwtMTgwODg5NzE4LC0zODM3Njk4OTksLTIwODUwODEx
+NDMsLTE0MjYyNDYwMzUsLTEzMjYzODk2NDEsMTYyNDI3ODAxOC
+w2MTEwMjk2ODksLTE0MjY2NzI5NDUsLTEyNTAxODI3MTgsLTk2
+Mjc2MzYxXX0=
 -->
