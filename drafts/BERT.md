@@ -298,7 +298,6 @@ Each training data contains Two sentences, $W_1[w_{11}, w_{12}, w_{13}, w_{14}, 
 微调是在BERT预训练模型的基础上加入针对性的微调网络结构（微调层），并利用（相对）少量数据来训练微调层使之能够满足一定的任务需要的学习过程。在微调训练中，BERT预训练模型的参数一般不会被训练（更新），BERT预训练模型网络只起到特征提取的作用。
 从本质上讲，基于transformer的BERT模型能够为序列元素生成具备上下文信息的编码，围绕着这个特点，作者设计了很多微调任务（如NER，STS，等），相对于BERT的预训练中使用的MLM和NSP任务，可以将这些微调任务分为两类：单句上下文任务和多句上下文任务。下面我们介绍这两类任务的典型代表。
 
-
 ![enter image description here](https://www.topbots.com/wp-content/uploads/2019/12/cover_transfer_learning_1600px_web.jpg)
 ![enter image description here](https://www.researchgate.net/profile/Jan_Christian_Blaise_Cruz/publication/334160936/figure/fig1/AS:776030256111617@1562031439583/Overall-BERT-pretraining-and-finetuning-framework-Note-that-the-same-architecture-in.ppm)
 
@@ -568,7 +567,7 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [BERT author explain BERT](https://www.reddit.com/r/MachineLearning/comments/9nfqxz/r_bert_pretraining_of_deep_bidirectional/)
 [Examining BERT's raw embeddings](https://towardsdatascience.com/examining-berts-raw-embeddings-fd905cb22df7)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTY2NzU4NzI5MiwtMzgzNzY5ODk5LC0yMD
+eyJoaXN0b3J5IjpbLTE4MDg4OTcxOCwtMzgzNzY5ODk5LC0yMD
 g1MDgxMTQzLC0xNDI2MjQ2MDM1LC0xMzI2Mzg5NjQxLDE2MjQy
 NzgwMTgsNjExMDI5Njg5LC0xNDI2NjcyOTQ1LC0xMjUwMTgyNz
 E4LC05NjI3NjM2MSw3NjcwNDg5MzQsLTIxMjY5MTI0MzEsNTQz
