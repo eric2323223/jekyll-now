@@ -326,9 +326,10 @@ BERT预训练模型解决这类问题的方法是对CLS符号的BERT编码进行
 		1. 数据预处理，将CLS加入X前，
 		2. BERT embedding
 		3. BERT encoding
-		4. 用分类器计算 类型
-		5. 
-	- 损失函数：cross-entropy
+		4. 用分类器判断 类型
+		5. 计算误差 （误差函数）
+		6. BP更新分类器参数
+
 
 预测
 
@@ -572,11 +573,11 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [BERT author explain BERT](https://www.reddit.com/r/MachineLearning/comments/9nfqxz/r_bert_pretraining_of_deep_bidirectional/)
 [Examining BERT's raw embeddings](https://towardsdatascience.com/examining-berts-raw-embeddings-fd905cb22df7)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNDU0MTc4NzU0LDEyMjM4ODI3NjksOTUwNT
-YxOTk2LDk0OTk0NTk0OCwtMzAwNDUzNDI4LDIwMDc5NzAwNDUs
-LTE4MDg4OTcxOCwtMzgzNzY5ODk5LC0yMDg1MDgxMTQzLC0xND
-I2MjQ2MDM1LC0xMzI2Mzg5NjQxLDE2MjQyNzgwMTgsNjExMDI5
-Njg5LC0xNDI2NjcyOTQ1LC0xMjUwMTgyNzE4LC05NjI3NjM2MS
-w3NjcwNDg5MzQsLTIxMjY5MTI0MzEsNTQzNzc2MDU0LC0xMzg5
-OTE5MDQ5XX0=
+eyJoaXN0b3J5IjpbMTgxMTU5OTIwOCwxMjIzODgyNzY5LDk1MD
+U2MTk5Niw5NDk5NDU5NDgsLTMwMDQ1MzQyOCwyMDA3OTcwMDQ1
+LC0xODA4ODk3MTgsLTM4Mzc2OTg5OSwtMjA4NTA4MTE0MywtMT
+QyNjI0NjAzNSwtMTMyNjM4OTY0MSwxNjI0Mjc4MDE4LDYxMTAy
+OTY4OSwtMTQyNjY3Mjk0NSwtMTI1MDE4MjcxOCwtOTYyNzYzNj
+EsNzY3MDQ4OTM0LC0yMTI2OTEyNDMxLDU0Mzc3NjA1NCwtMTM4
+OTkxOTA0OV19
 -->
