@@ -356,7 +356,8 @@ BERT预训练模型解决这类问题的方法是对CLS符号的BERT编码进行
 ### 问答问题 SQuAD
 ![](https://docs.google.com/drawings/d/e/2PACX-1vSGC-bIM19eOTk96audRUt_wo5hNgsIQpPZVo0pRfMLLxmCpYihvwaKYtcHI2Eyikmk4amBFMSNur6T/pub?w=835&h=686)
 - 任务介绍
-在给定的上下文中为一个具体的问题寻找答案。例如给定一段背景描述信息“*今天是教师节，小明送给了母亲一份特殊的节日礼物*”后，提出问题“*小明母亲的职业是什么？*”，让模型在背景描述信息中找到答案“教师”。这类问题，要求模型能够理解背景描述以及问题，
+在给定的上下文中为一个具体的问题寻找答案。例如给定一段背景描述信息“*今天是教师节，小明送给了母亲一份特殊的节日礼物*”后，提出问题“*小明母亲的职业是什么？*”，让模型在背景描述信息中找到答案“教师”。
+这类问题，要求模型能够理解背景描述以及问题，
 预测answer span(start pos, end pos)
 - 模型架构
 	- BERT预训练模型
@@ -573,11 +574,11 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [BERT author explain BERT](https://www.reddit.com/r/MachineLearning/comments/9nfqxz/r_bert_pretraining_of_deep_bidirectional/)
 [Examining BERT's raw embeddings](https://towardsdatascience.com/examining-berts-raw-embeddings-fd905cb22df7)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTk1OTcyOTAxNCwtNDEyMTYyNDU0LDI2Mj
-YyNDAyOCwxMjIzODgyNzY5LDk1MDU2MTk5Niw5NDk5NDU5NDgs
-LTMwMDQ1MzQyOCwyMDA3OTcwMDQ1LC0xODA4ODk3MTgsLTM4Mz
-c2OTg5OSwtMjA4NTA4MTE0MywtMTQyNjI0NjAzNSwtMTMyNjM4
-OTY0MSwxNjI0Mjc4MDE4LDYxMTAyOTY4OSwtMTQyNjY3Mjk0NS
-wtMTI1MDE4MjcxOCwtOTYyNzYzNjEsNzY3MDQ4OTM0LC0yMTI2
-OTEyNDMxXX0=
+eyJoaXN0b3J5IjpbNTI4ODQ2OTQwLC00MTIxNjI0NTQsMjYyNj
+I0MDI4LDEyMjM4ODI3NjksOTUwNTYxOTk2LDk0OTk0NTk0OCwt
+MzAwNDUzNDI4LDIwMDc5NzAwNDUsLTE4MDg4OTcxOCwtMzgzNz
+Y5ODk5LC0yMDg1MDgxMTQzLC0xNDI2MjQ2MDM1LC0xMzI2Mzg5
+NjQxLDE2MjQyNzgwMTgsNjExMDI5Njg5LC0xNDI2NjcyOTQ1LC
+0xMjUwMTgyNzE4LC05NjI3NjM2MSw3NjcwNDg5MzQsLTIxMjY5
+MTI0MzFdfQ==
 -->
