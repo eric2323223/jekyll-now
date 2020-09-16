@@ -392,6 +392,7 @@ BERT的核心思想是使用Transformer来进行深度双向上下文的语义�
 BERT最大的成功在于提供了一个方便可用的预训练模型
 
 从模型的角度来讲，为了让预训练模型服务于更多的下游任务，加入pooler
+>预训练的 BERT 表征可以仅用一个额外的输出层进行微调，进而为很多任务（如问答和语言推断任务）创建当前最优模型，无需对任务特定架构做出大量修改。我们只需要一个额外的输出层来对预训练 BERT 进行微调就可以用它来满足各种任务，无需针对特定任务对模型进行修改，这就是 BERT 模型能在大量 NLP 任务上取得突破的原因。
 
 从任务设计的角度，作者MLM， NSP
 
@@ -574,11 +575,11 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [BERT author explain BERT](https://www.reddit.com/r/MachineLearning/comments/9nfqxz/r_bert_pretraining_of_deep_bidirectional/)
 [Examining BERT's raw embeddings](https://towardsdatascience.com/examining-berts-raw-embeddings-fd905cb22df7)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTY5OTUwODQ5NSw1Mjg4NDY5NDAsLTQxMj
-E2MjQ1NCwyNjI2MjQwMjgsMTIyMzg4Mjc2OSw5NTA1NjE5OTYs
-OTQ5OTQ1OTQ4LC0zMDA0NTM0MjgsMjAwNzk3MDA0NSwtMTgwOD
-g5NzE4LC0zODM3Njk4OTksLTIwODUwODExNDMsLTE0MjYyNDYw
-MzUsLTEzMjYzODk2NDEsMTYyNDI3ODAxOCw2MTEwMjk2ODksLT
-E0MjY2NzI5NDUsLTEyNTAxODI3MTgsLTk2Mjc2MzYxLDc2NzA0
-ODkzNF19
+eyJoaXN0b3J5IjpbLTE2Njk1Mzc0LC02OTk1MDg0OTUsNTI4OD
+Q2OTQwLC00MTIxNjI0NTQsMjYyNjI0MDI4LDEyMjM4ODI3Njks
+OTUwNTYxOTk2LDk0OTk0NTk0OCwtMzAwNDUzNDI4LDIwMDc5Nz
+AwNDUsLTE4MDg4OTcxOCwtMzgzNzY5ODk5LC0yMDg1MDgxMTQz
+LC0xNDI2MjQ2MDM1LC0xMzI2Mzg5NjQxLDE2MjQyNzgwMTgsNj
+ExMDI5Njg5LC0xNDI2NjcyOTQ1LC0xMjUwMTgyNzE4LC05NjI3
+NjM2MV19
 -->
