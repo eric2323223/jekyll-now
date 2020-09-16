@@ -373,7 +373,6 @@ BERT在这项测试中不仅刷新了人工智能系统的记录，甚至超过�
 	- 训练数据
 		- question
 		- reference
-		- 
 		- answer_start_pos
 		- answer_end_pos
 	- 训练流程
@@ -587,7 +586,7 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [BERT author explain BERT](https://www.reddit.com/r/MachineLearning/comments/9nfqxz/r_bert_pretraining_of_deep_bidirectional/)
 [Examining BERT's raw embeddings](https://towardsdatascience.com/examining-berts-raw-embeddings-fd905cb22df7)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTA2MTE4MjQ3NSw5MDQ0NjQyNjksMTA5Nz
+eyJoaXN0b3J5IjpbMTAzNzk0NTk4NCw5MDQ0NjQyNjksMTA5Nz
 Y1MTQ1NywtMTI2NDk5OTc5NiwxNzc1OTc4NzA2LC03NzMyMjAx
 NTIsLTg3ODg5NDczNyw0NzQ5MjM1MTQsLTY4NTcwODAwOSwxNz
 UyNTI4ODkxLC0xMTIwMDQyODYyLC02OTk1MDg0OTUsNTI4ODQ2
