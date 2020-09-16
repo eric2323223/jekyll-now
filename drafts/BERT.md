@@ -306,7 +306,7 @@ Each training data contains Two sentences, $W_1[w_{11}, w_{12}, w_{13}, w_{14}, 
 
 ![](https://docs.google.com/drawings/d/e/2PACX-1vStZ1DhjhFi-1LIWS7hCHsvTzu_SQ-DS9Dh6MDCC2qcjmmDcuWte2Ii3wATxx149_NX-OOVzU1nqbr9/pub?w=884&h=709)
 - 任务介绍
-这种类型的任务对输入的一句话进行类型判断。例如判断一条购买评价的语义是肯定的还是否定的，实际上就是对这个评价进行分类（肯定和否定）
+这种类型的任务对输入的一句话进行类型判断。例如判断一条购买评价的语义是肯定的还是否定的，实际上就是对这个评价进行类型（肯定和否定）判断。
 
 - Make use of the CLS token
 - 微调层结构：分类器（全连接+softmax）[https://github.com/huggingface/transformers/blob/c67d1a0259cbb3aef31952b4f37d4fee0e36f134/src/transformers/modeling_bert.py#L1234-L1241](https://github.com/huggingface/transformers/blob/c67d1a0259cbb3aef31952b4f37d4fee0e36f134/src/transformers/modeling_bert.py#L1234-L1241)
@@ -567,7 +567,7 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [BERT author explain BERT](https://www.reddit.com/r/MachineLearning/comments/9nfqxz/r_bert_pretraining_of_deep_bidirectional/)
 [Examining BERT's raw embeddings](https://towardsdatascience.com/examining-berts-raw-embeddings-fd905cb22df7)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTg5MDAzMjY3MCwyMDA3OTcwMDQ1LC0xOD
+eyJoaXN0b3J5IjpbLTMwMDQ1MzQyOCwyMDA3OTcwMDQ1LC0xOD
 A4ODk3MTgsLTM4Mzc2OTg5OSwtMjA4NTA4MTE0MywtMTQyNjI0
 NjAzNSwtMTMyNjM4OTY0MSwxNjI0Mjc4MDE4LDYxMTAyOTY4OS
 wtMTQyNjY3Mjk0NSwtMTI1MDE4MjcxOCwtOTYyNzYzNjEsNzY3
