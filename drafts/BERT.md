@@ -377,10 +377,10 @@ BERT在这项测试中不仅刷新了人工智能系统的记录，甚至超过�
 		- 数据预处理 [CLS] + question + [SEP] + reference
 		$$X=\{[CLS], reference , [SEP], question\}$$
 		- BERT预训练模型计算
-		$$X_{bert} = Bert(X)$$
+		$$X_{bert} = \text{Bert}(X)$$
 		- 使用起始/终止位置分类器判断起止位置
-		$$\hat{Y_{start}} = \text{softmax} ( dense (X_{bert})), 
-		\hat{Y_{stop}} = \softmax( dense(X_{bert}))$$
+		$$\hat{Y_{start}} = \text{softmax} ( \text{dense} (X_{bert})), 
+		\hat{Y_{stop}} = \text{softmax}( \text{dense}(X_{bert}))$$
 		- 使用cross entropy计算分类误差
 		$$CE = -\sum Y_{start} \log(\hat{Y_{start}})$$
 		- BP更新起始/终止位置分类器参数
@@ -591,7 +591,7 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [BERT author explain BERT](https://www.reddit.com/r/MachineLearning/comments/9nfqxz/r_bert_pretraining_of_deep_bidirectional/)
 [Examining BERT's raw embeddings](https://towardsdatascience.com/examining-berts-raw-embeddings-fd905cb22df7)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjA5NzQyNzI5MCw5NTgwNDkzMjcsLTkyNj
+eyJoaXN0b3J5IjpbMTM0MzMyMzYwOCw5NTgwNDkzMjcsLTkyNj
 czMzA2NiwtMjE0NTg1NTIyOSwxMjcwODA2ODMxLDEzNjE2Nzc0
 NzcsLTU2OTA1ODgzMCwxMDM3OTQ1OTg0LDkwNDQ2NDI2OSwxMD
 k3NjUxNDU3LC0xMjY0OTk5Nzk2LDE3NzU5Nzg3MDYsLTc3MzIy
