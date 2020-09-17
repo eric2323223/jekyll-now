@@ -371,10 +371,11 @@ BERT在这项测试中不仅刷新了人工智能系统的记录，甚至超过�
 		- BERT预训练模型
 		- SQuaD任务层
 	- 训练数据
-		- X:question [SEP] reference, Y: answer_start_pos, answer_stop_pos
+		- X:question，reference, Y: answer_start_pos, answer_stop_pos
 
 	- 训练流程
 		- 数据预处理 [CLS] + question + [SEP] + reference
+		X=[CLS] + reference + [SEP] + question
 		- BERT预训练模型计算
 		- 使用起始/终止位置分类器判断起止位置
 		- 使用cross entropy计算分类误差
@@ -586,11 +587,11 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [BERT author explain BERT](https://www.reddit.com/r/MachineLearning/comments/9nfqxz/r_bert_pretraining_of_deep_bidirectional/)
 [Examining BERT's raw embeddings](https://towardsdatascience.com/examining-berts-raw-embeddings-fd905cb22df7)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTI3MDgwNjgzMSwxMzYxNjc3NDc3LC01Nj
-kwNTg4MzAsMTAzNzk0NTk4NCw5MDQ0NjQyNjksMTA5NzY1MTQ1
-NywtMTI2NDk5OTc5NiwxNzc1OTc4NzA2LC03NzMyMjAxNTIsLT
-g3ODg5NDczNyw0NzQ5MjM1MTQsLTY4NTcwODAwOSwxNzUyNTI4
-ODkxLC0xMTIwMDQyODYyLC02OTk1MDg0OTUsNTI4ODQ2OTQwLC
-00MTIxNjI0NTQsMjYyNjI0MDI4LDEyMjM4ODI3NjksOTUwNTYx
-OTk2XX0=
+eyJoaXN0b3J5IjpbMjAzOTYzODAxMiwxMjcwODA2ODMxLDEzNj
+E2Nzc0NzcsLTU2OTA1ODgzMCwxMDM3OTQ1OTg0LDkwNDQ2NDI2
+OSwxMDk3NjUxNDU3LC0xMjY0OTk5Nzk2LDE3NzU5Nzg3MDYsLT
+c3MzIyMDE1MiwtODc4ODk0NzM3LDQ3NDkyMzUxNCwtNjg1NzA4
+MDA5LDE3NTI1Mjg4OTEsLTExMjAwNDI4NjIsLTY5OTUwODQ5NS
+w1Mjg4NDY5NDAsLTQxMjE2MjQ1NCwyNjI2MjQwMjgsMTIyMzg4
+Mjc2OV19
 -->
