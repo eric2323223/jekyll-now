@@ -382,7 +382,7 @@ BERT在这项测试中不仅刷新了人工智能系统的记录，甚至超过�
 		$$Y_{start} = softmax ( dense (X_{bert}))$$
 		$$Y_{stop} = softmax( dense(X_{bert}))$$
 		- 使用cross entropy计算分类误差
-		$$$$
+		$$L_{ce} = $$
 		- BP更新起始/终止位置分类器参数
 - BERT可以用来
 - BERT可以做文本生成吗？
@@ -591,11 +591,11 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [BERT author explain BERT](https://www.reddit.com/r/MachineLearning/comments/9nfqxz/r_bert_pretraining_of_deep_bidirectional/)
 [Examining BERT's raw embeddings](https://towardsdatascience.com/examining-berts-raw-embeddings-fd905cb22df7)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE3MTI0NzIwMDMsLTIxNDU4NTUyMjksMT
-I3MDgwNjgzMSwxMzYxNjc3NDc3LC01NjkwNTg4MzAsMTAzNzk0
-NTk4NCw5MDQ0NjQyNjksMTA5NzY1MTQ1NywtMTI2NDk5OTc5Ni
-wxNzc1OTc4NzA2LC03NzMyMjAxNTIsLTg3ODg5NDczNyw0NzQ5
-MjM1MTQsLTY4NTcwODAwOSwxNzUyNTI4ODkxLC0xMTIwMDQyOD
-YyLC02OTk1MDg0OTUsNTI4ODQ2OTQwLC00MTIxNjI0NTQsMjYy
-NjI0MDI4XX0=
+eyJoaXN0b3J5IjpbMjA1NDcxNzIyNSwtMjE0NTg1NTIyOSwxMj
+cwODA2ODMxLDEzNjE2Nzc0NzcsLTU2OTA1ODgzMCwxMDM3OTQ1
+OTg0LDkwNDQ2NDI2OSwxMDk3NjUxNDU3LC0xMjY0OTk5Nzk2LD
+E3NzU5Nzg3MDYsLTc3MzIyMDE1MiwtODc4ODk0NzM3LDQ3NDky
+MzUxNCwtNjg1NzA4MDA5LDE3NTI1Mjg4OTEsLTExMjAwNDI4Nj
+IsLTY5OTUwODQ5NSw1Mjg4NDY5NDAsLTQxMjE2MjQ1NCwyNjI2
+MjQwMjhdfQ==
 -->
