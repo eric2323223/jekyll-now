@@ -273,7 +273,7 @@ The loss was calculated as the sum of the mean masked LM likelihood and the mean
 Each training data contains Two sentences, $W_1[w_{11}, w_{12}, w_{13}, w_{14}, w_{15}], W2[w_{21}, w_{22},w_{23},w_{24},w_{25}]$
 1. 数据预处理: 
     1.0  Tokenization (WordPiece), 压缩词典容量并解决OOV问题
-    $\text{CLS}_{t}$
+    $\text{CLS}^{t}$
 	1.1 . 加入特殊符号-CLS，SEP，PAD： [CLS] BERT is awesome. [SEP] I love BERT. [SEP]"
 	1.2.  Add masks to some words: [CLS] BERT [MASK] awesome. [SEP] I love BERT. [SEP
 	1.3.  Generate labels
@@ -592,7 +592,7 @@ GPT-2论证了什么事情呢？对于语言模型来说，不同领域的文本
 [BERT author explain BERT](https://www.reddit.com/r/MachineLearning/comments/9nfqxz/r_bert_pretraining_of_deep_bidirectional/)
 [Examining BERT's raw embeddings](https://towardsdatascience.com/examining-berts-raw-embeddings-fd905cb22df7)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjk5Mzg1MzUzLC0yNTc4MzEwOTksOTU4MD
+eyJoaXN0b3J5IjpbODkzMTI2MTUyLC0yNTc4MzEwOTksOTU4MD
 Q5MzI3LC05MjY3MzMwNjYsLTIxNDU4NTUyMjksMTI3MDgwNjgz
 MSwxMzYxNjc3NDc3LC01NjkwNTg4MzAsMTAzNzk0NTk4NCw5MD
 Q0NjQyNjksMTA5NzY1MTQ1NywtMTI2NDk5OTc5NiwxNzc1OTc4
