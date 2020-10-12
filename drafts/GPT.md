@@ -21,8 +21,8 @@
 
 ## reference
 [gpt2 and bert](https://www.kaggle.com/residentmario/notes-on-gpt-2-and-bert-models)
-
+[gpt3](https://medium.com/analytics-vidhya/openai-gpt-3-language-models-are-few-shot-learners-82531b3d3122)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTM5NDczMjg3NCwtODMxOTQ4NzcyLDc5Nz
+eyJoaXN0b3J5IjpbLTIzNDQ0OTI0MywtODMxOTQ4NzcyLDc5Nz
 EzNjE0NCwtMTYwMzA2Nzk1MV19
 -->
