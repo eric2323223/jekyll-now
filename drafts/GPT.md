@@ -8,6 +8,8 @@
 
 ### few(zero) shot learning
 ![enter image description here](https://miro.medium.com/max/625/1*q-P5aQ7A6VlsfroP3ckg8A.jpeg)
+
+![enter image description here](https://miro.medium.com/max/448/1*2dX-PZSNdmj0KOa-NmjrEA.jpeg)
 ### scale matters
 
 ### GTP vs BERT
@@ -23,7 +25,7 @@ GPT-3 demonstrates that a language model trained on enough data can solve NLP ta
 [gpt2 and bert](https://www.kaggle.com/residentmario/notes-on-gpt-2-and-bert-models)
 [gpt3](https://medium.com/analytics-vidhya/openai-gpt-3-language-models-are-few-shot-learners-82531b3d3122)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE4NDI3NzEwMjYsMTk1NjQ3ODM5NywtMj
-M0NDQ5MjQzLC04MzE5NDg3NzIsNzk3MTM2MTQ0LC0xNjAzMDY3
-OTUxXX0=
+eyJoaXN0b3J5IjpbLTY2Mjg1NDUzOSwxOTU2NDc4Mzk3LC0yMz
+Q0NDkyNDMsLTgzMTk0ODc3Miw3OTcxMzYxNDQsLTE2MDMwNjc5
+NTFdfQ==
 -->
