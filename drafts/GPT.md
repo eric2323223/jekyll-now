@@ -6,11 +6,16 @@
 
 ## GPT设计思想
 
-### few(se shot learning
+### few(zero) shot learning
+
+### scale matters
+
+### 
 
 ### GPT2/ GPT3
 
-### 
+## look ahead
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEyOTg1NDEyMiwtMTYwMzA2Nzk1MV19
+eyJoaXN0b3J5IjpbNzk3MTM2MTQ0LC0xNjAzMDY3OTUxXX0=
 -->
