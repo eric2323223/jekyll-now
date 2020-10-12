@@ -4,7 +4,9 @@
 
 ## GPT简介
 
-## 
+## GPT设计思想
+
+##　
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2MDMwNjc5NTFdfQ==
+eyJoaXN0b3J5IjpbLTI3NDgzNDY5NSwtMTYwMzA2Nzk1MV19
 -->
