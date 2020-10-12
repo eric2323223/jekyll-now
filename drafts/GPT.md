@@ -7,7 +7,7 @@
 ## GPT设计思想
 
 ### few(zero) shot learning
-
+![enter image description here](https://miro.medium.com/max/625/1*q-P5aQ7A6VlsfroP3ckg8A.jpeg)
 ### scale matters
 
 ### GTP vs BERT
@@ -23,6 +23,6 @@
 [gpt2 and bert](https://www.kaggle.com/residentmario/notes-on-gpt-2-and-bert-models)
 [gpt3](https://medium.com/analytics-vidhya/openai-gpt-3-language-models-are-few-shot-learners-82531b3d3122)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIzNDQ0OTI0MywtODMxOTQ4NzcyLDc5Nz
-EzNjE0NCwtMTYwMzA2Nzk1MV19
+eyJoaXN0b3J5IjpbMTk1NjQ3ODM5NywtMjM0NDQ5MjQzLC04Mz
+E5NDg3NzIsNzk3MTM2MTQ0LC0xNjAzMDY3OTUxXX0=
 -->
