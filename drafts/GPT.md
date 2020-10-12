@@ -21,7 +21,8 @@
 
 ## reference
 [gpt2 and bert](https://www.kaggle.com/residentmario/notes-on-gpt-2-and-bert-models)
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTgzMTk0ODc3Miw3OTcxMzYxNDQsLTE2MD
-MwNjc5NTFdfQ==
+eyJoaXN0b3J5IjpbMTM5NDczMjg3NCwtODMxOTQ4NzcyLDc5Nz
+EzNjE0NCwtMTYwMzA2Nzk1MV19
 -->
