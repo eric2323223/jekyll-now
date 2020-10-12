@@ -6,7 +6,8 @@
 
 ## GPT设计思想
 
-##　
+## 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTI3NDgzNDY5NSwtMTYwMzA2Nzk1MV19
+eyJoaXN0b3J5IjpbLTEzODY3NTAyNDcsLTE2MDMwNjc5NTFdfQ
+==
 -->
