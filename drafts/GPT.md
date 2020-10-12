@@ -6,8 +6,11 @@
 
 ## GPT设计思想
 
-## 
+### few(se shot learning
+
+### GPT2/ GPT3
+
+### 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzODY3NTAyNDcsLTE2MDMwNjc5NTFdfQ
-==
+eyJoaXN0b3J5IjpbLTEyOTg1NDEyMiwtMTYwMzA2Nzk1MV19
 -->
