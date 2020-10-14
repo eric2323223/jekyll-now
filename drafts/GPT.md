@@ -30,8 +30,10 @@ Secondly, while  [BERT](https://analyticsindiamag.com/step-by-step-guide-to-impl
 ## reference
 [gpt2 and bert](https://www.kaggle.com/residentmario/notes-on-gpt-2-and-bert-models)
 [gpt3](https://medium.com/analytics-vidhya/openai-gpt-3-language-models-are-few-shot-learners-82531b3d3122)
+[PET](https://analyticsindiamag.com/can-this-tiny-language-model-defeat-gigantic-gpt3/)
+[GPT2 and BERT a comparison](https://judithvanstegeren.com/blog/2020/GPT2-and-BERT-a-comparison.html)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNDcwMTAzNjI5LC02NjI4NTQ1MzksMTk1Nj
-Q3ODM5NywtMjM0NDQ5MjQzLC04MzE5NDg3NzIsNzk3MTM2MTQ0
-LC0xNjAzMDY3OTUxXX0=
+eyJoaXN0b3J5IjpbMjA2MDI5NTE5NSw0NzAxMDM2MjksLTY2Mj
+g1NDUzOSwxOTU2NDc4Mzk3LC0yMzQ0NDkyNDMsLTgzMTk0ODc3
+Miw3OTcxMzYxNDQsLTE2MDMwNjc5NTFdfQ==
 -->
