@@ -62,11 +62,13 @@ Secondly, while  [BERT](https://analyticsindiamag.com/step-by-step-guide-to-impl
 [GPT2 and BERT a comparison](https://judithvanstegeren.com/blog/2020/GPT2-and-BERT-a-comparison.html)
 [Transfer learning in NLP](https://docs.google.com/presentation/d/1fIhGikFPnb7G5kr58OvYC3GN4io7MznnM0aAgadvJfc/edit#slide=id.g5888218f39_1_161)
 [OpenAI GPT3 LM](https://www.slideshare.net/numenta/openais-gpt-3-language-model-guest-steve-omohundro)
+[GPT3 a brief summary](https://bmk.sh/2020/05/29/GPT-3-A-Brief-Summary/)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTU0OTAyMjgzOCwtMjAxNzI0NjIsLTQ1Mj
-Y3MjE4MiwtMTc0MjIwNzk4NSwxMjAwMzI5MjI5LC05OTY3NzQ2
-NTYsOTg0MzQ0NDk3LC0xNTYwNTgxODU4LDExNDIyNzEwMTcsLT
-MyNzU2NTMwNSwtMTEyNDk5ODIyMiwyMDYwMjk1MTk1LDQ3MDEw
-MzYyOSwtNjYyODU0NTM5LDE5NTY0NzgzOTcsLTIzNDQ0OTI0My
-wtODMxOTQ4NzcyLDc5NzEzNjE0NCwtMTYwMzA2Nzk1MV19
+eyJoaXN0b3J5IjpbLTE3OTA5MzUyNjIsLTIwMTcyNDYyLC00NT
+I2NzIxODIsLTE3NDIyMDc5ODUsMTIwMDMyOTIyOSwtOTk2Nzc0
+NjU2LDk4NDM0NDQ5NywtMTU2MDU4MTg1OCwxMTQyMjcxMDE3LC
+0zMjc1NjUzMDUsLTExMjQ5OTgyMjIsMjA2MDI5NTE5NSw0NzAx
+MDM2MjksLTY2Mjg1NDUzOSwxOTU2NDc4Mzk3LC0yMzQ0NDkyND
+MsLTgzMTk0ODc3Miw3OTcxMzYxNDQsLTE2MDMwNjc5NTFdfQ==
+
 -->
