@@ -79,7 +79,8 @@ Secondly, while  [BERT](https://analyticsindiamag.com/step-by-step-guide-to-impl
 
 ## reference
 [gpt2 and bert](https://www.kaggle.com/residentmario/notes-on-gpt-2-and-bert-models)
-[gpt3](https://medium.com/analytics-vidhya/openai-gpt-3-language-models-are-few-shot-learners-82531b3d3122)
+[gpt3 visualized](http://jalammar.github.io/how-gpt3-works-visualizations-animations/)
+[openai gpt3: lanaguage models are few-shot learners](https://medium.com/analytics-vidhya/openai-gpt-3-language-models-are-few-shot-learners-82531b3d3122)
 [PET](https://analyticsindiamag.com/can-this-tiny-language-model-defeat-gigantic-gpt3/)
 [GPT2 and BERT a comparison](https://judithvanstegeren.com/blog/2020/GPT2-and-BERT-a-comparison.html)
 [Transfer learning in NLP](https://docs.google.com/presentation/d/1fIhGikFPnb7G5kr58OvYC3GN4io7MznnM0aAgadvJfc/edit#slide=id.g5888218f39_1_161)
@@ -89,9 +90,9 @@ Secondly, while  [BERT](https://analyticsindiamag.com/step-by-step-guide-to-impl
 [autoCoder](https://wangcongcong123.github.io/AutoCoder/)
 [GPT-3 primer](https://towardsdatascience.com/gpt-3-primer-67bc2d821a00)
 [Scaling Laws for Neural Language models](https://arxiv.org/pdf/2001.08361.pdf)
-[enter link description here](https://medium.com/analytics-vidhya/openai-gpt-3-language-models-are-few-shot-learners-82531b3d3122)
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTU1Njk3MzMxMCw3MjI0MTA3OTMsLTgwMT
+eyJoaXN0b3J5IjpbMTkwOTU3OTI1MCw3MjI0MTA3OTMsLTgwMT
 kxNDMyMiwyMDE1Mjc1NjM2LC0xMjk0Mzg4Njc0LDE1NjMzMDMw
 NDksMTU3ODgzNjQ5OSwtMTA3NTMxMDExMyw2MTY2NjAzNjYsMj
 AzMTUwMzI0OSwtMTg3MzMyNjk1NCwtMTkyMTk5NDM2NSwtNzMy
