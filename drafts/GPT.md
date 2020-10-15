@@ -61,11 +61,12 @@ Secondly, while  [BERT](https://analyticsindiamag.com/step-by-step-guide-to-impl
 [PET](https://analyticsindiamag.com/can-this-tiny-language-model-defeat-gigantic-gpt3/)
 [GPT2 and BERT a comparison](https://judithvanstegeren.com/blog/2020/GPT2-and-BERT-a-comparison.html)
 [Transfer learning in NLP](https://docs.google.com/presentation/d/1fIhGikFPnb7G5kr58OvYC3GN4io7MznnM0aAgadvJfc/edit#slide=id.g5888218f39_1_161)
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQ1MjY3MjE4MiwtMTc0MjIwNzk4NSwxMj
-AwMzI5MjI5LC05OTY3NzQ2NTYsOTg0MzQ0NDk3LC0xNTYwNTgx
-ODU4LDExNDIyNzEwMTcsLTMyNzU2NTMwNSwtMTEyNDk5ODIyMi
-wyMDYwMjk1MTk1LDQ3MDEwMzYyOSwtNjYyODU0NTM5LDE5NTY0
-NzgzOTcsLTIzNDQ0OTI0MywtODMxOTQ4NzcyLDc5NzEzNjE0NC
-wtMTYwMzA2Nzk1MV19
+eyJoaXN0b3J5IjpbODA3MzE1NzA0LC00NTI2NzIxODIsLTE3ND
+IyMDc5ODUsMTIwMDMyOTIyOSwtOTk2Nzc0NjU2LDk4NDM0NDQ5
+NywtMTU2MDU4MTg1OCwxMTQyMjcxMDE3LC0zMjc1NjUzMDUsLT
+ExMjQ5OTgyMjIsMjA2MDI5NTE5NSw0NzAxMDM2MjksLTY2Mjg1
+NDUzOSwxOTU2NDc4Mzk3LC0yMzQ0NDkyNDMsLTgzMTk0ODc3Mi
+w3OTcxMzYxNDQsLTE2MDMwNjc5NTFdfQ==
 -->
