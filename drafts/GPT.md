@@ -9,6 +9,7 @@
 
 ### preprocessor 
 - tokenizer = BPE
+- 
 ## GPT设计思想
 ### Pretrain: LM is all you need
 -   Language modeling is a very difficult task, even for humans.
@@ -74,11 +75,11 @@ Secondly, while  [BERT](https://analyticsindiamag.com/step-by-step-guide-to-impl
 [OpenAI GPT3 LM](https://www.slideshare.net/numenta/openais-gpt-3-language-model-guest-steve-omohundro)
 [GPT3 a brief summary](https://bmk.sh/2020/05/29/GPT-3-A-Brief-Summary/)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE5NjI3OTk5MTYsMzA3NDg4NzY4LC05MD
-I2NzU0OTgsLTE3OTA5MzUyNjIsLTIwMTcyNDYyLC00NTI2NzIx
-ODIsLTE3NDIyMDc5ODUsMTIwMDMyOTIyOSwtOTk2Nzc0NjU2LD
-k4NDM0NDQ5NywtMTU2MDU4MTg1OCwxMTQyMjcxMDE3LC0zMjc1
-NjUzMDUsLTExMjQ5OTgyMjIsMjA2MDI5NTE5NSw0NzAxMDM2Mj
-ksLTY2Mjg1NDUzOSwxOTU2NDc4Mzk3LC0yMzQ0NDkyNDMsLTgz
-MTk0ODc3Ml19
+eyJoaXN0b3J5IjpbLTEzMzI3MjQwMTcsLTE5NjI3OTk5MTYsMz
+A3NDg4NzY4LC05MDI2NzU0OTgsLTE3OTA5MzUyNjIsLTIwMTcy
+NDYyLC00NTI2NzIxODIsLTE3NDIyMDc5ODUsMTIwMDMyOTIyOS
+wtOTk2Nzc0NjU2LDk4NDM0NDQ5NywtMTU2MDU4MTg1OCwxMTQy
+MjcxMDE3LC0zMjc1NjUzMDUsLTExMjQ5OTgyMjIsMjA2MDI5NT
+E5NSw0NzAxMDM2MjksLTY2Mjg1NDUzOSwxOTU2NDc4Mzk3LC0y
+MzQ0NDkyNDNdfQ==
 -->
