@@ -1,8 +1,8 @@
 # NLP的迁移学习-GPT篇
 
 ## 迁移学习和BERT
-- auto regressive
-- denoise 
+- auto regressive (GPT)
+- denoise autoencoder (BERT)
 
 ## GPT简介
 
@@ -35,8 +35,8 @@ Secondly, while  [BERT](https://analyticsindiamag.com/step-by-step-guide-to-impl
 [PET](https://analyticsindiamag.com/can-this-tiny-language-model-defeat-gigantic-gpt3/)
 [GPT2 and BERT a comparison](https://judithvanstegeren.com/blog/2020/GPT2-and-BERT-a-comparison.html)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTExMjQ5OTgyMjIsMjA2MDI5NTE5NSw0Nz
-AxMDM2MjksLTY2Mjg1NDUzOSwxOTU2NDc4Mzk3LC0yMzQ0NDky
-NDMsLTgzMTk0ODc3Miw3OTcxMzYxNDQsLTE2MDMwNjc5NTFdfQ
-==
+eyJoaXN0b3J5IjpbLTMyNzU2NTMwNSwtMTEyNDk5ODIyMiwyMD
+YwMjk1MTk1LDQ3MDEwMzYyOSwtNjYyODU0NTM5LDE5NTY0Nzgz
+OTcsLTIzNDQ0OTI0MywtODMxOTQ4NzcyLDc5NzEzNjE0NCwtMT
+YwMzA2Nzk1MV19
 -->
