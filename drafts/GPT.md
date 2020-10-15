@@ -89,12 +89,13 @@ Secondly, while  [BERT](https://analyticsindiamag.com/step-by-step-guide-to-impl
 [autoCoder](https://wangcongcong123.github.io/AutoCoder/)
 [GPT-3 primer](https://towardsdatascience.com/gpt-3-primer-67bc2d821a00)
 [Scaling Laws for Neural Language models](https://arxiv.org/pdf/2001.08361.pdf)
+[enter link description here](https://medium.com/analytics-vidhya/openai-gpt-3-language-models-are-few-shot-learners-82531b3d3122)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNzIyNDEwNzkzLC04MDE5MTQzMjIsMjAxNT
-I3NTYzNiwtMTI5NDM4ODY3NCwxNTYzMzAzMDQ5LDE1Nzg4MzY0
-OTksLTEwNzUzMTAxMTMsNjE2NjYwMzY2LDIwMzE1MDMyNDksLT
-E4NzMzMjY5NTQsLTE5MjE5OTQzNjUsLTczMjE1MjM5NiwtMTk2
-Mjc5OTkxNiwzMDc0ODg3NjgsLTkwMjY3NTQ5OCwtMTc5MDkzNT
-I2MiwtMjAxNzI0NjIsLTQ1MjY3MjE4MiwtMTc0MjIwNzk4NSwx
-MjAwMzI5MjI5XX0=
+eyJoaXN0b3J5IjpbMTU1Njk3MzMxMCw3MjI0MTA3OTMsLTgwMT
+kxNDMyMiwyMDE1Mjc1NjM2LC0xMjk0Mzg4Njc0LDE1NjMzMDMw
+NDksMTU3ODgzNjQ5OSwtMTA3NTMxMDExMyw2MTY2NjAzNjYsMj
+AzMTUwMzI0OSwtMTg3MzMyNjk1NCwtMTkyMTk5NDM2NSwtNzMy
+MTUyMzk2LC0xOTYyNzk5OTE2LDMwNzQ4ODc2OCwtOTAyNjc1ND
+k4LC0xNzkwOTM1MjYyLC0yMDE3MjQ2MiwtNDUyNjcyMTgyLC0x
+NzQyMjA3OTg1XX0=
 -->
