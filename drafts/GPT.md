@@ -87,12 +87,13 @@ Secondly, while  [BERT](https://analyticsindiamag.com/step-by-step-guide-to-impl
 [GPT3 a brief summary](https://bmk.sh/2020/05/29/GPT-3-A-Brief-Summary/)
 [generalized language model](https://www.topbots.com/generalized-language-models-ulmfit-openai-gpt/)
 [autoCoder](https://wangcongcong123.github.io/AutoCoder/)
+[GPT-3 primer](https://towardsdatascience.com/gpt-3-primer-67bc2d821a00)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjAxNTI3NTYzNiwtMTI5NDM4ODY3NCwxNT
-YzMzAzMDQ5LDE1Nzg4MzY0OTksLTEwNzUzMTAxMTMsNjE2NjYw
-MzY2LDIwMzE1MDMyNDksLTE4NzMzMjY5NTQsLTE5MjE5OTQzNj
-UsLTczMjE1MjM5NiwtMTk2Mjc5OTkxNiwzMDc0ODg3NjgsLTkw
-MjY3NTQ5OCwtMTc5MDkzNTI2MiwtMjAxNzI0NjIsLTQ1MjY3Mj
-E4MiwtMTc0MjIwNzk4NSwxMjAwMzI5MjI5LC05OTY3NzQ2NTYs
-OTg0MzQ0NDk3XX0=
+eyJoaXN0b3J5IjpbLTgwMTkxNDMyMiwyMDE1Mjc1NjM2LC0xMj
+k0Mzg4Njc0LDE1NjMzMDMwNDksMTU3ODgzNjQ5OSwtMTA3NTMx
+MDExMyw2MTY2NjAzNjYsMjAzMTUwMzI0OSwtMTg3MzMyNjk1NC
+wtMTkyMTk5NDM2NSwtNzMyMTUyMzk2LC0xOTYyNzk5OTE2LDMw
+NzQ4ODc2OCwtOTAyNjc1NDk4LC0xNzkwOTM1MjYyLC0yMDE3Mj
+Q2MiwtNDUyNjcyMTgyLC0xNzQyMjA3OTg1LDEyMDAzMjkyMjks
+LTk5Njc3NDY1Nl19
 -->
