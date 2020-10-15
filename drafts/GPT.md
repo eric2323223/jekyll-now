@@ -5,7 +5,11 @@
 - denoise autoencoder (BERT)
 
 ## GPT简介
-### preprocessor - tokenizer
+### facts
+- 2048 word vector
+- 96 transformer
+### preprocessor 
+- tokenizer = BPE
 ## GPT设计思想
 ### LM is good enough
 -   Language modeling is a very difficult task, even for humans.
@@ -47,9 +51,9 @@ Secondly, while  [BERT](https://analyticsindiamag.com/step-by-step-guide-to-impl
 [GPT2 and BERT a comparison](https://judithvanstegeren.com/blog/2020/GPT2-and-BERT-a-comparison.html)
 [Transfer learning in NLP](https://docs.google.com/presentation/d/1fIhGikFPnb7G5kr58OvYC3GN4io7MznnM0aAgadvJfc/edit#slide=id.g5888218f39_1_161)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTk5Njc3NDY1Niw5ODQzNDQ0OTcsLTE1Nj
-A1ODE4NTgsMTE0MjI3MTAxNywtMzI3NTY1MzA1LC0xMTI0OTk4
-MjIyLDIwNjAyOTUxOTUsNDcwMTAzNjI5LC02NjI4NTQ1MzksMT
-k1NjQ3ODM5NywtMjM0NDQ5MjQzLC04MzE5NDg3NzIsNzk3MTM2
-MTQ0LC0xNjAzMDY3OTUxXX0=
+eyJoaXN0b3J5IjpbODM4MjQ2MTUzLC05OTY3NzQ2NTYsOTg0Mz
+Q0NDk3LC0xNTYwNTgxODU4LDExNDIyNzEwMTcsLTMyNzU2NTMw
+NSwtMTEyNDk5ODIyMiwyMDYwMjk1MTk1LDQ3MDEwMzYyOSwtNj
+YyODU0NTM5LDE5NTY0NzgzOTcsLTIzNDQ0OTI0MywtODMxOTQ4
+NzcyLDc5NzEzNjE0NCwtMTYwMzA2Nzk1MV19
 -->
