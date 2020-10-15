@@ -26,7 +26,7 @@
 - few shot learning
 ![enter image description here](https://miro.medium.com/max/448/1*2dX-PZSNdmj0KOa-NmjrEA.jpeg)
 
-## GPT 发展
+## GPT设计思想
 ### LM is all you need
 -   Language modeling is a very difficult task, even for humans.
 -   Language models are expected to compress any possible context into a vector that generalizes over possible completions.
@@ -82,11 +82,11 @@ Secondly, while  [BERT](https://analyticsindiamag.com/step-by-step-guide-to-impl
 [OpenAI GPT3 LM](https://www.slideshare.net/numenta/openais-gpt-3-language-model-guest-steve-omohundro)
 [GPT3 a brief summary](https://bmk.sh/2020/05/29/GPT-3-A-Brief-Summary/)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjE2NjYwMzY2LDIwMzE1MDMyNDksLTE4Nz
-MzMjY5NTQsLTE5MjE5OTQzNjUsLTczMjE1MjM5NiwtMTk2Mjc5
-OTkxNiwzMDc0ODg3NjgsLTkwMjY3NTQ5OCwtMTc5MDkzNTI2Mi
-wtMjAxNzI0NjIsLTQ1MjY3MjE4MiwtMTc0MjIwNzk4NSwxMjAw
-MzI5MjI5LC05OTY3NzQ2NTYsOTg0MzQ0NDk3LC0xNTYwNTgxOD
-U4LDExNDIyNzEwMTcsLTMyNzU2NTMwNSwtMTEyNDk5ODIyMiwy
-MDYwMjk1MTk1XX0=
+eyJoaXN0b3J5IjpbLTEwNzUzMTAxMTMsNjE2NjYwMzY2LDIwMz
+E1MDMyNDksLTE4NzMzMjY5NTQsLTE5MjE5OTQzNjUsLTczMjE1
+MjM5NiwtMTk2Mjc5OTkxNiwzMDc0ODg3NjgsLTkwMjY3NTQ5OC
+wtMTc5MDkzNTI2MiwtMjAxNzI0NjIsLTQ1MjY3MjE4MiwtMTc0
+MjIwNzk4NSwxMjAwMzI5MjI5LC05OTY3NzQ2NTYsOTg0MzQ0ND
+k3LC0xNTYwNTgxODU4LDExNDIyNzEwMTcsLTMyNzU2NTMwNSwt
+MTEyNDk5ODIyMl19
 -->
