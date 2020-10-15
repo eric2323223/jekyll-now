@@ -42,16 +42,16 @@ GPT-3 demonstrates that a language model trained on enough data can solve NLP ta
 Both the models —  [GPT-3](https://analyticsindiamag.com/how-openais-gpt-3-can-be-alarming-for-the-society/)  and  [BERT](https://analyticsindiamag.com/bert-classifier-with-tensorflow-2-0/)  have been relatively new for the industry, but their state-of-the-art performance has made them the winners among other models in the natural language processing field. However, being trained on 175 billion parameters,  [GPT-3](https://analyticsindiamag.com/5-jobs-that-gpt-3-might-challenge/)  becomes 470 times bigger in size than BERT-Large.
 
 Secondly, while  [BERT](https://analyticsindiamag.com/step-by-step-guide-to-implement-multi-class-classification-with-bert-tensorflow/)  requires an elaborated fine-tuning process where users have to gather data of examples to train the model for specific downstream tasks, GPT-3’s text-in and text-out API allows the users to reprogram it using instructions and access it. Case in point — for sentiment analysis or question answering tasks, to use BERT, the users have to train the model on a separate layer on sentence encodings. However,  [GPT-3](https://analyticsindiamag.com/gpt-3-has-weaknesses-and-makes-silly-mistakes-sam-altman-openai/)  uses a few-shot learning process on the input token to predict the output result.
-
-### GPT3
-### facts
+### GPT-2: Language Models are Unsupervised Multitask Learners
+### GPT-3: Language Models are Few-Shot Learners
+#### facts
 - 2048 word vector
 - 96 transformer layers
 - 96 self-attention heads, each 128 dimensional
 - 12288 units in bottleneck layer, 49152 in feed forward layer
 - batch size of 3.2M samples
 
-### pretraining
+#### pretraining
 - trained on 499 Billion tokens
 - Would require 355 years and $4600000 train on cheapest GPU cloud
 
@@ -70,11 +70,11 @@ Secondly, while  [BERT](https://analyticsindiamag.com/step-by-step-guide-to-impl
 [OpenAI GPT3 LM](https://www.slideshare.net/numenta/openais-gpt-3-language-model-guest-steve-omohundro)
 [GPT3 a brief summary](https://bmk.sh/2020/05/29/GPT-3-A-Brief-Summary/)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTkwMjY3NTQ5OCwtMTc5MDkzNTI2MiwtMj
-AxNzI0NjIsLTQ1MjY3MjE4MiwtMTc0MjIwNzk4NSwxMjAwMzI5
-MjI5LC05OTY3NzQ2NTYsOTg0MzQ0NDk3LC0xNTYwNTgxODU4LD
-ExNDIyNzEwMTcsLTMyNzU2NTMwNSwtMTEyNDk5ODIyMiwyMDYw
-Mjk1MTk1LDQ3MDEwMzYyOSwtNjYyODU0NTM5LDE5NTY0NzgzOT
-csLTIzNDQ0OTI0MywtODMxOTQ4NzcyLDc5NzEzNjE0NCwtMTYw
-MzA2Nzk1MV19
+eyJoaXN0b3J5IjpbODU5MjY5MDE4LC05MDI2NzU0OTgsLTE3OT
+A5MzUyNjIsLTIwMTcyNDYyLC00NTI2NzIxODIsLTE3NDIyMDc5
+ODUsMTIwMDMyOTIyOSwtOTk2Nzc0NjU2LDk4NDM0NDQ5NywtMT
+U2MDU4MTg1OCwxMTQyMjcxMDE3LC0zMjc1NjUzMDUsLTExMjQ5
+OTgyMjIsMjA2MDI5NTE5NSw0NzAxMDM2MjksLTY2Mjg1NDUzOS
+wxOTU2NDc4Mzk3LC0yMzQ0NDkyNDMsLTgzMTk0ODc3Miw3OTcx
+MzYxNDRdfQ==
 -->
