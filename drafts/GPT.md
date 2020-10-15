@@ -10,6 +10,7 @@
 ### preprocessor 
 - tokenizer = BPE
 ### GPT model
+![enter image description here](https://cdn-images-1.medium.com/max/1600/1*Ji79bZ3KqpMAjZ9Txv4q8Q.png)
 #### embedding
 #### 
 ## GPT设计思想
@@ -77,11 +78,11 @@ Secondly, while  [BERT](https://analyticsindiamag.com/step-by-step-guide-to-impl
 [OpenAI GPT3 LM](https://www.slideshare.net/numenta/openais-gpt-3-language-model-guest-steve-omohundro)
 [GPT3 a brief summary](https://bmk.sh/2020/05/29/GPT-3-A-Brief-Summary/)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTczMjE1MjM5NiwtMTk2Mjc5OTkxNiwzMD
-c0ODg3NjgsLTkwMjY3NTQ5OCwtMTc5MDkzNTI2MiwtMjAxNzI0
-NjIsLTQ1MjY3MjE4MiwtMTc0MjIwNzk4NSwxMjAwMzI5MjI5LC
-05OTY3NzQ2NTYsOTg0MzQ0NDk3LC0xNTYwNTgxODU4LDExNDIy
-NzEwMTcsLTMyNzU2NTMwNSwtMTEyNDk5ODIyMiwyMDYwMjk1MT
-k1LDQ3MDEwMzYyOSwtNjYyODU0NTM5LDE5NTY0NzgzOTcsLTIz
-NDQ0OTI0M119
+eyJoaXN0b3J5IjpbLTE5MjE5OTQzNjUsLTczMjE1MjM5NiwtMT
+k2Mjc5OTkxNiwzMDc0ODg3NjgsLTkwMjY3NTQ5OCwtMTc5MDkz
+NTI2MiwtMjAxNzI0NjIsLTQ1MjY3MjE4MiwtMTc0MjIwNzk4NS
+wxMjAwMzI5MjI5LC05OTY3NzQ2NTYsOTg0MzQ0NDk3LC0xNTYw
+NTgxODU4LDExNDIyNzEwMTcsLTMyNzU2NTMwNSwtMTEyNDk5OD
+IyMiwyMDYwMjk1MTk1LDQ3MDEwMzYyOSwtNjYyODU0NTM5LDE5
+NTY0NzgzOTddfQ==
 -->
