@@ -40,9 +40,6 @@
 ![enter image description here](https://bmk.sh/images/gpt3/perf-small.png)
 
 
-
-
-### scale matters
 GPT3 already have most of the knowlege you can think of, the key is how to let GPT3 understand the task.
 GPT3/GPT2 are not strictly in transfer learning scope, because they don't need finetune.
 
@@ -85,11 +82,11 @@ Secondly, while  [BERT](https://analyticsindiamag.com/step-by-step-guide-to-impl
 [OpenAI GPT3 LM](https://www.slideshare.net/numenta/openais-gpt-3-language-model-guest-steve-omohundro)
 [GPT3 a brief summary](https://bmk.sh/2020/05/29/GPT-3-A-Brief-Summary/)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjAzMTUwMzI0OSwtMTg3MzMyNjk1NCwtMT
-kyMTk5NDM2NSwtNzMyMTUyMzk2LC0xOTYyNzk5OTE2LDMwNzQ4
-ODc2OCwtOTAyNjc1NDk4LC0xNzkwOTM1MjYyLC0yMDE3MjQ2Mi
-wtNDUyNjcyMTgyLC0xNzQyMjA3OTg1LDEyMDAzMjkyMjksLTk5
-Njc3NDY1Niw5ODQzNDQ0OTcsLTE1NjA1ODE4NTgsMTE0MjI3MT
-AxNywtMzI3NTY1MzA1LC0xMTI0OTk4MjIyLDIwNjAyOTUxOTUs
-NDcwMTAzNjI5XX0=
+eyJoaXN0b3J5IjpbNjE2NjYwMzY2LDIwMzE1MDMyNDksLTE4Nz
+MzMjY5NTQsLTE5MjE5OTQzNjUsLTczMjE1MjM5NiwtMTk2Mjc5
+OTkxNiwzMDc0ODg3NjgsLTkwMjY3NTQ5OCwtMTc5MDkzNTI2Mi
+wtMjAxNzI0NjIsLTQ1MjY3MjE4MiwtMTc0MjIwNzk4NSwxMjAw
+MzI5MjI5LC05OTY3NzQ2NTYsOTg0MzQ0NDk3LC0xNTYwNTgxOD
+U4LDExNDIyNzEwMTcsLTMyNzU2NTMwNSwtMTEyNDk5ODIyMiwy
+MDYwMjk1MTk1XX0=
 -->
