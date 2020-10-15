@@ -16,7 +16,7 @@
 #### transformer
 - encoder: masked self-attention
 - decoder: 
-## GPT设计思想
+
 ### Pretrain: LM is all you need
 -   Language modeling is a very difficult task, even for humans.
 -   Language models are expected to compress any possible context into a vector that generalizes over possible completions.
@@ -83,11 +83,11 @@ Secondly, while  [BERT](https://analyticsindiamag.com/step-by-step-guide-to-impl
 [OpenAI GPT3 LM](https://www.slideshare.net/numenta/openais-gpt-3-language-model-guest-steve-omohundro)
 [GPT3 a brief summary](https://bmk.sh/2020/05/29/GPT-3-A-Brief-Summary/)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODMwNDIwMDg1LC0xODczMzI2OTU0LC0xOT
-IxOTk0MzY1LC03MzIxNTIzOTYsLTE5NjI3OTk5MTYsMzA3NDg4
-NzY4LC05MDI2NzU0OTgsLTE3OTA5MzUyNjIsLTIwMTcyNDYyLC
-00NTI2NzIxODIsLTE3NDIyMDc5ODUsMTIwMDMyOTIyOSwtOTk2
-Nzc0NjU2LDk4NDM0NDQ5NywtMTU2MDU4MTg1OCwxMTQyMjcxMD
-E3LC0zMjc1NjUzMDUsLTExMjQ5OTgyMjIsMjA2MDI5NTE5NSw0
-NzAxMDM2MjldfQ==
+eyJoaXN0b3J5IjpbLTg5Mjk5MjExMSwtMTg3MzMyNjk1NCwtMT
+kyMTk5NDM2NSwtNzMyMTUyMzk2LC0xOTYyNzk5OTE2LDMwNzQ4
+ODc2OCwtOTAyNjc1NDk4LC0xNzkwOTM1MjYyLC0yMDE3MjQ2Mi
+wtNDUyNjcyMTgyLC0xNzQyMjA3OTg1LDEyMDAzMjkyMjksLTk5
+Njc3NDY1Niw5ODQzNDQ0OTcsLTE1NjA1ODE4NTgsMTE0MjI3MT
+AxNywtMzI3NTY1MzA1LC0xMTI0OTk4MjIyLDIwNjAyOTUxOTUs
+NDcwMTAzNjI5XX0=
 -->
