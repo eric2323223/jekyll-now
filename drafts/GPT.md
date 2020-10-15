@@ -5,8 +5,9 @@
 - denoise autoencoder (BERT)
 
 ## GPT简介
-
+### preprocessor - tokenizer
 ## GPT设计思想
+
 
 ### few(zero) shot learning
 ![enter image description here](https://miro.medium.com/max/625/1*q-P5aQ7A6VlsfroP3ckg8A.jpeg)
@@ -35,8 +36,8 @@ Secondly, while  [BERT](https://analyticsindiamag.com/step-by-step-guide-to-impl
 [PET](https://analyticsindiamag.com/can-this-tiny-language-model-defeat-gigantic-gpt3/)
 [GPT2 and BERT a comparison](https://judithvanstegeren.com/blog/2020/GPT2-and-BERT-a-comparison.html)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTMyNzU2NTMwNSwtMTEyNDk5ODIyMiwyMD
-YwMjk1MTk1LDQ3MDEwMzYyOSwtNjYyODU0NTM5LDE5NTY0Nzgz
-OTcsLTIzNDQ0OTI0MywtODMxOTQ4NzcyLDc5NzEzNjE0NCwtMT
-YwMzA2Nzk1MV19
+eyJoaXN0b3J5IjpbMTE0MjI3MTAxNywtMzI3NTY1MzA1LC0xMT
+I0OTk4MjIyLDIwNjAyOTUxOTUsNDcwMTAzNjI5LC02NjI4NTQ1
+MzksMTk1NjQ3ODM5NywtMjM0NDQ5MjQzLC04MzE5NDg3NzIsNz
+k3MTM2MTQ0LC0xNjAzMDY3OTUxXX0=
 -->
