@@ -10,16 +10,18 @@
 ### preprocessor 
 - tokenizer = BPE
 ## GPT设计思想
-### LM is good enough/ LM is all you need
+### Pretrain: LM is all you need
 -   Language modeling is a very difficult task, even for humans.
 -   Language models are expected to compress any possible context into a vector that generalizes over possible completions.
 	 -   “They walked down the street to ???”
  -   To have any chance at solving this task, a model is forced to learn syntax, semantics, encode facts about the world, etc.
 -   Given enough data, a huge model, and enough compute, can do a reasonable job!
 -   Empirically works better than translation, autoencoding: “Language Modeling Teaches You More Syntax than Translation Does”
-- 
 
-### few(zero) shot learning
+### finetune
+- zero shot learning
+- one shot learning
+- few shot learning
 ![enter image description here](https://miro.medium.com/max/448/1*2dX-PZSNdmj0KOa-NmjrEA.jpeg)
 
 ### the power of scale
@@ -72,11 +74,11 @@ Secondly, while  [BERT](https://analyticsindiamag.com/step-by-step-guide-to-impl
 [OpenAI GPT3 LM](https://www.slideshare.net/numenta/openais-gpt-3-language-model-guest-steve-omohundro)
 [GPT3 a brief summary](https://bmk.sh/2020/05/29/GPT-3-A-Brief-Summary/)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTI3NzIxMjc0MSwzMDc0ODg3NjgsLTkwMj
-Y3NTQ5OCwtMTc5MDkzNTI2MiwtMjAxNzI0NjIsLTQ1MjY3MjE4
-MiwtMTc0MjIwNzk4NSwxMjAwMzI5MjI5LC05OTY3NzQ2NTYsOT
-g0MzQ0NDk3LC0xNTYwNTgxODU4LDExNDIyNzEwMTcsLTMyNzU2
-NTMwNSwtMTEyNDk5ODIyMiwyMDYwMjk1MTk1LDQ3MDEwMzYyOS
-wtNjYyODU0NTM5LDE5NTY0NzgzOTcsLTIzNDQ0OTI0MywtODMx
-OTQ4NzcyXX0=
+eyJoaXN0b3J5IjpbLTE5NjI3OTk5MTYsMzA3NDg4NzY4LC05MD
+I2NzU0OTgsLTE3OTA5MzUyNjIsLTIwMTcyNDYyLC00NTI2NzIx
+ODIsLTE3NDIyMDc5ODUsMTIwMDMyOTIyOSwtOTk2Nzc0NjU2LD
+k4NDM0NDQ5NywtMTU2MDU4MTg1OCwxMTQyMjcxMDE3LC0zMjc1
+NjUzMDUsLTExMjQ5OTgyMjIsMjA2MDI5NTE5NSw0NzAxMDM2Mj
+ksLTY2Mjg1NDUzOSwxOTU2NDc4Mzk3LC0yMzQ0NDkyNDMsLTgz
+MTk0ODc3Ml19
 -->
