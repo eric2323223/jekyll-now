@@ -7,7 +7,13 @@
 ## GPT简介
 ### preprocessor - tokenizer
 ## GPT设计思想
-##
+### LM is good enough
+-   Language modeling is a very difficult task, even for humans.
+-   Language models are expected to compress any possible context into a vector that generalizes over possible completions.
+	 -   “They walked down the street to ???”
+ -   To have any chance at solving this task, a model is forced to learn syntax, semantics, encode facts about the world, etc.
+-   Given enough data, a huge model, and enough compute, can do a reasonable job!
+-   Empirically works better than translation, autoencoding: “Language Modeling Teaches You More Syntax than Translation Does”
 
 ### few(zero) shot learning
 ![enter image description here](https://miro.medium.com/max/625/1*q-P5aQ7A6VlsfroP3ckg8A.jpeg)
@@ -39,10 +45,11 @@ Secondly, while  [BERT](https://analyticsindiamag.com/step-by-step-guide-to-impl
 [gpt3](https://medium.com/analytics-vidhya/openai-gpt-3-language-models-are-few-shot-learners-82531b3d3122)
 [PET](https://analyticsindiamag.com/can-this-tiny-language-model-defeat-gigantic-gpt3/)
 [GPT2 and BERT a comparison](https://judithvanstegeren.com/blog/2020/GPT2-and-BERT-a-comparison.html)
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzk0NzU4NjA5LDk4NDM0NDQ5NywtMTU2MD
-U4MTg1OCwxMTQyMjcxMDE3LC0zMjc1NjUzMDUsLTExMjQ5OTgy
-MjIsMjA2MDI5NTE5NSw0NzAxMDM2MjksLTY2Mjg1NDUzOSwxOT
-U2NDc4Mzk3LC0yMzQ0NDkyNDMsLTgzMTk0ODc3Miw3OTcxMzYx
-NDQsLTE2MDMwNjc5NTFdfQ==
+eyJoaXN0b3J5IjpbLTEwMjI2MzQ4Niw5ODQzNDQ0OTcsLTE1Nj
+A1ODE4NTgsMTE0MjI3MTAxNywtMzI3NTY1MzA1LC0xMTI0OTk4
+MjIyLDIwNjAyOTUxOTUsNDcwMTAzNjI5LC02NjI4NTQ1MzksMT
+k1NjQ3ODM5NywtMjM0NDQ5MjQzLC04MzE5NDg3NzIsNzk3MTM2
+MTQ0LC0xNjAzMDY3OTUxXX0=
 -->
