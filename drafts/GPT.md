@@ -14,6 +14,7 @@
 
 ![enter image description here](https://miro.medium.com/max/448/1*2dX-PZSNdmj0KOa-NmjrEA.jpeg)
 ### scale matters
+GPT3 already have most of the common knowlege you can think of, the key is how to let GPT3 kno
 
 ### GTP vs BERT
 -   GPT-2 and BERT at the two leading language models out there at time of writing in early 2020. They are the same in that they are both based on the transformer architecture, but they are fundamentally different in that BERT has just the  _encoder_  blocks from the transformer, whilst GPT-2 has just the  _decoder_  blocks from the transformer.
@@ -26,6 +27,8 @@ Both the models —  [GPT-3](https://analyticsindiamag.com/how-openais-gpt-3-can
 
 Secondly, while  [BERT](https://analyticsindiamag.com/step-by-step-guide-to-implement-multi-class-classification-with-bert-tensorflow/)  requires an elaborated fine-tuning process where users have to gather data of examples to train the model for specific downstream tasks, GPT-3’s text-in and text-out API allows the users to reprogram it using instructions and access it. Case in point — for sentiment analysis or question answering tasks, to use BERT, the users have to train the model on a separate layer on sentence encodings. However,  [GPT-3](https://analyticsindiamag.com/gpt-3-has-weaknesses-and-makes-silly-mistakes-sam-altman-openai/)  uses a few-shot learning process on the input token to predict the output result.
 
+
+
 ## look ahead
 
 
@@ -36,8 +39,8 @@ Secondly, while  [BERT](https://analyticsindiamag.com/step-by-step-guide-to-impl
 [PET](https://analyticsindiamag.com/can-this-tiny-language-model-defeat-gigantic-gpt3/)
 [GPT2 and BERT a comparison](https://judithvanstegeren.com/blog/2020/GPT2-and-BERT-a-comparison.html)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTE0MjI3MTAxNywtMzI3NTY1MzA1LC0xMT
-I0OTk4MjIyLDIwNjAyOTUxOTUsNDcwMTAzNjI5LC02NjI4NTQ1
-MzksMTk1NjQ3ODM5NywtMjM0NDQ5MjQzLC04MzE5NDg3NzIsNz
-k3MTM2MTQ0LC0xNjAzMDY3OTUxXX0=
+eyJoaXN0b3J5IjpbMTkxMjc5NTQ5MywxMTQyMjcxMDE3LC0zMj
+c1NjUzMDUsLTExMjQ5OTgyMjIsMjA2MDI5NTE5NSw0NzAxMDM2
+MjksLTY2Mjg1NDUzOSwxOTU2NDc4Mzk3LC0yMzQ0NDkyNDMsLT
+gzMTk0ODc3Miw3OTcxMzYxNDQsLTE2MDMwNjc5NTFdfQ==
 -->
