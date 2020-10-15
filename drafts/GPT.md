@@ -19,9 +19,15 @@
 -   Empirically works better than translation, autoencoding: “Language Modeling Teaches You More Syntax than Translation Does”
 
 ### few(zero) shot learning
+![enter image description here](https://miro.medium.com/max/448/1*2dX-PZSNdmj0KOa-NmjrEA.jpeg)
+
+### the power of scale
 ![enter image description here](https://miro.medium.com/max/625/1*q-P5aQ7A6VlsfroP3ckg8A.jpeg)
 ![enter image description here](https://bmk.sh/images/gpt3/perf-small.png)
-![enter image description here](https://miro.medium.com/max/448/1*2dX-PZSNdmj0KOa-NmjrEA.jpeg)
+
+
+
+
 ### scale matters
 GPT3 already have most of the knowlege you can think of, the key is how to let GPT3 understand the task.
 GPT3/GPT2 are not strictly in transfer learning scope, because they don't need finetune.
@@ -64,11 +70,11 @@ Secondly, while  [BERT](https://analyticsindiamag.com/step-by-step-guide-to-impl
 [OpenAI GPT3 LM](https://www.slideshare.net/numenta/openais-gpt-3-language-model-guest-steve-omohundro)
 [GPT3 a brief summary](https://bmk.sh/2020/05/29/GPT-3-A-Brief-Summary/)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE3OTA5MzUyNjIsLTIwMTcyNDYyLC00NT
-I2NzIxODIsLTE3NDIyMDc5ODUsMTIwMDMyOTIyOSwtOTk2Nzc0
-NjU2LDk4NDM0NDQ5NywtMTU2MDU4MTg1OCwxMTQyMjcxMDE3LC
-0zMjc1NjUzMDUsLTExMjQ5OTgyMjIsMjA2MDI5NTE5NSw0NzAx
-MDM2MjksLTY2Mjg1NDUzOSwxOTU2NDc4Mzk3LC0yMzQ0NDkyND
-MsLTgzMTk0ODc3Miw3OTcxMzYxNDQsLTE2MDMwNjc5NTFdfQ==
-
+eyJoaXN0b3J5IjpbLTkwMjY3NTQ5OCwtMTc5MDkzNTI2MiwtMj
+AxNzI0NjIsLTQ1MjY3MjE4MiwtMTc0MjIwNzk4NSwxMjAwMzI5
+MjI5LC05OTY3NzQ2NTYsOTg0MzQ0NDk3LC0xNTYwNTgxODU4LD
+ExNDIyNzEwMTcsLTMyNzU2NTMwNSwtMTEyNDk5ODIyMiwyMDYw
+Mjk1MTk1LDQ3MDEwMzYyOSwtNjYyODU0NTM5LDE5NTY0NzgzOT
+csLTIzNDQ0OTI0MywtODMxOTQ4NzcyLDc5NzEzNjE0NCwtMTYw
+MzA2Nzk1MV19
 -->
