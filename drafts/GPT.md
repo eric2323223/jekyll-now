@@ -15,7 +15,8 @@
 ### pretraining
 - trained on 499 Billion tokens
 - Would require 355 years and $4600000 train on cheapest GPU cloud
-- 
+
+![enter image description here](https://miro.medium.com/max/4344/1*l8h-W_Y3atnWUVYyQL06jQ.png)
 ### preprocessor 
 - tokenizer = BPE
 ## GPT设计思想
@@ -59,9 +60,10 @@ Secondly, while  [BERT](https://analyticsindiamag.com/step-by-step-guide-to-impl
 [GPT2 and BERT a comparison](https://judithvanstegeren.com/blog/2020/GPT2-and-BERT-a-comparison.html)
 [Transfer learning in NLP](https://docs.google.com/presentation/d/1fIhGikFPnb7G5kr58OvYC3GN4io7MznnM0aAgadvJfc/edit#slide=id.g5888218f39_1_161)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTIwMDMyOTIyOSwtOTk2Nzc0NjU2LDk4ND
-M0NDQ5NywtMTU2MDU4MTg1OCwxMTQyMjcxMDE3LC0zMjc1NjUz
-MDUsLTExMjQ5OTgyMjIsMjA2MDI5NTE5NSw0NzAxMDM2MjksLT
-Y2Mjg1NDUzOSwxOTU2NDc4Mzk3LC0yMzQ0NDkyNDMsLTgzMTk0
-ODc3Miw3OTcxMzYxNDQsLTE2MDMwNjc5NTFdfQ==
+eyJoaXN0b3J5IjpbLTE3NDIyMDc5ODUsMTIwMDMyOTIyOSwtOT
+k2Nzc0NjU2LDk4NDM0NDQ5NywtMTU2MDU4MTg1OCwxMTQyMjcx
+MDE3LC0zMjc1NjUzMDUsLTExMjQ5OTgyMjIsMjA2MDI5NTE5NS
+w0NzAxMDM2MjksLTY2Mjg1NDUzOSwxOTU2NDc4Mzk3LC0yMzQ0
+NDkyNDMsLTgzMTk0ODc3Miw3OTcxMzYxNDQsLTE2MDMwNjc5NT
+FdfQ==
 -->
