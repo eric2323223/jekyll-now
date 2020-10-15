@@ -21,6 +21,7 @@
 
 
 ### finetune
+![enter image description here](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQrn1os2aaYUNoCBt_IYJV6ie2kkUNxIt2XcA&usqp=CAU)
 - zero shot learning
 - one shot learning
 - few shot learning
@@ -82,11 +83,11 @@ Secondly, while  [BERT](https://analyticsindiamag.com/step-by-step-guide-to-impl
 [OpenAI GPT3 LM](https://www.slideshare.net/numenta/openais-gpt-3-language-model-guest-steve-omohundro)
 [GPT3 a brief summary](https://bmk.sh/2020/05/29/GPT-3-A-Brief-Summary/)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEwNzUzMTAxMTMsNjE2NjYwMzY2LDIwMz
-E1MDMyNDksLTE4NzMzMjY5NTQsLTE5MjE5OTQzNjUsLTczMjE1
-MjM5NiwtMTk2Mjc5OTkxNiwzMDc0ODg3NjgsLTkwMjY3NTQ5OC
-wtMTc5MDkzNTI2MiwtMjAxNzI0NjIsLTQ1MjY3MjE4MiwtMTc0
-MjIwNzk4NSwxMjAwMzI5MjI5LC05OTY3NzQ2NTYsOTg0MzQ0ND
-k3LC0xNTYwNTgxODU4LDExNDIyNzEwMTcsLTMyNzU2NTMwNSwt
-MTEyNDk5ODIyMl19
+eyJoaXN0b3J5IjpbLTE3OTQyMzg4NTIsLTEwNzUzMTAxMTMsNj
+E2NjYwMzY2LDIwMzE1MDMyNDksLTE4NzMzMjY5NTQsLTE5MjE5
+OTQzNjUsLTczMjE1MjM5NiwtMTk2Mjc5OTkxNiwzMDc0ODg3Nj
+gsLTkwMjY3NTQ5OCwtMTc5MDkzNTI2MiwtMjAxNzI0NjIsLTQ1
+MjY3MjE4MiwtMTc0MjIwNzk4NSwxMjAwMzI5MjI5LC05OTY3Nz
+Q2NTYsOTg0MzQ0NDk3LC0xNTYwNTgxODU4LDExNDIyNzEwMTcs
+LTMyNzU2NTMwNV19
 -->
