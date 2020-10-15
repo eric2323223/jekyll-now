@@ -17,6 +17,7 @@
  -   To have any chance at solving this task, a model is forced to learn syntax, semantics, encode facts about the world, etc.
 -   Given enough data, a huge model, and enough compute, can do a reasonable job!
 -   Empirically works better than translation, autoencoding: “Language Modeling Teaches You More Syntax than Translation Does”
+- 
 
 ### few(zero) shot learning
 ![enter image description here](https://miro.medium.com/max/448/1*2dX-PZSNdmj0KOa-NmjrEA.jpeg)
@@ -71,11 +72,11 @@ Secondly, while  [BERT](https://analyticsindiamag.com/step-by-step-guide-to-impl
 [OpenAI GPT3 LM](https://www.slideshare.net/numenta/openais-gpt-3-language-model-guest-steve-omohundro)
 [GPT3 a brief summary](https://bmk.sh/2020/05/29/GPT-3-A-Brief-Summary/)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzA3NDg4NzY4LC05MDI2NzU0OTgsLTE3OT
-A5MzUyNjIsLTIwMTcyNDYyLC00NTI2NzIxODIsLTE3NDIyMDc5
-ODUsMTIwMDMyOTIyOSwtOTk2Nzc0NjU2LDk4NDM0NDQ5NywtMT
-U2MDU4MTg1OCwxMTQyMjcxMDE3LC0zMjc1NjUzMDUsLTExMjQ5
-OTgyMjIsMjA2MDI5NTE5NSw0NzAxMDM2MjksLTY2Mjg1NDUzOS
-wxOTU2NDc4Mzk3LC0yMzQ0NDkyNDMsLTgzMTk0ODc3Miw3OTcx
-MzYxNDRdfQ==
+eyJoaXN0b3J5IjpbLTI3NzIxMjc0MSwzMDc0ODg3NjgsLTkwMj
+Y3NTQ5OCwtMTc5MDkzNTI2MiwtMjAxNzI0NjIsLTQ1MjY3MjE4
+MiwtMTc0MjIwNzk4NSwxMjAwMzI5MjI5LC05OTY3NzQ2NTYsOT
+g0MzQ0NDk3LC0xNTYwNTgxODU4LDExNDIyNzEwMTcsLTMyNzU2
+NTMwNSwtMTEyNDk5ODIyMiwyMDYwMjk1MTk1LDQ3MDEwMzYyOS
+wtNjYyODU0NTM5LDE5NTY0NzgzOTcsLTIzNDQ0OTI0MywtODMx
+OTQ4NzcyXX0=
 -->
