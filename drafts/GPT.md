@@ -14,7 +14,7 @@
 
 ![enter image description here](https://miro.medium.com/max/448/1*2dX-PZSNdmj0KOa-NmjrEA.jpeg)
 ### scale matters
-GPT3 already have most of the common knowlege you can think of, the key is how to let GPT3 kno
+GPT3 already have most of the knowlege you can think of, the key is how to let GPT3 understand the task.
 
 ### GTP vs BERT
 -   GPT-2 and BERT at the two leading language models out there at time of writing in early 2020. They are the same in that they are both based on the transformer architecture, but they are fundamentally different in that BERT has just the  _encoder_  blocks from the transformer, whilst GPT-2 has just the  _decoder_  blocks from the transformer.
@@ -39,8 +39,8 @@ Secondly, while  [BERT](https://analyticsindiamag.com/step-by-step-guide-to-impl
 [PET](https://analyticsindiamag.com/can-this-tiny-language-model-defeat-gigantic-gpt3/)
 [GPT2 and BERT a comparison](https://judithvanstegeren.com/blog/2020/GPT2-and-BERT-a-comparison.html)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTkxMjc5NTQ5MywxMTQyMjcxMDE3LC0zMj
-c1NjUzMDUsLTExMjQ5OTgyMjIsMjA2MDI5NTE5NSw0NzAxMDM2
-MjksLTY2Mjg1NDUzOSwxOTU2NDc4Mzk3LC0yMzQ0NDkyNDMsLT
-gzMTk0ODc3Miw3OTcxMzYxNDQsLTE2MDMwNjc5NTFdfQ==
+eyJoaXN0b3J5IjpbLTE1NjA1ODE4NTgsMTE0MjI3MTAxNywtMz
+I3NTY1MzA1LC0xMTI0OTk4MjIyLDIwNjAyOTUxOTUsNDcwMTAz
+NjI5LC02NjI4NTQ1MzksMTk1NjQ3ODM5NywtMjM0NDQ5MjQzLC
+04MzE5NDg3NzIsNzk3MTM2MTQ0LC0xNjAzMDY3OTUxXX0=
 -->
