@@ -36,6 +36,7 @@
 -   Given enough data, a huge model, and enough compute, can do a reasonable job!
 -   Empirically works better than translation, autoencoding: “Language Modeling Teaches You More Syntax than Translation Does”
 ### LM works with all types of finetune tasks
+The most substantial upgrade that OpenAI GPT proposed is to get rid of the task-specific model and use the pre-trained language model directly!
 ### the power of scale
 ![enter image description here](https://miro.medium.com/max/625/1*q-P5aQ7A6VlsfroP3ckg8A.jpeg)
 ![enter image description here](https://bmk.sh/images/gpt3/perf-small.png)
@@ -82,9 +83,9 @@ Secondly, while  [BERT](https://analyticsindiamag.com/step-by-step-guide-to-impl
 [Transfer learning in NLP](https://docs.google.com/presentation/d/1fIhGikFPnb7G5kr58OvYC3GN4io7MznnM0aAgadvJfc/edit#slide=id.g5888218f39_1_161)
 [OpenAI GPT3 LM](https://www.slideshare.net/numenta/openais-gpt-3-language-model-guest-steve-omohundro)
 [GPT3 a brief summary](https://bmk.sh/2020/05/29/GPT-3-A-Brief-Summary/)
-[ge'ne](https://www.topbots.com/generalized-language-models-ulmfit-openai-gpt/)
+[generalized language model](https://www.topbots.com/generalized-language-models-ulmfit-openai-gpt/)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjA4NzI0MTgzMiwtMTA3NTMxMDExMyw2MT
+eyJoaXN0b3J5IjpbMTg4MjAwNzQ3MiwtMTA3NTMxMDExMyw2MT
 Y2NjAzNjYsMjAzMTUwMzI0OSwtMTg3MzMyNjk1NCwtMTkyMTk5
 NDM2NSwtNzMyMTUyMzk2LC0xOTYyNzk5OTE2LDMwNzQ4ODc2OC
 wtOTAyNjc1NDk4LC0xNzkwOTM1MjYyLC0yMDE3MjQ2MiwtNDUy
