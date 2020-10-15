@@ -12,7 +12,8 @@
 ### GPT model
 ![enter image description here](https://cdn-images-1.medium.com/max/1600/1*Ji79bZ3KqpMAjZ9Txv4q8Q.png)
 #### embedding
-#### 
+#### transformer encoder
+#### transformer
 ## GPT设计思想
 ### Pretrain: LM is all you need
 -   Language modeling is a very difficult task, even for humans.
@@ -78,11 +79,11 @@ Secondly, while  [BERT](https://analyticsindiamag.com/step-by-step-guide-to-impl
 [OpenAI GPT3 LM](https://www.slideshare.net/numenta/openais-gpt-3-language-model-guest-steve-omohundro)
 [GPT3 a brief summary](https://bmk.sh/2020/05/29/GPT-3-A-Brief-Summary/)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE5MjE5OTQzNjUsLTczMjE1MjM5NiwtMT
-k2Mjc5OTkxNiwzMDc0ODg3NjgsLTkwMjY3NTQ5OCwtMTc5MDkz
-NTI2MiwtMjAxNzI0NjIsLTQ1MjY3MjE4MiwtMTc0MjIwNzk4NS
-wxMjAwMzI5MjI5LC05OTY3NzQ2NTYsOTg0MzQ0NDk3LC0xNTYw
-NTgxODU4LDExNDIyNzEwMTcsLTMyNzU2NTMwNSwtMTEyNDk5OD
-IyMiwyMDYwMjk1MTk1LDQ3MDEwMzYyOSwtNjYyODU0NTM5LDE5
-NTY0NzgzOTddfQ==
+eyJoaXN0b3J5IjpbLTI1MDE2Njg2MSwtMTkyMTk5NDM2NSwtNz
+MyMTUyMzk2LC0xOTYyNzk5OTE2LDMwNzQ4ODc2OCwtOTAyNjc1
+NDk4LC0xNzkwOTM1MjYyLC0yMDE3MjQ2MiwtNDUyNjcyMTgyLC
+0xNzQyMjA3OTg1LDEyMDAzMjkyMjksLTk5Njc3NDY1Niw5ODQz
+NDQ0OTcsLTE1NjA1ODE4NTgsMTE0MjI3MTAxNywtMzI3NTY1Mz
+A1LC0xMTI0OTk4MjIyLDIwNjAyOTUxOTUsNDcwMTAzNjI5LC02
+NjI4NTQ1MzldfQ==
 -->
