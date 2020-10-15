@@ -5,22 +5,12 @@
 - denoise autoencoder (BERT)
 
 ## GPT简介
-### facts
-- 2048 word vector
-- 96 transformer layers
-- 96 self-attention heads, each 128 dimensional
-- 12288 units in bottleneck layer, 49152 in feed forward layer
-- batch size of 3.2M samples
 
-### pretraining
-- trained on 499 Billion tokens
-- Would require 355 years and $4600000 train on cheapest GPU cloud
 
-![enter image description here](https://miro.medium.com/max/4344/1*l8h-W_Y3atnWUVYyQL06jQ.png)
 ### preprocessor 
 - tokenizer = BPE
 ## GPT设计思想
-### LM is good enough
+### LM is good enough/ LM is all you need
 -   Language modeling is a very difficult task, even for humans.
 -   Language models are expected to compress any possible context into a vector that generalizes over possible completions.
 	 -   “They walked down the street to ???”
@@ -47,7 +37,19 @@ Both the models —  [GPT-3](https://analyticsindiamag.com/how-openais-gpt-3-can
 
 Secondly, while  [BERT](https://analyticsindiamag.com/step-by-step-guide-to-implement-multi-class-classification-with-bert-tensorflow/)  requires an elaborated fine-tuning process where users have to gather data of examples to train the model for specific downstream tasks, GPT-3’s text-in and text-out API allows the users to reprogram it using instructions and access it. Case in point — for sentiment analysis or question answering tasks, to use BERT, the users have to train the model on a separate layer on sentence encodings. However,  [GPT-3](https://analyticsindiamag.com/gpt-3-has-weaknesses-and-makes-silly-mistakes-sam-altman-openai/)  uses a few-shot learning process on the input token to predict the output result.
 
+### GPT3
+### facts
+- 2048 word vector
+- 96 transformer layers
+- 96 self-attention heads, each 128 dimensional
+- 12288 units in bottleneck layer, 49152 in feed forward layer
+- batch size of 3.2M samples
 
+### pretraining
+- trained on 499 Billion tokens
+- Would require 355 years and $4600000 train on cheapest GPU cloud
+
+![enter image description here](https://miro.medium.com/max/4344/1*l8h-W_Y3atnWUVYyQL06jQ.png)
 
 ## look ahead
 
@@ -60,10 +62,10 @@ Secondly, while  [BERT](https://analyticsindiamag.com/step-by-step-guide-to-impl
 [GPT2 and BERT a comparison](https://judithvanstegeren.com/blog/2020/GPT2-and-BERT-a-comparison.html)
 [Transfer learning in NLP](https://docs.google.com/presentation/d/1fIhGikFPnb7G5kr58OvYC3GN4io7MznnM0aAgadvJfc/edit#slide=id.g5888218f39_1_161)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE3NDIyMDc5ODUsMTIwMDMyOTIyOSwtOT
-k2Nzc0NjU2LDk4NDM0NDQ5NywtMTU2MDU4MTg1OCwxMTQyMjcx
-MDE3LC0zMjc1NjUzMDUsLTExMjQ5OTgyMjIsMjA2MDI5NTE5NS
-w0NzAxMDM2MjksLTY2Mjg1NDUzOSwxOTU2NDc4Mzk3LC0yMzQ0
-NDkyNDMsLTgzMTk0ODc3Miw3OTcxMzYxNDQsLTE2MDMwNjc5NT
-FdfQ==
+eyJoaXN0b3J5IjpbLTQ1MjY3MjE4MiwtMTc0MjIwNzk4NSwxMj
+AwMzI5MjI5LC05OTY3NzQ2NTYsOTg0MzQ0NDk3LC0xNTYwNTgx
+ODU4LDExNDIyNzEwMTcsLTMyNzU2NTMwNSwtMTEyNDk5ODIyMi
+wyMDYwMjk1MTk1LDQ3MDEwMzYyOSwtNjYyODU0NTM5LDE5NTY0
+NzgzOTcsLTIzNDQ0OTI0MywtODMxOTQ4NzcyLDc5NzEzNjE0NC
+wtMTYwMzA2Nzk1MV19
 -->
