@@ -79,6 +79,7 @@ Secondly, while  [BERT](https://analyticsindiamag.com/step-by-step-guide-to-impl
 
 ## reference
 [gpt2 and bert](https://www.kaggle.com/residentmario/notes-on-gpt-2-and-bert-models)
+[illustrated gpt2](http://jalammar.github.io/illustrated-gpt2/)
 [gpt3 visualized](http://jalammar.github.io/how-gpt3-works-visualizations-animations/)
 [openai gpt3: lanaguage models are few-shot learners](https://medium.com/analytics-vidhya/openai-gpt-3-language-models-are-few-shot-learners-82531b3d3122)
 [PET](https://analyticsindiamag.com/can-this-tiny-language-model-defeat-gigantic-gpt3/)
@@ -92,11 +93,11 @@ Secondly, while  [BERT](https://analyticsindiamag.com/step-by-step-guide-to-impl
 [Scaling Laws for Neural Language models](https://arxiv.org/pdf/2001.08361.pdf)
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTkwOTU3OTI1MCw3MjI0MTA3OTMsLTgwMT
-kxNDMyMiwyMDE1Mjc1NjM2LC0xMjk0Mzg4Njc0LDE1NjMzMDMw
-NDksMTU3ODgzNjQ5OSwtMTA3NTMxMDExMyw2MTY2NjAzNjYsMj
-AzMTUwMzI0OSwtMTg3MzMyNjk1NCwtMTkyMTk5NDM2NSwtNzMy
-MTUyMzk2LC0xOTYyNzk5OTE2LDMwNzQ4ODc2OCwtOTAyNjc1ND
-k4LC0xNzkwOTM1MjYyLC0yMDE3MjQ2MiwtNDUyNjcyMTgyLC0x
-NzQyMjA3OTg1XX0=
+eyJoaXN0b3J5IjpbLTE4OTA0MDg2NDYsNzIyNDEwNzkzLC04MD
+E5MTQzMjIsMjAxNTI3NTYzNiwtMTI5NDM4ODY3NCwxNTYzMzAz
+MDQ5LDE1Nzg4MzY0OTksLTEwNzUzMTAxMTMsNjE2NjYwMzY2LD
+IwMzE1MDMyNDksLTE4NzMzMjY5NTQsLTE5MjE5OTQzNjUsLTcz
+MjE1MjM5NiwtMTk2Mjc5OTkxNiwzMDc0ODg3NjgsLTkwMjY3NT
+Q5OCwtMTc5MDkzNTI2MiwtMjAxNzI0NjIsLTQ1MjY3MjE4Miwt
+MTc0MjIwNzk4NV19
 -->
