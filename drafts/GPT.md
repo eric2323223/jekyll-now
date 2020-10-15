@@ -7,7 +7,11 @@
 ## GPT简介
 ### facts
 - 2048 word vector
-- 96 transformer
+- 96 transformer layers
+- 96 self-attention heads, each 128 dimensional
+- 12288 units in bottleneck layer, 49152 in feed forward layer
+- batch size of 3.2M samples
+
 ### preprocessor 
 - tokenizer = BPE
 ## GPT设计思想
@@ -51,9 +55,9 @@ Secondly, while  [BERT](https://analyticsindiamag.com/step-by-step-guide-to-impl
 [GPT2 and BERT a comparison](https://judithvanstegeren.com/blog/2020/GPT2-and-BERT-a-comparison.html)
 [Transfer learning in NLP](https://docs.google.com/presentation/d/1fIhGikFPnb7G5kr58OvYC3GN4io7MznnM0aAgadvJfc/edit#slide=id.g5888218f39_1_161)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODM4MjQ2MTUzLC05OTY3NzQ2NTYsOTg0Mz
-Q0NDk3LC0xNTYwNTgxODU4LDExNDIyNzEwMTcsLTMyNzU2NTMw
-NSwtMTEyNDk5ODIyMiwyMDYwMjk1MTk1LDQ3MDEwMzYyOSwtNj
-YyODU0NTM5LDE5NTY0NzgzOTcsLTIzNDQ0OTI0MywtODMxOTQ4
-NzcyLDc5NzEzNjE0NCwtMTYwMzA2Nzk1MV19
+eyJoaXN0b3J5IjpbLTExMTk3OTQwNDYsLTk5Njc3NDY1Niw5OD
+QzNDQ0OTcsLTE1NjA1ODE4NTgsMTE0MjI3MTAxNywtMzI3NTY1
+MzA1LC0xMTI0OTk4MjIyLDIwNjAyOTUxOTUsNDcwMTAzNjI5LC
+02NjI4NTQ1MzksMTk1NjQ3ODM5NywtMjM0NDQ5MjQzLC04MzE5
+NDg3NzIsNzk3MTM2MTQ0LC0xNjAzMDY3OTUxXX0=
 -->
