@@ -12,6 +12,8 @@
 ### GPT model
 ![enter image description here](https://cdn-images-1.medium.com/max/1600/1*Ji79bZ3KqpMAjZ9Txv4q8Q.png)
 #### embedding
+- token embedding 
+- position e
 #### transformer
 - encoder: masked self-attention
 - decoder: 
@@ -80,11 +82,11 @@ Secondly, while  [BERT](https://analyticsindiamag.com/step-by-step-guide-to-impl
 [OpenAI GPT3 LM](https://www.slideshare.net/numenta/openais-gpt-3-language-model-guest-steve-omohundro)
 [GPT3 a brief summary](https://bmk.sh/2020/05/29/GPT-3-A-Brief-Summary/)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTQ4NTEyMTY3NiwtMTkyMTk5NDM2NSwtNz
-MyMTUyMzk2LC0xOTYyNzk5OTE2LDMwNzQ4ODc2OCwtOTAyNjc1
-NDk4LC0xNzkwOTM1MjYyLC0yMDE3MjQ2MiwtNDUyNjcyMTgyLC
-0xNzQyMjA3OTg1LDEyMDAzMjkyMjksLTk5Njc3NDY1Niw5ODQz
-NDQ0OTcsLTE1NjA1ODE4NTgsMTE0MjI3MTAxNywtMzI3NTY1Mz
-A1LC0xMTI0OTk4MjIyLDIwNjAyOTUxOTUsNDcwMTAzNjI5LC02
-NjI4NTQ1MzldfQ==
+eyJoaXN0b3J5IjpbOTE4MjEyNzg4LC0xOTIxOTk0MzY1LC03Mz
+IxNTIzOTYsLTE5NjI3OTk5MTYsMzA3NDg4NzY4LC05MDI2NzU0
+OTgsLTE3OTA5MzUyNjIsLTIwMTcyNDYyLC00NTI2NzIxODIsLT
+E3NDIyMDc5ODUsMTIwMDMyOTIyOSwtOTk2Nzc0NjU2LDk4NDM0
+NDQ5NywtMTU2MDU4MTg1OCwxMTQyMjcxMDE3LC0zMjc1NjUzMD
+UsLTExMjQ5OTgyMjIsMjA2MDI5NTE5NSw0NzAxMDM2MjksLTY2
+Mjg1NDUzOV19
 -->
