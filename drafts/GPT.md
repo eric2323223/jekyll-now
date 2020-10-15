@@ -8,15 +8,15 @@
 
 
 ### preprocessor 
-- tokenizer = BPE
+**Byte Pair Encoding** ([**BPE**](https://arxiv.org/abs/1508.07909)) is used to encode the input sequences. BPE was originally proposed as a data compression algorithm in 1990s and then was adopted to solve the open-vocabulary issue in machine translation, as we can easily run into rare and unknown words when translating into a new language. Motivated by the intuition that rare and unknown words can often be decomposed into multiple subwords, BPE finds the best word segmentation by iteratively and greedily merging frequent pairs of characters.
 ### GPT model
 ![enter image description here](https://cdn-images-1.medium.com/max/1600/1*Ji79bZ3KqpMAjZ9Txv4q8Q.png)
 #### embedding
 - token embedding + position embedding
 #### transformer
 - encoder: masked self-attention
-- decoder: l
-
+- decoder: language model
+![enter image description here](https://qjjnh3a9hpo1nukrg1fwoh71-wpengine.netdna-ssl.com/wp-content/uploads/2019/04/OpenAI-GPT-transformer-decoder_web.jpg)
 ### Pretrain: 
 
 
@@ -82,12 +82,13 @@ Secondly, while  [BERT](https://analyticsindiamag.com/step-by-step-guide-to-impl
 [Transfer learning in NLP](https://docs.google.com/presentation/d/1fIhGikFPnb7G5kr58OvYC3GN4io7MznnM0aAgadvJfc/edit#slide=id.g5888218f39_1_161)
 [OpenAI GPT3 LM](https://www.slideshare.net/numenta/openais-gpt-3-language-model-guest-steve-omohundro)
 [GPT3 a brief summary](https://bmk.sh/2020/05/29/GPT-3-A-Brief-Summary/)
+[ge'ne](https://www.topbots.com/generalized-language-models-ulmfit-openai-gpt/)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODk1MzAyMzc0LC0xMDc1MzEwMTEzLDYxNj
-Y2MDM2NiwyMDMxNTAzMjQ5LC0xODczMzI2OTU0LC0xOTIxOTk0
-MzY1LC03MzIxNTIzOTYsLTE5NjI3OTk5MTYsMzA3NDg4NzY4LC
-05MDI2NzU0OTgsLTE3OTA5MzUyNjIsLTIwMTcyNDYyLC00NTI2
-NzIxODIsLTE3NDIyMDc5ODUsMTIwMDMyOTIyOSwtOTk2Nzc0Nj
-U2LDk4NDM0NDQ5NywtMTU2MDU4MTg1OCwxMTQyMjcxMDE3LC0z
-Mjc1NjUzMDVdfQ==
+eyJoaXN0b3J5IjpbMjA4NzI0MTgzMiwtMTA3NTMxMDExMyw2MT
+Y2NjAzNjYsMjAzMTUwMzI0OSwtMTg3MzMyNjk1NCwtMTkyMTk5
+NDM2NSwtNzMyMTUyMzk2LC0xOTYyNzk5OTE2LDMwNzQ4ODc2OC
+wtOTAyNjc1NDk4LC0xNzkwOTM1MjYyLC0yMDE3MjQ2MiwtNDUy
+NjcyMTgyLC0xNzQyMjA3OTg1LDEyMDAzMjkyMjksLTk5Njc3ND
+Y1Niw5ODQzNDQ0OTcsLTE1NjA1ODE4NTgsMTE0MjI3MTAxNywt
+MzI3NTY1MzA1XX0=
 -->
