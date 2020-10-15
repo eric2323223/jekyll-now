@@ -7,7 +7,7 @@
 ## GPT简介
 ### preprocessor - tokenizer
 ## GPT设计思想
-
+##
 
 ### few(zero) shot learning
 ![enter image description here](https://miro.medium.com/max/625/1*q-P5aQ7A6VlsfroP3ckg8A.jpeg)
@@ -40,9 +40,9 @@ Secondly, while  [BERT](https://analyticsindiamag.com/step-by-step-guide-to-impl
 [PET](https://analyticsindiamag.com/can-this-tiny-language-model-defeat-gigantic-gpt3/)
 [GPT2 and BERT a comparison](https://judithvanstegeren.com/blog/2020/GPT2-and-BERT-a-comparison.html)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbOTg0MzQ0NDk3LC0xNTYwNTgxODU4LDExND
-IyNzEwMTcsLTMyNzU2NTMwNSwtMTEyNDk5ODIyMiwyMDYwMjk1
-MTk1LDQ3MDEwMzYyOSwtNjYyODU0NTM5LDE5NTY0NzgzOTcsLT
-IzNDQ0OTI0MywtODMxOTQ4NzcyLDc5NzEzNjE0NCwtMTYwMzA2
-Nzk1MV19
+eyJoaXN0b3J5IjpbMzk0NzU4NjA5LDk4NDM0NDQ5NywtMTU2MD
+U4MTg1OCwxMTQyMjcxMDE3LC0zMjc1NjUzMDUsLTExMjQ5OTgy
+MjIsMjA2MDI5NTE5NSw0NzAxMDM2MjksLTY2Mjg1NDUzOSwxOT
+U2NDc4Mzk3LC0yMzQ0NDkyNDMsLTgzMTk0ODc3Miw3OTcxMzYx
+NDQsLTE2MDMwNjc5NTFdfQ==
 -->
