@@ -22,7 +22,7 @@
 
 ### finetune
 **no model justification!!!**
-![enter image description here](https://qjjnh3a9hpo1nukrg1fwoh71-wpengine.netdna-ssl.com/wp-content/uploads/2019/04/cover_GPT_web.jpg)
+![enter image description here](https://qjjnh3a9hpo1nukrg1fwoh71-wpengine.netdna-ssl.com/wp-content/uploads/2019/04/GPT-downstream-tasks_web.jpg)
 - zero shot learning
 - one shot learning
 - few shot learning
@@ -86,11 +86,11 @@ Secondly, while  [BERT](https://analyticsindiamag.com/step-by-step-guide-to-impl
 [GPT3 a brief summary](https://bmk.sh/2020/05/29/GPT-3-A-Brief-Summary/)
 [generalized language model](https://www.topbots.com/generalized-language-models-ulmfit-openai-gpt/)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTU3ODgzNjQ5OSwtMTA3NTMxMDExMyw2MT
-Y2NjAzNjYsMjAzMTUwMzI0OSwtMTg3MzMyNjk1NCwtMTkyMTk5
-NDM2NSwtNzMyMTUyMzk2LC0xOTYyNzk5OTE2LDMwNzQ4ODc2OC
-wtOTAyNjc1NDk4LC0xNzkwOTM1MjYyLC0yMDE3MjQ2MiwtNDUy
-NjcyMTgyLC0xNzQyMjA3OTg1LDEyMDAzMjkyMjksLTk5Njc3ND
-Y1Niw5ODQzNDQ0OTcsLTE1NjA1ODE4NTgsMTE0MjI3MTAxNywt
-MzI3NTY1MzA1XX0=
+eyJoaXN0b3J5IjpbMTU2MzMwMzA0OSwxNTc4ODM2NDk5LC0xMD
+c1MzEwMTEzLDYxNjY2MDM2NiwyMDMxNTAzMjQ5LC0xODczMzI2
+OTU0LC0xOTIxOTk0MzY1LC03MzIxNTIzOTYsLTE5NjI3OTk5MT
+YsMzA3NDg4NzY4LC05MDI2NzU0OTgsLTE3OTA5MzUyNjIsLTIw
+MTcyNDYyLC00NTI2NzIxODIsLTE3NDIyMDc5ODUsMTIwMDMyOT
+IyOSwtOTk2Nzc0NjU2LDk4NDM0NDQ5NywtMTU2MDU4MTg1OCwx
+MTQyMjcxMDE3XX0=
 -->
