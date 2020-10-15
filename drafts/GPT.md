@@ -61,9 +61,9 @@ Secondly, while  [BERT](https://analyticsindiamag.com/step-by-step-guide-to-impl
 [PET](https://analyticsindiamag.com/can-this-tiny-language-model-defeat-gigantic-gpt3/)
 [GPT2 and BERT a comparison](https://judithvanstegeren.com/blog/2020/GPT2-and-BERT-a-comparison.html)
 [Transfer learning in NLP](https://docs.google.com/presentation/d/1fIhGikFPnb7G5kr58OvYC3GN4io7MznnM0aAgadvJfc/edit#slide=id.g5888218f39_1_161)
-
+[OpenAI GPT3 LM](https://www.slideshare.net/numenta/openais-gpt-3-language-model-guest-steve-omohundro)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODA3MzE1NzA0LC00NTI2NzIxODIsLTE3ND
+eyJoaXN0b3J5IjpbLTIwMTcyNDYyLC00NTI2NzIxODIsLTE3ND
 IyMDc5ODUsMTIwMDMyOTIyOSwtOTk2Nzc0NjU2LDk4NDM0NDQ5
 NywtMTU2MDU4MTg1OCwxMTQyMjcxMDE3LC0zMjc1NjUzMDUsLT
 ExMjQ5OTgyMjIsMjA2MDI5NTE5NSw0NzAxMDM2MjksLTY2Mjg1
