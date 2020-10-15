@@ -15,13 +15,13 @@
 - token embedding + position embedding
 #### transformer
 - encoder: masked self-attention
-- decoder: 
+- decoder: l
 
 ### Pretrain: 
 
 
 ### finetune
-![enter image description here](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQrn1os2aaYUNoCBt_IYJV6ie2kkUNxIt2XcA&usqp=CAU)
+![enter image description here](https://qjjnh3a9hpo1nukrg1fwoh71-wpengine.netdna-ssl.com/wp-content/uploads/2019/04/cover_GPT_web.jpg)
 - zero shot learning
 - one shot learning
 - few shot learning
@@ -83,11 +83,11 @@ Secondly, while  [BERT](https://analyticsindiamag.com/step-by-step-guide-to-impl
 [OpenAI GPT3 LM](https://www.slideshare.net/numenta/openais-gpt-3-language-model-guest-steve-omohundro)
 [GPT3 a brief summary](https://bmk.sh/2020/05/29/GPT-3-A-Brief-Summary/)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE3OTQyMzg4NTIsLTEwNzUzMTAxMTMsNj
-E2NjYwMzY2LDIwMzE1MDMyNDksLTE4NzMzMjY5NTQsLTE5MjE5
-OTQzNjUsLTczMjE1MjM5NiwtMTk2Mjc5OTkxNiwzMDc0ODg3Nj
-gsLTkwMjY3NTQ5OCwtMTc5MDkzNTI2MiwtMjAxNzI0NjIsLTQ1
-MjY3MjE4MiwtMTc0MjIwNzk4NSwxMjAwMzI5MjI5LC05OTY3Nz
-Q2NTYsOTg0MzQ0NDk3LC0xNTYwNTgxODU4LDExNDIyNzEwMTcs
-LTMyNzU2NTMwNV19
+eyJoaXN0b3J5IjpbODk1MzAyMzc0LC0xMDc1MzEwMTEzLDYxNj
+Y2MDM2NiwyMDMxNTAzMjQ5LC0xODczMzI2OTU0LC0xOTIxOTk0
+MzY1LC03MzIxNTIzOTYsLTE5NjI3OTk5MTYsMzA3NDg4NzY4LC
+05MDI2NzU0OTgsLTE3OTA5MzUyNjIsLTIwMTcyNDYyLC00NTI2
+NzIxODIsLTE3NDIyMDc5ODUsMTIwMDMyOTIyOSwtOTk2Nzc0Nj
+U2LDk4NDM0NDQ5NywtMTU2MDU4MTg1OCwxMTQyMjcxMDE3LC0z
+Mjc1NjUzMDVdfQ==
 -->
