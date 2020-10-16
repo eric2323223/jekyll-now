@@ -116,13 +116,14 @@ GPT-3依旧延续自己的单向语言模型训练方式，只不过这次把模
 [autoCoder](https://wangcongcong123.github.io/AutoCoder/)
 [GPT-3 primer](https://towardsdatascience.com/gpt-3-primer-67bc2d821a00)
 [Scaling Laws for Neural Language models](https://arxiv.org/pdf/2001.08361.pdf)
+[openai gpt2原理解读](https://zhuanlan.zhihu.com/p/57251615)
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTc4ODU4ODY5MiwzMjA1NTY1MjcsNzIyND
-EwNzkzLC04MDE5MTQzMjIsMjAxNTI3NTYzNiwtMTI5NDM4ODY3
-NCwxNTYzMzAzMDQ5LDE1Nzg4MzY0OTksLTEwNzUzMTAxMTMsNj
-E2NjYwMzY2LDIwMzE1MDMyNDksLTE4NzMzMjY5NTQsLTE5MjE5
-OTQzNjUsLTczMjE1MjM5NiwtMTk2Mjc5OTkxNiwzMDc0ODg3Nj
-gsLTkwMjY3NTQ5OCwtMTc5MDkzNTI2MiwtMjAxNzI0NjIsLTQ1
-MjY3MjE4Ml19
+eyJoaXN0b3J5IjpbLTU2NTEwNjEzNiwtNzg4NTg4NjkyLDMyMD
+U1NjUyNyw3MjI0MTA3OTMsLTgwMTkxNDMyMiwyMDE1Mjc1NjM2
+LC0xMjk0Mzg4Njc0LDE1NjMzMDMwNDksMTU3ODgzNjQ5OSwtMT
+A3NTMxMDExMyw2MTY2NjAzNjYsMjAzMTUwMzI0OSwtMTg3MzMy
+Njk1NCwtMTkyMTk5NDM2NSwtNzMyMTUyMzk2LC0xOTYyNzk5OT
+E2LDMwNzQ4ODc2OCwtOTAyNjc1NDk4LC0xNzkwOTM1MjYyLC0y
+MDE3MjQ2Ml19
 -->
