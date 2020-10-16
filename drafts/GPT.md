@@ -64,12 +64,7 @@ GPT2的创新点在于验证了无监督的语言建模能够学习到有监督�
 
 这个才是GPT-2文章价值所在。
 
-  
-  
-作者：wzl  
-链接：https://www.zhihu.com/question/332756878/answer/735213535  
-来源：知乎  
-著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
+   
 ### GPT-3: Language Models are Few-Shot Learners
 GPT-3依旧延续自己的单向语言模型训练方式，只不过这次把模型尺寸增大到了**1750亿**，并且使用**45TB**数据进行训练。同时，GPT-3主要聚焦于更通用的NLP模型，解决当前BERT类模型的两个缺点：
 
@@ -78,13 +73,7 @@ GPT-3依旧延续自己的单向语言模型训练方式，只不过这次把模
 
 因此GPT-3的主要目标是**用更少的领域数据、且不经过精调步骤去解决问题**。
 
-  
-  
-作者：rumor  
-链接：https://www.zhihu.com/question/398114261/answer/1253942032  
-来源：知乎  
-著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
-#### facts
+  #### facts
 - 2048 word vector
 - 96 transformer layers
 - 96 self-attention heads, each 128 dimensional
@@ -119,11 +108,11 @@ GPT-3依旧延续自己的单向语言模型训练方式，只不过这次把模
 [openai gpt2原理解读](https://zhuanlan.zhihu.com/p/57251615)
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTU2NTEwNjEzNiwtNzg4NTg4NjkyLDMyMD
-U1NjUyNyw3MjI0MTA3OTMsLTgwMTkxNDMyMiwyMDE1Mjc1NjM2
-LC0xMjk0Mzg4Njc0LDE1NjMzMDMwNDksMTU3ODgzNjQ5OSwtMT
-A3NTMxMDExMyw2MTY2NjAzNjYsMjAzMTUwMzI0OSwtMTg3MzMy
-Njk1NCwtMTkyMTk5NDM2NSwtNzMyMTUyMzk2LC0xOTYyNzk5OT
-E2LDMwNzQ4ODc2OCwtOTAyNjc1NDk4LC0xNzkwOTM1MjYyLC0y
-MDE3MjQ2Ml19
+eyJoaXN0b3J5IjpbLTE3NTkwNDQ0MjEsLTU2NTEwNjEzNiwtNz
+g4NTg4NjkyLDMyMDU1NjUyNyw3MjI0MTA3OTMsLTgwMTkxNDMy
+MiwyMDE1Mjc1NjM2LC0xMjk0Mzg4Njc0LDE1NjMzMDMwNDksMT
+U3ODgzNjQ5OSwtMTA3NTMxMDExMyw2MTY2NjAzNjYsMjAzMTUw
+MzI0OSwtMTg3MzMyNjk1NCwtMTkyMTk5NDM2NSwtNzMyMTUyMz
+k2LC0xOTYyNzk5OTE2LDMwNzQ4ODc2OCwtOTAyNjc1NDk4LC0x
+NzkwOTM1MjYyXX0=
 -->
