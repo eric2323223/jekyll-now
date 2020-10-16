@@ -71,6 +71,19 @@ GPT2的创新点在于验证了无监督的语言建模能够学习到有监督�
 来源：知乎  
 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
 ### GPT-3: Language Models are Few-Shot Learners
+GPT-3依旧延续自己的单向语言模型训练方式，只不过这次把模型尺寸增大到了**1750亿**，并且使用**45TB**数据进行训练。同时，GPT-3主要聚焦于更通用的NLP模型，解决当前BERT类模型的两个缺点：
+
+1.  **对领域内有标签数据的过分依赖**：虽然有了预训练+精调的两段式框架，但还是少不了一定量的领域标注数据，否则很难取得不错的效果，而标注数据的成本又是很高的。
+2.  **对于领域数据分布的过拟合**：在精调阶段，因为领域数据有限，模型只能拟合训练数据分布，如果数据较少的话就可能造成过拟合，致使模型的泛华能力下降，更加无法应用到其他领域。
+
+因此GPT-3的主要目标是**用更少的领域数据、且不经过精调步骤去解决问题**。
+
+  
+  
+作者：rumor  
+链接：https://www.zhihu.com/question/398114261/answer/1253942032  
+来源：知乎  
+著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
 #### facts
 - 2048 word vector
 - 96 transformer layers
@@ -105,7 +118,7 @@ GPT2的创新点在于验证了无监督的语言建模能够学习到有监督�
 [Scaling Laws for Neural Language models](https://arxiv.org/pdf/2001.08361.pdf)
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTY0NjE4NzYzMywzMjA1NTY1MjcsNzIyND
+eyJoaXN0b3J5IjpbLTc4ODU4ODY5MiwzMjA1NTY1MjcsNzIyND
 EwNzkzLC04MDE5MTQzMjIsMjAxNTI3NTYzNiwtMTI5NDM4ODY3
 NCwxNTYzMzAzMDQ5LDE1Nzg4MzY0OTksLTEwNzUzMTAxMTMsNj
 E2NjYwMzY2LDIwMzE1MDMyNDksLTE4NzMzMjY5NTQsLTE5MjE5
