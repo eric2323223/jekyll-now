@@ -59,6 +59,17 @@ Both the models —  [GPT-3](https://analyticsindiamag.com/how-openais-gpt-3-can
 Secondly, while  [BERT](https://analyticsindiamag.com/step-by-step-guide-to-implement-multi-class-classification-with-bert-tensorflow/)  requires an elaborated fine-tuning process where users have to gather data of examples to train the model for specific downstream tasks, GPT-3’s text-in and text-out API allows the users to reprogram it using instructions and access it. Case in point — for sentiment analysis or question answering tasks, to use BERT, the users have to train the model on a separate layer on sentence encodings. However,  [GPT-3](https://analyticsindiamag.com/gpt-3-has-weaknesses-and-makes-silly-mistakes-sam-altman-openai/)  uses a few-shot learning process on the input token to predict the output result.
 ### GPT-1: Improving Language Understanding by Generative Pre-Training
 ### GPT-2: Language Models are Unsupervised Multitask Learners
+GPT2的创新点在于验证了无监督的语言建模能够学习到有监督任务所需的特征。原文是
+> We demonstrate that language models begin to learn these tasks without any explicit supervision when trained on a new dataset of millions of webpages called WebText.
+
+这个才是GPT-2文章价值所在。
+
+  
+  
+作者：wzl  
+链接：https://www.zhihu.com/question/332756878/answer/735213535  
+来源：知乎  
+著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
 ### GPT-3: Language Models are Few-Shot Learners
 #### facts
 - 2048 word vector
@@ -94,11 +105,11 @@ Secondly, while  [BERT](https://analyticsindiamag.com/step-by-step-guide-to-impl
 [Scaling Laws for Neural Language models](https://arxiv.org/pdf/2001.08361.pdf)
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzIwNTU2NTI3LDcyMjQxMDc5MywtODAxOT
-E0MzIyLDIwMTUyNzU2MzYsLTEyOTQzODg2NzQsMTU2MzMwMzA0
-OSwxNTc4ODM2NDk5LC0xMDc1MzEwMTEzLDYxNjY2MDM2NiwyMD
-MxNTAzMjQ5LC0xODczMzI2OTU0LC0xOTIxOTk0MzY1LC03MzIx
-NTIzOTYsLTE5NjI3OTk5MTYsMzA3NDg4NzY4LC05MDI2NzU0OT
-gsLTE3OTA5MzUyNjIsLTIwMTcyNDYyLC00NTI2NzIxODIsLTE3
-NDIyMDc5ODVdfQ==
+eyJoaXN0b3J5IjpbMTY0NjE4NzYzMywzMjA1NTY1MjcsNzIyND
+EwNzkzLC04MDE5MTQzMjIsMjAxNTI3NTYzNiwtMTI5NDM4ODY3
+NCwxNTYzMzAzMDQ5LDE1Nzg4MzY0OTksLTEwNzUzMTAxMTMsNj
+E2NjYwMzY2LDIwMzE1MDMyNDksLTE4NzMzMjY5NTQsLTE5MjE5
+OTQzNjUsLTczMjE1MjM5NiwtMTk2Mjc5OTkxNiwzMDc0ODg3Nj
+gsLTkwMjY3NTQ5OCwtMTc5MDkzNTI2MiwtMjAxNzI0NjIsLTQ1
+MjY3MjE4Ml19
 -->
