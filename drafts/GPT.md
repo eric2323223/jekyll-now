@@ -88,7 +88,8 @@ GPT-3依旧延续自己的单向语言模型训练方式，只不过这次把模
 
 ## look ahead
 gpt-3 is a huge look-up table
-- it 
+- it cannot understand basic numaric calculation
+- 
 
 然而，**GPT-3还是存在一些局限，论文作者给出了未来有前景的方向：**
 
@@ -114,11 +115,11 @@ gpt-3 is a huge look-up table
 [openai gpt2原理解读](https://zhuanlan.zhihu.com/p/57251615)
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjgzNjk3NjQsLTE3NTkwNDQ0MjEsLTU2NT
-EwNjEzNiwtNzg4NTg4NjkyLDMyMDU1NjUyNyw3MjI0MTA3OTMs
-LTgwMTkxNDMyMiwyMDE1Mjc1NjM2LC0xMjk0Mzg4Njc0LDE1Nj
-MzMDMwNDksMTU3ODgzNjQ5OSwtMTA3NTMxMDExMyw2MTY2NjAz
-NjYsMjAzMTUwMzI0OSwtMTg3MzMyNjk1NCwtMTkyMTk5NDM2NS
-wtNzMyMTUyMzk2LC0xOTYyNzk5OTE2LDMwNzQ4ODc2OCwtOTAy
-Njc1NDk4XX0=
+eyJoaXN0b3J5IjpbLTIxMjUwNTYwMjgsLTE3NTkwNDQ0MjEsLT
+U2NTEwNjEzNiwtNzg4NTg4NjkyLDMyMDU1NjUyNyw3MjI0MTA3
+OTMsLTgwMTkxNDMyMiwyMDE1Mjc1NjM2LC0xMjk0Mzg4Njc0LD
+E1NjMzMDMwNDksMTU3ODgzNjQ5OSwtMTA3NTMxMDExMyw2MTY2
+NjAzNjYsMjAzMTUwMzI0OSwtMTg3MzMyNjk1NCwtMTkyMTk5ND
+M2NSwtNzMyMTUyMzk2LC0xOTYyNzk5OTE2LDMwNzQ4ODc2OCwt
+OTAyNjc1NDk4XX0=
 -->
