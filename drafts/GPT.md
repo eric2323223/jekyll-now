@@ -87,6 +87,9 @@ GPT-3依旧延续自己的单向语言模型训练方式，只不过这次把模
 ![enter image description here](https://miro.medium.com/max/4344/1*l8h-W_Y3atnWUVYyQL06jQ.png)
 
 ## look ahead
+gpt-3 is a huge look-up table
+- it 
+
 然而，**GPT-3还是存在一些局限，论文作者给出了未来有前景的方向：**
 
 -   建立GPT-3尺度的双向模型。
@@ -111,11 +114,11 @@ GPT-3依旧延续自己的单向语言模型训练方式，只不过这次把模
 [openai gpt2原理解读](https://zhuanlan.zhihu.com/p/57251615)
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTg5MzUyMDA1NiwtMTc1OTA0NDQyMSwtNT
-Y1MTA2MTM2LC03ODg1ODg2OTIsMzIwNTU2NTI3LDcyMjQxMDc5
-MywtODAxOTE0MzIyLDIwMTUyNzU2MzYsLTEyOTQzODg2NzQsMT
-U2MzMwMzA0OSwxNTc4ODM2NDk5LC0xMDc1MzEwMTEzLDYxNjY2
-MDM2NiwyMDMxNTAzMjQ5LC0xODczMzI2OTU0LC0xOTIxOTk0Mz
-Y1LC03MzIxNTIzOTYsLTE5NjI3OTk5MTYsMzA3NDg4NzY4LC05
-MDI2NzU0OThdfQ==
+eyJoaXN0b3J5IjpbNjgzNjk3NjQsLTE3NTkwNDQ0MjEsLTU2NT
+EwNjEzNiwtNzg4NTg4NjkyLDMyMDU1NjUyNyw3MjI0MTA3OTMs
+LTgwMTkxNDMyMiwyMDE1Mjc1NjM2LC0xMjk0Mzg4Njc0LDE1Nj
+MzMDMwNDksMTU3ODgzNjQ5OSwtMTA3NTMxMDExMyw2MTY2NjAz
+NjYsMjAzMTUwMzI0OSwtMTg3MzMyNjk1NCwtMTkyMTk5NDM2NS
+wtNzMyMTUyMzk2LC0xOTYyNzk5OTE2LDMwNzQ4ODc2OCwtOTAy
+Njc1NDk4XX0=
 -->
