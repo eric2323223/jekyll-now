@@ -19,7 +19,7 @@
 	- top K
 ![enter image description here](https://qjjnh3a9hpo1nukrg1fwoh71-wpengine.netdna-ssl.com/wp-content/uploads/2019/04/OpenAI-GPT-transformer-decoder_web.jpg)
 ### Pretrain: 
-
+loss function:
 
 ### finetune
 **no model justification!!!**
@@ -115,11 +115,11 @@ gpt-3 is a huge look-up table
 [openai gpt2原理解读](https://zhuanlan.zhihu.com/p/57251615)
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIxMjUwNTYwMjgsLTE3NTkwNDQ0MjEsLT
-U2NTEwNjEzNiwtNzg4NTg4NjkyLDMyMDU1NjUyNyw3MjI0MTA3
-OTMsLTgwMTkxNDMyMiwyMDE1Mjc1NjM2LC0xMjk0Mzg4Njc0LD
-E1NjMzMDMwNDksMTU3ODgzNjQ5OSwtMTA3NTMxMDExMyw2MTY2
-NjAzNjYsMjAzMTUwMzI0OSwtMTg3MzMyNjk1NCwtMTkyMTk5ND
-M2NSwtNzMyMTUyMzk2LC0xOTYyNzk5OTE2LDMwNzQ4ODc2OCwt
-OTAyNjc1NDk4XX0=
+eyJoaXN0b3J5IjpbNDI2NzEwMTUzLC0yMTI1MDU2MDI4LC0xNz
+U5MDQ0NDIxLC01NjUxMDYxMzYsLTc4ODU4ODY5MiwzMjA1NTY1
+MjcsNzIyNDEwNzkzLC04MDE5MTQzMjIsMjAxNTI3NTYzNiwtMT
+I5NDM4ODY3NCwxNTYzMzAzMDQ5LDE1Nzg4MzY0OTksLTEwNzUz
+MTAxMTMsNjE2NjYwMzY2LDIwMzE1MDMyNDksLTE4NzMzMjY5NT
+QsLTE5MjE5OTQzNjUsLTczMjE1MjM5NiwtMTk2Mjc5OTkxNiwz
+MDc0ODg3NjhdfQ==
 -->
