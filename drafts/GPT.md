@@ -113,10 +113,10 @@ gpt-3 is a huge look-up table
 [GPT-3 primer](https://towardsdatascience.com/gpt-3-primer-67bc2d821a00)
 [Scaling Laws for Neural Language models](https://arxiv.org/pdf/2001.08361.pdf)
 [openai gpt2原理解读](https://zhuanlan.zhihu.com/p/57251615)
-
+[GPT-3: A Hitchhiker's Guide](https://lambdalabs.com/blog/gpt-3/)
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIxNDgxNzY3Myw0MjY3MTAxNTMsLTIxMj
+eyJoaXN0b3J5IjpbLTU3MjE0NjYxNiw0MjY3MTAxNTMsLTIxMj
 UwNTYwMjgsLTE3NTkwNDQ0MjEsLTU2NTEwNjEzNiwtNzg4NTg4
 NjkyLDMyMDU1NjUyNyw3MjI0MTA3OTMsLTgwMTkxNDMyMiwyMD
 E1Mjc1NjM2LC0xMjk0Mzg4Njc0LDE1NjMzMDMwNDksMTU3ODgz
