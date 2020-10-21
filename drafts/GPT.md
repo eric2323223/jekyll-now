@@ -114,13 +114,13 @@ gpt-3 is a huge look-up table
 [Scaling Laws for Neural Language models](https://arxiv.org/pdf/2001.08361.pdf)
 [openai gpt2原理解读](https://zhuanlan.zhihu.com/p/57251615)
 [GPT-3: A Hitchhiker's Guide](https://lambdalabs.com/blog/gpt-3/)
-
+[OpenAI's GPT-3 Language Model: A Technical Overview](https://lambdalabs.com/blog/demystifying-gpt-3/)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTU3MjE0NjYxNiw0MjY3MTAxNTMsLTIxMj
-UwNTYwMjgsLTE3NTkwNDQ0MjEsLTU2NTEwNjEzNiwtNzg4NTg4
-NjkyLDMyMDU1NjUyNyw3MjI0MTA3OTMsLTgwMTkxNDMyMiwyMD
-E1Mjc1NjM2LC0xMjk0Mzg4Njc0LDE1NjMzMDMwNDksMTU3ODgz
-NjQ5OSwtMTA3NTMxMDExMyw2MTY2NjAzNjYsMjAzMTUwMzI0OS
-wtMTg3MzMyNjk1NCwtMTkyMTk5NDM2NSwtNzMyMTUyMzk2LC0x
-OTYyNzk5OTE2XX0=
+eyJoaXN0b3J5IjpbLTE1NzU0NTA5MzgsLTU3MjE0NjYxNiw0Mj
+Y3MTAxNTMsLTIxMjUwNTYwMjgsLTE3NTkwNDQ0MjEsLTU2NTEw
+NjEzNiwtNzg4NTg4NjkyLDMyMDU1NjUyNyw3MjI0MTA3OTMsLT
+gwMTkxNDMyMiwyMDE1Mjc1NjM2LC0xMjk0Mzg4Njc0LDE1NjMz
+MDMwNDksMTU3ODgzNjQ5OSwtMTA3NTMxMDExMyw2MTY2NjAzNj
+YsMjAzMTUwMzI0OSwtMTg3MzMyNjk1NCwtMTkyMTk5NDM2NSwt
+NzMyMTUyMzk2XX0=
 -->
