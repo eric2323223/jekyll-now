@@ -10,7 +10,7 @@
 ### preprocessor 
 **Byte Pair Encoding** ([**BPE**](https://arxiv.org/abs/1508.07909)) is used to encode the input sequences. BPE was originally proposed as a data compression algorithm in 1990s and then was adopted to solve the open-vocabulary issue in machine translation, as we can easily run into rare and unknown words when translating into a new language. Motivated by the intuition that rare and unknown words can often be decomposed into multiple subwords, BPE finds the best word segmentation by iteratively and greedily merging frequent pairs of characters.
 ### GPT model
-GTP预训练模型和Transformer很相似，在位置编码使用了geng'ji
+GTP预训练模型和Transformer很相似，在位置编码使用了绝对位置编码，
 ![enter image description here](https://cdn-images-1.medium.com/max/1600/1*Ji79bZ3KqpMAjZ9Txv4q8Q.png)
 #### embedding
 - token embedding
@@ -23,6 +23,7 @@ absolute position embedding `self.wpe = nn.Embedding(config.n_positions, config.
 	- top K
 ![enter image description here](https://qjjnh3a9hpo1nukrg1fwoh71-wpengine.netdna-ssl.com/wp-content/uploads/2019/04/OpenAI-GPT-transformer-decoder_web.jpg)
 ### Pretrain: 
+
 loss function:
 
 ### finetune
@@ -120,11 +121,11 @@ gpt-3 is a huge look-up table
 [GPT-3: A Hitchhiker's Guide](https://lambdalabs.com/blog/gpt-3/)
 [OpenAI's GPT-3 Language Model: A Technical Overview](https://lambdalabs.com/blog/demystifying-gpt-3/)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTk2NDkwMDUzLC0xNTc1NDUwOTM4LC01Nz
-IxNDY2MTYsNDI2NzEwMTUzLC0yMTI1MDU2MDI4LC0xNzU5MDQ0
-NDIxLC01NjUxMDYxMzYsLTc4ODU4ODY5MiwzMjA1NTY1MjcsNz
-IyNDEwNzkzLC04MDE5MTQzMjIsMjAxNTI3NTYzNiwtMTI5NDM4
-ODY3NCwxNTYzMzAzMDQ5LDE1Nzg4MzY0OTksLTEwNzUzMTAxMT
-MsNjE2NjYwMzY2LDIwMzE1MDMyNDksLTE4NzMzMjY5NTQsLTE5
-MjE5OTQzNjVdfQ==
+eyJoaXN0b3J5IjpbLTM2NTQwNzg5NiwtMTU3NTQ1MDkzOCwtNT
+cyMTQ2NjE2LDQyNjcxMDE1MywtMjEyNTA1NjAyOCwtMTc1OTA0
+NDQyMSwtNTY1MTA2MTM2LC03ODg1ODg2OTIsMzIwNTU2NTI3LD
+cyMjQxMDc5MywtODAxOTE0MzIyLDIwMTUyNzU2MzYsLTEyOTQz
+ODg2NzQsMTU2MzMwMzA0OSwxNTc4ODM2NDk5LC0xMDc1MzEwMT
+EzLDYxNjY2MDM2NiwyMDMxNTAzMjQ5LC0xODczMzI2OTU0LC0x
+OTIxOTk0MzY1XX0=
 -->
