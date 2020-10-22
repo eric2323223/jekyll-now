@@ -53,6 +53,9 @@ GPT3 already have most of the knowlege you can think of, the key is how to let G
 GPT3/GPT2 are not strictly in transfer learning scope, because they don't need finetune.
 
 ### GTP vs BERT
+
+> we noted that unsupervised learning techniques can yield surprisingly discriminative features when trained on enough data.Here, we wanted to further explore this idea: can we develop one model, train it in an unsupervised way on a large amount of data, and then fine-tune the model to achieve good performance on many different tasks? Our results indicate that this approach works surprisingly well; the same core model can be fine-tuned for very different tasks with minimal adaptation.
+
 -   GPT-2 and BERT at the two leading language models out there at time of writing in early 2020. They are the same in that they are both based on the transformer architecture, but they are fundamentally different in that BERT has just the  _encoder_  blocks from the transformer, whilst GPT-2 has just the  _decoder_  blocks from the transformer.
 
 ### GPT2/ GPT3
@@ -121,11 +124,11 @@ gpt-3 is a huge look-up table
 [GPT-3: A Hitchhiker's Guide](https://lambdalabs.com/blog/gpt-3/)
 [OpenAI's GPT-3 Language Model: A Technical Overview](https://lambdalabs.com/blog/demystifying-gpt-3/)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEwMDg3Njk0MzUsLTM2NTQwNzg5NiwtMT
-U3NTQ1MDkzOCwtNTcyMTQ2NjE2LDQyNjcxMDE1MywtMjEyNTA1
-NjAyOCwtMTc1OTA0NDQyMSwtNTY1MTA2MTM2LC03ODg1ODg2OT
-IsMzIwNTU2NTI3LDcyMjQxMDc5MywtODAxOTE0MzIyLDIwMTUy
-NzU2MzYsLTEyOTQzODg2NzQsMTU2MzMwMzA0OSwxNTc4ODM2ND
-k5LC0xMDc1MzEwMTEzLDYxNjY2MDM2NiwyMDMxNTAzMjQ5LC0x
-ODczMzI2OTU0XX0=
+eyJoaXN0b3J5IjpbODQyMzQzMjIyLC0zNjU0MDc4OTYsLTE1Nz
+U0NTA5MzgsLTU3MjE0NjYxNiw0MjY3MTAxNTMsLTIxMjUwNTYw
+MjgsLTE3NTkwNDQ0MjEsLTU2NTEwNjEzNiwtNzg4NTg4NjkyLD
+MyMDU1NjUyNyw3MjI0MTA3OTMsLTgwMTkxNDMyMiwyMDE1Mjc1
+NjM2LC0xMjk0Mzg4Njc0LDE1NjMzMDMwNDksMTU3ODgzNjQ5OS
+wtMTA3NTMxMDExMyw2MTY2NjAzNjYsMjAzMTUwMzI0OSwtMTg3
+MzMyNjk1NF19
 -->
