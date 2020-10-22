@@ -23,8 +23,8 @@ absolute position embedding `self.wpe = nn.Embedding(config.n_positions, config.
 	- top K
 ![enter image description here](https://qjjnh3a9hpo1nukrg1fwoh71-wpengine.netdna-ssl.com/wp-content/uploads/2019/04/OpenAI-GPT-transformer-decoder_web.jpg)
 ### Pretrain: 
--   GPT-2 is trained on the standard task: given a sequence of prior words, predict the next word.
-loss function:
+-   GPT is trained on the standard task: given a sequence of prior words, predict the next word.
+-  loss function:
 
 ### finetune
 **no model justification!!!**
@@ -126,11 +126,11 @@ gpt-3 is a huge look-up table
 [GPT-3: A Hitchhiker's Guide](https://lambdalabs.com/blog/gpt-3/)
 [OpenAI's GPT-3 Language Model: A Technical Overview](https://lambdalabs.com/blog/demystifying-gpt-3/)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbOTM3MDc2NDU4LC0xNjAwNTk3MzI5LDg0Mj
-M0MzIyMiwtMzY1NDA3ODk2LC0xNTc1NDUwOTM4LC01NzIxNDY2
-MTYsNDI2NzEwMTUzLC0yMTI1MDU2MDI4LC0xNzU5MDQ0NDIxLC
-01NjUxMDYxMzYsLTc4ODU4ODY5MiwzMjA1NTY1MjcsNzIyNDEw
-NzkzLC04MDE5MTQzMjIsMjAxNTI3NTYzNiwtMTI5NDM4ODY3NC
-wxNTYzMzAzMDQ5LDE1Nzg4MzY0OTksLTEwNzUzMTAxMTMsNjE2
-NjYwMzY2XX0=
+eyJoaXN0b3J5IjpbMTgyOTY2MzQ5NCwtMTYwMDU5NzMyOSw4ND
+IzNDMyMjIsLTM2NTQwNzg5NiwtMTU3NTQ1MDkzOCwtNTcyMTQ2
+NjE2LDQyNjcxMDE1MywtMjEyNTA1NjAyOCwtMTc1OTA0NDQyMS
+wtNTY1MTA2MTM2LC03ODg1ODg2OTIsMzIwNTU2NTI3LDcyMjQx
+MDc5MywtODAxOTE0MzIyLDIwMTUyNzU2MzYsLTEyOTQzODg2Nz
+QsMTU2MzMwMzA0OSwxNTc4ODM2NDk5LC0xMDc1MzEwMTEzLDYx
+NjY2MDM2Nl19
 -->
