@@ -10,10 +10,11 @@
 ### preprocessor 
 **Byte Pair Encoding** ([**BPE**](https://arxiv.org/abs/1508.07909)) is used to encode the input sequences. BPE was originally proposed as a data compression algorithm in 1990s and then was adopted to solve the open-vocabulary issue in machine translation, as we can easily run into rare and unknown words when translating into a new language. Motivated by the intuition that rare and unknown words can often be decomposed into multiple subwords, BPE finds the best word segmentation by iteratively and greedily merging frequent pairs of characters.
 ### GPT model
+GTP预训练模型和Transformer很相似，在位置编码使用了geng'ji
 ![enter image description here](https://cdn-images-1.medium.com/max/1600/1*Ji79bZ3KqpMAjZ9Txv4q8Q.png)
 #### embedding
 - token embedding
-self.wte = nn.Embedding(config.vocab_size, config.n_embd)
+`self.wte = nn.Embedding(config.vocab_size, config.n_embd)`
 - position embedding
 absolute position embedding `self.wpe = nn.Embedding(config.n_positions, config.n_embd)`
 #### transformer
@@ -119,11 +120,11 @@ gpt-3 is a huge look-up table
 [GPT-3: A Hitchhiker's Guide](https://lambdalabs.com/blog/gpt-3/)
 [OpenAI's GPT-3 Language Model: A Technical Overview](https://lambdalabs.com/blog/demystifying-gpt-3/)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEwOTg0MzQxMTksLTE1NzU0NTA5MzgsLT
-U3MjE0NjYxNiw0MjY3MTAxNTMsLTIxMjUwNTYwMjgsLTE3NTkw
-NDQ0MjEsLTU2NTEwNjEzNiwtNzg4NTg4NjkyLDMyMDU1NjUyNy
-w3MjI0MTA3OTMsLTgwMTkxNDMyMiwyMDE1Mjc1NjM2LC0xMjk0
-Mzg4Njc0LDE1NjMzMDMwNDksMTU3ODgzNjQ5OSwtMTA3NTMxMD
-ExMyw2MTY2NjAzNjYsMjAzMTUwMzI0OSwtMTg3MzMyNjk1NCwt
-MTkyMTk5NDM2NV19
+eyJoaXN0b3J5IjpbNTk2NDkwMDUzLC0xNTc1NDUwOTM4LC01Nz
+IxNDY2MTYsNDI2NzEwMTUzLC0yMTI1MDU2MDI4LC0xNzU5MDQ0
+NDIxLC01NjUxMDYxMzYsLTc4ODU4ODY5MiwzMjA1NTY1MjcsNz
+IyNDEwNzkzLC04MDE5MTQzMjIsMjAxNTI3NTYzNiwtMTI5NDM4
+ODY3NCwxNTYzMzAzMDQ5LDE1Nzg4MzY0OTksLTEwNzUzMTAxMT
+MsNjE2NjYwMzY2LDIwMzE1MDMyNDksLTE4NzMzMjY5NTQsLTE5
+MjE5OTQzNjVdfQ==
 -->
