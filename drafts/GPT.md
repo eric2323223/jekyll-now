@@ -23,7 +23,7 @@ absolute position embedding `self.wpe = nn.Embedding(config.n_positions, config.
 	- top K
 ![enter image description here](https://qjjnh3a9hpo1nukrg1fwoh71-wpengine.netdna-ssl.com/wp-content/uploads/2019/04/OpenAI-GPT-transformer-decoder_web.jpg)
 ### Pretrain: 
-t
+train to predict next word. standard LM
 loss function:
 
 ### finetune
@@ -121,11 +121,11 @@ gpt-3 is a huge look-up table
 [GPT-3: A Hitchhiker's Guide](https://lambdalabs.com/blog/gpt-3/)
 [OpenAI's GPT-3 Language Model: A Technical Overview](https://lambdalabs.com/blog/demystifying-gpt-3/)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTMwNzIzODQwMCwtMzY1NDA3ODk2LC0xNT
-c1NDUwOTM4LC01NzIxNDY2MTYsNDI2NzEwMTUzLC0yMTI1MDU2
-MDI4LC0xNzU5MDQ0NDIxLC01NjUxMDYxMzYsLTc4ODU4ODY5Mi
-wzMjA1NTY1MjcsNzIyNDEwNzkzLC04MDE5MTQzMjIsMjAxNTI3
-NTYzNiwtMTI5NDM4ODY3NCwxNTYzMzAzMDQ5LDE1Nzg4MzY0OT
-ksLTEwNzUzMTAxMTMsNjE2NjYwMzY2LDIwMzE1MDMyNDksLTE4
-NzMzMjY5NTRdfQ==
+eyJoaXN0b3J5IjpbLTEwMDg3Njk0MzUsLTM2NTQwNzg5NiwtMT
+U3NTQ1MDkzOCwtNTcyMTQ2NjE2LDQyNjcxMDE1MywtMjEyNTA1
+NjAyOCwtMTc1OTA0NDQyMSwtNTY1MTA2MTM2LC03ODg1ODg2OT
+IsMzIwNTU2NTI3LDcyMjQxMDc5MywtODAxOTE0MzIyLDIwMTUy
+NzU2MzYsLTEyOTQzODg2NzQsMTU2MzMwMzA0OSwxNTc4ODM2ND
+k5LC0xMDc1MzEwMTEzLDYxNjY2MDM2NiwyMDMxNTAzMjQ5LC0x
+ODczMzI2OTU0XX0=
 -->
