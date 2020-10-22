@@ -12,7 +12,10 @@
 ### GPT model
 ![enter image description here](https://cdn-images-1.medium.com/max/1600/1*Ji79bZ3KqpMAjZ9Txv4q8Q.png)
 #### embedding
-- token embedding position embedding
+- token embedding
+self.wte = nn.Embedding(config.vocab_size, config.n_embd)
+- position embedding
+absolute position embedding `self.wpe = nn.Embedding(config.n_positions, config.n_embd)`
 #### transformer
 - encoder: masked self-attention
 - decoder: language model
@@ -116,11 +119,11 @@ gpt-3 is a huge look-up table
 [GPT-3: A Hitchhiker's Guide](https://lambdalabs.com/blog/gpt-3/)
 [OpenAI's GPT-3 Language Model: A Technical Overview](https://lambdalabs.com/blog/demystifying-gpt-3/)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTIyMzc5NjMzNywtMTU3NTQ1MDkzOCwtNT
-cyMTQ2NjE2LDQyNjcxMDE1MywtMjEyNTA1NjAyOCwtMTc1OTA0
-NDQyMSwtNTY1MTA2MTM2LC03ODg1ODg2OTIsMzIwNTU2NTI3LD
-cyMjQxMDc5MywtODAxOTE0MzIyLDIwMTUyNzU2MzYsLTEyOTQz
-ODg2NzQsMTU2MzMwMzA0OSwxNTc4ODM2NDk5LC0xMDc1MzEwMT
-EzLDYxNjY2MDM2NiwyMDMxNTAzMjQ5LC0xODczMzI2OTU0LC0x
-OTIxOTk0MzY1XX0=
+eyJoaXN0b3J5IjpbLTEwOTg0MzQxMTksLTE1NzU0NTA5MzgsLT
+U3MjE0NjYxNiw0MjY3MTAxNTMsLTIxMjUwNTYwMjgsLTE3NTkw
+NDQ0MjEsLTU2NTEwNjEzNiwtNzg4NTg4NjkyLDMyMDU1NjUyNy
+w3MjI0MTA3OTMsLTgwMTkxNDMyMiwyMDE1Mjc1NjM2LC0xMjk0
+Mzg4Njc0LDE1NjMzMDMwNDksMTU3ODgzNjQ5OSwtMTA3NTMxMD
+ExMyw2MTY2NjAzNjYsMjAzMTUwMzI0OSwtMTg3MzMyNjk1NCwt
+MTkyMTk5NDM2NV19
 -->
