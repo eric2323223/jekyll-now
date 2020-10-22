@@ -42,6 +42,7 @@ loss function:
  -   To have any chance at solving this task, a model is forced to learn syntax, semantics, encode facts about the world, etc.
 -   Given enough data, a huge model, and enough compute, can do a reasonable job!
 -   Empirically works better than translation, autoencoding: “Language Modeling Teaches You More Syntax than Translation Does”
+
 ### LM works with all types of finetune tasks
 The most substantial upgrade that OpenAI GPT proposed is to get rid of the task-specific model and use the pre-trained language model directly!
 ### the power of scale
@@ -124,11 +125,11 @@ gpt-3 is a huge look-up table
 [GPT-3: A Hitchhiker's Guide](https://lambdalabs.com/blog/gpt-3/)
 [OpenAI's GPT-3 Language Model: A Technical Overview](https://lambdalabs.com/blog/demystifying-gpt-3/)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODQyMzQzMjIyLC0zNjU0MDc4OTYsLTE1Nz
-U0NTA5MzgsLTU3MjE0NjYxNiw0MjY3MTAxNTMsLTIxMjUwNTYw
-MjgsLTE3NTkwNDQ0MjEsLTU2NTEwNjEzNiwtNzg4NTg4NjkyLD
-MyMDU1NjUyNyw3MjI0MTA3OTMsLTgwMTkxNDMyMiwyMDE1Mjc1
-NjM2LC0xMjk0Mzg4Njc0LDE1NjMzMDMwNDksMTU3ODgzNjQ5OS
-wtMTA3NTMxMDExMyw2MTY2NjAzNjYsMjAzMTUwMzI0OSwtMTg3
-MzMyNjk1NF19
+eyJoaXN0b3J5IjpbMTM1NDIwMDk5Niw4NDIzNDMyMjIsLTM2NT
+QwNzg5NiwtMTU3NTQ1MDkzOCwtNTcyMTQ2NjE2LDQyNjcxMDE1
+MywtMjEyNTA1NjAyOCwtMTc1OTA0NDQyMSwtNTY1MTA2MTM2LC
+03ODg1ODg2OTIsMzIwNTU2NTI3LDcyMjQxMDc5MywtODAxOTE0
+MzIyLDIwMTUyNzU2MzYsLTEyOTQzODg2NzQsMTU2MzMwMzA0OS
+wxNTc4ODM2NDk5LC0xMDc1MzEwMTEzLDYxNjY2MDM2NiwyMDMx
+NTAzMjQ5XX0=
 -->
