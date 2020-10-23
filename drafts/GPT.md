@@ -1,8 +1,16 @@
 # NLP的迁移学习-GPT篇
 
 ## 迁移学习和BERT
-- auto regressive (GPT)
-- denoise autoencoder (BERT)
+> 迁移学习（Transfer Learning）无疑是目前深度学习中的新热点（相对而言）。在计算机视觉领域，它已经应用了一段时间，人们使用经过训练的模型从庞大的ImageNet数据集中学习特征，然后针对较小的数据针对不同的任务对其进行进一步的训练。但是，在NLP中，迁移学习主要限于使用预训练的单词嵌入（这大大改善了基线）。最近，研究人员正在努力将整个模型从一项任务转移到另一项任务，这就是本文的主题。
+Sebastian Ruder和Jeremy Howard也许是第一个通过其提出的ULMFiT方法，在NLP中的应用了迁移学习方法，该方法超越了所有最新的文本分类技术。
+紧接着，OpenAI 在几个NLP任务上扩大了他们的想法，并超越了SOTA。
+在2018年NAACL上，获得最佳论文奖的是介绍ELMo的论文，该论文是一种新的词嵌入技术，与ULMFiT背后的思想非常相似，该技术来自位于UWash的AllenAI和 Luke Zettlemoyer小组的研究人员。
+在本文中，我将讨论所有这些新工作以及它们之间的相互关系。让我们从Ruder和Howard的引领潮流的架构开始。
+
+基于注意力机制的transformer取代RNN成为当前主流的网络基础，当前的主流方案主要分为两类方法，第一类只使用transformer的编码器，通过在输入中引入噪音  训练，本质上属于denoise autoencoder，最典型的就是大名鼎鼎的BERT（我们在**中有过比较详尽的介绍）以及一系列对BERT的改进如XLNET。。。；另一类使用了完整的transformer模型（包括编码器和解码器）
+
+- auto regressive (GPT)  TEXT generation！！！
+
 
 ## GPT简介
 
@@ -126,11 +134,11 @@ gpt-3 is a huge look-up table
 [GPT-3: A Hitchhiker's Guide](https://lambdalabs.com/blog/gpt-3/)
 [OpenAI's GPT-3 Language Model: A Technical Overview](https://lambdalabs.com/blog/demystifying-gpt-3/)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTgyOTY2MzQ5NCwtMTYwMDU5NzMyOSw4ND
-IzNDMyMjIsLTM2NTQwNzg5NiwtMTU3NTQ1MDkzOCwtNTcyMTQ2
-NjE2LDQyNjcxMDE1MywtMjEyNTA1NjAyOCwtMTc1OTA0NDQyMS
-wtNTY1MTA2MTM2LC03ODg1ODg2OTIsMzIwNTU2NTI3LDcyMjQx
-MDc5MywtODAxOTE0MzIyLDIwMTUyNzU2MzYsLTEyOTQzODg2Nz
-QsMTU2MzMwMzA0OSwxNTc4ODM2NDk5LC0xMDc1MzEwMTEzLDYx
-NjY2MDM2Nl19
+eyJoaXN0b3J5IjpbMTMwOTQ3NTUzOSwxODI5NjYzNDk0LC0xNj
+AwNTk3MzI5LDg0MjM0MzIyMiwtMzY1NDA3ODk2LC0xNTc1NDUw
+OTM4LC01NzIxNDY2MTYsNDI2NzEwMTUzLC0yMTI1MDU2MDI4LC
+0xNzU5MDQ0NDIxLC01NjUxMDYxMzYsLTc4ODU4ODY5MiwzMjA1
+NTY1MjcsNzIyNDEwNzkzLC04MDE5MTQzMjIsMjAxNTI3NTYzNi
+wtMTI5NDM4ODY3NCwxNTYzMzAzMDQ5LDE1Nzg4MzY0OTksLTEw
+NzUzMTAxMTNdfQ==
 -->
