@@ -93,6 +93,9 @@ GPT-3依旧延续自己的单向语言模型训练方式，只不过这次把模
 
 因此GPT-3的主要目标是**用更少的领域数据、且不经过精调步骤去解决问题**。
 
+Question？Improve scale make real intelligent？ NO！
+GPT3的价值更多体现在shi'ying
+
   #### facts
 - 2048 word vector
 - 96 transformer layers
@@ -136,11 +139,11 @@ gpt-3 is a huge look-up table
 [GPT-3: A Hitchhiker's Guide](https://lambdalabs.com/blog/gpt-3/)
 [OpenAI's GPT-3 Language Model: A Technical Overview](https://lambdalabs.com/blog/demystifying-gpt-3/)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODU1NDQzMjQ0LDEzMDk0NzU1MzksMTgyOT
-Y2MzQ5NCwtMTYwMDU5NzMyOSw4NDIzNDMyMjIsLTM2NTQwNzg5
-NiwtMTU3NTQ1MDkzOCwtNTcyMTQ2NjE2LDQyNjcxMDE1MywtMj
-EyNTA1NjAyOCwtMTc1OTA0NDQyMSwtNTY1MTA2MTM2LC03ODg1
-ODg2OTIsMzIwNTU2NTI3LDcyMjQxMDc5MywtODAxOTE0MzIyLD
-IwMTUyNzU2MzYsLTEyOTQzODg2NzQsMTU2MzMwMzA0OSwxNTc4
-ODM2NDk5XX0=
+eyJoaXN0b3J5IjpbLTM4NTE2NzEzNSw4NTU0NDMyNDQsMTMwOT
+Q3NTUzOSwxODI5NjYzNDk0LC0xNjAwNTk3MzI5LDg0MjM0MzIy
+MiwtMzY1NDA3ODk2LC0xNTc1NDUwOTM4LC01NzIxNDY2MTYsND
+I2NzEwMTUzLC0yMTI1MDU2MDI4LC0xNzU5MDQ0NDIxLC01NjUx
+MDYxMzYsLTc4ODU4ODY5MiwzMjA1NTY1MjcsNzIyNDEwNzkzLC
+04MDE5MTQzMjIsMjAxNTI3NTYzNiwtMTI5NDM4ODY3NCwxNTYz
+MzAzMDQ5XX0=
 -->
