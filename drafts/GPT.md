@@ -76,7 +76,6 @@ Both the models —  [GPT-3](https://analyticsindiamag.com/how-openais-gpt-3-can
 
 Secondly, while  [BERT](https://analyticsindiamag.com/step-by-step-guide-to-implement-multi-class-classification-with-bert-tensorflow/)  requires an elaborated fine-tuning process where users have to gather data of examples to train the model for specific downstream tasks, GPT-3’s text-in and text-out API allows the users to reprogram it using instructions and access it. Case in point — for sentiment analysis or question answering tasks, to use BERT, the users have to train the model on a separate layer on sentence encodings. However,  [GPT-3](https://analyticsindiamag.com/gpt-3-has-weaknesses-and-makes-silly-mistakes-sam-altman-openai/)  uses a few-shot learning process on the input token to predict the output result.
 ### GPT-1: Improving Language Understanding by Generative Pre-Training
-
 ### GPT-2: Language Models are Unsupervised Multitask Learners
 GPT2的创新点在于验证了无监督的语言建模能够学习到有监督任务所需的特征。原文是
 > We demonstrate that language models begin to learn these tasks without any explicit supervision when trained on a new dataset of millions of webpages called WebText.
@@ -145,11 +144,11 @@ gpt-3 is a huge look-up table
 [GPT-3: A Hitchhiker's Guide](https://lambdalabs.com/blog/gpt-3/)
 [OpenAI's GPT-3 Language Model: A Technical Overview](https://lambdalabs.com/blog/demystifying-gpt-3/)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE4MDI3OTAzNDIsOTQyNzY4MDQwLDg1NT
-Q0MzI0NCwxMzA5NDc1NTM5LDE4Mjk2NjM0OTQsLTE2MDA1OTcz
-MjksODQyMzQzMjIyLC0zNjU0MDc4OTYsLTE1NzU0NTA5MzgsLT
-U3MjE0NjYxNiw0MjY3MTAxNTMsLTIxMjUwNTYwMjgsLTE3NTkw
-NDQ0MjEsLTU2NTEwNjEzNiwtNzg4NTg4NjkyLDMyMDU1NjUyNy
-w3MjI0MTA3OTMsLTgwMTkxNDMyMiwyMDE1Mjc1NjM2LC0xMjk0
-Mzg4Njc0XX0=
+eyJoaXN0b3J5IjpbOTQyNzY4MDQwLDk0Mjc2ODA0MCw4NTU0ND
+MyNDQsMTMwOTQ3NTUzOSwxODI5NjYzNDk0LC0xNjAwNTk3MzI5
+LDg0MjM0MzIyMiwtMzY1NDA3ODk2LC0xNTc1NDUwOTM4LC01Nz
+IxNDY2MTYsNDI2NzEwMTUzLC0yMTI1MDU2MDI4LC0xNzU5MDQ0
+NDIxLC01NjUxMDYxMzYsLTc4ODU4ODY5MiwzMjA1NTY1MjcsNz
+IyNDEwNzkzLC04MDE5MTQzMjIsMjAxNTI3NTYzNiwtMTI5NDM4
+ODY3NF19
 -->
