@@ -84,6 +84,8 @@ GPT2的创新点在于验证了无监督的语言建模能够学习到有监督�
 
    
 ### GPT-3: Language Models are Few-Shot Learners
+-   GPT-3 showcases how a language model trained on a massive range of data can solve various NLP tasks without fine-tuning.
+
 GPT-3依旧延续自己的单向语言模型训练方式，只不过这次把模型尺寸增大到了**1750亿**，并且使用**45TB**数据进行训练。同时，GPT-3主要聚焦于更通用的NLP模型，解决当前BERT类模型的两个缺点：
 
 1.  **对领域内有标签数据的过分依赖**：虽然有了预训练+精调的两段式框架，但还是少不了一定量的领域标注数据，否则很难取得不错的效果，而标注数据的成本又是很高的。
@@ -134,11 +136,11 @@ gpt-3 is a huge look-up table
 [GPT-3: A Hitchhiker's Guide](https://lambdalabs.com/blog/gpt-3/)
 [OpenAI's GPT-3 Language Model: A Technical Overview](https://lambdalabs.com/blog/demystifying-gpt-3/)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTMwOTQ3NTUzOSwxODI5NjYzNDk0LC0xNj
-AwNTk3MzI5LDg0MjM0MzIyMiwtMzY1NDA3ODk2LC0xNTc1NDUw
-OTM4LC01NzIxNDY2MTYsNDI2NzEwMTUzLC0yMTI1MDU2MDI4LC
-0xNzU5MDQ0NDIxLC01NjUxMDYxMzYsLTc4ODU4ODY5MiwzMjA1
-NTY1MjcsNzIyNDEwNzkzLC04MDE5MTQzMjIsMjAxNTI3NTYzNi
-wtMTI5NDM4ODY3NCwxNTYzMzAzMDQ5LDE1Nzg4MzY0OTksLTEw
-NzUzMTAxMTNdfQ==
+eyJoaXN0b3J5IjpbODU1NDQzMjQ0LDEzMDk0NzU1MzksMTgyOT
+Y2MzQ5NCwtMTYwMDU5NzMyOSw4NDIzNDMyMjIsLTM2NTQwNzg5
+NiwtMTU3NTQ1MDkzOCwtNTcyMTQ2NjE2LDQyNjcxMDE1MywtMj
+EyNTA1NjAyOCwtMTc1OTA0NDQyMSwtNTY1MTA2MTM2LC03ODg1
+ODg2OTIsMzIwNTU2NTI3LDcyMjQxMDc5MywtODAxOTE0MzIyLD
+IwMTUyNzU2MzYsLTEyOTQzODg2NzQsMTU2MzMwMzA0OSwxNTc4
+ODM2NDk5XX0=
 -->
