@@ -82,9 +82,11 @@ GPT2的创新点在于验证了无监督的语言建模能够学习到有监督�
 
 这个才是GPT-2文章价值所在。
 
+
+>GPT-2 displays a broad set of capabilities, including the ability to generate conditional synthetic text samples of unprecedented quality, where we prime the model with an input and have it generate a lengthy continuation. In addition, GPT-2 outperforms other language models trained on specific domains (like Wikipedia, news, or books) without needing to use these domain-specific training datasets. On language tasks like question answering, reading comprehension, summarization, and translation, GPT-2 begins to learn these tasks from the raw text, using no task-specific training data. While scores on these downstream tasks are far from state-of-the-art, they suggest that the tasks can benefit from unsupervised techniques, given sufficient (unlabeled) data and compute.
    
 ### GPT-3: Language Models are Few-Shot Learners
-可以跳过finetune训练直接使用
+**可以跳过finetune训练直接使用**
 
 
 -   GPT-3 showcases how a language model trained on a massive range of data can solve various NLP tasks without fine-tuning.
@@ -142,11 +144,11 @@ gpt-3 is a huge look-up table
 [GPT-3: A Hitchhiker's Guide](https://lambdalabs.com/blog/gpt-3/)
 [OpenAI's GPT-3 Language Model: A Technical Overview](https://lambdalabs.com/blog/demystifying-gpt-3/)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTc1NTgxMTExOCw4NTU0NDMyNDQsMTMwOT
-Q3NTUzOSwxODI5NjYzNDk0LC0xNjAwNTk3MzI5LDg0MjM0MzIy
-MiwtMzY1NDA3ODk2LC0xNTc1NDUwOTM4LC01NzIxNDY2MTYsND
-I2NzEwMTUzLC0yMTI1MDU2MDI4LC0xNzU5MDQ0NDIxLC01NjUx
-MDYxMzYsLTc4ODU4ODY5MiwzMjA1NTY1MjcsNzIyNDEwNzkzLC
-04MDE5MTQzMjIsMjAxNTI3NTYzNiwtMTI5NDM4ODY3NCwxNTYz
-MzAzMDQ5XX0=
+eyJoaXN0b3J5IjpbOTQyNzY4MDQwLDg1NTQ0MzI0NCwxMzA5ND
+c1NTM5LDE4Mjk2NjM0OTQsLTE2MDA1OTczMjksODQyMzQzMjIy
+LC0zNjU0MDc4OTYsLTE1NzU0NTA5MzgsLTU3MjE0NjYxNiw0Mj
+Y3MTAxNTMsLTIxMjUwNTYwMjgsLTE3NTkwNDQ0MjEsLTU2NTEw
+NjEzNiwtNzg4NTg4NjkyLDMyMDU1NjUyNyw3MjI0MTA3OTMsLT
+gwMTkxNDMyMiwyMDE1Mjc1NjM2LC0xMjk0Mzg4Njc0LDE1NjMz
+MDMwNDldfQ==
 -->
