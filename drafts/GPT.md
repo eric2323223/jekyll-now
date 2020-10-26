@@ -14,7 +14,6 @@ Sebastian Ruder和Jeremy Howard也许是第一个通过其提出的ULMFiT方法�
 
 ## GPT简介
 
-
 ### preprocessor 
 **Byte Pair Encoding** ([**BPE**](https://arxiv.org/abs/1508.07909)) is used to encode the input sequences. BPE was originally proposed as a data compression algorithm in 1990s and then was adopted to solve the open-vocabulary issue in machine translation, as we can easily run into rare and unknown words when translating into a new language. Motivated by the intuition that rare and unknown words can often be decomposed into multiple subwords, BPE finds the best word segmentation by iteratively and greedily merging frequent pairs of characters.
 ### GPT model
@@ -144,11 +143,11 @@ gpt-3 is a huge look-up table
 [GPT-3: A Hitchhiker's Guide](https://lambdalabs.com/blog/gpt-3/)
 [OpenAI's GPT-3 Language Model: A Technical Overview](https://lambdalabs.com/blog/demystifying-gpt-3/)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbOTQyNzY4MDQwLDk0Mjc2ODA0MCw4NTU0ND
-MyNDQsMTMwOTQ3NTUzOSwxODI5NjYzNDk0LC0xNjAwNTk3MzI5
-LDg0MjM0MzIyMiwtMzY1NDA3ODk2LC0xNTc1NDUwOTM4LC01Nz
-IxNDY2MTYsNDI2NzEwMTUzLC0yMTI1MDU2MDI4LC0xNzU5MDQ0
-NDIxLC01NjUxMDYxMzYsLTc4ODU4ODY5MiwzMjA1NTY1MjcsNz
-IyNDEwNzkzLC04MDE5MTQzMjIsMjAxNTI3NTYzNiwtMTI5NDM4
-ODY3NF19
+eyJoaXN0b3J5IjpbMTgwOTQ2MzQxOCw5NDI3NjgwNDAsODU1ND
+QzMjQ0LDEzMDk0NzU1MzksMTgyOTY2MzQ5NCwtMTYwMDU5NzMy
+OSw4NDIzNDMyMjIsLTM2NTQwNzg5NiwtMTU3NTQ1MDkzOCwtNT
+cyMTQ2NjE2LDQyNjcxMDE1MywtMjEyNTA1NjAyOCwtMTc1OTA0
+NDQyMSwtNTY1MTA2MTM2LC03ODg1ODg2OTIsMzIwNTU2NTI3LD
+cyMjQxMDc5MywtODAxOTE0MzIyLDIwMTUyNzU2MzYsLTEyOTQz
+ODg2NzRdfQ==
 -->
