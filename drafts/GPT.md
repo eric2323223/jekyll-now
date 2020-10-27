@@ -30,6 +30,7 @@ absolute position embedding `self.wpe = nn.Embedding(config.n_positions, config.
 	- top K
 ![enter image description here](https://qjjnh3a9hpo1nukrg1fwoh71-wpengine.netdna-ssl.com/wp-content/uploads/2019/04/OpenAI-GPT-transformer-decoder_web.jpg)
 ### Pretrain: 
+- attention mask
 -   GPT is trained on the standard task: given a sequence of prior words, predict the next word.
 -  loss function:
 
@@ -143,8 +144,8 @@ gpt-3 is a huge look-up table
 [GPT-3: A Hitchhiker's Guide](https://lambdalabs.com/blog/gpt-3/)
 [OpenAI's GPT-3 Language Model: A Technical Overview](https://lambdalabs.com/blog/demystifying-gpt-3/)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTgwOTQ2MzQxOCwtMTU2ODUyMTc4MCwxOD
-A5NDYzNDE4LDk0Mjc2ODA0MCw4NTU0NDMyNDQsMTMwOTQ3NTUz
+eyJoaXN0b3J5IjpbLTQ5MTczOTMxNSwxODA5NDYzNDE4LC0xNT
+Y4NTIxNzgwLDk0Mjc2ODA0MCw4NTU0NDMyNDQsMTMwOTQ3NTUz
 OSwxODI5NjYzNDk0LC0xNjAwNTk3MzI5LDg0MjM0MzIyMiwtMz
 Y1NDA3ODk2LC0xNTc1NDUwOTM4LC01NzIxNDY2MTYsNDI2NzEw
 MTUzLC0yMTI1MDU2MDI4LC0xNzU5MDQ0NDIxLC01NjUxMDYxMz
