@@ -144,12 +144,13 @@ gpt-3 is a huge look-up table
 [GPT-3: A Hitchhiker's Guide](https://lambdalabs.com/blog/gpt-3/)
 [OpenAI's GPT-3 Language Model: A Technical Overview](https://lambdalabs.com/blog/demystifying-gpt-3/)
 [generalized language models](https://lilianweng.github.io/lil-log/2019/01/31/generalized-language-models.html#openai-gpt)
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTg3ODY3MDIwMCwtNDkxNzM5MzE1LDE4MD
-k0NjM0MTgsLTE1Njg1MjE3ODAsOTQyNzY4MDQwLDg1NTQ0MzI0
-NCwxMzA5NDc1NTM5LDE4Mjk2NjM0OTQsLTE2MDA1OTczMjksOD
-QyMzQzMjIyLC0zNjU0MDc4OTYsLTE1NzU0NTA5MzgsLTU3MjE0
-NjYxNiw0MjY3MTAxNTMsLTIxMjUwNTYwMjgsLTE3NTkwNDQ0Mj
-EsLTU2NTEwNjEzNiwtNzg4NTg4NjkyLDMyMDU1NjUyNyw3MjI0
-MTA3OTNdfQ==
+eyJoaXN0b3J5IjpbLTU1NDg4NjQ3NCwtODc4NjcwMjAwLC00OT
+E3MzkzMTUsMTgwOTQ2MzQxOCwtMTU2ODUyMTc4MCw5NDI3Njgw
+NDAsODU1NDQzMjQ0LDEzMDk0NzU1MzksMTgyOTY2MzQ5NCwtMT
+YwMDU5NzMyOSw4NDIzNDMyMjIsLTM2NTQwNzg5NiwtMTU3NTQ1
+MDkzOCwtNTcyMTQ2NjE2LDQyNjcxMDE1MywtMjEyNTA1NjAyOC
+wtMTc1OTA0NDQyMSwtNTY1MTA2MTM2LC03ODg1ODg2OTIsMzIw
+NTU2NTI3XX0=
 -->
