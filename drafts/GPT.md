@@ -146,12 +146,13 @@ gpt-3 is a huge look-up table
 [OpenAI's GPT-3 Language Model: A Technical Overview](https://lambdalabs.com/blog/demystifying-gpt-3/)
 [generalized language models](https://lilianweng.github.io/lil-log/2019/01/31/generalized-language-models.html#openai-gpt)
 [Language models](https://docs.google.com/presentation/d/1sdH-9KQipnu3RMN0-YUqU8R4ZMLapz8IJzfe7VLN39o/edit#slide=id.p)
+[gpt3-language-models-are-few-shot-learners](https://blog.inten.to/gpt-3-language-models-are-few-shot-learners-a13d1ae8b1f9)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTI2NDUxNTkwOCwtNzY0MzE1MDc0LC04Nz
-g2NzAyMDAsLTQ5MTczOTMxNSwxODA5NDYzNDE4LC0xNTY4NTIx
-NzgwLDk0Mjc2ODA0MCw4NTU0NDMyNDQsMTMwOTQ3NTUzOSwxOD
-I5NjYzNDk0LC0xNjAwNTk3MzI5LDg0MjM0MzIyMiwtMzY1NDA3
-ODk2LC0xNTc1NDUwOTM4LC01NzIxNDY2MTYsNDI2NzEwMTUzLC
-0yMTI1MDU2MDI4LC0xNzU5MDQ0NDIxLC01NjUxMDYxMzYsLTc4
-ODU4ODY5Ml19
+eyJoaXN0b3J5IjpbNDc4NDcxODY2LDEyNjQ1MTU5MDgsLTc2ND
+MxNTA3NCwtODc4NjcwMjAwLC00OTE3MzkzMTUsMTgwOTQ2MzQx
+OCwtMTU2ODUyMTc4MCw5NDI3NjgwNDAsODU1NDQzMjQ0LDEzMD
+k0NzU1MzksMTgyOTY2MzQ5NCwtMTYwMDU5NzMyOSw4NDIzNDMy
+MjIsLTM2NTQwNzg5NiwtMTU3NTQ1MDkzOCwtNTcyMTQ2NjE2LD
+QyNjcxMDE1MywtMjEyNTA1NjAyOCwtMTc1OTA0NDQyMSwtNTY1
+MTA2MTM2XX0=
 -->
