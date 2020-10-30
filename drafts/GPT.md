@@ -50,6 +50,7 @@ absolute position embedding `self.wpe = nn.Embedding(config.n_positions, config.
  -   To have any chance at solving this task, a model is forced to learn syntax, semantics, encode facts about the world, etc.
 -   Given enough data, a huge model, and enough compute, can do a reasonable job!
 -   Empirically works better than translation, autoencoding: “Language Modeling Teaches You More Syntax than Translation Does”
+### The most substantial upgrade that OpenAI GPT proposed is to get rid of the task-specific model and use the pre-trained language model directly!
 ### GPT1: 可以直接加速finetune训练
 ![enter image description here](https://openai.com/content/images/2018/06/zero-shot-transfer@2x.png)
 ### LM works with all types of finetune tasks
@@ -146,11 +147,11 @@ gpt-3 is a huge look-up table
 [generalized language models](https://lilianweng.github.io/lil-log/2019/01/31/generalized-language-models.html#openai-gpt)
 [Language models](https://docs.google.com/presentation/d/1sdH-9KQipnu3RMN0-YUqU8R4ZMLapz8IJzfe7VLN39o/edit#slide=id.p)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTc2NDMxNTA3NCwtODc4NjcwMjAwLC00OT
-E3MzkzMTUsMTgwOTQ2MzQxOCwtMTU2ODUyMTc4MCw5NDI3Njgw
-NDAsODU1NDQzMjQ0LDEzMDk0NzU1MzksMTgyOTY2MzQ5NCwtMT
-YwMDU5NzMyOSw4NDIzNDMyMjIsLTM2NTQwNzg5NiwtMTU3NTQ1
-MDkzOCwtNTcyMTQ2NjE2LDQyNjcxMDE1MywtMjEyNTA1NjAyOC
-wtMTc1OTA0NDQyMSwtNTY1MTA2MTM2LC03ODg1ODg2OTIsMzIw
-NTU2NTI3XX0=
+eyJoaXN0b3J5IjpbMTI2NDUxNTkwOCwtNzY0MzE1MDc0LC04Nz
+g2NzAyMDAsLTQ5MTczOTMxNSwxODA5NDYzNDE4LC0xNTY4NTIx
+NzgwLDk0Mjc2ODA0MCw4NTU0NDMyNDQsMTMwOTQ3NTUzOSwxOD
+I5NjYzNDk0LC0xNjAwNTk3MzI5LDg0MjM0MzIyMiwtMzY1NDA3
+ODk2LC0xNTc1NDUwOTM4LC01NzIxNDY2MTYsNDI2NzEwMTUzLC
+0yMTI1MDU2MDI4LC0xNzU5MDQ0NDIxLC01NjUxMDYxMzYsLTc4
+ODU4ODY5Ml19
 -->
