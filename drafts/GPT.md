@@ -150,9 +150,9 @@ gpt-3 is a huge look-up table
 [Language models](https://docs.google.com/presentation/d/1sdH-9KQipnu3RMN0-YUqU8R4ZMLapz8IJzfe7VLN39o/edit#slide=id.p)
 [gpt3-language-models-are-few-shot-learners](https://blog.inten.to/gpt-3-language-models-are-few-shot-learners-a13d1ae8b1f9)
 [NLP模型应用之三：GPT与GPT-2](https://www.jianshu.com/p/1571bfe0af01)
-
+[Improving Language Understanding by Generative Pre-Training](https://www.cs.princeton.edu/courses/archive/spring20/cos598C/lectures/lec4-pretraining.pdf)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTEzNDQ3MjcyMSwxNzI0MjAyMTQ3LDk2Nz
+eyJoaXN0b3J5IjpbMTkxODc0OTQ0MCwxNzI0MjAyMTQ3LDk2Nz
 AwOTQ4OSwxOTY4OTk2NjY5LC0xMzYzMzU1NjY5LC0xMTgwODQz
 MTkzLDQ3ODQ3MTg2NiwxMjY0NTE1OTA4LC03NjQzMTUwNzQsLT
 g3ODY3MDIwMCwtNDkxNzM5MzE1LDE4MDk0NjM0MTgsLTE1Njg1
