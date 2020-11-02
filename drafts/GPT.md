@@ -17,7 +17,7 @@ Sebastian Ruder和Jeremy Howard也许是第一个通过其提出的ULMFiT方法�
 ### preprocessor 
 **Byte Pair Encoding** ([**BPE**](https://arxiv.org/abs/1508.07909)) is used to encode the input sequences. BPE was originally proposed as a data compression algorithm in 1990s and then was adopted to solve the open-vocabulary issue in machine translation, as we can easily run into rare and unknown words when translating into a new language. Motivated by the intuition that rare and unknown words can often be decomposed into multiple subwords, BPE finds the best word segmentation by iteratively and greedily merging frequent pairs of characters.
 ### GPT model
-GTP预训练模型和Transformer很相似，在位置编码使用了绝对位置编码，
+GTP预训练模型只使用Transformer 解码器（decoder），在位置编码使用了绝对位置编码，
 ![enter image description here](https://cdn-images-1.medium.com/max/1600/1*Ji79bZ3KqpMAjZ9Txv4q8Q.png)
 #### embedding
 - token embedding
@@ -148,11 +148,11 @@ gpt-3 is a huge look-up table
 [Language models](https://docs.google.com/presentation/d/1sdH-9KQipnu3RMN0-YUqU8R4ZMLapz8IJzfe7VLN39o/edit#slide=id.p)
 [gpt3-language-models-are-few-shot-learners](https://blog.inten.to/gpt-3-language-models-are-few-shot-learners-a13d1ae8b1f9)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNDc4NDcxODY2LDEyNjQ1MTU5MDgsLTc2ND
-MxNTA3NCwtODc4NjcwMjAwLC00OTE3MzkzMTUsMTgwOTQ2MzQx
-OCwtMTU2ODUyMTc4MCw5NDI3NjgwNDAsODU1NDQzMjQ0LDEzMD
-k0NzU1MzksMTgyOTY2MzQ5NCwtMTYwMDU5NzMyOSw4NDIzNDMy
-MjIsLTM2NTQwNzg5NiwtMTU3NTQ1MDkzOCwtNTcyMTQ2NjE2LD
-QyNjcxMDE1MywtMjEyNTA1NjAyOCwtMTc1OTA0NDQyMSwtNTY1
-MTA2MTM2XX0=
+eyJoaXN0b3J5IjpbMTY3MTEyNDEyMCw0Nzg0NzE4NjYsMTI2ND
+UxNTkwOCwtNzY0MzE1MDc0LC04Nzg2NzAyMDAsLTQ5MTczOTMx
+NSwxODA5NDYzNDE4LC0xNTY4NTIxNzgwLDk0Mjc2ODA0MCw4NT
+U0NDMyNDQsMTMwOTQ3NTUzOSwxODI5NjYzNDk0LC0xNjAwNTk3
+MzI5LDg0MjM0MzIyMiwtMzY1NDA3ODk2LC0xNTc1NDUwOTM4LC
+01NzIxNDY2MTYsNDI2NzEwMTUzLC0yMTI1MDU2MDI4LC0xNzU5
+MDQ0NDIxXX0=
 -->
