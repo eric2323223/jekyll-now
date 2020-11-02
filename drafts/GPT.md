@@ -150,12 +150,13 @@ gpt-3 is a huge look-up table
 [Language models](https://docs.google.com/presentation/d/1sdH-9KQipnu3RMN0-YUqU8R4ZMLapz8IJzfe7VLN39o/edit#slide=id.p)
 [gpt3-language-models-are-few-shot-learners](https://blog.inten.to/gpt-3-language-models-are-few-shot-learners-a13d1ae8b1f9)
 [NLP模型应用之三：GPT与GPT-2](https://www.jianshu.com/p/1571bfe0af01)
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTcyNDIwMjE0Nyw5NjcwMDk0ODksMTk2OD
-k5NjY2OSwtMTM2MzM1NTY2OSwtMTE4MDg0MzE5Myw0Nzg0NzE4
-NjYsMTI2NDUxNTkwOCwtNzY0MzE1MDc0LC04Nzg2NzAyMDAsLT
-Q5MTczOTMxNSwxODA5NDYzNDE4LC0xNTY4NTIxNzgwLDk0Mjc2
-ODA0MCw4NTU0NDMyNDQsMTMwOTQ3NTUzOSwxODI5NjYzNDk0LC
-0xNjAwNTk3MzI5LDg0MjM0MzIyMiwtMzY1NDA3ODk2LC0xNTc1
-NDUwOTM4XX0=
+eyJoaXN0b3J5IjpbMTEzNDQ3MjcyMSwxNzI0MjAyMTQ3LDk2Nz
+AwOTQ4OSwxOTY4OTk2NjY5LC0xMzYzMzU1NjY5LC0xMTgwODQz
+MTkzLDQ3ODQ3MTg2NiwxMjY0NTE1OTA4LC03NjQzMTUwNzQsLT
+g3ODY3MDIwMCwtNDkxNzM5MzE1LDE4MDk0NjM0MTgsLTE1Njg1
+MjE3ODAsOTQyNzY4MDQwLDg1NTQ0MzI0NCwxMzA5NDc1NTM5LD
+E4Mjk2NjM0OTQsLTE2MDA1OTczMjksODQyMzQzMjIyLC0zNjU0
+MDc4OTZdfQ==
 -->
