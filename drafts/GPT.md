@@ -77,6 +77,7 @@ Both the models —  [GPT-3](https://analyticsindiamag.com/how-openais-gpt-3-can
 Secondly, while  [BERT](https://analyticsindiamag.com/step-by-step-guide-to-implement-multi-class-classification-with-bert-tensorflow/)  requires an elaborated fine-tuning process where users have to gather data of examples to train the model for specific downstream tasks, GPT-3’s text-in and text-out API allows the users to reprogram it using instructions and access it. Case in point — for sentiment analysis or question answering tasks, to use BERT, the users have to train the model on a separate layer on sentence encodings. However,  [GPT-3](https://analyticsindiamag.com/gpt-3-has-weaknesses-and-makes-silly-mistakes-sam-altman-openai/)  uses a few-shot learning process on the input token to predict the output result.
 ### GPT-1: Improving Language Understanding by Generative Pre-Training
 ### GPT-2: Language Models are Unsupervised Multitask Learners
+![enter image description here](https://joeddav.github.io/blog/images/zsl/gpt3_triviahq.png)
 GPT2的创新点在于验证了无监督的语言建模能够学习到有监督任务所需的特征。原文是
 > We demonstrate that language models begin to learn these tasks without any explicit supervision when trained on a new dataset of millions of webpages called WebText.
 
@@ -152,11 +153,11 @@ gpt-3 is a huge look-up table
 [NLP模型应用之三：GPT与GPT-2](https://www.jianshu.com/p/1571bfe0af01)
 [Improving Language Understanding by Generative Pre-Training](https://www.cs.princeton.edu/courses/archive/spring20/cos598C/lectures/lec4-pretraining.pdf)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTkxODc0OTQ0MCwxNzI0MjAyMTQ3LDk2Nz
-AwOTQ4OSwxOTY4OTk2NjY5LC0xMzYzMzU1NjY5LC0xMTgwODQz
-MTkzLDQ3ODQ3MTg2NiwxMjY0NTE1OTA4LC03NjQzMTUwNzQsLT
-g3ODY3MDIwMCwtNDkxNzM5MzE1LDE4MDk0NjM0MTgsLTE1Njg1
-MjE3ODAsOTQyNzY4MDQwLDg1NTQ0MzI0NCwxMzA5NDc1NTM5LD
-E4Mjk2NjM0OTQsLTE2MDA1OTczMjksODQyMzQzMjIyLC0zNjU0
-MDc4OTZdfQ==
+eyJoaXN0b3J5IjpbLTUxMjc5MTUwMywxOTE4NzQ5NDQwLDE3Mj
+QyMDIxNDcsOTY3MDA5NDg5LDE5Njg5OTY2NjksLTEzNjMzNTU2
+NjksLTExODA4NDMxOTMsNDc4NDcxODY2LDEyNjQ1MTU5MDgsLT
+c2NDMxNTA3NCwtODc4NjcwMjAwLC00OTE3MzkzMTUsMTgwOTQ2
+MzQxOCwtMTU2ODUyMTc4MCw5NDI3NjgwNDAsODU1NDQzMjQ0LD
+EzMDk0NzU1MzksMTgyOTY2MzQ5NCwtMTYwMDU5NzMyOSw4NDIz
+NDMyMjJdfQ==
 -->
