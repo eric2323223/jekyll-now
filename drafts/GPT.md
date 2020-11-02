@@ -24,8 +24,7 @@ GTP预训练模型只使用Transformer 解码器（decoder），在位置编码�
 `self.wte = nn.Embedding(config.vocab_size, config.n_embd)`
 - position embedding
 absolute position embedding `self.wpe = nn.Embedding(config.n_positions, config.n_embd)`
-#### transformer
-- encoder: masked self-attention
+#### transformer decoder
 - decoder: language model
 	- top K
 ![enter image description here](https://qjjnh3a9hpo1nukrg1fwoh71-wpengine.netdna-ssl.com/wp-content/uploads/2019/04/OpenAI-GPT-transformer-decoder_web.jpg)
@@ -148,11 +147,11 @@ gpt-3 is a huge look-up table
 [Language models](https://docs.google.com/presentation/d/1sdH-9KQipnu3RMN0-YUqU8R4ZMLapz8IJzfe7VLN39o/edit#slide=id.p)
 [gpt3-language-models-are-few-shot-learners](https://blog.inten.to/gpt-3-language-models-are-few-shot-learners-a13d1ae8b1f9)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTY3MTEyNDEyMCw0Nzg0NzE4NjYsMTI2ND
-UxNTkwOCwtNzY0MzE1MDc0LC04Nzg2NzAyMDAsLTQ5MTczOTMx
-NSwxODA5NDYzNDE4LC0xNTY4NTIxNzgwLDk0Mjc2ODA0MCw4NT
-U0NDMyNDQsMTMwOTQ3NTUzOSwxODI5NjYzNDk0LC0xNjAwNTk3
-MzI5LDg0MjM0MzIyMiwtMzY1NDA3ODk2LC0xNTc1NDUwOTM4LC
-01NzIxNDY2MTYsNDI2NzEwMTUzLC0yMTI1MDU2MDI4LC0xNzU5
-MDQ0NDIxXX0=
+eyJoaXN0b3J5IjpbLTExODA4NDMxOTMsNDc4NDcxODY2LDEyNj
+Q1MTU5MDgsLTc2NDMxNTA3NCwtODc4NjcwMjAwLC00OTE3Mzkz
+MTUsMTgwOTQ2MzQxOCwtMTU2ODUyMTc4MCw5NDI3NjgwNDAsOD
+U1NDQzMjQ0LDEzMDk0NzU1MzksMTgyOTY2MzQ5NCwtMTYwMDU5
+NzMyOSw4NDIzNDMyMjIsLTM2NTQwNzg5NiwtMTU3NTQ1MDkzOC
+wtNTcyMTQ2NjE2LDQyNjcxMDE1MywtMjEyNTA1NjAyOCwtMTc1
+OTA0NDQyMV19
 -->
