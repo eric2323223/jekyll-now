@@ -149,9 +149,9 @@ gpt-3 is a huge look-up table
 [generalized language models](https://lilianweng.github.io/lil-log/2019/01/31/generalized-language-models.html#openai-gpt)
 [Language models](https://docs.google.com/presentation/d/1sdH-9KQipnu3RMN0-YUqU8R4ZMLapz8IJzfe7VLN39o/edit#slide=id.p)
 [gpt3-language-models-are-few-shot-learners](https://blog.inten.to/gpt-3-language-models-are-few-shot-learners-a13d1ae8b1f9)
-
+[NLP模型应用之三：GPT与GPT-2](https://www.jianshu.com/p/1571bfe0af01)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTU4ODA3MDgzLDE5Njg5OTY2NjksLTEzNj
+eyJoaXN0b3J5IjpbOTY3MDA5NDg5LDE5Njg5OTY2NjksLTEzNj
 MzNTU2NjksLTExODA4NDMxOTMsNDc4NDcxODY2LDEyNjQ1MTU5
 MDgsLTc2NDMxNTA3NCwtODc4NjcwMjAwLC00OTE3MzkzMTUsMT
 gwOTQ2MzQxOCwtMTU2ODUyMTc4MCw5NDI3NjgwNDAsODU1NDQz
