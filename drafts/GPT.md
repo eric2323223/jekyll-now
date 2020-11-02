@@ -7,7 +7,7 @@ Sebastian Ruder和Jeremy Howard也许是第一个通过其提出的ULMFiT方法�
 在2018年NAACL上，获得最佳论文奖的是介绍ELMo的论文，该论文是一种新的词嵌入技术，与ULMFiT背后的思想非常相似，该技术来自位于UWash的AllenAI和 Luke Zettlemoyer小组的研究人员。
 在本文中，我将讨论所有这些新工作以及它们之间的相互关系。让我们从Ruder和Howard的引领潮流的架构开始。
 
-基于注意力机制的transformer取代RNN成为当前主流的网络基础，当前的主流方案主要分为两类方法，第一类只使用transformer的编码器，通过在输入中引入噪音  训练，本质上属于denoise autoencoder，最典型的就是大名鼎鼎的BERT（我们在**中有过比较详尽的介绍）以及一系列对BERT的改进如XLNET。。。；另一类使用了完整的transformer模型（包括解码器）
+基于注意力机制的transformer取代RNN成为当前主流的网络基础，当前的主流方案主要分为两类方法，第一类只使用transformer的编码器，通过在输入中引入噪音  训练，本质上属于denoise autoencoder，最典型的就是大名鼎鼎的BERT（我们在**中有过比较详尽的介绍）以及一系列对BERT的改进如XLNET。。。；另一类使用了完整的transformer模型，它只是用transformer的解码器。
 
 - auto regressive (GPT)  TEXT generation！！！
 
@@ -151,11 +151,11 @@ gpt-3 is a huge look-up table
 [gpt3-language-models-are-few-shot-learners](https://blog.inten.to/gpt-3-language-models-are-few-shot-learners-a13d1ae8b1f9)
 [NLP模型应用之三：GPT与GPT-2](https://www.jianshu.com/p/1571bfe0af01)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNzU0MzAyNDY2LDk2NzAwOTQ4OSwxOTY4OT
-k2NjY5LC0xMzYzMzU1NjY5LC0xMTgwODQzMTkzLDQ3ODQ3MTg2
-NiwxMjY0NTE1OTA4LC03NjQzMTUwNzQsLTg3ODY3MDIwMCwtND
-kxNzM5MzE1LDE4MDk0NjM0MTgsLTE1Njg1MjE3ODAsOTQyNzY4
-MDQwLDg1NTQ0MzI0NCwxMzA5NDc1NTM5LDE4Mjk2NjM0OTQsLT
-E2MDA1OTczMjksODQyMzQzMjIyLC0zNjU0MDc4OTYsLTE1NzU0
-NTA5MzhdfQ==
+eyJoaXN0b3J5IjpbMTcyNDIwMjE0Nyw5NjcwMDk0ODksMTk2OD
+k5NjY2OSwtMTM2MzM1NTY2OSwtMTE4MDg0MzE5Myw0Nzg0NzE4
+NjYsMTI2NDUxNTkwOCwtNzY0MzE1MDc0LC04Nzg2NzAyMDAsLT
+Q5MTczOTMxNSwxODA5NDYzNDE4LC0xNTY4NTIxNzgwLDk0Mjc2
+ODA0MCw4NTU0NDMyNDQsMTMwOTQ3NTUzOSwxODI5NjYzNDk0LC
+0xNjAwNTk3MzI5LDg0MjM0MzIyMiwtMzY1NDA3ODk2LC0xNTc1
+NDUwOTM4XX0=
 -->
