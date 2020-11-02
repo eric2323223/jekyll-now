@@ -31,7 +31,7 @@ absolute position embedding `self.wpe = nn.Embedding(config.n_positions, config.
 ### Pretrain: 
 - attention mask
 -   GPT is trained on the standard task: given a sequence of prior words, predict the next word.
--  loss function:
+-  loss function: standard LM
 
 ### finetune
 **no model justification!!!**
@@ -147,11 +147,11 @@ gpt-3 is a huge look-up table
 [Language models](https://docs.google.com/presentation/d/1sdH-9KQipnu3RMN0-YUqU8R4ZMLapz8IJzfe7VLN39o/edit#slide=id.p)
 [gpt3-language-models-are-few-shot-learners](https://blog.inten.to/gpt-3-language-models-are-few-shot-learners-a13d1ae8b1f9)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTExODA4NDMxOTMsNDc4NDcxODY2LDEyNj
-Q1MTU5MDgsLTc2NDMxNTA3NCwtODc4NjcwMjAwLC00OTE3Mzkz
-MTUsMTgwOTQ2MzQxOCwtMTU2ODUyMTc4MCw5NDI3NjgwNDAsOD
-U1NDQzMjQ0LDEzMDk0NzU1MzksMTgyOTY2MzQ5NCwtMTYwMDU5
-NzMyOSw4NDIzNDMyMjIsLTM2NTQwNzg5NiwtMTU3NTQ1MDkzOC
-wtNTcyMTQ2NjE2LDQyNjcxMDE1MywtMjEyNTA1NjAyOCwtMTc1
-OTA0NDQyMV19
+eyJoaXN0b3J5IjpbLTEzNjMzNTU2NjksLTExODA4NDMxOTMsND
+c4NDcxODY2LDEyNjQ1MTU5MDgsLTc2NDMxNTA3NCwtODc4Njcw
+MjAwLC00OTE3MzkzMTUsMTgwOTQ2MzQxOCwtMTU2ODUyMTc4MC
+w5NDI3NjgwNDAsODU1NDQzMjQ0LDEzMDk0NzU1MzksMTgyOTY2
+MzQ5NCwtMTYwMDU5NzMyOSw4NDIzNDMyMjIsLTM2NTQwNzg5Ni
+wtMTU3NTQ1MDkzOCwtNTcyMTQ2NjE2LDQyNjcxMDE1MywtMjEy
+NTA1NjAyOF19
 -->
