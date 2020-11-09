@@ -30,7 +30,7 @@ absolute position embedding `self.wpe = nn.Embedding(config.n_positions, config.
 ![enter image description here](https://qjjnh3a9hpo1nukrg1fwoh71-wpengine.netdna-ssl.com/wp-content/uploads/2019/04/OpenAI-GPT-transformer-decoder_web.jpg)
 ### Pretrain: 
 - attention mask
--   GPT is trained on the standard task: given a sequence of prior words, predict the next word.
+- GPT is trained on the standard task: given a sequence of prior words, predict the next word.
 -  loss function: standard LM
 
 ### finetune
@@ -154,11 +154,11 @@ gpt-3 is a huge look-up table
 [Improving Language Understanding by Generative Pre-Training](https://www.cs.princeton.edu/courses/archive/spring20/cos598C/lectures/lec4-pretraining.pdf)
 [GPT3-the-database-prompt](https://www.gwern.net/GPT-3#the-database-prompt)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbOTYyODU5MDM4LC01NTk1NTIzNDgsLTUxMj
-c5MTUwMywxOTE4NzQ5NDQwLDE3MjQyMDIxNDcsOTY3MDA5NDg5
-LDE5Njg5OTY2NjksLTEzNjMzNTU2NjksLTExODA4NDMxOTMsND
-c4NDcxODY2LDEyNjQ1MTU5MDgsLTc2NDMxNTA3NCwtODc4Njcw
-MjAwLC00OTE3MzkzMTUsMTgwOTQ2MzQxOCwtMTU2ODUyMTc4MC
-w5NDI3NjgwNDAsODU1NDQzMjQ0LDEzMDk0NzU1MzksMTgyOTY2
-MzQ5NF19
+eyJoaXN0b3J5IjpbLTE4MDU0NjgzODYsOTYyODU5MDM4LC01NT
+k1NTIzNDgsLTUxMjc5MTUwMywxOTE4NzQ5NDQwLDE3MjQyMDIx
+NDcsOTY3MDA5NDg5LDE5Njg5OTY2NjksLTEzNjMzNTU2NjksLT
+ExODA4NDMxOTMsNDc4NDcxODY2LDEyNjQ1MTU5MDgsLTc2NDMx
+NTA3NCwtODc4NjcwMjAwLC00OTE3MzkzMTUsMTgwOTQ2MzQxOC
+wtMTU2ODUyMTc4MCw5NDI3NjgwNDAsODU1NDQzMjQ0LDEzMDk0
+NzU1MzldfQ==
 -->
