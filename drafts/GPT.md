@@ -34,6 +34,7 @@ absolute position embedding `self.wpe = nn.Embedding(config.n_positions, config.
 -  loss function: standard LM
 
 ### finetune
+GPT(GPT1) train different linear layer for specific tasks, such as similarity and multiple choice.
 **no model justification!!!**
 ![enter image description here](https://qjjnh3a9hpo1nukrg1fwoh71-wpengine.netdna-ssl.com/wp-content/uploads/2019/04/GPT-downstream-tasks_web.jpg)
 - zero shot learning
@@ -155,11 +156,11 @@ gpt-3 is a huge look-up table
 [GPT3-the-database-prompt](https://www.gwern.net/GPT-3#the-database-prompt)
 [what can you do with the openai gpt-3](https://blog.exxactcorp.com/what-can-you-do-with-the-openai-gpt-3-language-model/)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjMwNzgwODY0LC0xODA1NDY4Mzg2LDk2Mj
-g1OTAzOCwtNTU5NTUyMzQ4LC01MTI3OTE1MDMsMTkxODc0OTQ0
-MCwxNzI0MjAyMTQ3LDk2NzAwOTQ4OSwxOTY4OTk2NjY5LC0xMz
-YzMzU1NjY5LC0xMTgwODQzMTkzLDQ3ODQ3MTg2NiwxMjY0NTE1
-OTA4LC03NjQzMTUwNzQsLTg3ODY3MDIwMCwtNDkxNzM5MzE1LD
-E4MDk0NjM0MTgsLTE1Njg1MjE3ODAsOTQyNzY4MDQwLDg1NTQ0
-MzI0NF19
+eyJoaXN0b3J5IjpbLTEzMjYzMjEyMTIsMjMwNzgwODY0LC0xOD
+A1NDY4Mzg2LDk2Mjg1OTAzOCwtNTU5NTUyMzQ4LC01MTI3OTE1
+MDMsMTkxODc0OTQ0MCwxNzI0MjAyMTQ3LDk2NzAwOTQ4OSwxOT
+Y4OTk2NjY5LC0xMzYzMzU1NjY5LC0xMTgwODQzMTkzLDQ3ODQ3
+MTg2NiwxMjY0NTE1OTA4LC03NjQzMTUwNzQsLTg3ODY3MDIwMC
+wtNDkxNzM5MzE1LDE4MDk0NjM0MTgsLTE1Njg1MjE3ODAsOTQy
+NzY4MDQwXX0=
 -->
