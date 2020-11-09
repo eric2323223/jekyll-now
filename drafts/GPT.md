@@ -14,7 +14,7 @@ Sebastian Ruder和Jeremy Howard也许是第一个通过其提出的ULMFiT方法�
 
 ## GPT简介
 
-### Toke'ni'ze
+### Tokenizer
 **Byte Pair Encoding** ([**BPE**](https://arxiv.org/abs/1508.07909)) is used to encode the input sequences. BPE was originally proposed as a data compression algorithm in 1990s and then was adopted to solve the open-vocabulary issue in machine translation, as we can easily run into rare and unknown words when translating into a new language. Motivated by the intuition that rare and unknown words can often be decomposed into multiple subwords, BPE finds the best word segmentation by iteratively and greedily merging frequent pairs of characters.
 ### GPT model
 GTP预训练模型只使用Transformer 解码器（decoder），在位置编码使用了绝对位置编码，
@@ -154,7 +154,7 @@ gpt-3 is a huge look-up table
 [Improving Language Understanding by Generative Pre-Training](https://www.cs.princeton.edu/courses/archive/spring20/cos598C/lectures/lec4-pretraining.pdf)
 [GPT3-the-database-prompt](https://www.gwern.net/GPT-3#the-database-prompt)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTY3NzMyMTU0LC01NTk1NTIzNDgsLTUxMj
+eyJoaXN0b3J5IjpbOTYyODU5MDM4LC01NTk1NTIzNDgsLTUxMj
 c5MTUwMywxOTE4NzQ5NDQwLDE3MjQyMDIxNDcsOTY3MDA5NDg5
 LDE5Njg5OTY2NjksLTEzNjMzNTU2NjksLTExODA4NDMxOTMsND
 c4NDcxODY2LDEyNjQ1MTU5MDgsLTc2NDMxNTA3NCwtODc4Njcw
