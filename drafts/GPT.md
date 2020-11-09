@@ -153,12 +153,13 @@ gpt-3 is a huge look-up table
 [NLP模型应用之三：GPT与GPT-2](https://www.jianshu.com/p/1571bfe0af01)
 [Improving Language Understanding by Generative Pre-Training](https://www.cs.princeton.edu/courses/archive/spring20/cos598C/lectures/lec4-pretraining.pdf)
 [GPT3-the-database-prompt](https://www.gwern.net/GPT-3#the-database-prompt)
+[what can you do with the openai gpt-3](https://blog.exxactcorp.com/what-can-you-do-with-the-openai-gpt-3-language-model/)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE4MDU0NjgzODYsOTYyODU5MDM4LC01NT
-k1NTIzNDgsLTUxMjc5MTUwMywxOTE4NzQ5NDQwLDE3MjQyMDIx
-NDcsOTY3MDA5NDg5LDE5Njg5OTY2NjksLTEzNjMzNTU2NjksLT
-ExODA4NDMxOTMsNDc4NDcxODY2LDEyNjQ1MTU5MDgsLTc2NDMx
-NTA3NCwtODc4NjcwMjAwLC00OTE3MzkzMTUsMTgwOTQ2MzQxOC
-wtMTU2ODUyMTc4MCw5NDI3NjgwNDAsODU1NDQzMjQ0LDEzMDk0
-NzU1MzldfQ==
+eyJoaXN0b3J5IjpbMjMwNzgwODY0LC0xODA1NDY4Mzg2LDk2Mj
+g1OTAzOCwtNTU5NTUyMzQ4LC01MTI3OTE1MDMsMTkxODc0OTQ0
+MCwxNzI0MjAyMTQ3LDk2NzAwOTQ4OSwxOTY4OTk2NjY5LC0xMz
+YzMzU1NjY5LC0xMTgwODQzMTkzLDQ3ODQ3MTg2NiwxMjY0NTE1
+OTA4LC03NjQzMTUwNzQsLTg3ODY3MDIwMCwtNDkxNzM5MzE1LD
+E4MDk0NjM0MTgsLTE1Njg1MjE3ODAsOTQyNzY4MDQwLDg1NTQ0
+MzI0NF19
 -->
