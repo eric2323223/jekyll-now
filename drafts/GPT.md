@@ -155,12 +155,13 @@ gpt-3 is a huge look-up table
 [Improving Language Understanding by Generative Pre-Training](https://www.cs.princeton.edu/courses/archive/spring20/cos598C/lectures/lec4-pretraining.pdf)
 [GPT3-the-database-prompt](https://www.gwern.net/GPT-3#the-database-prompt)
 [what can you do with the openai gpt-3](https://blog.exxactcorp.com/what-can-you-do-with-the-openai-gpt-3-language-model/)
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzMjYzMjEyMTIsMjMwNzgwODY0LC0xOD
-A1NDY4Mzg2LDk2Mjg1OTAzOCwtNTU5NTUyMzQ4LC01MTI3OTE1
-MDMsMTkxODc0OTQ0MCwxNzI0MjAyMTQ3LDk2NzAwOTQ4OSwxOT
-Y4OTk2NjY5LC0xMzYzMzU1NjY5LC0xMTgwODQzMTkzLDQ3ODQ3
-MTg2NiwxMjY0NTE1OTA4LC03NjQzMTUwNzQsLTg3ODY3MDIwMC
-wtNDkxNzM5MzE1LDE4MDk0NjM0MTgsLTE1Njg1MjE3ODAsOTQy
-NzY4MDQwXX0=
+eyJoaXN0b3J5IjpbLTEyNTA3Nzk0MDYsLTEzMjYzMjEyMTIsMj
+MwNzgwODY0LC0xODA1NDY4Mzg2LDk2Mjg1OTAzOCwtNTU5NTUy
+MzQ4LC01MTI3OTE1MDMsMTkxODc0OTQ0MCwxNzI0MjAyMTQ3LD
+k2NzAwOTQ4OSwxOTY4OTk2NjY5LC0xMzYzMzU1NjY5LC0xMTgw
+ODQzMTkzLDQ3ODQ3MTg2NiwxMjY0NTE1OTA4LC03NjQzMTUwNz
+QsLTg3ODY3MDIwMCwtNDkxNzM5MzE1LDE4MDk0NjM0MTgsLTE1
+Njg1MjE3ODBdfQ==
 -->
