@@ -83,7 +83,7 @@ GPT2的创新点在于验证了无监督的语言建模能够学习到有监督�
 > We demonstrate that language models begin to learn these tasks without any explicit supervision when trained on a new dataset of millions of webpages called WebText.
 
 这个才是GPT-2文章价值所在。
-
+>
 
 >GPT-2 displays a broad set of capabilities, including the ability to generate conditional synthetic text samples of unprecedented quality, where we prime the model with an input and have it generate a lengthy continuation. In addition, GPT-2 outperforms other language models trained on specific domains (like Wikipedia, news, or books) without needing to use these domain-specific training datasets. On language tasks like question answering, reading comprehension, summarization, and translation, GPT-2 begins to learn these tasks from the raw text, using no task-specific training data. While scores on these downstream tasks are far from state-of-the-art, they suggest that the tasks can benefit from unsupervised techniques, given sufficient (unlabeled) data and compute.
    
@@ -163,11 +163,11 @@ gpt-3 is a huge look-up table
 [what can you do with the openai gpt-3](https://blog.exxactcorp.com/what-can-you-do-with-the-openai-gpt-3-language-model/)
 [Understanding the GPT-2 source code](https://medium.com/analytics-vidhya/understanding-the-gpt-2-source-code-part-5-87bbe21dd749)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2MDYzODUxMjYsLTEyNTQ2Nzg4MjQsOT
-U5MTQ3ODMxLC0xNTQ3NTQzMzgyLC0xMzI2MzIxMjEyLDIzMDc4
-MDg2NCwtMTgwNTQ2ODM4Niw5NjI4NTkwMzgsLTU1OTU1MjM0OC
-wtNTEyNzkxNTAzLDE5MTg3NDk0NDAsMTcyNDIwMjE0Nyw5Njcw
-MDk0ODksMTk2ODk5NjY2OSwtMTM2MzM1NTY2OSwtMTE4MDg0Mz
-E5Myw0Nzg0NzE4NjYsMTI2NDUxNTkwOCwtNzY0MzE1MDc0LC04
-Nzg2NzAyMDBdfQ==
+eyJoaXN0b3J5IjpbLTE1MDIwODgzNTAsLTE2MDYzODUxMjYsLT
+EyNTQ2Nzg4MjQsOTU5MTQ3ODMxLC0xNTQ3NTQzMzgyLC0xMzI2
+MzIxMjEyLDIzMDc4MDg2NCwtMTgwNTQ2ODM4Niw5NjI4NTkwMz
+gsLTU1OTU1MjM0OCwtNTEyNzkxNTAzLDE5MTg3NDk0NDAsMTcy
+NDIwMjE0Nyw5NjcwMDk0ODksMTk2ODk5NjY2OSwtMTM2MzM1NT
+Y2OSwtMTE4MDg0MzE5Myw0Nzg0NzE4NjYsMTI2NDUxNTkwOCwt
+NzY0MzE1MDc0XX0=
 -->
