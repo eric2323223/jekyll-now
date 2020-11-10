@@ -101,6 +101,7 @@ GPT-3依旧延续自己的单向语言模型训练方式，只不过这次把模
 因此GPT-3的主要目标是**用更少的领域数据、且不经过精调步骤去解决问题**。
 
 > Here we show that scaling up language models greatly improves task-agnostic, few-shot performance, sometimes even reaching competitiveness with prior state-of-the-art finetuning approaches.
+>  
 
 Question？Improve scale make real intelligent？ NO！GPT 不会做多位数的加减法。
 GPT3并没有在理论上进行任何创新（仅仅是一次费用高昂的实验报告），它的价值更多体现在实际的应用中，
@@ -159,11 +160,11 @@ gpt-3 is a huge look-up table
 [what can you do with the openai gpt-3](https://blog.exxactcorp.com/what-can-you-do-with-the-openai-gpt-3-language-model/)
 [Understanding the GPT-2 source code](https://medium.com/analytics-vidhya/understanding-the-gpt-2-source-code-part-5-87bbe21dd749)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbOTU5MTQ3ODMxLC0xNTQ3NTQzMzgyLC0xMz
-I2MzIxMjEyLDIzMDc4MDg2NCwtMTgwNTQ2ODM4Niw5NjI4NTkw
-MzgsLTU1OTU1MjM0OCwtNTEyNzkxNTAzLDE5MTg3NDk0NDAsMT
-cyNDIwMjE0Nyw5NjcwMDk0ODksMTk2ODk5NjY2OSwtMTM2MzM1
-NTY2OSwtMTE4MDg0MzE5Myw0Nzg0NzE4NjYsMTI2NDUxNTkwOC
-wtNzY0MzE1MDc0LC04Nzg2NzAyMDAsLTQ5MTczOTMxNSwxODA5
-NDYzNDE4XX0=
+eyJoaXN0b3J5IjpbNTA4OTI5MzksOTU5MTQ3ODMxLC0xNTQ3NT
+QzMzgyLC0xMzI2MzIxMjEyLDIzMDc4MDg2NCwtMTgwNTQ2ODM4
+Niw5NjI4NTkwMzgsLTU1OTU1MjM0OCwtNTEyNzkxNTAzLDE5MT
+g3NDk0NDAsMTcyNDIwMjE0Nyw5NjcwMDk0ODksMTk2ODk5NjY2
+OSwtMTM2MzM1NTY2OSwtMTE4MDg0MzE5Myw0Nzg0NzE4NjYsMT
+I2NDUxNTkwOCwtNzY0MzE1MDc0LC04Nzg2NzAyMDAsLTQ5MTcz
+OTMxNV19
 -->
