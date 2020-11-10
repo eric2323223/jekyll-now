@@ -106,7 +106,7 @@ GPT-3依旧延续自己的单向语言模型训练方式，只不过这次把模
 >  One-Shot
 >  Zero-Shot
 
-Question？Improve scale make real intelligent？ NO！GPT 不会做多位数的加减法。
+Question？Improve scale make real intelligent？ YES?NO? GPT 不会做多位数的加减法。
 GPT3并没有在理论上进行任何创新（仅仅是一次费用高昂的实验报告），它的价值更多体现在实际的应用中，
 
   #### facts
@@ -163,11 +163,11 @@ gpt-3 is a huge look-up table
 [what can you do with the openai gpt-3](https://blog.exxactcorp.com/what-can-you-do-with-the-openai-gpt-3-language-model/)
 [Understanding the GPT-2 source code](https://medium.com/analytics-vidhya/understanding-the-gpt-2-source-code-part-5-87bbe21dd749)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEyNTQ2Nzg4MjQsOTU5MTQ3ODMxLC0xNT
-Q3NTQzMzgyLC0xMzI2MzIxMjEyLDIzMDc4MDg2NCwtMTgwNTQ2
-ODM4Niw5NjI4NTkwMzgsLTU1OTU1MjM0OCwtNTEyNzkxNTAzLD
-E5MTg3NDk0NDAsMTcyNDIwMjE0Nyw5NjcwMDk0ODksMTk2ODk5
-NjY2OSwtMTM2MzM1NTY2OSwtMTE4MDg0MzE5Myw0Nzg0NzE4Nj
-YsMTI2NDUxNTkwOCwtNzY0MzE1MDc0LC04Nzg2NzAyMDAsLTQ5
-MTczOTMxNV19
+eyJoaXN0b3J5IjpbLTE2MDYzODUxMjYsLTEyNTQ2Nzg4MjQsOT
+U5MTQ3ODMxLC0xNTQ3NTQzMzgyLC0xMzI2MzIxMjEyLDIzMDc4
+MDg2NCwtMTgwNTQ2ODM4Niw5NjI4NTkwMzgsLTU1OTU1MjM0OC
+wtNTEyNzkxNTAzLDE5MTg3NDk0NDAsMTcyNDIwMjE0Nyw5Njcw
+MDk0ODksMTk2ODk5NjY2OSwtMTM2MzM1NTY2OSwtMTE4MDg0Mz
+E5Myw0Nzg0NzE4NjYsMTI2NDUxNTkwOCwtNzY0MzE1MDc0LC04
+Nzg2NzAyMDBdfQ==
 -->
