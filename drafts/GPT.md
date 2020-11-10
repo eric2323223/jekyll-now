@@ -155,9 +155,9 @@ gpt-3 is a huge look-up table
 [Improving Language Understanding by Generative Pre-Training](https://www.cs.princeton.edu/courses/archive/spring20/cos598C/lectures/lec4-pretraining.pdf)
 [GPT3-the-database-prompt](https://www.gwern.net/GPT-3#the-database-prompt)
 [what can you do with the openai gpt-3](https://blog.exxactcorp.com/what-can-you-do-with-the-openai-gpt-3-language-model/)
-
+[Understanding the GPT-2 source code](https://medium.com/analytics-vidhya/understanding-the-gpt-2-source-code-part-5-87bbe21dd749)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEyNTA3Nzk0MDYsLTEzMjYzMjEyMTIsMj
+eyJoaXN0b3J5IjpbLTE1NDc1NDMzODIsLTEzMjYzMjEyMTIsMj
 MwNzgwODY0LC0xODA1NDY4Mzg2LDk2Mjg1OTAzOCwtNTU5NTUy
 MzQ4LC01MTI3OTE1MDMsMTkxODc0OTQ0MCwxNzI0MjAyMTQ3LD
 k2NzAwOTQ4OSwxOTY4OTk2NjY5LC0xMzYzMzU1NjY5LC0xMTgw
