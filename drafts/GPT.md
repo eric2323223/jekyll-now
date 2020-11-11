@@ -16,6 +16,7 @@ Sebastian Ruder和Jeremy Howard也许是第一个通过其提出的ULMFiT方法�
 
 ### Tokenizer
 **Byte Pair Encoding** ([**BPE**](https://arxiv.org/abs/1508.07909)) is used to encode the input sequences. BPE was originally proposed as a data compression algorithm in 1990s and then was adopted to solve the open-vocabulary issue in machine translation, as we can easily run into rare and unknown words when translating into a new language. Motivated by the intuition that rare and unknown words can often be decomposed into multiple subwords, BPE finds the best word segmentation by iteratively and greedily merging frequent pairs of characters.
+
 ### GPT model
 GTP预训练模型只使用Transformer 解码器（decoder），在位置编码使用了绝对位置编码，
 ![enter image description here](https://cdn-images-1.medium.com/max/1600/1*Ji79bZ3KqpMAjZ9Txv4q8Q.png)
@@ -163,11 +164,11 @@ gpt-3 is a huge look-up table
 [what can you do with the openai gpt-3](https://blog.exxactcorp.com/what-can-you-do-with-the-openai-gpt-3-language-model/)
 [Understanding the GPT-2 source code](https://medium.com/analytics-vidhya/understanding-the-gpt-2-source-code-part-5-87bbe21dd749)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTAwOTQ1MDIwMiwtMTYwNjM4NTEyNiwtMT
-I1NDY3ODgyNCw5NTkxNDc4MzEsLTE1NDc1NDMzODIsLTEzMjYz
-MjEyMTIsMjMwNzgwODY0LC0xODA1NDY4Mzg2LDk2Mjg1OTAzOC
-wtNTU5NTUyMzQ4LC01MTI3OTE1MDMsMTkxODc0OTQ0MCwxNzI0
-MjAyMTQ3LDk2NzAwOTQ4OSwxOTY4OTk2NjY5LC0xMzYzMzU1Nj
-Y5LC0xMTgwODQzMTkzLDQ3ODQ3MTg2NiwxMjY0NTE1OTA4LC03
-NjQzMTUwNzRdfQ==
+eyJoaXN0b3J5IjpbLTI1OTk4MjYxMiwxMDA5NDUwMjAyLC0xNj
+A2Mzg1MTI2LC0xMjU0Njc4ODI0LDk1OTE0NzgzMSwtMTU0NzU0
+MzM4MiwtMTMyNjMyMTIxMiwyMzA3ODA4NjQsLTE4MDU0NjgzOD
+YsOTYyODU5MDM4LC01NTk1NTIzNDgsLTUxMjc5MTUwMywxOTE4
+NzQ5NDQwLDE3MjQyMDIxNDcsOTY3MDA5NDg5LDE5Njg5OTY2Nj
+ksLTEzNjMzNTU2NjksLTExODA4NDMxOTMsNDc4NDcxODY2LDEy
+NjQ1MTU5MDhdfQ==
 -->
