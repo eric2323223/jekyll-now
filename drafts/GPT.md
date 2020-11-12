@@ -164,12 +164,13 @@ gpt-3 is a huge look-up table
 [what can you do with the openai gpt-3](https://blog.exxactcorp.com/what-can-you-do-with-the-openai-gpt-3-language-model/)
 [Understanding the GPT-2 source code](https://medium.com/analytics-vidhya/understanding-the-gpt-2-source-code-part-5-87bbe21dd749)
 [Generating text summaries with GPT2](https://blog.paperspace.com/generating-text-summaries-gpt-2/)
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTg3ODQyNTM2MywtMjU5OTgyNjEyLDEwMD
-k0NTAyMDIsLTE2MDYzODUxMjYsLTEyNTQ2Nzg4MjQsOTU5MTQ3
-ODMxLC0xNTQ3NTQzMzgyLC0xMzI2MzIxMjEyLDIzMDc4MDg2NC
-wtMTgwNTQ2ODM4Niw5NjI4NTkwMzgsLTU1OTU1MjM0OCwtNTEy
-NzkxNTAzLDE5MTg3NDk0NDAsMTcyNDIwMjE0Nyw5NjcwMDk0OD
-ksMTk2ODk5NjY2OSwtMTM2MzM1NTY2OSwtMTE4MDg0MzE5Myw0
-Nzg0NzE4NjZdfQ==
+eyJoaXN0b3J5IjpbLTk4MDg3MjA2MywxODc4NDI1MzYzLC0yNT
+k5ODI2MTIsMTAwOTQ1MDIwMiwtMTYwNjM4NTEyNiwtMTI1NDY3
+ODgyNCw5NTkxNDc4MzEsLTE1NDc1NDMzODIsLTEzMjYzMjEyMT
+IsMjMwNzgwODY0LC0xODA1NDY4Mzg2LDk2Mjg1OTAzOCwtNTU5
+NTUyMzQ4LC01MTI3OTE1MDMsMTkxODc0OTQ0MCwxNzI0MjAyMT
+Q3LDk2NzAwOTQ4OSwxOTY4OTk2NjY5LC0xMzYzMzU1NjY5LC0x
+MTgwODQzMTkzXX0=
 -->
