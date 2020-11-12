@@ -164,9 +164,9 @@ gpt-3 is a huge look-up table
 [what can you do with the openai gpt-3](https://blog.exxactcorp.com/what-can-you-do-with-the-openai-gpt-3-language-model/)
 [Understanding the GPT-2 source code](https://medium.com/analytics-vidhya/understanding-the-gpt-2-source-code-part-5-87bbe21dd749)
 [Generating text summaries with GPT2](https://blog.paperspace.com/generating-text-summaries-gpt-2/)
-
+[Practical applications of GPT2](https://medium.com/the-research-nest/practical-applications-of-open-ais-gpt-2-deep-learning-model-14701f18a432)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTk4MDg3MjA2MywxODc4NDI1MzYzLC0yNT
+eyJoaXN0b3J5IjpbLTg2NDYyODQ4MywxODc4NDI1MzYzLC0yNT
 k5ODI2MTIsMTAwOTQ1MDIwMiwtMTYwNjM4NTEyNiwtMTI1NDY3
 ODgyNCw5NTkxNDc4MzEsLTE1NDc1NDMzODIsLTEzMjYzMjEyMT
 IsMjMwNzgwODY0LC0xODA1NDY4Mzg2LDk2Mjg1OTAzOCwtNTU5
