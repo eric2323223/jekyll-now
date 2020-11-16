@@ -78,6 +78,7 @@ Both the models —  [GPT-3](https://analyticsindiamag.com/how-openais-gpt-3-can
 
 Secondly, while  [BERT](https://analyticsindiamag.com/step-by-step-guide-to-implement-multi-class-classification-with-bert-tensorflow/)  requires an elaborated fine-tuning process where users have to gather data of examples to train the model for specific downstream tasks, GPT-3’s text-in and text-out API allows the users to reprogram it using instructions and access it. Case in point — for sentiment analysis or question answering tasks, to use BERT, the users have to train the model on a separate layer on sentence encodings. However,  [GPT-3](https://analyticsindiamag.com/gpt-3-has-weaknesses-and-makes-silly-mistakes-sam-altman-openai/)  uses a few-shot learning process on the input token to predict the output result.
 ### GPT-1: Improving Language Understanding by Generative Pre-Training
+> We demonstrate that large gains on these tasks can be realized by generative pre-training of a language model on a diverse corpus of unlabeled text, followed by discriminative fine-tuning on each specific task. In contrast to previous approaches, we make use of task-aware input transformations during fine-tuning to achieve effective transfer while requiring minimal changes to the model architecture. We demonstrate the effectiveness of our approach on a wide range of benchmarks for natural language understanding
 ### GPT-2: Language Models are Unsupervised Multitask Learners
 ![enter image description here](https://joeddav.github.io/blog/images/zsl/gpt3_triviahq.png)
 GPT2的创新点在于验证了无监督的语言建模能够学习到有监督任务所需的特征。原文是
@@ -167,11 +168,11 @@ gpt-3 is a huge look-up table
 [Practical applications of GPT2](https://medium.com/the-research-nest/practical-applications-of-open-ais-gpt-2-deep-learning-model-14701f18a432)
 [Fine-Tuning GPT-2 from Human Preferences](https://openai.com/blog/fine-tuning-gpt-2/)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjkwOTg1MzAxLDE4Nzg0MjUzNjMsLTI1OT
-k4MjYxMiwxMDA5NDUwMjAyLC0xNjA2Mzg1MTI2LC0xMjU0Njc4
-ODI0LDk1OTE0NzgzMSwtMTU0NzU0MzM4MiwtMTMyNjMyMTIxMi
-wyMzA3ODA4NjQsLTE4MDU0NjgzODYsOTYyODU5MDM4LC01NTk1
-NTIzNDgsLTUxMjc5MTUwMywxOTE4NzQ5NDQwLDE3MjQyMDIxND
-csOTY3MDA5NDg5LDE5Njg5OTY2NjksLTEzNjMzNTU2NjksLTEx
-ODA4NDMxOTNdfQ==
+eyJoaXN0b3J5IjpbLTg4MDEwMDAxLDY5MDk4NTMwMSwxODc4ND
+I1MzYzLC0yNTk5ODI2MTIsMTAwOTQ1MDIwMiwtMTYwNjM4NTEy
+NiwtMTI1NDY3ODgyNCw5NTkxNDc4MzEsLTE1NDc1NDMzODIsLT
+EzMjYzMjEyMTIsMjMwNzgwODY0LC0xODA1NDY4Mzg2LDk2Mjg1
+OTAzOCwtNTU5NTUyMzQ4LC01MTI3OTE1MDMsMTkxODc0OTQ0MC
+wxNzI0MjAyMTQ3LDk2NzAwOTQ4OSwxOTY4OTk2NjY5LC0xMzYz
+MzU1NjY5XX0=
 -->
