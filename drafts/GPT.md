@@ -83,7 +83,7 @@ Secondly, while  [BERT](https://analyticsindiamag.com/step-by-step-guide-to-impl
 #### Training data
 >We use the BooksCorpus dataset [71] for training the language model. It contains over 7,000 unique unpublished books from a variety of genres including Adventure, Fantasy, and Romance. Crucially, it contains long stretches of contiguous text, which allows the generative model to learn to condition on long-range information.
 #### Model specification
-> 
+> Our model largely follows the original transformer work [62]. We trained a 12-layer decoder-only transformer with masked self-attention heads (768 dimensional states and 12 attention heads). For the position-wise feed-forward networks, we used 3072 dimensional inner states. We used the Adam optimization scheme [27] with a max learning rate of 2.5e-4. The learning rate was increased linearly from zero over the first 2000 updates and annealed to 0 using a cosine schedule. We train for 100 epochs on minibatches of 64 randomly sampled, contiguous sequences of 512 tokens.
 ### GPT-2: Language Models are Unsupervised Multitask Learners
 ![enter image description here](https://joeddav.github.io/blog/images/zsl/gpt3_triviahq.png)
 GPT2的创新点在于验证了无监督的语言建模能够学习到有监督任务所需的特征。原文是
@@ -173,11 +173,11 @@ gpt-3 is a huge look-up table
 [Practical applications of GPT2](https://medium.com/the-research-nest/practical-applications-of-open-ais-gpt-2-deep-learning-model-14701f18a432)
 [Fine-Tuning GPT-2 from Human Preferences](https://openai.com/blog/fine-tuning-gpt-2/)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTAxODQ4NjgzOCwtMTc0OTgwMjI3NywtOD
-gwMTAwMDEsNjkwOTg1MzAxLDE4Nzg0MjUzNjMsLTI1OTk4MjYx
-MiwxMDA5NDUwMjAyLC0xNjA2Mzg1MTI2LC0xMjU0Njc4ODI0LD
-k1OTE0NzgzMSwtMTU0NzU0MzM4MiwtMTMyNjMyMTIxMiwyMzA3
-ODA4NjQsLTE4MDU0NjgzODYsOTYyODU5MDM4LC01NTk1NTIzND
-gsLTUxMjc5MTUwMywxOTE4NzQ5NDQwLDE3MjQyMDIxNDcsOTY3
-MDA5NDg5XX0=
+eyJoaXN0b3J5IjpbLTE1ODA2NzUxMTksLTE3NDk4MDIyNzcsLT
+g4MDEwMDAxLDY5MDk4NTMwMSwxODc4NDI1MzYzLC0yNTk5ODI2
+MTIsMTAwOTQ1MDIwMiwtMTYwNjM4NTEyNiwtMTI1NDY3ODgyNC
+w5NTkxNDc4MzEsLTE1NDc1NDMzODIsLTEzMjYzMjEyMTIsMjMw
+NzgwODY0LC0xODA1NDY4Mzg2LDk2Mjg1OTAzOCwtNTU5NTUyMz
+Q4LC01MTI3OTE1MDMsMTkxODc0OTQ0MCwxNzI0MjAyMTQ3LDk2
+NzAwOTQ4OV19
 -->
