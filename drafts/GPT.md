@@ -88,7 +88,9 @@ Secondly, while  [BERT](https://analyticsindiamag.com/step-by-step-guide-to-impl
 > - Natural Language Inference: We evaluate on five datasets with diverse sources, including image captions (SNLI), transcribed speech, popular fiction, and government reports (MNLI), Wikipedia articles (QNLI), science exams (SciTail) or news articles (RTE)
 > - Question answering and commonsense reasoning: We use the recently released RACE dataset [30], consisting of English passages with associated questions from middle and high school exams
 > - Semantic Similarity: Semantic similarity (or paraphrase detection) tasks involve predicting whether two sentences are semantically equivalent or not. The challenges lie in recognizing rephrasing of concepts, understanding negation, and handling syntactic ambiguity. We use three datasets for this task – the Microsoft Paraphrase corpus (MRPC) [14] (collected from news sources), the Quora Question Pairs (QQP) dataset [9], and the Semantic Textual Similarity benchmark (STS-B) [6].
-> 
+> - Classification: Finally, we also evaluate on two different text classification tasks. The Corpus of Linguistic Acceptability (CoLA) [65] contains expert judgements on whether a sentence is grammatical or not, and tests the innate linguistic bias of trained models. The Stanford Sentiment Treebank (SST-2) [54], on the other hand, is a standard binary classification task.
+#### Analysis
+
 ### GPT-2: Language Models are Unsupervised Multitask Learners
 ![enter image description here](https://joeddav.github.io/blog/images/zsl/gpt3_triviahq.png)
 GPT2的创新点在于验证了无监督的语言建模能够学习到有监督任务所需的特征。原文是
@@ -178,11 +180,11 @@ gpt-3 is a huge look-up table
 [Practical applications of GPT2](https://medium.com/the-research-nest/practical-applications-of-open-ais-gpt-2-deep-learning-model-14701f18a432)
 [Fine-Tuning GPT-2 from Human Preferences](https://openai.com/blog/fine-tuning-gpt-2/)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEwMDQ5Nzc1MjYsMTc3MDEyMzg1MSwtMT
-c0OTgwMjI3NywtODgwMTAwMDEsNjkwOTg1MzAxLDE4Nzg0MjUz
-NjMsLTI1OTk4MjYxMiwxMDA5NDUwMjAyLC0xNjA2Mzg1MTI2LC
-0xMjU0Njc4ODI0LDk1OTE0NzgzMSwtMTU0NzU0MzM4MiwtMTMy
-NjMyMTIxMiwyMzA3ODA4NjQsLTE4MDU0NjgzODYsOTYyODU5MD
-M4LC01NTk1NTIzNDgsLTUxMjc5MTUwMywxOTE4NzQ5NDQwLDE3
-MjQyMDIxNDddfQ==
+eyJoaXN0b3J5IjpbMTc2MjExMDg2MSwxNzcwMTIzODUxLC0xNz
+Q5ODAyMjc3LC04ODAxMDAwMSw2OTA5ODUzMDEsMTg3ODQyNTM2
+MywtMjU5OTgyNjEyLDEwMDk0NTAyMDIsLTE2MDYzODUxMjYsLT
+EyNTQ2Nzg4MjQsOTU5MTQ3ODMxLC0xNTQ3NTQzMzgyLC0xMzI2
+MzIxMjEyLDIzMDc4MDg2NCwtMTgwNTQ2ODM4Niw5NjI4NTkwMz
+gsLTU1OTU1MjM0OCwtNTEyNzkxNTAzLDE5MTg3NDk0NDAsMTcy
+NDIwMjE0N119
 -->
