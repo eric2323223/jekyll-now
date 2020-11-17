@@ -86,7 +86,9 @@ Secondly, while  [BERT](https://analyticsindiamag.com/step-by-step-guide-to-impl
 > Our model largely follows the original transformer work [62]. We trained a 12-layer decoder-only transformer with masked self-attention heads (768 dimensional states and 12 attention heads). For the position-wise feed-forward networks, we used 3072 dimensional inner states. We used the Adam optimization scheme [27] with a max learning rate of 2.5e-4. The learning rate was increased linearly from zero over the first 2000 updates and annealed to 0 using a cosine schedule. We train for 100 epochs on minibatches of 64 randomly sampled, contiguous sequences of 512 tokens.
 #### supervised fine-tuning
 > - Natural Language Inference: We evaluate on five datasets with diverse sources, including image captions (SNLI), transcribed speech, popular fiction, and government reports (MNLI), Wikipedia articles (QNLI), science exams (SciTail) or news articles (RTE)
-> - 
+> - Question answering and commonsense reasoning: We use the recently released RACE dataset [30], consisting of English passages with associated questions from middle and high school exams
+> - Semantic Similarity: Semantic similarity (or paraphrase detection) tasks involve predicting whether two sentences are semantically equivalent or not. The challenges lie in recognizing rephrasing of concepts, understanding negation, and handling syntactic ambiguity. We use three datasets for this task – the Microsoft Paraphrase corpus (MRPC) [14] (collected from news sources), the Quora Question Pairs (QQP) dataset [9], and the Semantic Textual Similarity benchmark (STS-B) [6].
+> 
 ### GPT-2: Language Models are Unsupervised Multitask Learners
 ![enter image description here](https://joeddav.github.io/blog/images/zsl/gpt3_triviahq.png)
 GPT2的创新点在于验证了无监督的语言建模能够学习到有监督任务所需的特征。原文是
@@ -176,11 +178,11 @@ gpt-3 is a huge look-up table
 [Practical applications of GPT2](https://medium.com/the-research-nest/practical-applications-of-open-ais-gpt-2-deep-learning-model-14701f18a432)
 [Fine-Tuning GPT-2 from Human Preferences](https://openai.com/blog/fine-tuning-gpt-2/)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTg2NDYyNTk0NCwxNzcwMTIzODUxLC0xNz
-Q5ODAyMjc3LC04ODAxMDAwMSw2OTA5ODUzMDEsMTg3ODQyNTM2
-MywtMjU5OTgyNjEyLDEwMDk0NTAyMDIsLTE2MDYzODUxMjYsLT
-EyNTQ2Nzg4MjQsOTU5MTQ3ODMxLC0xNTQ3NTQzMzgyLC0xMzI2
-MzIxMjEyLDIzMDc4MDg2NCwtMTgwNTQ2ODM4Niw5NjI4NTkwMz
-gsLTU1OTU1MjM0OCwtNTEyNzkxNTAzLDE5MTg3NDk0NDAsMTcy
-NDIwMjE0N119
+eyJoaXN0b3J5IjpbLTEwMDQ5Nzc1MjYsMTc3MDEyMzg1MSwtMT
+c0OTgwMjI3NywtODgwMTAwMDEsNjkwOTg1MzAxLDE4Nzg0MjUz
+NjMsLTI1OTk4MjYxMiwxMDA5NDUwMjAyLC0xNjA2Mzg1MTI2LC
+0xMjU0Njc4ODI0LDk1OTE0NzgzMSwtMTU0NzU0MzM4MiwtMTMy
+NjMyMTIxMiwyMzA3ODA4NjQsLTE4MDU0NjgzODYsOTYyODU5MD
+M4LC01NTk1NTIzNDgsLTUxMjc5MTUwMywxOTE4NzQ5NDQwLDE3
+MjQyMDIxNDddfQ==
 -->
