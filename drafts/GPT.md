@@ -81,6 +81,9 @@ Secondly, while  [BERT](https://analyticsindiamag.com/step-by-step-guide-to-impl
 ### GPT-1: Improving Language Understanding by Generative Pre-Training
 > We demonstrate that large gains on these tasks can be realized by generative pre-training of a language model on a diverse corpus of unlabeled text, followed by discriminative fine-tuning on each specific task. In contrast to previous approaches, we make use of task-aware input transformations during fine-tuning to achieve effective transfer while requiring minimal changes to the model architecture. We demonstrate the effectiveness of our approach on a wide range of benchmarks for natural language understanding
 #### Training data
+>We use the BooksCorpus dataset [71] for training the language model. It contains over 7,000 unique unpublished books from a variety of genres including Adventure, Fantasy, and Romance. Crucially, it contains long stretches of contiguous text, which allows the generative model to learn to condition on long-range information.
+#### Model specification
+> 
 ### GPT-2: Language Models are Unsupervised Multitask Learners
 ![enter image description here](https://joeddav.github.io/blog/images/zsl/gpt3_triviahq.png)
 GPT2的创新点在于验证了无监督的语言建模能够学习到有监督任务所需的特征。原文是
@@ -170,11 +173,11 @@ gpt-3 is a huge look-up table
 [Practical applications of GPT2](https://medium.com/the-research-nest/practical-applications-of-open-ais-gpt-2-deep-learning-model-14701f18a432)
 [Fine-Tuning GPT-2 from Human Preferences](https://openai.com/blog/fine-tuning-gpt-2/)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE3NDk4MDIyNzcsLTg4MDEwMDAxLDY5MD
-k4NTMwMSwxODc4NDI1MzYzLC0yNTk5ODI2MTIsMTAwOTQ1MDIw
-MiwtMTYwNjM4NTEyNiwtMTI1NDY3ODgyNCw5NTkxNDc4MzEsLT
-E1NDc1NDMzODIsLTEzMjYzMjEyMTIsMjMwNzgwODY0LC0xODA1
-NDY4Mzg2LDk2Mjg1OTAzOCwtNTU5NTUyMzQ4LC01MTI3OTE1MD
-MsMTkxODc0OTQ0MCwxNzI0MjAyMTQ3LDk2NzAwOTQ4OSwxOTY4
-OTk2NjY5XX0=
+eyJoaXN0b3J5IjpbMTAxODQ4NjgzOCwtMTc0OTgwMjI3NywtOD
+gwMTAwMDEsNjkwOTg1MzAxLDE4Nzg0MjUzNjMsLTI1OTk4MjYx
+MiwxMDA5NDUwMjAyLC0xNjA2Mzg1MTI2LC0xMjU0Njc4ODI0LD
+k1OTE0NzgzMSwtMTU0NzU0MzM4MiwtMTMyNjMyMTIxMiwyMzA3
+ODA4NjQsLTE4MDU0NjgzODYsOTYyODU5MDM4LC01NTk1NTIzND
+gsLTUxMjc5MTUwMywxOTE4NzQ5NDQwLDE3MjQyMDIxNDcsOTY3
+MDA5NDg5XX0=
 -->
