@@ -85,6 +85,7 @@ Secondly, while  [BERT](https://analyticsindiamag.com/step-by-step-guide-to-impl
 #### Model specification
 > Our model largely follows the original transformer work [62]. We trained a 12-layer decoder-only transformer with masked self-attention heads (768 dimensional states and 12 attention heads). For the position-wise feed-forward networks, we used 3072 dimensional inner states. We used the Adam optimization scheme [27] with a max learning rate of 2.5e-4. The learning rate was increased linearly from zero over the first 2000 updates and annealed to 0 using a cosine schedule. We train for 100 epochs on minibatches of 64 randomly sampled, contiguous sequences of 512 tokens.
 #### supervised fine-tuning
+> - Natural Language Inference: We evaluate on five datasets with diverse sources, including image captions (SNLI), transcribed speech, popular fiction, and government reports (MNLI), Wikipedia articles (QNLI), science exams (SciTail) or news articles (RTE)
 > - 
 ### GPT-2: Language Models are Unsupervised Multitask Learners
 ![enter image description here](https://joeddav.github.io/blog/images/zsl/gpt3_triviahq.png)
@@ -175,7 +176,7 @@ gpt-3 is a huge look-up table
 [Practical applications of GPT2](https://medium.com/the-research-nest/practical-applications-of-open-ais-gpt-2-deep-learning-model-14701f18a432)
 [Fine-Tuning GPT-2 from Human Preferences](https://openai.com/blog/fine-tuning-gpt-2/)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTUyOTYzMzY4OCwxNzcwMTIzODUxLC0xNz
+eyJoaXN0b3J5IjpbMTg2NDYyNTk0NCwxNzcwMTIzODUxLC0xNz
 Q5ODAyMjc3LC04ODAxMDAwMSw2OTA5ODUzMDEsMTg3ODQyNTM2
 MywtMjU5OTgyNjEyLDEwMDk0NTAyMDIsLTE2MDYzODUxMjYsLT
 EyNTQ2Nzg4MjQsOTU5MTQ3ODMxLC0xNTQ3NTQzMzgyLC0xMzI2
