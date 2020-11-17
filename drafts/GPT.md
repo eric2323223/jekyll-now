@@ -91,6 +91,7 @@ Secondly, while  [BERT](https://analyticsindiamag.com/step-by-step-guide-to-impl
 > - Classification: Finally, we also evaluate on two different text classification tasks. The Corpus of Linguistic Acceptability (CoLA) [65] contains expert judgements on whether a sentence is grammatical or not, and tests the innate linguistic bias of trained models. The Stanford Sentiment Treebank (SST-2) [54], on the other hand, is a standard binary classification task.
 #### Analysis
 ![enter image description here](https://d3i71xaburhd42.cloudfront.net/cd18800a0fe0b668a1cc19f2ec95b5003d0a5035/7-Figure2-1.png)
+>
 ### GPT-2: Language Models are Unsupervised Multitask Learners
 ![enter image description here](https://joeddav.github.io/blog/images/zsl/gpt3_triviahq.png)
 GPT2的创新点在于验证了无监督的语言建模能够学习到有监督任务所需的特征。原文是
@@ -180,11 +181,11 @@ gpt-3 is a huge look-up table
 [Practical applications of GPT2](https://medium.com/the-research-nest/practical-applications-of-open-ais-gpt-2-deep-learning-model-14701f18a432)
 [Fine-Tuning GPT-2 from Human Preferences](https://openai.com/blog/fine-tuning-gpt-2/)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbOTgyMjIyNDk5LDE3NjIxMTA4NjEsMTc3MD
-EyMzg1MSwtMTc0OTgwMjI3NywtODgwMTAwMDEsNjkwOTg1MzAx
-LDE4Nzg0MjUzNjMsLTI1OTk4MjYxMiwxMDA5NDUwMjAyLC0xNj
-A2Mzg1MTI2LC0xMjU0Njc4ODI0LDk1OTE0NzgzMSwtMTU0NzU0
-MzM4MiwtMTMyNjMyMTIxMiwyMzA3ODA4NjQsLTE4MDU0NjgzOD
-YsOTYyODU5MDM4LC01NTk1NTIzNDgsLTUxMjc5MTUwMywxOTE4
-NzQ5NDQwXX0=
+eyJoaXN0b3J5IjpbLTc1NDgyNTAxLDk4MjIyMjQ5OSwxNzYyMT
+EwODYxLDE3NzAxMjM4NTEsLTE3NDk4MDIyNzcsLTg4MDEwMDAx
+LDY5MDk4NTMwMSwxODc4NDI1MzYzLC0yNTk5ODI2MTIsMTAwOT
+Q1MDIwMiwtMTYwNjM4NTEyNiwtMTI1NDY3ODgyNCw5NTkxNDc4
+MzEsLTE1NDc1NDMzODIsLTEzMjYzMjEyMTIsMjMwNzgwODY0LC
+0xODA1NDY4Mzg2LDk2Mjg1OTAzOCwtNTU5NTUyMzQ4LC01MTI3
+OTE1MDNdfQ==
 -->
