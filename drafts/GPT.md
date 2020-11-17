@@ -101,7 +101,9 @@ GPT2的创新点在于验证了无监督的语言建模能够学习到有监督�
 这个才是GPT-2文章价值所在。
 
 >GPT-2 displays a broad set of capabilities, including the ability to generate conditional synthetic text samples of unprecedented quality, where we prime the model with an input and have it generate a lengthy continuation. In addition, GPT-2 outperforms other language models trained on specific domains (like Wikipedia, news, or books) without needing to use these domain-specific training datasets. On language tasks like question answering, reading comprehension, summarization, and translation, GPT-2 begins to learn these tasks from the raw text, using no task-specific training data. While scores on these downstream tasks are far from state-of-the-art, they suggest that the tasks can benefit from unsupervised techniques, given sufficient (unlabeled) data and compute.
-####    
+![enter image description here](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUFL2kZa4Nzhvte_2-qmBsFtnoCQ_6ffJvDg&usqp=CAU)
+#### training data
+   
 ### GPT-3: Language Models are Few-Shot Learners
 **可以跳过finetune训练直接使用**
 
@@ -182,11 +184,11 @@ gpt-3 is a huge look-up table
 [Practical applications of GPT2](https://medium.com/the-research-nest/practical-applications-of-open-ais-gpt-2-deep-learning-model-14701f18a432)
 [Fine-Tuning GPT-2 from Human Preferences](https://openai.com/blog/fine-tuning-gpt-2/)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTAzMDc3MTU4NiwtMTIzMDMyMzI5NCw5OD
-IyMjI0OTksMTc2MjExMDg2MSwxNzcwMTIzODUxLC0xNzQ5ODAy
-Mjc3LC04ODAxMDAwMSw2OTA5ODUzMDEsMTg3ODQyNTM2MywtMj
-U5OTgyNjEyLDEwMDk0NTAyMDIsLTE2MDYzODUxMjYsLTEyNTQ2
-Nzg4MjQsOTU5MTQ3ODMxLC0xNTQ3NTQzMzgyLC0xMzI2MzIxMj
-EyLDIzMDc4MDg2NCwtMTgwNTQ2ODM4Niw5NjI4NTkwMzgsLTU1
-OTU1MjM0OF19
+eyJoaXN0b3J5IjpbLTE3NzIyNTUwMzEsLTEyMzAzMjMyOTQsOT
+gyMjIyNDk5LDE3NjIxMTA4NjEsMTc3MDEyMzg1MSwtMTc0OTgw
+MjI3NywtODgwMTAwMDEsNjkwOTg1MzAxLDE4Nzg0MjUzNjMsLT
+I1OTk4MjYxMiwxMDA5NDUwMjAyLC0xNjA2Mzg1MTI2LC0xMjU0
+Njc4ODI0LDk1OTE0NzgzMSwtMTU0NzU0MzM4MiwtMTMyNjMyMT
+IxMiwyMzA3ODA4NjQsLTE4MDU0NjgzODYsOTYyODU5MDM4LC01
+NTk1NTIzNDhdfQ==
 -->
