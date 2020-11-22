@@ -109,6 +109,8 @@ GPT2的创新点在于验证了无监督的语言建模能够学习到有监督�
 #### Analysis
 > We demonstrate that language models begin to learn these tasks without any explicit supervision when trained on a new dataset of millions of webpages called WebText.
 > These findings suggest a promising path towards building language processing systems which learn to perform tasks from their naturally occurring demonstrations.
+#### Conclusion
+> When a large language model is trained on a sufficiently large and diverse dataset it is able to perform well across many domains and datasets. GPT-2 zero-shots to state of the art performance on 7 out of 8 tested language modeling datasets. The diversity of tasks the model is able to perform in a zero-shot setting suggests that high-capacity models trained to maximize the likelihood of a sufficiently varied text corpus begin to learn how to perform a surprising amount of tasks without the need for explicit supervision.
 ### GPT-3: Language Models are Few-Shot Learners
 **可以跳过finetune训练直接使用**
 
@@ -189,11 +191,11 @@ gpt-3 is a huge look-up table
 [Practical applications of GPT2](https://medium.com/the-research-nest/practical-applications-of-open-ais-gpt-2-deep-learning-model-14701f18a432)
 [Fine-Tuning GPT-2 from Human Preferences](https://openai.com/blog/fine-tuning-gpt-2/)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2NDczNTQxODMsLTEyMzk0NzU3MywtMT
-c3MjI1NTAzMSwtMTIzMDMyMzI5NCw5ODIyMjI0OTksMTc2MjEx
-MDg2MSwxNzcwMTIzODUxLC0xNzQ5ODAyMjc3LC04ODAxMDAwMS
-w2OTA5ODUzMDEsMTg3ODQyNTM2MywtMjU5OTgyNjEyLDEwMDk0
-NTAyMDIsLTE2MDYzODUxMjYsLTEyNTQ2Nzg4MjQsOTU5MTQ3OD
-MxLC0xNTQ3NTQzMzgyLC0xMzI2MzIxMjEyLDIzMDc4MDg2NCwt
-MTgwNTQ2ODM4Nl19
+eyJoaXN0b3J5IjpbNTQyMDQyOTU2LC0xMjM5NDc1NzMsLTE3Nz
+IyNTUwMzEsLTEyMzAzMjMyOTQsOTgyMjIyNDk5LDE3NjIxMTA4
+NjEsMTc3MDEyMzg1MSwtMTc0OTgwMjI3NywtODgwMTAwMDEsNj
+kwOTg1MzAxLDE4Nzg0MjUzNjMsLTI1OTk4MjYxMiwxMDA5NDUw
+MjAyLC0xNjA2Mzg1MTI2LC0xMjU0Njc4ODI0LDk1OTE0NzgzMS
+wtMTU0NzU0MzM4MiwtMTMyNjMyMTIxMiwyMzA3ODA4NjQsLTE4
+MDU0NjgzODZdfQ==
 -->
