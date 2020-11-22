@@ -106,6 +106,7 @@ GPT2的创新点在于验证了无监督的语言建模能够学习到有监督�
 > The resulting dataset, WebText, contains the text subset of these 45 million links. To extract the text from HTML responses we use a combination of the Dragnet (Peters & Lecocq, 2013) and Newspaper1 content extractors. All results presented in this paper use a preliminary version of WebText which does not include links created after Dec 2017 and which after de-duplication and some heuristic based cleaning contains slightly over 8 million documents for a total of 40 GB of text. We removed all Wikipedia documents from WebText since it is a common data source for other datasets and could complicate analysis due to over1https://github.com/codelucas/newspaper Language Models are Unsupervised Multitask Learners lapping training data with test evaluation tasks.  
 #### model
 > The model largely follows the details of the OpenAI GPT model (Radford et al., 2018) with a Parameters Layers dmodel 117M 12 768 345M 24 1024 762M 36 1280 1542M 48 1600 Table 2. Architecture hyperparameters for the 4 model sizes. few modifications. Layer normalization (Ba et al., 2016) was moved to the input of each sub-block, similar to a pre-activation residual network (He et al., 2016) and an additional layer normalization was added after the final selfattention block. A modified initialization which accounts for the accumulation on the residual path with model depth is used. We scale the weights of residual layers at initialization by a factor of 1/ √ N where N is the number of residual layers. The vocabulary is expanded to 50,257. We also increase the context size from 512 to 1024 tokens and a larger batchsize of 512 is used.
+##### Analysis
 ### GPT-3: Language Models are Few-Shot Learners
 **可以跳过finetune训练直接使用**
 
@@ -186,11 +187,11 @@ gpt-3 is a huge look-up table
 [Practical applications of GPT2](https://medium.com/the-research-nest/practical-applications-of-open-ais-gpt-2-deep-learning-model-14701f18a432)
 [Fine-Tuning GPT-2 from Human Preferences](https://openai.com/blog/fine-tuning-gpt-2/)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEyMzk0NzU3MywtMTc3MjI1NTAzMSwtMT
-IzMDMyMzI5NCw5ODIyMjI0OTksMTc2MjExMDg2MSwxNzcwMTIz
-ODUxLC0xNzQ5ODAyMjc3LC04ODAxMDAwMSw2OTA5ODUzMDEsMT
-g3ODQyNTM2MywtMjU5OTgyNjEyLDEwMDk0NTAyMDIsLTE2MDYz
-ODUxMjYsLTEyNTQ2Nzg4MjQsOTU5MTQ3ODMxLC0xNTQ3NTQzMz
-gyLC0xMzI2MzIxMjEyLDIzMDc4MDg2NCwtMTgwNTQ2ODM4Niw5
-NjI4NTkwMzhdfQ==
+eyJoaXN0b3J5IjpbLTE4MDEzMjM3MjIsLTEyMzk0NzU3MywtMT
+c3MjI1NTAzMSwtMTIzMDMyMzI5NCw5ODIyMjI0OTksMTc2MjEx
+MDg2MSwxNzcwMTIzODUxLC0xNzQ5ODAyMjc3LC04ODAxMDAwMS
+w2OTA5ODUzMDEsMTg3ODQyNTM2MywtMjU5OTgyNjEyLDEwMDk0
+NTAyMDIsLTE2MDYzODUxMjYsLTEyNTQ2Nzg4MjQsOTU5MTQ3OD
+MxLC0xNTQ3NTQzMzgyLC0xMzI2MzIxMjEyLDIzMDc4MDg2NCwt
+MTgwNTQ2ODM4Nl19
 -->
