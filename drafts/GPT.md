@@ -106,6 +106,9 @@ GPT2的创新点在于验证了无监督的语言建模能够学习到有监督�
 > The resulting dataset, WebText, contains the text subset of these 45 million links. To extract the text from HTML responses we use a combination of the Dragnet (Peters & Lecocq, 2013) and Newspaper1 content extractors. All results presented in this paper use a preliminary version of WebText which does not include links created after Dec 2017 and which after de-duplication and some heuristic based cleaning contains slightly over 8 million documents for a total of 40 GB of text. We removed all Wikipedia documents from WebText since it is a common data source for other datasets and could complicate analysis due to over1https://github.com/codelucas/newspaper Language Models are Unsupervised Multitask Learners lapping training data with test evaluation tasks.  
 #### model
 > The model largely follows the details of the OpenAI GPT model (Radford et al., 2018) with a Parameters Layers dmodel 117M 12 768 345M 24 1024 762M 36 1280 1542M 48 1600 Table 2. Architecture hyperparameters for the 4 model sizes. few modifications. Layer normalization (Ba et al., 2016) was moved to the input of each sub-block, similar to a pre-activation residual network (He et al., 2016) and an additional layer normalization was added after the final selfattention block. A modified initialization which accounts for the accumulation on the residual path with model depth is used. We scale the weights of residual layers at initialization by a factor of 1/ √ N where N is the number of residual layers. The vocabulary is expanded to 50,257. We also increase the context size from 512 to 1024 tokens and a larger batchsize of 512 is used.
+#### Experiments
+> We trained and benchmarked four LMs with approximately log-uniformly spaced sizes. The architectures are summarized in Table 2. The smallest model is equivalent to the original GPT, and the second smallest equivalent to the largest model from BERT (Devlin et al., 2018). Our largest model, which we call GPT-2, has over an order of magnitude more parameters than GPT. The learning rate of each model was manually tuned for the best perplexity on a 5% held-out sample of WebText. All models still underfit WebText and held-out perplexity has as of yet improved given more training time.
+> Parameters Layers dmodel 117M 12 768 345M 24 1024 762M 36 1280 1542M 48 1600 Table 2. Architecture hyperparameters for the 4 model sizes.
 #### Analysis
 > We demonstrate that language models begin to learn these tasks without any explicit supervision when trained on a new dataset of millions of webpages called WebText.
 > These findings suggest a promising path towards building language processing systems which learn to perform tasks from their naturally occurring demonstrations.
@@ -191,11 +194,11 @@ gpt-3 is a huge look-up table
 [Practical applications of GPT2](https://medium.com/the-research-nest/practical-applications-of-open-ais-gpt-2-deep-learning-model-14701f18a432)
 [Fine-Tuning GPT-2 from Human Preferences](https://openai.com/blog/fine-tuning-gpt-2/)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTQyMDQyOTU2LC0xMjM5NDc1NzMsLTE3Nz
-IyNTUwMzEsLTEyMzAzMjMyOTQsOTgyMjIyNDk5LDE3NjIxMTA4
-NjEsMTc3MDEyMzg1MSwtMTc0OTgwMjI3NywtODgwMTAwMDEsNj
-kwOTg1MzAxLDE4Nzg0MjUzNjMsLTI1OTk4MjYxMiwxMDA5NDUw
-MjAyLC0xNjA2Mzg1MTI2LC0xMjU0Njc4ODI0LDk1OTE0NzgzMS
-wtMTU0NzU0MzM4MiwtMTMyNjMyMTIxMiwyMzA3ODA4NjQsLTE4
-MDU0NjgzODZdfQ==
+eyJoaXN0b3J5IjpbLTE2MTM3OTgxNDYsNTQyMDQyOTU2LC0xMj
+M5NDc1NzMsLTE3NzIyNTUwMzEsLTEyMzAzMjMyOTQsOTgyMjIy
+NDk5LDE3NjIxMTA4NjEsMTc3MDEyMzg1MSwtMTc0OTgwMjI3Ny
+wtODgwMTAwMDEsNjkwOTg1MzAxLDE4Nzg0MjUzNjMsLTI1OTk4
+MjYxMiwxMDA5NDUwMjAyLC0xNjA2Mzg1MTI2LC0xMjU0Njc4OD
+I0LDk1OTE0NzgzMSwtMTU0NzU0MzM4MiwtMTMyNjMyMTIxMiwy
+MzA3ODA4NjRdfQ==
 -->
