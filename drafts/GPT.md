@@ -110,11 +110,12 @@ GPT2的创新点在于验证了无监督的语言建模能够学习到有监督�
 > We trained and benchmarked four LMs with approximately log-uniformly spaced sizes. The architectures are summarized in Table 2. The smallest model is equivalent to the original GPT, and the second smallest equivalent to the largest model from BERT (Devlin et al., 2018). Our largest model, which we call GPT-2, has over an order of magnitude more parameters than GPT. The learning rate of each model was manually tuned for the best perplexity on a 5% held-out sample of WebText. All models still underfit WebText and held-out perplexity has as of yet improved given more training time.
 
  |Parameters |Layers |dmodel|
- |---------------------------------
- 117M |12 |768|
- 345M |24 |1024
- 762M |36 |1280
- 1542M |48 |1600| Table 2. Architecture hyperparameters for the 4 model sizes.
+ |---|---|---|---|
+ |117M |12 |768|
+ |345M |24 |1024|
+ |762M |36 |1280|
+ |1542M |48 |1600| 
+Table 2. Architecture hyperparameters for the 4 model sizes.
 #### Analysis
 > We demonstrate that language models begin to learn these tasks without any explicit supervision when trained on a new dataset of millions of webpages called WebText.
 > These findings suggest a promising path towards building language processing systems which learn to perform tasks from their naturally occurring demonstrations.
@@ -200,11 +201,11 @@ gpt-3 is a huge look-up table
 [Practical applications of GPT2](https://medium.com/the-research-nest/practical-applications-of-open-ais-gpt-2-deep-learning-model-14701f18a432)
 [Fine-Tuning GPT-2 from Human Preferences](https://openai.com/blog/fine-tuning-gpt-2/)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEyMjEyMjk2MDksNTQyMDQyOTU2LC0xMj
-M5NDc1NzMsLTE3NzIyNTUwMzEsLTEyMzAzMjMyOTQsOTgyMjIy
-NDk5LDE3NjIxMTA4NjEsMTc3MDEyMzg1MSwtMTc0OTgwMjI3Ny
-wtODgwMTAwMDEsNjkwOTg1MzAxLDE4Nzg0MjUzNjMsLTI1OTk4
-MjYxMiwxMDA5NDUwMjAyLC0xNjA2Mzg1MTI2LC0xMjU0Njc4OD
-I0LDk1OTE0NzgzMSwtMTU0NzU0MzM4MiwtMTMyNjMyMTIxMiwy
-MzA3ODA4NjRdfQ==
+eyJoaXN0b3J5IjpbMTAyMDk4MzIwNCw1NDIwNDI5NTYsLTEyMz
+k0NzU3MywtMTc3MjI1NTAzMSwtMTIzMDMyMzI5NCw5ODIyMjI0
+OTksMTc2MjExMDg2MSwxNzcwMTIzODUxLC0xNzQ5ODAyMjc3LC
+04ODAxMDAwMSw2OTA5ODUzMDEsMTg3ODQyNTM2MywtMjU5OTgy
+NjEyLDEwMDk0NTAyMDIsLTE2MDYzODUxMjYsLTEyNTQ2Nzg4Mj
+QsOTU5MTQ3ODMxLC0xNTQ3NTQzMzgyLC0xMzI2MzIxMjEyLDIz
+MDc4MDg2NF19
 -->
