@@ -102,6 +102,7 @@ GPT2的创新点在于验证了无监督的语言建模能够学习到有监督�
 
 >GPT-2 displays a broad set of capabilities, including the ability to generate conditional synthetic text samples of unprecedented quality, where we prime the model with an input and have it generate a lengthy continuation. In addition, GPT-2 outperforms other language models trained on specific domains (like Wikipedia, news, or books) without needing to use these domain-specific training datasets. On language tasks like question answering, reading comprehension, summarization, and translation, GPT-2 begins to learn these tasks from the raw text, using no task-specific training data. While scores on these downstream tasks are far from state-of-the-art, they suggest that the tasks can benefit from unsupervised techniques, given sufficient (unlabeled) data and compute.
 ![enter image description here](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUFL2kZa4Nzhvte_2-qmBsFtnoCQ_6ffJvDg&usqp=CAU)
+> In this paper, we connect these two lines of work and continue the trend of more general methods of transfer. We demonstrate language models can perform down-stream tasks in a zero-shot setting – without any parameter or architecture modification. We demonstrate this approach shows potential by highlighting the ability of language models to perform a wide range of tasks in a zero-shot setting. We achieve promising, competitive, and state of the art results depending on the task.
 #### training data
 > The resulting dataset, WebText, contains the text subset of these 45 million links. To extract the text from HTML responses we use a combination of the Dragnet (Peters & Lecocq, 2013) and Newspaper1 content extractors. All results presented in this paper use a preliminary version of WebText which does not include links created after Dec 2017 and which after de-duplication and some heuristic based cleaning contains slightly over 8 million documents for a total of 40 GB of text. We removed all Wikipedia documents from WebText since it is a common data source for other datasets and could complicate analysis due to over1https://github.com/codelucas/newspaper Language Models are Unsupervised Multitask Learners lapping training data with test evaluation tasks.  
 #### model
@@ -201,11 +202,11 @@ gpt-3 is a huge look-up table
 [Practical applications of GPT2](https://medium.com/the-research-nest/practical-applications-of-open-ais-gpt-2-deep-learning-model-14701f18a432)
 [Fine-Tuning GPT-2 from Human Preferences](https://openai.com/blog/fine-tuning-gpt-2/)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTAyMDk4MzIwNCw1NDIwNDI5NTYsLTEyMz
-k0NzU3MywtMTc3MjI1NTAzMSwtMTIzMDMyMzI5NCw5ODIyMjI0
-OTksMTc2MjExMDg2MSwxNzcwMTIzODUxLC0xNzQ5ODAyMjc3LC
-04ODAxMDAwMSw2OTA5ODUzMDEsMTg3ODQyNTM2MywtMjU5OTgy
-NjEyLDEwMDk0NTAyMDIsLTE2MDYzODUxMjYsLTEyNTQ2Nzg4Mj
-QsOTU5MTQ3ODMxLC0xNTQ3NTQzMzgyLC0xMzI2MzIxMjEyLDIz
-MDc4MDg2NF19
+eyJoaXN0b3J5IjpbLTg0NzE5NDc0LDEwMjA5ODMyMDQsNTQyMD
+QyOTU2LC0xMjM5NDc1NzMsLTE3NzIyNTUwMzEsLTEyMzAzMjMy
+OTQsOTgyMjIyNDk5LDE3NjIxMTA4NjEsMTc3MDEyMzg1MSwtMT
+c0OTgwMjI3NywtODgwMTAwMDEsNjkwOTg1MzAxLDE4Nzg0MjUz
+NjMsLTI1OTk4MjYxMiwxMDA5NDUwMjAyLC0xNjA2Mzg1MTI2LC
+0xMjU0Njc4ODI0LDk1OTE0NzgzMSwtMTU0NzU0MzM4MiwtMTMy
+NjMyMTIxMl19
 -->
