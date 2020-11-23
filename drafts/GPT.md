@@ -12,7 +12,10 @@ Sebastian Ruder和Jeremy Howard也许是第一个通过其提出的ULMFiT方法�
 - auto regressive (GPT)  TEXT generation！！！
 - 
 ## 背景
-- **Learning to Generate Reviews and Discovering Sentiment**， 使用RNN模型，unsupervised 预训练+少量
+- **Learning to Generate Reviews and Discovering Sentiment**， 使用RNN模型，unsupervised 预训练+少量supervised finetuning
+> We first trained a  [multiplicative LSTM](https://arxiv.org/abs/1609.07959)  with 4,096 units on a corpus of 82 million Amazon reviews to predict the next character in a chunk of text. Training took one month across four NVIDIA Pascal GPUs, with our model processing 12,500 characters per second.
+These 4,096 units (which are just a vector of floats) can be regarded as a feature vector representing the string read by the model. After training the mLSTM, we turned the model into a sentiment classifier by taking a linear combination of these units, learning the weights of the combination via the available supervised data.
+While training the linear model with L1 regularization, we noticed it used surprisingly few of the learned units. Digging in, we realized there actually existed a single “sentiment neuron” that’s highly predictive of the sentiment value.
 - **Semi-supervised sequence learning**, In contrast to learning a generic representation on one large dataset and then evaluating on other tasks/datasets, Dai & Le (2015) proposed using similar unsupervised objectives such as sequence autoencoding and language modeling to first pretrain a model on a dataset and then finetune it for a given task.
 
 ## GPT简介
@@ -205,11 +208,11 @@ gpt-3 is a huge look-up table
 [Practical applications of GPT2](https://medium.com/the-research-nest/practical-applications-of-open-ais-gpt-2-deep-learning-model-14701f18a432)
 [Fine-Tuning GPT-2 from Human Preferences](https://openai.com/blog/fine-tuning-gpt-2/)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTU3NjM5ODE0NCwtMTMxMDUxNzg1OCw0OT
-gzMjY0OSwtODQ3MTk0NzQsMTAyMDk4MzIwNCw1NDIwNDI5NTYs
-LTEyMzk0NzU3MywtMTc3MjI1NTAzMSwtMTIzMDMyMzI5NCw5OD
-IyMjI0OTksMTc2MjExMDg2MSwxNzcwMTIzODUxLC0xNzQ5ODAy
-Mjc3LC04ODAxMDAwMSw2OTA5ODUzMDEsMTg3ODQyNTM2MywtMj
-U5OTgyNjEyLDEwMDk0NTAyMDIsLTE2MDYzODUxMjYsLTEyNTQ2
-Nzg4MjRdfQ==
+eyJoaXN0b3J5IjpbLTI5MzUwNjYwNiwtNTc2Mzk4MTQ0LC0xMz
+EwNTE3ODU4LDQ5ODMyNjQ5LC04NDcxOTQ3NCwxMDIwOTgzMjA0
+LDU0MjA0Mjk1NiwtMTIzOTQ3NTczLC0xNzcyMjU1MDMxLC0xMj
+MwMzIzMjk0LDk4MjIyMjQ5OSwxNzYyMTEwODYxLDE3NzAxMjM4
+NTEsLTE3NDk4MDIyNzcsLTg4MDEwMDAxLDY5MDk4NTMwMSwxOD
+c4NDI1MzYzLC0yNTk5ODI2MTIsMTAwOTQ1MDIwMiwtMTYwNjM4
+NTEyNl19
 -->
