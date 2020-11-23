@@ -10,6 +10,7 @@ Sebastian Ruder和Jeremy Howard也许是第一个通过其提出的ULMFiT方法�
 基于注意力机制的transformer取代RNN成为当前主流的网络基础，当前的主流方案主要分为两类方法，第一类只使用transformer的编码器，通过在输入中引入噪音  训练，本质上属于denoise autoencoder，最典型的就是大名鼎鼎的BERT（我们在**中有过比较详尽的介绍）以及一系列对BERT的改进如XLNET。。。；另一类使用了完整的transformer模型，它只是用transformer的解码器。
 
 - auto regressive (GPT)  TEXT generation！！！
+- 
 
 
 ## GPT简介
@@ -202,11 +203,11 @@ gpt-3 is a huge look-up table
 [Practical applications of GPT2](https://medium.com/the-research-nest/practical-applications-of-open-ais-gpt-2-deep-learning-model-14701f18a432)
 [Fine-Tuning GPT-2 from Human Preferences](https://openai.com/blog/fine-tuning-gpt-2/)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTg0NzE5NDc0LDEwMjA5ODMyMDQsNTQyMD
-QyOTU2LC0xMjM5NDc1NzMsLTE3NzIyNTUwMzEsLTEyMzAzMjMy
-OTQsOTgyMjIyNDk5LDE3NjIxMTA4NjEsMTc3MDEyMzg1MSwtMT
-c0OTgwMjI3NywtODgwMTAwMDEsNjkwOTg1MzAxLDE4Nzg0MjUz
-NjMsLTI1OTk4MjYxMiwxMDA5NDUwMjAyLC0xNjA2Mzg1MTI2LC
-0xMjU0Njc4ODI0LDk1OTE0NzgzMSwtMTU0NzU0MzM4MiwtMTMy
-NjMyMTIxMl19
+eyJoaXN0b3J5IjpbNDk4MzI2NDksLTg0NzE5NDc0LDEwMjA5OD
+MyMDQsNTQyMDQyOTU2LC0xMjM5NDc1NzMsLTE3NzIyNTUwMzEs
+LTEyMzAzMjMyOTQsOTgyMjIyNDk5LDE3NjIxMTA4NjEsMTc3MD
+EyMzg1MSwtMTc0OTgwMjI3NywtODgwMTAwMDEsNjkwOTg1MzAx
+LDE4Nzg0MjUzNjMsLTI1OTk4MjYxMiwxMDA5NDUwMjAyLC0xNj
+A2Mzg1MTI2LC0xMjU0Njc4ODI0LDk1OTE0NzgzMSwtMTU0NzU0
+MzM4Ml19
 -->
