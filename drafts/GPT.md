@@ -11,7 +11,8 @@ Sebastian Ruder和Jeremy Howard也许是第一个通过其提出的ULMFiT方法�
 
 - auto regressive (GPT)  TEXT generation！！！
 - 
-
+## 背景
+- Learning to Generate Reviews and Discovering Sentiment， 使用RNN模型，
 
 ## GPT简介
 
@@ -203,11 +204,11 @@ gpt-3 is a huge look-up table
 [Practical applications of GPT2](https://medium.com/the-research-nest/practical-applications-of-open-ais-gpt-2-deep-learning-model-14701f18a432)
 [Fine-Tuning GPT-2 from Human Preferences](https://openai.com/blog/fine-tuning-gpt-2/)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNDk4MzI2NDksLTg0NzE5NDc0LDEwMjA5OD
-MyMDQsNTQyMDQyOTU2LC0xMjM5NDc1NzMsLTE3NzIyNTUwMzEs
-LTEyMzAzMjMyOTQsOTgyMjIyNDk5LDE3NjIxMTA4NjEsMTc3MD
-EyMzg1MSwtMTc0OTgwMjI3NywtODgwMTAwMDEsNjkwOTg1MzAx
-LDE4Nzg0MjUzNjMsLTI1OTk4MjYxMiwxMDA5NDUwMjAyLC0xNj
-A2Mzg1MTI2LC0xMjU0Njc4ODI0LDk1OTE0NzgzMSwtMTU0NzU0
-MzM4Ml19
+eyJoaXN0b3J5IjpbMjA5NTczNzAzNiw0OTgzMjY0OSwtODQ3MT
+k0NzQsMTAyMDk4MzIwNCw1NDIwNDI5NTYsLTEyMzk0NzU3Mywt
+MTc3MjI1NTAzMSwtMTIzMDMyMzI5NCw5ODIyMjI0OTksMTc2Mj
+ExMDg2MSwxNzcwMTIzODUxLC0xNzQ5ODAyMjc3LC04ODAxMDAw
+MSw2OTA5ODUzMDEsMTg3ODQyNTM2MywtMjU5OTgyNjEyLDEwMD
+k0NTAyMDIsLTE2MDYzODUxMjYsLTEyNTQ2Nzg4MjQsOTU5MTQ3
+ODMxXX0=
 -->
