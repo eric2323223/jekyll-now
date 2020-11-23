@@ -12,8 +12,8 @@ Sebastian Ruder和Jeremy Howard也许是第一个通过其提出的ULMFiT方法�
 - auto regressive (GPT)  TEXT generation！！！
 - 
 ## 背景
-- Learning to Generate Reviews and Discovering Sentiment， 使用RNN模型，unsupervised 预训练+少量
-- In contrast to learning a generic representation on one large dataset and then evaluating on other tasks/datasets, Dai & Le (2015) proposed using similar unsupervised objectives such as sequence autoencoding and language modeling to first pretrain a model on a dataset and then finetune it for a given task.
+- **Learning to Generate Reviews and Discovering Sentiment**， 使用RNN模型，unsupervised 预训练+少量
+- **Semi-supervised sequence learning**, In contrast to learning a generic representation on one large dataset and then evaluating on other tasks/datasets, Dai & Le (2015) proposed using similar unsupervised objectives such as sequence autoencoding and language modeling to first pretrain a model on a dataset and then finetune it for a given task.
 
 ## GPT简介
 
@@ -205,7 +205,7 @@ gpt-3 is a huge look-up table
 [Practical applications of GPT2](https://medium.com/the-research-nest/practical-applications-of-open-ais-gpt-2-deep-learning-model-14701f18a432)
 [Fine-Tuning GPT-2 from Human Preferences](https://openai.com/blog/fine-tuning-gpt-2/)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwNjkxMzYxMCwtMTMxMDUxNzg1OCw0OT
+eyJoaXN0b3J5IjpbLTU3NjM5ODE0NCwtMTMxMDUxNzg1OCw0OT
 gzMjY0OSwtODQ3MTk0NzQsMTAyMDk4MzIwNCw1NDIwNDI5NTYs
 LTEyMzk0NzU3MywtMTc3MjI1NTAzMSwtMTIzMDMyMzI5NCw5OD
 IyMjI0OTksMTc2MjExMDg2MSwxNzcwMTIzODUxLC0xNzQ5ODAy
