@@ -50,7 +50,7 @@ GPT(GPT1) train different linear layer for specific tasks, such as similarity an
 ![enter image description here](https://miro.medium.com/max/448/1*2dX-PZSNdmj0KOa-NmjrEA.jpeg)
 
 ## GPT设计思想
-
+GPT设计思想的诞生可以追述到
 ### LM is all you need
 -   Language modeling is a very difficult task, even for humans.
 -   Language models are expected to compress any possible context into a vector that generalizes over possible completions.
@@ -209,11 +209,11 @@ gpt-3 is a huge look-up table
 [Fine-Tuning GPT-2 from Human Preferences](https://openai.com/blog/fine-tuning-gpt-2/)
 [Unsupervised sentiment neuron](https://openai.com/blog/unsupervised-sentiment-neuron/)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIxNDA5OTI3MzQsLTU3NjM5ODE0NCwtMT
-MxMDUxNzg1OCw0OTgzMjY0OSwtODQ3MTk0NzQsMTAyMDk4MzIw
-NCw1NDIwNDI5NTYsLTEyMzk0NzU3MywtMTc3MjI1NTAzMSwtMT
-IzMDMyMzI5NCw5ODIyMjI0OTksMTc2MjExMDg2MSwxNzcwMTIz
-ODUxLC0xNzQ5ODAyMjc3LC04ODAxMDAwMSw2OTA5ODUzMDEsMT
-g3ODQyNTM2MywtMjU5OTgyNjEyLDEwMDk0NTAyMDIsLTE2MDYz
-ODUxMjZdfQ==
+eyJoaXN0b3J5IjpbLTIwODE4MzY2MzAsLTIxNDA5OTI3MzQsLT
+U3NjM5ODE0NCwtMTMxMDUxNzg1OCw0OTgzMjY0OSwtODQ3MTk0
+NzQsMTAyMDk4MzIwNCw1NDIwNDI5NTYsLTEyMzk0NzU3MywtMT
+c3MjI1NTAzMSwtMTIzMDMyMzI5NCw5ODIyMjI0OTksMTc2MjEx
+MDg2MSwxNzcwMTIzODUxLC0xNzQ5ODAyMjc3LC04ODAxMDAwMS
+w2OTA5ODUzMDEsMTg3ODQyNTM2MywtMjU5OTgyNjEyLDEwMDk0
+NTAyMDJdfQ==
 -->
