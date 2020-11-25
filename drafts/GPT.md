@@ -114,8 +114,10 @@ GPT2的创新点在于验证了无监督的语言建模能够学习到有监督�
 >GPT-2显示了广泛的功能，包括生成具有空前质量的条件合成文本样本的能力，我们在模型中使用输入来填充模型并让其生成冗长的延续。 此外，GPT-2优于在特定领域（如Wikipedia，新闻或书籍）上训练的其他语言模型，而无需使用这些特定于领域的训练数据集。 在诸如答疑，阅读理解，总结和翻译之类的语言任务上，GPT-2开始使用原始文本来学习这些任务，而没有使用特定于任务的训练数据。 尽管这些下游任务的得分远非最新水平，但它们表明，只要有足够的（未标记）数据和计算，这些任务就可以从无监督的技术中受益。
 ![enter image description here](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUFL2kZa4Nzhvte_2-qmBsFtnoCQ_6ffJvDg&usqp=CAU)
 > In this paper, we connect these two lines of work and continue the trend of more general methods of transfer. We demonstrate language models can perform down-stream tasks in a zero-shot setting – without any parameter or architecture modification. We demonstrate this approach shows potential by highlighting the ability of language models to perform a wide range of tasks in a zero-shot setting. We achieve promising, competitive, and state of the art results depending on the task.
+> 在本文中，我们将这两方面的工作联系起来，并延续了更通用的转移方法的趋势。 我们演示了语言模型可以在零触发设置下执行下游任务-无需任何参数或体系结构修改。 我们通过强调语言模型在零镜头设置下执行各种任务的能力来证明这种方法显示出了潜力。 我们根据任务获得有希望的，有竞争力的和最先进的结果。
 #### training data
 > The resulting dataset, WebText, contains the text subset of these 45 million links. To extract the text from HTML responses we use a combination of the Dragnet (Peters & Lecocq, 2013) and Newspaper1 content extractors. All results presented in this paper use a preliminary version of WebText which does not include links created after Dec 2017 and which after de-duplication and some heuristic based cleaning contains slightly over 8 million documents for a total of 40 GB of text. We removed all Wikipedia documents from WebText since it is a common data source for other datasets and could complicate analysis due to over1https://github.com/codelucas/newspaper Language Models are Unsupervised Multitask Learners lapping training data with test evaluation tasks.  
+> 结果数据集WebText包含这4500万个链接的文本子集。 为了从HTML响应中提取文本，我们使用了Dragnet（Peters和Lecocq，2013）和Newspaper1内容提取器的组合。 本文介绍的所有结果均使用WebText的初步版本，该版本不包含2017年12月之后创建的链接，该链接在重复数据删除和基于启发式的清理后包含略超过800万份文档，总计40 GB文本。 我们从WebText中删除了所有Wikipedia文档，因为它是其他数据集的通用数据源，并且由于过于复杂而导致分析复杂化。
 #### model
 > The model largely follows the details of the OpenAI GPT model (Radford et al., 2018) with a Parameters Layers dmodel 117M 12 768 345M 24 1024 762M 36 1280 1542M 48 1600 Table 2. Architecture hyperparameters for the 4 model sizes. few modifications. Layer normalization (Ba et al., 2016) was moved to the input of each sub-block, similar to a pre-activation residual network (He et al., 2016) and an additional layer normalization was added after the final selfattention block. A modified initialization which accounts for the accumulation on the residual path with model depth is used. We scale the weights of residual layers at initialization by a factor of 1/ √ N where N is the number of residual layers. The vocabulary is expanded to 50,257. We also increase the context size from 512 to 1024 tokens and a larger batchsize of 512 is used.
 #### Experiments
@@ -129,7 +131,6 @@ GPT2的创新点在于验证了无监督的语言建模能够学习到有监督�
  |1542M |48 |1600| 
 Table 2. Architecture hyperparameters for the 4 model sizes.
 #### Analysis
-> We demonstrate that language models begin to learn these tasks without any explicit supervision when trained on a new dataset of millions of webpages called WebText.
 > These findings suggest a promising path towards building language processing systems which learn to perform tasks from their naturally occurring demonstrations.
 #### Conclusion
 > When a large language model is trained on a sufficiently large and diverse dataset it is able to perform well across many domains and datasets. GPT-2 zero-shots to state of the art performance on 7 out of 8 tested language modeling datasets. The diversity of tasks the model is able to perform in a zero-shot setting suggests that high-capacity models trained to maximize the likelihood of a sufficiently varied text corpus begin to learn how to perform a surprising amount of tasks without the need for explicit supervision.
@@ -214,11 +215,11 @@ gpt-3 is a huge look-up table
 [Fine-Tuning GPT-2 from Human Preferences](https://openai.com/blog/fine-tuning-gpt-2/)
 [Unsupervised sentiment neuron](https://openai.com/blog/unsupervised-sentiment-neuron/)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTY5OTI0NzgyMiwtMTYyODc0NjYyNiwxOD
-M0MzE3NjE4LC0yMTQwOTkyNzM0LC01NzYzOTgxNDQsLTEzMTA1
-MTc4NTgsNDk4MzI2NDksLTg0NzE5NDc0LDEwMjA5ODMyMDQsNT
-QyMDQyOTU2LC0xMjM5NDc1NzMsLTE3NzIyNTUwMzEsLTEyMzAz
-MjMyOTQsOTgyMjIyNDk5LDE3NjIxMTA4NjEsMTc3MDEyMzg1MS
-wtMTc0OTgwMjI3NywtODgwMTAwMDEsNjkwOTg1MzAxLDE4Nzg0
-MjUzNjNdfQ==
+eyJoaXN0b3J5IjpbNTI4MjMwNjYxLC0xNjI4NzQ2NjI2LDE4Mz
+QzMTc2MTgsLTIxNDA5OTI3MzQsLTU3NjM5ODE0NCwtMTMxMDUx
+Nzg1OCw0OTgzMjY0OSwtODQ3MTk0NzQsMTAyMDk4MzIwNCw1ND
+IwNDI5NTYsLTEyMzk0NzU3MywtMTc3MjI1NTAzMSwtMTIzMDMy
+MzI5NCw5ODIyMjI0OTksMTc2MjExMDg2MSwxNzcwMTIzODUxLC
+0xNzQ5ODAyMjc3LC04ODAxMDAwMSw2OTA5ODUzMDEsMTg3ODQy
+NTM2M119
 -->
