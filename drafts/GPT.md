@@ -90,6 +90,7 @@ Secondly, while  [BERT](https://analyticsindiamag.com/step-by-step-guide-to-impl
 > 们证明，通过在各种未标记文本的语料库上对语言模型进行生成式预训练，然后对每个特定任务进行区分性微调，可以实现这些任务的巨大收益。 与以前的方法相比，我们在微调过程中利用了任务感知的输入转换来实现有效的传递，同时对模型体系结构的更改要求最小。 我们在广泛的自然语言理解基准测试中证明了我们的方法的有效性
 #### Training data
 >We use the BooksCorpus dataset [71] for training the language model. It contains over 7,000 unique unpublished books from a variety of genres including Adventure, Fantasy, and Romance. Crucially, it contains long stretches of contiguous text, which allows the generative model to learn to condition on long-range information.
+>我们使用BooksCorpus数据集[71]训练语言模型。 它包含7,000多种不同类型的未出版未出版书籍，包括冒险，幻想和浪漫。 至关重要的是，它包含长段连续的文本，这使生成模型可以学习以远程信息为条件。
 #### Model specification
 > Our model largely follows the original transformer work [62]. We trained a 12-layer decoder-only transformer with masked self-attention heads (768 dimensional states and 12 attention heads). For the position-wise feed-forward networks, we used 3072 dimensional inner states. We used the Adam optimization scheme [27] with a max learning rate of 2.5e-4. The learning rate was increased linearly from zero over the first 2000 updates and annealed to 0 using a cosine schedule. We train for 100 epochs on minibatches of 64 randomly sampled, contiguous sequences of 512 tokens.
 #### supervised fine-tuning
@@ -105,10 +106,12 @@ Secondly, while  [BERT](https://analyticsindiamag.com/step-by-step-guide-to-impl
 ![enter image description here](https://joeddav.github.io/blog/images/zsl/gpt3_triviahq.png)
 GPT2的创新点在于验证了无监督的语言建模能够学习到有监督任务所需的特征。原文是
 > We demonstrate that language models begin to learn these tasks without any explicit supervision when trained on a new dataset of millions of webpages called WebText.
+> 我们证明，当在名为WebText的数百万个网页的新数据集上进行训练时，语言模型开始在没有任何明确监督的情况下开始学习这些任务。
 
 这个才是GPT-2文章价值所在。
 
 >GPT-2 displays a broad set of capabilities, including the ability to generate conditional synthetic text samples of unprecedented quality, where we prime the model with an input and have it generate a lengthy continuation. In addition, GPT-2 outperforms other language models trained on specific domains (like Wikipedia, news, or books) without needing to use these domain-specific training datasets. On language tasks like question answering, reading comprehension, summarization, and translation, GPT-2 begins to learn these tasks from the raw text, using no task-specific training data. While scores on these downstream tasks are far from state-of-the-art, they suggest that the tasks can benefit from unsupervised techniques, given sufficient (unlabeled) data and compute.
+>GPT-2显示了广泛的功能，包括生成具有空前质量的条件合成文本样本的能力，我们在模型中使用输入来填充模型并让其生成冗长的延续。 此外，GPT-2优于在特定领域（如Wikipedia，新闻或书籍）上训练的其他语言模型，而无需使用这些特定于领域的训练数据集。 在诸如答疑，阅读理解，总结和翻译之类的语言任务上，GPT-2开始使用原始文本来学习这些任务，而没有使用特定于任务的训练数据。 尽管这些下游任务的得分远非最新水平，但它们表明，只要有足够的（未标记）数据和计算，这些任务就可以从无监督的技术中受益。
 ![enter image description here](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUFL2kZa4Nzhvte_2-qmBsFtnoCQ_6ffJvDg&usqp=CAU)
 > In this paper, we connect these two lines of work and continue the trend of more general methods of transfer. We demonstrate language models can perform down-stream tasks in a zero-shot setting – without any parameter or architecture modification. We demonstrate this approach shows potential by highlighting the ability of language models to perform a wide range of tasks in a zero-shot setting. We achieve promising, competitive, and state of the art results depending on the task.
 #### training data
@@ -211,11 +214,11 @@ gpt-3 is a huge look-up table
 [Fine-Tuning GPT-2 from Human Preferences](https://openai.com/blog/fine-tuning-gpt-2/)
 [Unsupervised sentiment neuron](https://openai.com/blog/unsupervised-sentiment-neuron/)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTY4ODA0NDU1LC0xNjI4NzQ2NjI2LDE4Mz
-QzMTc2MTgsLTIxNDA5OTI3MzQsLTU3NjM5ODE0NCwtMTMxMDUx
-Nzg1OCw0OTgzMjY0OSwtODQ3MTk0NzQsMTAyMDk4MzIwNCw1ND
-IwNDI5NTYsLTEyMzk0NzU3MywtMTc3MjI1NTAzMSwtMTIzMDMy
-MzI5NCw5ODIyMjI0OTksMTc2MjExMDg2MSwxNzcwMTIzODUxLC
-0xNzQ5ODAyMjc3LC04ODAxMDAwMSw2OTA5ODUzMDEsMTg3ODQy
-NTM2M119
+eyJoaXN0b3J5IjpbLTY5OTI0NzgyMiwtMTYyODc0NjYyNiwxOD
+M0MzE3NjE4LC0yMTQwOTkyNzM0LC01NzYzOTgxNDQsLTEzMTA1
+MTc4NTgsNDk4MzI2NDksLTg0NzE5NDc0LDEwMjA5ODMyMDQsNT
+QyMDQyOTU2LC0xMjM5NDc1NzMsLTE3NzIyNTUwMzEsLTEyMzAz
+MjMyOTQsOTgyMjIyNDk5LDE3NjIxMTA4NjEsMTc3MDEyMzg1MS
+wtMTc0OTgwMjI3NywtODgwMTAwMDEsNjkwOTg1MzAxLDE4Nzg0
+MjUzNjNdfQ==
 -->
