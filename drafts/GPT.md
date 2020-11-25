@@ -132,8 +132,10 @@ GPT2的创新点在于验证了无监督的语言建模能够学习到有监督�
 Table 2. Architecture hyperparameters for the 4 model sizes.
 #### Analysis
 > These findings suggest a promising path towards building language processing systems which learn to perform tasks from their naturally occurring demonstrations.
+> 这些发现为建立语言处理系统提供了一条有希望的途径，该系统将从自然发生的演示中学习执行任务。
 #### Conclusion
 > When a large language model is trained on a sufficiently large and diverse dataset it is able to perform well across many domains and datasets. GPT-2 zero-shots to state of the art performance on 7 out of 8 tested language modeling datasets. The diversity of tasks the model is able to perform in a zero-shot setting suggests that high-capacity models trained to maximize the likelihood of a sufficiently varied text corpus begin to learn how to perform a surprising amount of tasks without the need for explicit supervision.
+> 在足够大且多样化的数据集上训练大型语言模型时，它能够在许多域和数据集上表现良好。 GPT-2对8个经过测试的语言建模数据集中的7个进行了最新性能的零射。 该模型能够在零镜头设置下执行的任务的多样性表明，经过训练以使文本语料库充分变化的可能性最大化的高容量模型开始学习如何执行数量惊人的任务，而无需明确的监督 。
 ### GPT-3: Language Models are Few-Shot Learners
 **可以跳过finetune训练直接使用**
 
@@ -215,11 +217,11 @@ gpt-3 is a huge look-up table
 [Fine-Tuning GPT-2 from Human Preferences](https://openai.com/blog/fine-tuning-gpt-2/)
 [Unsupervised sentiment neuron](https://openai.com/blog/unsupervised-sentiment-neuron/)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTI4MjMwNjYxLC0xNjI4NzQ2NjI2LDE4Mz
-QzMTc2MTgsLTIxNDA5OTI3MzQsLTU3NjM5ODE0NCwtMTMxMDUx
-Nzg1OCw0OTgzMjY0OSwtODQ3MTk0NzQsMTAyMDk4MzIwNCw1ND
-IwNDI5NTYsLTEyMzk0NzU3MywtMTc3MjI1NTAzMSwtMTIzMDMy
-MzI5NCw5ODIyMjI0OTksMTc2MjExMDg2MSwxNzcwMTIzODUxLC
-0xNzQ5ODAyMjc3LC04ODAxMDAwMSw2OTA5ODUzMDEsMTg3ODQy
-NTM2M119
+eyJoaXN0b3J5IjpbLTE2MzQzMDE5OTAsLTE2Mjg3NDY2MjYsMT
+gzNDMxNzYxOCwtMjE0MDk5MjczNCwtNTc2Mzk4MTQ0LC0xMzEw
+NTE3ODU4LDQ5ODMyNjQ5LC04NDcxOTQ3NCwxMDIwOTgzMjA0LD
+U0MjA0Mjk1NiwtMTIzOTQ3NTczLC0xNzcyMjU1MDMxLC0xMjMw
+MzIzMjk0LDk4MjIyMjQ5OSwxNzYyMTEwODYxLDE3NzAxMjM4NT
+EsLTE3NDk4MDIyNzcsLTg4MDEwMDAxLDY5MDk4NTMwMSwxODc4
+NDI1MzYzXX0=
 -->
