@@ -75,7 +75,7 @@ GPT3/GPT2 are not strictly in transfer learning scope, because they don't need f
 ### GTP vs BERT
 
 > we noted that unsupervised learning techniques can yield surprisingly discriminative features when trained on enough data.Here, we wanted to further explore this idea: can we develop one model, train it in an unsupervised way on a large amount of data, and then fine-tune the model to achieve good performance on many different tasks? Our results indicate that this approach works surprisingly well; the same core model can be fine-tuned for very different tasks with minimal adaptation.
-
+> 我们注意到，无监督学习技术在训练足够多的数据时可以产生出乎意料的区别特征。在这里，我们想进一步探索这一思想：我们可以开发一个模型，以无监督的方式对大量数据进行训练，然后精细地- 调整模型以在许多不同的任务上实现良好的性能？ 我们的结果表明，这种方法行之有效。 可以以最小的适应性为不同的任务微调相同的核心模型。
 -   GPT-2 and BERT at the two leading language models out there at time of writing in early 2020. They are the same in that they are both based on the transformer architecture, but they are fundamentally different in that BERT has just the  _encoder_  blocks from the transformer, whilst GPT-2 has just the  _decoder_  blocks from the transformer.
 
 ### GPT2/ GPT3
@@ -217,11 +217,11 @@ gpt-3 is a huge look-up table
 [Fine-Tuning GPT-2 from Human Preferences](https://openai.com/blog/fine-tuning-gpt-2/)
 [Unsupervised sentiment neuron](https://openai.com/blog/unsupervised-sentiment-neuron/)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2MzQzMDE5OTAsLTE2Mjg3NDY2MjYsMT
-gzNDMxNzYxOCwtMjE0MDk5MjczNCwtNTc2Mzk4MTQ0LC0xMzEw
-NTE3ODU4LDQ5ODMyNjQ5LC04NDcxOTQ3NCwxMDIwOTgzMjA0LD
-U0MjA0Mjk1NiwtMTIzOTQ3NTczLC0xNzcyMjU1MDMxLC0xMjMw
-MzIzMjk0LDk4MjIyMjQ5OSwxNzYyMTEwODYxLDE3NzAxMjM4NT
-EsLTE3NDk4MDIyNzcsLTg4MDEwMDAxLDY5MDk4NTMwMSwxODc4
-NDI1MzYzXX0=
+eyJoaXN0b3J5IjpbMTg2ODU4MDY0LC0xNjM0MzAxOTkwLC0xNj
+I4NzQ2NjI2LDE4MzQzMTc2MTgsLTIxNDA5OTI3MzQsLTU3NjM5
+ODE0NCwtMTMxMDUxNzg1OCw0OTgzMjY0OSwtODQ3MTk0NzQsMT
+AyMDk4MzIwNCw1NDIwNDI5NTYsLTEyMzk0NzU3MywtMTc3MjI1
+NTAzMSwtMTIzMDMyMzI5NCw5ODIyMjI0OTksMTc2MjExMDg2MS
+wxNzcwMTIzODUxLC0xNzQ5ODAyMjc3LC04ODAxMDAwMSw2OTA5
+ODUzMDFdfQ==
 -->
