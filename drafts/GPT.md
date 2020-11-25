@@ -87,6 +87,7 @@ Both the models —  [GPT-3](https://analyticsindiamag.com/how-openais-gpt-3-can
 Secondly, while  [BERT](https://analyticsindiamag.com/step-by-step-guide-to-implement-multi-class-classification-with-bert-tensorflow/)  requires an elaborated fine-tuning process where users have to gather data of examples to train the model for specific downstream tasks, GPT-3’s text-in and text-out API allows the users to reprogram it using instructions and access it. Case in point — for sentiment analysis or question answering tasks, to use BERT, the users have to train the model on a separate layer on sentence encodings. However,  [GPT-3](https://analyticsindiamag.com/gpt-3-has-weaknesses-and-makes-silly-mistakes-sam-altman-openai/)  uses a few-shot learning process on the input token to predict the output result.
 ### GPT-1: Improving Language Understanding by Generative Pre-Training
 > We demonstrate that large gains on these tasks can be realized by generative pre-training of a language model on a diverse corpus of unlabeled text, followed by discriminative fine-tuning on each specific task. In contrast to previous approaches, we make use of task-aware input transformations during fine-tuning to achieve effective transfer while requiring minimal changes to the model architecture. We demonstrate the effectiveness of our approach on a wide range of benchmarks for natural language understanding
+> 们证明，通过在各种未标记文本的语料库上对语言模型进行生成式预训练，然后对每个特定任务进行区分性微调，可以实现这些任务的巨大收益。 与以前的方法相比，我们在微调过程中利用了任务感知的输入转换来实现有效的传递，同时对模型体系结构的更改要求最小。 我们在广泛的自然语言理解基准测试中证明了我们的方法的有效性
 #### Training data
 >We use the BooksCorpus dataset [71] for training the language model. It contains over 7,000 unique unpublished books from a variety of genres including Adventure, Fantasy, and Romance. Crucially, it contains long stretches of contiguous text, which allows the generative model to learn to condition on long-range information.
 #### Model specification
@@ -210,11 +211,11 @@ gpt-3 is a huge look-up table
 [Fine-Tuning GPT-2 from Human Preferences](https://openai.com/blog/fine-tuning-gpt-2/)
 [Unsupervised sentiment neuron](https://openai.com/blog/unsupervised-sentiment-neuron/)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2Mjg3NDY2MjYsMTgzNDMxNzYxOCwtMj
-E0MDk5MjczNCwtNTc2Mzk4MTQ0LC0xMzEwNTE3ODU4LDQ5ODMy
-NjQ5LC04NDcxOTQ3NCwxMDIwOTgzMjA0LDU0MjA0Mjk1NiwtMT
-IzOTQ3NTczLC0xNzcyMjU1MDMxLC0xMjMwMzIzMjk0LDk4MjIy
-MjQ5OSwxNzYyMTEwODYxLDE3NzAxMjM4NTEsLTE3NDk4MDIyNz
-csLTg4MDEwMDAxLDY5MDk4NTMwMSwxODc4NDI1MzYzLC0yNTk5
-ODI2MTJdfQ==
+eyJoaXN0b3J5IjpbLTY4ODA0NDU1LC0xNjI4NzQ2NjI2LDE4Mz
+QzMTc2MTgsLTIxNDA5OTI3MzQsLTU3NjM5ODE0NCwtMTMxMDUx
+Nzg1OCw0OTgzMjY0OSwtODQ3MTk0NzQsMTAyMDk4MzIwNCw1ND
+IwNDI5NTYsLTEyMzk0NzU3MywtMTc3MjI1NTAzMSwtMTIzMDMy
+MzI5NCw5ODIyMjI0OTksMTc2MjExMDg2MSwxNzcwMTIzODUxLC
+0xNzQ5ODAyMjc3LC04ODAxMDAwMSw2OTA5ODUzMDEsMTg3ODQy
+NTM2M119
 -->
