@@ -86,7 +86,7 @@ GPT-3 demonstrates that a language model trained on enough data can solve NLP ta
 Both the models —  [GPT-3](https://analyticsindiamag.com/how-openais-gpt-3-can-be-alarming-for-the-society/)  and  [BERT](https://analyticsindiamag.com/bert-classifier-with-tensorflow-2-0/)  have been relatively new for the industry, but their state-of-the-art performance has made them the winners among other models in the natural language processing field. However, being trained on 175 billion parameters,  [GPT-3](https://analyticsindiamag.com/5-jobs-that-gpt-3-might-challenge/)  becomes 470 times bigger in size than BERT-Large.
 
 Secondly, while  [BERT](https://analyticsindiamag.com/step-by-step-guide-to-implement-multi-class-classification-with-bert-tensorflow/)  requires an elaborated fine-tuning process where users have to gather data of examples to train the model for specific downstream tasks, GPT-3’s text-in and text-out API allows the users to reprogram it using instructions and access it. Case in point — for sentiment analysis or question answering tasks, to use BERT, the users have to train the model on a separate layer on sentence encodings. However,  [GPT-3](https://analyticsindiamag.com/gpt-3-has-weaknesses-and-makes-silly-mistakes-sam-altman-openai/)  uses a few-shot learning process on the input token to predict the output result.
-## GPT的发展
+## GPT的发展 
 ### GPT-1: Improving Language Understanding by Generative Pre-Training
 > We demonstrate that large gains on these tasks can be realized by generative pre-training of a language model on a diverse corpus of unlabeled text, followed by discriminative fine-tuning on each specific task. In contrast to previous approaches, we make use of task-aware input transformations during fine-tuning to achieve effective transfer while requiring minimal changes to the model architecture. We demonstrate the effectiveness of our approach on a wide range of benchmarks for natural language understanding
 > 们证明，通过在各种未标记文本的语料库上对语言模型进行生成式预训练，然后对每个特定任务进行区分性微调，可以实现这些任务的巨大收益。 与以前的方法相比，我们在微调过程中利用了任务感知的输入转换来实现有效的传递，同时对模型体系结构的更改要求最小。 我们在广泛的自然语言理解基准测试中证明了我们的方法的有效性
@@ -219,11 +219,11 @@ gpt-3 is a huge look-up table
 [Fine-Tuning GPT-2 from Human Preferences](https://openai.com/blog/fine-tuning-gpt-2/)
 [Unsupervised sentiment neuron](https://openai.com/blog/unsupervised-sentiment-neuron/)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTAwMjc0Nzg3NCwtMTYzMjE0NTQ1NywtMT
-YzNDMwMTk5MCwtMTYyODc0NjYyNiwxODM0MzE3NjE4LC0yMTQw
-OTkyNzM0LC01NzYzOTgxNDQsLTEzMTA1MTc4NTgsNDk4MzI2ND
-ksLTg0NzE5NDc0LDEwMjA5ODMyMDQsNTQyMDQyOTU2LC0xMjM5
-NDc1NzMsLTE3NzIyNTUwMzEsLTEyMzAzMjMyOTQsOTgyMjIyND
-k5LDE3NjIxMTA4NjEsMTc3MDEyMzg1MSwtMTc0OTgwMjI3Nywt
-ODgwMTAwMDFdfQ==
+eyJoaXN0b3J5IjpbMTQ2OTg2NjIwMiwxMDAyNzQ3ODc0LC0xNj
+MyMTQ1NDU3LC0xNjM0MzAxOTkwLC0xNjI4NzQ2NjI2LDE4MzQz
+MTc2MTgsLTIxNDA5OTI3MzQsLTU3NjM5ODE0NCwtMTMxMDUxNz
+g1OCw0OTgzMjY0OSwtODQ3MTk0NzQsMTAyMDk4MzIwNCw1NDIw
+NDI5NTYsLTEyMzk0NzU3MywtMTc3MjI1NTAzMSwtMTIzMDMyMz
+I5NCw5ODIyMjI0OTksMTc2MjExMDg2MSwxNzcwMTIzODUxLC0x
+NzQ5ODAyMjc3XX0=
 -->
