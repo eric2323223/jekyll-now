@@ -20,7 +20,7 @@ While training the linear model with L1 regularization, we noticed it used surpr
 - **Semi-supervised sequence learning**, In contrast to learning a generic representation on one large dataset and then evaluating on other tasks/datasets, Dai & Le (2015) proposed using similar unsupervised objectives such as sequence autoencoding and language modeling to first pretrain a model on a dataset and then finetune it for a given task.
 
 ## GPT简介
-GPT的在迁移学的的路上比BERTg
+GPT的在迁移学的的路上比BERT走的更远了一步，它希望
 ### LM is all you need
 #### LM works with all types of finetune tasks
 The most substantial upgrade that OpenAI GPT proposed is to get rid of the task-specific model and use the pre-trained language model directly!
@@ -221,7 +221,7 @@ gpt-3 is a huge look-up table
 [Fine-Tuning GPT-2 from Human Preferences](https://openai.com/blog/fine-tuning-gpt-2/)
 [Unsupervised sentiment neuron](https://openai.com/blog/unsupervised-sentiment-neuron/)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTcxNDkzNTI5LDExODkxMjY0MTcsLTEzMj
+eyJoaXN0b3J5IjpbMTExMDg4MTM5LDExODkxMjY0MTcsLTEzMj
 AwMjc3NjUsMTQ2OTg2NjIwMiwxMDAyNzQ3ODc0LC0xNjMyMTQ1
 NDU3LC0xNjM0MzAxOTkwLC0xNjI4NzQ2NjI2LDE4MzQzMTc2MT
 gsLTIxNDA5OTI3MzQsLTU3NjM5ODE0NCwtMTMxMDUxNzg1OCw0
