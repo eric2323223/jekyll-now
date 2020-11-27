@@ -179,6 +179,7 @@ GPT3并没有在理论上进行任何创新（仅仅是一次费用高昂的实�
 ## look ahead
 > 对于GPT-3而言，它最大的价值是在无监督下的自我学习能力，以及纯粹通过扩大规模实现性能提升。后者已经在GPT-3的论文中得到验证，数据越大，参数量越大，模型的性能表现越好。 其实，GPT-3与GPT-2本质上差异并不大，只是在数据量和参数量两个方面扩大了100倍，便得到了远超GPT-2的性能。
 长远来看，我们唯一可以确定的是，未来我们会创造越来越多的数据和计算能力，那么，它将意味着GPT-3的迭代版会越来越强。至于未来GPT-3会达到怎样的程度，深度学习之父、图灵奖得主Hinton称，" 如以GPT3惊人性能预测，未来生命，宇宙和万物的答案也不过是4.398万亿个参数而已。”
+## 总结
 
 gpt-3 is a huge look-up table
 - it cannot understand basic numaric calculation
@@ -221,7 +222,7 @@ gpt-3 is a huge look-up table
 [Fine-Tuning GPT-2 from Human Preferences](https://openai.com/blog/fine-tuning-gpt-2/)
 [Unsupervised sentiment neuron](https://openai.com/blog/unsupervised-sentiment-neuron/)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEyMTUxNjU3MzUsMTQ2OTg2NjIwMiwxMD
+eyJoaXN0b3J5IjpbLTEzMjAwMjc3NjUsMTQ2OTg2NjIwMiwxMD
 AyNzQ3ODc0LC0xNjMyMTQ1NDU3LC0xNjM0MzAxOTkwLC0xNjI4
 NzQ2NjI2LDE4MzQzMTc2MTgsLTIxNDA5OTI3MzQsLTU3NjM5OD
 E0NCwtMTMxMDUxNzg1OCw0OTgzMjY0OSwtODQ3MTk0NzQsMTAy
