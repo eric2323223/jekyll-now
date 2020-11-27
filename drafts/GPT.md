@@ -20,10 +20,13 @@ While training the linear model with L1 regularization, we noticed it used surpr
 - **Semi-supervised sequence learning**, In contrast to learning a generic representation on one large dataset and then evaluating on other tasks/datasets, Dai & Le (2015) proposed using similar unsupervised objectives such as sequence autoencoding and language modeling to first pretrain a model on a dataset and then finetune it for a given task.
 
 ## GPT简介
-
-### Tokenizer
-**Byte Pair Encoding** ([**BPE**](https://arxiv.org/abs/1508.07909)) is used to encode the input sequences. BPE was originally proposed as a data compression algorithm in 1990s and then was adopted to solve the open-vocabulary issue in machine translation, as we can easily run into rare and unknown words when translating into a new language. Motivated by the intuition that rare and unknown words can often be decomposed into multiple subwords, BPE finds the best word segmentation by iteratively and greedily merging frequent pairs of characters.
-
+### LM is all you need
+-   Language modeling is a very difficult task, even for humans.
+-   Language models are expected to compress any possible context into a vector that generalizes over possible completions.
+	 -   “They walked down the street to ???”
+ -   To have any chance at solving this task, a model is forced to learn syntax, semantics, encode facts about the world, etc.
+-   Given enough data, a huge model, and enough compute, can do a reasonable job!
+-   Empirically works better than translation, autoencoding: “Language Modeling Teaches You More Syntax than Translation Does”
 ### GPT model
 GTP预训练模型只使用Transformer 解码器（decoder），在位置编码使用了绝对位置编码，
 ![enter image description here](https://cdn-images-1.medium.com/max/1600/1*Ji79bZ3KqpMAjZ9Txv4q8Q.png)
@@ -53,13 +56,8 @@ GPT(GPT1) train different linear layer for specific tasks, such as similarity an
 ## GPT设计思想
 GPT设计思想的诞生可以追述到
 “representation learning”
-### LM is all you need
--   Language modeling is a very difficult task, even for humans.
--   Language models are expected to compress any possible context into a vector that generalizes over possible completions.
-	 -   “They walked down the street to ???”
- -   To have any chance at solving this task, a model is forced to learn syntax, semantics, encode facts about the world, etc.
--   Given enough data, a huge model, and enough compute, can do a reasonable job!
--   Empirically works better than translation, autoencoding: “Language Modeling Teaches You More Syntax than Translation Does”
+
+
 ### The most substantial upgrade that OpenAI GPT proposed is to get rid of the task-specific model and use the pre-trained language model directly!
 ### GPT1: 可以直接加速finetune训练
 ![enter image description here](https://openai.com/content/images/2018/06/zero-shot-transfer@2x.png)
@@ -219,11 +217,11 @@ gpt-3 is a huge look-up table
 [Fine-Tuning GPT-2 from Human Preferences](https://openai.com/blog/fine-tuning-gpt-2/)
 [Unsupervised sentiment neuron](https://openai.com/blog/unsupervised-sentiment-neuron/)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTQ2OTg2NjIwMiwxMDAyNzQ3ODc0LC0xNj
-MyMTQ1NDU3LC0xNjM0MzAxOTkwLC0xNjI4NzQ2NjI2LDE4MzQz
-MTc2MTgsLTIxNDA5OTI3MzQsLTU3NjM5ODE0NCwtMTMxMDUxNz
-g1OCw0OTgzMjY0OSwtODQ3MTk0NzQsMTAyMDk4MzIwNCw1NDIw
-NDI5NTYsLTEyMzk0NzU3MywtMTc3MjI1NTAzMSwtMTIzMDMyMz
-I5NCw5ODIyMjI0OTksMTc2MjExMDg2MSwxNzcwMTIzODUxLC0x
-NzQ5ODAyMjc3XX0=
+eyJoaXN0b3J5IjpbLTM2MDE5MDYxMiwxNDY5ODY2MjAyLDEwMD
+I3NDc4NzQsLTE2MzIxNDU0NTcsLTE2MzQzMDE5OTAsLTE2Mjg3
+NDY2MjYsMTgzNDMxNzYxOCwtMjE0MDk5MjczNCwtNTc2Mzk4MT
+Q0LC0xMzEwNTE3ODU4LDQ5ODMyNjQ5LC04NDcxOTQ3NCwxMDIw
+OTgzMjA0LDU0MjA0Mjk1NiwtMTIzOTQ3NTczLC0xNzcyMjU1MD
+MxLC0xMjMwMzIzMjk0LDk4MjIyMjQ5OSwxNzYyMTEwODYxLDE3
+NzAxMjM4NTFdfQ==
 -->
