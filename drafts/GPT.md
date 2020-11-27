@@ -61,8 +61,6 @@ GPT(GPT1) train different linear layer for specific tasks, such as similarity an
 GPT设计思想的诞生可以追述到
 “representation learning”
 
-
-### The most substantial upgrade that OpenAI GPT proposed is to get rid of the task-specific model and use the pre-trained language model directly!
 ### GPT1: 可以直接加速finetune训练
 ![enter image description here](https://openai.com/content/images/2018/06/zero-shot-transfer@2x.png)
 
@@ -222,11 +220,11 @@ gpt-3 is a huge look-up table
 [Fine-Tuning GPT-2 from Human Preferences](https://openai.com/blog/fine-tuning-gpt-2/)
 [Unsupervised sentiment neuron](https://openai.com/blog/unsupervised-sentiment-neuron/)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzMjAwMjc3NjUsMTQ2OTg2NjIwMiwxMD
-AyNzQ3ODc0LC0xNjMyMTQ1NDU3LC0xNjM0MzAxOTkwLC0xNjI4
-NzQ2NjI2LDE4MzQzMTc2MTgsLTIxNDA5OTI3MzQsLTU3NjM5OD
-E0NCwtMTMxMDUxNzg1OCw0OTgzMjY0OSwtODQ3MTk0NzQsMTAy
-MDk4MzIwNCw1NDIwNDI5NTYsLTEyMzk0NzU3MywtMTc3MjI1NT
-AzMSwtMTIzMDMyMzI5NCw5ODIyMjI0OTksMTc2MjExMDg2MSwx
-NzcwMTIzODUxXX0=
+eyJoaXN0b3J5IjpbMTE4OTEyNjQxNywtMTMyMDAyNzc2NSwxND
+Y5ODY2MjAyLDEwMDI3NDc4NzQsLTE2MzIxNDU0NTcsLTE2MzQz
+MDE5OTAsLTE2Mjg3NDY2MjYsMTgzNDMxNzYxOCwtMjE0MDk5Mj
+czNCwtNTc2Mzk4MTQ0LC0xMzEwNTE3ODU4LDQ5ODMyNjQ5LC04
+NDcxOTQ3NCwxMDIwOTgzMjA0LDU0MjA0Mjk1NiwtMTIzOTQ3NT
+czLC0xNzcyMjU1MDMxLC0xMjMwMzIzMjk0LDk4MjIyMjQ5OSwx
+NzYyMTEwODYxXX0=
 -->
