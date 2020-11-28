@@ -12,6 +12,7 @@ Sebastian Ruder和Jeremy Howard也许是第一个通过其提出的ULMFiT方法�
 - auto regressive (GPT)  TEXT generation！！！
 - 
 ## 背景
+BERT。。。的时候风光无限，在多个NLP任务中ch
 作为和BERT同时期的预训练模型，GPT最初的设计目标也是BERT很相似，
 - **Learning to Generate Reviews and Discovering Sentiment**， 使用RNN模型，unsupervised 预训练+少量supervised finetuning
 > We first trained a  [multiplicative LSTM](https://arxiv.org/abs/1609.07959)  with 4,096 units on a corpus of 82 million Amazon reviews to predict the next character in a chunk of text. Training took one month across four NVIDIA Pascal GPUs, with our model processing 12,500 characters per second.
@@ -222,11 +223,11 @@ gpt-3 is a huge look-up table
 [Fine-Tuning GPT-2 from Human Preferences](https://openai.com/blog/fine-tuning-gpt-2/)
 [Unsupervised sentiment neuron](https://openai.com/blog/unsupervised-sentiment-neuron/)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTQ3NzA4OTA1NiwxNjg1MTk4MTU4LDExMT
-A4ODEzOSwxMTg5MTI2NDE3LC0xMzIwMDI3NzY1LDE0Njk4NjYy
-MDIsMTAwMjc0Nzg3NCwtMTYzMjE0NTQ1NywtMTYzNDMwMTk5MC
-wtMTYyODc0NjYyNiwxODM0MzE3NjE4LC0yMTQwOTkyNzM0LC01
-NzYzOTgxNDQsLTEzMTA1MTc4NTgsNDk4MzI2NDksLTg0NzE5ND
-c0LDEwMjA5ODMyMDQsNTQyMDQyOTU2LC0xMjM5NDc1NzMsLTE3
-NzIyNTUwMzFdfQ==
+eyJoaXN0b3J5IjpbNTM3NjM4MTI1LDE0NzcwODkwNTYsMTY4NT
+E5ODE1OCwxMTEwODgxMzksMTE4OTEyNjQxNywtMTMyMDAyNzc2
+NSwxNDY5ODY2MjAyLDEwMDI3NDc4NzQsLTE2MzIxNDU0NTcsLT
+E2MzQzMDE5OTAsLTE2Mjg3NDY2MjYsMTgzNDMxNzYxOCwtMjE0
+MDk5MjczNCwtNTc2Mzk4MTQ0LC0xMzEwNTE3ODU4LDQ5ODMyNj
+Q5LC04NDcxOTQ3NCwxMDIwOTgzMjA0LDU0MjA0Mjk1NiwtMTIz
+OTQ3NTczXX0=
 -->
