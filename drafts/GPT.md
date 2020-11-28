@@ -97,7 +97,7 @@ Secondly, while  [BERT](https://analyticsindiamag.com/step-by-step-guide-to-impl
 #### Model specification
 > Our model largely follows the original transformer work [62]. We trained a 12-layer decoder-only transformer with masked self-attention heads (768 dimensional states and 12 attention heads). For the position-wise feed-forward networks, we used 3072 dimensional inner states. We used the Adam optimization scheme [27] with a max learning rate of 2.5e-4. The learning rate was increased linearly from zero over the first 2000 updates and annealed to 0 using a cosine schedule. We train for 100 epochs on minibatches of 64 randomly sampled, contiguous sequences of 512 tokens.
 #### supervised fine-tuning
-GPT设计了
+GPT设计了4种heads处理不同任务： LMhead，ClfHead，multichoiceHead，similarityHead
 > - Natural Language Inference: We evaluate on five datasets with diverse sources, including image captions (SNLI), transcribed speech, popular fiction, and government reports (MNLI), Wikipedia articles (QNLI), science exams (SciTail) or news articles (RTE)
 > - Question answering and commonsense reasoning: We use the recently released RACE dataset [30], consisting of English passages with associated questions from middle and high school exams
 > - Semantic Similarity: Semantic similarity (or paraphrase detection) tasks involve predicting whether two sentences are semantically equivalent or not. The challenges lie in recognizing rephrasing of concepts, understanding negation, and handling syntactic ambiguity. We use three datasets for this task – the Microsoft Paraphrase corpus (MRPC) [14] (collected from news sources), the Quora Question Pairs (QQP) dataset [9], and the Semantic Textual Similarity benchmark (STS-B) [6].
@@ -222,7 +222,7 @@ gpt-3 is a huge look-up table
 [Fine-Tuning GPT-2 from Human Preferences](https://openai.com/blog/fine-tuning-gpt-2/)
 [Unsupervised sentiment neuron](https://openai.com/blog/unsupervised-sentiment-neuron/)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTIyOTgwNDQ3MiwxNjg1MTk4MTU4LDExMT
+eyJoaXN0b3J5IjpbMTQ3NzA4OTA1NiwxNjg1MTk4MTU4LDExMT
 A4ODEzOSwxMTg5MTI2NDE3LC0xMzIwMDI3NzY1LDE0Njk4NjYy
 MDIsMTAwMjc0Nzg3NCwtMTYzMjE0NTQ1NywtMTYzNDMwMTk5MC
 wtMTYyODc0NjYyNiwxODM0MzE3NjE4LC0yMTQwOTkyNzM0LC01
