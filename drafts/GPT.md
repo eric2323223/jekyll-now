@@ -23,7 +23,7 @@ While training the linear model with L1 regularization, we noticed it used surpr
 
 ## GPT简介
 GPT的全称是Generative Pretraining，它最迟是由openAI在2018年在Improving Language Understanding by Generative Pre-Training的论文中发布的基于Transformer的预训练模型。
-GPT的作者之前的一些研究中发现了大量的文本训练可以让基于RNN模型学习到一些可辩别的特征（discriminative features）。 为了验证这些学习到的特征具有通用性，并且可以应用于多种微调任务，作者设计了这样的迁移学习场景：首先对基于Transformer模型应用大量预料进行自监督训练， 然后将预训练模型进行微调后应用到多个微调任务场景测试中利用极少量的数据进行监督式训练，最后实验结果证明
+GPT的作者之前的一些研究中发现了大量的文本训练可以让基于RNN模型学习到一些可辩别的特征（discriminative features）。 为了验证这些学习到的特征具有通用性，并且可以应用于多种微调任务，作者设计了这样的迁移学习场景：首先对基于Transformer模型应用大量预料进行自监督训练， 然后将预训练模型进行微调后应用到多个微调任务场景（与预训练无关）测试中利用极少量的数据进行监督式训练，最后实验结果在多项公开测试zhong证明
 > 在本文中，我们探索了一种使用语言监督的半监督方法来进行语言理解任务
 无监督的预训练和有监督的微调相结合。 我们的目标是学习通用
 几乎不适应各种各样任务的转移。 我们假设可以访问
@@ -236,11 +236,11 @@ gpt-3 is a huge look-up table
 [Fine-Tuning GPT-2 from Human Preferences](https://openai.com/blog/fine-tuning-gpt-2/)
 [Unsupervised sentiment neuron](https://openai.com/blog/unsupervised-sentiment-neuron/)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTQxMjE3MTczMyw4NjcwMDE1NzEsMTA5OT
-Q1MTIwMiwtMTY2NzU1Njg3Niw4MDg3MTM0NjcsMTQ3NzA4OTA1
-NiwxNjg1MTk4MTU4LDExMTA4ODEzOSwxMTg5MTI2NDE3LC0xMz
-IwMDI3NzY1LDE0Njk4NjYyMDIsMTAwMjc0Nzg3NCwtMTYzMjE0
-NTQ1NywtMTYzNDMwMTk5MCwtMTYyODc0NjYyNiwxODM0MzE3Nj
-E4LC0yMTQwOTkyNzM0LC01NzYzOTgxNDQsLTEzMTA1MTc4NTgs
-NDk4MzI2NDldfQ==
+eyJoaXN0b3J5IjpbNzk3NjQzMzM2LDE0MTIxNzE3MzMsODY3MD
+AxNTcxLDEwOTk0NTEyMDIsLTE2Njc1NTY4NzYsODA4NzEzNDY3
+LDE0NzcwODkwNTYsMTY4NTE5ODE1OCwxMTEwODgxMzksMTE4OT
+EyNjQxNywtMTMyMDAyNzc2NSwxNDY5ODY2MjAyLDEwMDI3NDc4
+NzQsLTE2MzIxNDU0NTcsLTE2MzQzMDE5OTAsLTE2Mjg3NDY2Mj
+YsMTgzNDMxNzYxOCwtMjE0MDk5MjczNCwtNTc2Mzk4MTQ0LC0x
+MzEwNTE3ODU4XX0=
 -->
