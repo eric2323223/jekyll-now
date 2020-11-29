@@ -23,7 +23,7 @@ While training the linear model with L1 regularization, we noticed it used surpr
 
 ## GPT简介
 GPT的全称是Generative Pretraining，它最迟是由openAI在2018年在Improving Language Understanding by Generative Pre-Training的论文中发布的基于Transformer的预训练模型。
-GPT的作者之前的一些研究中发现了大量的。。。为了验证
+GPT的作者之前的一些研究中发现了大量的。。。为了验证。。。，
 
 
 GPT的在迁移学的的路上比BERT走的更远了一步，它希望预训练模型可以直接用于微调任务，而不需为微调任务设计专门的微调层。
@@ -228,7 +228,7 @@ gpt-3 is a huge look-up table
 [Fine-Tuning GPT-2 from Human Preferences](https://openai.com/blog/fine-tuning-gpt-2/)
 [Unsupervised sentiment neuron](https://openai.com/blog/unsupervised-sentiment-neuron/)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE3NTIwNjI3MSw4NjcwMDE1NzEsMTA5OT
+eyJoaXN0b3J5IjpbLTMzMzMyMzEyNSw4NjcwMDE1NzEsMTA5OT
 Q1MTIwMiwtMTY2NzU1Njg3Niw4MDg3MTM0NjcsMTQ3NzA4OTA1
 NiwxNjg1MTk4MTU4LDExMTA4ODEzOSwxMTg5MTI2NDE3LC0xMz
 IwMDI3NzY1LDE0Njk4NjYyMDIsMTAwMjc0Nzg3NCwtMTYzMjE0
