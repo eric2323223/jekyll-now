@@ -62,7 +62,7 @@ absolute position embedding `self.wpe = nn.Embedding(config.n_positions, config.
 - attention mask
 - GPT is trained on the standard task: given a sequence of prior words, predict the next word.
 -  loss function: standard LM
-
+####
 ### finetune
 GPT(GPT1) train different linear layer for specific tasks, such as similarity and multiple choice.
 **no model justification!!!**
@@ -236,11 +236,11 @@ gpt-3 is a huge look-up table
 [Fine-Tuning GPT-2 from Human Preferences](https://openai.com/blog/fine-tuning-gpt-2/)
 [Unsupervised sentiment neuron](https://openai.com/blog/unsupervised-sentiment-neuron/)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE4MTkyNjg4MTksMTQxMjE3MTczMyw4Nj
-cwMDE1NzEsMTA5OTQ1MTIwMiwtMTY2NzU1Njg3Niw4MDg3MTM0
-NjcsMTQ3NzA4OTA1NiwxNjg1MTk4MTU4LDExMTA4ODEzOSwxMT
-g5MTI2NDE3LC0xMzIwMDI3NzY1LDE0Njk4NjYyMDIsMTAwMjc0
-Nzg3NCwtMTYzMjE0NTQ1NywtMTYzNDMwMTk5MCwtMTYyODc0Nj
-YyNiwxODM0MzE3NjE4LC0yMTQwOTkyNzM0LC01NzYzOTgxNDQs
-LTEzMTA1MTc4NThdfQ==
+eyJoaXN0b3J5IjpbNDY2MTE1NjkzLC0xODE5MjY4ODE5LDE0MT
+IxNzE3MzMsODY3MDAxNTcxLDEwOTk0NTEyMDIsLTE2Njc1NTY4
+NzYsODA4NzEzNDY3LDE0NzcwODkwNTYsMTY4NTE5ODE1OCwxMT
+EwODgxMzksMTE4OTEyNjQxNywtMTMyMDAyNzc2NSwxNDY5ODY2
+MjAyLDEwMDI3NDc4NzQsLTE2MzIxNDU0NTcsLTE2MzQzMDE5OT
+AsLTE2Mjg3NDY2MjYsMTgzNDMxNzYxOCwtMjE0MDk5MjczNCwt
+NTc2Mzk4MTQ0XX0=
 -->
