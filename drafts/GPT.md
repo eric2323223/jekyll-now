@@ -22,7 +22,7 @@ While training the linear model with L1 regularization, we noticed it used surpr
 - **Semi-supervised sequence learning**, In contrast to learning a generic representation on one large dataset and then evaluating on other tasks/datasets, Dai & Le (2015) proposed using similar unsupervised objectives such as sequence autoencoding and language modeling to first pretrain a model on a dataset and then finetune it for a given task.
 
 ## GPT简介
-GPT的全称是Generative Pretraining，它是由openAI在
+GPT的全称是Generative Pretraining，它是由openAI在2018年在Improving Language Understanding by Generative Pre-Training的论文中发布的基于Transformer的yu
 GPT的在迁移学的的路上比BERT走的更远了一步，它希望预训练模型可以直接用于微调任务，而不需为微调任务设计专门的微调层。
 ### LM is all you need
 #### LM works with all types of finetune tasks
@@ -225,11 +225,11 @@ gpt-3 is a huge look-up table
 [Fine-Tuning GPT-2 from Human Preferences](https://openai.com/blog/fine-tuning-gpt-2/)
 [Unsupervised sentiment neuron](https://openai.com/blog/unsupervised-sentiment-neuron/)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTc2NDg3MTI1MiwxMDk5NDUxMjAyLC0xNj
-Y3NTU2ODc2LDgwODcxMzQ2NywxNDc3MDg5MDU2LDE2ODUxOTgx
-NTgsMTExMDg4MTM5LDExODkxMjY0MTcsLTEzMjAwMjc3NjUsMT
-Q2OTg2NjIwMiwxMDAyNzQ3ODc0LC0xNjMyMTQ1NDU3LC0xNjM0
-MzAxOTkwLC0xNjI4NzQ2NjI2LDE4MzQzMTc2MTgsLTIxNDA5OT
-I3MzQsLTU3NjM5ODE0NCwtMTMxMDUxNzg1OCw0OTgzMjY0OSwt
-ODQ3MTk0NzRdfQ==
+eyJoaXN0b3J5IjpbLTE2Nzk4MzU2MzgsMTA5OTQ1MTIwMiwtMT
+Y2NzU1Njg3Niw4MDg3MTM0NjcsMTQ3NzA4OTA1NiwxNjg1MTk4
+MTU4LDExMTA4ODEzOSwxMTg5MTI2NDE3LC0xMzIwMDI3NzY1LD
+E0Njk4NjYyMDIsMTAwMjc0Nzg3NCwtMTYzMjE0NTQ1NywtMTYz
+NDMwMTk5MCwtMTYyODc0NjYyNiwxODM0MzE3NjE4LC0yMTQwOT
+kyNzM0LC01NzYzOTgxNDQsLTEzMTA1MTc4NTgsNDk4MzI2NDks
+LTg0NzE5NDc0XX0=
 -->
