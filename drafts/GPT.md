@@ -67,7 +67,10 @@ absolute position embedding `self.wpe = nn.Embedding(config.n_positions, config.
 GPT(GPT1) train different linear layer for specific tasks, such as similarity and multiple choice.
 **no model justification!!!**
 ![enter image description here](https://qjjnh3a9hpo1nukrg1fwoh71-wpengine.netdna-ssl.com/wp-content/uploads/2019/04/GPT-downstream-tasks_web.jpg)
-> **Task-specific input transformations** For some tasks, like text classification, we can directly fine-tune our model as described above. Certain other tasks, like question answering or textual entailment, have structured inputs such as ordered sentence pairs, or triplets of document, question, and answers. Since our pre-trained model was trained on contiguous sequences of text, we require some modifications to apply it to these tasks. Previous work proposed learning task specific architectures on top of transferred representations [44]. Such an approach re-introduces a significant amount of task-specific customization and does not use transfer learning for these additional architectural components. Instead, we use a traversal-style approach [52], where we convert structured inputs into an ordered sequence that our pre-trained model can process. These input transformations allow us to avoid making extensive changes to the architecture across tasks. We provide a brief description of these input transformations below and Figure 1 provides a visual illustration. All transformations include adding randomly initialized start and end tokens (hsi, hei). Textual entailment For entailment tasks, we concatenate the premise p and hypothesis h token sequences, with a delimiter token ($) in between. Similarity For similarity tasks, there is no inherent ordering of the two sentences being compared. To reflect this, we modify the input sequence to contain both possible sentence orderings (with a delimiter in between) and process each independently to produce two sequence representations h m l which are added element-wise before being fed into the linear output layer. Question Answering and Commonsense Reasoning For these tasks, we are given a context document z, a question q, and a set of possible answers {ak}. We concatenate the document context and question with each possible answer, adding a delimiter token in between to get [z; q; $; ak]. Each of these sequences are processed independently with our model and then normalized via a softmax layer to produce an output distribution over possible answers.
+> **Task-specific input transformations** For some tasks, like text classification, we can directly fine-tune our model as described above. Certain other tasks, like question answering or textual entailment, have structured inputs such as ordered sentence pairs, or triplets of document, question, and answers. Since our pre-trained model was trained on contiguous sequences of text, we require some modifications to apply it to these tasks. Previous work proposed learning task specific architectures on top of transferred representations [44]. Such an approach re-introduces a significant amount of task-specific customization and does not use transfer learning for these additional architectural components. Instead, we use a traversal-style approach [52], where we convert structured inputs into an ordered sequence that our pre-trained model can process. These input transformations allow us to avoid making extensive changes to the architecture across tasks. We provide a brief description of these input transformations below and Figure 1 provides a visual illustration. All transformations include adding randomly initialized start and end tokens (<s>, <e>). 
+> **Textual entailment** For entailment tasks, we concatenate the premise p and hypothesis h token sequences, with a delimiter token ($) in between. 
+> **Similarity** For similarity tasks, there is no inherent ordering of the two sentences being compared. To reflect this, we modify the input sequence to contain both possible sentence orderings (with a delimiter in between) and process each independently to produce two sequence representations h m l which are added element-wise before being fed into the linear output layer. 
+> **Question Answering and Commonsense Reasoning** For these tasks, we are given a context document z, a question q, and a set of possible answers {ak}. We concatenate the document context and question with each possible answer, adding a delimiter token in between to get [z; q; $; ak]. Each of these sequences are processed independently with our model and then normalized via a softmax layer to produce an output distribution over possible answers.
 - zero shot learning
 - one shot learning
 - few shot learning
@@ -237,11 +240,11 @@ gpt-3 is a huge look-up table
 [Fine-Tuning GPT-2 from Human Preferences](https://openai.com/blog/fine-tuning-gpt-2/)
 [Unsupervised sentiment neuron](https://openai.com/blog/unsupervised-sentiment-neuron/)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE5NjQ3ODc2NjQsLTE4MDI5NDAwMjAsLT
-E4MTkyNjg4MTksMTQxMjE3MTczMyw4NjcwMDE1NzEsMTA5OTQ1
-MTIwMiwtMTY2NzU1Njg3Niw4MDg3MTM0NjcsMTQ3NzA4OTA1Ni
-wxNjg1MTk4MTU4LDExMTA4ODEzOSwxMTg5MTI2NDE3LC0xMzIw
-MDI3NzY1LDE0Njk4NjYyMDIsMTAwMjc0Nzg3NCwtMTYzMjE0NT
-Q1NywtMTYzNDMwMTk5MCwtMTYyODc0NjYyNiwxODM0MzE3NjE4
-LC0yMTQwOTkyNzM0XX0=
+eyJoaXN0b3J5IjpbNDU4NDQ5NTAwLC0xODAyOTQwMDIwLC0xOD
+E5MjY4ODE5LDE0MTIxNzE3MzMsODY3MDAxNTcxLDEwOTk0NTEy
+MDIsLTE2Njc1NTY4NzYsODA4NzEzNDY3LDE0NzcwODkwNTYsMT
+Y4NTE5ODE1OCwxMTEwODgxMzksMTE4OTEyNjQxNywtMTMyMDAy
+Nzc2NSwxNDY5ODY2MjAyLDEwMDI3NDc4NzQsLTE2MzIxNDU0NT
+csLTE2MzQzMDE5OTAsLTE2Mjg3NDY2MjYsMTgzNDMxNzYxOCwt
+MjE0MDk5MjczNF19
 -->
