@@ -70,7 +70,7 @@ GPT(GPT1) train different linear layer for specific tasks, such as similarity an
 > **Task-specific input transformations** For some tasks, like text classification, we can directly fine-tune our model as described above. Certain other tasks, like question answering or textual entailment, have structured inputs such as ordered sentence pairs, or triplets of document, question, and answers. Since our pre-trained model was trained on contiguous sequences of text, we require some modifications to apply it to these tasks. Previous work proposed learning task specific architectures on top of transferred representations [44]. Such an approach re-introduces a significant amount of task-specific customization and does not use transfer learning for these additional architectural components. Instead, we use a traversal-style approach [52], where we convert structured inputs into an ordered sequence that our pre-trained model can process. These input transformations allow us to avoid making extensive changes to the architecture across tasks. We provide a brief description of these input transformations below and Figure 1 provides a visual illustration. All transformations include adding randomly initialized start and end tokens ($\langle s \rangle, \langle e\rangle$). 
 > **Textual entailment** For entailment tasks, we concatenate the premise $p$ and hypothesis $h$ token sequences, with a delimiter token ($) in between. 
 > **Similarity** For similarity tasks, there is no inherent ordering of the two sentences being compared. To reflect this, we modify the input sequence to contain both possible sentence orderings (with a delimiter in between) and process each independently to produce two sequence representations $h^m_l$which are added element-wise before being fed into the linear output layer. 
-> **Question Answering and Commonsense Reasoning** For these tasks, we are given a context document z, a question q, and a set of possible answers {ak}. We concatenate the document context and question with each possible answer, adding a delimiter token in between to get [z; q; $; ak]. Each of these sequences are processed independently with our model and then normalized via a softmax layer to produce an output distribution over possible answers.
+> **Question Answering and Commonsense Reasoning** For these tasks, we are given a context document z, a question q, and a set of possible answers {$a_k$}. We concatenate the document context and question with each possible answer, adding a delimiter token in between to get [z; q; $; ak]. Each of these sequences are processed independently with our model and then normalized via a softmax layer to produce an output distribution over possible answers.
 - zero shot learning
 - one shot learning
 - few shot learning
@@ -240,11 +240,11 @@ gpt-3 is a huge look-up table
 [Fine-Tuning GPT-2 from Human Preferences](https://openai.com/blog/fine-tuning-gpt-2/)
 [Unsupervised sentiment neuron](https://openai.com/blog/unsupervised-sentiment-neuron/)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIxMzAyNTAxNzcsNDU4NDQ5NTAwLC0xOD
-AyOTQwMDIwLC0xODE5MjY4ODE5LDE0MTIxNzE3MzMsODY3MDAx
-NTcxLDEwOTk0NTEyMDIsLTE2Njc1NTY4NzYsODA4NzEzNDY3LD
-E0NzcwODkwNTYsMTY4NTE5ODE1OCwxMTEwODgxMzksMTE4OTEy
-NjQxNywtMTMyMDAyNzc2NSwxNDY5ODY2MjAyLDEwMDI3NDc4Nz
-QsLTE2MzIxNDU0NTcsLTE2MzQzMDE5OTAsLTE2Mjg3NDY2MjYs
-MTgzNDMxNzYxOF19
+eyJoaXN0b3J5IjpbLTM3NjE4Njc5NCw0NTg0NDk1MDAsLTE4MD
+I5NDAwMjAsLTE4MTkyNjg4MTksMTQxMjE3MTczMyw4NjcwMDE1
+NzEsMTA5OTQ1MTIwMiwtMTY2NzU1Njg3Niw4MDg3MTM0NjcsMT
+Q3NzA4OTA1NiwxNjg1MTk4MTU4LDExMTA4ODEzOSwxMTg5MTI2
+NDE3LC0xMzIwMDI3NzY1LDE0Njk4NjYyMDIsMTAwMjc0Nzg3NC
+wtMTYzMjE0NTQ1NywtMTYzNDMwMTk5MCwtMTYyODc0NjYyNiwx
+ODM0MzE3NjE4XX0=
 -->
