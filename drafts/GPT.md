@@ -125,6 +125,7 @@ GPT设计了4种heads处理不同任务： LMhead，ClfHead，multichoiceHead，
 > - Impact of number of layers transfered: We observe the standard result that transferring embeddings improves performance and that each transformer layer provides further benefits up to 9% for full transfer on MultiNLI. This indicates that each layer in the pre-trained model contains useful functionality for solving target tasks.
 > - zero shot: We observe the performance of these heuristics is stable and steadily increases over training suggesting that generative pretraining supports the learning of a wide variety of task relevant functionality. We also observe the LSTM exhibits higher variance in its zero-shot performance suggesting that the inductive bias of the Transformer architecture assists in transfer
 ### GPT-2: Language Models are Unsupervised Multitask Learners
+zero-shot !
 ![enter image description here](https://joeddav.github.io/blog/images/zsl/gpt3_triviahq.png)
 GPT2的创新点在于验证了无监督的语言建模能够学习到有监督任务所需的特征。原文是
 > We demonstrate that language models begin to learn these tasks without any explicit supervision when trained on a new dataset of millions of webpages called WebText.
@@ -240,11 +241,11 @@ gpt-3 is a huge look-up table
 [Fine-Tuning GPT-2 from Human Preferences](https://openai.com/blog/fine-tuning-gpt-2/)
 [Unsupervised sentiment neuron](https://openai.com/blog/unsupervised-sentiment-neuron/)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTM3NjE4Njc5NCw0NTg0NDk1MDAsLTE4MD
-I5NDAwMjAsLTE4MTkyNjg4MTksMTQxMjE3MTczMyw4NjcwMDE1
-NzEsMTA5OTQ1MTIwMiwtMTY2NzU1Njg3Niw4MDg3MTM0NjcsMT
-Q3NzA4OTA1NiwxNjg1MTk4MTU4LDExMTA4ODEzOSwxMTg5MTI2
-NDE3LC0xMzIwMDI3NzY1LDE0Njk4NjYyMDIsMTAwMjc0Nzg3NC
-wtMTYzMjE0NTQ1NywtMTYzNDMwMTk5MCwtMTYyODc0NjYyNiwx
-ODM0MzE3NjE4XX0=
+eyJoaXN0b3J5IjpbMTg2MTI2MjY3MCwtMzc2MTg2Nzk0LDQ1OD
+Q0OTUwMCwtMTgwMjk0MDAyMCwtMTgxOTI2ODgxOSwxNDEyMTcx
+NzMzLDg2NzAwMTU3MSwxMDk5NDUxMjAyLC0xNjY3NTU2ODc2LD
+gwODcxMzQ2NywxNDc3MDg5MDU2LDE2ODUxOTgxNTgsMTExMDg4
+MTM5LDExODkxMjY0MTcsLTEzMjAwMjc3NjUsMTQ2OTg2NjIwMi
+wxMDAyNzQ3ODc0LC0xNjMyMTQ1NDU3LC0xNjM0MzAxOTkwLC0x
+NjI4NzQ2NjI2XX0=
 -->
