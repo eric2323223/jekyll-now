@@ -64,6 +64,16 @@ absolute position embedding `self.wpe = nn.Embedding(config.n_positions, config.
 -  loss function: standard LM
 - 预训练流程
 ### finetune
+> The most substantial upgrade that OpenAI GPT proposed is to get rid of the task-specific model and use the pre-trained language model directly!
+Let’s take classification as an example. Say, in the labeled dataset, each input has  nn  tokens,  x=(x1,…,xn)x=(x1,…,xn), and one label  yy. GPT first processes the input sequence  xx  through the pre-trained transformer decoder and the last layer output for the last token  xnxn  is  h(n)LhL(n). Then with only one new trainable weight matrix  WyWy, it can predict a distribution over class labels.
+![GPT classification](https://lilianweng.github.io/lil-log/assets/images/GPT-classification.png)
+P(y∣x1,…,xn)=softmax(h(n)LWy)P(y∣x1,…,xn)=softmax(hL(n)Wy)
+The loss is to minimize the negative log-likelihood for true labels. In addition, adding the LM loss as an auxiliary loss is found to be beneficial, because:
+-   (1) it helps accelerate convergence during training and
+-   (2) it is expected to improve the generalization of the supervised model.
+LclsLLML=∑(x,y)∈DlogP(y∣x1,…,xn)=∑(x,y)∈Dlogsoftmax(h(n)L(x)Wy)=−∑ilogp(xi∣xi−k,…,xi−1)=Lcls+λLLMLcls=∑(x,y)∈Dlog⁡P(y∣x1,…,xn)=∑(x,y)∈Dlog⁡softmax(hL(n)(x)Wy)LLM=−∑ilog⁡p(xi∣xi−k,…,xi−1)L=Lcls+λLLM
+>With similar designs, no customized model structure is needed for other end tasks (see Fig. 7). If the task input contains multiple sentences, a special delimiter token (`$`) is added between each pair of sentences. The embedding for this delimiter token is a new parameter we need to learn, but it should be pretty minimal.
+
 GPT(GPT1) train different linear layer for specific tasks, such as similarity and multiple choice.
 **no model justification!!!**
 ![enter image description here](https://qjjnh3a9hpo1nukrg1fwoh71-wpengine.netdna-ssl.com/wp-content/uploads/2019/04/GPT-downstream-tasks_web.jpg)
@@ -241,11 +251,11 @@ gpt-3 is a huge look-up table
 [Fine-Tuning GPT-2 from Human Preferences](https://openai.com/blog/fine-tuning-gpt-2/)
 [Unsupervised sentiment neuron](https://openai.com/blog/unsupervised-sentiment-neuron/)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTg2MTI2MjY3MCwtMzc2MTg2Nzk0LDQ1OD
-Q0OTUwMCwtMTgwMjk0MDAyMCwtMTgxOTI2ODgxOSwxNDEyMTcx
-NzMzLDg2NzAwMTU3MSwxMDk5NDUxMjAyLC0xNjY3NTU2ODc2LD
-gwODcxMzQ2NywxNDc3MDg5MDU2LDE2ODUxOTgxNTgsMTExMDg4
-MTM5LDExODkxMjY0MTcsLTEzMjAwMjc3NjUsMTQ2OTg2NjIwMi
-wxMDAyNzQ3ODc0LC0xNjMyMTQ1NDU3LC0xNjM0MzAxOTkwLC0x
-NjI4NzQ2NjI2XX0=
+eyJoaXN0b3J5IjpbODk5NTA5NTQ4LDE4NjEyNjI2NzAsLTM3Nj
+E4Njc5NCw0NTg0NDk1MDAsLTE4MDI5NDAwMjAsLTE4MTkyNjg4
+MTksMTQxMjE3MTczMyw4NjcwMDE1NzEsMTA5OTQ1MTIwMiwtMT
+Y2NzU1Njg3Niw4MDg3MTM0NjcsMTQ3NzA4OTA1NiwxNjg1MTk4
+MTU4LDExMTA4ODEzOSwxMTg5MTI2NDE3LC0xMzIwMDI3NzY1LD
+E0Njk4NjYyMDIsMTAwMjc0Nzg3NCwtMTYzMjE0NTQ1NywtMTYz
+NDMwMTk5MF19
 -->
