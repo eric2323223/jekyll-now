@@ -81,10 +81,7 @@ GPT(GPT1) train different linear layer for specific tasks, such as similarity an
 > **Textual entailment** For entailment tasks, we concatenate the premise $p$ and hypothesis $h$ token sequences, with a delimiter token ($) in between. 
 > **Similarity** For similarity tasks, there is no inherent ordering of the two sentences being compared. To reflect this, we modify the input sequence to contain both possible sentence orderings (with a delimiter in between) and process each independently to produce two sequence representations $h^m_l$which are added element-wise before being fed into the linear output layer. 
 > **Question Answering and Commonsense Reasoning** For these tasks, we are given a context document z, a question q, and a set of possible answers {$a_k$}. We concatenate the document context and question with each possible answer, adding a delimiter token in between to get [z; q; $; ak]. Each of these sequences are processed independently with our model and then normalized via a softmax layer to produce an output distribution over possible answers.
-- zero shot learning
-- one shot learning
-- few shot learning
-![enter image description here](https://miro.medium.com/max/448/1*2dX-PZSNdmj0KOa-NmjrEA.jpeg)
+
 
 ## GPT设计思想
 GPT设计思想的诞生可以追述到
@@ -182,12 +179,12 @@ GPT-3依旧延续自己的单向语言模型训练方式，只不过这次把模
 
 因此GPT-3的主要目标是**用更少的领域数据、且不经过精调步骤去解决问题**。
 
+- zero shot learning
+- one shot learning
+- few shot learning
+![enter image description here](https://miro.medium.com/max/448/1*2dX-PZSNdmj0KOa-NmjrEA.jpeg)
 > Here we show that scaling up language models greatly improves task-agnostic, few-shot performance, sometimes even reaching competitiveness with prior state-of-the-art finetuning approaches.
 
->  Fine-Tuning
->  Few-Shot
->  One-Shot
->  Zero-Shot
 
 Question？Improve scale make real intelligent？ YES?NO? GPT 不会做多位数的加减法。
 GPT3并没有在理论上进行任何创新（仅仅是一次费用高昂的实验报告），它的价值更多体现在实际的应用中，
@@ -251,11 +248,11 @@ gpt-3 is a huge look-up table
 [Fine-Tuning GPT-2 from Human Preferences](https://openai.com/blog/fine-tuning-gpt-2/)
 [Unsupervised sentiment neuron](https://openai.com/blog/unsupervised-sentiment-neuron/)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODk5NTA5NTQ4LDE4NjEyNjI2NzAsLTM3Nj
-E4Njc5NCw0NTg0NDk1MDAsLTE4MDI5NDAwMjAsLTE4MTkyNjg4
-MTksMTQxMjE3MTczMyw4NjcwMDE1NzEsMTA5OTQ1MTIwMiwtMT
-Y2NzU1Njg3Niw4MDg3MTM0NjcsMTQ3NzA4OTA1NiwxNjg1MTk4
-MTU4LDExMTA4ODEzOSwxMTg5MTI2NDE3LC0xMzIwMDI3NzY1LD
-E0Njk4NjYyMDIsMTAwMjc0Nzg3NCwtMTYzMjE0NTQ1NywtMTYz
-NDMwMTk5MF19
+eyJoaXN0b3J5IjpbMzg1NDI5MjkzLDg5OTUwOTU0OCwxODYxMj
+YyNjcwLC0zNzYxODY3OTQsNDU4NDQ5NTAwLC0xODAyOTQwMDIw
+LC0xODE5MjY4ODE5LDE0MTIxNzE3MzMsODY3MDAxNTcxLDEwOT
+k0NTEyMDIsLTE2Njc1NTY4NzYsODA4NzEzNDY3LDE0NzcwODkw
+NTYsMTY4NTE5ODE1OCwxMTEwODgxMzksMTE4OTEyNjQxNywtMT
+MyMDAyNzc2NSwxNDY5ODY2MjAyLDEwMDI3NDc4NzQsLTE2MzIx
+NDU0NTddfQ==
 -->
