@@ -35,17 +35,12 @@ GPT的作者之前的一些研究中发现了大量的文本训练可以让基�
 
 
 GPT的在迁移学的的路上比BERT走的更远了一步，它希望预训练模型可以直接用于微调任务，而不需为微调任务设计专门的微调层。
-### LM is all you need
-#### LM works with all types of finetune tasks
-The most substantial upgrade that OpenAI GPT proposed is to get rid of the task-specific model and use the pre-trained language model directly!
--   Language modeling is a very difficult task, even for humans.
--   Language models are expected to compress any possible context into a vector that generalizes over possible completions.
-	 -   “They walked down the street to ???”
- -   To have any chance at solving this task, a model is forced to learn syntax, semantics, encode facts about the world, etc.
--   Given enough data, a huge model, and enough compute, can do a reasonable job!
--   Empirically works better than translation, autoencoding: “Language Modeling Teaches You More Syntax than Translation Does”
+
+
 ### GPT model
 GTP预训练模型只使用Transformer 解码器（decoder），在位置编码使用了绝对位置编码，
+
+> Our model largely follows the original transformer work [62]. We trained a 12-layer decoder-only transformer with masked self-attention heads (768 dimensional states and 12 attention heads). For the position-wise feed-forward networks, we used 3072 dimensional inner states. We used the Adam optimization scheme [27] with a max learning rate of 2.5e-4. The learning rate was increased linearly from zero over the first 2000 updates and annealed to 0 using a cosine schedule. We train for 100 epochs on minibatches of 64 randomly sampled, contiguous sequences of 512 tokens.
 ![enter image description here](https://cdn-images-1.medium.com/max/1600/1*Ji79bZ3KqpMAjZ9Txv4q8Q.png)
 #### embedding
 - token embedding
@@ -58,12 +53,22 @@ absolute position embedding `self.wpe = nn.Embedding(config.n_positions, config.
 ![enter image description here](https://qjjnh3a9hpo1nukrg1fwoh71-wpengine.netdna-ssl.com/wp-content/uploads/2019/04/OpenAI-GPT-transformer-decoder_web.jpg)
 ### Tokenizer
 **Byte Pair Encoding** ([**BPE**](https://arxiv.org/abs/1508.07909)) is used to encode the input sequences. BPE was originally proposed as a data compression algorithm in 1990s and then was adopted to solve the open-vocabulary issue in machine translation, as we can easily run into rare and unknown words when translating into a new language. Motivated by the intuition that rare and unknown words can often be decomposed into multiple subwords, BPE finds the best word segmentation by iteratively and greedily merging frequent pairs of characters.
-### Pretrain: 
+### self-supervised Pretrain: 
+#### Training data
+>We use the BooksCorpus dataset [71] for training the language model. It contains over 7,000 unique unpublished books from a variety of genres including Adventure, Fantasy, and Romance. Crucially, it contains long stretches of contiguous text, which allows the generative model to learn to condition on long-range information.
+>我们使用BooksCorpus数据集[71]训练语言模型。 它包含7,000多种不同类型的未出版未出版书籍，包括冒险，幻想和浪漫。 至关重要的是，它包含长段连续的文本，这使生成模型可以学习以远程信息为条件。
 - attention mask
 - GPT is trained on the standard task: given a sequence of prior words, predict the next word.
 -  loss function: standard LM
 - 预训练流程
-### finetune
+### supervised finetune
+GPT设计了4种heads处理不同任务： LMhead，ClfHead，multichoiceHead，similarityHead
+> - Natural Language Inference: We evaluate on five datasets with diverse sources, including image captions (SNLI), transcribed speech, popular fiction, and government reports (MNLI), Wikipedia articles (QNLI), science exams (SciTail) or news articles (RTE)
+> - Question answering and commonsense reasoning: We use the recently released RACE dataset [30], consisting of English passages with associated questions from middle and high school exams
+> - Semantic Similarity: Semantic similarity (or paraphrase detection) tasks involve predicting whether two sentences are semantically equivalent or not. The challenges lie in recognizing rephrasing of concepts, understanding negation, and handling syntactic ambiguity. We use three datasets for this task – the Microsoft Paraphrase corpus (MRPC) [14] (collected from news sources), the Quora Question Pairs (QQP) dataset [9], and the Semantic Textual Similarity benchmark (STS-B) [6].
+> - Classification: Finally, we also evaluate on two different text classification tasks. The Corpus of Linguistic Acceptability (CoLA) [65] contains expert judgements on whether a sentence is grammatical or not, and tests the innate linguistic bias of trained models. The Stanford Sentiment Treebank (SST-2) [54], on the other hand, is a standard binary classification task.
+
+
 > The most substantial upgrade that OpenAI GPT proposed is to get rid of the task-specific model and use the pre-trained language model directly!
 Let’s take classification as an example. Say, in the labeled dataset, each input has  nn  tokens,  x=(x1,…,xn)x=(x1,…,xn), and one label  yy. GPT first processes the input sequence  xx  through the pre-trained transformer decoder and the last layer output for the last token  xnxn  is  h(n)LhL(n). Then with only one new trainable weight matrix  WyWy, it can predict a distribution over class labels.
 ![GPT classification](https://lilianweng.github.io/lil-log/assets/images/GPT-classification.png)
@@ -82,7 +87,10 @@ GPT(GPT1) train different linear layer for specific tasks, such as similarity an
 > **Similarity** For similarity tasks, there is no inherent ordering of the two sentences being compared. To reflect this, we modify the input sequence to contain both possible sentence orderings (with a delimiter in between) and process each independently to produce two sequence representations $h^m_l$which are added element-wise before being fed into the linear output layer. 
 > **Question Answering and Commonsense Reasoning** For these tasks, we are given a context document z, a question q, and a set of possible answers {$a_k$}. We concatenate the document context and question with each possible answer, adding a delimiter token in between to get [z; q; $; ak]. Each of these sequences are processed independently with our model and then normalized via a softmax layer to produce an output distribution over possible answers.
 
-
+### Analysis
+![enter image description here](https://d3i71xaburhd42.cloudfront.net/cd18800a0fe0b668a1cc19f2ec95b5003d0a5035/7-Figure2-1.png)
+> - Impact of number of layers transfered: We observe the standard result that transferring embeddings improves performance and that each transformer layer provides further benefits up to 9% for full transfer on MultiNLI. This indicates that each layer in the pre-trained model contains useful functionality for solving target tasks.
+> - zero shot: We observe the performance of these heuristics is stable and steadily increases over training suggesting that generative pretraining supports the learning of a wide variety of task relevant functionality. We also observe the LSTM exhibits higher variance in its zero-shot performance suggesting that the inductive bias of the Transformer architecture assists in transfer
 ## GPT设计思想
 GPT设计思想的诞生可以追述到
 “representation learning”
@@ -116,23 +124,19 @@ Secondly, while  [BERT](https://analyticsindiamag.com/step-by-step-guide-to-impl
 ### GPT-1: Improving Language Understanding by Generative Pre-Training
 > We demonstrate that large gains on these tasks can be realized by generative pre-training of a language model on a diverse corpus of unlabeled text, followed by discriminative fine-tuning on each specific task. In contrast to previous approaches, we make use of task-aware input transformations during fine-tuning to achieve effective transfer while requiring minimal changes to the model architecture. We demonstrate the effectiveness of our approach on a wide range of benchmarks for natural language understanding
 > 们证明，通过在各种未标记文本的语料库上对语言模型进行生成式预训练，然后对每个特定任务进行区分性微调，可以实现这些任务的巨大收益。 与以前的方法相比，我们在微调过程中利用了任务感知的输入转换来实现有效的传递，同时对模型体系结构的更改要求最小。 我们在广泛的自然语言理解基准测试中证明了我们的方法的有效性
-#### Training data
->We use the BooksCorpus dataset [71] for training the language model. It contains over 7,000 unique unpublished books from a variety of genres including Adventure, Fantasy, and Romance. Crucially, it contains long stretches of contiguous text, which allows the generative model to learn to condition on long-range information.
->我们使用BooksCorpus数据集[71]训练语言模型。 它包含7,000多种不同类型的未出版未出版书籍，包括冒险，幻想和浪漫。 至关重要的是，它包含长段连续的文本，这使生成模型可以学习以远程信息为条件。
-#### Model specification
-> Our model largely follows the original transformer work [62]. We trained a 12-layer decoder-only transformer with masked self-attention heads (768 dimensional states and 12 attention heads). For the position-wise feed-forward networks, we used 3072 dimensional inner states. We used the Adam optimization scheme [27] with a max learning rate of 2.5e-4. The learning rate was increased linearly from zero over the first 2000 updates and annealed to 0 using a cosine schedule. We train for 100 epochs on minibatches of 64 randomly sampled, contiguous sequences of 512 tokens.
-#### supervised fine-tuning
-GPT设计了4种heads处理不同任务： LMhead，ClfHead，multichoiceHead，similarityHead
-> - Natural Language Inference: We evaluate on five datasets with diverse sources, including image captions (SNLI), transcribed speech, popular fiction, and government reports (MNLI), Wikipedia articles (QNLI), science exams (SciTail) or news articles (RTE)
-> - Question answering and commonsense reasoning: We use the recently released RACE dataset [30], consisting of English passages with associated questions from middle and high school exams
-> - Semantic Similarity: Semantic similarity (or paraphrase detection) tasks involve predicting whether two sentences are semantically equivalent or not. The challenges lie in recognizing rephrasing of concepts, understanding negation, and handling syntactic ambiguity. We use three datasets for this task – the Microsoft Paraphrase corpus (MRPC) [14] (collected from news sources), the Quora Question Pairs (QQP) dataset [9], and the Semantic Textual Similarity benchmark (STS-B) [6].
-> - Classification: Finally, we also evaluate on two different text classification tasks. The Corpus of Linguistic Acceptability (CoLA) [65] contains expert judgements on whether a sentence is grammatical or not, and tests the innate linguistic bias of trained models. The Stanford Sentiment Treebank (SST-2) [54], on the other hand, is a standard binary classification task.
-#### Analysis
-![enter image description here](https://d3i71xaburhd42.cloudfront.net/cd18800a0fe0b668a1cc19f2ec95b5003d0a5035/7-Figure2-1.png)
-> - Impact of number of layers transfered: We observe the standard result that transferring embeddings improves performance and that each transformer layer provides further benefits up to 9% for full transfer on MultiNLI. This indicates that each layer in the pre-trained model contains useful functionality for solving target tasks.
-> - zero shot: We observe the performance of these heuristics is stable and steadily increases over training suggesting that generative pretraining supports the learning of a wide variety of task relevant functionality. We also observe the LSTM exhibits higher variance in its zero-shot performance suggesting that the inductive bias of the Transformer architecture assists in transfer
+
 ### GPT-2: Language Models are Unsupervised Multitask Learners
-zero-shot !
+相比GPT有两点变化
+- zero-shot
+- LM is all you need
+#### LM works with all types of finetune tasks
+The most substantial upgrade that OpenAI GPT proposed is to get rid of the task-specific model and use the pre-trained language model directly!
+-   Language modeling is a very difficult task, even for humans.
+-   Language models are expected to compress any possible context into a vector that generalizes over possible completions.
+	 -   “They walked down the street to ???”
+ -   To have any chance at solving this task, a model is forced to learn syntax, semantics, encode facts about the world, etc.
+-   Given enough data, a huge model, and enough compute, can do a reasonable job!
+-   Empirically works better than translation, autoencoding: “Language Modeling Teaches You More Syntax than Translation Does”
 ![enter image description here](https://joeddav.github.io/blog/images/zsl/gpt3_triviahq.png)
 GPT2的创新点在于验证了无监督的语言建模能够学习到有监督任务所需的特征。原文是
 > We demonstrate that language models begin to learn these tasks without any explicit supervision when trained on a new dataset of millions of webpages called WebText.
@@ -248,11 +252,11 @@ gpt-3 is a huge look-up table
 [Fine-Tuning GPT-2 from Human Preferences](https://openai.com/blog/fine-tuning-gpt-2/)
 [Unsupervised sentiment neuron](https://openai.com/blog/unsupervised-sentiment-neuron/)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzg1NDI5MjkzLDg5OTUwOTU0OCwxODYxMj
-YyNjcwLC0zNzYxODY3OTQsNDU4NDQ5NTAwLC0xODAyOTQwMDIw
-LC0xODE5MjY4ODE5LDE0MTIxNzE3MzMsODY3MDAxNTcxLDEwOT
-k0NTEyMDIsLTE2Njc1NTY4NzYsODA4NzEzNDY3LDE0NzcwODkw
-NTYsMTY4NTE5ODE1OCwxMTEwODgxMzksMTE4OTEyNjQxNywtMT
-MyMDAyNzc2NSwxNDY5ODY2MjAyLDEwMDI3NDc4NzQsLTE2MzIx
-NDU0NTddfQ==
+eyJoaXN0b3J5IjpbMTY2MDQwNDc1MiwzODU0MjkyOTMsODk5NT
+A5NTQ4LDE4NjEyNjI2NzAsLTM3NjE4Njc5NCw0NTg0NDk1MDAs
+LTE4MDI5NDAwMjAsLTE4MTkyNjg4MTksMTQxMjE3MTczMyw4Nj
+cwMDE1NzEsMTA5OTQ1MTIwMiwtMTY2NzU1Njg3Niw4MDg3MTM0
+NjcsMTQ3NzA4OTA1NiwxNjg1MTk4MTU4LDExMTA4ODEzOSwxMT
+g5MTI2NDE3LC0xMzIwMDI3NzY1LDE0Njk4NjYyMDIsMTAwMjc0
+Nzg3NF19
 -->
