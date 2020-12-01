@@ -43,7 +43,7 @@ GPT的在迁移学的的路上比BERT走的更远了一步，它希望预训练�
 GTP预训练模型只使用Transformer 解码器（decoder），在位置编码使用了绝对位置编码，
 
 > Our model largely follows the original transformer work [62]. We trained a 12-layer decoder-only transformer with masked self-attention heads (768 dimensional states and 12 attention heads). For the position-wise feed-forward networks, we used 3072 dimensional inner states. We used the Adam optimization scheme [27] with a max learning rate of 2.5e-4. The learning rate was increased linearly from zero over the first 2000 updates and annealed to 0 using a cosine schedule. We train for 100 epochs on minibatches of 64 randomly sampled, contiguous sequences of 512 tokens.
-> GPT模型沿用了transformer 解码器d
+> GPT模型沿用了transformer 解码器的模型结构，解码器具有12个带遮罩d解码层
 ![enter image description here](https://cdn-images-1.medium.com/max/1600/1*Ji79bZ3KqpMAjZ9Txv4q8Q.png)
 #### embedding
 - token embedding
@@ -256,7 +256,7 @@ gpt-3 is a huge look-up table
 [Fine-Tuning GPT-2 from Human Preferences](https://openai.com/blog/fine-tuning-gpt-2/)
 [Unsupervised sentiment neuron](https://openai.com/blog/unsupervised-sentiment-neuron/)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTc3ODQ1OTc4OCw5MzUyNDgzNDAsLTIwMj
+eyJoaXN0b3J5IjpbMTUzNDA0OTQ0OSw5MzUyNDgzNDAsLTIwMj
 M1MTU1MzcsLTEwODA0OTczOTksMTA4MzgwMTQwMywtMTExNzM5
 MTMzNSwtMTA4MDQ5NzM5OSwtMTc2NjA1MDc5MywtMTg4NDk2MT
 kwOCwxNjYwNDA0NzUyLDM4NTQyOTI5Myw4OTk1MDk1NDgsMTg2
