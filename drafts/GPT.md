@@ -39,7 +39,7 @@ GPT的在迁移学的的路上比BERT走的更远了一步，它希望预训练�
 
 ### GPT model
 如下图（蓝色方框内）所示，GPT模型基本上就是Transformer模型的解码器部分，不同之处仅仅在于型的输入不同，Transformer解码器的输入是由编码器生成的**句向量**和编码器输出，解码器在解码时要先对已生成的输出进行自注意力计算，再进行编码器-解码器注意力计算；而GPT的输入只有*数字化*（tokenized）用户输入，因此只对用户输入进行自注意力计算。
-![enter image description here](https://docs.google.com/drawings/d/e/2PACX-1vTpyx0DRdTPtHBXJKKjRx-ufa_eKX8Cis6fKI99HKVhhwAWKXTT1klDz1ZKm0_VDjjC7-mtVk8YEkqN/pub?w=601&h=378)
+![enter image description here](https://docs.google.com/drawings/d/e/2PACX-1vTpyx0DRdTPtHBXJKKjRx-ufa_eKX8Cis6fKI99HKVhhwAWKXTT1klDz1ZKm0_VDjjC7-mtVk8YEkqN/pub?w=601&h=411)
 GTP预训练模型只使用Transformer 解码器（decoder），在位置编码使用了绝对位置编码，
 
 > Our model largely follows the original transformer work [62]. We trained a 12-layer decoder-only transformer with masked self-attention heads (768 dimensional states and 12 attention heads). For the position-wise feed-forward networks, we used 3072 dimensional inner states. We used the Adam optimization scheme [27] with a max learning rate of 2.5e-4. The learning rate was increased linearly from zero over the first 2000 updates and annealed to 0 using a cosine schedule. We train for 100 epochs on minibatches of 64 randomly sampled, contiguous sequences of 512 tokens.
@@ -257,11 +257,11 @@ gpt-3 is a huge look-up table
 [Fine-Tuning GPT-2 from Human Preferences](https://openai.com/blog/fine-tuning-gpt-2/)
 [Unsupervised sentiment neuron](https://openai.com/blog/unsupervised-sentiment-neuron/)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbOTMxODY3NzQ2LDE1OTE5NDI4MTgsMjA0MD
-c5MjA4Nyw5MzUyNDgzNDAsLTIwMjM1MTU1MzcsLTEwODA0OTcz
-OTksMTA4MzgwMTQwMywtMTExNzM5MTMzNSwtMTA4MDQ5NzM5OS
-wtMTc2NjA1MDc5MywtMTg4NDk2MTkwOCwxNjYwNDA0NzUyLDM4
-NTQyOTI5Myw4OTk1MDk1NDgsMTg2MTI2MjY3MCwtMzc2MTg2Nz
-k0LDQ1ODQ0OTUwMCwtMTgwMjk0MDAyMCwtMTgxOTI2ODgxOSwx
-NDEyMTcxNzMzXX0=
+eyJoaXN0b3J5IjpbLTkzMjE0ODg5NCw5MzE4Njc3NDYsMTU5MT
+k0MjgxOCwyMDQwNzkyMDg3LDkzNTI0ODM0MCwtMjAyMzUxNTUz
+NywtMTA4MDQ5NzM5OSwxMDgzODAxNDAzLC0xMTE3MzkxMzM1LC
+0xMDgwNDk3Mzk5LC0xNzY2MDUwNzkzLC0xODg0OTYxOTA4LDE2
+NjA0MDQ3NTIsMzg1NDI5MjkzLDg5OTUwOTU0OCwxODYxMjYyNj
+cwLC0zNzYxODY3OTQsNDU4NDQ5NTAwLC0xODAyOTQwMDIwLC0x
+ODE5MjY4ODE5XX0=
 -->
