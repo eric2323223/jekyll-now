@@ -39,7 +39,7 @@ GPT的在迁移学的的路上比BERT走的更远了一步，它希望预训练�
 
 ### GPT model
 
-如下图（蓝色方框内）所示，GPT模型基本上就是Transformer模型的解码器部分，不同之处仅有两点：首先是模型的输入不同，Transformer解码器的输入是由编码器生成的**句向量**，而GPT的输入是tokenized用户输入；其次是注意力机制的作用对象不同，Transformer中注意力关注对象是在句向量和解码器输出（？），而GPT
+如下图（蓝色方框内）所示，GPT模型基本上就是Transformer模型的解码器部分，不同之处仅仅在于型的输入不同，Transformer解码器的输入是由编码器生成的**句向量**，解码器z而GPT的输入是tokenized用户输入；其次是注意力机制的作用对象不同，Transformer中注意力关注对象是在句向量和解码器输出（？），而GPT
 -   Furthermore, in the standard transformer architecture self-attention is applied to the entire surrounding context, e.g. all of the other words in the sentence. In GPT-2  **masked self-attention**  is used instead: the decoder is only allowed (via obfuscation masking of the remaining word positions) to glean information from the prior words in the sentence (plus the word itself).
 -   Besides that GPT-2 is a close copy of the basic transformer architecture.
 GTP预训练模型只使用Transformer 解码器（decoder），在位置编码使用了绝对位置编码，
@@ -257,11 +257,11 @@ gpt-3 is a huge look-up table
 [Fine-Tuning GPT-2 from Human Preferences](https://openai.com/blog/fine-tuning-gpt-2/)
 [Unsupervised sentiment neuron](https://openai.com/blog/unsupervised-sentiment-neuron/)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwMjM1MTU1MzcsLTEwODA0OTczOTksMT
-A4MzgwMTQwMywtMTExNzM5MTMzNSwtMTA4MDQ5NzM5OSwtMTc2
-NjA1MDc5MywtMTg4NDk2MTkwOCwxNjYwNDA0NzUyLDM4NTQyOT
-I5Myw4OTk1MDk1NDgsMTg2MTI2MjY3MCwtMzc2MTg2Nzk0LDQ1
-ODQ0OTUwMCwtMTgwMjk0MDAyMCwtMTgxOTI2ODgxOSwxNDEyMT
-cxNzMzLDg2NzAwMTU3MSwxMDk5NDUxMjAyLC0xNjY3NTU2ODc2
-LDgwODcxMzQ2N119
+eyJoaXN0b3J5IjpbMjAzNTI4ODEyLC0yMDIzNTE1NTM3LC0xMD
+gwNDk3Mzk5LDEwODM4MDE0MDMsLTExMTczOTEzMzUsLTEwODA0
+OTczOTksLTE3NjYwNTA3OTMsLTE4ODQ5NjE5MDgsMTY2MDQwND
+c1MiwzODU0MjkyOTMsODk5NTA5NTQ4LDE4NjEyNjI2NzAsLTM3
+NjE4Njc5NCw0NTg0NDk1MDAsLTE4MDI5NDAwMjAsLTE4MTkyNj
+g4MTksMTQxMjE3MTczMyw4NjcwMDE1NzEsMTA5OTQ1MTIwMiwt
+MTY2NzU1Njg3Nl19
 -->
