@@ -44,7 +44,7 @@ GTP预训练模型只使用Transformer 解码器（decoder），在位置编码�
 
 > Our model largely follows the original transformer work [62]. We trained a 12-layer decoder-only transformer with masked self-attention heads (768 dimensional states and 12 attention heads). For the position-wise feed-forward networks, we used 3072 dimensional inner states. We used the Adam optimization scheme [27] with a max learning rate of 2.5e-4. The learning rate was increased linearly from zero over the first 2000 updates and annealed to 0 using a cosine schedule. We train for 100 epochs on minibatches of 64 randomly sampled, contiguous sequences of 512 tokens.
 > 
-GPT模型沿用了transformer 解码器的模型结构，解码器具有12个解码层，每个解码层有12个多头自注意力计算单元，
+GPT模型沿用了transformer 解码器的模型结构，解码器具有12个解码层，每个解码层有12个多头自注意力计算单元（去掉了），
 ![enter image description here](https://cdn-images-1.medium.com/max/1600/1*Ji79bZ3KqpMAjZ9Txv4q8Q.png)
 #### embedding
 - token embedding
@@ -257,11 +257,11 @@ gpt-3 is a huge look-up table
 [Fine-Tuning GPT-2 from Human Preferences](https://openai.com/blog/fine-tuning-gpt-2/)
 [Unsupervised sentiment neuron](https://openai.com/blog/unsupervised-sentiment-neuron/)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2MzE5Njk5NTksOTM1MjQ4MzQwLC0yMD
-IzNTE1NTM3LC0xMDgwNDk3Mzk5LDEwODM4MDE0MDMsLTExMTcz
-OTEzMzUsLTEwODA0OTczOTksLTE3NjYwNTA3OTMsLTE4ODQ5Nj
-E5MDgsMTY2MDQwNDc1MiwzODU0MjkyOTMsODk5NTA5NTQ4LDE4
-NjEyNjI2NzAsLTM3NjE4Njc5NCw0NTg0NDk1MDAsLTE4MDI5ND
-AwMjAsLTE4MTkyNjg4MTksMTQxMjE3MTczMyw4NjcwMDE1NzEs
-MTA5OTQ1MTIwMl19
+eyJoaXN0b3J5IjpbLTkzNjg5ODY5Miw5MzUyNDgzNDAsLTIwMj
+M1MTU1MzcsLTEwODA0OTczOTksMTA4MzgwMTQwMywtMTExNzM5
+MTMzNSwtMTA4MDQ5NzM5OSwtMTc2NjA1MDc5MywtMTg4NDk2MT
+kwOCwxNjYwNDA0NzUyLDM4NTQyOTI5Myw4OTk1MDk1NDgsMTg2
+MTI2MjY3MCwtMzc2MTg2Nzk0LDQ1ODQ0OTUwMCwtMTgwMjk0MD
+AyMCwtMTgxOTI2ODgxOSwxNDEyMTcxNzMzLDg2NzAwMTU3MSwx
+MDk5NDUxMjAyXX0=
 -->
