@@ -86,6 +86,7 @@ LclsLLML=∑(x,y)∈DlogP(y∣x1,…,xn)=∑(x,y)∈Dlogsoftmax(h(n)L(x)Wy)=−�
 
 GPT(GPT1) train different linear layer for specific tasks, such as similarity and multiple choice.
 **no model justification!!!**
+![enter image description here](https://s3.amazonaws.com/clearvoice-media/asg_Dl6YY4jDjq8NXQEH/art_6fF6mdHcMP5MGJeL/1596183183154-1596183183154.png)
 ![enter image description here](https://qjjnh3a9hpo1nukrg1fwoh71-wpengine.netdna-ssl.com/wp-content/uploads/2019/04/GPT-downstream-tasks_web.jpg)
 > **Task-specific input transformations** For some tasks, like text classification, we can directly fine-tune our model as described above. Certain other tasks, like question answering or textual entailment, have structured inputs such as ordered sentence pairs, or triplets of document, question, and answers. Since our pre-trained model was trained on contiguous sequences of text, we require some modifications to apply it to these tasks. Previous work proposed learning task specific architectures on top of transferred representations [44]. Such an approach re-introduces a significant amount of task-specific customization and does not use transfer learning for these additional architectural components. Instead, we use a traversal-style approach [52], where we convert structured inputs into an ordered sequence that our pre-trained model can process. These input transformations allow us to avoid making extensive changes to the architecture across tasks. We provide a brief description of these input transformations below and Figure 1 provides a visual illustration. All transformations include adding randomly initialized start and end tokens ($\langle s \rangle, \langle e\rangle$). 
 > **Textual entailment** For entailment tasks, we concatenate the premise $p$ and hypothesis $h$ token sequences, with a delimiter token ($) in between. 
@@ -258,11 +259,11 @@ gpt-3 is a huge look-up table
 [Unsupervised sentiment neuron](https://openai.com/blog/unsupervised-sentiment-neuron/)
 [What is GPT3](https://www.rev.com/blog/what-is-gpt-3-the-new-openai-language-model)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNDU2OTQwNDk3LC05MzIxNDg4OTQsOTMxOD
-Y3NzQ2LDE1OTE5NDI4MTgsMjA0MDc5MjA4Nyw5MzUyNDgzNDAs
-LTIwMjM1MTU1MzcsLTEwODA0OTczOTksMTA4MzgwMTQwMywtMT
-ExNzM5MTMzNSwtMTA4MDQ5NzM5OSwtMTc2NjA1MDc5MywtMTg4
-NDk2MTkwOCwxNjYwNDA0NzUyLDM4NTQyOTI5Myw4OTk1MDk1ND
-gsMTg2MTI2MjY3MCwtMzc2MTg2Nzk0LDQ1ODQ0OTUwMCwtMTgw
-Mjk0MDAyMF19
+eyJoaXN0b3J5IjpbMTMyNjkyMzU0NywtOTMyMTQ4ODk0LDkzMT
+g2Nzc0NiwxNTkxOTQyODE4LDIwNDA3OTIwODcsOTM1MjQ4MzQw
+LC0yMDIzNTE1NTM3LC0xMDgwNDk3Mzk5LDEwODM4MDE0MDMsLT
+ExMTczOTEzMzUsLTEwODA0OTczOTksLTE3NjYwNTA3OTMsLTE4
+ODQ5NjE5MDgsMTY2MDQwNDc1MiwzODU0MjkyOTMsODk5NTA5NT
+Q4LDE4NjEyNjI2NzAsLTM3NjE4Njc5NCw0NTg0NDk1MDAsLTE4
+MDI5NDAwMjBdfQ==
 -->
