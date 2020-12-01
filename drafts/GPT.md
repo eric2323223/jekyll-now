@@ -51,6 +51,7 @@ absolute position embedding `self.wpe = nn.Embedding(config.n_positions, config.
 - decoder: language model
 	- top K
 ![enter image description here](https://qjjnh3a9hpo1nukrg1fwoh71-wpengine.netdna-ssl.com/wp-content/uploads/2019/04/OpenAI-GPT-transformer-decoder_web.jpg)
+![enter image description here](https://jalammar.github.io/images/gpt2/self-attention-and-masked-self-attention.png)
 ### Tokenizer
 **Byte Pair Encoding** ([**BPE**](https://arxiv.org/abs/1508.07909)) is used to encode the input sequences. BPE was originally proposed as a data compression algorithm in 1990s and then was adopted to solve the open-vocabulary issue in machine translation, as we can easily run into rare and unknown words when translating into a new language. Motivated by the intuition that rare and unknown words can often be decomposed into multiple subwords, BPE finds the best word segmentation by iteratively and greedily merging frequent pairs of characters.
 ### self-supervised Pretrain: 
@@ -252,11 +253,11 @@ gpt-3 is a huge look-up table
 [Fine-Tuning GPT-2 from Human Preferences](https://openai.com/blog/fine-tuning-gpt-2/)
 [Unsupervised sentiment neuron](https://openai.com/blog/unsupervised-sentiment-neuron/)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTY2MDQwNDc1MiwzODU0MjkyOTMsODk5NT
-A5NTQ4LDE4NjEyNjI2NzAsLTM3NjE4Njc5NCw0NTg0NDk1MDAs
-LTE4MDI5NDAwMjAsLTE4MTkyNjg4MTksMTQxMjE3MTczMyw4Nj
-cwMDE1NzEsMTA5OTQ1MTIwMiwtMTY2NzU1Njg3Niw4MDg3MTM0
-NjcsMTQ3NzA4OTA1NiwxNjg1MTk4MTU4LDExMTA4ODEzOSwxMT
-g5MTI2NDE3LC0xMzIwMDI3NzY1LDE0Njk4NjYyMDIsMTAwMjc0
-Nzg3NF19
+eyJoaXN0b3J5IjpbLTE4ODQ5NjE5MDgsMTY2MDQwNDc1MiwzOD
+U0MjkyOTMsODk5NTA5NTQ4LDE4NjEyNjI2NzAsLTM3NjE4Njc5
+NCw0NTg0NDk1MDAsLTE4MDI5NDAwMjAsLTE4MTkyNjg4MTksMT
+QxMjE3MTczMyw4NjcwMDE1NzEsMTA5OTQ1MTIwMiwtMTY2NzU1
+Njg3Niw4MDg3MTM0NjcsMTQ3NzA4OTA1NiwxNjg1MTk4MTU4LD
+ExMTA4ODEzOSwxMTg5MTI2NDE3LC0xMzIwMDI3NzY1LDE0Njk4
+NjYyMDJdfQ==
 -->
