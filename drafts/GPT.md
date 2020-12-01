@@ -59,6 +59,7 @@ absolute position embedding `self.wpe = nn.Embedding(config.n_positions, config.
 ### Tokenizer
 **Byte Pair Encoding** ([**BPE**](https://arxiv.org/abs/1508.07909)) is used to encode the input sequences. BPE was originally proposed as a data compression algorithm in 1990s and then was adopted to solve the open-vocabulary issue in machine translation, as we can easily run into rare and unknown words when translating into a new language. Motivated by the intuition that rare and unknown words can often be decomposed into multiple subwords, BPE finds the best word segmentation by iteratively and greedily merging frequent pairs of characters.
 ### self-supervised Pretrain: 
+GPT使用传统的语言模型训练fang'fa
 #### Training data
 >We use the BooksCorpus dataset [71] for training the language model. It contains over 7,000 unique unpublished books from a variety of genres including Adventure, Fantasy, and Romance. Crucially, it contains long stretches of contiguous text, which allows the generative model to learn to condition on long-range information.
 >我们使用BooksCorpus数据集[71]训练语言模型。 它包含7,000多种不同类型的未出版未出版书籍，包括冒险，幻想和浪漫。 至关重要的是，它包含长段连续的文本，这使生成模型可以学习以远程信息为条件。
@@ -259,11 +260,11 @@ gpt-3 is a huge look-up table
 [Unsupervised sentiment neuron](https://openai.com/blog/unsupervised-sentiment-neuron/)
 [What is GPT3](https://www.rev.com/blog/what-is-gpt-3-the-new-openai-language-model)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTMyNjkyMzU0NywtOTMyMTQ4ODk0LDkzMT
-g2Nzc0NiwxNTkxOTQyODE4LDIwNDA3OTIwODcsOTM1MjQ4MzQw
-LC0yMDIzNTE1NTM3LC0xMDgwNDk3Mzk5LDEwODM4MDE0MDMsLT
-ExMTczOTEzMzUsLTEwODA0OTczOTksLTE3NjYwNTA3OTMsLTE4
-ODQ5NjE5MDgsMTY2MDQwNDc1MiwzODU0MjkyOTMsODk5NTA5NT
-Q4LDE4NjEyNjI2NzAsLTM3NjE4Njc5NCw0NTg0NDk1MDAsLTE4
-MDI5NDAwMjBdfQ==
+eyJoaXN0b3J5IjpbLTE3MjE5MDc4NywxMzI2OTIzNTQ3LC05Mz
+IxNDg4OTQsOTMxODY3NzQ2LDE1OTE5NDI4MTgsMjA0MDc5MjA4
+Nyw5MzUyNDgzNDAsLTIwMjM1MTU1MzcsLTEwODA0OTczOTksMT
+A4MzgwMTQwMywtMTExNzM5MTMzNSwtMTA4MDQ5NzM5OSwtMTc2
+NjA1MDc5MywtMTg4NDk2MTkwOCwxNjYwNDA0NzUyLDM4NTQyOT
+I5Myw4OTk1MDk1NDgsMTg2MTI2MjY3MCwtMzc2MTg2Nzk0LDQ1
+ODQ0OTUwMF19
 -->
