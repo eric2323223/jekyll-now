@@ -67,6 +67,7 @@ GPT使用传统的语言模型（Lanaguage model）训练方法
 - GPT is trained on the standard task: given a sequence of prior words, predict the next word.
 -  loss function: standard LM
 - 预训练流程
+![enter image description here](https://docs.google.com/drawings/d/e/2PACX-1vTX-aCAbIFrxzK9lcpEOv4gKmreLsRf-nkGLkvuOk6kMr8ozERpqnlqztR2OpVjOIlNW81m9hRi5OPz/pub?w=300&h=700)
 ### supervised finetune
 GPT设计了4种heads处理不同任务： LMhead，ClfHead，multichoiceHead，similarityHead
 > - Natural Language Inference: We evaluate on five datasets with diverse sources, including image captions (SNLI), transcribed speech, popular fiction, and government reports (MNLI), Wikipedia articles (QNLI), science exams (SciTail) or news articles (RTE)
@@ -260,11 +261,11 @@ gpt-3 is a huge look-up table
 [Unsupervised sentiment neuron](https://openai.com/blog/unsupervised-sentiment-neuron/)
 [What is GPT3](https://www.rev.com/blog/what-is-gpt-3-the-new-openai-language-model)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTQzOTgzNTcwMiwxMzI2OTIzNTQ3LC05Mz
-IxNDg4OTQsOTMxODY3NzQ2LDE1OTE5NDI4MTgsMjA0MDc5MjA4
-Nyw5MzUyNDgzNDAsLTIwMjM1MTU1MzcsLTEwODA0OTczOTksMT
-A4MzgwMTQwMywtMTExNzM5MTMzNSwtMTA4MDQ5NzM5OSwtMTc2
-NjA1MDc5MywtMTg4NDk2MTkwOCwxNjYwNDA0NzUyLDM4NTQyOT
-I5Myw4OTk1MDk1NDgsMTg2MTI2MjY3MCwtMzc2MTg2Nzk0LDQ1
-ODQ0OTUwMF19
+eyJoaXN0b3J5IjpbLTE3Njc2MzQ3ODMsMTQzOTgzNTcwMiwxMz
+I2OTIzNTQ3LC05MzIxNDg4OTQsOTMxODY3NzQ2LDE1OTE5NDI4
+MTgsMjA0MDc5MjA4Nyw5MzUyNDgzNDAsLTIwMjM1MTU1MzcsLT
+EwODA0OTczOTksMTA4MzgwMTQwMywtMTExNzM5MTMzNSwtMTA4
+MDQ5NzM5OSwtMTc2NjA1MDc5MywtMTg4NDk2MTkwOCwxNjYwND
+A0NzUyLDM4NTQyOTI5Myw4OTk1MDk1NDgsMTg2MTI2MjY3MCwt
+Mzc2MTg2Nzk0XX0=
 -->
