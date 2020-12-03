@@ -71,6 +71,7 @@ GPT使用传统的语言模型（Lanaguage model）训练方法
 - attention mask
 - GPT is trained on the standard task: given a sequence of prior words, predict the next word.
 -  loss function: standard LM
+- 分类器
 - 预训练流程
 ![enter image description here](https://docs.google.com/drawings/d/e/2PACX-1vTX-aCAbIFrxzK9lcpEOv4gKmreLsRf-nkGLkvuOk6kMr8ozERpqnlqztR2OpVjOIlNW81m9hRi5OPz/pub?w=300&h=700)
 ### supervised finetune
@@ -266,11 +267,11 @@ gpt-3 is a huge look-up table
 [Unsupervised sentiment neuron](https://openai.com/blog/unsupervised-sentiment-neuron/)
 [What is GPT3](https://www.rev.com/blog/what-is-gpt-3-the-new-openai-language-model)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNDYzODg1NDYwLDc0NjQ2OTEzOSwxMTA1OD
-U4ODQ5LC0xNzEwODg0ODAzLC0xNDM3NDA0Mjg5LC0xNzY3NjM0
-NzgzLDE0Mzk4MzU3MDIsMTMyNjkyMzU0NywtOTMyMTQ4ODk0LD
-kzMTg2Nzc0NiwxNTkxOTQyODE4LDIwNDA3OTIwODcsOTM1MjQ4
-MzQwLC0yMDIzNTE1NTM3LC0xMDgwNDk3Mzk5LDEwODM4MDE0MD
-MsLTExMTczOTEzMzUsLTEwODA0OTczOTksLTE3NjYwNTA3OTMs
-LTE4ODQ5NjE5MDhdfQ==
+eyJoaXN0b3J5IjpbMjEwNTI2MzI4NCw3NDY0NjkxMzksMTEwNT
+g1ODg0OSwtMTcxMDg4NDgwMywtMTQzNzQwNDI4OSwtMTc2NzYz
+NDc4MywxNDM5ODM1NzAyLDEzMjY5MjM1NDcsLTkzMjE0ODg5NC
+w5MzE4Njc3NDYsMTU5MTk0MjgxOCwyMDQwNzkyMDg3LDkzNTI0
+ODM0MCwtMjAyMzUxNTUzNywtMTA4MDQ5NzM5OSwxMDgzODAxND
+AzLC0xMTE3MzkxMzM1LC0xMDgwNDk3Mzk5LC0xNzY2MDUwNzkz
+LC0xODg0OTYxOTA4XX0=
 -->
