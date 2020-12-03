@@ -48,7 +48,7 @@ GPT模型沿用了transformer 解码器的模型结构，解码器具有12个解
 ![enter image description here](https://cdn-images-1.medium.com/max/1600/1*Ji79bZ3KqpMAjZ9Txv4q8Q.png)
 #### 编码层
 - 词编码
-GPT解码层使用一个长度为768的浮点数向量来表示每个词，词编码的作用是将**zhuan'h
+GPT解码层使用一个长度为768的浮点数向量来表示每个词，词编码的作用是将**转换为**。
 `self.wte = nn.Embedding(config.vocab_size, config.n_embd)`
 - 位置编码
 absolute position embedding `self.wpe = nn.Embedding(config.n_positions, config.n_embd)`
@@ -262,11 +262,11 @@ gpt-3 is a huge look-up table
 [Unsupervised sentiment neuron](https://openai.com/blog/unsupervised-sentiment-neuron/)
 [What is GPT3](https://www.rev.com/blog/what-is-gpt-3-the-new-openai-language-model)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwNTUxMjAxMTUsLTE3Njc2MzQ3ODMsMT
-QzOTgzNTcwMiwxMzI2OTIzNTQ3LC05MzIxNDg4OTQsOTMxODY3
-NzQ2LDE1OTE5NDI4MTgsMjA0MDc5MjA4Nyw5MzUyNDgzNDAsLT
-IwMjM1MTU1MzcsLTEwODA0OTczOTksMTA4MzgwMTQwMywtMTEx
-NzM5MTMzNSwtMTA4MDQ5NzM5OSwtMTc2NjA1MDc5MywtMTg4ND
-k2MTkwOCwxNjYwNDA0NzUyLDM4NTQyOTI5Myw4OTk1MDk1NDgs
-MTg2MTI2MjY3MF19
+eyJoaXN0b3J5IjpbOTI1NTEzMzI4LC0xNzY3NjM0NzgzLDE0Mz
+k4MzU3MDIsMTMyNjkyMzU0NywtOTMyMTQ4ODk0LDkzMTg2Nzc0
+NiwxNTkxOTQyODE4LDIwNDA3OTIwODcsOTM1MjQ4MzQwLC0yMD
+IzNTE1NTM3LC0xMDgwNDk3Mzk5LDEwODM4MDE0MDMsLTExMTcz
+OTEzMzUsLTEwODA0OTczOTksLTE3NjYwNTA3OTMsLTE4ODQ5Nj
+E5MDgsMTY2MDQwNDc1MiwzODU0MjkyOTMsODk5NTA5NTQ4LDE4
+NjEyNjI2NzBdfQ==
 -->
