@@ -108,7 +108,7 @@ GPT论文在GPT模型上做了大量实验，并根据实验结果提出了一�
 ![enter image description here](https://d3i71xaburhd42.cloudfront.net/cd18800a0fe0b668a1cc19f2ec95b5003d0a5035/7-Figure2-1.png)
 > - Impact of number of layers transfered: We observe the standard result that transferring embeddings improves performance and that each transformer layer provides further benefits up to 9% for full transfer on MultiNLI. This indicates that each layer in the pre-trained model contains useful functionality for solving target tasks.
 - 模型深度对迁移学习的影响
-GPT作者训练了多种不同深度的预训练模型，然后再微调任务（RACE和MultiNLI）中比较了上图1中可以观察到随着模型深度（层数）的增加，
+GPT作者训练了多种不同深度（GPT解码器层数）的预训练模型，并在微调任务（RACE和MultiNLI）中比较了准确率，如上图1中所示，可以观察到随着模型深度（层数）的增加，
 > - zero shot: We observe the performance of these heuristics is stable and steadily increases over training suggesting that generative pretraining supports the learning of a wide variety of task relevant functionality. We also observe the LSTM exhibits higher variance in its zero-shot performance suggesting that the inductive bias of the Transformer architecture assists in transfer
 - zero shot
 
@@ -274,7 +274,7 @@ gpt-3 is a huge look-up table
 [Unsupervised sentiment neuron](https://openai.com/blog/unsupervised-sentiment-neuron/)
 [What is GPT3](https://www.rev.com/blog/what-is-gpt-3-the-new-openai-language-model)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTU5MDc5MTIxMCwtMTMyNTgyNTQ2MiwtNT
+eyJoaXN0b3J5IjpbMTM4NzI3MDk5OCwtMTMyNTgyNTQ2MiwtNT
 kwNjM3MjQwLDkzNzIzNTM1NCwtMTMyOTU0OTE0MCwyMTA1MjYz
 Mjg0LDc0NjQ2OTEzOSwxMTA1ODU4ODQ5LC0xNzEwODg0ODAzLC
 0xNDM3NDA0Mjg5LC0xNzY3NjM0NzgzLDE0Mzk4MzU3MDIsMTMy
