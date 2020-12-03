@@ -103,8 +103,8 @@ GPT(GPT1) train different linear layer for specific tasks, such as similarity an
 > **Similarity** For similarity tasks, there is no inherent ordering of the two sentences being compared. To reflect this, we modify the input sequence to contain both possible sentence orderings (with a delimiter in between) and process each independently to produce two sequence representations $h^m_l$which are added element-wise before being fed into the linear output layer. 
 > **Question Answering and Commonsense Reasoning** For these tasks, we are given a context document z, a question q, and a set of possible answers {$a_k$}. We concatenate the document context and question with each possible answer, adding a delimiter token in between to get [z; q; $; ak]. Each of these sequences are processed independently with our model and then normalized via a softmax layer to produce an output distribution over possible answers.
 
-### 结果分析
-
+### 实验数据分析
+GPT论文
 ![enter image description here](https://d3i71xaburhd42.cloudfront.net/cd18800a0fe0b668a1cc19f2ec95b5003d0a5035/7-Figure2-1.png)
 > - Impact of number of layers transfered: We observe the standard result that transferring embeddings improves performance and that each transformer layer provides further benefits up to 9% for full transfer on MultiNLI. This indicates that each layer in the pre-trained model contains useful functionality for solving target tasks.
 > - zero shot: We observe the performance of these heuristics is stable and steadily increases over training suggesting that generative pretraining supports the learning of a wide variety of task relevant functionality. We also observe the LSTM exhibits higher variance in its zero-shot performance suggesting that the inductive bias of the Transformer architecture assists in transfer
@@ -271,11 +271,11 @@ gpt-3 is a huge look-up table
 [Unsupervised sentiment neuron](https://openai.com/blog/unsupervised-sentiment-neuron/)
 [What is GPT3](https://www.rev.com/blog/what-is-gpt-3-the-new-openai-language-model)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTczNDQ4NDUyNywtNTkwNjM3MjQwLDkzNz
-IzNTM1NCwtMTMyOTU0OTE0MCwyMTA1MjYzMjg0LDc0NjQ2OTEz
-OSwxMTA1ODU4ODQ5LC0xNzEwODg0ODAzLC0xNDM3NDA0Mjg5LC
-0xNzY3NjM0NzgzLDE0Mzk4MzU3MDIsMTMyNjkyMzU0NywtOTMy
-MTQ4ODk0LDkzMTg2Nzc0NiwxNTkxOTQyODE4LDIwNDA3OTIwOD
-csOTM1MjQ4MzQwLC0yMDIzNTE1NTM3LC0xMDgwNDk3Mzk5LDEw
-ODM4MDE0MDNdfQ==
+eyJoaXN0b3J5IjpbLTEzMjU4MjU0NjIsLTU5MDYzNzI0MCw5Mz
+cyMzUzNTQsLTEzMjk1NDkxNDAsMjEwNTI2MzI4NCw3NDY0Njkx
+MzksMTEwNTg1ODg0OSwtMTcxMDg4NDgwMywtMTQzNzQwNDI4OS
+wtMTc2NzYzNDc4MywxNDM5ODM1NzAyLDEzMjY5MjM1NDcsLTkz
+MjE0ODg5NCw5MzE4Njc3NDYsMTU5MTk0MjgxOCwyMDQwNzkyMD
+g3LDkzNTI0ODM0MCwtMjAyMzUxNTUzNywtMTA4MDQ5NzM5OSwx
+MDgzODAxNDAzXX0=
 -->
