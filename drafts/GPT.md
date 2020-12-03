@@ -59,7 +59,6 @@ $$H = T * W_{pe}$$
 absolute position embedding `self.wpe = nn.Embedding(config.n_positions, config.n_embd)`
 #### GPT decoder
 - decoder: language model
-	- top K
 ![enter image description here](https://qjjnh3a9hpo1nukrg1fwoh71-wpengine.netdna-ssl.com/wp-content/uploads/2019/04/OpenAI-GPT-transformer-decoder_web.jpg)
 ![enter image description here](https://jalammar.github.io/images/gpt2/self-attention-and-masked-self-attention.png)
 ### Tokenizer
@@ -267,11 +266,11 @@ gpt-3 is a huge look-up table
 [Unsupervised sentiment neuron](https://openai.com/blog/unsupervised-sentiment-neuron/)
 [What is GPT3](https://www.rev.com/blog/what-is-gpt-3-the-new-openai-language-model)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNzQ2NDY5MTM5LDExMDU4NTg4NDksLTE3MT
-A4ODQ4MDMsLTE0Mzc0MDQyODksLTE3Njc2MzQ3ODMsMTQzOTgz
-NTcwMiwxMzI2OTIzNTQ3LC05MzIxNDg4OTQsOTMxODY3NzQ2LD
-E1OTE5NDI4MTgsMjA0MDc5MjA4Nyw5MzUyNDgzNDAsLTIwMjM1
-MTU1MzcsLTEwODA0OTczOTksMTA4MzgwMTQwMywtMTExNzM5MT
-MzNSwtMTA4MDQ5NzM5OSwtMTc2NjA1MDc5MywtMTg4NDk2MTkw
-OCwxNjYwNDA0NzUyXX0=
+eyJoaXN0b3J5IjpbNDYzODg1NDYwLDc0NjQ2OTEzOSwxMTA1OD
+U4ODQ5LC0xNzEwODg0ODAzLC0xNDM3NDA0Mjg5LC0xNzY3NjM0
+NzgzLDE0Mzk4MzU3MDIsMTMyNjkyMzU0NywtOTMyMTQ4ODk0LD
+kzMTg2Nzc0NiwxNTkxOTQyODE4LDIwNDA3OTIwODcsOTM1MjQ4
+MzQwLC0yMDIzNTE1NTM3LC0xMDgwNDk3Mzk5LDEwODM4MDE0MD
+MsLTExMTczOTEzMzUsLTEwODA0OTczOTksLTE3NjYwNTA3OTMs
+LTE4ODQ5NjE5MDhdfQ==
 -->
