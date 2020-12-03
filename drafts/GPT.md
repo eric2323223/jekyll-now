@@ -46,10 +46,11 @@ GTP预训练模型只使用Transformer 解码器（decoder），在位置编码�
 > 
 GPT模型沿用了transformer 解码器的模型结构，解码器具有12个解码层，每个解码层有12个多头自注意力计算单元（由于没有context vector，去掉了编码器-解码器注意力计算单元），
 ![enter image description here](https://cdn-images-1.medium.com/max/1600/1*Ji79bZ3KqpMAjZ9Txv4q8Q.png)
-#### embedding
-- token embedding
+#### 编码层
+- 词编码
+GPT解码层对每个c
 `self.wte = nn.Embedding(config.vocab_size, config.n_embd)`
-- position embedding
+- 位置编码
 absolute position embedding `self.wpe = nn.Embedding(config.n_positions, config.n_embd)`
 #### transformer decoder
 - decoder: language model
@@ -261,11 +262,11 @@ gpt-3 is a huge look-up table
 [Unsupervised sentiment neuron](https://openai.com/blog/unsupervised-sentiment-neuron/)
 [What is GPT3](https://www.rev.com/blog/what-is-gpt-3-the-new-openai-language-model)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE3Njc2MzQ3ODMsMTQzOTgzNTcwMiwxMz
-I2OTIzNTQ3LC05MzIxNDg4OTQsOTMxODY3NzQ2LDE1OTE5NDI4
-MTgsMjA0MDc5MjA4Nyw5MzUyNDgzNDAsLTIwMjM1MTU1MzcsLT
-EwODA0OTczOTksMTA4MzgwMTQwMywtMTExNzM5MTMzNSwtMTA4
-MDQ5NzM5OSwtMTc2NjA1MDc5MywtMTg4NDk2MTkwOCwxNjYwND
-A0NzUyLDM4NTQyOTI5Myw4OTk1MDk1NDgsMTg2MTI2MjY3MCwt
-Mzc2MTg2Nzk0XX0=
+eyJoaXN0b3J5IjpbMTU5MTQwOTcwNywtMTc2NzYzNDc4MywxND
+M5ODM1NzAyLDEzMjY5MjM1NDcsLTkzMjE0ODg5NCw5MzE4Njc3
+NDYsMTU5MTk0MjgxOCwyMDQwNzkyMDg3LDkzNTI0ODM0MCwtMj
+AyMzUxNTUzNywtMTA4MDQ5NzM5OSwxMDgzODAxNDAzLC0xMTE3
+MzkxMzM1LC0xMDgwNDk3Mzk5LC0xNzY2MDUwNzkzLC0xODg0OT
+YxOTA4LDE2NjA0MDQ3NTIsMzg1NDI5MjkzLDg5OTUwOTU0OCwx
+ODYxMjYyNjcwXX0=
 -->
