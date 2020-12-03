@@ -107,6 +107,7 @@ GPT(GPT1) train different linear layer for specific tasks, such as similarity an
 ![enter image description here](https://d3i71xaburhd42.cloudfront.net/cd18800a0fe0b668a1cc19f2ec95b5003d0a5035/7-Figure2-1.png)
 > - Impact of number of layers transfered: We observe the standard result that transferring embeddings improves performance and that each transformer layer provides further benefits up to 9% for full transfer on MultiNLI. This indicates that each layer in the pre-trained model contains useful functionality for solving target tasks.
 > - zero shot: We observe the performance of these heuristics is stable and steadily increases over training suggesting that generative pretraining supports the learning of a wide variety of task relevant functionality. We also observe the LSTM exhibits higher variance in its zero-shot performance suggesting that the inductive bias of the Transformer architecture assists in transfer
+
 ## GPT设计思想
 GPT设计思想的诞生可以追述到
 “representation learning”
@@ -269,11 +270,11 @@ gpt-3 is a huge look-up table
 [Unsupervised sentiment neuron](https://openai.com/blog/unsupervised-sentiment-neuron/)
 [What is GPT3](https://www.rev.com/blog/what-is-gpt-3-the-new-openai-language-model)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbOTM3MjM1MzU0LC0xMzI5NTQ5MTQwLDIxMD
-UyNjMyODQsNzQ2NDY5MTM5LDExMDU4NTg4NDksLTE3MTA4ODQ4
-MDMsLTE0Mzc0MDQyODksLTE3Njc2MzQ3ODMsMTQzOTgzNTcwMi
-wxMzI2OTIzNTQ3LC05MzIxNDg4OTQsOTMxODY3NzQ2LDE1OTE5
-NDI4MTgsMjA0MDc5MjA4Nyw5MzUyNDgzNDAsLTIwMjM1MTU1Mz
-csLTEwODA0OTczOTksMTA4MzgwMTQwMywtMTExNzM5MTMzNSwt
-MTA4MDQ5NzM5OV19
+eyJoaXN0b3J5IjpbLTU5MDYzNzI0MCw5MzcyMzUzNTQsLTEzMj
+k1NDkxNDAsMjEwNTI2MzI4NCw3NDY0NjkxMzksMTEwNTg1ODg0
+OSwtMTcxMDg4NDgwMywtMTQzNzQwNDI4OSwtMTc2NzYzNDc4My
+wxNDM5ODM1NzAyLDEzMjY5MjM1NDcsLTkzMjE0ODg5NCw5MzE4
+Njc3NDYsMTU5MTk0MjgxOCwyMDQwNzkyMDg3LDkzNTI0ODM0MC
+wtMjAyMzUxNTUzNywtMTA4MDQ5NzM5OSwxMDgzODAxNDAzLC0x
+MTE3MzkxMzM1XX0=
 -->
