@@ -106,11 +106,10 @@ GPT(GPT1) train different linear layer for specific tasks, such as similarity an
 ### 实验数据分析
 GPT论文在GPT模型上做了大量实验，并根据实验结果提出了一些分析，这些分析也影响了GPT后续的发展方向
 ![enter image description here](https://d3i71xaburhd42.cloudfront.net/cd18800a0fe0b668a1cc19f2ec95b5003d0a5035/7-Figure2-1.png)
-> - Impact of number of layers transfered: We observe the standard result that transferring embeddings improves performance and that each transformer layer provides further benefits up to 9% for full transfer on MultiNLI. This indicates that each layer in the pre-trained model contains useful functionality for solving target tasks.
 - 模型深度对迁移学习的影响
-GPT作者训练了多种不同深度（GPT解码器层数）的预训练模型，并在微调任务（RACE和MultiNLI）中对不同预训练模型的预测结果比较，如上图1中所示，可以观察到随着模型深度（层数）的增加，预测准确率也随之上升。这个结果说明了，增加解码器的层数可以让预训练模型携带更多可重用的特征，帮助提高微调任务的效果
+GPT作者训练了多种不同深度（GPT解码器层数）的预训练模型，并在微调任务（RACE和MultiNLI）中对不同预训练模型的预测结果比较，如上图1中所示，可以观察到随着模型深度（层数）的增加，预测准确率也随之上升。这个结果说明了增加解码器的层数可以让预训练模型携带更多可重用的特征，帮助提高微调任务的效果
 > - zero shot: We observe the performance of these heuristics is stable and steadily increases over training suggesting that generative pretraining supports the learning of a wide variety of task relevant functionality. We also observe the LSTM exhibits higher variance in its zero-shot performance suggesting that the inductive bias of the Transformer architecture assists in transfer
-- 零次学习（zero shot
+- 零次学习（zero shot）
 
 
 ## GPT设计思想
@@ -275,7 +274,7 @@ gpt-3 is a huge look-up table
 [Unsupervised sentiment neuron](https://openai.com/blog/unsupervised-sentiment-neuron/)
 [What is GPT3](https://www.rev.com/blog/what-is-gpt-3-the-new-openai-language-model)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTcyNjU3ODYzNSwtMTMyNTgyNTQ2MiwtNT
+eyJoaXN0b3J5IjpbLTMwMjU4NjUyMiwtMTMyNTgyNTQ2MiwtNT
 kwNjM3MjQwLDkzNzIzNTM1NCwtMTMyOTU0OTE0MCwyMTA1MjYz
 Mjg0LDc0NjQ2OTEzOSwxMTA1ODU4ODQ5LC0xNzEwODg0ODAzLC
 0xNDM3NDA0Mjg5LC0xNzY3NjM0NzgzLDE0Mzk4MzU3MDIsMTMy
