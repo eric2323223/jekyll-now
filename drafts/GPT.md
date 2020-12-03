@@ -110,7 +110,7 @@ GPT论文在GPT模型上做了大量实验，并根据实验结果提出了一�
 GPT作者训练了多种不同深度（GPT解码器层数）的预训练模型，并在微调任务（RACE和MultiNLI）中对不同预训练模型的预测结果比较，如上图1中所示，可以观察到随着模型深度（层数）的增加，预测准确率也随之上升。这个结果说明了增加解码器的层数可以让预训练模型携带更多可重用的特征，帮助提高微调任务的效果
 > - zero shot: We observe the performance of these heuristics is stable and steadily increases over training suggesting that generative pretraining supports the learning of a wide variety of task relevant functionality. We also observe the LSTM exhibits higher variance in its zero-shot performance suggesting that the inductive bias of the Transformer architecture assists in transfer
 - 零次学习（zero shot）
-在另一个实验中，作者尝试了零次学习，也就是使用经过不同训练量训练出来的多种预训练模型，在不经过微调训练而直接在微调任务（sentiment analysis...）的场景中进行预测，如上图2所示。实验结果显示预训练量的提高能提高零次学习的
+在另一个实验中，作者尝试了零次学习，也就是使用经过不同训练量训练出来的多种预训练模型，在不经过微调训练而直接在微调任务（sentiment analysis...）的场景中进行预测，如上图2所示。实验结果显示预训练量的提高能普遍提高零次学习在各个微调任务中的准确率。这提示了使用更大的数据集进行预训练是
 
 ## GPT设计思想
 GPT设计思想的诞生可以追述到
@@ -274,11 +274,11 @@ gpt-3 is a huge look-up table
 [Unsupervised sentiment neuron](https://openai.com/blog/unsupervised-sentiment-neuron/)
 [What is GPT3](https://www.rev.com/blog/what-is-gpt-3-the-new-openai-language-model)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzcyNDc3MTc1LDU0Mzc1NDQzNywtMzAyNT
-g2NTIyLC0xMzI1ODI1NDYyLC01OTA2MzcyNDAsOTM3MjM1MzU0
-LC0xMzI5NTQ5MTQwLDIxMDUyNjMyODQsNzQ2NDY5MTM5LDExMD
-U4NTg4NDksLTE3MTA4ODQ4MDMsLTE0Mzc0MDQyODksLTE3Njc2
-MzQ3ODMsMTQzOTgzNTcwMiwxMzI2OTIzNTQ3LC05MzIxNDg4OT
-QsOTMxODY3NzQ2LDE1OTE5NDI4MTgsMjA0MDc5MjA4Nyw5MzUy
-NDgzNDBdfQ==
+eyJoaXN0b3J5IjpbMTIyNDIxNzkzNCw1NDM3NTQ0MzcsLTMwMj
+U4NjUyMiwtMTMyNTgyNTQ2MiwtNTkwNjM3MjQwLDkzNzIzNTM1
+NCwtMTMyOTU0OTE0MCwyMTA1MjYzMjg0LDc0NjQ2OTEzOSwxMT
+A1ODU4ODQ5LC0xNzEwODg0ODAzLC0xNDM3NDA0Mjg5LC0xNzY3
+NjM0NzgzLDE0Mzk4MzU3MDIsMTMyNjkyMzU0NywtOTMyMTQ4OD
+k0LDkzMTg2Nzc0NiwxNTkxOTQyODE4LDIwNDA3OTIwODcsOTM1
+MjQ4MzQwXX0=
 -->
