@@ -53,7 +53,7 @@ $$H = T * W_{we}$$
 
 `self.wte = nn.Embedding(config.vocab_size, config.n_embd)`
 - 位置编码
-
+由于注意力机制不区分词的前后顺序，没有位置的概念，因此需要在
 absolute position embedding `self.wpe = nn.Embedding(config.n_positions, config.n_embd)`
 #### transformer decoder
 - decoder: language model
@@ -265,7 +265,7 @@ gpt-3 is a huge look-up table
 [Unsupervised sentiment neuron](https://openai.com/blog/unsupervised-sentiment-neuron/)
 [What is GPT3](https://www.rev.com/blog/what-is-gpt-3-the-new-openai-language-model)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTYyMTc3NTgxNSwtMTQzNzQwNDI4OSwtMT
+eyJoaXN0b3J5IjpbMTk2ODU2OTgxMSwtMTQzNzQwNDI4OSwtMT
 c2NzYzNDc4MywxNDM5ODM1NzAyLDEzMjY5MjM1NDcsLTkzMjE0
 ODg5NCw5MzE4Njc3NDYsMTU5MTk0MjgxOCwyMDQwNzkyMDg3LD
 kzNTI0ODM0MCwtMjAyMzUxNTUzNywtMTA4MDQ5NzM5OSwxMDgz
