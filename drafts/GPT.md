@@ -72,6 +72,7 @@ GPT使用传统的语言模型（Lanaguage model）训练方法
 - GPT is trained on the standard task: given a sequence of prior words, predict the next word.
 -  loss function: standard LM
 #### 分类器
+dense + softmax
 Top K
 #### 预训练流程
 ![enter image description here](https://docs.google.com/drawings/d/e/2PACX-1vTX-aCAbIFrxzK9lcpEOv4gKmreLsRf-nkGLkvuOk6kMr8ozERpqnlqztR2OpVjOIlNW81m9hRi5OPz/pub?w=300&h=700)
@@ -268,11 +269,11 @@ gpt-3 is a huge look-up table
 [Unsupervised sentiment neuron](https://openai.com/blog/unsupervised-sentiment-neuron/)
 [What is GPT3](https://www.rev.com/blog/what-is-gpt-3-the-new-openai-language-model)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTE3NTAzNDg2OCwtMTMyOTU0OTE0MCwyMT
-A1MjYzMjg0LDc0NjQ2OTEzOSwxMTA1ODU4ODQ5LC0xNzEwODg0
-ODAzLC0xNDM3NDA0Mjg5LC0xNzY3NjM0NzgzLDE0Mzk4MzU3MD
-IsMTMyNjkyMzU0NywtOTMyMTQ4ODk0LDkzMTg2Nzc0NiwxNTkx
-OTQyODE4LDIwNDA3OTIwODcsOTM1MjQ4MzQwLC0yMDIzNTE1NT
-M3LC0xMDgwNDk3Mzk5LDEwODM4MDE0MDMsLTExMTczOTEzMzUs
-LTEwODA0OTczOTldfQ==
+eyJoaXN0b3J5IjpbOTM3MjM1MzU0LC0xMzI5NTQ5MTQwLDIxMD
+UyNjMyODQsNzQ2NDY5MTM5LDExMDU4NTg4NDksLTE3MTA4ODQ4
+MDMsLTE0Mzc0MDQyODksLTE3Njc2MzQ3ODMsMTQzOTgzNTcwMi
+wxMzI2OTIzNTQ3LC05MzIxNDg4OTQsOTMxODY3NzQ2LDE1OTE5
+NDI4MTgsMjA0MDc5MjA4Nyw5MzUyNDgzNDAsLTIwMjM1MTU1Mz
+csLTEwODA0OTczOTksMTA4MzgwMTQwMywtMTExNzM5MTMzNSwt
+MTA4MDQ5NzM5OV19
 -->
