@@ -104,7 +104,7 @@ GPT(GPT1) train different linear layer for specific tasks, such as similarity an
 > **Question Answering and Commonsense Reasoning** For these tasks, we are given a context document z, a question q, and a set of possible answers {$a_k$}. We concatenate the document context and question with each possible answer, adding a delimiter token in between to get [z; q; $; ak]. Each of these sequences are processed independently with our model and then normalized via a softmax layer to produce an output distribution over possible answers.
 
 ### 实验数据分析
-GPT论文zai
+GPT论文在GPT模型上做了大量实验，并根据实验
 ![enter image description here](https://d3i71xaburhd42.cloudfront.net/cd18800a0fe0b668a1cc19f2ec95b5003d0a5035/7-Figure2-1.png)
 > - Impact of number of layers transfered: We observe the standard result that transferring embeddings improves performance and that each transformer layer provides further benefits up to 9% for full transfer on MultiNLI. This indicates that each layer in the pre-trained model contains useful functionality for solving target tasks.
 > - zero shot: We observe the performance of these heuristics is stable and steadily increases over training suggesting that generative pretraining supports the learning of a wide variety of task relevant functionality. We also observe the LSTM exhibits higher variance in its zero-shot performance suggesting that the inductive bias of the Transformer architecture assists in transfer
@@ -271,11 +271,11 @@ gpt-3 is a huge look-up table
 [Unsupervised sentiment neuron](https://openai.com/blog/unsupervised-sentiment-neuron/)
 [What is GPT3](https://www.rev.com/blog/what-is-gpt-3-the-new-openai-language-model)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTYzODk2MTc2MiwtMTMyNTgyNTQ2MiwtNT
-kwNjM3MjQwLDkzNzIzNTM1NCwtMTMyOTU0OTE0MCwyMTA1MjYz
-Mjg0LDc0NjQ2OTEzOSwxMTA1ODU4ODQ5LC0xNzEwODg0ODAzLC
-0xNDM3NDA0Mjg5LC0xNzY3NjM0NzgzLDE0Mzk4MzU3MDIsMTMy
-NjkyMzU0NywtOTMyMTQ4ODk0LDkzMTg2Nzc0NiwxNTkxOTQyOD
-E4LDIwNDA3OTIwODcsOTM1MjQ4MzQwLC0yMDIzNTE1NTM3LC0x
-MDgwNDk3Mzk5XX0=
+eyJoaXN0b3J5IjpbNzU4NzIxMjI0LC0xMzI1ODI1NDYyLC01OT
+A2MzcyNDAsOTM3MjM1MzU0LC0xMzI5NTQ5MTQwLDIxMDUyNjMy
+ODQsNzQ2NDY5MTM5LDExMDU4NTg4NDksLTE3MTA4ODQ4MDMsLT
+E0Mzc0MDQyODksLTE3Njc2MzQ3ODMsMTQzOTgzNTcwMiwxMzI2
+OTIzNTQ3LC05MzIxNDg4OTQsOTMxODY3NzQ2LDE1OTE5NDI4MT
+gsMjA0MDc5MjA4Nyw5MzUyNDgzNDAsLTIwMjM1MTU1MzcsLTEw
+ODA0OTczOTldfQ==
 -->
