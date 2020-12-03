@@ -108,9 +108,8 @@ GPT论文在GPT模型上做了大量实验，并根据实验结果提出了一�
 ![enter image description here](https://d3i71xaburhd42.cloudfront.net/cd18800a0fe0b668a1cc19f2ec95b5003d0a5035/7-Figure2-1.png)
 - 模型深度对迁移学习的影响
 GPT作者训练了多种不同深度（GPT解码器层数）的预训练模型，并在微调任务（RACE和MultiNLI）中对不同预训练模型的预测结果比较，如上图1中所示，可以观察到随着模型深度（层数）的增加，预测准确率也随之上升。这个结果说明了增加解码器的层数可以让预训练模型携带更多可重用的特征，帮助提高微调任务的效果
-> - zero shot: We observe the performance of these heuristics is stable and steadily increases over training suggesting that generative pretraining supports the learning of a wide variety of task relevant functionality. We also observe the LSTM exhibits higher variance in its zero-shot performance suggesting that the inductive bias of the Transformer architecture assists in transfer
 - 零次学习（zero shot）
-在另一个实验中，作者尝试了零次学习，也就是使用经过不同训练量训练出来的多种预训练模型，在不经过微调训练而直接在微调任务（sentiment analysis...）的场景中进行预测，如上图2所示。实验结果显示预训练量的提高能普遍提高零次学习在各个微调任务中的准确率。这提示了使用更大的数据集进行预训练可以提高。。。。另外比较图中LSTM和
+在另一个实验中，作者尝试了零次学习，也就是使用经过不同训练量训练出来的多种预训练模型，在不经过微调训练而直接在微调任务（sentiment analysis...）的场景中进行预测，如上图2所示。实验结果显示预训练量的提高能普遍提高零次学习在各个微调任务中的准确率。这提示了使用更大的数据集进行预训练可以提高。。。。另外比较图中LSTM和Transformer的曲线也进一步印证了Transformer的。。。
 
 ## GPT设计思想
 GPT设计思想的诞生可以追述到
@@ -274,11 +273,11 @@ gpt-3 is a huge look-up table
 [Unsupervised sentiment neuron](https://openai.com/blog/unsupervised-sentiment-neuron/)
 [What is GPT3](https://www.rev.com/blog/what-is-gpt-3-the-new-openai-language-model)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0MzAyNDYyNzUsNTQzNzU0NDM3LC0zMD
-I1ODY1MjIsLTEzMjU4MjU0NjIsLTU5MDYzNzI0MCw5MzcyMzUz
-NTQsLTEzMjk1NDkxNDAsMjEwNTI2MzI4NCw3NDY0NjkxMzksMT
-EwNTg1ODg0OSwtMTcxMDg4NDgwMywtMTQzNzQwNDI4OSwtMTc2
-NzYzNDc4MywxNDM5ODM1NzAyLDEzMjY5MjM1NDcsLTkzMjE0OD
-g5NCw5MzE4Njc3NDYsMTU5MTk0MjgxOCwyMDQwNzkyMDg3LDkz
-NTI0ODM0MF19
+eyJoaXN0b3J5IjpbOTg2OTA3NjIxLDU0Mzc1NDQzNywtMzAyNT
+g2NTIyLC0xMzI1ODI1NDYyLC01OTA2MzcyNDAsOTM3MjM1MzU0
+LC0xMzI5NTQ5MTQwLDIxMDUyNjMyODQsNzQ2NDY5MTM5LDExMD
+U4NTg4NDksLTE3MTA4ODQ4MDMsLTE0Mzc0MDQyODksLTE3Njc2
+MzQ3ODMsMTQzOTgzNTcwMiwxMzI2OTIzNTQ3LC05MzIxNDg4OT
+QsOTMxODY3NzQ2LDE1OTE5NDI4MTgsMjA0MDc5MjA4Nyw5MzUy
+NDgzNDBdfQ==
 -->
