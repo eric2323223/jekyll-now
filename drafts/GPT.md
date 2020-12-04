@@ -95,7 +95,6 @@ LclsLLML=∑(x,y)∈DlogP(y∣x1,…,xn)=∑(x,y)∈Dlogsoftmax(h(n)L(x)Wy)=−�
 >With similar designs, no customized model structure is needed for other end tasks (see Fig. 7). If the task input contains multiple sentences, a special delimiter token (`$`) is added between each pair of sentences. The embedding for this delimiter token is a new parameter we need to learn, but it should be pretty minimal.
 
 GPT(GPT1) train different linear layer for specific tasks, such as similarity and multiple choice.
-**no model justification!!!**
 ![enter image description here](https://s3.amazonaws.com/clearvoice-media/asg_Dl6YY4jDjq8NXQEH/art_6fF6mdHcMP5MGJeL/1596183183154-1596183183154.png)
 ![enter image description here](https://qjjnh3a9hpo1nukrg1fwoh71-wpengine.netdna-ssl.com/wp-content/uploads/2019/04/GPT-downstream-tasks_web.jpg)
 > **Task-specific input transformations** For some tasks, like text classification, we can directly fine-tune our model as described above. Certain other tasks, like question answering or textual entailment, have structured inputs such as ordered sentence pairs, or triplets of document, question, and answers. Since our pre-trained model was trained on contiguous sequences of text, we require some modifications to apply it to these tasks. Previous work proposed learning task specific architectures on top of transferred representations [44]. Such an approach re-introduces a significant amount of task-specific customization and does not use transfer learning for these additional architectural components. Instead, we use a traversal-style approach [52], where we convert structured inputs into an ordered sequence that our pre-trained model can process. These input transformations allow us to avoid making extensive changes to the architecture across tasks. We provide a brief description of these input transformations below and Figure 1 provides a visual illustration. All transformations include adding randomly initialized start and end tokens ($\langle s \rangle, \langle e\rangle$). 
@@ -273,11 +272,11 @@ gpt-3 is a huge look-up table
 [Unsupervised sentiment neuron](https://openai.com/blog/unsupervised-sentiment-neuron/)
 [What is GPT3](https://www.rev.com/blog/what-is-gpt-3-the-new-openai-language-model)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbOTg2OTA3NjIxLDU0Mzc1NDQzNywtMzAyNT
-g2NTIyLC0xMzI1ODI1NDYyLC01OTA2MzcyNDAsOTM3MjM1MzU0
-LC0xMzI5NTQ5MTQwLDIxMDUyNjMyODQsNzQ2NDY5MTM5LDExMD
-U4NTg4NDksLTE3MTA4ODQ4MDMsLTE0Mzc0MDQyODksLTE3Njc2
-MzQ3ODMsMTQzOTgzNTcwMiwxMzI2OTIzNTQ3LC05MzIxNDg4OT
-QsOTMxODY3NzQ2LDE1OTE5NDI4MTgsMjA0MDc5MjA4Nyw5MzUy
-NDgzNDBdfQ==
+eyJoaXN0b3J5IjpbLTUwMjYwMjgwLDk4NjkwNzYyMSw1NDM3NT
+Q0MzcsLTMwMjU4NjUyMiwtMTMyNTgyNTQ2MiwtNTkwNjM3MjQw
+LDkzNzIzNTM1NCwtMTMyOTU0OTE0MCwyMTA1MjYzMjg0LDc0Nj
+Q2OTEzOSwxMTA1ODU4ODQ5LC0xNzEwODg0ODAzLC0xNDM3NDA0
+Mjg5LC0xNzY3NjM0NzgzLDE0Mzk4MzU3MDIsMTMyNjkyMzU0Ny
+wtOTMyMTQ4ODk0LDkzMTg2Nzc0NiwxNTkxOTQyODE4LDIwNDA3
+OTIwODddfQ==
 -->
