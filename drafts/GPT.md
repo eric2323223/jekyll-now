@@ -271,12 +271,13 @@ gpt-3 is a huge look-up table
 [Fine-Tuning GPT-2 from Human Preferences](https://openai.com/blog/fine-tuning-gpt-2/)
 [Unsupervised sentiment neuron](https://openai.com/blog/unsupervised-sentiment-neuron/)
 [What is GPT3](https://www.rev.com/blog/what-is-gpt-3-the-new-openai-language-model)
+[Illustrated GPT2](http://jalammar.github.io/illustrated-gpt2/#part-3-beyond-language-modeling)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTUwMjYwMjgwLDk4NjkwNzYyMSw1NDM3NT
-Q0MzcsLTMwMjU4NjUyMiwtMTMyNTgyNTQ2MiwtNTkwNjM3MjQw
-LDkzNzIzNTM1NCwtMTMyOTU0OTE0MCwyMTA1MjYzMjg0LDc0Nj
-Q2OTEzOSwxMTA1ODU4ODQ5LC0xNzEwODg0ODAzLC0xNDM3NDA0
-Mjg5LC0xNzY3NjM0NzgzLDE0Mzk4MzU3MDIsMTMyNjkyMzU0Ny
-wtOTMyMTQ4ODk0LDkzMTg2Nzc0NiwxNTkxOTQyODE4LDIwNDA3
-OTIwODddfQ==
+eyJoaXN0b3J5IjpbMTI2OTA0MDY5MywtNTAyNjAyODAsOTg2OT
+A3NjIxLDU0Mzc1NDQzNywtMzAyNTg2NTIyLC0xMzI1ODI1NDYy
+LC01OTA2MzcyNDAsOTM3MjM1MzU0LC0xMzI5NTQ5MTQwLDIxMD
+UyNjMyODQsNzQ2NDY5MTM5LDExMDU4NTg4NDksLTE3MTA4ODQ4
+MDMsLTE0Mzc0MDQyODksLTE3Njc2MzQ3ODMsMTQzOTgzNTcwMi
+wxMzI2OTIzNTQ3LC05MzIxNDg4OTQsOTMxODY3NzQ2LDE1OTE5
+NDI4MThdfQ==
 -->
