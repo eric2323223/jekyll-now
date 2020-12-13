@@ -45,7 +45,7 @@ GTP预训练模型只使用Transformer 解码器（decoder），在位置编码�
 > Our model largely follows the original transformer work [62]. We trained a 12-layer decoder-only transformer with masked self-attention heads (768 dimensional states and 12 attention heads). For the position-wise feed-forward networks, we used 3072 dimensional inner states. We used the Adam optimization scheme [27] with a max learning rate of 2.5e-4. The learning rate was increased linearly from zero over the first 2000 updates and annealed to 0 using a cosine schedule. We train for 100 epochs on minibatches of 64 randomly sampled, contiguous sequences of 512 tokens.
 > 
 GPT模型沿用了transformer 解码器的模型结构，解码器具有12个解码层，每个解码层有12个多头自注意力计算单元（由于没有context vector，去掉了编码器-解码器注意力计算单元），
-![enter image description here](https://cdn-images-1.medium.com/max/1600/1*Ji79bZ3KqpMAjZ9Txv4q8Q.png)
+
 #### 编码层
 - 词编码
 GPT解码层使用长度为$h$ 768的浮点数向量来表示每个词，因此需要将tokenzied的词向量$t$（长度为$v$)的长度转换为768位 ， 负责这个转换就是词编码。GPT中采用一个$v*h$转换矩阵 $W_{we}$来实现
@@ -275,11 +275,11 @@ gpt-3 is a huge look-up table
 [What is GPT3](https://www.rev.com/blog/what-is-gpt-3-the-new-openai-language-model)
 [Illustrated GPT2](http://jalammar.github.io/illustrated-gpt2/#part-3-beyond-language-modeling)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTk0MjY4OTUxOCwxMjY5MDQwNjkzLC01MD
-I2MDI4MCw5ODY5MDc2MjEsNTQzNzU0NDM3LC0zMDI1ODY1MjIs
-LTEzMjU4MjU0NjIsLTU5MDYzNzI0MCw5MzcyMzUzNTQsLTEzMj
-k1NDkxNDAsMjEwNTI2MzI4NCw3NDY0NjkxMzksMTEwNTg1ODg0
-OSwtMTcxMDg4NDgwMywtMTQzNzQwNDI4OSwtMTc2NzYzNDc4My
-wxNDM5ODM1NzAyLDEzMjY5MjM1NDcsLTkzMjE0ODg5NCw5MzE4
-Njc3NDZdfQ==
+eyJoaXN0b3J5IjpbLTM5NzQ5MTUwOSwxOTQyNjg5NTE4LDEyNj
+kwNDA2OTMsLTUwMjYwMjgwLDk4NjkwNzYyMSw1NDM3NTQ0Mzcs
+LTMwMjU4NjUyMiwtMTMyNTgyNTQ2MiwtNTkwNjM3MjQwLDkzNz
+IzNTM1NCwtMTMyOTU0OTE0MCwyMTA1MjYzMjg0LDc0NjQ2OTEz
+OSwxMTA1ODU4ODQ5LC0xNzEwODg0ODAzLC0xNDM3NDA0Mjg5LC
+0xNzY3NjM0NzgzLDE0Mzk4MzU3MDIsMTMyNjkyMzU0NywtOTMy
+MTQ4ODk0XX0=
 -->
