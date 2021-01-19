@@ -81,7 +81,7 @@ Top K
 #### 预训练流程
 ![enter image description here](https://docs.google.com/drawings/d/e/2PACX-1vTX-aCAbIFrxzK9lcpEOv4gKmreLsRf-nkGLkvuOk6kMr8ozERpqnlqztR2OpVjOIlNW81m9hRi5OPz/pub?w=300&h=700)
 ### supervised finetune
-GPT设计了4种heads处理不同任务： LMhead，ClfHead，multichoiceHead，similarityHead
+GPT设计了4种heads处理不同任务： LMhead, (ClfHead，multichoiceHead，similarityHead, inferenceHead, classificationHead)
 > - Natural Language Inference: We evaluate on five datasets with diverse sources, including image captions (SNLI), transcribed speech, popular fiction, and government reports (MNLI), Wikipedia articles (QNLI), science exams (SciTail) or news articles (RTE)
 > - Question answering and commonsense reasoning: We use the recently released RACE dataset [30], consisting of English passages with associated questions from middle and high school exams
 > - Semantic Similarity: Semantic similarity (or paraphrase detection) tasks involve predicting whether two sentences are semantically equivalent or not. The challenges lie in recognizing rephrasing of concepts, understanding negation, and handling syntactic ambiguity. We use three datasets for this task – the Microsoft Paraphrase corpus (MRPC) [14] (collected from news sources), the Quora Question Pairs (QQP) dataset [9], and the Semantic Textual Similarity benchmark (STS-B) [6].
@@ -277,11 +277,11 @@ gpt-3 is a huge look-up table
 [What is GPT3](https://www.rev.com/blog/what-is-gpt-3-the-new-openai-language-model)
 [Illustrated GPT2](http://jalammar.github.io/illustrated-gpt2/#part-3-beyond-language-modeling)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTk1MDQ1NTM5MiwxMzYwMDA2ODQ0LC0zOT
-c0OTE1MDksMTk0MjY4OTUxOCwxMjY5MDQwNjkzLC01MDI2MDI4
-MCw5ODY5MDc2MjEsNTQzNzU0NDM3LC0zMDI1ODY1MjIsLTEzMj
-U4MjU0NjIsLTU5MDYzNzI0MCw5MzcyMzUzNTQsLTEzMjk1NDkx
-NDAsMjEwNTI2MzI4NCw3NDY0NjkxMzksMTEwNTg1ODg0OSwtMT
-cxMDg4NDgwMywtMTQzNzQwNDI4OSwtMTc2NzYzNDc4MywxNDM5
-ODM1NzAyXX0=
+eyJoaXN0b3J5IjpbMTQxNjI1MTE4MiwxOTUwNDU1MzkyLDEzNj
+AwMDY4NDQsLTM5NzQ5MTUwOSwxOTQyNjg5NTE4LDEyNjkwNDA2
+OTMsLTUwMjYwMjgwLDk4NjkwNzYyMSw1NDM3NTQ0MzcsLTMwMj
+U4NjUyMiwtMTMyNTgyNTQ2MiwtNTkwNjM3MjQwLDkzNzIzNTM1
+NCwtMTMyOTU0OTE0MCwyMTA1MjYzMjg0LDc0NjQ2OTEzOSwxMT
+A1ODU4ODQ5LC0xNzEwODg0ODAzLC0xNDM3NDA0Mjg5LC0xNzY3
+NjM0NzgzXX0=
 -->
