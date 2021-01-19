@@ -63,6 +63,8 @@ absolute position embedding `self.wpe = nn.Embedding(config.n_positions, config.
 ![enter image description here](https://jalammar.github.io/images/gpt2/self-attention-and-masked-self-attention.png)
 #### LM 层（LM head）
 
+
+
 ### Tokenizer
 **Byte Pair Encoding** ([**BPE**](https://arxiv.org/abs/1508.07909)) is used to encode the input sequences. BPE was originally proposed as a data compression algorithm in 1990s and then was adopted to solve the open-vocabulary issue in machine translation, as we can easily run into rare and unknown words when translating into a new language. Motivated by the intuition that rare and unknown words can often be decomposed into multiple subwords, BPE finds the best word segmentation by iteratively and greedily merging frequent pairs of characters.
 ### self-supervised Pretrain: 
@@ -275,11 +277,11 @@ gpt-3 is a huge look-up table
 [What is GPT3](https://www.rev.com/blog/what-is-gpt-3-the-new-openai-language-model)
 [Illustrated GPT2](http://jalammar.github.io/illustrated-gpt2/#part-3-beyond-language-modeling)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTM2MDAwNjg0NCwtMzk3NDkxNTA5LDE5ND
-I2ODk1MTgsMTI2OTA0MDY5MywtNTAyNjAyODAsOTg2OTA3NjIx
-LDU0Mzc1NDQzNywtMzAyNTg2NTIyLC0xMzI1ODI1NDYyLC01OT
-A2MzcyNDAsOTM3MjM1MzU0LC0xMzI5NTQ5MTQwLDIxMDUyNjMy
-ODQsNzQ2NDY5MTM5LDExMDU4NTg4NDksLTE3MTA4ODQ4MDMsLT
-E0Mzc0MDQyODksLTE3Njc2MzQ3ODMsMTQzOTgzNTcwMiwxMzI2
-OTIzNTQ3XX0=
+eyJoaXN0b3J5IjpbMTk1MDQ1NTM5MiwxMzYwMDA2ODQ0LC0zOT
+c0OTE1MDksMTk0MjY4OTUxOCwxMjY5MDQwNjkzLC01MDI2MDI4
+MCw5ODY5MDc2MjEsNTQzNzU0NDM3LC0zMDI1ODY1MjIsLTEzMj
+U4MjU0NjIsLTU5MDYzNzI0MCw5MzcyMzUzNTQsLTEzMjk1NDkx
+NDAsMjEwNTI2MzI4NCw3NDY0NjkxMzksMTEwNTg1ODg0OSwtMT
+cxMDg4NDgwMywtMTQzNzQwNDI4OSwtMTc2NzYzNDc4MywxNDM5
+ODM1NzAyXX0=
 -->
