@@ -34,7 +34,7 @@ GPT的作者之前的一些研究中发现了大量的文本训练可以让基�
 这些参数用于使用相应的受监督目标的目标任务。
 
 
-GPT在其诞生和发展之路中逐渐明晰了 的在迁移学的的路上比BERT走的更远了一步，它希望预训练模型可以直接用于微调任务，而不需为微调任务设计专门的微调层。
+GPT在其诞生和发展之路中逐渐明晰了*** 这种迁移学习的思路比BERT走的更远了一步，它希望预训练模型可以直接用于微调任务，而不需为微调任务设计专门的微调层。
 
 
 ### GPT model
@@ -275,7 +275,7 @@ gpt-3 is a huge look-up table
 [What is GPT3](https://www.rev.com/blog/what-is-gpt-3-the-new-openai-language-model)
 [Illustrated GPT2](http://jalammar.github.io/illustrated-gpt2/#part-3-beyond-language-modeling)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTY2NjU1MTg1NywtMzk3NDkxNTA5LDE5ND
+eyJoaXN0b3J5IjpbMTM2MDAwNjg0NCwtMzk3NDkxNTA5LDE5ND
 I2ODk1MTgsMTI2OTA0MDY5MywtNTAyNjAyODAsOTg2OTA3NjIx
 LDU0Mzc1NDQzNywtMzAyNTg2NTIyLC0xMzI1ODI1NDYyLC01OT
 A2MzcyNDAsOTM3MjM1MzU0LC0xMzI5NTQ5MTQwLDIxMDUyNjMy
