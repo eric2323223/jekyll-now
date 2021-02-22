@@ -107,7 +107,7 @@ GPT(GPT1) train different linear layer for specific tasks, such as similarity an
 > **Question Answering and Commonsense Reasoning** For these tasks, we are given a context document z, a question q, and a set of possible answers {$a_k$}. We concatenate the document context and question with each possible answer, adding a delimiter token in between to get [z; q; $; ak]. Each of these sequences are processed independently with our model and then normalized via a softmax layer to produce an output distribution over possible answers.
 
 ### 实验数据分析
-GPT论文在GPT模型上做了大量实验，并根据实验结果提出了一些分析，这些分析也影响了GPT后续的发展方向
+GPT论文在GPT模型上做了大量实验，并根据实验结果提出了一些观点，这些观点也影响了GPT后续的发展方向
 ![enter image description here](https://d3i71xaburhd42.cloudfront.net/cd18800a0fe0b668a1cc19f2ec95b5003d0a5035/7-Figure2-1.png)
 - 模型深度对迁移学习的影响
 GPT作者训练了多种不同深度（GPT解码器层数）的预训练模型，并在微调任务（RACE和MultiNLI）中对不同预训练模型的预测结果比较，如上图1中所示，可以观察到随着模型深度（层数）的增加，预测准确率也随之上升。这个结果说明了增加解码器的层数可以让预训练模型携带更多可重用的特征，帮助提高微调任务的效果
@@ -277,11 +277,11 @@ gpt-3 is a huge look-up table
 [What is GPT3](https://www.rev.com/blog/what-is-gpt-3-the-new-openai-language-model)
 [Illustrated GPT2](http://jalammar.github.io/illustrated-gpt2/#part-3-beyond-language-modeling)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTQxNjI1MTE4MiwxOTUwNDU1MzkyLDEzNj
-AwMDY4NDQsLTM5NzQ5MTUwOSwxOTQyNjg5NTE4LDEyNjkwNDA2
-OTMsLTUwMjYwMjgwLDk4NjkwNzYyMSw1NDM3NTQ0MzcsLTMwMj
-U4NjUyMiwtMTMyNTgyNTQ2MiwtNTkwNjM3MjQwLDkzNzIzNTM1
-NCwtMTMyOTU0OTE0MCwyMTA1MjYzMjg0LDc0NjQ2OTEzOSwxMT
-A1ODU4ODQ5LC0xNzEwODg0ODAzLC0xNDM3NDA0Mjg5LC0xNzY3
-NjM0NzgzXX0=
+eyJoaXN0b3J5IjpbMTAzMDM2Njg2LDE0MTYyNTExODIsMTk1MD
+Q1NTM5MiwxMzYwMDA2ODQ0LC0zOTc0OTE1MDksMTk0MjY4OTUx
+OCwxMjY5MDQwNjkzLC01MDI2MDI4MCw5ODY5MDc2MjEsNTQzNz
+U0NDM3LC0zMDI1ODY1MjIsLTEzMjU4MjU0NjIsLTU5MDYzNzI0
+MCw5MzcyMzUzNTQsLTEzMjk1NDkxNDAsMjEwNTI2MzI4NCw3ND
+Y0NjkxMzksMTEwNTg1ODg0OSwtMTcxMDg4NDgwMywtMTQzNzQw
+NDI4OV19
 -->
