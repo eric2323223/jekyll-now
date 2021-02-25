@@ -86,7 +86,7 @@ Top K
 ### supervised finetune
 GPT设计了4种heads处理不同任务： LMhead, (ClfHead，multichoiceHead，similarityHead, inferenceHead, classificationHead)
 $$P(y|x^1, ...,x^m) = \mathrm{softmax} (h_l^mW_y)$$
-$$L_2($$
+$$L_2(C)$$
 > - Natural Language Inference: We evaluate on five datasets with diverse sources, including image captions (SNLI), transcribed speech, popular fiction, and government reports (MNLI), Wikipedia articles (QNLI), science exams (SciTail) or news articles (RTE)
 > - Question answering and commonsense reasoning: We use the recently released RACE dataset [30], consisting of English passages with associated questions from middle and high school exams
 > - Semantic Similarity: Semantic similarity (or paraphrase detection) tasks involve predicting whether two sentences are semantically equivalent or not. The challenges lie in recognizing rephrasing of concepts, understanding negation, and handling syntactic ambiguity. We use three datasets for this task – the Microsoft Paraphrase corpus (MRPC) [14] (collected from news sources), the Quora Question Pairs (QQP) dataset [9], and the Semantic Textual Similarity benchmark (STS-B) [6].
@@ -287,7 +287,7 @@ gpt-3 is a huge look-up table
 
 $$P(u) = \underset{x} \mathrm{softmax} (h_nW_e^T)$$
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEwMDM4NzE1MSwtNDEwMTk1NDIxLC0xMj
+eyJoaXN0b3J5IjpbLTYxNDM2NTY0MSwtNDEwMTk1NDIxLC0xMj
 g1Nzc3ODE0LDEwMzAzNjY4NiwxNDE2MjUxMTgyLDE5NTA0NTUz
 OTIsMTM2MDAwNjg0NCwtMzk3NDkxNTA5LDE5NDI2ODk1MTgsMT
 I2OTA0MDY5MywtNTAyNjAyODAsOTg2OTA3NjIxLDU0Mzc1NDQz
