@@ -154,8 +154,8 @@ Secondly, while  [BERT](https://analyticsindiamag.com/step-by-step-guide-to-impl
 - greedy search
 - Beam search
 - Pure Sampling
-- ### Top-k Sampling and Sampling with Temperature
-- ### Nucleus Sampling
+- Top-k Sampling and Sampling with Temperature
+- Nucleus Sampling
 ## GPT的发展 
 ### GPT-1: Improving Language Understanding by Generative Pre-Training
 > We demonstrate that large gains on these tasks can be realized by generative pre-training of a language model on a diverse corpus of unlabeled text, followed by discriminative fine-tuning on each specific task. In contrast to previous approaches, we make use of task-aware input transformations during fine-tuning to achieve effective transfer while requiring minimal changes to the model architecture. We demonstrate the effectiveness of our approach on a wide range of benchmarks for natural language understanding
@@ -289,17 +289,17 @@ gpt-3 is a huge look-up table
 [Unsupervised sentiment neuron](https://openai.com/blog/unsupervised-sentiment-neuron/)
 [What is GPT3](https://www.rev.com/blog/what-is-gpt-3-the-new-openai-language-model)
 [Illustrated GPT2](http://jalammar.github.io/illustrated-gpt2/#part-3-beyond-language-modeling)
-
+[How to Build an AI Text Generator: Text Generation with a GPT-2 Model](https://code.oursky.com/ai-text-generator-text-generation-with-a-gpt2-model/)
 
 
 
 $$P(u) = \underset{x} \mathrm{softmax} (h_nW_e^T)$$
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjUxNzgyNTIsLTE3Njc0MjMwNzIsLTQxMD
-E5NTQyMSwtMTI4NTc3NzgxNCwxMDMwMzY2ODYsMTQxNjI1MTE4
-MiwxOTUwNDU1MzkyLDEzNjAwMDY4NDQsLTM5NzQ5MTUwOSwxOT
-QyNjg5NTE4LDEyNjkwNDA2OTMsLTUwMjYwMjgwLDk4NjkwNzYy
-MSw1NDM3NTQ0MzcsLTMwMjU4NjUyMiwtMTMyNTgyNTQ2MiwtNT
-kwNjM3MjQwLDkzNzIzNTM1NCwtMTMyOTU0OTE0MCwyMTA1MjYz
-Mjg0XX0=
+eyJoaXN0b3J5IjpbLTEzNDk2MzA4OTAsLTE3Njc0MjMwNzIsLT
+QxMDE5NTQyMSwtMTI4NTc3NzgxNCwxMDMwMzY2ODYsMTQxNjI1
+MTE4MiwxOTUwNDU1MzkyLDEzNjAwMDY4NDQsLTM5NzQ5MTUwOS
+wxOTQyNjg5NTE4LDEyNjkwNDA2OTMsLTUwMjYwMjgwLDk4Njkw
+NzYyMSw1NDM3NTQ0MzcsLTMwMjU4NjUyMiwtMTMyNTgyNTQ2Mi
+wtNTkwNjM3MjQwLDkzNzIzNTM1NCwtMTMyOTU0OTE0MCwyMTA1
+MjYzMjg0XX0=
 -->
