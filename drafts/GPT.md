@@ -149,12 +149,13 @@ GPT-3 demonstrates that a language model trained on enough data can solve NLP ta
 Both the models —  [GPT-3](https://analyticsindiamag.com/how-openais-gpt-3-can-be-alarming-for-the-society/)  and  [BERT](https://analyticsindiamag.com/bert-classifier-with-tensorflow-2-0/)  have been relatively new for the industry, but their state-of-the-art performance has made them the winners among other models in the natural language processing field. However, being trained on 175 billion parameters,  [GPT-3](https://analyticsindiamag.com/5-jobs-that-gpt-3-might-challenge/)  becomes 470 times bigger in size than BERT-Large.
 
 Secondly, while  [BERT](https://analyticsindiamag.com/step-by-step-guide-to-implement-multi-class-classification-with-bert-tensorflow/)  requires an elaborated fine-tuning process where users have to gather data of examples to train the model for specific downstream tasks, GPT-3’s text-in and text-out API allows the users to reprogram it using instructions and access it. Case in point — for sentiment analysis or question answering tasks, to use BERT, the users have to train the model on a separate layer on sentence encodings. However,  [GPT-3](https://analyticsindiamag.com/gpt-3-has-weaknesses-and-makes-silly-mistakes-sam-altman-openai/)  uses a few-shot learning process on the input token to predict the output result.
-###  **Text Generation with a Language Model**
-## **Text Generation with a Language Model**
-
+###  **[Text Generation with a Language Model](https://code.oursky.com/ai-text-generator-text-generation-with-a-gpt2-model/)**
 
 - greedy search
 - Beam search
+- Pure Sampling
+- ### Top-k Sampling and Sampling with Temperature
+- ### Nucleus Sampling
 ## GPT的发展 
 ### GPT-1: Improving Language Understanding by Generative Pre-Training
 > We demonstrate that large gains on these tasks can be realized by generative pre-training of a language model on a diverse corpus of unlabeled text, followed by discriminative fine-tuning on each specific task. In contrast to previous approaches, we make use of task-aware input transformations during fine-tuning to achieve effective transfer while requiring minimal changes to the model architecture. We demonstrate the effectiveness of our approach on a wide range of benchmarks for natural language understanding
@@ -294,11 +295,11 @@ gpt-3 is a huge look-up table
 
 $$P(u) = \underset{x} \mathrm{softmax} (h_nW_e^T)$$
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODY1ODMwMjQwLC0xNzY3NDIzMDcyLC00MT
-AxOTU0MjEsLTEyODU3Nzc4MTQsMTAzMDM2Njg2LDE0MTYyNTEx
-ODIsMTk1MDQ1NTM5MiwxMzYwMDA2ODQ0LC0zOTc0OTE1MDksMT
-k0MjY4OTUxOCwxMjY5MDQwNjkzLC01MDI2MDI4MCw5ODY5MDc2
-MjEsNTQzNzU0NDM3LC0zMDI1ODY1MjIsLTEzMjU4MjU0NjIsLT
-U5MDYzNzI0MCw5MzcyMzUzNTQsLTEzMjk1NDkxNDAsMjEwNTI2
-MzI4NF19
+eyJoaXN0b3J5IjpbNjUxNzgyNTIsLTE3Njc0MjMwNzIsLTQxMD
+E5NTQyMSwtMTI4NTc3NzgxNCwxMDMwMzY2ODYsMTQxNjI1MTE4
+MiwxOTUwNDU1MzkyLDEzNjAwMDY4NDQsLTM5NzQ5MTUwOSwxOT
+QyNjg5NTE4LDEyNjkwNDA2OTMsLTUwMjYwMjgwLDk4NjkwNzYy
+MSw1NDM3NTQ0MzcsLTMwMjU4NjUyMiwtMTMyNTgyNTQ2MiwtNT
+kwNjM3MjQwLDkzNzIzNTM1NCwtMTMyOTU0OTE0MCwyMTA1MjYz
+Mjg0XX0=
 -->
