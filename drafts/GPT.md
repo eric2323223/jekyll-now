@@ -71,7 +71,7 @@ absolute position embedding `self.wpe = nn.Embedding(config.n_positions, config.
 GPT使用传统的语言模型（Lanaguage model）训练方法
 $$h_0 = UW_e + W_p$$
 $$h_l = \mathrm{transformerblock}(h_{l-1})  $$
-
+$$P(u) = \mathrm{softmax} (h_nW_e^T)$$
 #### Training data
 >We use the BooksCorpus dataset [71] for training the language model. It contains over 7,000 unique unpublished books from a variety of genres including Adventure, Fantasy, and Romance. Crucially, it contains long stretches of contiguous text, which allows the generative model to learn to condition on long-range information.
 >我们使用BooksCorpus数据集[71]训练语言模型。 它包含7,000多种不同类型的未出版未出版书籍，包括冒险，幻想和浪漫。 至关重要的是，它包含长段连续的文本，这使生成模型可以学习以远程信息为条件。
@@ -285,11 +285,11 @@ gpt-3 is a huge look-up table
 
 $$P(u) = \underset{x} \mathrm{softmax} (h_nW_e^T)$$
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzc3NTA0MDAzLC00MTAxOTU0MjEsLTEyOD
-U3Nzc4MTQsMTAzMDM2Njg2LDE0MTYyNTExODIsMTk1MDQ1NTM5
-MiwxMzYwMDA2ODQ0LC0zOTc0OTE1MDksMTk0MjY4OTUxOCwxMj
-Y5MDQwNjkzLC01MDI2MDI4MCw5ODY5MDc2MjEsNTQzNzU0NDM3
-LC0zMDI1ODY1MjIsLTEzMjU4MjU0NjIsLTU5MDYzNzI0MCw5Mz
-cyMzUzNTQsLTEzMjk1NDkxNDAsMjEwNTI2MzI4NCw3NDY0Njkx
-MzldfQ==
+eyJoaXN0b3J5IjpbMjA2MDE3MzY3NiwtNDEwMTk1NDIxLC0xMj
+g1Nzc3ODE0LDEwMzAzNjY4NiwxNDE2MjUxMTgyLDE5NTA0NTUz
+OTIsMTM2MDAwNjg0NCwtMzk3NDkxNTA5LDE5NDI2ODk1MTgsMT
+I2OTA0MDY5MywtNTAyNjAyODAsOTg2OTA3NjIxLDU0Mzc1NDQz
+NywtMzAyNTg2NTIyLC0xMzI1ODI1NDYyLC01OTA2MzcyNDAsOT
+M3MjM1MzU0LC0xMzI5NTQ5MTQwLDIxMDUyNjMyODQsNzQ2NDY5
+MTM5XX0=
 -->
