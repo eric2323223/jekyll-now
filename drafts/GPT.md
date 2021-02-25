@@ -70,8 +70,8 @@ absolute position embedding `self.wpe = nn.Embedding(config.n_positions, config.
 ### self-supervised Pretrain: 
 GPT使用传统的语言模型（Lanaguage model）训练方法
 $$h_0 = UW_e + W_p$$
-$$h_l = \mathrm{transformer_block}(h_{l-1})  $$
-$$P(u) = \softmax (h_nW_e^T)$$
+$$h_l = \mathrm{transformerblock}(h_{l-1})  $$
+$$P(u) = \mathrm{softmax} (h_nW_e^T)$$
 #### Training data
 >We use the BooksCorpus dataset [71] for training the language model. It contains over 7,000 unique unpublished books from a variety of genres including Adventure, Fantasy, and Romance. Crucially, it contains long stretches of contiguous text, which allows the generative model to learn to condition on long-range information.
 >我们使用BooksCorpus数据集[71]训练语言模型。 它包含7,000多种不同类型的未出版未出版书籍，包括冒险，幻想和浪漫。 至关重要的是，它包含长段连续的文本，这使生成模型可以学习以远程信息为条件。
@@ -280,11 +280,11 @@ gpt-3 is a huge look-up table
 [What is GPT3](https://www.rev.com/blog/what-is-gpt-3-the-new-openai-language-model)
 [Illustrated GPT2](http://jalammar.github.io/illustrated-gpt2/#part-3-beyond-language-modeling)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQxMDE5NTQyMSwtMTI4NTc3NzgxNCwxMD
-MwMzY2ODYsMTQxNjI1MTE4MiwxOTUwNDU1MzkyLDEzNjAwMDY4
-NDQsLTM5NzQ5MTUwOSwxOTQyNjg5NTE4LDEyNjkwNDA2OTMsLT
-UwMjYwMjgwLDk4NjkwNzYyMSw1NDM3NTQ0MzcsLTMwMjU4NjUy
-MiwtMTMyNTgyNTQ2MiwtNTkwNjM3MjQwLDkzNzIzNTM1NCwtMT
-MyOTU0OTE0MCwyMTA1MjYzMjg0LDc0NjQ2OTEzOSwxMTA1ODU4
-ODQ5XX0=
+eyJoaXN0b3J5IjpbMTEzNzUyMzcwMywtNDEwMTk1NDIxLC0xMj
+g1Nzc3ODE0LDEwMzAzNjY4NiwxNDE2MjUxMTgyLDE5NTA0NTUz
+OTIsMTM2MDAwNjg0NCwtMzk3NDkxNTA5LDE5NDI2ODk1MTgsMT
+I2OTA0MDY5MywtNTAyNjAyODAsOTg2OTA3NjIxLDU0Mzc1NDQz
+NywtMzAyNTg2NTIyLC0xMzI1ODI1NDYyLC01OTA2MzcyNDAsOT
+M3MjM1MzU0LC0xMzI5NTQ5MTQwLDIxMDUyNjMyODQsNzQ2NDY5
+MTM5XX0=
 -->
