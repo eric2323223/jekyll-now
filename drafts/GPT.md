@@ -82,7 +82,7 @@ $$P(u) = \mathrm{softmax} (h_nW_e^T)$$
 dense + softmax
 Top K
 #### 预训练流程
-![enter image description here](https://docs.google.com/drawings/d/e/2PACX-1vTX-aCAbIFrxzK9lcpEOv4gKmreLsRf-nkGLkvuOk6kMr8ozERpqnlqztR2OpVjOIlNW81m9hRi5OPz/pub?w=300&h=700)
+![enter image description here]( )
 ### supervised finetune
 GPT设计了4种heads处理不同任务： LMhead, (ClfHead，multichoiceHead，similarityHead, inferenceHead, classificationHead)
 $$P(y|x^1, ...,x^m) = \mathrm{softmax} (h_l^mW_y)$$
@@ -295,11 +295,11 @@ gpt-3 is a huge look-up table
 
 $$P(u) = \underset{x} \mathrm{softmax} (h_nW_e^T)$$
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzNDk2MzA4OTAsLTE3Njc0MjMwNzIsLT
-QxMDE5NTQyMSwtMTI4NTc3NzgxNCwxMDMwMzY2ODYsMTQxNjI1
-MTE4MiwxOTUwNDU1MzkyLDEzNjAwMDY4NDQsLTM5NzQ5MTUwOS
-wxOTQyNjg5NTE4LDEyNjkwNDA2OTMsLTUwMjYwMjgwLDk4Njkw
-NzYyMSw1NDM3NTQ0MzcsLTMwMjU4NjUyMiwtMTMyNTgyNTQ2Mi
-wtNTkwNjM3MjQwLDkzNzIzNTM1NCwtMTMyOTU0OTE0MCwyMTA1
-MjYzMjg0XX0=
+eyJoaXN0b3J5IjpbMTcyNzM1NjAwMCwtMTM0OTYzMDg5MCwtMT
+c2NzQyMzA3MiwtNDEwMTk1NDIxLC0xMjg1Nzc3ODE0LDEwMzAz
+NjY4NiwxNDE2MjUxMTgyLDE5NTA0NTUzOTIsMTM2MDAwNjg0NC
+wtMzk3NDkxNTA5LDE5NDI2ODk1MTgsMTI2OTA0MDY5MywtNTAy
+NjAyODAsOTg2OTA3NjIxLDU0Mzc1NDQzNywtMzAyNTg2NTIyLC
+0xMzI1ODI1NDYyLC01OTA2MzcyNDAsOTM3MjM1MzU0LC0xMzI5
+NTQ5MTQwXX0=
 -->
