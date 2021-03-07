@@ -65,7 +65,7 @@ absolute position embedding `self.wpe = nn.Embedding(config.n_positions, config.
 
 
 
-### Tokenizer
+#### Tokenizer
 **Byte Pair Encoding** ([**BPE**](https://arxiv.org/abs/1508.07909)) is used to encode the input sequences. BPE was originally proposed as a data compression algorithm in 1990s and then was adopted to solve the open-vocabulary issue in machine translation, as we can easily run into rare and unknown words when translating into a new language. Motivated by the intuition that rare and unknown words can often be decomposed into multiple subwords, BPE finds the best word segmentation by iteratively and greedily merging frequent pairs of characters.
 ### self-supervised Pretrain: 
 GPT使用传统的语言模型（Lanaguage model）训练方法
@@ -295,11 +295,11 @@ gpt-3 is a huge look-up table
 
 $$P(u) = \underset{x} \mathrm{softmax} (h_nW_e^T)$$
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTcyNzM1NjAwMCwtMTM0OTYzMDg5MCwtMT
-c2NzQyMzA3MiwtNDEwMTk1NDIxLC0xMjg1Nzc3ODE0LDEwMzAz
-NjY4NiwxNDE2MjUxMTgyLDE5NTA0NTUzOTIsMTM2MDAwNjg0NC
-wtMzk3NDkxNTA5LDE5NDI2ODk1MTgsMTI2OTA0MDY5MywtNTAy
-NjAyODAsOTg2OTA3NjIxLDU0Mzc1NDQzNywtMzAyNTg2NTIyLC
-0xMzI1ODI1NDYyLC01OTA2MzcyNDAsOTM3MjM1MzU0LC0xMzI5
-NTQ5MTQwXX0=
+eyJoaXN0b3J5IjpbMTM2ODQ4OTEwOSwxNzI3MzU2MDAwLC0xMz
+Q5NjMwODkwLC0xNzY3NDIzMDcyLC00MTAxOTU0MjEsLTEyODU3
+Nzc4MTQsMTAzMDM2Njg2LDE0MTYyNTExODIsMTk1MDQ1NTM5Mi
+wxMzYwMDA2ODQ0LC0zOTc0OTE1MDksMTk0MjY4OTUxOCwxMjY5
+MDQwNjkzLC01MDI2MDI4MCw5ODY5MDc2MjEsNTQzNzU0NDM3LC
+0zMDI1ODY1MjIsLTEzMjU4MjU0NjIsLTU5MDYzNzI0MCw5Mzcy
+MzUzNTRdfQ==
 -->
