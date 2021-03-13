@@ -290,16 +290,16 @@ gpt-3 is a huge look-up table
 [What is GPT3](https://www.rev.com/blog/what-is-gpt-3-the-new-openai-language-model)
 [Illustrated GPT2](http://jalammar.github.io/illustrated-gpt2/#part-3-beyond-language-modeling)
 [How to Build an AI Text Generator: Text Generation with a GPT-2 Model](https://code.oursky.com/ai-text-generator-text-generation-with-a-gpt2-model/)
-
+[GTP model explained](https://medium.com/walmartglobaltech/the-journey-of-open-ai-gpt-models-32d95b7b7fb2)
 
 
 $$P(u) = \underset{x} \mathrm{softmax} (h_nW_e^T)$$
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTM2ODQ4OTEwOSwxNzI3MzU2MDAwLC0xMz
-Q5NjMwODkwLC0xNzY3NDIzMDcyLC00MTAxOTU0MjEsLTEyODU3
-Nzc4MTQsMTAzMDM2Njg2LDE0MTYyNTExODIsMTk1MDQ1NTM5Mi
-wxMzYwMDA2ODQ0LC0zOTc0OTE1MDksMTk0MjY4OTUxOCwxMjY5
-MDQwNjkzLC01MDI2MDI4MCw5ODY5MDc2MjEsNTQzNzU0NDM3LC
-0zMDI1ODY1MjIsLTEzMjU4MjU0NjIsLTU5MDYzNzI0MCw5Mzcy
-MzUzNTRdfQ==
+eyJoaXN0b3J5IjpbNjQyOTc0MjM3LDEzNjg0ODkxMDksMTcyNz
+M1NjAwMCwtMTM0OTYzMDg5MCwtMTc2NzQyMzA3MiwtNDEwMTk1
+NDIxLC0xMjg1Nzc3ODE0LDEwMzAzNjY4NiwxNDE2MjUxMTgyLD
+E5NTA0NTUzOTIsMTM2MDAwNjg0NCwtMzk3NDkxNTA5LDE5NDI2
+ODk1MTgsMTI2OTA0MDY5MywtNTAyNjAyODAsOTg2OTA3NjIxLD
+U0Mzc1NDQzNywtMzAyNTg2NTIyLC0xMzI1ODI1NDYyLC01OTA2
+MzcyNDBdfQ==
 -->
