@@ -61,12 +61,8 @@ absolute position embedding `self.wpe = nn.Embedding(config.n_positions, config.
 - decoder: language model
 ![enter image description here](https://qjjnh3a9hpo1nukrg1fwoh71-wpengine.netdna-ssl.com/wp-content/uploads/2019/04/OpenAI-GPT-transformer-decoder_web.jpg)
 ![enter image description here](https://jalammar.github.io/images/gpt2/self-attention-and-masked-self-attention.png)
-#### LM 层（LM head）
 
 
-
-#### Tokenizer
-**Byte Pair Encoding** ([**BPE**](https://arxiv.org/abs/1508.07909)) is used to encode the input sequences. BPE was originally proposed as a data compression algorithm in 1990s and then was adopted to solve the open-vocabulary issue in machine translation, as we can easily run into rare and unknown words when translating into a new language. Motivated by the intuition that rare and unknown words can often be decomposed into multiple subwords, BPE finds the best word segmentation by iteratively and greedily merging frequent pairs of characters.
 ### self-supervised Pretrain: 
 GPT使用传统的语言模型（Lanaguage model）训练方法
 $$h_0 = UW_e + W_p$$
@@ -78,6 +74,9 @@ $$P(u) = \mathrm{softmax} (h_nW_e^T)$$
 - attention mask
 - GPT is trained on the standard task: given a sequence of prior words, predict the next word.
 -  loss function: standard LM
+#### Tokenizer
+**Byte Pair Encoding** ([**BPE**](https://arxiv.org/abs/1508.07909)) is used to encode the input sequences. BPE was originally proposed as a data compression algorithm in 1990s and then was adopted to solve the open-vocabulary issue in machine translation, as we can easily run into rare and unknown words when translating into a new language. Motivated by the intuition that rare and unknown words can often be decomposed into multiple subwords, BPE finds the best word segmentation by iteratively and greedily merging frequent pairs of characters.
+#### 
 #### 分类器
 dense + softmax
 Top K
@@ -295,11 +294,11 @@ gpt-3 is a huge look-up table
 
 $$P(u) = \underset{x} \mathrm{softmax} (h_nW_e^T)$$
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjQyOTc0MjM3LDEzNjg0ODkxMDksMTcyNz
-M1NjAwMCwtMTM0OTYzMDg5MCwtMTc2NzQyMzA3MiwtNDEwMTk1
-NDIxLC0xMjg1Nzc3ODE0LDEwMzAzNjY4NiwxNDE2MjUxMTgyLD
-E5NTA0NTUzOTIsMTM2MDAwNjg0NCwtMzk3NDkxNTA5LDE5NDI2
-ODk1MTgsMTI2OTA0MDY5MywtNTAyNjAyODAsOTg2OTA3NjIxLD
-U0Mzc1NDQzNywtMzAyNTg2NTIyLC0xMzI1ODI1NDYyLC01OTA2
-MzcyNDBdfQ==
+eyJoaXN0b3J5IjpbMTU1NTQyODA0LDY0Mjk3NDIzNywxMzY4ND
+g5MTA5LDE3MjczNTYwMDAsLTEzNDk2MzA4OTAsLTE3Njc0MjMw
+NzIsLTQxMDE5NTQyMSwtMTI4NTc3NzgxNCwxMDMwMzY2ODYsMT
+QxNjI1MTE4MiwxOTUwNDU1MzkyLDEzNjAwMDY4NDQsLTM5NzQ5
+MTUwOSwxOTQyNjg5NTE4LDEyNjkwNDA2OTMsLTUwMjYwMjgwLD
+k4NjkwNzYyMSw1NDM3NTQ0MzcsLTMwMjU4NjUyMiwtMTMyNTgy
+NTQ2Ml19
 -->
