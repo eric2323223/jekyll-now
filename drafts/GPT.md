@@ -76,10 +76,9 @@ $$P(u) = \mathrm{softmax} (h_nW_e^T)$$
 -  loss function: standard LM
 #### Tokenizer
 **Byte Pair Encoding** ([**BPE**](https://arxiv.org/abs/1508.07909)) is used to encode the input sequences. BPE was originally proposed as a data compression algorithm in 1990s and then was adopted to solve the open-vocabulary issue in machine translation, as we can easily run into rare and unknown words when translating into a new language. Motivated by the intuition that rare and unknown words can often be decomposed into multiple subwords, BPE finds the best word segmentation by iteratively and greedily merging frequent pairs of characters.
-#### 
-#### 分类器
-dense + softmax
-Top K
+#### GPT model
+#### LM head
+
 #### 预训练流程
 ![enter image description here]( )
 ### supervised finetune
@@ -294,11 +293,11 @@ gpt-3 is a huge look-up table
 
 $$P(u) = \underset{x} \mathrm{softmax} (h_nW_e^T)$$
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTU1NTQyODA0LDY0Mjk3NDIzNywxMzY4ND
-g5MTA5LDE3MjczNTYwMDAsLTEzNDk2MzA4OTAsLTE3Njc0MjMw
-NzIsLTQxMDE5NTQyMSwtMTI4NTc3NzgxNCwxMDMwMzY2ODYsMT
-QxNjI1MTE4MiwxOTUwNDU1MzkyLDEzNjAwMDY4NDQsLTM5NzQ5
-MTUwOSwxOTQyNjg5NTE4LDEyNjkwNDA2OTMsLTUwMjYwMjgwLD
-k4NjkwNzYyMSw1NDM3NTQ0MzcsLTMwMjU4NjUyMiwtMTMyNTgy
-NTQ2Ml19
+eyJoaXN0b3J5IjpbLTUyMjcxNDQzNiw2NDI5NzQyMzcsMTM2OD
+Q4OTEwOSwxNzI3MzU2MDAwLC0xMzQ5NjMwODkwLC0xNzY3NDIz
+MDcyLC00MTAxOTU0MjEsLTEyODU3Nzc4MTQsMTAzMDM2Njg2LD
+E0MTYyNTExODIsMTk1MDQ1NTM5MiwxMzYwMDA2ODQ0LC0zOTc0
+OTE1MDksMTk0MjY4OTUxOCwxMjY5MDQwNjkzLC01MDI2MDI4MC
+w5ODY5MDc2MjEsNTQzNzU0NDM3LC0zMDI1ODY1MjIsLTEzMjU4
+MjU0NjJdfQ==
 -->
